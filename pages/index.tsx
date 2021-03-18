@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Giscussions from '../components/Giscussions';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -43,6 +44,8 @@ export default function Home() {
           </a>
         </div>
       </main>
+
+      <Giscussions />
 
       <footer className={styles.footer}>
         <a

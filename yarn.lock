@@ -146,6 +146,11 @@
   resolved "https://registry.yarnpkg.com/@opentelemetry/context-base/-/context-base-0.14.0.tgz#c67fc20a4d891447ca1a855d7d70fa79a3533001"
   integrity sha512-sDOAZcYwynHFTbLo6n8kIbLiVF3a3BLkrmehJUyEbT9F+Smbi47kLGS2gG2g0fjBLR/Lr1InPD7kXL7FaTqEkw==
 
+"@primer/octicons-react@^12.1.0":
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-12.1.0.tgz#7556450199e0c10e72e99dd02c59f1ac33544767"
+  integrity sha512-eb/5Obsp6/pVkyzzGhobK6aPAkKqx6VleF/7HYeihGTYm3rGZc+prL/jhxD5Mo1P6U343YEkHjc2gKuvtENn1g==
+
 "@tailwindcss/jit@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@tailwindcss/jit/-/jit-0.1.3.tgz#50390d9ac95fee78ed23a7e2320ef20bd4a35354"

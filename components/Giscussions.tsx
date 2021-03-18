@@ -1,4 +1,4 @@
-import { ArrowDownIcon, ArrowUpIcon } from '@primer/octicons-react';
+import { ArrowDownIcon, ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 
 export default function Giscussions() {
   return (
@@ -20,6 +20,44 @@ export default function Giscussions() {
             <button type="button">
               <ArrowDownIcon />
             </button>
+          </div>
+        </div>
+        <div className="w-full border border-blue-100 rounded-md">
+          <div className="flex items-center px-3">
+            <h3 className="flex items-center flex-auto pt-2">
+              <a href="https://github.com/laymonage" className="flex items-center">
+                <img
+                  className="mr-2 rounded-full"
+                  src="https://avatars.githubusercontent.com/u/6379424?s=60&amp;v=4"
+                  width="30"
+                  height="30"
+                  alt="@laymonage"
+                />
+                <span className="text-bold">laymonage</span>
+              </a>
+              <a
+                href="#discussioncomment-123"
+                id="discussioncomment-123-permalink"
+                className="ml-2 text-gray-500"
+              >
+                <div
+                  data-datetime="2021-03-18T14:25:14Z"
+                  className="whitespace-nowrap"
+                  title="Mar 18, 2021, 9:25 PM GMT+7"
+                >
+                  2 hours ago
+                </div>
+              </a>
+              <div className="hidden ml-2 text-xs sm:inline-flex">
+                <span className="px-1 ml-1 border border-blue-100 rounded-md">Maintainer</span>
+                <span className="px-1 ml-1 border border-blue-100 rounded-md">Author</span>
+              </div>
+            </h3>
+            <div className="flex">
+              <button>
+                <KebabHorizontalIcon />
+              </button>
+            </div>
           </div>
         </div>
       </div>

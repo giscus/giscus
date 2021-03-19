@@ -1,4 +1,9 @@
-import { ArrowDownIcon, ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
+import {
+  ArrowDownIcon,
+  ArrowUpIcon,
+  KebabHorizontalIcon,
+  SmileyIcon,
+} from '@primer/octicons-react';
 
 export default function Giscussions() {
   return (
@@ -67,6 +72,9 @@ export default function Giscussions() {
             <div className="w-full p-4">Test comment.</div>
             <div className="flex content-center justify-between">
               <div className="ml-4">
+                <button className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded">
+                  <SmileyIcon />
+                </button>
                 <button className="px-2 py-1 mb-4 mr-2 border rounded">
                   <img
                     className="inline-block mr-1"
@@ -75,7 +83,7 @@ export default function Giscussions() {
                     width="16"
                     src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png"
                   />
-                  <span>1</span>
+                  <span className="text-xs">1</span>
                 </button>
               </div>
               <div className="mb-4 mr-4">
@@ -97,7 +105,7 @@ export default function Giscussions() {
                   />
                 </a>
               </div>
-              <div className="w-full mb-2 ml-2">
+              <div className="w-full ml-2">
                 <div className="flex">
                   <h3 className="flex items-center flex-auto pt-1">
                     <a href="https://github.com/laymonage" className="flex items-center">
@@ -133,19 +141,20 @@ export default function Giscussions() {
                 </div>
                 <div className="">
                   <div className="w-full py-4">Test reply.</div>
-                  <div className="flex content-center justify-between">
-                    <div className="">
-                      <button className="px-2 py-1 mb-4 mr-2 border rounded">
-                        <img
-                          className="inline-block mr-1"
-                          alt="eyes"
-                          height="16"
-                          width="16"
-                          src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png"
-                        />
-                        <span>1</span>
-                      </button>
-                    </div>
+                  <div className="flex content-center">
+                    <button className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded">
+                      <SmileyIcon />
+                    </button>
+                    <button className="px-2 py-1 mb-4 mr-2 border rounded">
+                      <img
+                        className="inline-block mr-1"
+                        alt="eyes"
+                        height="16"
+                        width="16"
+                        src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png"
+                      />
+                      <span className="text-xs">1</span>
+                    </button>
                   </div>
                 </div>
               </div>

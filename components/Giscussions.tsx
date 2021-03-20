@@ -27,7 +27,7 @@ function ReactButton() {
   }
 
   return (
-    <>
+    <div ref={ref}>
       <button
         className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600"
         onClick={togglePopover}
@@ -35,7 +35,6 @@ function ReactButton() {
         <SmileyIcon />
       </button>
       <div
-        ref={ref}
         className={`absolute ${
           isOpen ? 'visible scale-100' : 'invisible scale-50'
         } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded popover top-8`}
@@ -79,7 +78,7 @@ function ReactButton() {
           `}
         </style>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -278,7 +277,7 @@ export default function Giscussions() {
           <div className="border-b rounded-b">
             <div className="w-full p-4">Test comment.</div>
             <div className="flex content-center justify-between">
-              <div className="relative ml-4">
+              <div className="relative flex ml-4">
                 <ReactButton />
                 <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
                   <span className="mr-1">👀</span>

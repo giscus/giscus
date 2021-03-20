@@ -213,13 +213,7 @@ export default function Giscussions() {
                   </style>
                 </div>
                 <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
-                  <img
-                    className="inline-block mr-1"
-                    alt="eyes"
-                    height="16"
-                    width="16"
-                    src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png"
-                  />
+                  <span className="mr-1">👀</span>
                   <span className="text-xs text-blue-700">1</span>
                 </button>
               </div>
@@ -283,13 +277,7 @@ export default function Giscussions() {
                       <SmileyIcon />
                     </button>
                     <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
-                      <img
-                        className="inline-block mr-1"
-                        alt="eyes"
-                        height="16"
-                        width="16"
-                        src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png"
-                      />
+                      <span className="mr-1">👀</span>
                       <span className="text-xs text-blue-600">1</span>
                     </button>
                   </div>

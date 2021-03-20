@@ -7,6 +7,74 @@ import {
 } from '@primer/octicons-react';
 import { ReactNode, useState } from 'react';
 
+function ReactButton() {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <>
+      <button
+        className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <SmileyIcon />
+      </button>
+      <div
+        className={`absolute ${
+          isOpen ? 'visible scale-100' : 'invisible scale-50'
+        } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded popover top-8`}
+      >
+        <p className="m-2">Pick your reaction</p>
+        <div className="my-2 border-t" />
+        <div className="m-2">
+          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
+            👍
+          </button>
+          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
+            👎
+          </button>
+          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
+            😆
+          </button>
+          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
+            🎉
+          </button>
+          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
+            😕
+          </button>
+          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
+            ❤️
+          </button>
+          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
+            🚀
+          </button>
+          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
+            👀
+          </button>
+        </div>
+        <style jsx>
+          {`
+            .popover::before {
+              position: absolute;
+              top: -16px;
+              left: 9px;
+              border: 8px solid transparent;
+              border-bottom: 8px solid lightgray;
+              content: '';
+            }
+            .popover::after {
+              position: absolute;
+              top: -15px;
+              left: 10px;
+              border: 7px solid transparent;
+              border-bottom: 8px solid white;
+              content: '';
+            }
+          `}
+        </style>
+      </div>
+    </>
+  );
+}
+
 function Reply({ children }: { children: ReactNode }) {
   return (
     <div className="relative pt-2 bg-gray-500 bg-opacity-5 reply">
@@ -59,10 +127,8 @@ function Reply({ children }: { children: ReactNode }) {
           </div>
           <div className="">
             <div className="w-full py-4">{children}</div>
-            <div className="flex content-center">
-              <button className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600">
-                <SmileyIcon />
-              </button>
+            <div className="relative flex content-center">
+              <ReactButton />
               <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
                 <span className="mr-1">👀</span>
                 <span className="text-xs text-blue-600">1</span>
@@ -128,8 +194,6 @@ function CommentBox() {
 }
 
 export default function Giscussions() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
@@ -196,90 +260,7 @@ export default function Giscussions() {
             <div className="w-full p-4">Test comment.</div>
             <div className="flex content-center justify-between">
               <div className="relative ml-4">
-                <button
-                  className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600"
-                  onClick={() => setIsOpen(!isOpen)}
-                >
-                  <SmileyIcon />
-                </button>
-                <div
-                  className={`absolute ${
-                    isOpen ? 'visible scale-100' : 'invisible scale-50'
-                  } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded popover top-8`}
-                >
-                  <p className="m-2">Pick your reaction</p>
-                  <div className="my-2 border-t" />
-                  <div className="m-2">
-                    <button
-                      type="button"
-                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
-                    >
-                      👍
-                    </button>
-                    <button
-                      type="button"
-                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
-                    >
-                      👎
-                    </button>
-                    <button
-                      type="button"
-                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
-                    >
-                      😆
-                    </button>
-                    <button
-                      type="button"
-                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
-                    >
-                      🎉
-                    </button>
-                    <button
-                      type="button"
-                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
-                    >
-                      😕
-                    </button>
-                    <button
-                      type="button"
-                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
-                    >
-                      ❤️
-                    </button>
-                    <button
-                      type="button"
-                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
-                    >
-                      🚀
-                    </button>
-                    <button
-                      type="button"
-                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
-                    >
-                      👀
-                    </button>
-                  </div>
-                  <style jsx>
-                    {`
-                      .popover::before {
-                        position: absolute;
-                        top: -16px;
-                        left: 9px;
-                        border: 8px solid transparent;
-                        border-bottom: 8px solid lightgray;
-                        content: '';
-                      }
-                      .popover::after {
-                        position: absolute;
-                        top: -15px;
-                        left: 10px;
-                        border: 7px solid transparent;
-                        border-bottom: 8px solid white;
-                        content: '';
-                      }
-                    `}
-                  </style>
-                </div>
+                <ReactButton />
                 <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
                   <span className="mr-1">👀</span>
                   <span className="text-xs text-blue-700">1</span>

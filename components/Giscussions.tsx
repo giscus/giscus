@@ -9,6 +9,7 @@ import { useState } from 'react';
 
 export default function Giscussions() {
   const [isPreview, setIsPreview] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="w-full text-gray-800">
@@ -75,10 +76,91 @@ export default function Giscussions() {
           <div className="border-b rounded-b">
             <div className="w-full p-4">Test comment.</div>
             <div className="flex content-center justify-between">
-              <div className="ml-4">
-                <button className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600">
+              <div className="relative ml-4">
+                <button
+                  className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600"
+                  onClick={() => setIsOpen(!isOpen)}
+                >
                   <SmileyIcon />
                 </button>
+                <div
+                  className={`absolute ${
+                    isOpen ? 'visible scale-100' : 'invisible scale-50'
+                  } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded popover top-8`}
+                >
+                  <p className="m-2">Pick your reaction</p>
+                  <div className="my-2 border-t" />
+                  <div className="m-2">
+                    <button
+                      type="button"
+                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
+                    >
+                      👍
+                    </button>
+                    <button
+                      type="button"
+                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
+                    >
+                      👎
+                    </button>
+                    <button
+                      type="button"
+                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
+                    >
+                      😆
+                    </button>
+                    <button
+                      type="button"
+                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
+                    >
+                      🎉
+                    </button>
+                    <button
+                      type="button"
+                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
+                    >
+                      😕
+                    </button>
+                    <button
+                      type="button"
+                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
+                    >
+                      ❤️
+                    </button>
+                    <button
+                      type="button"
+                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
+                    >
+                      🚀
+                    </button>
+                    <button
+                      type="button"
+                      className="w-8 h-8 transform focus:scale-150 hover:scale-150"
+                    >
+                      👀
+                    </button>
+                  </div>
+                  <style jsx>
+                    {`
+                      .popover::before {
+                        position: absolute;
+                        top: -16px;
+                        left: 9px;
+                        border: 8px solid transparent;
+                        border-bottom: 8px solid lightgray;
+                        content: '';
+                      }
+                      .popover::after {
+                        position: absolute;
+                        top: -15px;
+                        left: 10px;
+                        border: 7px solid transparent;
+                        border-bottom: 8px solid white;
+                        content: '';
+                      }
+                    `}
+                  </style>
+                </div>
                 <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
                   <img
                     className="inline-block mr-1"

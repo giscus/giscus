@@ -8,12 +8,18 @@ import {
 import { ReactNode, useState } from 'react';
 
 function ReactButton() {
+  const reactions = ['👍', '👎', '😆', '🎉', '😕', '❤️', '🚀', '👀'];
   const [isOpen, setIsOpen] = useState(false);
+
+  function togglePopover() {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
       <button
         className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={togglePopover}
       >
         <SmileyIcon />
       </button>
@@ -25,30 +31,16 @@ function ReactButton() {
         <p className="m-2">Pick your reaction</p>
         <div className="my-2 border-t" />
         <div className="m-2">
-          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
-            👍
-          </button>
-          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
-            👎
-          </button>
-          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
-            😆
-          </button>
-          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
-            🎉
-          </button>
-          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
-            😕
-          </button>
-          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
-            ❤️
-          </button>
-          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
-            🚀
-          </button>
-          <button type="button" className="w-8 h-8 transform focus:scale-150 hover:scale-150">
-            👀
-          </button>
+          {reactions.map((reaction) => (
+            <button
+              key={reaction}
+              type="button"
+              className="w-8 h-8 transition-transform transform focus:scale-150 hover:scale-150"
+              onClick={togglePopover}
+            >
+              {reaction}
+            </button>
+          ))}
         </div>
         <style jsx>
           {`

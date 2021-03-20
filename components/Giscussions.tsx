@@ -6,10 +6,21 @@ import {
   SmileyIcon,
 } from '@primer/octicons-react';
 import { ReactNode, useState } from 'react';
+import useComponentVisible from '../lib/hooks';
 
 function ReactButton() {
-  const reactions = ['👍', '👎', '😆', '🎉', '😕', '❤️', '🚀', '👀'];
-  const [isOpen, setIsOpen] = useState(false);
+  const reactions = [
+    { name: '+1', emoji: '👍' },
+    { name: '-1', emoji: '👎' },
+    { name: 'Laugh', emoji: '😆' },
+    { name: 'Hooray', emoji: '🎉' },
+    { name: 'Confused', emoji: '😕' },
+    { name: 'Love', emoji: '❤️' },
+    { name: 'Rocket', emoji: '🚀' },
+    { name: 'Eyes', emoji: '👀' },
+  ];
+  const [current, setCurrent] = useState('');
+  const [ref, isOpen, setIsOpen] = useComponentVisible<HTMLDivElement>(false);
 
   function togglePopover() {
     setIsOpen(!isOpen);
@@ -24,21 +35,26 @@ function ReactButton() {
         <SmileyIcon />
       </button>
       <div
+        ref={ref}
         className={`absolute ${
           isOpen ? 'visible scale-100' : 'invisible scale-50'
         } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded popover top-8`}
       >
-        <p className="m-2">Pick your reaction</p>
+        <p className="m-2">{current || 'Pick your reaction'}</p>
         <div className="my-2 border-t" />
         <div className="m-2">
           {reactions.map((reaction) => (
             <button
-              key={reaction}
+              key={reaction.name}
               type="button"
               className="w-8 h-8 transition-transform transform focus:scale-150 hover:scale-150"
               onClick={togglePopover}
+              onMouseEnter={() => setCurrent(reaction.name)}
+              onFocus={() => setCurrent(reaction.name)}
+              onMouseLeave={() => setCurrent('')}
+              onBlur={() => setCurrent('')}
             >
-              {reaction}
+              {reaction.emoji}
             </button>
           ))}
         </div>

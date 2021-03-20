@@ -11,7 +11,7 @@ export default function Giscussions() {
   const [isPreview, setIsPreview] = useState(false);
 
   return (
-    <div className="w-full">
+    <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">2 comments</h4>
       </div>
@@ -67,7 +67,7 @@ export default function Giscussions() {
               </div>
             </h3>
             <div className="flex">
-              <button className="text-gray-500">
+              <button className="text-gray-500 hover:text-blue-600">
                 <KebabHorizontalIcon />
               </button>
             </div>
@@ -76,10 +76,10 @@ export default function Giscussions() {
             <div className="w-full p-4">Test comment.</div>
             <div className="flex content-center justify-between">
               <div className="ml-4">
-                <button className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded">
+                <button className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600">
                   <SmileyIcon />
                 </button>
-                <button className="px-2 py-1 mb-4 mr-2 border rounded">
+                <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
                   <img
                     className="inline-block mr-1"
                     alt="eyes"
@@ -87,7 +87,7 @@ export default function Giscussions() {
                     width="16"
                     src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png"
                   />
-                  <span className="text-xs">1</span>
+                  <span className="text-xs text-blue-700">1</span>
                 </button>
               </div>
               <div className="mb-4 mr-4">
@@ -97,7 +97,7 @@ export default function Giscussions() {
           </div>
           <div className="pt-2 bg-gray-500 bg-opacity-5">
             <div className="flex pt-2 pl-4">
-              <div className="w-[2px] bg-gray-200 relative left-4 z-0"></div>
+              <div className="w-[2px] flex-shrink-0 bg-gray-500 bg-opacity-10 relative left-[14px] z-0"></div>
               <div className="z-10">
                 <a href="https://github.com/laymonage" className="flex items-center">
                   <img
@@ -138,7 +138,7 @@ export default function Giscussions() {
                     </div>
                   </h3>
                   <div className="flex mr-4">
-                    <button className="text-gray-500">
+                    <button className="text-gray-500 hover:text-blue-600">
                       <KebabHorizontalIcon />
                     </button>
                   </div>
@@ -146,10 +146,10 @@ export default function Giscussions() {
                 <div className="">
                   <div className="w-full py-4">Test reply.</div>
                   <div className="flex content-center">
-                    <button className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded">
+                    <button className="px-3 py-1 mb-4 mr-3 text-gray-900 text-opacity-75 border rounded hover:text-blue-600">
                       <SmileyIcon />
                     </button>
-                    <button className="px-2 py-1 mb-4 mr-2 border rounded">
+                    <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
                       <img
                         className="inline-block mr-1"
                         alt="eyes"
@@ -157,7 +157,7 @@ export default function Giscussions() {
                         width="16"
                         src="https://github.githubassets.com/images/icons/emoji/unicode/1f440.png"
                       />
-                      <span className="text-xs">1</span>
+                      <span className="text-xs text-blue-600">1</span>
                     </button>
                   </div>
                 </div>

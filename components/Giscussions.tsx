@@ -7,18 +7,9 @@ import {
 } from '@primer/octicons-react';
 import { ReactNode, useState } from 'react';
 import useComponentVisible from '../lib/hooks';
+import { Reactions } from '../lib/reactions';
 
 function ReactButton() {
-  const reactions = [
-    { name: '+1', emoji: '👍' },
-    { name: '-1', emoji: '👎' },
-    { name: 'Laugh', emoji: '😆' },
-    { name: 'Hooray', emoji: '🎉' },
-    { name: 'Confused', emoji: '😕' },
-    { name: 'Love', emoji: '❤️' },
-    { name: 'Rocket', emoji: '🚀' },
-    { name: 'Eyes', emoji: '👀' },
-  ];
   const [current, setCurrent] = useState('');
   const [ref, isOpen, setIsOpen] = useComponentVisible<HTMLDivElement>(false);
 
@@ -42,18 +33,18 @@ function ReactButton() {
         <p className="m-2">{current || 'Pick your reaction'}</p>
         <div className="my-2 border-t" />
         <div className="m-2">
-          {reactions.map((reaction) => (
+          {Object.entries(Reactions).map(([key, { name, emoji }]) => (
             <button
-              key={reaction.name}
+              key={key}
               type="button"
               className="w-8 h-8 transition-transform transform focus:scale-150 hover:scale-150"
               onClick={togglePopover}
-              onMouseEnter={() => setCurrent(reaction.name)}
-              onFocus={() => setCurrent(reaction.name)}
+              onMouseEnter={() => setCurrent(name)}
+              onFocus={() => setCurrent(name)}
               onMouseLeave={() => setCurrent('')}
               onBlur={() => setCurrent('')}
             >
-              {reaction.emoji}
+              {emoji}
             </button>
           ))}
         </div>

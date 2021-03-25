@@ -4,7 +4,7 @@ export const Reactions = {
   LAUGH: { name: 'Laugh', emoji: '😆' },
   HOORAY: { name: 'Hooray', emoji: '🎉' },
   CONFUSED: { name: 'Confused', emoji: '😕' },
-  LOVE: { name: 'Love', emoji: '❤️' },
+  HEART: { name: 'Love', emoji: '❤️' },
   ROCKET: { name: 'Rocket', emoji: '🚀' },
   EYES: { name: 'Eyes', emoji: '👀' },
 } as const;

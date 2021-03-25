@@ -20,6 +20,7 @@ const GET_DISCUSSIONS_QUERY = `
               url
             }
             createdAt
+            url
             authorAssociation
             includesCreatedEdit
             bodyHTML
@@ -39,6 +40,7 @@ const GET_DISCUSSIONS_QUERY = `
                   url
                 }
                 createdAt
+                url
                 authorAssociation
                 includesCreatedEdit
                 bodyHTML

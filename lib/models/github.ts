@@ -19,6 +19,7 @@ export interface GReactionGroup {
 interface GBaseComment {
   author: GRepositoryDiscussionAuthor;
   createdAt: string;
+  url: string;
   authorAssociation: string;
   includesCreatedEdit: boolean;
   bodyHTML: string;

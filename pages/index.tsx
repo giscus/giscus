@@ -44,7 +44,11 @@ export default function Home() {
           </a>
         </div>
 
-        <Giscussions />
+        <Giscussions
+          repositoryOwner="laymonage"
+          repositoryName="discussions-playground"
+          discussionNumber={4}
+        />
       </main>
 
       <footer className={styles.footer}>

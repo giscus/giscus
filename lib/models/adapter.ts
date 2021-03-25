@@ -16,6 +16,7 @@ export type IReactionGroups = {
 interface IBaseComment {
   author: IUser;
   createdAt: string;
+  url: string;
   authorAssociation: string;
   includesCreatedEdit: boolean;
   bodyHTML: string;

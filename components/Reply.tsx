@@ -1,8 +1,12 @@
-import { ReactNode } from 'react';
 import { KebabHorizontalIcon } from '@primer/octicons-react';
-import ReactButton from './ReactButton';
+import ReactButtons from './ReactButtons';
+import { IReply } from '../lib/models/adapter';
 
-export default function Reply({ children }: { children: ReactNode }) {
+export interface IReplyProps {
+  reply: IReply;
+}
+
+export default function Reply({ reply }: IReplyProps) {
   return (
     <>
       <div className="relative pt-2 bg-gray-500 bg-opacity-5 gsc-reply">
@@ -18,41 +22,34 @@ export default function Reply({ children }: { children: ReactNode }) {
         </div>
         <div className="flex pt-2 pl-4">
           <div className="z-10 flex-shrink-0">
-            <a href="https://github.com/laymonage" className="flex items-center">
+            <a href={reply.author.url} className="flex items-center">
               <img
                 className="rounded-full"
-                src="https://avatars.githubusercontent.com/u/6379424?s=60&amp;v=4"
+                src={reply.author.avatarUrl}
                 width="30"
                 height="30"
-                alt="@laymonage"
+                alt={`@${reply.author.login}`}
               />
             </a>
           </div>
           <div className="w-full ml-2">
             <div className="flex">
               <h3 className="flex items-center flex-auto pt-1">
-                <a href="https://github.com/laymonage" className="flex items-center">
-                  <span className="font-semibold">laymonage</span>
+                <a href={reply.author.url} className="flex items-center">
+                  <span className="font-semibold">{reply.author.login}</span>
                 </a>
-                <a
-                  href="#discussioncomment-123"
-                  id="discussioncomment-123-permalink"
-                  className="ml-2 text-gray-500"
-                >
+                <a href={reply.url} className="ml-2 text-gray-500">
                   <div
-                    data-datetime="2021-03-18T14:25:14Z"
+                    data-datetime={reply.createdAt}
                     className="whitespace-nowrap"
                     title="Mar 18, 2021, 9:25 PM GMT+7"
                   >
-                    2 hours ago
+                    {reply.createdAt}
                   </div>
                 </a>
                 <div className="hidden ml-2 text-xs sm:inline-flex">
                   <span className="px-1 ml-1 border border-blue-400 rounded-md border-opacity-30">
-                    Maintainer
-                  </span>
-                  <span className="px-1 ml-1 border border-blue-400 rounded-md border-opacity-30">
-                    Author
+                    {reply.authorAssociation}
                   </span>
                 </div>
               </h3>
@@ -63,13 +60,12 @@ export default function Reply({ children }: { children: ReactNode }) {
               </div>
             </div>
             <div className="">
-              <div className="w-full py-4">{children}</div>
+              <div
+                className="w-full py-4"
+                dangerouslySetInnerHTML={{ __html: reply.bodyHTML }}
+              ></div>
               <div className="relative flex content-center">
-                <ReactButton />
-                <button className="px-2 py-1 mb-4 mr-2 bg-blue-400 border rounded bg-opacity-10">
-                  <span className="mr-1">👀</span>
-                  <span className="text-xs text-blue-600">1</span>
-                </button>
+                <ReactButtons reactionGroups={reply.reactions} />
               </div>
             </div>
           </div>

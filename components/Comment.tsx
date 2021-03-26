@@ -60,7 +60,10 @@ export default function Comment({ comment }: ICommentProps) {
           </div>
         </div>
         <div className="border-b rounded-b">
-          <div className="w-full p-4" dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}></div>
+          <div
+            className="w-full p-4 markdown"
+            dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}
+          ></div>
           <div className="flex content-center justify-between">
             <div className="relative flex ml-4">
               <ReactButton reactionGroups={comment.reactions} />

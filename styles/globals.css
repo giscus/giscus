@@ -1,8 +1,27 @@
 a {
-  color: inherit;
   @apply no-underline;
 }
 
 a:hover {
   @apply text-blue-700 underline;
+}
+
+.markdown a {
+  @apply text-blue-700;
+}
+
+.markdown pre {
+  line-height: 1.45;
+  @apply p-4 overflow-auto text-xs rounded-md bg-gray-500 bg-opacity-5;
+}
+
+.markdown blockquote,
+.markdown details,
+.markdown dl,
+.markdown ol,
+.markdown p,
+.markdown pre,
+.markdown table,
+.markdown ul {
+  @apply mb-4;
 }

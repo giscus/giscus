@@ -61,7 +61,7 @@ export default function Reply({ reply }: IReplyProps) {
             </div>
             <div className="">
               <div
-                className="w-full py-4"
+                className="w-full py-4 markdown"
                 dangerouslySetInnerHTML={{ __html: reply.bodyHTML }}
               ></div>
               <div className="relative flex content-center">

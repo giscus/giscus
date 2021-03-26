@@ -59,7 +59,7 @@ export default function Comment({ comment }: ICommentProps) {
             </button>
           </div>
         </div>
-        <div className="border-b rounded-b">
+        <div className="rounded-b">
           <div
             className="w-full p-4 markdown"
             dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}

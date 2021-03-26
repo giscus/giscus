@@ -10,7 +10,7 @@ export interface IReplyProps {
 export default function Reply({ reply }: IReplyProps) {
   return (
     <>
-      <div className="relative pt-2 bg-gray-500 bg-opacity-5 gsc-reply">
+      <div className="relative pt-2 bg-gray-500 first:border-t bg-opacity-5 gsc-reply">
         <div className="w-[2px] flex-shrink-0 bg-gray-500 bg-opacity-10 absolute left-[30px] h-full top-0 gsc-tl-line">
           <style jsx>
             {`

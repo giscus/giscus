@@ -14,6 +14,9 @@ const GET_DISCUSSIONS_QUERY = `
         comments(first: 20) {
           totalCount
           nodes {
+            netVoteCount
+            viewerHasDownvoted
+            viewerHasUpvoted
             author {
               avatarUrl
               login

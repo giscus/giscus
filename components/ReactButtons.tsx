@@ -37,14 +37,16 @@ export default function ReactButtons({ reactionGroups }: IReactButtonsProps) {
               <button
                 key={key}
                 type="button"
-                className="w-8 h-8 transition-transform transform focus:scale-150 hover:scale-150"
+                className={`w-8 h-8 gsc-emoji-button ${
+                  reactionGroups[key].viewerHasReacted ? 'border bg-blue-400 bg-opacity-10' : ''
+                }`}
                 onClick={togglePopover}
                 onMouseEnter={() => setCurrent(name)}
                 onFocus={() => setCurrent(name)}
                 onMouseLeave={() => setCurrent('')}
                 onBlur={() => setCurrent('')}
               >
-                {emoji}
+                <span className="inline-block transition-transform gsc-emoji">{emoji}</span>
               </button>
             ))}
           </div>
@@ -65,6 +67,10 @@ export default function ReactButtons({ reactionGroups }: IReactButtonsProps) {
                 border: 7px solid transparent;
                 border-bottom: 8px solid white;
                 content: '';
+              }
+              .gsc-emoji-button:focus .gsc-emoji,
+              .gsc-emoji-button:hover .gsc-emoji {
+                transform: scaleX(1.5) scaleY(1.5);
               }
             `}
           </style>

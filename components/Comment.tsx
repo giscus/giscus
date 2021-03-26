@@ -13,16 +13,16 @@ export default function Comment({ comment }: ICommentProps) {
     <div className="flex my-4 text-sm">
       <div className="flex-shrink-0 mr-2 w-14">
         <div className="flex flex-col">
-          <button type="button">
-            <ArrowUpIcon />
+          <button type="button" className={`${comment.viewerHasUpvoted ? 'text-blue-600' : ''}`}>
+            <ArrowUpIcon className="transform hover:translate-y-[-10%] transition-transform ease-in-out duration-150" />
           </button>
           <div className="flex justify-center w-full">
             <div className="flex flex-row justify-center min-w-[26px] px-2 py-1 text-blue-900 bg-blue-400 bg-opacity-20 rounded-full">
-              <div className="overflow-hidden text-xs">21</div>
+              <div className="overflow-hidden text-xs">{comment.netVoteCount}</div>
             </div>
           </div>
-          <button type="button">
-            <ArrowDownIcon />
+          <button type="button" className={`${comment.viewerHasDownvoted ? 'text-blue-600' : ''}`}>
+            <ArrowDownIcon className="transform hover:translate-y-[10%] transition-transform ease-in-out duration-150" />
           </button>
         </div>
       </div>

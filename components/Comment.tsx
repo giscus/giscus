@@ -1,4 +1,5 @@
 import { ArrowDownIcon, ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
+import { formatDistance } from 'date-fns';
 import { IComment } from '../lib/models/adapter';
 import ReactButton from './ReactButtons';
 import Reply from './Reply';
@@ -42,9 +43,9 @@ export default function Comment({ comment }: ICommentProps) {
               <div
                 data-datetime={comment.createdAt}
                 className="whitespace-nowrap"
-                title="Mar 18, 2021, 9:25 PM GMT+7"
+                title={new Date(comment.createdAt).toLocaleString()}
               >
-                {comment.createdAt}
+                {formatDistance(new Date(comment.createdAt), new Date(), { addSuffix: true })}
               </div>
             </a>
             <div className="hidden ml-2 text-xs sm:inline-flex">

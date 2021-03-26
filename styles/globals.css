@@ -25,3 +25,7 @@ a:hover {
 .markdown ul {
   @apply mb-4;
 }
+
+.markdown > :last-child {
+  @apply mb-0;
+}

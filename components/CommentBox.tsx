@@ -71,7 +71,9 @@ export default function CommentBox() {
           <MarkdownIcon className="mr-1" />
           Styling with Markdown is supported
         </a>
-        <button className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] rounded-md">Comment</button>
+        <button className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)]  rounded-md">
+          Comment
+        </button>
       </div>
     </div>
   );

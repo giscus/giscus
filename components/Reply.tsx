@@ -33,7 +33,7 @@ export default function Reply({ reply }: IReplyProps) {
               />
             </a>
           </div>
-          <div className="w-full ml-2">
+          <div className="w-full min-w-0 ml-2">
             <div className="flex">
               <h3 className="flex items-center flex-auto pt-1">
                 <a href={reply.author.url} className="flex items-center">
@@ -53,20 +53,18 @@ export default function Reply({ reply }: IReplyProps) {
                   </span>
                 </div>
               </h3>
-              <div className="flex mr-4">
+              <div className="flex pr-4">
                 <button className="text-gray-500 hover:text-blue-600">
                   <KebabHorizontalIcon />
                 </button>
               </div>
             </div>
-            <div className="">
-              <div
-                className="w-full py-2 markdown"
-                dangerouslySetInnerHTML={{ __html: reply.bodyHTML }}
-              ></div>
-              <div className="relative flex content-center mr-4">
-                <ReactButtons reactionGroups={reply.reactions} />
-              </div>
+            <div
+              className="w-full py-2 pr-4 markdown"
+              dangerouslySetInnerHTML={{ __html: reply.bodyHTML }}
+            ></div>
+            <div className="relative flex content-center mr-4">
+              <ReactButtons reactionGroups={reply.reactions} />
             </div>
           </div>
         </div>

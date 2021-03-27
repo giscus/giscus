@@ -29,3 +29,7 @@ a:hover {
 .markdown > :last-child {
   @apply mb-0;
 }
+
+.markdown pre {
+  @apply overflow-auto;
+}

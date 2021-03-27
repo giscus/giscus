@@ -26,7 +26,7 @@ export default function Comment({ comment }: ICommentProps) {
           </button>
         </div>
       </div>
-      <div className="w-full border border-blue-400 rounded-md border-opacity-30">
+      <div className="w-full min-w-0 border border-blue-400 rounded-md border-opacity-30">
         <div className="flex items-center px-4">
           <h3 className="flex items-center flex-auto pt-2">
             <a href={comment.author.url} className="flex items-center">
@@ -59,27 +59,20 @@ export default function Comment({ comment }: ICommentProps) {
             </button>
           </div>
         </div>
-        <div className="rounded-b">
-          <div
-            className="w-full p-4 markdown"
-            dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}
-          ></div>
-          <div className="flex content-center justify-between">
-            <div className="relative flex mx-4">
-              <ReactButtons reactionGroups={comment.reactions} />
-            </div>
-            <div className="mb-4 mr-4">
-              <span className="text-xs text-gray-500">
-                {comment.replyCount === 1 ? '1 reply' : `${comment.replyCount} replies`}
-              </span>
-            </div>
+        <div className="p-4 markdown" dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}></div>
+        <div className="flex content-center justify-between">
+          <div className="relative flex mx-4">
+            <ReactButtons reactionGroups={comment.reactions} />
+          </div>
+          <div className="mb-4 mr-4">
+            <span className="text-xs text-gray-500">
+              {comment.replyCount === 1 ? '1 reply' : `${comment.replyCount} replies`}
+            </span>
           </div>
         </div>
-        <div>
-          {comment.replies.map((reply) => (
-            <Reply key={reply.url} reply={reply} />
-          ))}
-        </div>
+        {comment.replies.map((reply) => (
+          <Reply key={reply.url} reply={reply} />
+        ))}
         <div className="flex px-4 py-2 bg-gray-500 border-t bg-opacity-5">
           <a href={comment.author.url} className="flex items-center flex-shrink-0">
             <img

@@ -1,7 +1,7 @@
 import { ArrowDownIcon, ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { formatDistance, format } from 'date-fns';
 import { IComment } from '../lib/models/adapter';
-import ReactButton from './ReactButtons';
+import ReactButtons from './ReactButtons';
 import Reply from './Reply';
 
 export interface ICommentProps {
@@ -65,8 +65,8 @@ export default function Comment({ comment }: ICommentProps) {
             dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}
           ></div>
           <div className="flex content-center justify-between">
-            <div className="relative flex ml-4">
-              <ReactButton reactionGroups={comment.reactions} />
+            <div className="relative flex mx-4">
+              <ReactButtons reactionGroups={comment.reactions} />
             </div>
             <div className="mb-4 mr-4">
               <span className="text-xs text-gray-500">

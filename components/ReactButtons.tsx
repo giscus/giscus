@@ -81,7 +81,7 @@ export default function ReactButtons({ reactionGroups }: IReactButtonsProps) {
         count > 0 ? (
           <button
             key={value}
-            className={`px-2 py-1 mb-4 mr-2 border rounded bg-opacity-10 ${
+            className={`px-2 py-1 mb-4 mr-2 last:mr-0 border rounded bg-opacity-10 ${
               viewerHasReacted ? ' bg-blue-400' : ''
             }`}
           >

@@ -64,7 +64,7 @@ export default function Reply({ reply }: IReplyProps) {
                 className="w-full py-2 markdown"
                 dangerouslySetInnerHTML={{ __html: reply.bodyHTML }}
               ></div>
-              <div className="relative flex content-center">
+              <div className="relative flex content-center mr-4">
                 <ReactButtons reactionGroups={reply.reactions} />
               </div>
             </div>

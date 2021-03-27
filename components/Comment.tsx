@@ -60,7 +60,7 @@ export default function Comment({ comment }: ICommentProps) {
           </div>
         </div>
         <div className="p-4 markdown" dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}></div>
-        <div className="flex content-center justify-between">
+        <div className="flex content-center justify-between border-b">
           <div className="relative flex mx-4">
             <ReactButtons reactionGroups={comment.reactions} />
           </div>
@@ -70,10 +70,14 @@ export default function Comment({ comment }: ICommentProps) {
             </span>
           </div>
         </div>
-        {comment.replies.map((reply) => (
-          <Reply key={reply.url} reply={reply} />
-        ))}
-        <div className="flex px-4 py-2 bg-gray-500 border-t bg-opacity-5">
+        {comment.replies.length > 0 ? (
+          <div className="border-b">
+            {comment.replies.map((reply) => (
+              <Reply key={reply.url} reply={reply} />
+            ))}
+          </div>
+        ) : null}
+        <div className="flex px-4 py-2 bg-gray-500 bg-opacity-5">
           <a href={comment.author.url} className="flex items-center flex-shrink-0">
             <img
               className="inline-block rounded-full"

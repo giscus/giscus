@@ -44,11 +44,13 @@ export default function Home() {
           </a>
         </div>
 
-        <Giscussions
-          repositoryOwner="laymonage"
-          repositoryName="discussions-playground"
-          discussionNumber={4}
-        />
+        <div className="w-full max-w-3xl">
+          <Giscussions
+            repositoryOwner="laymonage"
+            repositoryName="discussions-playground"
+            discussionNumber={4}
+          />
+        </div>
       </main>
 
       <footer className={styles.footer}>

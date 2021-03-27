@@ -1,6 +1,6 @@
 import { SmileyIcon } from '@primer/octicons-react';
 import { useState } from 'react';
-import useComponentVisible from '../lib/hooks';
+import { useComponentVisible } from '../lib/hooks';
 import { IReactionGroups } from '../lib/models/adapter';
 import { Reactions } from '../lib/reactions';
 

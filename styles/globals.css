@@ -6,13 +6,34 @@ a:hover {
   @apply text-blue-700 underline;
 }
 
+.markdown {
+  @apply break-words;
+}
+
 .markdown a {
   @apply text-blue-700;
 }
 
 .markdown pre {
   line-height: 1.45;
-  @apply p-4 overflow-auto text-xs rounded-md bg-gray-500 bg-opacity-5;
+  @apply p-4 overflow-auto rounded-md;
+}
+
+.markdown code {
+  @apply text-xs;
+}
+
+.markdown pre,
+.markdown p code {
+  @apply bg-gray-500 bg-opacity-5;
+}
+
+.markdown p code {
+  @apply px-1 py-[2px] rounded-md;
+}
+
+.markdown blockquote {
+  @apply px-4 border-l-[3px] text-gray-500;
 }
 
 .markdown blockquote,
@@ -28,8 +49,4 @@ a:hover {
 
 .markdown > :last-child {
   @apply mb-0;
-}
-
-.markdown pre {
-  @apply overflow-auto;
 }

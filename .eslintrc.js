@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended'],
   plugins: ['@typescript-eslint', 'react'],
   rules: {},
   globals: {

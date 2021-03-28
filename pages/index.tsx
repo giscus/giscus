@@ -1,8 +1,12 @@
+import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import Giscussions from '../components/Giscussions';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  const route = useRouter();
+  const session = route.query.session as string;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -45,11 +49,14 @@ export default function Home() {
         </div>
 
         <div className="w-full max-w-3xl">
-          <Giscussions
-            repositoryOwner="laymonage"
-            repositoryName="discussions-playground"
-            discussionNumber={4}
-          />
+          {session ? (
+            <Giscussions
+              repositoryOwner="laymonage"
+              repositoryName="discussions-playground"
+              discussionNumber="4"
+              session={session}
+            />
+          ) : null}
         </div>
       </main>
 

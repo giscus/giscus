@@ -7,7 +7,7 @@ interface State {
   expires: number;
 }
 
-export function encodeState(
+export async function encodeState(
   value: string,
   password: string,
   expires = Date.now() + DEFAULT_VALIDITY_PERIOD,
@@ -16,7 +16,7 @@ export function encodeState(
   return aesGcmEncrypt(JSON.stringify(state), password);
 }
 
-export async function tryDecodeState(encryptedState: string, password: string) {
+export async function decodeState(encryptedState: string, password: string) {
   let state: State;
   try {
     state = JSON.parse(await aesGcmDecrypt(encryptedState, password));

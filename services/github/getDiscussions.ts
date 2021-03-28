@@ -1,5 +1,4 @@
 import { GUser, GRepository } from '../../lib/models/github';
-import { env } from '../../lib/variables';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';
 
@@ -76,11 +75,14 @@ export interface GetDiscussionsBody {
   };
 }
 
-export async function getDiscussions(params: GetDiscussionsParams): Promise<GetDiscussionsBody> {
+export async function getDiscussions(
+  params: GetDiscussionsParams,
+  token: string,
+): Promise<GetDiscussionsBody> {
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${env.token}`,
+      Authorization: `Bearer ${token}`,
       'GraphQL-Features': 'discussions_api',
     },
 

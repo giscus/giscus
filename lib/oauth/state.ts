@@ -19,8 +19,11 @@ export async function encodeState(
 export async function decodeState(encryptedState: string, password: string) {
   let state: State;
   try {
-    state = JSON.parse(await aesGcmDecrypt(encryptedState, password));
+    const decrypted = await aesGcmDecrypt(encryptedState, password);
+    console.log({ decrypted });
+    state = JSON.parse(decrypted);
   } catch (err) {
+    console.log({ err });
     throw new Error('Invalid state value.');
   }
   if (Date.now() > state.expires) {

@@ -11,6 +11,7 @@
  *   aesGcmEncrypt('my secret text', 'pw').then(function(ciphertext) { console.log(ciphertext); });
  */
 export async function aesGcmEncrypt(plaintext: string, password: string): Promise<string> {
+  const { webcrypto: crypto } = await import('crypto');
   const pwUtf8 = new TextEncoder().encode(password); // encode password as UTF-8
   const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8); // hash the password
 
@@ -25,7 +26,7 @@ export async function aesGcmEncrypt(plaintext: string, password: string): Promis
 
   const ctArray = Array.from(new Uint8Array(ctBuffer)); // ciphertext as byte array
   const ctStr = ctArray.map((byte) => String.fromCharCode(byte)).join(''); // ciphertext as string
-  const ctBase64 = btoa(ctStr); // encode ciphertext as base64
+  const ctBase64 = Buffer.from(ctStr, 'binary').toString('base64'); // encode ciphertext as base64
 
   const ivHex = Array.from(iv)
     .map((b) => ('00' + b.toString(16)).slice(-2))
@@ -47,6 +48,7 @@ export async function aesGcmEncrypt(plaintext: string, password: string): Promis
  *   aesGcmDecrypt(ciphertext, 'pw').then(function(plaintext) { console.log(plaintext); });
  */
 export async function aesGcmDecrypt(ciphertext: string, password: string): Promise<string> {
+  const { webcrypto: crypto } = await import('crypto');
   const pwUtf8 = new TextEncoder().encode(password); // encode password as UTF-8
   const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8); // hash the password
 
@@ -59,7 +61,7 @@ export async function aesGcmDecrypt(ciphertext: string, password: string): Promi
 
   const key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['decrypt']); // use pw to generate key
 
-  const ctStr = atob(ciphertext.slice(24)); // decode base64 ciphertext
+  const ctStr = Buffer.from(ciphertext.slice(24), 'base64').toString('binary'); // decode base64 ciphertext
   const ctUint8 = new Uint8Array(ctStr.match(/[\s\S]/g).map((ch) => ch.charCodeAt(0))); // ciphertext as Uint8Array
   // note: why doesn't ctUint8 = new TextEncoder().encode(ctStr) work?
 

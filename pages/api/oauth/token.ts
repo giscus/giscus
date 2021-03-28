@@ -1,13 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { env } from '../../../lib/variables';
 import { decodeState } from '../../../lib/oauth/state';
-
-interface TokenRequest {
-  session: string;
-}
+import { ITokenRequest } from '../../../lib/models/giscussions';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { session } = req.body as TokenRequest;
+  const { session } = req.body as ITokenRequest;
   if (!session) {
     res.status(400).json({ error: 'Unable to parse request body.' });
     return;

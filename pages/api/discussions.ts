@@ -8,9 +8,6 @@ export default async (
   res: NextApiResponse<IGiscussion | { error: string }>,
 ) => {
   const token = req.headers.authorization?.split('Bearer ')[1];
-  if (!token) {
-    res.status(401).json({ error: 'Missing authorization token in request headers.' });
-  }
 
   const params: GetDiscussionsParams = {
     repositoryOwner: req.query.repositoryOwner as string,

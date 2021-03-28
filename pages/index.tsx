@@ -49,14 +49,12 @@ export default function Home() {
         </div>
 
         <div className="w-full max-w-3xl">
-          {session ? (
-            <Giscussions
-              repositoryOwner="laymonage"
-              repositoryName="discussions-playground"
-              discussionNumber="4"
-              session={session}
-            />
-          ) : null}
+          <Giscussions
+            repositoryOwner="laymonage"
+            repositoryName="discussions-playground"
+            discussionNumber="4"
+            session={session}
+          />
         </div>
       </main>
 

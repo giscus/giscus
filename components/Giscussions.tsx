@@ -14,7 +14,7 @@ export default function Giscussions(props: IGiscussionsProps) {
   useEffect(() => {
     const { session, ...params } = props;
     const getData = async () => {
-      const token = await getToken(session);
+      const token = session ? await getToken(session) : undefined;
       const data = await getGiscussions(params, token);
       setData(data);
     };

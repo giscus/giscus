@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IGiscussion } from '../lib/models/adapter';
-import { ITokenRequest, IGiscussionsRequest } from '../lib/models/services';
+import { ITokenRequest, IGiscussionsRequest } from '../lib/models/giscussions';
 import { getGiscussions } from '../services/giscussions/discussions';
 import { getToken } from '../services/giscussions/token';
 import Comment from './Comment';
@@ -9,12 +9,17 @@ import CommentBox from './CommentBox';
 export type IGiscussionsProps = ITokenRequest & IGiscussionsRequest;
 
 export default function Giscussions(props: IGiscussionsProps) {
-  const { session, ...params } = props;
   const [data, setData] = useState<IGiscussion | null>(null);
 
-  getToken(session).then((token) => {
-    getGiscussions(params, token).then((data) => setData(data));
-  });
+  useEffect(() => {
+    const { session, ...params } = props;
+    const getData = async () => {
+      const token = await getToken(session);
+      const data = await getGiscussions(params, token);
+      setData(data);
+    };
+    getData();
+  }, [props]);
 
   return (
     <div className="w-full text-gray-800">

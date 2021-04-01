@@ -11,11 +11,15 @@ export default function CommentBox() {
 
   useEffect(() => {
     if (isPreview && input !== lastInput) {
-      setIsLoading(true);
-      renderMarkdown(input).then((value) => {
-        setPreview(value);
-        setIsLoading(false);
-      });
+      if (input) {
+        setIsLoading(true);
+        renderMarkdown(input).then((value) => {
+          setPreview(value);
+          setIsLoading(false);
+        });
+      } else {
+        setPreview('Nothing to preview');
+      }
       setLastInput(input);
     }
   }, [isPreview, input, lastInput]);

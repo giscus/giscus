@@ -26,8 +26,7 @@ interface IBaseComment {
 export type IReply = IBaseComment;
 
 export interface IComment extends IBaseComment {
-  netVoteCount: number;
-  viewerHasDownvoted: boolean;
+  upvoteCount: number;
   viewerHasUpvoted: boolean;
   replyCount: number;
   replies: IReply[];

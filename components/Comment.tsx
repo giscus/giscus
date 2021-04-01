@@ -18,12 +18,9 @@ export default function Comment({ comment }: ICommentProps) {
           </button>
           <div className="flex justify-center w-full">
             <div className="flex flex-row justify-center min-w-[26px] px-2 py-1 text-blue-900 bg-blue-400 bg-opacity-20 rounded-full">
-              <div className="overflow-hidden text-xs">{comment.netVoteCount}</div>
+              <div className="overflow-hidden text-xs">{comment.upvoteCount}</div>
             </div>
           </div>
-          <button type="button" className={`${comment.viewerHasDownvoted ? 'text-blue-600' : ''}`}>
-            <ArrowDownIcon className="transform hover:translate-y-[10%] transition-transform ease-in-out duration-150" />
-          </button>
         </div>
       </div>
       <div className="w-full min-w-0 border border-blue-400 rounded-md border-opacity-30">

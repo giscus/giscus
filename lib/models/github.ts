@@ -29,8 +29,7 @@ interface GBaseComment {
 export type GReply = GBaseComment;
 
 export interface GComment extends GBaseComment {
-  netVoteCount: number;
-  viewerHasDownvoted: boolean;
+  upvoteCount: number;
   viewerHasUpvoted: boolean;
   replies: {
     totalCount: number;

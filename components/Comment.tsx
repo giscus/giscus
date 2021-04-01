@@ -1,4 +1,4 @@
-import { ArrowDownIcon, ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
+import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { formatDistance, format } from 'date-fns';
 import { IComment } from '../lib/models/adapter';
 import ReactButtons from './ReactButtons';

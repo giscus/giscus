@@ -61,9 +61,9 @@ export default function CommentBox() {
           ></textarea>
         )}
       </div>
-      <div className="flex items-center justify-between m-2 text-gray-500 hover:text-blue-600">
+      <div className="flex items-center justify-between m-2">
         <a
-          className="text-xs"
+          className="text-xs text-gray-500 hover:text-blue-600 hover:no-underline"
           rel="nofollow noopener noreferrer"
           target="_blank"
           href="https://guides.github.com/features/mastering-markdown/"

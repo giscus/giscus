@@ -1,5 +1,6 @@
 import { MarkdownIcon } from '@primer/octicons-react';
-import { useContext, useEffect, useState } from 'react';
+import { useRouter } from 'next/dist/client/router';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../lib/context';
 import { renderMarkdown } from '../services/github/markdown';
 
@@ -9,7 +10,8 @@ export default function CommentBox() {
   const [lastInput, setLastInput] = useState('');
   const [preview, setPreview] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { token } = useContext(AuthContext);
+  const { token, origin } = useContext(AuthContext);
+  const router = useRouter();
 
   useEffect(() => {
     if (isPreview && input !== lastInput) {
@@ -23,6 +25,10 @@ export default function CommentBox() {
       setLastInput(input);
     }
   }, [isPreview, input, lastInput, token]);
+
+  const handleClick = useCallback(() => {
+    if (!token) router.push(`/api/oauth/authorize?redirect_uri=${encodeURIComponent(origin)}`);
+  }, [token, origin, router]);
 
   return (
     <div className="text-sm border rounded">
@@ -78,7 +84,10 @@ export default function CommentBox() {
           <MarkdownIcon className="mr-1" />
           Styling with Markdown is supported
         </a>
-        <button className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center">
+        <button
+          className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center"
+          onClick={handleClick}
+        >
           {token ? (
             `Comment`
           ) : (

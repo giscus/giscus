@@ -1,32 +1,25 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../lib/context';
-import { IGiscussion } from '../lib/models/adapter';
 import { IGiscussionsRequest } from '../lib/models/giscussions';
-import { getGiscussions } from '../services/giscussions/discussions';
+import { useDiscussions } from '../services/giscussions/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
 
 export type IGiscussionsProps = IGiscussionsRequest;
 
 export default function Giscussions(props: IGiscussionsProps) {
-  const [data, setData] = useState<IGiscussion | null>(null);
   const { token } = useContext(AuthContext);
-
-  useEffect(() => {
-    const getData = async () => {
-      const data = await getGiscussions(props, token);
-      setData(data);
-    };
-    getData();
-  }, [props, token]);
+  const { data, isLoading, isError } = useDiscussions(props, token);
 
   return (
     <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">
-          {data
-            ? `${data.totalCount} comment${data.totalCount !== 1 ? 's' : ''}`
-            : 'Loading comments...'}
+          {isLoading
+            ? 'Loading comments...'
+            : isError
+            ? 'An error occurred.'
+            : `${data.totalCount} comment${data.totalCount !== 1 ? 's' : ''}`}
         </h4>
       </div>
 

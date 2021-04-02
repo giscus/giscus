@@ -63,7 +63,7 @@ export default function Comment({ comment }: ICommentProps) {
           </div>
           <div className="mb-4 mr-4">
             <span className="text-xs text-gray-500">
-              {comment.replyCount === 1 ? '1 reply' : `${comment.replyCount} replies`}
+              {comment.replyCount} {comment.replyCount === 1 ? 'reply' : 'replies'}
             </span>
           </div>
         </div>

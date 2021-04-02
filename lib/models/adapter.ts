@@ -7,7 +7,7 @@ export interface IUser {
 }
 
 export type IReactionGroups = {
-  [key in keyof typeof Reactions]: {
+  [key in keyof Reactions]: {
     count: number;
     viewerHasReacted: boolean;
   };

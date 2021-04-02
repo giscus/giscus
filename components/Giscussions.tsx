@@ -25,7 +25,9 @@ export default function Giscussions(props: IGiscussionsProps) {
     <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">
-          {data ? `${data.totalCount} comments` : 'Loading comments...'}
+          {data
+            ? `${data.totalCount} comment${data.totalCount !== 1 ? 's' : ''}`
+            : 'Loading comments...'}
         </h4>
       </div>
 

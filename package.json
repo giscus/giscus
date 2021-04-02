@@ -12,9 +12,9 @@
     "@primer/octicons-react": "^12.1.0",
     "date-fns": "^2.19.0",
     "jsonwebtoken": "^8.5.1",
-    "next": "10.0.9",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "next": "^10.0.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "swr": "^0.5.4"
   },
   "devDependencies": {

@@ -5,21 +5,36 @@ import Giscussions from '../components/Giscussions';
 import { AuthContext } from '../lib/context';
 import { getToken } from '../services/giscussions/token';
 
+const GISCUSSIONS_SESSION_KEY = 'giscussions-session';
+
 export default function Home() {
-  const route = useRouter();
-  const session = route.query.session as string;
+  const router = useRouter();
   const [token, setToken] = useState('');
   const [origin, setOrigin] = useState('');
 
   useEffect(() => {
-    if (session) {
-      getToken(session).then(setToken);
+    const querySession = router.query.session as string;
+
+    let savedSession: string;
+    try {
+      savedSession = JSON.parse(localStorage.getItem(GISCUSSIONS_SESSION_KEY));
+    } catch (err) {
+      savedSession = '';
     }
-  }, [session]);
+
+    const session = querySession || savedSession;
+
+    if (session) getToken(session).then(setToken);
+
+    if (querySession) {
+      localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
+      router.replace(router.pathname, undefined, { scroll: false, shallow: true });
+    }
+  }, [router]);
 
   useEffect(() => {
-    setOrigin((route.query.origin as string) || location.href || '');
-  }, [origin, route.query.origin]);
+    setOrigin((router.query.origin as string) || location.href || '');
+  }, [origin, router.query.origin]);
 
   return (
     <>

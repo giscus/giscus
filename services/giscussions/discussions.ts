@@ -1,12 +1,20 @@
+import { useMemo } from 'react';
+import useSWR from 'swr';
+import { fetcher } from '../../lib/fetcher';
 import { IGiscussion } from '../../lib/models/adapter';
 import { IGiscussionsRequest } from '../../lib/models/giscussions';
 
-export async function getGiscussions(params: IGiscussionsRequest, token?: string) {
+export function useDiscussions(params: IGiscussionsRequest, token?: string) {
   const urlParams = new URLSearchParams({ ...params });
-  const headers = token ? { Authorization: `Bearer ${token}` } : {};
+  const headers = useMemo(() => {
+    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    return { headers };
+  }, [token]);
 
-  const data = await fetch(`/api/discussions?${urlParams}`, { headers }).then((response) =>
-    response.json(),
-  );
-  return data as IGiscussion;
+  const { data, error } = useSWR<IGiscussion>([`/api/discussions?${urlParams}`, headers], fetcher);
+  return {
+    data: data,
+    isLoading: !error && !data,
+    isError: !!error,
+  };
 }

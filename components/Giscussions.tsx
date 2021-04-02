@@ -1,25 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../lib/context';
 import { IGiscussion } from '../lib/models/adapter';
-import { ITokenRequest, IGiscussionsRequest } from '../lib/models/giscussions';
+import { IGiscussionsRequest } from '../lib/models/giscussions';
 import { getGiscussions } from '../services/giscussions/discussions';
-import { getToken } from '../services/giscussions/token';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
 
-export type IGiscussionsProps = ITokenRequest & IGiscussionsRequest;
+export type IGiscussionsProps = IGiscussionsRequest;
 
 export default function Giscussions(props: IGiscussionsProps) {
   const [data, setData] = useState<IGiscussion | null>(null);
+  const { token } = useContext(AuthContext);
 
   useEffect(() => {
-    const { session, ...params } = props;
     const getData = async () => {
-      const token = session ? await getToken(session) : undefined;
-      const data = await getGiscussions(params, token);
+      const data = await getGiscussions(props, token);
       setData(data);
     };
     getData();
-  }, [props]);
+  }, [props, token]);
 
   return (
     <div className="w-full text-gray-800">

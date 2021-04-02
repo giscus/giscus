@@ -1,5 +1,6 @@
 import { MarkdownIcon } from '@primer/octicons-react';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../lib/context';
 import { renderMarkdown } from '../services/github/markdown';
 
 export default function CommentBox() {
@@ -8,12 +9,13 @@ export default function CommentBox() {
   const [lastInput, setLastInput] = useState('');
   const [preview, setPreview] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const { token } = useContext(AuthContext);
 
   useEffect(() => {
     if (isPreview && input !== lastInput) {
       if (input) {
         setIsLoading(true);
-        renderMarkdown(input).then((value) => {
+        renderMarkdown(input, token).then((value) => {
           setPreview(value);
           setIsLoading(false);
         });
@@ -22,7 +24,7 @@ export default function CommentBox() {
       }
       setLastInput(input);
     }
-  }, [isPreview, input, lastInput]);
+  }, [isPreview, input, lastInput, token]);
 
   return (
     <div className="text-sm border rounded">

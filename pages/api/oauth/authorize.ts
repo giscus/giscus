@@ -13,7 +13,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const { client_id } = env;
-  const redirect_uri = `http://${req.headers.host}/api/oauth/authorized`;
+  const proto = req.headers['x-forwarded-proto'] || 'http';
+  const redirect_uri = `${proto}://${req.headers.host}/api/oauth/authorized`;
   const state = await encodeState(appReturnUrl, env.encryption_password);
 
   const oauthParams = new URLSearchParams({ client_id, redirect_uri, state });

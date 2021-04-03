@@ -2,6 +2,7 @@ import { MarkdownIcon } from '@primer/octicons-react';
 import { useRouter } from 'next/dist/client/router';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../lib/context';
+import { useLoginUrl } from '../lib/hooks';
 import { renderMarkdown } from '../services/github/markdown';
 
 export default function CommentBox() {
@@ -12,6 +13,7 @@ export default function CommentBox() {
   const [isLoading, setIsLoading] = useState(false);
   const { token, origin } = useContext(AuthContext);
   const router = useRouter();
+  const loginUrl = useLoginUrl(origin);
 
   useEffect(() => {
     if (isPreview && input !== lastInput) {
@@ -27,8 +29,8 @@ export default function CommentBox() {
   }, [isPreview, input, lastInput, token]);
 
   const handleClick = useCallback(() => {
-    if (!token) router.push(`/api/oauth/authorize?redirect_uri=${encodeURIComponent(origin)}`);
-  }, [token, origin, router]);
+    if (!token) router.push(loginUrl);
+  }, [token, router, loginUrl]);
 
   return (
     <div className="text-sm border rounded">

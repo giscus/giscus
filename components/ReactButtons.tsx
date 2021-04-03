@@ -1,6 +1,8 @@
 import { SmileyIcon } from '@primer/octicons-react';
-import { useState } from 'react';
-import { useComponentVisible } from '../lib/hooks';
+import Link from 'next/link';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../lib/context';
+import { useComponentVisible, useLoginUrl } from '../lib/hooks';
 import { IReactionGroups } from '../lib/models/adapter';
 import { Reactions } from '../lib/reactions';
 
@@ -11,6 +13,8 @@ export interface IReactButtonsProps {
 export default function ReactButtons({ reactionGroups }: IReactButtonsProps) {
   const [current, setCurrent] = useState('');
   const [ref, isOpen, setIsOpen] = useComponentVisible<HTMLDivElement>(false);
+  const { token, origin } = useContext(AuthContext);
+  const loginUrl = useLoginUrl(origin);
 
   function togglePopover() {
     setIsOpen(!isOpen);
@@ -30,7 +34,18 @@ export default function ReactButtons({ reactionGroups }: IReactButtonsProps) {
             isOpen ? 'visible scale-100' : 'invisible scale-50'
           } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded popover top-8`}
         >
-          <p className="m-2">{current || 'Pick your reaction'}</p>
+          <p className="m-2">
+            {token ? (
+              current || 'Pick your reaction'
+            ) : (
+              <>
+                <Link href={loginUrl}>
+                  <a className="text-blue-600">Sign in</a>
+                </Link>{' '}
+                to add your reaction.
+              </>
+            )}
+          </p>
           <div className="my-2 border-t" />
           <div className="m-2">
             {Object.entries(Reactions).map(([key, { name, emoji }]) => (
@@ -45,6 +60,7 @@ export default function ReactButtons({ reactionGroups }: IReactButtonsProps) {
                 onFocus={() => setCurrent(name)}
                 onMouseLeave={() => setCurrent('')}
                 onBlur={() => setCurrent('')}
+                disabled={!token}
               >
                 <span className="inline-block transition-transform gsc-emoji">{emoji}</span>
               </button>
@@ -84,6 +100,10 @@ export default function ReactButtons({ reactionGroups }: IReactButtonsProps) {
             className={`px-2 py-1 mb-4 mr-2 last:mr-0 border rounded bg-opacity-10 ${
               viewerHasReacted ? ' bg-blue-400' : ''
             }`}
+            disabled={!token}
+            title={`${count} ${count === 1 ? 'person' : 'people'} reacted with ${Reactions[
+              value
+            ].name.toLowerCase()} emoji`}
           >
             <span className="mr-1">{Reactions[value].emoji}</span>
             <span className="text-xs text-blue-600">{count}</span>

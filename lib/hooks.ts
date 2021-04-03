@@ -23,7 +23,3 @@ export function useComponentVisible<T extends HTMLElement>(initialIsVisible: boo
     Dispatch<SetStateAction<boolean>>,
   ];
 }
-
-export function useLoginUrl(origin: string) {
-  return `/api/oauth/authorize?redirect_uri=${encodeURIComponent(origin)}`;
-}

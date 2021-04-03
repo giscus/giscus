@@ -1,8 +1,8 @@
 import { SmileyIcon } from '@primer/octicons-react';
 import Link from 'next/link';
 import { useContext, useState } from 'react';
-import { AuthContext } from '../lib/context';
-import { useComponentVisible, useLoginUrl } from '../lib/hooks';
+import { AuthContext, getLoginUrl } from '../lib/context';
+import { useComponentVisible } from '../lib/hooks';
 import { IReactionGroups } from '../lib/models/adapter';
 import { Reactions } from '../lib/reactions';
 
@@ -14,7 +14,7 @@ export default function ReactButtons({ reactionGroups }: IReactButtonsProps) {
   const [current, setCurrent] = useState('');
   const [ref, isOpen, setIsOpen] = useComponentVisible<HTMLDivElement>(false);
   const { token, origin } = useContext(AuthContext);
-  const loginUrl = useLoginUrl(origin);
+  const loginUrl = getLoginUrl(origin);
 
   function togglePopover() {
     setIsOpen(!isOpen);

@@ -1,8 +1,7 @@
 import { MarkdownIcon } from '@primer/octicons-react';
 import { useRouter } from 'next/dist/client/router';
 import { useCallback, useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../lib/context';
-import { useLoginUrl } from '../lib/hooks';
+import { AuthContext, getLoginUrl } from '../lib/context';
 import { renderMarkdown } from '../services/github/markdown';
 
 export default function CommentBox() {
@@ -13,7 +12,7 @@ export default function CommentBox() {
   const [isLoading, setIsLoading] = useState(false);
   const { token, origin } = useContext(AuthContext);
   const router = useRouter();
-  const loginUrl = useLoginUrl(origin);
+  const loginUrl = getLoginUrl(origin);
 
   useEffect(() => {
     if (isPreview && input !== lastInput) {

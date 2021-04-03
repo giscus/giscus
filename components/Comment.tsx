@@ -1,14 +1,17 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { formatDistance, format } from 'date-fns';
-import { IComment } from '../lib/models/adapter';
+import { IComment, IUser } from '../lib/models/adapter';
 import ReactButtons from './ReactButtons';
 import Reply from './Reply';
 
 export interface ICommentProps {
+  viewer: IUser;
   comment: IComment;
 }
 
-export default function Comment({ comment }: ICommentProps) {
+export default function Comment({ viewer, comment }: ICommentProps) {
+  const isAnonymousViewer = viewer.login === 'giscussions[bot]';
+
   return (
     <div className="flex my-4 text-sm">
       <div className="flex-shrink-0 mr-2 w-14">
@@ -75,17 +78,25 @@ export default function Comment({ comment }: ICommentProps) {
           </div>
         ) : null}
         <div className="flex px-4 py-2 bg-gray-500 bg-opacity-5">
-          <a href={comment.author.url} className="flex items-center flex-shrink-0">
+          <a
+            href={isAnonymousViewer ? 'https://github.com/apps/giscussions' : viewer.url}
+            className="flex items-center flex-shrink-0"
+          >
             <img
               className="inline-block rounded-full"
-              src={comment.author.avatarUrl}
+              src={viewer.avatarUrl}
               width="30"
               height="30"
-              alt={`@${comment.author.login}`}
+              alt={isAnonymousViewer ? 'Anonymous' : `@${viewer.login}`}
             />
           </a>
-          <button className="w-full px-2 py-1 ml-2 text-left text-gray-600 bg-white border rounded">
-            Write a reply
+          <button
+            className={`w-full px-2 py-1 ml-2 text-left text-gray-600 border rounded ${
+              isAnonymousViewer ? 'bg-gray-400 bg-opacity-5' : 'bg-white'
+            }`}
+            disabled={isAnonymousViewer}
+          >
+            {isAnonymousViewer ? 'Sign in to reply' : 'Write a reply'}
           </button>
         </div>
       </div>

@@ -11,6 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (!code || !state) {
     res.status(400).json({ error: '`code` and `state` are required.' });
+    return;
   }
 
   const { client_id, client_secret, encryption_password } = env;
@@ -19,7 +20,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     appReturnUrl = await decodeState(state, encryption_password);
   } catch (err) {
-    return res.status(400).json({ error: err.message });
+    res.status(400).json({ error: err.message });
+    return;
   }
 
   const init = {
@@ -41,7 +43,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error(`Access token response had status ${response.status}.`);
     }
   } catch (err) {
-    return res.status(503).json({ error: err.message });
+    res.status(503).json({ error: err.message });
+    return;
   }
 
   const returnUrl = new URL(appReturnUrl);
@@ -52,5 +55,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   );
   returnUrl.searchParams.set('session', session);
 
-  return res.redirect(302, returnUrl.href);
+  res.redirect(302, returnUrl.href);
 };

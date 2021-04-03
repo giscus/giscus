@@ -24,7 +24,7 @@ export default function Giscussions(props: IGiscussionsProps) {
       </div>
 
       {data?.comments?.map((comment) => (
-        <Comment key={comment.url} comment={comment} />
+        <Comment key={comment.url} comment={comment} viewer={data.viewer} />
       ))}
 
       <div className="my-4 text-sm border-t-2"></div>

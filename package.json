@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@peculiar/webcrypto": "^1.1.6",
     "@primer/octicons-react": "^12.1.0",
     "date-fns": "^2.19.0",
     "jsonwebtoken": "^8.5.1",

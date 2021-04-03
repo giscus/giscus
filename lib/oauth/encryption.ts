@@ -1,12 +1,6 @@
-// Workaround for TypeScript
-import nodecrypto from 'crypto';
+import { Crypto } from '@peculiar/webcrypto';
 
-interface NodeCrypto {
-  webcrypto: typeof crypto;
-}
-
-const cryptolib = ((nodecrypto as unknown) as NodeCrypto).webcrypto;
-// End workaround
+const crypto = new Crypto();
 
 /**
  * Encrypts plaintext using AES-GCM with supplied password, for decryption with aesGcmDecrypt().
@@ -22,16 +16,16 @@ const cryptolib = ((nodecrypto as unknown) as NodeCrypto).webcrypto;
  */
 export async function aesGcmEncrypt(plaintext: string, password: string): Promise<string> {
   const pwUtf8 = new TextEncoder().encode(password); // encode password as UTF-8
-  const pwHash = await cryptolib.subtle.digest('SHA-256', pwUtf8); // hash the password
+  const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8); // hash the password
 
-  const iv = cryptolib.getRandomValues(new Uint8Array(12)); // get 96-bit random iv
+  const iv = crypto.getRandomValues(new Uint8Array(12)); // get 96-bit random iv
 
   const alg = { name: 'AES-GCM', iv: iv }; // specify algorithm to use
 
-  const key = await cryptolib.subtle.importKey('raw', pwHash, alg, false, ['encrypt']); // generate key from pw
+  const key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['encrypt']); // generate key from pw
 
   const ptUint8 = new TextEncoder().encode(plaintext); // encode plaintext as UTF-8
-  const ctBuffer = await cryptolib.subtle.encrypt(alg, key, ptUint8); // encrypt plaintext using key
+  const ctBuffer = await crypto.subtle.encrypt(alg, key, ptUint8); // encrypt plaintext using key
 
   const ctArray = Array.from(new Uint8Array(ctBuffer)); // ciphertext as byte array
   const ctStr = ctArray.map((byte) => String.fromCharCode(byte)).join(''); // ciphertext as string
@@ -58,7 +52,7 @@ export async function aesGcmEncrypt(plaintext: string, password: string): Promis
  */
 export async function aesGcmDecrypt(ciphertext: string, password: string): Promise<string> {
   const pwUtf8 = new TextEncoder().encode(password); // encode password as UTF-8
-  const pwHash = await cryptolib.subtle.digest('SHA-256', pwUtf8); // hash the password
+  const pwHash = await crypto.subtle.digest('SHA-256', pwUtf8); // hash the password
 
   const iv = ciphertext
     .slice(0, 24)
@@ -67,13 +61,13 @@ export async function aesGcmDecrypt(ciphertext: string, password: string): Promi
 
   const alg = { name: 'AES-GCM', iv: new Uint8Array(iv) }; // specify algorithm to use
 
-  const key = await cryptolib.subtle.importKey('raw', pwHash, alg, false, ['decrypt']); // use pw to generate key
+  const key = await crypto.subtle.importKey('raw', pwHash, alg, false, ['decrypt']); // use pw to generate key
 
   const ctStr = Buffer.from(ciphertext.slice(24), 'base64').toString('binary'); // decode base64 ciphertext
   const ctUint8 = new Uint8Array(ctStr.match(/[\s\S]/g).map((ch) => ch.charCodeAt(0))); // ciphertext as Uint8Array
   // note: why doesn't ctUint8 = new TextEncoder().encode(ctStr) work?
 
-  const plainBuffer = await cryptolib.subtle.decrypt(alg, key, ctUint8); // decrypt ciphertext using key
+  const plainBuffer = await crypto.subtle.decrypt(alg, key, ctUint8); // decrypt ciphertext using key
   const plaintext = new TextDecoder().decode(plainBuffer); // decode password from UTF-8
 
   return plaintext; // return the plaintext

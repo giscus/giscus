@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getDiscussion } from '../../services/github/getDiscussion';
-import { adaptDiscussions } from '../../lib/adapter';
+import { adaptDiscussion } from '../../lib/adapter';
 import { IGiscussion } from '../../lib/models/adapter';
 
 export default async (
@@ -12,7 +12,7 @@ export default async (
   const params = { id: req.query.id as string };
 
   const { data } = await getDiscussion(params, token);
-  const adapted = adaptDiscussions(data);
+  const adapted = adaptDiscussion(data);
 
   res.status(200).json(adapted);
 };

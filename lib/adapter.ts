@@ -1,7 +1,7 @@
-import { IComment, IGiscussion, IReactionGroups } from './models/adapter';
-import { GComment, GReactionGroup, GRepositoryDiscussion, GUser } from './models/github';
+import { IComment, IGiscussion, IReactionGroups, IReply } from './models/adapter';
+import { GComment, GReactionGroup, GReply, GRepositoryDiscussion, GUser } from './models/github';
 
-function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups {
+export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups {
   return reactionGroups.reduce((acc, group) => {
     acc[group.content] = {
       count: group.users.totalCount,
@@ -11,24 +11,23 @@ function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups 
   }, {}) as IReactionGroups;
 }
 
-function adaptComments(comments: GComment[]): IComment[] {
-  return comments.map((comment) => {
-    const { replies: repliesData, reactionGroups, ...rest } = comment;
-    const { totalCount: replyCount, nodes: replyNodes } = repliesData;
-
-    const reactions = adaptReactionGroups(reactionGroups);
-
-    const replies = replyNodes.map((reply) => {
-      const { reactionGroups, ...rest } = reply;
-      const reactions = adaptReactionGroups(reactionGroups);
-      return { ...rest, reactions };
-    });
-
-    return { ...rest, replyCount, reactions, replies };
-  });
+export function adaptReply(reply: GReply): IReply {
+  const { reactionGroups, ...rest } = reply;
+  const reactions = adaptReactionGroups(reactionGroups);
+  return { ...rest, reactions };
 }
 
-export function adaptDiscussions({
+export function adaptComment(comment: GComment): IComment {
+  const { replies: repliesData, reactionGroups, ...rest } = comment;
+  const { totalCount: replyCount, nodes: replyNodes } = repliesData;
+
+  const reactions = adaptReactionGroups(reactionGroups);
+  const replies = replyNodes.map(adaptReply);
+
+  return { ...rest, replyCount, reactions, replies };
+}
+
+export function adaptDiscussion({
   viewer,
   discussion,
 }: {
@@ -42,7 +41,7 @@ export function adaptDiscussions({
     commentsData.totalCount,
   );
 
-  const comments = adaptComments(commentsData.nodes);
+  const comments = commentsData.nodes.map(adaptComment);
 
   return {
     viewer,

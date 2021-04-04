@@ -1,15 +1,16 @@
 import { useContext } from 'react';
 import { AuthContext } from '../lib/context';
-import { IGiscussionsRequest } from '../lib/models/giscussions';
 import { useDiscussions } from '../services/giscussions/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
 
-export type IGiscussionsProps = IGiscussionsRequest;
+export interface IGiscussionsProps {
+  id: string;
+}
 
-export default function Giscussions(props: IGiscussionsProps) {
+export default function Giscussions({ id }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
-  const { data, isLoading, isError } = useDiscussions(props, token);
+  const { data, isLoading, isError } = useDiscussions(id, token);
 
   return (
     <div className="w-full text-gray-800">

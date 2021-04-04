@@ -5,9 +5,3 @@ export interface ITokenRequest {
 export interface ITokenResponse {
   token: string;
 }
-
-export interface IGiscussionsRequest {
-  repositoryOwner: string;
-  repositoryName: string;
-  discussionNumber: string;
-}

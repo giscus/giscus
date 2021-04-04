@@ -1,5 +1,5 @@
 import { IComment, IGiscussion, IReactionGroups } from './models/adapter';
-import { GComment, GReactionGroup, GRepository, GUser } from './models/github';
+import { GComment, GReactionGroup, GRepositoryDiscussion, GUser } from './models/github';
 
 function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups {
   return reactionGroups.reduce((acc, group) => {
@@ -30,12 +30,11 @@ function adaptComments(comments: GComment[]): IComment[] {
 
 export function adaptDiscussions({
   viewer,
-  repository,
+  discussion,
 }: {
   viewer: GUser;
-  repository: GRepository;
+  discussion: GRepositoryDiscussion;
 }): IGiscussion {
-  const { discussion } = repository;
   const { comments: commentsData } = discussion;
 
   const totalCount = commentsData.nodes.reduce(

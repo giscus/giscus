@@ -1,17 +1,18 @@
-import { GUser, GRepository } from '../../lib/models/github';
+import { GUser, GRepositoryDiscussion } from '../../lib/models/github';
 import { getReadAccessToken } from './getReadAccessToken';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';
 
-const GET_DISCUSSIONS_QUERY = `
-  query($repositoryOwner: String!, $repositoryName: String!, $discussionNumber: Int!) {
+const GET_DISCUSSION_QUERY = `
+  query($id: ID!) {
     viewer {
       avatarUrl
       login
       url
     }
-    repository(owner: $repositoryOwner, name: $repositoryName) {
-      discussion(number: $discussionNumber) {
+    discussion: node(id: $id) {
+      ... on Discussion {
+        id
         comments(first: 20) {
           totalCount
           nodes {
@@ -62,23 +63,21 @@ const GET_DISCUSSIONS_QUERY = `
     }
   }`;
 
-export interface GetDiscussionsParams {
-  repositoryOwner: string;
-  repositoryName: string;
-  discussionNumber: number;
+export interface GetDiscussionParams {
+  id: string;
 }
 
-export interface GetDiscussionsBody {
+export interface GetDiscussionBody {
   data: {
     viewer: GUser;
-    repository: GRepository;
+    discussion: GRepositoryDiscussion;
   };
 }
 
-export async function getDiscussions(
-  params: GetDiscussionsParams,
+export async function getDiscussion(
+  params: GetDiscussionParams,
   token?: string,
-): Promise<GetDiscussionsBody> {
+): Promise<GetDiscussionBody> {
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {
@@ -87,7 +86,7 @@ export async function getDiscussions(
     },
 
     body: JSON.stringify({
-      query: GET_DISCUSSIONS_QUERY,
+      query: GET_DISCUSSION_QUERY,
       variables: params,
     }),
   }).then((r) => r.json());

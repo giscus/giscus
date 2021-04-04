@@ -38,12 +38,9 @@ export interface GComment extends GBaseComment {
 }
 
 export interface GRepositoryDiscussion {
+  id: string;
   comments: {
     totalCount: number;
     nodes: GComment[];
   };
-}
-
-export interface GRepository {
-  discussion: GRepositoryDiscussion;
 }

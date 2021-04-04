@@ -45,11 +45,7 @@ export default function Home() {
 
       <main className="w-full max-w-3xl mx-auto my-4">
         <AuthContext.Provider value={{ token, origin }}>
-          <Giscussions
-            repositoryOwner="laymonage"
-            repositoryName="discussions-playground"
-            discussionNumber="4"
-          />
+          <Giscussions id="MDEwOkRpc2N1c3Npb24zMjc5Nzgx" />
         </AuthContext.Provider>
       </main>
     </>

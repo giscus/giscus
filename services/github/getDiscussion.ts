@@ -67,7 +67,7 @@ export interface GetDiscussionParams {
   id: string;
 }
 
-export interface GetDiscussionBody {
+export interface GetDiscussionResponse {
   data: {
     viewer: GUser;
     discussion: GRepositoryDiscussion;
@@ -77,7 +77,7 @@ export interface GetDiscussionBody {
 export async function getDiscussion(
   params: GetDiscussionParams,
   token?: string,
-): Promise<GetDiscussionBody> {
+): Promise<GetDiscussionResponse> {
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {

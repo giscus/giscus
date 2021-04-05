@@ -10,10 +10,14 @@ export function useDiscussions(id: string, token?: string) {
     return { headers };
   }, [token]);
 
-  const { data, error } = useSWR<IGiscussion>([`/api/discussions?${urlParams}`, headers], fetcher);
+  const { data, error, mutate } = useSWR<IGiscussion>(
+    [`/api/discussions?${urlParams}`, headers],
+    fetcher,
+  );
   return {
-    data: data,
+    data,
     isLoading: !error && !data,
     isError: !!error,
+    mutate,
   };
 }

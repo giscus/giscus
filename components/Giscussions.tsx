@@ -41,7 +41,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
 
       <div className="my-4 text-sm border-t-2"></div>
 
-      <CommentBox />
+      <CommentBox discussionId={id} onSubmit={addNewComment} />
     </div>
   );
 }

@@ -1,15 +1,25 @@
 import { MarkdownIcon } from '@primer/octicons-react';
 import { useRouter } from 'next/dist/client/router';
 import { useCallback, useContext, useEffect, useState } from 'react';
+import { adaptComment } from '../lib/adapter';
 import { AuthContext, getLoginUrl } from '../lib/context';
+import { IComment } from '../lib/models/adapter';
+import { addDiscussionComment } from '../services/github/addDiscussionComment';
 import { renderMarkdown } from '../services/github/markdown';
 
-export default function CommentBox() {
+export interface CommentBoxProps {
+  discussionId: string;
+  replyToId?: string;
+  onSubmit: (comment: IComment) => void;
+}
+
+export default function CommentBox({ discussionId, onSubmit }: CommentBoxProps) {
   const [isPreview, setIsPreview] = useState(false);
   const [input, setInput] = useState('');
   const [lastInput, setLastInput] = useState('');
   const [preview, setPreview] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { token, origin } = useContext(AuthContext);
   const router = useRouter();
   const loginUrl = getLoginUrl(origin);
@@ -28,8 +38,25 @@ export default function CommentBox() {
   }, [isPreview, input, lastInput, token]);
 
   const handleClick = useCallback(() => {
-    if (!token) router.push(loginUrl);
-  }, [token, router, loginUrl]);
+    if (!token) {
+      router.push(loginUrl);
+      return;
+    }
+
+    setIsSubmitting(true);
+    const payload = { body: input, discussionId: discussionId };
+
+    addDiscussionComment(payload, token).then(({ data: { addDiscussionComment } }) => {
+      const { comment } = addDiscussionComment;
+      const adapted = adaptComment(comment);
+
+      onSubmit(adapted);
+      setInput('');
+      setPreview('');
+      setIsPreview(false);
+      setIsSubmitting(false);
+    });
+  }, [token, router, loginUrl, input, discussionId, onSubmit]);
 
   return (
     <div className="text-sm border rounded">
@@ -71,7 +98,7 @@ export default function CommentBox() {
             placeholder={token ? 'Write a comment' : 'Sign in to comment'}
             onChange={(event) => setInput(event.target.value)}
             value={input}
-            disabled={!token}
+            disabled={!token || isSubmitting}
           ></textarea>
         )}
       </div>
@@ -86,8 +113,9 @@ export default function CommentBox() {
           Styling with Markdown is supported
         </a>
         <button
-          className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center"
+          className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center disabled:opacity-50"
           onClick={handleClick}
+          disabled={isSubmitting}
         >
           {token ? (
             `Comment`

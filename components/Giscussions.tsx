@@ -1,5 +1,6 @@
-import { useContext } from 'react';
+import { useCallback, useContext } from 'react';
 import { AuthContext } from '../lib/context';
+import { IComment } from '../lib/models/adapter';
 import { useDiscussions } from '../services/giscussions/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
@@ -10,7 +11,17 @@ export interface IGiscussionsProps {
 
 export default function Giscussions({ id }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
-  const { data, isLoading, isError } = useDiscussions(id, token);
+  const { data, isLoading, isError, mutate } = useDiscussions(id, token);
+
+  const addNewComment = useCallback(
+    (comment: IComment) =>
+      mutate({
+        ...data,
+        totalCount: data.totalCount + 1,
+        comments: [...data.comments, comment],
+      }),
+    [data, mutate],
+  );
 
   return (
     <div className="w-full text-gray-800">

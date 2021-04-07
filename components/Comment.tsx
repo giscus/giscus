@@ -1,17 +1,17 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { formatDistance, format } from 'date-fns';
-import { IComment, IUser } from '../lib/models/adapter';
+import { ReactElement } from 'react';
+import { IComment } from '../lib/models/adapter';
+import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
 import Reply from './Reply';
 
 export interface ICommentProps {
-  viewer: IUser;
   comment: IComment;
+  children?: ReactElement<typeof CommentBox>;
 }
 
-export default function Comment({ viewer, comment }: ICommentProps) {
-  const isAnonymousViewer = viewer.login === 'giscussions[bot]';
-
+export default function Comment({ comment, children }: ICommentProps) {
   return (
     <div className="flex my-4 text-sm">
       <div className="flex-shrink-0 mr-2 w-14">
@@ -60,7 +60,7 @@ export default function Comment({ viewer, comment }: ICommentProps) {
           </div>
         </div>
         <div className="p-4 markdown" dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}></div>
-        <div className="flex content-center justify-between border-b">
+        <div className="flex content-center justify-between">
           <div className="relative flex mx-4">
             <ReactButtons reactionGroups={comment.reactions} />
           </div>
@@ -71,34 +71,13 @@ export default function Comment({ viewer, comment }: ICommentProps) {
           </div>
         </div>
         {comment.replies.length > 0 ? (
-          <div className="border-b">
+          <div className="border-t">
             {comment.replies.map((reply) => (
               <Reply key={reply.url} reply={reply} />
             ))}
           </div>
         ) : null}
-        <div className="flex px-4 py-2 bg-gray-500 bg-opacity-5">
-          <a
-            href={isAnonymousViewer ? 'https://github.com/apps/giscussions' : viewer.url}
-            className="flex items-center flex-shrink-0"
-          >
-            <img
-              className="inline-block rounded-full"
-              src={viewer.avatarUrl}
-              width="30"
-              height="30"
-              alt={isAnonymousViewer ? 'Anonymous' : `@${viewer.login}`}
-            />
-          </a>
-          <button
-            className={`w-full px-2 py-1 ml-2 text-left text-gray-600 border rounded ${
-              isAnonymousViewer ? 'bg-gray-400 bg-opacity-5' : 'bg-white'
-            }`}
-            disabled={isAnonymousViewer}
-          >
-            {isAnonymousViewer ? 'Sign in to reply' : 'Write a reply'}
-          </button>
-        </div>
+        {children}
       </div>
     </div>
   );

@@ -12,9 +12,13 @@ export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReaction
 }
 
 export function adaptReply(reply: GReply): IReply {
-  const { reactionGroups, ...rest } = reply;
+  const {
+    reactionGroups,
+    replyTo: { id: replyToId },
+    ...rest
+  } = reply;
   const reactions = adaptReactionGroups(reactionGroups);
-  return { ...rest, reactions };
+  return { ...rest, reactions, replyToId };
 }
 
 export function adaptComment(comment: GComment): IComment {

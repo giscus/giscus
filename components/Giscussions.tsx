@@ -1,6 +1,6 @@
 import { useCallback, useContext } from 'react';
 import { AuthContext } from '../lib/context';
-import { IComment } from '../lib/models/adapter';
+import { IComment, IReply } from '../lib/models/adapter';
 import { useDiscussions } from '../services/giscussions/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
@@ -23,6 +23,20 @@ export default function Giscussions({ id }: IGiscussionsProps) {
     [data, mutate],
   );
 
+  const addNewReply = useCallback(
+    (reply: IReply) =>
+      mutate({
+        ...data,
+        totalCount: data.totalCount + 1,
+        comments: data.comments.map((comment) =>
+          comment.id === reply.replyToId
+            ? { ...comment, replies: [...comment.replies, reply] }
+            : comment,
+        ),
+      }),
+    [data, mutate],
+  );
+
   return (
     <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
@@ -36,12 +50,21 @@ export default function Giscussions({ id }: IGiscussionsProps) {
       </div>
 
       {data?.comments?.map((comment) => (
-        <Comment key={comment.url} comment={comment} viewer={data.viewer} />
+        <Comment key={comment.url} comment={comment}>
+          {token ? (
+            <CommentBox
+              discussionId={id}
+              onSubmit={addNewReply}
+              replyToId={comment.id}
+              viewer={data.viewer}
+            />
+          ) : null}
+        </Comment>
       ))}
 
       <div className="my-4 text-sm border-t-2"></div>
 
-      <CommentBox discussionId={id} onSubmit={addNewComment} />
+      <CommentBox discussionId={id} onSubmit={addNewComment} viewer={data?.viewer} />
     </div>
   );
 }

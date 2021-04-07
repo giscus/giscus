@@ -16,6 +16,7 @@ const GET_DISCUSSION_QUERY = `
         comments(first: 20) {
           totalCount
           nodes {
+            id
             upvoteCount
             viewerHasUpvoted
             author {
@@ -38,6 +39,7 @@ const GET_DISCUSSION_QUERY = `
             replies(first: 100) {
               totalCount
               nodes {
+                id
                 author {
                   avatarUrl
                   login
@@ -54,6 +56,9 @@ const GET_DISCUSSION_QUERY = `
                     totalCount
                   }
                   viewerHasReacted
+                }
+                replyTo {
+                  id
                 }
               }
             }

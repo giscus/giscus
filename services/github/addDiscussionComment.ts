@@ -4,6 +4,7 @@ const ADD_DISCUSSION_COMMENT_QUERY = `
   mutation($body: String!, $discussionId: ID!) {
     addDiscussionComment(input: {body: $body, discussionId: $discussionId}) {
       comment {
+        id
         upvoteCount
         viewerHasUpvoted
         author {
@@ -26,6 +27,7 @@ const ADD_DISCUSSION_COMMENT_QUERY = `
         replies(first: 100) {
           totalCount
           nodes {
+            id
             author {
               avatarUrl
               login

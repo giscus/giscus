@@ -17,6 +17,7 @@ export interface GReactionGroup {
 }
 
 interface GBaseComment {
+  id: string;
   author: GRepositoryDiscussionAuthor;
   createdAt: string;
   url: string;
@@ -26,7 +27,11 @@ interface GBaseComment {
   reactionGroups: GReactionGroup[];
 }
 
-export type GReply = GBaseComment;
+export interface GReply extends GBaseComment {
+  replyTo: {
+    id: string;
+  };
+}
 
 export interface GComment extends GBaseComment {
   upvoteCount: number;

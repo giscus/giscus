@@ -14,6 +14,7 @@ export type IReactionGroups = {
 };
 
 interface IBaseComment {
+  id: string;
   author: IUser;
   createdAt: string;
   url: string;
@@ -23,7 +24,9 @@ interface IBaseComment {
   reactions: IReactionGroups;
 }
 
-export type IReply = IBaseComment;
+export interface IReply extends IBaseComment {
+  replyToId: string;
+}
 
 export interface IComment extends IBaseComment {
   upvoteCount: number;

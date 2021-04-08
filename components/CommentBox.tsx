@@ -119,6 +119,7 @@ export default function CommentBox({ viewer, discussionId, replyToId, onSubmit }
             value={input}
             disabled={!token || isSubmitting}
             ref={(textarea) => isReply && textarea && setTimeout(() => textarea.focus())}
+            onKeyDown={(event) => event.ctrlKey && event.key === 'Enter' && handleClick()}
           ></textarea>
         )}
       </div>

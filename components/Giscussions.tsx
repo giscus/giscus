@@ -50,7 +50,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
       </div>
 
       {data?.comments?.map((comment) => (
-        <Comment key={comment.url} comment={comment}>
+        <Comment key={comment.id} comment={comment}>
           {token ? (
             <CommentBox
               discussionId={id}

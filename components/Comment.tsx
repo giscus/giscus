@@ -76,7 +76,7 @@ export default function Comment({ comment, children }: ICommentProps) {
         {comment.replyCount > 0 ? (
           <div className="pt-2 bg-gray-500 border-t bg-opacity-5">
             {replies.map((reply) => (
-              <Reply key={reply.url} reply={reply} />
+              <Reply key={reply.id} reply={reply} />
             ))}
             {page === 0 && comment.replyCount > 3 ? (
               <button

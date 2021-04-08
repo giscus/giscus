@@ -71,7 +71,7 @@ export default function Comment({ comment, children }: ICommentProps) {
           </div>
         </div>
         {comment.replies.length > 0 ? (
-          <div className="border-t">
+          <div className="pt-2 bg-gray-500 border-t bg-opacity-5">
             {comment.replies.map((reply) => (
               <Reply key={reply.url} reply={reply} />
             ))}

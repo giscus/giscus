@@ -1,6 +1,6 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { formatDistance, format } from 'date-fns';
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { IComment } from '../lib/models/adapter';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
@@ -12,6 +12,9 @@ export interface ICommentProps {
 }
 
 export default function Comment({ comment, children }: ICommentProps) {
+  const [page, setPage] = useState(0);
+  const replies = comment.replies.slice(0, page === 0 ? 3 : undefined);
+
   return (
     <div className="flex my-4 text-sm">
       <div className="flex-shrink-0 mr-2 w-14">
@@ -70,11 +73,19 @@ export default function Comment({ comment, children }: ICommentProps) {
             </span>
           </div>
         </div>
-        {comment.replies.length > 0 ? (
+        {comment.replyCount > 0 ? (
           <div className="pt-2 bg-gray-500 border-t bg-opacity-5">
-            {comment.replies.map((reply) => (
+            {replies.map((reply) => (
               <Reply key={reply.url} reply={reply} />
             ))}
+            {page === 0 && comment.replyCount > 3 ? (
+              <button
+                className="mb-2 ml-3 text-xs font-semibold text-blue-700 hover:underline"
+                onClick={() => setPage(page + 1)}
+              >
+                View more
+              </button>
+            ) : null}
           </div>
         ) : null}
         {children}

@@ -1,7 +1,7 @@
 import { KebabHorizontalIcon } from '@primer/octicons-react';
 import ReactButtons from './ReactButtons';
 import { IReply } from '../lib/models/adapter';
-import { formatDistance, format } from 'date-fns';
+import { formatDistanceStrict, format } from 'date-fns';
 
 export interface IReplyProps {
   reply: IReply;
@@ -43,7 +43,7 @@ export default function Reply({ reply }: IReplyProps) {
                   className="whitespace-nowrap"
                   title={format(new Date(reply.createdAt), 'LLL d, y, p O')}
                 >
-                  {formatDistance(new Date(reply.createdAt), new Date(), { addSuffix: true })}
+                  {formatDistanceStrict(new Date(reply.createdAt), new Date(), { addSuffix: true })}
                 </div>
               </a>
               <div className="hidden ml-2 text-xs sm:inline-flex">

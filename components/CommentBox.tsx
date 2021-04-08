@@ -46,6 +46,7 @@ export default function CommentBox({ viewer, discussionId, replyToId, onSubmit }
     setPreview('');
     setIsPreview(false);
     setIsSubmitting(false);
+    setIsReplyOpen(false);
   }, []);
 
   const handleClick = useCallback(() => {

@@ -1,25 +1,36 @@
 import { SmileyIcon } from '@primer/octicons-react';
 import Link from 'next/link';
-import { useContext, useState } from 'react';
+import { useCallback, useContext, useState } from 'react';
 import { AuthContext, getLoginUrl } from '../lib/context';
 import { useComponentVisible } from '../lib/hooks';
 import { IReactionGroups } from '../lib/models/adapter';
 import { Reactions } from '../lib/reactions';
+import { toggleReaction } from '../services/github/toggleReaction';
 
 export interface IReactButtonsProps {
   reactionGroups: IReactionGroups;
+  subjectId: string;
   variant?: 'groupsOnly' | 'popoverOnly' | 'all';
 }
 
-export default function ReactButtons({ reactionGroups, variant = 'all' }: IReactButtonsProps) {
+export default function ReactButtons({
+  reactionGroups,
+  subjectId,
+  variant = 'all',
+}: IReactButtonsProps) {
   const [current, setCurrent] = useState('');
   const [ref, isOpen, setIsOpen] = useComponentVisible<HTMLDivElement>(false);
   const { token, origin } = useContext(AuthContext);
   const loginUrl = getLoginUrl(origin);
 
-  function togglePopover() {
-    setIsOpen(!isOpen);
-  }
+  const togglePopover = useCallback(() => setIsOpen(!isOpen), [isOpen, setIsOpen]);
+
+  const react = useCallback(
+    (content: Reactions) => {
+      toggleReaction({ content, subjectId }, token, reactionGroups[content].viewerHasReacted);
+    },
+    [reactionGroups, subjectId, token],
+  );
 
   return (
     <>
@@ -59,7 +70,10 @@ export default function ReactButtons({ reactionGroups, variant = 'all' }: IReact
                   className={`w-8 h-8 gsc-emoji-button ${
                     reactionGroups[key].viewerHasReacted ? 'border bg-blue-400 bg-opacity-10' : ''
                   }`}
-                  onClick={togglePopover}
+                  onClick={() => {
+                    react(key as Reactions);
+                    togglePopover();
+                  }}
                   onMouseEnter={() => setCurrent(name)}
                   onFocus={() => setCurrent(name)}
                   onMouseLeave={() => setCurrent('')}
@@ -110,6 +124,7 @@ export default function ReactButtons({ reactionGroups, variant = 'all' }: IReact
                 title={`${count} ${count === 1 ? 'person' : 'people'} reacted with ${Reactions[
                   value
                 ].name.toLowerCase()} emoji`}
+                onClick={() => react(value as Reactions)}
               >
                 <span className="mr-1">{Reactions[value].emoji}</span>
                 <span className="text-xs text-blue-600">{count}</span>

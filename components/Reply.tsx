@@ -53,7 +53,11 @@ export default function Reply({ reply }: IReplyProps) {
               </div>
             </h3>
             <div className="flex pr-4">
-              <ReactButtons reactionGroups={reply.reactions} variant="popoverOnly" />
+              <ReactButtons
+                reactionGroups={reply.reactions}
+                subjectId={reply.id}
+                variant="popoverOnly"
+              />
               <button className="text-gray-500 hover:text-blue-600">
                 <KebabHorizontalIcon />
               </button>
@@ -64,7 +68,11 @@ export default function Reply({ reply }: IReplyProps) {
             dangerouslySetInnerHTML={{ __html: reply.bodyHTML }}
           ></div>
           <div className="relative flex content-center mr-4">
-            <ReactButtons reactionGroups={reply.reactions} variant="groupsOnly" />
+            <ReactButtons
+              reactionGroups={reply.reactions}
+              subjectId={reply.id}
+              variant="groupsOnly"
+            />
           </div>
         </div>
       </div>

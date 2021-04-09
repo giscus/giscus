@@ -43,7 +43,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full max-w-3xl mx-auto my-4">
+      <main className="w-full max-w-3xl p-2 mx-auto">
         <AuthContext.Provider value={{ token, origin }}>
           <Giscussions id="MDEwOkRpc2N1c3Npb24zMjc5Nzgx" />
         </AuthContext.Provider>

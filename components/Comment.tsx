@@ -92,7 +92,7 @@ export default function Comment({
           </div>
           <div className="mb-4 mr-4">
             <span className="text-xs text-gray-500">
-              {comment.replyCount} {comment.replyCount === 1 ? 'reply' : 'replies'}
+              {comment.replyCount}&nbsp;{comment.replyCount === 1 ? 'reply' : 'replies'}
             </span>
           </div>
         </div>

@@ -37,6 +37,41 @@ export default function Giscussions({ id }: IGiscussionsProps) {
     [data, mutate],
   );
 
+  const updateComment = useCallback(
+    (newComment: IComment, promise?: Promise<unknown>) =>
+      mutate(
+        {
+          ...data,
+          comments: data.comments.map((comment) =>
+            comment.id === newComment.id ? newComment : comment,
+          ),
+        },
+        !promise,
+      ) && promise?.then(() => mutate()),
+    [data, mutate],
+  );
+
+  const updateReply = useCallback(
+    (newReply: IReply, promise?: Promise<unknown>) =>
+      mutate(
+        {
+          ...data,
+          comments: data.comments.map((comment) =>
+            comment.id === newReply.replyToId
+              ? {
+                  ...comment,
+                  replies: comment.replies.map((reply) =>
+                    reply.id === newReply.id ? newReply : reply,
+                  ),
+                }
+              : comment,
+          ),
+        },
+        !promise,
+      ) && promise?.then(() => mutate()),
+    [data, mutate],
+  );
+
   return (
     <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
@@ -50,7 +85,12 @@ export default function Giscussions({ id }: IGiscussionsProps) {
       </div>
 
       {data?.comments?.map((comment) => (
-        <Comment key={comment.id} comment={comment}>
+        <Comment
+          key={comment.id}
+          comment={comment}
+          onCommentUpdate={updateComment}
+          onReplyUpdate={updateReply}
+        >
           {token ? (
             <CommentBox
               discussionId={id}

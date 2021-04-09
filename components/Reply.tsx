@@ -2,12 +2,21 @@ import { KebabHorizontalIcon } from '@primer/octicons-react';
 import ReactButtons from './ReactButtons';
 import { IReply } from '../lib/models/adapter';
 import { formatDistanceStrict, format } from 'date-fns';
+import { useCallback } from 'react';
+import { Reactions, updateCommentReaction } from '../lib/reactions';
 
 export interface IReplyProps {
   reply: IReply;
+  onReplyUpdate: (newReply: IReply, promise: Promise<unknown>) => void;
 }
 
-export default function Reply({ reply }: IReplyProps) {
+export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
+  const updateReactions = useCallback(
+    (content: Reactions, promise: Promise<unknown>) =>
+      onReplyUpdate(updateCommentReaction(reply, content), promise),
+    [reply, onReplyUpdate],
+  );
+
   return (
     <div className="relative gsc-reply">
       <div className="w-[2px] flex-shrink-0 bg-gray-500 bg-opacity-10 absolute left-[30px] h-full top-0 gsc-tl-line">
@@ -57,6 +66,7 @@ export default function Reply({ reply }: IReplyProps) {
                 reactionGroups={reply.reactions}
                 subjectId={reply.id}
                 variant="popoverOnly"
+                onReact={updateReactions}
               />
               <button className="text-gray-500 hover:text-blue-600">
                 <KebabHorizontalIcon />
@@ -72,6 +82,7 @@ export default function Reply({ reply }: IReplyProps) {
               reactionGroups={reply.reactions}
               subjectId={reply.id}
               variant="groupsOnly"
+              onReact={updateReactions}
             />
           </div>
         </div>

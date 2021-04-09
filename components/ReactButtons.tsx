@@ -10,12 +10,14 @@ import { toggleReaction } from '../services/github/toggleReaction';
 export interface IReactButtonsProps {
   reactionGroups: IReactionGroups;
   subjectId: string;
+  onReact: (content: Reactions, promise: Promise<unknown>) => void;
   variant?: 'groupsOnly' | 'popoverOnly' | 'all';
 }
 
 export default function ReactButtons({
   reactionGroups,
   subjectId,
+  onReact,
   variant = 'all',
 }: IReactButtonsProps) {
   const [current, setCurrent] = useState('');
@@ -27,9 +29,12 @@ export default function ReactButtons({
 
   const react = useCallback(
     (content: Reactions) => {
-      toggleReaction({ content, subjectId }, token, reactionGroups[content].viewerHasReacted);
+      onReact(
+        content,
+        toggleReaction({ content, subjectId }, token, reactionGroups[content].viewerHasReacted),
+      );
     },
-    [reactionGroups, subjectId, token],
+    [onReact, reactionGroups, subjectId, token],
   );
 
   return (

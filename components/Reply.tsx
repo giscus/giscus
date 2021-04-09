@@ -1,9 +1,9 @@
 import { KebabHorizontalIcon } from '@primer/octicons-react';
 import ReactButtons from './ReactButtons';
 import { IReply } from '../lib/models/adapter';
-import { formatDistanceStrict, format } from 'date-fns';
 import { useCallback } from 'react';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
+import { formatDate, formatDateDistance } from '../lib/string';
 
 export interface IReplyProps {
   reply: IReply;
@@ -48,11 +48,8 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                 <span className="font-semibold">{reply.author.login}</span>
               </a>
               <a href={reply.url} className="ml-2 text-gray-500">
-                <div
-                  className="whitespace-nowrap"
-                  title={format(new Date(reply.createdAt), 'LLL d, y, p O')}
-                >
-                  {formatDistanceStrict(new Date(reply.createdAt), new Date(), { addSuffix: true })}
+                <div className="whitespace-nowrap" title={formatDate(reply.createdAt)}>
+                  {formatDateDistance(reply.createdAt)}
                 </div>
               </a>
               <div className="hidden ml-2 text-xs sm:inline-flex">

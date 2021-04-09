@@ -1,8 +1,8 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
-import { formatDistance, format } from 'date-fns';
 import { ReactElement, useCallback, useState } from 'react';
 import { IComment, IReply } from '../lib/models/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
+import { formatDate, formatDateDistance } from '../lib/string';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
 import Reply from './Reply';
@@ -57,11 +57,8 @@ export default function Comment({
               <span className="font-semibold">{comment.author.login}</span>
             </a>
             <a href={comment.url} className="ml-2 text-gray-500">
-              <div
-                className="whitespace-nowrap"
-                title={format(new Date(comment.createdAt), 'LLL d, y, p O')}
-              >
-                {formatDistance(new Date(comment.createdAt), new Date(), { addSuffix: true })}
+              <div className="whitespace-nowrap" title={formatDate(comment.createdAt)}>
+                {formatDateDistance(comment.createdAt)}
               </div>
             </a>
             <div className="hidden ml-2 text-xs sm:inline-flex">

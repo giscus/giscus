@@ -117,8 +117,9 @@ export default function ReactButtons({
         </div>
       ) : null}
 
-      {variant !== 'popoverOnly'
-        ? Object.entries(reactionGroups).map(([value, { count, viewerHasReacted }]) =>
+      {variant !== 'popoverOnly' ? (
+        <div className="flex flex-wrap">
+          {Object.entries(reactionGroups).map(([value, { count, viewerHasReacted }]) =>
             count > 0 ? (
               <button
                 key={value}
@@ -135,8 +136,9 @@ export default function ReactButtons({
                 <span className="text-xs text-blue-600">{count}</span>
               </button>
             ) : null,
-          )
-        : null}
+          )}
+        </div>
+      ) : null}
     </>
   );
 }

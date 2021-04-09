@@ -14,7 +14,6 @@ export interface ICommentProps {
 export default function Comment({ comment, children }: ICommentProps) {
   const [page, setPage] = useState(0);
   const replies = comment.replies.slice(0, page === 0 ? 3 : undefined);
-
   return (
     <div className="flex my-4 text-sm">
       <div className="flex-shrink-0 mr-2 w-14">
@@ -65,7 +64,7 @@ export default function Comment({ comment, children }: ICommentProps) {
         <div className="p-4 markdown" dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}></div>
         <div className="flex content-center justify-between">
           <div className="relative flex mx-4">
-            <ReactButtons reactionGroups={comment.reactions} />
+            <ReactButtons reactionGroups={comment.reactions} subjectId={comment.id} />
           </div>
           <div className="mb-4 mr-4">
             <span className="text-xs text-gray-500">

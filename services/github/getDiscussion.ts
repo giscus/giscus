@@ -27,7 +27,7 @@ const GET_DISCUSSION_QUERY = `
             createdAt
             url
             authorAssociation
-            includesCreatedEdit
+            lastEditedAt
             bodyHTML
             reactionGroups {
               content
@@ -48,7 +48,7 @@ const GET_DISCUSSION_QUERY = `
                 createdAt
                 url
                 authorAssociation
-                includesCreatedEdit
+                lastEditedAt
                 bodyHTML
                 reactionGroups {
                   content

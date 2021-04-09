@@ -19,7 +19,7 @@ interface IBaseComment {
   createdAt: string;
   url: string;
   authorAssociation: string;
-  includesCreatedEdit: boolean;
+  lastEditedAt: string;
   bodyHTML: string;
   reactions: IReactionGroups;
 }

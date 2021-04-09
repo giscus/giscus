@@ -22,7 +22,7 @@ interface GBaseComment {
   createdAt: string;
   url: string;
   authorAssociation: string;
-  includesCreatedEdit: boolean;
+  lastEditedAt: string;
   bodyHTML: string;
   reactionGroups: GReactionGroup[];
 }

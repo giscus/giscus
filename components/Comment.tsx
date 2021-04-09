@@ -1,7 +1,8 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { formatDistance, format } from 'date-fns';
-import { ReactElement, useState } from 'react';
-import { IComment } from '../lib/models/adapter';
+import { ReactElement, useCallback, useState } from 'react';
+import { IComment, IReply } from '../lib/models/adapter';
+import { Reactions, updateCommentReaction } from '../lib/reactions';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
 import Reply from './Reply';
@@ -9,11 +10,25 @@ import Reply from './Reply';
 export interface ICommentProps {
   comment: IComment;
   children?: ReactElement<typeof CommentBox>;
+  onCommentUpdate: (newComment: IComment, promise: Promise<unknown>) => void;
+  onReplyUpdate: (newReply: IReply, promise: Promise<unknown>) => void;
 }
 
-export default function Comment({ comment, children }: ICommentProps) {
+export default function Comment({
+  comment,
+  children,
+  onCommentUpdate,
+  onReplyUpdate,
+}: ICommentProps) {
   const [page, setPage] = useState(0);
   const replies = comment.replies.slice(0, page === 0 ? 3 : undefined);
+
+  const updateReactions = useCallback(
+    (reaction: Reactions, promise: Promise<unknown>) =>
+      onCommentUpdate(updateCommentReaction(comment, reaction), promise),
+    [comment, onCommentUpdate],
+  );
+
   return (
     <div className="flex my-4 text-sm">
       <div className="flex-shrink-0 mr-2 w-14">
@@ -64,7 +79,11 @@ export default function Comment({ comment, children }: ICommentProps) {
         <div className="p-4 markdown" dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}></div>
         <div className="flex content-center justify-between">
           <div className="relative flex mx-4">
-            <ReactButtons reactionGroups={comment.reactions} subjectId={comment.id} />
+            <ReactButtons
+              reactionGroups={comment.reactions}
+              subjectId={comment.id}
+              onReact={updateReactions}
+            />
           </div>
           <div className="mb-4 mr-4">
             <span className="text-xs text-gray-500">
@@ -75,7 +94,7 @@ export default function Comment({ comment, children }: ICommentProps) {
         {comment.replyCount > 0 ? (
           <div className="pt-2 bg-gray-500 border-t bg-opacity-5">
             {replies.map((reply) => (
-              <Reply key={reply.id} reply={reply} />
+              <Reply key={reply.id} reply={reply} onReplyUpdate={onReplyUpdate} />
             ))}
             {page === 0 && comment.replyCount > 3 ? (
               <button

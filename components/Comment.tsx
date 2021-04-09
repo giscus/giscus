@@ -68,6 +68,14 @@ export default function Comment({
             </div>
           </h3>
           <div className="flex">
+            {comment.lastEditedAt ? (
+              <button
+                className="hidden mr-2 text-gray-600 sm:inline-block"
+                title={`Last edited at ${formatDate(comment.lastEditedAt)}`}
+              >
+                edited
+              </button>
+            ) : null}
             <button className="text-gray-500 hover:text-blue-600">
               <KebabHorizontalIcon />
             </button>

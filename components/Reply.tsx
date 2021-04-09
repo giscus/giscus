@@ -59,6 +59,14 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
               </div>
             </h3>
             <div className="flex pr-4">
+              {reply.lastEditedAt ? (
+                <button
+                  className="hidden mr-2 text-gray-600 sm:inline-block"
+                  title={`Last edited at ${formatDate(reply.lastEditedAt)}`}
+                >
+                  edited
+                </button>
+              ) : null}
               <ReactButtons
                 reactionGroups={reply.reactions}
                 subjectId={reply.id}

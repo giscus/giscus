@@ -83,7 +83,7 @@ export default function Comment({
         </div>
         <div className="p-4 markdown" dangerouslySetInnerHTML={{ __html: comment.bodyHTML }}></div>
         <div className="flex content-center justify-between">
-          <div className="relative flex mx-4">
+          <div className="flex mx-4">
             <ReactButtons
               reactionGroups={comment.reactions}
               subjectId={comment.id}

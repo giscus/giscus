@@ -40,7 +40,7 @@ export default function ReactButtons({
   return (
     <>
       {variant !== 'groupsOnly' ? (
-        <div ref={ref}>
+        <div ref={ref} className="relative">
           <button
             className={`px-3 py-[3px] text-gray-900 text-opacity-75 hover:text-blue-600 ${
               variant !== 'popoverOnly' ? 'mb-4 mr-3 border rounded' : ''
@@ -50,9 +50,9 @@ export default function ReactButtons({
             <SmileyIcon size={18} />
           </button>
           <div
-            className={`absolute ${
-              isOpen ? 'visible scale-100' : 'invisible scale-50'
-            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded popover top-8`}
+            className={`absolute ${isOpen ? 'visible scale-100' : 'invisible scale-50'} ${
+              variant === 'popoverOnly' ? 'popover-only right-0' : 'popover'
+            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded top-10`}
           >
             <p className="m-2">
               {token ? (
@@ -103,6 +103,22 @@ export default function ReactButtons({
                   position: absolute;
                   top: -15px;
                   left: 10px;
+                  border: 7px solid transparent;
+                  border-bottom: 8px solid white;
+                  content: '';
+                }
+                .popover-only::before {
+                  position: absolute;
+                  top: -16px;
+                  right: 9px;
+                  border: 8px solid transparent;
+                  border-bottom: 8px solid lightgray;
+                  content: '';
+                }
+                .popover-only::after {
+                  position: absolute;
+                  top: -15px;
+                  right: 10px;
                   border: 7px solid transparent;
                   border-bottom: 8px solid white;
                   content: '';

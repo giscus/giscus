@@ -76,7 +76,7 @@ export default function Comment({
                 edited
               </button>
             ) : null}
-            <button className="text-gray-500 hover:text-blue-600">
+            <button className="hidden text-gray-500 hover:text-blue-600 sm:inline-block">
               <KebabHorizontalIcon />
             </button>
           </div>

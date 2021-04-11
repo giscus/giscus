@@ -8,6 +8,6 @@ export function formatDateDistance(dt: string) {
   return formatDistanceStrict(new Date(dt), new Date(), { addSuffix: true });
 }
 
-export function isNullish(v: unknown) {
-  return v === null || v === undefined;
+export function isEmpty(v: unknown) {
+  return v === null || v === undefined || v === '';
 }

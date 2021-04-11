@@ -10,8 +10,34 @@ export interface IGiscussionsProps {
 
 export default function Giscussions({ id }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
-  const { data, isLoading, isError, mutators } = useDiscussions(id, token);
-  const { addNewComment, addNewReply, updateComment, updateReply } = mutators;
+
+  const backComments = useDiscussions(id, token, { last: 20 });
+  const {
+    data: _backData,
+    isError: isBackError,
+    isLoading: isBackLoading,
+    mutators: backMutators,
+  } = backComments;
+
+  const backData = _backData && _backData[_backData.length - 1];
+  const startCursor = backData?.pageInfo.startCursor;
+
+  const frontParams = {
+    first: startCursor ? 20 : 0,
+    before: startCursor,
+  };
+
+  const frontComments = useDiscussions(id, token, frontParams);
+  const {
+    data: frontData,
+    isError: isFrontError,
+    isLoading: isFrontLoading,
+    mutators: frontMutators,
+  } = frontComments;
+
+  const isError = isFrontError || isBackError;
+  const isLoading = isFrontLoading || isBackLoading;
+  const totalCount = backData?.totalCount + frontData?.reduce((prev, g) => prev + g.totalCount, 0);
 
   return (
     <div className="w-full text-gray-800">
@@ -21,38 +47,58 @@ export default function Giscussions({ id }: IGiscussionsProps) {
             ? 'Loading comments...'
             : isError
             ? 'An error occurred.'
-            : `${data[data.length - 1].totalCount} comment${
-                data[data.length - 1].totalCount !== 1 ? 's' : ''
-              }`}
+            : `${totalCount} comment${totalCount !== 1 ? 's' : ''}`}
         </h4>
       </div>
 
-      {data?.map((page) =>
-        page.comments.map((comment) => (
-          <Comment
-            key={comment.id}
-            comment={comment}
-            onCommentUpdate={updateComment}
-            onReplyUpdate={updateReply}
-          >
-            {token ? (
-              <CommentBox
-                discussionId={id}
-                onSubmit={addNewReply}
-                replyToId={comment.id}
-                viewer={page.viewer}
-              />
-            ) : null}
-          </Comment>
-        )),
-      )}
+      {!isLoading
+        ? frontData?.map((page) =>
+            page.comments.map((comment) => (
+              <Comment
+                key={comment.id}
+                comment={comment}
+                onCommentUpdate={frontMutators.updateComment}
+                onReplyUpdate={frontMutators.updateReply}
+              >
+                {token ? (
+                  <CommentBox
+                    discussionId={id}
+                    onSubmit={frontMutators.addNewReply}
+                    replyToId={comment.id}
+                    viewer={frontData && frontData[0].viewer}
+                  />
+                ) : null}
+              </Comment>
+            )),
+          )
+        : null}
+
+      {!isLoading
+        ? backData?.comments.map((comment) => (
+            <Comment
+              key={comment.id}
+              comment={comment}
+              onCommentUpdate={backMutators.updateComment}
+              onReplyUpdate={backMutators.updateReply}
+            >
+              {token ? (
+                <CommentBox
+                  discussionId={id}
+                  onSubmit={backMutators.addNewReply}
+                  replyToId={comment.id}
+                  viewer={backData?.viewer}
+                />
+              ) : null}
+            </Comment>
+          ))
+        : null}
 
       <div className="my-4 text-sm border-t-2"></div>
 
       <CommentBox
         discussionId={id}
-        onSubmit={addNewComment}
-        viewer={data && data[data.length - 1].viewer}
+        onSubmit={backMutators.addNewComment}
+        viewer={backData?.viewer}
       />
     </div>
   );

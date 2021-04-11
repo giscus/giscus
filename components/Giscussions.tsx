@@ -11,7 +11,7 @@ export interface IGiscussionsProps {
 export default function Giscussions({ id }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
 
-  const backComments = useDiscussions(id, token, { last: 20 });
+  const backComments = useDiscussions(id, token, { last: 15 });
   const {
     data: _backData,
     isError: isBackError,
@@ -25,7 +25,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
     startCursor.current = backData?.pageInfo.startCursor;
 
   const frontParams = {
-    first: startCursor.current ? 20 : 0,
+    first: startCursor.current ? 15 : 0,
     before: startCursor.current,
   };
 

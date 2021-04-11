@@ -38,6 +38,7 @@ export interface IComment extends IBaseComment {
 export interface IGiscussion {
   viewer: IUser;
   totalCount: number;
+  totalCountWithReplies: number;
   pageInfo: {
     startCursor: string;
     hasNextPage: boolean;

@@ -16,7 +16,11 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
     if (pageIndex === 0) return [`/api/discussions?${urlParams}`, headers];
     if (!previousPageData.pageInfo.hasNextPage) return null;
     const params = new URLSearchParams(
-      cleanParams({ id, after: previousPageData.pageInfo.endCursor }),
+      cleanParams({
+        id,
+        after: previousPageData.pageInfo.endCursor,
+        before: pagination.before,
+      }),
     );
     return [`/api/discussions?${params}`, headers];
   };

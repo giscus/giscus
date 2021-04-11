@@ -38,7 +38,9 @@ export function adaptDiscussion({
   viewer: GUser;
   discussion: GRepositoryDiscussion;
 }): IGiscussion {
-  const { comments: commentsData } = discussion;
+  const {
+    comments: { pageInfo, ...commentsData },
+  } = discussion;
 
   const totalCount = commentsData.nodes.reduce(
     (acc, comment) => acc + comment.replies.totalCount,
@@ -50,6 +52,7 @@ export function adaptDiscussion({
   return {
     viewer,
     totalCount,
+    pageInfo,
     comments,
   };
 }

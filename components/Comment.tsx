@@ -92,16 +92,16 @@ export default function Comment({
           </div>
           <div className="mb-4 mr-4">
             <span className="text-xs text-gray-500">
-              {comment.replyCount}&nbsp;{comment.replyCount === 1 ? 'reply' : 'replies'}
+              {comment.replies.length}&nbsp;{comment.replies.length === 1 ? 'reply' : 'replies'}
             </span>
           </div>
         </div>
-        {comment.replyCount > 0 ? (
+        {comment.replies.length > 0 ? (
           <div className="pt-2 bg-gray-500 border-t bg-opacity-5">
             {replies.map((reply) => (
               <Reply key={reply.id} reply={reply} onReplyUpdate={onReplyUpdate} />
             ))}
-            {page === 0 && comment.replyCount > 3 ? (
+            {page === 0 && comment.replies.length > 3 ? (
               <button
                 className="mb-2 ml-3 text-xs font-semibold text-blue-700 hover:underline"
                 onClick={() => setPage(page + 1)}

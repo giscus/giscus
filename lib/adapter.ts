@@ -44,7 +44,7 @@ export function adaptDiscussion({
 
   const totalCount = commentsData.nodes.reduce(
     (acc, comment) => acc + comment.replies.totalCount,
-    commentsData.totalCount,
+    commentsData.nodes.length,
   );
 
   const comments = commentsData.nodes.map(adaptComment);

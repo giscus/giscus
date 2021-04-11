@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { AuthContext } from '../lib/context';
 import { useDiscussions } from '../services/giscussions/discussions';
 import Comment from './Comment';
@@ -20,11 +20,13 @@ export default function Giscussions({ id }: IGiscussionsProps) {
   } = backComments;
 
   const backData = _backData && _backData[_backData.length - 1];
-  const startCursor = backData?.pageInfo.startCursor;
+  const startCursor = useRef('');
+  if (!startCursor.current && backData?.pageInfo.startCursor)
+    startCursor.current = backData?.pageInfo.startCursor;
 
   const frontParams = {
-    first: startCursor ? 20 : 0,
-    before: startCursor,
+    first: startCursor.current ? 20 : 0,
+    before: startCursor.current,
   };
 
   const frontComments = useDiscussions(id, token, frontParams);

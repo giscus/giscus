@@ -25,29 +25,29 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
 
   const addNewComment = useCallback(
     (comment: IComment) => {
-      const first = data.slice(0, data.length - 1);
-      const [last] = data.slice(-1);
-      return mutate([
-        ...first,
-        { ...last, totalCount: last.totalCount + 1, comments: [...last.comments, comment] },
-      ]);
+      const firstPage = data.slice(0, data.length - 1);
+      const [lastPage] = data.slice(-1);
+      mutate([...firstPage, { ...lastPage, comments: [...lastPage.comments, comment] }], false);
+      return mutate();
     },
     [data, mutate],
   );
 
   const addNewReply = useCallback(
-    (reply: IReply) =>
+    (reply: IReply) => {
       mutate(
         data.map((page) => ({
           ...page,
-          totalCount: page.totalCount + 1,
           comments: page.comments.map((comment) =>
             comment.id === reply.replyToId
               ? { ...comment, replies: [...comment.replies, reply] }
               : comment,
           ),
         })),
-      ),
+        false,
+      );
+      return mutate();
+    },
     [data, mutate],
   );
 

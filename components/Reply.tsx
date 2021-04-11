@@ -3,7 +3,7 @@ import ReactButtons from './ReactButtons';
 import { IReply } from '../lib/models/adapter';
 import { useCallback } from 'react';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
-import { formatDate, formatDateDistance } from '../lib/string';
+import { formatDate, formatDateDistance } from '../lib/utils';
 
 export interface IReplyProps {
   reply: IReply;

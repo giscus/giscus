@@ -38,5 +38,11 @@ export interface IComment extends IBaseComment {
 export interface IGiscussion {
   viewer: IUser;
   totalCount: number;
+  pageInfo: {
+    startCursor: string;
+    hasNextPage: boolean;
+    hasPreviousPage: boolean;
+    endCursor: string;
+  };
   comments: IComment[];
 }

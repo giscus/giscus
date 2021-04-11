@@ -46,6 +46,12 @@ export interface GRepositoryDiscussion {
   id: string;
   comments: {
     totalCount: number;
+    pageInfo: {
+      startCursor: string;
+      hasNextPage: boolean;
+      hasPreviousPage: boolean;
+      endCursor: string;
+    };
     nodes: GComment[];
   };
 }

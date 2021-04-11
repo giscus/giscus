@@ -15,6 +15,12 @@ const GET_DISCUSSION_QUERY = `
         id
         comments(first: 20) {
           totalCount
+          pageInfo {
+            startCursor
+            hasNextPage
+            hasPreviousPage
+            endCursor
+          }
           nodes {
             id
             upvoteCount

@@ -21,7 +21,10 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
     return [`/api/discussions?${params}`, headers];
   };
 
-  const { data, size, setSize, error, mutate } = useSWRInfinite<IGiscussion>(getKey, fetcher);
+  const { data, size, setSize, error, mutate, isValidating } = useSWRInfinite<IGiscussion>(
+    getKey,
+    fetcher,
+  );
 
   const addNewComment = useCallback(
     (comment: IComment) => {
@@ -90,6 +93,7 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
     data,
     size,
     setSize,
+    isValidating,
     isLoading: !error && !data,
     isError: !!error,
     mutators: { addNewComment, addNewReply, updateComment, updateReply },

@@ -1,9 +1,11 @@
+import { reduceParams } from '../../lib/fetcher';
+import { PaginationParams } from '../../lib/models/common';
 import { GUser, GRepositoryDiscussion } from '../../lib/models/github';
 import { getReadAccessToken } from './getReadAccessToken';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';
 
-const GET_DISCUSSION_QUERY = `
+const GET_DISCUSSION_QUERY = (pagination: PaginationParams) => `
   query($id: ID!) {
     viewer {
       avatarUrl
@@ -13,7 +15,7 @@ const GET_DISCUSSION_QUERY = `
     discussion: node(id: $id) {
       ... on Discussion {
         id
-        comments(first: 20) {
+        comments(${reduceParams({ ...pagination })}) {
           totalCount
           pageInfo {
             startCursor
@@ -74,7 +76,7 @@ const GET_DISCUSSION_QUERY = `
     }
   }`;
 
-export interface GetDiscussionParams {
+export interface GetDiscussionParams extends PaginationParams {
   id: string;
 }
 
@@ -89,6 +91,7 @@ export async function getDiscussion(
   params: GetDiscussionParams,
   token?: string,
 ): Promise<GetDiscussionResponse> {
+  const { id, ...pagination } = params;
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {
@@ -97,8 +100,8 @@ export async function getDiscussion(
     },
 
     body: JSON.stringify({
-      query: GET_DISCUSSION_QUERY,
-      variables: params,
+      query: GET_DISCUSSION_QUERY(pagination),
+      variables: { id },
     }),
   }).then((r) => r.json());
 }

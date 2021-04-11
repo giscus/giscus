@@ -9,7 +9,16 @@ export default async (
 ) => {
   const token = req.headers.authorization?.split('Bearer ')[1];
 
-  const params = { id: req.query.id as string };
+  const params = {
+    id: req.query.id as string,
+    first: +req.query.first,
+    last: +req.query.last,
+    after: req.query.after as string,
+    before: req.query.before as string,
+  };
+  if (!params.last && !params.first) {
+    params.first = 20;
+  }
 
   const { data } = await getDiscussion(params, token);
   const adapted = adaptDiscussion(data);

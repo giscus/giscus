@@ -39,7 +39,9 @@ export default function Giscussions({ id }: IGiscussionsProps) {
 
   const isError = isFrontError || isBackError;
   const isLoading = isFrontLoading || isBackLoading;
-  const totalCount = backData?.totalCount + frontData?.reduce((prev, g) => prev + g.totalCount, 0);
+  const totalCountWithReplies =
+    backData?.totalCountWithReplies +
+    frontData?.reduce((prev, g) => prev + g.totalCountWithReplies, 0);
 
   return (
     <div className="w-full text-gray-800">
@@ -49,7 +51,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
             ? 'Loading comments...'
             : isError
             ? 'An error occurred.'
-            : `${totalCount} comment${totalCount !== 1 ? 's' : ''}`}
+            : `${totalCountWithReplies} comment${totalCountWithReplies !== 1 ? 's' : ''}`}
         </h4>
       </div>
 

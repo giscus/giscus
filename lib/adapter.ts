@@ -39,10 +39,10 @@ export function adaptDiscussion({
   discussion: GRepositoryDiscussion;
 }): IGiscussion {
   const {
-    comments: { pageInfo, ...commentsData },
+    comments: { pageInfo, totalCount, ...commentsData },
   } = discussion;
 
-  const totalCount = commentsData.nodes.reduce(
+  const totalCountWithReplies = commentsData.nodes.reduce(
     (acc, comment) => acc + comment.replies.totalCount,
     commentsData.nodes.length,
   );
@@ -52,6 +52,7 @@ export function adaptDiscussion({
   return {
     viewer,
     totalCount,
+    totalCountWithReplies,
     pageInfo,
     comments,
   };

@@ -59,7 +59,9 @@ export default function Giscussions({ id }: IGiscussionsProps) {
             ? 'Loading comments...'
             : isError
             ? 'An error occurred.'
-            : `${totalCountWithReplies} comment${totalCountWithReplies !== 1 ? 's' : ''}`}
+            : `${totalCountWithReplies}${numHidden > 0 ? '+' : ''} comment${
+                totalCountWithReplies !== 1 ? 's' : ''
+              }`}
         </h4>
       </div>
 

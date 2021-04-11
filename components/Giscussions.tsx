@@ -21,31 +21,39 @@ export default function Giscussions({ id }: IGiscussionsProps) {
             ? 'Loading comments...'
             : isError
             ? 'An error occurred.'
-            : `${data.totalCount} comment${data.totalCount !== 1 ? 's' : ''}`}
+            : `${data[data.length - 1].totalCount} comment${
+                data[data.length - 1].totalCount !== 1 ? 's' : ''
+              }`}
         </h4>
       </div>
 
-      {data?.comments?.map((comment) => (
-        <Comment
-          key={comment.id}
-          comment={comment}
-          onCommentUpdate={updateComment}
-          onReplyUpdate={updateReply}
-        >
-          {token ? (
-            <CommentBox
-              discussionId={id}
-              onSubmit={addNewReply}
-              replyToId={comment.id}
-              viewer={data.viewer}
-            />
-          ) : null}
-        </Comment>
-      ))}
+      {data?.map((page) =>
+        page.comments.map((comment) => (
+          <Comment
+            key={comment.id}
+            comment={comment}
+            onCommentUpdate={updateComment}
+            onReplyUpdate={updateReply}
+          >
+            {token ? (
+              <CommentBox
+                discussionId={id}
+                onSubmit={addNewReply}
+                replyToId={comment.id}
+                viewer={page.viewer}
+              />
+            ) : null}
+          </Comment>
+        )),
+      )}
 
       <div className="my-4 text-sm border-t-2"></div>
 
-      <CommentBox discussionId={id} onSubmit={addNewComment} viewer={data?.viewer} />
+      <CommentBox
+        discussionId={id}
+        onSubmit={addNewComment}
+        viewer={data && data[data.length - 1].viewer}
+      />
     </div>
   );
 }

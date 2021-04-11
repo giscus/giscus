@@ -34,8 +34,16 @@ export default function Giscussions({ id }: IGiscussionsProps) {
     data: frontData,
     isError: isFrontError,
     isLoading: isFrontLoading,
+    isValidating: isFrontValidating,
     mutators: frontMutators,
+    size,
+    setSize,
   } = frontComments;
+
+  const numHidden =
+    backData?.totalCount -
+    backData?.comments.length -
+    frontData?.reduce((prev, g) => prev + g.comments.length, 0);
 
   const isError = isFrontError || isBackError;
   const isLoading = isFrontLoading || isBackLoading;
@@ -76,6 +84,28 @@ export default function Giscussions({ id }: IGiscussionsProps) {
             )),
           )
         : null}
+
+      {numHidden > 0 ? (
+        <div className="flex justify-center py-2 my-4 bg-center bg-repeat-x zigzag">
+          <style jsx>{`
+            .zigzag {
+              background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg);
+            }
+          `}</style>
+          <button
+            className="flex flex-col items-center px-6 py-2 text-sm bg-white border rounded"
+            onClick={() => setSize(size + 1)}
+            disabled={isFrontValidating}
+          >
+            <span>
+              {numHidden} hidden item{numHidden !== 1 ? 's' : ''}
+            </span>
+            <span className="font-semibold text-blue-700">
+              {isFrontValidating ? 'Loading' : 'Load more'}...
+            </span>
+          </button>
+        </div>
+      ) : null}
 
       {!isLoading
         ? backData?.comments.map((comment) => (

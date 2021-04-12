@@ -15,7 +15,7 @@ const ADD_DISCUSSION_COMMENT_QUERY = `
         createdAt
         url
         authorAssociation
-        includesCreatedEdit
+        lastEditedAt
         bodyHTML
         reactionGroups {
           content
@@ -36,7 +36,7 @@ const ADD_DISCUSSION_COMMENT_QUERY = `
             createdAt
             url
             authorAssociation
-            includesCreatedEdit
+            lastEditedAt
             bodyHTML
             reactionGroups {
               content

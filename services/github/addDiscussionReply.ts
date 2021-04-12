@@ -15,7 +15,7 @@ const ADD_DISCUSSION_REPLY_QUERY = `
         createdAt
         url
         authorAssociation
-        includesCreatedEdit
+        lastEditedAt
         bodyHTML
         reactionGroups {
           content

@@ -20,6 +20,8 @@ interface IBaseComment {
   url: string;
   authorAssociation: string;
   lastEditedAt: string | null;
+  deletedAt: string | null;
+  isMinimized: boolean;
   bodyHTML: string;
   reactions: IReactionGroups;
 }

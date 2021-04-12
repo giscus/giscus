@@ -16,6 +16,8 @@ const ADD_DISCUSSION_COMMENT_QUERY = `
         url
         authorAssociation
         lastEditedAt
+        deletedAt
+        isMinimized
         bodyHTML
         reactionGroups {
           content
@@ -37,6 +39,8 @@ const ADD_DISCUSSION_COMMENT_QUERY = `
             url
             authorAssociation
             lastEditedAt
+            deletedAt
+            isMinimized
             bodyHTML
             reactionGroups {
               content

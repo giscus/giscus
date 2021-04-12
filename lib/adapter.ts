@@ -1,5 +1,12 @@
 import { IComment, IGiscussion, IReactionGroups, IReply } from './models/adapter';
-import { GComment, GReactionGroup, GReply, GRepositoryDiscussion, GUser } from './models/github';
+import {
+  GComment,
+  GCommentAuthorAssociation,
+  GReactionGroup,
+  GReply,
+  GRepositoryDiscussion,
+  GUser,
+} from './models/github';
 
 export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups {
   return reactionGroups.reduce((acc, group) => {
@@ -11,24 +18,31 @@ export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReaction
   }, {}) as IReactionGroups;
 }
 
+export function adaptAuthorAssociation(association: GCommentAuthorAssociation) {
+  return association.toLowerCase().replace('_', ' ');
+}
+
 export function adaptReply(reply: GReply): IReply {
   const {
     reactionGroups,
     replyTo: { id: replyToId },
+    authorAssociation: association,
     ...rest
   } = reply;
+  const authorAssociation = adaptAuthorAssociation(association);
   const reactions = adaptReactionGroups(reactionGroups);
-  return { ...rest, reactions, replyToId };
+  return { ...rest, authorAssociation, reactions, replyToId };
 }
 
 export function adaptComment(comment: GComment): IComment {
-  const { replies: repliesData, reactionGroups, ...rest } = comment;
+  const { replies: repliesData, reactionGroups, authorAssociation: association, ...rest } = comment;
   const { totalCount: replyCount, nodes: replyNodes } = repliesData;
 
+  const authorAssociation = adaptAuthorAssociation(association);
   const reactions = adaptReactionGroups(reactionGroups);
   const replies = replyNodes.map(adaptReply);
 
-  return { ...rest, replyCount, reactions, replies };
+  return { ...rest, authorAssociation, replyCount, reactions, replies };
 }
 
 export function adaptDiscussion({

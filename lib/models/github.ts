@@ -32,6 +32,7 @@ interface GBaseComment {
   createdAt: string;
   url: string;
   authorAssociation: GCommentAuthorAssociation;
+  lastEditedAt: string | null;
   bodyHTML: string;
   reactionGroups: GReactionGroup[];
 }

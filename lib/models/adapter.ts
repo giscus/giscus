@@ -19,7 +19,7 @@ interface IBaseComment {
   createdAt: string;
   url: string;
   authorAssociation: string;
-  lastEditedAt: string;
+  lastEditedAt: string | null;
   bodyHTML: string;
   reactions: IReactionGroups;
 }

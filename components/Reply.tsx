@@ -17,6 +17,8 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
     [reply, onReplyUpdate],
   );
 
+  const hidden = reply.deletedAt || reply.isMinimized;
+
   return (
     <div className="relative gsc-reply">
       <div className="w-[2px] flex-shrink-0 bg-gray-500 bg-opacity-10 absolute left-[30px] h-full top-0 gsc-tl-line">
@@ -29,7 +31,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
           `}
         </style>
       </div>
-      <div className="flex py-2 pl-4">
+      <div className={`flex py-2 pl-4 ${hidden ? 'items-center' : ''}`}>
         <div className="z-10 flex-shrink-0">
           <a href={reply.author.url} className="flex items-center">
             <img
@@ -42,54 +44,62 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
           </a>
         </div>
         <div className="w-full min-w-0 ml-2">
-          <div className="flex">
-            <h3 className="flex items-start flex-auto">
-              <a href={reply.author.url} className="flex items-center">
-                <span className="font-semibold">{reply.author.login}</span>
-              </a>
-              <a href={reply.url} className="ml-2 text-gray-500">
-                <div className="whitespace-nowrap" title={formatDate(reply.createdAt)}>
-                  {formatDateDistance(reply.createdAt)}
+          {!hidden ? (
+            <div className="flex">
+              <h3 className="flex items-start flex-auto">
+                <a href={reply.author.url} className="flex items-center">
+                  <span className="font-semibold">{reply.author.login}</span>
+                </a>
+                <a href={reply.url} className="ml-2 text-gray-500">
+                  <div className="whitespace-nowrap" title={formatDate(reply.createdAt)}>
+                    {formatDateDistance(reply.createdAt)}
+                  </div>
+                </a>
+                <div className="hidden ml-2 text-xs sm:inline-flex">
+                  <span className="px-1 ml-1 capitalize border border-blue-400 rounded-md border-opacity-30">
+                    {reply.authorAssociation}
+                  </span>
                 </div>
-              </a>
-              <div className="hidden ml-2 text-xs sm:inline-flex">
-                <span className="px-1 ml-1 capitalize border border-blue-400 rounded-md border-opacity-30">
-                  {reply.authorAssociation}
-                </span>
-              </div>
-            </h3>
-            <div className="flex pr-4">
-              {reply.lastEditedAt ? (
-                <button
-                  className="hidden mr-2 text-gray-600 sm:inline-block"
-                  title={`Last edited at ${formatDate(reply.lastEditedAt)}`}
-                >
-                  edited
+              </h3>
+              <div className="flex pr-4">
+                {reply.lastEditedAt ? (
+                  <button
+                    className="hidden mr-2 text-gray-600 sm:inline-block"
+                    title={`Last edited at ${formatDate(reply.lastEditedAt)}`}
+                  >
+                    edited
+                  </button>
+                ) : null}
+                <ReactButtons
+                  reactionGroups={reply.reactions}
+                  subjectId={reply.id}
+                  variant="popoverOnly"
+                  onReact={updateReactions}
+                />
+                <button className="hidden text-gray-500 hover:text-blue-600 sm:inline-block">
+                  <KebabHorizontalIcon />
                 </button>
-              ) : null}
+              </div>
+            </div>
+          ) : null}
+          <div
+            className={`w-full pr-4 markdown ${!hidden ? 'pb-2' : ''}`}
+            dangerouslySetInnerHTML={hidden ? undefined : { __html: reply.bodyHTML }}
+          >
+            <em className="text-gray-500">
+              This comment {reply.deletedAt ? 'was deleted' : 'has been hidden'}.
+            </em>
+          </div>
+          {!hidden ? (
+            <div className="flex content-center mr-4">
               <ReactButtons
                 reactionGroups={reply.reactions}
                 subjectId={reply.id}
-                variant="popoverOnly"
+                variant="groupsOnly"
                 onReact={updateReactions}
               />
-              <button className="hidden text-gray-500 hover:text-blue-600 sm:inline-block">
-                <KebabHorizontalIcon />
-              </button>
             </div>
-          </div>
-          <div
-            className="w-full pb-2 pr-4 markdown"
-            dangerouslySetInnerHTML={{ __html: reply.bodyHTML }}
-          ></div>
-          <div className="flex content-center mr-4">
-            <ReactButtons
-              reactionGroups={reply.reactions}
-              subjectId={reply.id}
-              variant="groupsOnly"
-              onReact={updateReactions}
-            />
-          </div>
+          ) : null}
         </div>
       </div>
     </div>

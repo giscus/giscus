@@ -63,7 +63,7 @@ export default function Comment({
             </a>
             <div className="hidden ml-2 text-xs sm:inline-flex">
               <span className="px-1 ml-1 capitalize border border-blue-400 rounded-md border-opacity-30">
-                {comment.authorAssociation.toLowerCase()}
+                {comment.authorAssociation}
               </span>
             </div>
           </h3>

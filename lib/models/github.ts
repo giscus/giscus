@@ -8,6 +8,16 @@ export interface GUser {
 
 export type GRepositoryDiscussionAuthor = GUser;
 
+export type GCommentAuthorAssociation =
+  | 'COLLABORATOR'
+  | 'CONTRIBUTOR'
+  | 'FIRST_TIMER'
+  | 'FIRST_TIME_CONTRIBUTOR'
+  | 'MANNEQUIN'
+  | 'MEMBER'
+  | 'NONE'
+  | 'OWNER';
+
 export interface GReactionGroup {
   content: keyof typeof Reactions;
   users: {
@@ -21,8 +31,7 @@ interface GBaseComment {
   author: GRepositoryDiscussionAuthor;
   createdAt: string;
   url: string;
-  authorAssociation: string;
-  lastEditedAt: string;
+  authorAssociation: GCommentAuthorAssociation;
   bodyHTML: string;
   reactionGroups: GReactionGroup[];
 }

@@ -16,6 +16,8 @@ const ADD_DISCUSSION_REPLY_QUERY = `
         url
         authorAssociation
         lastEditedAt
+        deletedAt
+        isMinimized
         bodyHTML
         reactionGroups {
           content

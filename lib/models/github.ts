@@ -33,6 +33,8 @@ interface GBaseComment {
   url: string;
   authorAssociation: GCommentAuthorAssociation;
   lastEditedAt: string | null;
+  deletedAt: string | null;
+  isMinimized: boolean;
   bodyHTML: string;
   reactionGroups: GReactionGroup[];
 }

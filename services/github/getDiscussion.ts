@@ -36,6 +36,8 @@ const GET_DISCUSSION_QUERY = (pagination: PaginationParams) => `
             url
             authorAssociation
             lastEditedAt
+            deletedAt
+            isMinimized
             bodyHTML
             reactionGroups {
               content
@@ -57,6 +59,8 @@ const GET_DISCUSSION_QUERY = (pagination: PaginationParams) => `
                 url
                 authorAssociation
                 lastEditedAt
+                deletedAt
+                isMinimized
                 bodyHTML
                 reactionGroups {
                   content

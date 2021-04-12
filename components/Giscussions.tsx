@@ -88,12 +88,13 @@ export default function Giscussions({ id }: IGiscussionsProps) {
         : null}
 
       {numHidden > 0 ? (
-        <div className="flex justify-center py-2 my-4 bg-center bg-repeat-x zigzag">
-          <style jsx>{`
-            .zigzag {
-              background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg);
-            }
-          `}</style>
+        <div
+          className="flex justify-center py-2 my-4 bg-center bg-repeat-x"
+          style={{
+            backgroundImage:
+              'url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg)',
+          }}
+        >
           <button
             className="flex flex-col items-center px-6 py-2 text-sm bg-white border rounded"
             onClick={() => setSize(size + 1)}

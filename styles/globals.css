@@ -120,7 +120,7 @@ a:hover {
 
 .markdown ul,
 .markdown ol {
-  @apply pl-8;
+  @apply pl-[2em];
 }
 
 .markdown ul {
@@ -133,6 +133,15 @@ a:hover {
 
 .markdown ul ul ul {
   list-style-type: square;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.task-list-item-checkbox {
+  @apply align-middle;
+  margin: 0 0.2em 0.25em -1.6em;
 }
 
 .markdown ol {

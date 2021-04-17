@@ -4,6 +4,6 @@ export async function renderMarkdown(text: string, token?: string) {
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: token ? { Authorization: `token ${token}` } : {},
-    body: JSON.stringify({ text }),
+    body: JSON.stringify({ mode: 'gfm', text }),
   }).then((r) => r.text());
 }

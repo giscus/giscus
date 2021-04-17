@@ -1468,6 +1468,11 @@ get-orientation@1.1.2:
   dependencies:
     stream-parser "^0.3.1"
 
+github-syntax-light@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/github-syntax-light/-/github-syntax-light-0.5.0.tgz#17466fdd3c08d756ce3f016ed18a2a1343ce0729"
+  integrity sha1-F0Zv3TwI11bOPwFu0YoqE0POByk=
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"

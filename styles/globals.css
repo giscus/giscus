@@ -75,6 +75,19 @@ a:hover {
   @apply px-1 py-[2px] rounded-md;
 }
 
+.markdown table th,
+.markdown table td {
+  @apply px-3 py-[6px] border;
+}
+
+.markdown table th {
+  @apply font-semibold;
+}
+
+.markdown table tr:nth-child(2n) {
+  @apply bg-gray-500 bg-opacity-5;
+}
+
 .markdown blockquote {
   @apply px-4 border-l-[3px] text-gray-500;
 }

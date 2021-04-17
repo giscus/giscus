@@ -89,6 +89,17 @@ a:hover {
   @apply mb-4;
 }
 
+.markdown li + li {
+  @apply mt-1;
+}
+
+.markdown ol ol,
+.markdown ol ul,
+.markdown ul ol,
+.markdown ul ul {
+  @apply my-0;
+}
+
 .markdown ul,
 .markdown ol {
   @apply pl-8;

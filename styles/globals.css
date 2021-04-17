@@ -47,6 +47,19 @@ a:hover {
   @apply mb-4;
 }
 
+.markdown ul,
+.markdown ol {
+  @apply pl-8;
+}
+
+.markdown ul {
+  @apply list-disc;
+}
+
+.markdown ol {
+  @apply list-decimal;
+}
+
 .markdown > :last-child {
   @apply mb-0;
 }

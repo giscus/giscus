@@ -60,6 +60,10 @@ a:hover {
   @apply list-decimal;
 }
 
+.markdown kbd {
+  @apply px-[5px] py-[3px] text-[11px] align-middle border rounded-md shadow bg-gray-400 bg-opacity-5 text-gray-700;
+}
+
 .markdown > :last-child {
   @apply mb-0;
 }

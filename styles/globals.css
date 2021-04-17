@@ -18,6 +18,44 @@ a:hover {
   @apply font-semibold;
 }
 
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply mt-6 mb-4 font-semibold;
+}
+
+.markdown h1,
+.markdown h2 {
+  @apply pb-2 border-b;
+}
+
+.markdown h1 {
+  @apply text-3xl;
+}
+
+.markdown h2 {
+  @apply text-2xl;
+}
+
+.markdown h3 {
+  @apply text-xl;
+}
+
+.markdown h4 {
+  @apply text-base;
+}
+
+.markdown h5 {
+  @apply text-sm;
+}
+
+.markdown h6 {
+  @apply text-xs text-gray-500;
+}
+
 .markdown pre {
   line-height: 1.45;
   @apply p-4 overflow-auto rounded-md;

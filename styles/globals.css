@@ -107,6 +107,10 @@ a:hover {
   @apply mt-1;
 }
 
+.markdown li > p {
+  @apply mt-4;
+}
+
 .markdown ol ol,
 .markdown ol ul,
 .markdown ul ol,
@@ -121,6 +125,14 @@ a:hover {
 
 .markdown ul {
   @apply list-disc;
+}
+
+.markdown ul ul {
+  list-style-type: circle;
+}
+
+.markdown ul ul ul {
+  list-style-type: square;
 }
 
 .markdown ol {

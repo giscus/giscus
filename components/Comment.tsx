@@ -1,12 +1,14 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
-import { ReactElement, ReactNode, useCallback, useState } from 'react';
+import { ReactElement, ReactNode, useCallback, useContext, useState } from 'react';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { IComment, IReply } from '../lib/types/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
+import { toggleUpvote } from '../services/github/toggleUpvote';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
 import Reply from './Reply';
+import { AuthContext } from '../lib/context';
 
 interface ICommentProps {
   children?: ReactNode;
@@ -25,6 +27,7 @@ export default function Comment({
 }: ICommentProps) {
   const [page, setPage] = useState(0);
   const replies = comment.replies.slice(0, page === 0 ? 3 : undefined);
+  const { token } = useContext(AuthContext);
 
   const updateReactions = useCallback(
     (reaction: Reactions, promise: Promise<unknown>) =>
@@ -33,6 +36,27 @@ export default function Comment({
   );
 
   const incrementPage = () => page < 1 && setPage(page + 1);
+
+  const upvote = useCallback(() => {
+    const upvoteCount = comment.viewerHasUpvoted
+      ? comment.upvoteCount - 1
+      : comment.upvoteCount + 1;
+
+    const promise = toggleUpvote(
+      { upvoteInput: { subjectId: comment.id } },
+      token,
+      comment.viewerHasUpvoted,
+    );
+
+    onCommentUpdate(
+      {
+        ...comment,
+        upvoteCount,
+        viewerHasUpvoted: !comment.viewerHasUpvoted,
+      },
+      promise,
+    );
+  }, [comment, onCommentUpdate, token]);
 
   const hidden = comment.deletedAt || comment.isMinimized;
 
@@ -44,6 +68,8 @@ export default function Comment({
             <button
               type="button"
               className={`${comment.viewerHasUpvoted ? 'color-text-link' : 'color-text-secondary'}`}
+              onClick={upvote}
+              disabled={!token}
             >
               <ArrowUpIcon className="transform hover:translate-y-[-10%] transition-transform ease-in-out duration-150" />
             </button>

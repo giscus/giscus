@@ -61,6 +61,7 @@ a:hover {
   @apply p-4 overflow-auto rounded-md;
 }
 
+.markdown pre,
 .markdown code {
   @apply text-xs;
 }

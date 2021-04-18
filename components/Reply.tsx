@@ -55,11 +55,13 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                     {formatDateDistance(reply.createdAt)}
                   </div>
                 </a>
-                <div className="hidden ml-2 text-xs sm:inline-flex">
-                  <span className="px-1 ml-1 capitalize border border-blue-400 rounded-md border-opacity-30">
-                    {reply.authorAssociation}
-                  </span>
-                </div>
+                {reply.authorAssociation ? (
+                  <div className="hidden ml-2 text-xs sm:inline-flex">
+                    <span className="px-1 ml-1 capitalize border border-blue-400 rounded-md border-opacity-30">
+                      {reply.authorAssociation}
+                    </span>
+                  </div>
+                ) : null}
               </h3>
               <div className="flex pr-4">
                 {reply.lastEditedAt ? (

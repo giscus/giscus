@@ -19,7 +19,7 @@ export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReaction
 }
 
 export function adaptAuthorAssociation(association: GCommentAuthorAssociation) {
-  return association.toLowerCase().replace('_', ' ');
+  return association === 'NONE' ? '' : association.toLowerCase().replace('_', ' ');
 }
 
 export function adaptReply(reply: GReply): IReply {

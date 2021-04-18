@@ -53,6 +53,7 @@ export function adaptDiscussion({
   discussion: GRepositoryDiscussion;
 }): IGiscussion {
   const {
+    repository,
     comments: { pageInfo, totalCount, ...commentsData },
   } = discussion;
 
@@ -68,6 +69,7 @@ export function adaptDiscussion({
     totalCount,
     totalCountWithReplies,
     pageInfo,
+    repository,
     comments,
   };
 }

@@ -66,11 +66,13 @@ export default function Comment({
                   {formatDateDistance(comment.createdAt)}
                 </div>
               </a>
-              <div className="hidden ml-2 text-xs sm:inline-flex">
-                <span className="px-1 ml-1 capitalize border border-blue-400 rounded-md border-opacity-30">
-                  {comment.authorAssociation}
-                </span>
-              </div>
+              {comment.authorAssociation ? (
+                <div className="hidden ml-2 text-xs sm:inline-flex">
+                  <span className="px-1 ml-1 capitalize border border-blue-400 rounded-md border-opacity-30">
+                    {comment.authorAssociation}
+                  </span>
+                </div>
+              ) : null}
             </h3>
             <div className="flex">
               {comment.lastEditedAt ? (

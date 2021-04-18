@@ -15,6 +15,9 @@ const GET_DISCUSSION_QUERY = (pagination: PaginationParams) => `
     discussion: node(id: $id) {
       ... on Discussion {
         id
+        repository {
+          nameWithOwner
+        }
         comments(${reduceParams({ ...pagination })}) {
           totalCount
           pageInfo {

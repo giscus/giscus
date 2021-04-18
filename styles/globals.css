@@ -165,3 +165,75 @@ a:hover {
 .markdown > :first-child {
   @apply mt-0;
 }
+
+/* GitHub Primer stuff */
+
+.markdown .rounded-1 {
+  @apply rounded-md;
+}
+
+.markdown .border-bottom {
+  @apply border-b;
+}
+
+.markdown .color-bg-secondary {
+  @apply bg-gray-400 bg-opacity-5;
+}
+
+.markdown .lh-condensed {
+  line-height: 1.25;
+}
+
+.markdown .f6 {
+  @apply text-xs;
+}
+
+.markdown .text-bold {
+  @apply font-semibold;
+}
+
+.markdown .color-text-tertiary {
+  @apply text-gray-500;
+}
+
+.markdown .commit-tease-sha {
+  @apply font-mono text-gray-600;
+  font-size: 90%;
+}
+
+.markdown .mb-0 {
+  @apply mb-0;
+}
+
+.markdown .py-0 {
+  @apply py-0;
+}
+
+.markdown .border-0 {
+  @apply border-none;
+}
+
+.markdown .blob-wrapper {
+  @apply overflow-x-auto overflow-y-hidden;
+}
+
+.markdown .blob-wrapper-embedded {
+  @apply max-h-[240px] overflow-y-auto;
+}
+
+.markdown .blob-num {
+  @apply w-[1%] min-w-[50px] px-[10px] font-mono text-xs leading-5 text-gray-400 text-right whitespace-nowrap align-top cursor-pointer select-none;
+}
+
+.markdown .blob-num:before {
+  content: attr(data-line-number);
+}
+
+.markdown .blob-code-inner {
+  @apply overflow-visible font-mono text-xs whitespace-pre;
+  word-wrap: normal;
+}
+
+.blob-wrapper table tr:nth-child(2n) {
+  background-color: initial;
+}

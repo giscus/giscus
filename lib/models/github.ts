@@ -56,6 +56,9 @@ export interface GComment extends GBaseComment {
 
 export interface GRepositoryDiscussion {
   id: string;
+  repository: {
+    nameWithOwner: string;
+  };
   comments: {
     totalCount: number;
     pageInfo: {

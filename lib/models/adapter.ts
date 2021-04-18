@@ -47,5 +47,8 @@ export interface IGiscussion {
     hasPreviousPage: boolean;
     endCursor: string;
   };
+  repository: {
+    nameWithOwner: string;
+  };
   comments: IComment[];
 }

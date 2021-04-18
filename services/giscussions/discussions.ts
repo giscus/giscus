@@ -2,10 +2,14 @@ import { useCallback, useMemo } from 'react';
 import { useSWRInfinite } from 'swr';
 import { cleanParams, fetcher } from '../../lib/fetcher';
 import { IComment, IGiscussion, IReply } from '../../lib/models/adapter';
-import { PaginationParams } from '../../lib/models/common';
+import { DiscussionQuery, PaginationParams } from '../../lib/models/common';
 
-export function useDiscussions(id: string, token?: string, pagination: PaginationParams = {}) {
-  const urlParams = new URLSearchParams(cleanParams({ id, ...pagination }));
+export function useDiscussions(
+  query: DiscussionQuery,
+  token?: string,
+  pagination: PaginationParams = {},
+) {
+  const urlParams = new URLSearchParams(cleanParams({ ...query, ...pagination }));
 
   const headers = useMemo(() => {
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
@@ -14,11 +18,11 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
 
   const getKey = (pageIndex: number, previousPageData?: IGiscussion) => {
     if (pageIndex === 0) return [`/api/discussions?${urlParams}`, headers];
-    if (!previousPageData.pageInfo.hasNextPage) return null;
+    if (!previousPageData.discussion.pageInfo.hasNextPage) return null;
     const params = new URLSearchParams(
       cleanParams({
-        id,
-        after: previousPageData.pageInfo.endCursor,
+        ...query,
+        after: previousPageData.discussion.pageInfo.endCursor,
         before: pagination.before,
       }),
     );
@@ -34,7 +38,19 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
     (comment: IComment) => {
       const firstPage = data.slice(0, data.length - 1);
       const [lastPage] = data.slice(-1);
-      mutate([...firstPage, { ...lastPage, comments: [...lastPage.comments, comment] }], false);
+      mutate(
+        [
+          ...firstPage,
+          {
+            ...lastPage,
+            discussion: {
+              ...lastPage.discussion,
+              comments: [...lastPage.discussion.comments, comment],
+            },
+          },
+        ],
+        false,
+      );
       return mutate();
     },
     [data, mutate],
@@ -45,7 +61,7 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
       mutate(
         data.map((page) => ({
           ...page,
-          comments: page.comments.map((comment) =>
+          comments: page.discussion.comments.map((comment) =>
             comment.id === reply.replyToId
               ? { ...comment, replies: [...comment.replies, reply] }
               : comment,
@@ -63,7 +79,7 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
       mutate(
         data.map((page) => ({
           ...page,
-          comments: page.comments.map((comment) =>
+          comments: page.discussion.comments.map((comment) =>
             comment.id === newComment.id ? newComment : comment,
           ),
         })),
@@ -77,7 +93,7 @@ export function useDiscussions(id: string, token?: string, pagination: Paginatio
       mutate(
         data.map((page) => ({
           ...page,
-          comments: page.comments.map((comment) =>
+          comments: page.discussion.comments.map((comment) =>
             comment.id === newReply.replyToId
               ? {
                   ...comment,

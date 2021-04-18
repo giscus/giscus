@@ -39,16 +39,19 @@ export interface IComment extends IBaseComment {
 
 export interface IGiscussion {
   viewer: IUser;
-  totalCount: number;
-  totalCountWithReplies: number;
-  pageInfo: {
-    startCursor: string;
-    hasNextPage: boolean;
-    hasPreviousPage: boolean;
-    endCursor: string;
+  discussion: {
+    id: string;
+    totalCount: number;
+    totalCountWithReplies: number;
+    pageInfo: {
+      startCursor: string;
+      hasNextPage: boolean;
+      hasPreviousPage: boolean;
+      endCursor: string;
+    };
+    repository: {
+      nameWithOwner: string;
+    };
+    comments: IComment[];
   };
-  repository: {
-    nameWithOwner: string;
-  };
-  comments: IComment[];
 }

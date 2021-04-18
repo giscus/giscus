@@ -10,12 +10,19 @@ import { renderMarkdown } from '../services/github/markdown';
 
 export interface CommentBoxProps {
   discussionId: string;
+  context?: string;
   replyToId?: string;
   onSubmit: (comment: IComment | IReply) => void;
   viewer?: IUser;
 }
 
-export default function CommentBox({ viewer, discussionId, replyToId, onSubmit }: CommentBoxProps) {
+export default function CommentBox({
+  viewer,
+  discussionId,
+  context,
+  replyToId,
+  onSubmit,
+}: CommentBoxProps) {
   const [isPreview, setIsPreview] = useState(false);
   const [input, setInput] = useState('');
   const [lastInput, setLastInput] = useState('');
@@ -32,14 +39,14 @@ export default function CommentBox({ viewer, discussionId, replyToId, onSubmit }
     if (isPreview && input !== lastInput) {
       if (input) {
         setIsLoading(true);
-        renderMarkdown(input, token).then((value) => {
+        renderMarkdown(input, token, context).then((value) => {
           setPreview(value);
           setIsLoading(false);
         });
       }
       setLastInput(input);
     }
-  }, [isPreview, input, lastInput, token]);
+  }, [isPreview, input, lastInput, token, context]);
 
   const reset = useCallback(() => {
     setInput('');

@@ -51,6 +51,8 @@ export default function Giscussions({ id }: IGiscussionsProps) {
     backData?.totalCountWithReplies +
     frontData?.reduce((prev, g) => prev + g.totalCountWithReplies, 0);
 
+  const context = backData?.repository?.nameWithOwner;
+
   return (
     <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
@@ -121,6 +123,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
               {token ? (
                 <CommentBox
                   discussionId={id}
+                  context={context}
                   onSubmit={backMutators.addNewReply}
                   replyToId={comment.id}
                   viewer={backData?.viewer}
@@ -134,6 +137,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
 
       <CommentBox
         discussionId={id}
+        context={context}
         onSubmit={backMutators.addNewComment}
         viewer={backData?.viewer}
       />

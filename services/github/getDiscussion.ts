@@ -1,79 +1,81 @@
-import { reduceParams } from '../../lib/fetcher';
-import { PaginationParams } from '../../lib/models/common';
+import { DiscussionQuery, PaginationParams } from '../../lib/models/common';
 import { GUser, GRepositoryDiscussion } from '../../lib/models/github';
 import { getReadAccessToken } from './getReadAccessToken';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';
 
-const GET_DISCUSSION_QUERY = (pagination: PaginationParams) => `
-  query($id: ID!) {
+const GET_DISCUSSION_QUERY = `
+  query($query: String! $first: Int $last: Int $after: String $before: String) {
     viewer {
       avatarUrl
       login
       url
     }
-    discussion: node(id: $id) {
-      ... on Discussion {
-        id
-        repository {
-          nameWithOwner
-        }
-        comments(${reduceParams({ ...pagination })}) {
-          totalCount
-          pageInfo {
-            startCursor
-            hasNextPage
-            hasPreviousPage
-            endCursor
+    search(type: DISCUSSION first: 1 query: $query) {
+      discussionCount
+      nodes {
+        ... on Discussion {
+          id
+          repository {
+            nameWithOwner
           }
-          nodes {
-            id
-            upvoteCount
-            viewerHasUpvoted
-            author {
-              avatarUrl
-              login
-              url
+          comments(first: $first last: $last after: $after before: $before) {
+            totalCount
+            pageInfo {
+              startCursor
+              hasNextPage
+              hasPreviousPage
+              endCursor
             }
-            createdAt
-            url
-            authorAssociation
-            lastEditedAt
-            deletedAt
-            isMinimized
-            bodyHTML
-            reactionGroups {
-              content
-              users {
-                totalCount
-              }
-              viewerHasReacted
-            }
-            replies(first: 100) {
-              totalCount
-              nodes {
-                id
-                author {
-                  avatarUrl
-                  login
-                  url
-                }
-                createdAt
+            nodes {
+              id
+              upvoteCount
+              viewerHasUpvoted
+              author {
+                avatarUrl
+                login
                 url
-                authorAssociation
-                lastEditedAt
-                deletedAt
-                isMinimized
-                bodyHTML
-                reactionGroups {
-                  content
-                  users {
-                    totalCount
-                  }
-                  viewerHasReacted
+              }
+              createdAt
+              url
+              authorAssociation
+              lastEditedAt
+              deletedAt
+              isMinimized
+              bodyHTML
+              reactionGroups {
+                content
+                users {
+                  totalCount
                 }
-                replyTo {
+                viewerHasReacted
+              }
+              replies(first: 100) {
+                totalCount
+                nodes {
                   id
+                  author {
+                    avatarUrl
+                    login
+                    url
+                  }
+                  createdAt
+                  url
+                  authorAssociation
+                  lastEditedAt
+                  deletedAt
+                  isMinimized
+                  bodyHTML
+                  reactionGroups {
+                    content
+                    users {
+                      totalCount
+                    }
+                    viewerHasReacted
+                  }
+                  replyTo {
+                    id
+                  }
                 }
               }
             }
@@ -83,14 +85,15 @@ const GET_DISCUSSION_QUERY = (pagination: PaginationParams) => `
     }
   }`;
 
-export interface GetDiscussionParams extends PaginationParams {
-  id: string;
-}
+export interface GetDiscussionParams extends PaginationParams, DiscussionQuery {}
 
 export interface GetDiscussionResponse {
   data: {
     viewer: GUser;
-    discussion: GRepositoryDiscussion;
+    search: {
+      discussionCount: number;
+      nodes: Array<GRepositoryDiscussion>;
+    };
   };
 }
 
@@ -98,7 +101,9 @@ export async function getDiscussion(
   params: GetDiscussionParams,
   token?: string,
 ): Promise<GetDiscussionResponse> {
-  const { id, ...pagination } = params;
+  const { repo, term, ...pagination } = params;
+  const query = `repo:${repo} ${term}`;
+
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {
@@ -107,8 +112,8 @@ export async function getDiscussion(
     },
 
     body: JSON.stringify({
-      query: GET_DISCUSSION_QUERY(pagination),
-      variables: { id },
+      query: GET_DISCUSSION_QUERY,
+      variables: { repo, query, ...pagination },
     }),
   }).then((r) => r.json());
 }

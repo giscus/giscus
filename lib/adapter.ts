@@ -50,9 +50,12 @@ export function adaptDiscussion({
   discussion,
 }: {
   viewer: GUser;
-  discussion: GRepositoryDiscussion;
+  discussion: GRepositoryDiscussion | null;
 }): IGiscussion {
+  if (!discussion) return { viewer, discussion: null };
+
   const {
+    id,
     repository,
     comments: { pageInfo, totalCount, ...commentsData },
   } = discussion;
@@ -66,10 +69,13 @@ export function adaptDiscussion({
 
   return {
     viewer,
-    totalCount,
-    totalCountWithReplies,
-    pageInfo,
-    repository,
-    comments,
+    discussion: {
+      id,
+      totalCount,
+      totalCountWithReplies,
+      pageInfo,
+      repository,
+      comments,
+    },
   };
 }

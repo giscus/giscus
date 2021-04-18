@@ -4,3 +4,8 @@ export interface PaginationParams {
   after?: string;
   before?: string;
 }
+
+export interface DiscussionQuery {
+  repo: string;
+  term: string;
+}

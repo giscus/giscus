@@ -10,7 +10,8 @@ export default async (
   const token = req.headers.authorization?.split('Bearer ')[1];
 
   const params = {
-    id: req.query.id as string,
+    repo: req.query.repo as string,
+    term: req.query.term as string,
     first: +req.query.first,
     last: +req.query.last,
     after: req.query.after as string,
@@ -21,7 +22,13 @@ export default async (
   }
 
   const { data } = await getDiscussion(params, token);
-  const adapted = adaptDiscussion(data);
+  const {
+    viewer,
+    search: { discussionCount, nodes },
+  } = data;
+  const discussion = discussionCount > 0 ? nodes[0] : null;
+
+  const adapted = adaptDiscussion({ viewer, discussion });
 
   res.status(200).json(adapted);
 };

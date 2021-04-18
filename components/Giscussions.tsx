@@ -5,13 +5,15 @@ import Comment from './Comment';
 import CommentBox from './CommentBox';
 
 export interface IGiscussionsProps {
-  id: string;
+  repo: string;
+  term: string;
 }
 
-export default function Giscussions({ id }: IGiscussionsProps) {
+export default function Giscussions({ repo, term }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
+  const query = { repo, term };
 
-  const backComments = useDiscussions(id, token, { last: 15 });
+  const backComments = useDiscussions(query, token, { last: 15 });
   const {
     data: _backData,
     isError: isBackError,
@@ -21,15 +23,15 @@ export default function Giscussions({ id }: IGiscussionsProps) {
 
   const backData = _backData && _backData[_backData.length - 1];
   const startCursor = useRef('');
-  if (!startCursor.current && backData?.pageInfo.startCursor)
-    startCursor.current = backData?.pageInfo.startCursor;
+  if (!startCursor.current && backData?.discussion.pageInfo.startCursor)
+    startCursor.current = backData?.discussion.pageInfo.startCursor;
 
   const frontParams = {
     first: startCursor.current ? 15 : 0,
     before: startCursor.current,
   };
 
-  const frontComments = useDiscussions(id, token, frontParams);
+  const frontComments = useDiscussions(query, token, frontParams);
   const {
     data: frontData,
     isError: isFrontError,
@@ -41,17 +43,17 @@ export default function Giscussions({ id }: IGiscussionsProps) {
   } = frontComments;
 
   const numHidden =
-    backData?.totalCount -
-    backData?.comments.length -
-    frontData?.reduce((prev, g) => prev + g.comments.length, 0);
+    backData?.discussion.totalCount -
+    backData?.discussion.comments.length -
+    frontData?.reduce((prev, g) => prev + g.discussion.comments.length, 0);
 
   const isError = isFrontError || isBackError;
   const isLoading = isFrontLoading || isBackLoading;
   const totalCountWithReplies =
-    backData?.totalCountWithReplies +
-    frontData?.reduce((prev, g) => prev + g.totalCountWithReplies, 0);
+    backData?.discussion.totalCountWithReplies +
+    frontData?.reduce((prev, g) => prev + g.discussion.totalCountWithReplies, 0);
 
-  const context = backData?.repository?.nameWithOwner;
+  const context = backData?.discussion.repository?.nameWithOwner;
 
   return (
     <div className="w-full text-gray-800">
@@ -69,7 +71,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
 
       {!isLoading
         ? frontData?.map((page) =>
-            page.comments.map((comment) => (
+            page.discussion.comments.map((comment) => (
               <Comment
                 key={comment.id}
                 comment={comment}
@@ -78,7 +80,8 @@ export default function Giscussions({ id }: IGiscussionsProps) {
               >
                 {token ? (
                   <CommentBox
-                    discussionId={id}
+                    discussionId={backData?.discussion?.id}
+                    context={context}
                     onSubmit={frontMutators.addNewReply}
                     replyToId={comment.id}
                     viewer={frontData && frontData[0].viewer}
@@ -113,7 +116,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
       ) : null}
 
       {!isLoading
-        ? backData?.comments.map((comment) => (
+        ? backData?.discussion.comments.map((comment) => (
             <Comment
               key={comment.id}
               comment={comment}
@@ -122,7 +125,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
             >
               {token ? (
                 <CommentBox
-                  discussionId={id}
+                  discussionId={backData?.discussion?.id}
                   context={context}
                   onSubmit={backMutators.addNewReply}
                   replyToId={comment.id}
@@ -136,7 +139,7 @@ export default function Giscussions({ id }: IGiscussionsProps) {
       <div className="my-4 text-sm border-t-2"></div>
 
       <CommentBox
-        discussionId={id}
+        discussionId={backData?.discussion?.id}
         context={context}
         onSubmit={backMutators.addNewComment}
         viewer={backData?.viewer}

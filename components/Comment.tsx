@@ -29,6 +29,17 @@ export default function Comment({
     [comment, onCommentUpdate],
   );
 
+  const toggleEmail = useCallback((event) => {
+    const element = event.target as Element;
+    const toggle = element.closest<HTMLAnchorElement>('.email-hidden-toggle a');
+    if (toggle && event.currentTarget.contains(toggle)) {
+      event.preventDefault();
+      const container = element.closest('div');
+      const content = container.querySelector('.email-hidden-reply');
+      content.classList.toggle('expanded');
+    }
+  }, []);
+
   const hidden = comment.deletedAt || comment.isMinimized;
 
   return (
@@ -93,6 +104,7 @@ export default function Comment({
           className={`markdown ${
             comment.isMinimized ? 'px-4 py-2 bg-gray-500 bg-opacity-5' : 'p-4'
           }`}
+          onClick={toggleEmail}
           dangerouslySetInnerHTML={hidden ? undefined : { __html: comment.bodyHTML }}
         >
           <em className="text-gray-500">

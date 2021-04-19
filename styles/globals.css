@@ -234,6 +234,23 @@ a:hover {
   word-wrap: normal;
 }
 
-.blob-wrapper table tr:nth-child(2n) {
+.markdown .blob-wrapper table tr:nth-child(2n) {
   background-color: initial;
+}
+
+.markdown .email-hidden-toggle a {
+  @apply inline-block h-3 px-2 text-xs font-semibold leading-[6px] no-underline align-middle bg-gray-400 bg-opacity-20 border;
+}
+
+.markdown .email-quoted-reply,
+.markdown .email-signature-reply {
+  @apply px-4 my-4 text-gray-500 border-l-4;
+}
+
+.markdown .email-hidden-reply {
+  @apply whitespace-pre-wrap hidden;
+}
+
+.markdown .email-hidden-reply.expanded {
+  @apply block;
 }

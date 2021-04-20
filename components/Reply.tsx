@@ -4,6 +4,7 @@ import { IReply } from '../lib/models/adapter';
 import { useCallback } from 'react';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
+import { useToggleEmail } from '../lib/hooks';
 
 export interface IReplyProps {
   reply: IReply;
@@ -16,6 +17,8 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
       onReplyUpdate(updateCommentReaction(reply, content), promise),
     [reply, onReplyUpdate],
   );
+
+  const toggleEmail = useToggleEmail();
 
   const hidden = reply.deletedAt || reply.isMinimized;
 
@@ -86,6 +89,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
           ) : null}
           <div
             className={`w-full pr-4 markdown ${!hidden ? 'pb-2' : ''}`}
+            onClick={toggleEmail}
             dangerouslySetInnerHTML={hidden ? undefined : { __html: reply.bodyHTML }}
           >
             <em className="text-gray-500">

@@ -12,7 +12,7 @@ export default function Home() {
   const [token, setToken] = useState('');
   const [origin, setOrigin] = useState('');
 
-  const querySession = router.query.session as string;
+  const querySession = router.query.giscussions as string;
 
   let savedSession: string;
   try {

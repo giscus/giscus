@@ -17,6 +17,7 @@ export function useDiscussions(
   }, [token]);
 
   const getKey = (pageIndex: number, previousPageData?: IGiscussion) => {
+    if (pagination.first === 0) return null;
     if (pageIndex === 0) return [`/api/discussions?${urlParams}`, headers];
     if (!previousPageData.discussion.pageInfo.hasNextPage) return null;
     const params = new URLSearchParams(

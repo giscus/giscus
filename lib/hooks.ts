@@ -1,4 +1,13 @@
-import { useState, useEffect, useRef, MutableRefObject, Dispatch, SetStateAction } from 'react';
+import {
+  useState,
+  useEffect,
+  useCallback,
+  useRef,
+  MouseEvent as ReactMouseEvent,
+  MutableRefObject,
+  Dispatch,
+  SetStateAction,
+} from 'react';
 
 export function useComponentVisible<T extends HTMLElement>(initialIsVisible: boolean) {
   const [isComponentVisible, setIsComponentVisible] = useState(initialIsVisible);
@@ -22,4 +31,17 @@ export function useComponentVisible<T extends HTMLElement>(initialIsVisible: boo
     boolean,
     Dispatch<SetStateAction<boolean>>,
   ];
+}
+
+export function useToggleEmail() {
+  return useCallback((event: ReactMouseEvent<HTMLDivElement, MouseEvent>) => {
+    const element = event.target as Element;
+    const toggle = element.closest<HTMLAnchorElement>('.email-hidden-toggle a');
+    if (toggle && event.currentTarget.contains(toggle)) {
+      event.preventDefault();
+      const container = element.closest('div');
+      const content = container.querySelector('.email-hidden-reply');
+      content.classList.toggle('expanded');
+    }
+  }, []);
 }

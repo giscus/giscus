@@ -1,5 +1,6 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { ReactElement, useCallback, useState } from 'react';
+import { useToggleEmail } from '../lib/hooks';
 import { IComment, IReply } from '../lib/models/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
@@ -29,16 +30,7 @@ export default function Comment({
     [comment, onCommentUpdate],
   );
 
-  const toggleEmail = useCallback((event) => {
-    const element = event.target as Element;
-    const toggle = element.closest<HTMLAnchorElement>('.email-hidden-toggle a');
-    if (toggle && event.currentTarget.contains(toggle)) {
-      event.preventDefault();
-      const container = element.closest('div');
-      const content = container.querySelector('.email-hidden-reply');
-      content.classList.toggle('expanded');
-    }
-  }, []);
+  const toggleEmail = useToggleEmail();
 
   const hidden = comment.deletedAt || comment.isMinimized;
 

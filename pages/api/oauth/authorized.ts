@@ -53,7 +53,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     encryption_password,
     Date.now() + TOKEN_VALIDITY_PERIOD,
   );
-  returnUrl.searchParams.set('session', session);
+  returnUrl.searchParams.set('giscussions', session);
 
   res.redirect(302, returnUrl.href);
 };

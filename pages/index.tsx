@@ -12,25 +12,23 @@ export default function Home() {
   const [token, setToken] = useState('');
   const [origin, setOrigin] = useState('');
 
-  useEffect(() => {
-    const querySession = router.query.session as string;
+  const querySession = router.query.session as string;
 
-    let savedSession: string;
-    try {
-      savedSession = JSON.parse(localStorage.getItem(GISCUSSIONS_SESSION_KEY));
-    } catch (err) {
-      savedSession = '';
-    }
+  let savedSession: string;
+  try {
+    savedSession = JSON.parse(localStorage.getItem(GISCUSSIONS_SESSION_KEY));
+  } catch (err) {
+    savedSession = '';
+  }
 
-    const session = querySession || savedSession;
+  const session = querySession || savedSession;
 
-    if (session) getToken(session).then(setToken);
+  if (session) getToken(session).then(setToken);
 
-    if (querySession) {
-      localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
-      router.replace(router.pathname, undefined, { scroll: false, shallow: true });
-    }
-  }, [router]);
+  if (querySession) {
+    localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
+    router.replace(router.pathname, undefined, { scroll: false, shallow: true });
+  }
 
   useEffect(() => {
     setOrigin((router.query.origin as string) || location.href || '');
@@ -44,9 +42,11 @@ export default function Home() {
       </Head>
 
       <main className="w-full max-w-3xl p-2 mx-auto">
-        <AuthContext.Provider value={{ token, origin }}>
-          <Giscussions repo="laymonage/discussions-playground" term="GraphQL" />
-        </AuthContext.Provider>
+        {!session || token ? (
+          <AuthContext.Provider value={{ token, origin }}>
+            <Giscussions repo="laymonage/discussions-playground" term="GraphQL" />
+          </AuthContext.Provider>
+        ) : null}
       </main>
     </>
   );

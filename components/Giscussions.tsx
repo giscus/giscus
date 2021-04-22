@@ -36,7 +36,6 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
     data: frontData,
     isError: isFrontError,
     isLoading: isFrontLoading,
-    isValidating: isFrontValidating,
     mutators: frontMutators,
     size,
     setSize,
@@ -49,6 +48,8 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
 
   const isError = isFrontError || isBackError;
   const isLoading = isFrontLoading || isBackLoading;
+  const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
+
   const totalCountWithReplies =
     backData?.discussion.totalCountWithReplies +
     frontData?.reduce((prev, g) => prev + g.discussion.totalCountWithReplies, 0);
@@ -103,13 +104,13 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
           <button
             className="flex flex-col items-center px-6 py-2 text-sm bg-white border rounded"
             onClick={() => setSize(size + 1)}
-            disabled={isFrontValidating}
+            disabled={isLoadingMore}
           >
             <span>
               {numHidden} hidden item{numHidden !== 1 ? 's' : ''}
             </span>
             <span className="font-semibold text-blue-700">
-              {isFrontValidating ? 'Loading' : 'Load more'}...
+              {isLoadingMore ? 'Loading' : 'Load more'}...
             </span>
           </button>
         </div>

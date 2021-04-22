@@ -59,17 +59,19 @@ export function useDiscussions(
 
   const addNewReply = useCallback(
     (reply: IReply) => {
-      mutate(
-        data.map((page) => ({
-          ...page,
+      const newData = data.map((page) => ({
+        ...page,
+        discussion: {
+          ...page.discussion,
           comments: page.discussion.comments.map((comment) =>
             comment.id === reply.replyToId
               ? { ...comment, replies: [...comment.replies, reply] }
               : comment,
           ),
-        })),
-        false,
-      );
+        },
+      }));
+      console.log({ data, newData });
+      mutate(newData, false);
       return mutate();
     },
     [data, mutate],
@@ -80,9 +82,12 @@ export function useDiscussions(
       mutate(
         data.map((page) => ({
           ...page,
-          comments: page.discussion.comments.map((comment) =>
-            comment.id === newComment.id ? newComment : comment,
-          ),
+          discussion: {
+            ...page.discussion,
+            comments: page.discussion.comments.map((comment) =>
+              comment.id === newComment.id ? newComment : comment,
+            ),
+          },
         })),
         !promise,
       ) && promise?.then(() => mutate()),
@@ -94,16 +99,19 @@ export function useDiscussions(
       mutate(
         data.map((page) => ({
           ...page,
-          comments: page.discussion.comments.map((comment) =>
-            comment.id === newReply.replyToId
-              ? {
-                  ...comment,
-                  replies: comment.replies.map((reply) =>
-                    reply.id === newReply.id ? newReply : reply,
-                  ),
-                }
-              : comment,
-          ),
+          discussion: {
+            ...page.discussion,
+            comments: page.discussion.comments.map((comment) =>
+              comment.id === newReply.replyToId
+                ? {
+                    ...comment,
+                    replies: comment.replies.map((reply) =>
+                      reply.id === newReply.id ? newReply : reply,
+                    ),
+                  }
+                : comment,
+            ),
+          },
         })),
         !promise,
       ) && promise?.then(() => mutate()),

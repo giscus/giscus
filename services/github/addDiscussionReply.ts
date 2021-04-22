@@ -5,8 +5,6 @@ const ADD_DISCUSSION_REPLY_QUERY = `
     addDiscussionReply: addDiscussionComment(input: {body: $body, discussionId: $discussionId, replyToId: $replyToId}) {
       reply: comment {
         id
-        upvoteCount
-        viewerHasUpvoted
         author {
           avatarUrl
           login

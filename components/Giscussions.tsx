@@ -23,8 +23,8 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
 
   const backData = _backData && _backData[_backData.length - 1];
   const startCursor = useRef('');
-  if (!startCursor.current && backData?.discussion.pageInfo.startCursor)
-    startCursor.current = backData?.discussion.pageInfo.startCursor;
+  if (!startCursor.current && backData?.discussion?.pageInfo?.startCursor)
+    startCursor.current = backData?.discussion?.pageInfo?.startCursor;
 
   const frontParams = {
     first: startCursor.current ? 15 : 0,
@@ -42,25 +42,29 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
   } = frontComments;
 
   const numHidden =
-    backData?.discussion.totalCount -
-    backData?.discussion.comments.length -
+    backData?.discussion?.totalCount -
+    backData?.discussion?.comments.length -
     frontData?.reduce((prev, g) => prev + g.discussion.comments.length, 0);
 
   const isError = isFrontError || isBackError;
   const isLoading = isFrontLoading || isBackLoading;
   const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
 
+  const isNotFound = !isBackLoading && !backData?.discussion;
+
   const totalCountWithReplies =
-    backData?.discussion.totalCountWithReplies +
+    backData?.discussion?.totalCountWithReplies +
     frontData?.reduce((prev, g) => prev + g.discussion.totalCountWithReplies, 0);
 
-  const context = backData?.discussion.repository?.nameWithOwner;
+  const context = backData?.discussion?.repository?.nameWithOwner;
 
   return (
     <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">
-          {isLoading
+          {isNotFound
+            ? 'Discussion not found.'
+            : isLoading
             ? 'Loading comments...'
             : isError
             ? 'An error occurred.'
@@ -117,7 +121,7 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
       ) : null}
 
       {!isLoading
-        ? backData?.discussion.comments.map((comment) => (
+        ? backData?.discussion?.comments?.map((comment) => (
             <Comment
               key={comment.id}
               comment={comment}
@@ -137,14 +141,16 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
           ))
         : null}
 
-      <div className="my-4 text-sm border-t-2"></div>
+      <div className="my-4 text-sm border-t-2" />
 
-      <CommentBox
-        discussionId={backData?.discussion?.id}
-        context={context}
-        onSubmit={backMutators.addNewComment}
-        viewer={backData?.viewer}
-      />
+      {!isLoading ? (
+        <CommentBox
+          discussionId={backData?.discussion?.id}
+          context={context}
+          onSubmit={backMutators.addNewComment}
+          viewer={backData?.viewer}
+        />
+      ) : null}
     </div>
   );
 }

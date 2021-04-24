@@ -37,7 +37,7 @@ export default function Comment({
   return (
     <div className="flex my-4 text-sm">
       {!comment.isMinimized ? (
-        <div className="flex-shrink-0 mr-2 w-14">
+        <div className="flex-shrink-0 mr-4">
           <div className="flex flex-col">
             <button type="button" className={`${comment.viewerHasUpvoted ? 'text-blue-600' : ''}`}>
               <ArrowUpIcon className="transform hover:translate-y-[-10%] transition-transform ease-in-out duration-150" />

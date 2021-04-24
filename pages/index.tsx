@@ -9,7 +9,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Widget repo="laymonage/discussions-playground" term="GraphQL" />
+      <main className="w-full max-w-3xl p-2 mx-auto">
+        <Widget repo="laymonage/discussions-playground" term="GraphQL" />
+      </main>
     </>
   );
 }

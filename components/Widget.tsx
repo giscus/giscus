@@ -40,14 +40,11 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
         <title>Giscussions</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="w-full max-w-3xl p-2 mx-auto">
-        {!session || token ? (
-          <AuthContext.Provider value={{ token, origin }}>
-            <Giscussions repo={repo} term={term} />
-          </AuthContext.Provider>
-        ) : null}
-      </main>
+      {!session || token ? (
+        <AuthContext.Provider value={{ token, origin }}>
+          <Giscussions repo={repo} term={term} />
+        </AuthContext.Provider>
+      ) : null}
     </>
   );
 }

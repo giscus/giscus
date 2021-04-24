@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../lib/context';
 import { useDiscussions } from '../services/giscussions/discussions';
 import Comment from './Comment';
@@ -22,24 +22,50 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
   } = backComments;
 
   const backData = _backData && _backData[_backData.length - 1];
-  const startCursor = useRef('');
-  if (!startCursor.current && backData?.discussion?.pageInfo?.startCursor)
-    startCursor.current = backData?.discussion?.pageInfo?.startCursor;
+  const intersectId = backData?.discussion?.comments?.[0]?.id;
 
   const frontParams = {
-    first: startCursor.current ? 15 : 0,
-    before: startCursor.current,
+    first: intersectId ? 15 : 0,
   };
 
   const frontComments = useDiscussions(query, token, frontParams);
   const {
-    data: frontData,
+    data: _frontData,
     isError: isFrontError,
     isLoading: isFrontLoading,
     mutators: frontMutators,
     size,
     setSize,
   } = frontComments;
+
+  const frontData = _frontData?.map((page) => {
+    let foundIntersect = false;
+
+    // We couldn't make use of GitHub API's `before` parameter to prevent
+    // duplicates because that would change our key for SWR. Therefore,
+    // we need to get rid of duplicates manually by removing the comments
+    // that are already in backData.
+    const newData = {
+      ...page,
+      discussion: {
+        ...page.discussion,
+        comments: page.discussion.comments.filter((comment) => {
+          if (comment.id === intersectId) {
+            foundIntersect = true;
+          }
+          return foundIntersect ? false : true;
+        }),
+      },
+    };
+
+    // Fix the comment count.
+    newData.discussion.totalCountWithReplies = newData.discussion.comments.reduce(
+      (prev, c) => prev + c.replyCount,
+      newData.discussion.comments.length,
+    );
+
+    return newData;
+  });
 
   const numHidden =
     backData?.discussion?.totalCount -

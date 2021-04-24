@@ -21,11 +21,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {repo && term ? (
-        <Widget repo={repo} term={term} />
-      ) : !isLoading ? (
-        'Please provide repo and term query parameters.'
-      ) : null}
+      <main className="w-full p-2 mx-auto">
+        {repo && term ? (
+          <Widget repo={repo} term={term} />
+        ) : !isLoading ? (
+          'Please provide repo and term query parameters.'
+        ) : null}
+      </main>
     </>
   );
 }

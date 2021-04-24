@@ -46,8 +46,10 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
     backData?.discussion?.comments.length -
     frontData?.reduce((prev, g) => prev + g.discussion.comments.length, 0);
 
+  const needsFrontLoading = backData?.discussion?.pageInfo?.hasPreviousPage;
+
   const isError = isFrontError || isBackError;
-  const isLoading = isFrontLoading || isBackLoading;
+  const isLoading = (needsFrontLoading && isFrontLoading) || isBackLoading;
   const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
 
   const isNotFound = !isBackLoading && !backData?.discussion;
@@ -68,9 +70,9 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
             ? 'Loading comments...'
             : isError
             ? 'An error occurred.'
-            : `${totalCountWithReplies}${numHidden > 0 ? '+' : ''} comment${
-                totalCountWithReplies !== 1 ? 's' : ''
-              }`}
+            : `${Number.isNaN(totalCountWithReplies) ? 0 : totalCountWithReplies}${
+                numHidden > 0 ? '+' : ''
+              } comment${totalCountWithReplies !== 1 ? 's' : ''}`}
         </h4>
       </div>
 
@@ -143,7 +145,7 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
 
       <div className="my-4 text-sm border-t-2" />
 
-      {!isLoading ? (
+      {!isLoading && !isNotFound ? (
         <CommentBox
           discussionId={backData?.discussion?.id}
           context={context}

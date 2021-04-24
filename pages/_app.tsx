@@ -1,3 +1,4 @@
+import 'preact/devtools';
 import '../styles/globals.css';
 import 'tailwindcss/tailwind.css';
 

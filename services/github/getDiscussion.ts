@@ -11,7 +11,7 @@ const GET_DISCUSSION_QUERY = `
       login
       url
     }
-    search(type: DISCUSSION first: 1 query: $query) {
+    search(type: DISCUSSION last: 1 query: $query) {
       discussionCount
       nodes {
         ... on Discussion {

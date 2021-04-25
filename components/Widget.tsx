@@ -12,6 +12,10 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
   const [token, setToken] = useState('');
   const [origin, setOrigin] = useState('');
 
+  useEffect(() => {
+    setOrigin((router.query.origin as string) || location.href || '');
+  }, [origin, router.query.origin]);
+
   const querySession = router.query.giscussions as string;
 
   let savedSession: string;
@@ -27,12 +31,18 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
 
   if (querySession) {
     localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
-    router.replace(router.pathname, undefined, { scroll: false, shallow: true });
+    router.replace(
+      {
+        pathname: router.pathname,
+        query: { repo, term },
+      },
+      undefined,
+      {
+        scroll: false,
+        shallow: true,
+      },
+    );
   }
-
-  useEffect(() => {
-    setOrigin((router.query.origin as string) || location.href || '');
-  }, [origin, router.query.origin]);
 
   return (
     <>

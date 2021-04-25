@@ -44,13 +44,15 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
     );
   }
 
+  const ready = (!session || token) && repo && term;
+
   return (
     <>
       <Head>
         <title>Giscussions</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {!session || token ? (
+      {ready ? (
         <AuthContext.Provider value={{ token, origin }}>
           <Giscussions repo={repo} term={term} />
         </AuthContext.Provider>

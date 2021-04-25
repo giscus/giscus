@@ -1,5 +1,5 @@
 import { MarkdownIcon } from '@primer/octicons-react';
-import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { adaptComment, adaptReply } from '../lib/adapter';
 import { AuthContext, getLoginUrl } from '../lib/context';
@@ -31,7 +31,6 @@ export default function CommentBox({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isReplyOpen, setIsReplyOpen] = useState(false);
   const { token, origin } = useContext(AuthContext);
-  const router = useRouter();
   const loginUrl = getLoginUrl(origin);
   const isReply = !!replyToId;
 
@@ -57,11 +56,6 @@ export default function CommentBox({
   }, []);
 
   const handleClick = useCallback(() => {
-    if (!token) {
-      router.push(loginUrl);
-      return;
-    }
-
     setIsSubmitting(true);
     const payload = { body: input, discussionId, replyToId };
 
@@ -82,7 +76,7 @@ export default function CommentBox({
         reset();
       });
     }
-  }, [token, router, loginUrl, input, discussionId, replyToId, onSubmit, reset]);
+  }, [token, input, discussionId, replyToId, onSubmit, reset]);
 
   return !isReply || isReplyOpen ? (
     <div className={`w-full text-sm ${replyToId ? 'border-t' : 'border rounded'}`}>
@@ -149,15 +143,20 @@ export default function CommentBox({
               Cancel
             </button>
           ) : null}
-          <button
-            className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center disabled:opacity-50"
-            onClick={handleClick}
-            disabled={(token && !input.trim()) || isSubmitting}
-          >
-            {token ? (
-              `${isReply ? 'Reply' : 'Comment'}`
-            ) : (
-              <>
+          {token ? (
+            <button
+              className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center disabled:opacity-50"
+              onClick={handleClick}
+              disabled={(token && !input.trim()) || isSubmitting}
+            >
+              {isReply ? 'Reply' : 'Comment'}
+            </button>
+          ) : (
+            <Link href={loginUrl}>
+              <a
+                className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center disabled:opacity-50"
+                target="_top"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -172,16 +171,16 @@ export default function CommentBox({
                   />
                 </svg>{' '}
                 Sign in with GitHub
-              </>
-            )}
-          </button>
+              </a>
+            </Link>
+          )}
         </div>
       </div>
     </div>
   ) : (
     <div className="flex px-4 py-2 bg-gray-500 border-t bg-opacity-5">
       {viewer ? (
-        <a href={viewer.url} className="flex items-center flex-shrink-0">
+        <a href={viewer.url} className="flex items-center flex-shrink-0" target="_top">
           <img
             className="inline-block rounded-full"
             src={viewer.avatarUrl}

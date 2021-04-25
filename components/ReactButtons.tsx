@@ -60,7 +60,9 @@ export default function ReactButtons({
               ) : (
                 <>
                   <Link href={loginUrl}>
-                    <a className="text-blue-600">Sign in</a>
+                    <a className="text-blue-600" target="_top">
+                      Sign in
+                    </a>
                   </Link>{' '}
                   to add your reaction.
                 </>

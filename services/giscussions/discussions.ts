@@ -70,7 +70,6 @@ export function useDiscussions(
           ),
         },
       }));
-      console.log({ data, newData });
       mutate(newData, false);
       return mutate();
     },
@@ -120,6 +119,7 @@ export function useDiscussions(
 
   return {
     data,
+    error,
     size,
     setSize,
     isValidating,

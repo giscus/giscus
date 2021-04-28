@@ -9,5 +9,7 @@ export async function getToken(session: string) {
     body: JSON.stringify({ session } as ITokenRequest),
   }).then((r) => r.json());
 
+  if (!token) throw new Error('Unable to retrieve token.');
+
   return token;
 }

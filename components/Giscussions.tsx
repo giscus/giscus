@@ -19,6 +19,7 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
     isError: isBackError,
     isLoading: isBackLoading,
     mutators: backMutators,
+    error,
   } = backComments;
 
   const backData = _backData && _backData[_backData.length - 1];
@@ -91,7 +92,7 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">
           {isError
-            ? 'An error occurred.'
+            ? `An error occurred${error.error ? `: ${error.error}` : ''}.`
             : isNotFound
             ? 'Discussion not found.'
             : isLoading

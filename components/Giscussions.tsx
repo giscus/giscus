@@ -90,12 +90,12 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
     <div className="w-full text-gray-800">
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">
-          {isNotFound
+          {isError
+            ? 'An error occurred.'
+            : isNotFound
             ? 'Discussion not found.'
             : isLoading
             ? 'Loading comments...'
-            : isError
-            ? 'An error occurred.'
             : `${Number.isNaN(totalCountWithReplies) ? 0 : totalCountWithReplies}${
                 numHidden > 0 ? '+' : ''
               } comment${totalCountWithReplies !== 1 ? 's' : ''}`}

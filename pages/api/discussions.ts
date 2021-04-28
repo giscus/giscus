@@ -21,11 +21,18 @@ export default async (
     params.first = 20;
   }
 
-  const { data } = await getDiscussion(params, token);
+  const response = await getDiscussion(params, token);
+  if ('message' in response) {
+    res.status(500).json({ error: response.message });
+    return;
+  }
+
   const {
-    viewer,
-    search: { discussionCount, nodes },
-  } = data;
+    data: {
+      viewer,
+      search: { discussionCount, nodes },
+    },
+  } = response;
   const discussion = discussionCount > 0 ? nodes[0] : null;
 
   const adapted = adaptDiscussion({ viewer, discussion });

@@ -70,3 +70,8 @@ export interface GRepositoryDiscussion {
     nodes: GComment[];
   };
 }
+
+export interface GError {
+  message: string;
+  documentation_url: string;
+}

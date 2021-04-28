@@ -1,5 +1,5 @@
 import { DiscussionQuery, PaginationParams } from '../../lib/models/common';
-import { GUser, GRepositoryDiscussion } from '../../lib/models/github';
+import { GUser, GRepositoryDiscussion, GError } from '../../lib/models/github';
 import { getReadAccessToken } from './getReadAccessToken';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';
@@ -100,7 +100,7 @@ export interface GetDiscussionResponse {
 export async function getDiscussion(
   params: GetDiscussionParams,
   token?: string,
-): Promise<GetDiscussionResponse> {
+): Promise<GetDiscussionResponse | GError> {
   const { repo, term, ...pagination } = params;
   const query = `repo:${repo} ${term}`;
 

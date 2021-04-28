@@ -154,7 +154,7 @@ export default function CommentBox({
           ) : (
             <Link href={loginUrl}>
               <a
-                className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center disabled:opacity-50"
+                className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] hover:no-underline hover:text-white border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center disabled:opacity-50"
                 target="_top"
               >
                 <svg

@@ -27,7 +27,13 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
 
   const session = querySession || savedSession;
 
-  if (session) getToken(session).then(setToken);
+  if (session)
+    getToken(session)
+      .then(setToken)
+      .catch(() => {
+        localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
+        router.reload();
+      });
 
   if (querySession) {
     const query = { ...router.query };

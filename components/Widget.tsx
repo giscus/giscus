@@ -30,11 +30,14 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
   if (session) getToken(session).then(setToken);
 
   if (querySession) {
+    const query = { ...router.query };
+    delete query.giscussions;
+
     localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
     router.replace(
       {
         pathname: router.pathname,
-        query: { repo, term },
+        query,
       },
       undefined,
       {

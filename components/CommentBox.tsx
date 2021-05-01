@@ -13,6 +13,7 @@ export interface CommentBoxProps {
   context?: string;
   replyToId?: string;
   onSubmit: (comment: IComment | IReply) => void;
+  onReplyOpen?: VoidFunction;
   viewer?: IUser;
 }
 
@@ -22,6 +23,7 @@ export default function CommentBox({
   context,
   replyToId,
   onSubmit,
+  onReplyOpen,
 }: CommentBoxProps) {
   const [isPreview, setIsPreview] = useState(false);
   const [input, setInput] = useState('');
@@ -77,6 +79,11 @@ export default function CommentBox({
       });
     }
   }, [token, input, discussionId, replyToId, onSubmit, reset]);
+
+  const handleReplyOpen = useCallback(() => {
+    onReplyOpen();
+    setIsReplyOpen(true);
+  }, [onReplyOpen]);
 
   return !isReply || isReplyOpen ? (
     <div
@@ -198,7 +205,7 @@ export default function CommentBox({
       ) : null}
       <button
         className="w-full px-2 py-1 ml-2 text-left border rounded cursor-text form-control color-text-secondary color-border-primary"
-        onClick={() => setIsReplyOpen(true)}
+        onClick={handleReplyOpen}
       >
         Write a reply
       </button>

@@ -10,7 +10,7 @@ import Reply from './Reply';
 
 export interface ICommentProps {
   comment: IComment;
-  children?: ReactElement<typeof CommentBox>;
+  children?: (viewMore: VoidFunction) => ReactElement<typeof CommentBox>;
   onCommentUpdate: (newComment: IComment, promise: Promise<unknown>) => void;
   onReplyUpdate: (newReply: IReply, promise: Promise<unknown>) => void;
 }
@@ -29,6 +29,8 @@ export default function Comment({
       onCommentUpdate(updateCommentReaction(comment, reaction), promise),
     [comment, onCommentUpdate],
   );
+
+  const incrementPage = () => page < 1 && setPage(page + 1);
 
   const toggleEmail = useToggleEmail();
 
@@ -143,14 +145,14 @@ export default function Comment({
             {page === 0 && comment.replies.length > 3 ? (
               <button
                 className="mb-2 ml-3 text-xs font-semibold color-text-link hover:underline"
-                onClick={() => setPage(page + 1)}
+                onClick={incrementPage}
               >
                 View more
               </button>
             ) : null}
           </div>
         ) : null}
-        {!hidden ? children : null}
+        {!hidden ? children(incrementPage) : null}
       </div>
     </div>
   );

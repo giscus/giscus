@@ -42,8 +42,8 @@ export default function ReactButtons({
       {variant !== 'groupsOnly' ? (
         <div ref={ref} className="relative">
           <button
-            className={`px-3 py-[3px] text-gray-900 text-opacity-75 hover:text-blue-600 ${
-              variant !== 'popoverOnly' ? 'mb-4 mr-3 border rounded' : ''
+            className={`px-3 py-[3px] Link--secondary${
+              variant !== 'popoverOnly' ? ' mb-4 mr-3 border rounded color-bg-tertiary' : ''
             }`}
             onClick={togglePopover}
           >
@@ -52,7 +52,7 @@ export default function ReactButtons({
           <div
             className={`absolute ${isOpen ? 'visible scale-100' : 'invisible scale-50'} ${
               variant === 'popoverOnly' ? 'popover-only right-0' : 'popover'
-            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] text-gray-600 bg-white border rounded top-10`}
+            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] color-text-secondary color-bg-primary border rounded top-10`}
           >
             <p className="m-2">
               {token ? (
@@ -60,7 +60,7 @@ export default function ReactButtons({
               ) : (
                 <>
                   <Link href={loginUrl}>
-                    <a className="text-blue-600" target="_top">
+                    <a className="color-text-link" target="_top">
                       Sign in
                     </a>
                   </Link>{' '}
@@ -75,7 +75,7 @@ export default function ReactButtons({
                   key={key}
                   type="button"
                   className={`w-8 h-8 gsc-emoji-button ${
-                    reactionGroups[key].viewerHasReacted ? 'border bg-blue-400 bg-opacity-10' : ''
+                    reactionGroups[key].viewerHasReacted ? 'border color-bg-info' : ''
                   }`}
                   onClick={() => {
                     react(key as Reactions);
@@ -141,8 +141,8 @@ export default function ReactButtons({
             count > 0 ? (
               <button
                 key={value}
-                className={`px-2 py-[3px] mb-4 mr-2 last:mr-0 border rounded bg-opacity-10 ${
-                  viewerHasReacted ? ' bg-blue-400' : ''
+                className={`px-2 py-[3px] mb-4 mr-2 last:mr-0 border rounded${
+                  viewerHasReacted ? ' color-bg-info' : ''
                 }`}
                 disabled={!token}
                 title={`${count} ${count === 1 ? 'person' : 'people'} reacted with ${Reactions[
@@ -151,7 +151,7 @@ export default function ReactButtons({
                 onClick={() => react(value as Reactions)}
               >
                 <span className="mr-1">{Reactions[value].emoji}</span>
-                <span className="text-xs text-blue-600">{count}</span>
+                <span className="text-xs color-text-link">{count}</span>
               </button>
             ) : null,
           )}

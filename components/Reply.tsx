@@ -24,7 +24,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
 
   return (
     <div className="relative gsc-reply">
-      <div className="w-[2px] flex-shrink-0 bg-gray-500 bg-opacity-10 absolute left-[30px] h-full top-0 gsc-tl-line">
+      <div className="w-[2px] flex-shrink-0 absolute left-[30px] h-full top-0 gsc-tl-line">
         <style jsx>
           {`
             :global(.gsc-reply):first-child > .gsc-tl-line {
@@ -51,16 +51,16 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
             <div className="flex">
               <h3 className="flex items-start flex-auto">
                 <a href={reply.author.url} className="flex items-center">
-                  <span className="font-semibold">{reply.author.login}</span>
+                  <span className="font-semibold Link--primary">{reply.author.login}</span>
                 </a>
-                <a href={reply.url} className="ml-2 text-gray-500">
+                <a href={reply.url} className="ml-2 Link--secondary">
                   <div className="whitespace-nowrap" title={formatDate(reply.createdAt)}>
                     {formatDateDistance(reply.createdAt)}
                   </div>
                 </a>
                 {reply.authorAssociation ? (
                   <div className="hidden ml-2 text-xs sm:inline-flex">
-                    <span className="px-1 ml-1 capitalize border border-blue-400 rounded-md border-opacity-30">
+                    <span className="px-1 ml-1 capitalize border rounded-md color-label-border">
                       {reply.authorAssociation}
                     </span>
                   </div>
@@ -69,7 +69,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
               <div className="flex pr-4">
                 {reply.lastEditedAt ? (
                   <button
-                    className="hidden mr-2 text-gray-600 sm:inline-block"
+                    className="hidden mr-2 sm:inline-block color-text-secondary"
                     title={`Last edited at ${formatDate(reply.lastEditedAt)}`}
                   >
                     edited
@@ -81,7 +81,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   variant="popoverOnly"
                   onReact={updateReactions}
                 />
-                <button className="hidden text-gray-500 hover:text-blue-600 sm:inline-block">
+                <button className="hidden sm:inline-block Link--secondary">
                   <KebabHorizontalIcon />
                 </button>
               </div>
@@ -92,7 +92,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
             onClick={toggleEmail}
             dangerouslySetInnerHTML={hidden ? undefined : { __html: reply.bodyHTML }}
           >
-            <em className="text-gray-500">
+            <em className="color-text-secondary">
               This comment {reply.deletedAt ? 'was deleted' : 'has been hidden'}.
             </em>
           </div>

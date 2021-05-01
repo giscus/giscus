@@ -7,9 +7,10 @@ import CommentBox from './CommentBox';
 export interface IGiscussionsProps {
   repo: string;
   term: string;
+  theme?: string;
 }
 
-export default function Giscussions({ repo, term }: IGiscussionsProps) {
+export default function Giscussions({ repo, term, theme }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
   const query = { repo, term };
 
@@ -88,7 +89,7 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
   const context = backData?.discussion?.repository?.nameWithOwner;
 
   return (
-    <div className="w-full text-gray-800">
+    <div className="w-full color-text-primary color-bg-canvas" data-theme={theme || 'light'}>
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">
           {isError
@@ -135,14 +136,14 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
           }}
         >
           <button
-            className="flex flex-col items-center px-6 py-2 text-sm bg-white border rounded"
+            className="flex flex-col items-center px-6 py-2 text-sm border rounded color-bg-primary"
             onClick={() => setSize(size + 1)}
             disabled={isLoadingMore}
           >
-            <span>
+            <span className="color-text-secondary">
               {numHidden} hidden item{numHidden !== 1 ? 's' : ''}
             </span>
-            <span className="font-semibold text-blue-700">
+            <span className="font-semibold color-text-link">
               {isLoadingMore ? 'Loading' : 'Load more'}...
             </span>
           </button>

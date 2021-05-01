@@ -79,14 +79,14 @@ export default function CommentBox({
   }, [token, input, discussionId, replyToId, onSubmit, reset]);
 
   return !isReply || isReplyOpen ? (
-    <div className={`w-full text-sm ${replyToId ? 'border-t' : 'border rounded'}`}>
-      <div className="flex bg-gray-500 border-b rounded-t bg-opacity-5">
+    <div className={`w-full text-sm ${replyToId ? 'border-t' : 'border rounded'} color-bg-primary`}>
+      <div className="flex border-b rounded-t color-bg-tertiary">
         <div className="mx-2 mb-[-1px] mt-2">
           <button
             className={`px-4 py-2 border border-b-0 focus:outline-none ${
               !isPreview
-                ? 'text-gray-700 bg-white border border-b-0 rounded-t'
-                : 'text-gray-500 border-transparent'
+                ? 'color-text-primary color-bg-canvas rounded-t'
+                : 'color-text-secondary border-transparent'
             }`}
             onClick={() => setIsPreview(false)}
           >
@@ -94,7 +94,9 @@ export default function CommentBox({
           </button>
           <button
             className={`px-4 py-2 border border-b-0 focus:outline-none ml-1 ${
-              isPreview ? 'text-gray-700 bg-white rounded-t' : 'text-gray-500 border-transparent'
+              isPreview
+                ? 'color-text-primary color-bg-canvas rounded-t'
+                : 'color-text-secondary border-transparent'
             }`}
             onClick={() => setIsPreview(true)}
           >
@@ -114,7 +116,7 @@ export default function CommentBox({
           </div>
         ) : (
           <textarea
-            className="w-full p-2 border rounded min-h-[100px]"
+            className="w-full p-2 border rounded min-h-[100px] form-control"
             placeholder={token ? 'Write a comment' : 'Sign in to comment'}
             onChange={(event) => setInput(event.target.value)}
             value={input}
@@ -126,7 +128,7 @@ export default function CommentBox({
       </div>
       <div className="flex items-center justify-between m-2">
         <a
-          className="text-xs text-gray-500 hover:text-blue-600 hover:no-underline"
+          className="text-xs hover:no-underline Link--secondary"
           rel="nofollow noopener noreferrer"
           target="_blank"
           href="https://guides.github.com/features/mastering-markdown/"
@@ -137,7 +139,7 @@ export default function CommentBox({
         <div>
           {isReply ? (
             <button
-              className="px-4 py-[5px] ml-1 text-gray-900 bg-white hover:bg-gray-100 border rounded-md"
+              className="px-4 py-[5px] ml-1 border rounded-md btn"
               onClick={() => setIsReplyOpen(false)}
             >
               Cancel
@@ -145,7 +147,7 @@ export default function CommentBox({
           ) : null}
           {token ? (
             <button
-              className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center disabled:opacity-50"
+              className="px-4 py-[5px] ml-1 rounded-md inline-flex items-center btn btn-primary"
               onClick={handleClick}
               disabled={(token && !input.trim()) || isSubmitting}
             >
@@ -154,7 +156,7 @@ export default function CommentBox({
           ) : (
             <Link href={loginUrl}>
               <a
-                className="px-4 py-[5px] ml-1 text-white bg-[#2ea44f] hover:bg-[#2c974b] hover:no-underline hover:text-white border-[rgba(27,31,35,0.15)] rounded-md inline-flex items-center disabled:opacity-50"
+                className="px-4 py-[5px] ml-1 hover:no-underline rounded-md inline-flex items-center btn btn-primary"
                 target="_top"
               >
                 <svg
@@ -178,7 +180,7 @@ export default function CommentBox({
       </div>
     </div>
   ) : (
-    <div className="flex px-4 py-2 bg-gray-500 border-t bg-opacity-5">
+    <div className="flex px-4 py-2 border-t color-bg-tertiary">
       {viewer ? (
         <a href={viewer.url} className="flex items-center flex-shrink-0" target="_top">
           <img
@@ -191,7 +193,7 @@ export default function CommentBox({
         </a>
       ) : null}
       <button
-        className="w-full px-2 py-1 ml-2 text-left text-gray-600 bg-white border rounded cursor-text"
+        className="w-full px-2 py-1 ml-2 text-left border rounded cursor-text form-control"
         onClick={() => setIsReplyOpen(true)}
       >
         Write a reply

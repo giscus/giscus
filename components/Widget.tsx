@@ -1,5 +1,4 @@
 import { useRouter } from 'next/dist/client/router';
-import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Giscussions from '../components/Giscussions';
 import { AuthContext } from '../lib/context';
@@ -55,17 +54,11 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
 
   const ready = (!session || token) && repo && term;
 
-  return (
-    <>
-      <Head>
-        <title>Giscussions</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {ready ? (
-        <AuthContext.Provider value={{ token, origin }}>
-          <Giscussions repo={repo} term={term} />
-        </AuthContext.Provider>
-      ) : null}
-    </>
-  );
+  const theme = (router.query.theme as string) || 'light';
+
+  return ready ? (
+    <AuthContext.Provider value={{ token, origin }}>
+      <Giscussions repo={repo} term={term} theme={theme} />
+    </AuthContext.Provider>
+  ) : null;
 }

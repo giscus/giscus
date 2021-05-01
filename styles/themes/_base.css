@@ -1,0 +1,135 @@
+/*
+
+This file contains adapted styles from the Primer CSS
+design system, licensed under:
+
+MIT License
+Copyright (c) 2021 GitHub Inc.
+https://github.com/primer/css/blob/main/LICENSE
+
+*/
+
+* {
+  border-color: var(--color-border-primary);
+}
+
+a,
+.color-text-link,
+.Link--primary:hover,
+.Link--secondary:hover {
+  color: var(--color-text-link);
+}
+
+.color-bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.color-bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.color-bg-tertiary {
+  background-color: var(--color-bg-tertiary);
+}
+
+.color-bg-canvas {
+  background-color: var(--color-bg-canvas);
+}
+
+.color-bg-canvas-inset {
+  background-color: var(--color-bg-canvas-inset);
+}
+
+.color-bg-info {
+  background-color: var(--color-bg-info);
+}
+
+.color-text-primary,
+.Link--primary {
+  color: var(--color-text-primary);
+}
+
+.color-text-secondary,
+.Link--secondary {
+  color: var(--color-text-secondary);
+}
+
+.color-text-tertiary {
+  color: var(--color-text-tertiary);
+}
+
+.color-border-primary {
+  border-color: var(--color-border-primary);
+}
+
+.color-border-info {
+  border-color: var(--color-border-info);
+}
+
+.form-control {
+  background-color: var(--color-input-bg);
+  border-color: var(--color-input-border);
+}
+
+.color-label-border {
+  border-color: var(--color-label-border);
+}
+
+.color-upvote-icon-bg {
+  background-color: var(--color-upvote-icon-bg);
+}
+
+.Counter--secondary {
+  color: var(--color-counter-secondary-text);
+  background-color: var(--color-counter-secondary-bg);
+}
+
+.btn {
+  color: var(--color-btn-text);
+  border-color: var(--color-btn-border);
+  box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.3, 0, 0.5, 1);
+  transition-delay: 0s;
+  transition-property: color, background-color, border-color;
+}
+
+.btn:hover {
+  background-color: var(--color-btn-hover-bg);
+  border-color: var(--color-btn-hover-border);
+  transition-duration: 0.1s;
+}
+
+.btn:active {
+  background-color: var(--color-btn-active-bg);
+  border-color: var(--color-btn-active-border);
+  transition: none;
+}
+
+.btn-primary {
+  color: var(--color-btn-primary-text);
+  background-color: var(--color-btn-primary-bg);
+  border-color: var(--color-btn-primary-border);
+  box-shadow: var(--color-btn-primary-shadow), var(--color-btn-primary-inset-shadow);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-btn-primary-hover-bg);
+  border-color: var(--color-btn-primary-hover-border);
+}
+
+.btn-primary:disabled {
+  color: var(--color-btn-primary-disabled-text);
+  background-color: var(--color-btn-primary-disabled-bg);
+  border-color: var(--color-btn-primary-disabled-border);
+}
+
+.octicon {
+  fill: currentColor;
+}
+
+.gsc-tl-line {
+  background-color: var(--color-border-secondary);
+}

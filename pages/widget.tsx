@@ -7,6 +7,7 @@ export default function Home() {
 
   const repo = router.query.repo as string;
   const term = router.query.term as string;
+  const theme = router.query.theme as string;
 
   return (
     <>
@@ -15,7 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full mx-auto">
+      <main className="w-full mx-auto" data-theme={theme}>
         <Widget repo={repo} term={term} />
       </main>
 

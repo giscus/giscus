@@ -7,10 +7,9 @@ import CommentBox from './CommentBox';
 export interface IGiscussionsProps {
   repo: string;
   term: string;
-  theme?: string;
 }
 
-export default function Giscussions({ repo, term, theme }: IGiscussionsProps) {
+export default function Giscussions({ repo, term }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
   const query = { repo, term };
 
@@ -89,7 +88,7 @@ export default function Giscussions({ repo, term, theme }: IGiscussionsProps) {
   const context = backData?.discussion?.repository?.nameWithOwner;
 
   return (
-    <div className="w-full color-text-primary" data-theme={theme || 'light'}>
+    <div className="w-full color-text-primary">
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">
           {isError

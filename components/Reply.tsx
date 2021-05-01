@@ -24,16 +24,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
 
   return (
     <div className="relative gsc-reply">
-      <div className="w-[2px] flex-shrink-0 absolute left-[30px] h-full top-0 gsc-tl-line">
-        <style jsx>
-          {`
-            :global(.gsc-reply):first-child > .gsc-tl-line {
-              top: 16px;
-              height: calc(100% - 16px);
-            }
-          `}
-        </style>
-      </div>
+      <div className="w-[2px] flex-shrink-0 absolute left-[30px] h-full top-0 gsc-tl-line" />
       <div className={`flex py-2 pl-4 ${hidden ? 'items-center' : ''}`}>
         <div className="z-10 flex-shrink-0">
           <a href={reply.author.url} className="flex items-center">

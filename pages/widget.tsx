@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full p-2 mx-auto">
+      <main className="w-full mx-auto">
         <Widget repo={repo} term={term} />
       </main>
 

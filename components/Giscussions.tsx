@@ -89,7 +89,7 @@ export default function Giscussions({ repo, term, theme }: IGiscussionsProps) {
   const context = backData?.discussion?.repository?.nameWithOwner;
 
   return (
-    <div className="w-full color-text-primary color-bg-canvas" data-theme={theme || 'light'}>
+    <div className="w-full color-text-primary" data-theme={theme || 'light'}>
       <div className="flex flex-wrap items-center">
         <h4 className="flex-auto my-2 mr-2 font-semibold">
           {isError

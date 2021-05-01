@@ -7,9 +7,10 @@ import CommentBox from './CommentBox';
 export interface IGiscussionsProps {
   repo: string;
   term: string;
+  onError?: VoidFunction;
 }
 
-export default function Giscussions({ repo, term }: IGiscussionsProps) {
+export default function Giscussions({ repo, term, onError }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
   const query = { repo, term };
 
@@ -86,6 +87,8 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
     frontData?.reduce((prev, g) => prev + g.discussion.totalCountWithReplies, 0);
 
   const context = backData?.discussion?.repository?.nameWithOwner;
+
+  if (error?.error && onError) onError();
 
   return (
     <div className="w-full color-text-primary">

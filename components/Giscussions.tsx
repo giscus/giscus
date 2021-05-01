@@ -129,7 +129,7 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
       {numHidden > 0 ? (
         <div className="flex justify-center py-2 my-4 bg-center bg-repeat-x pagination-loader-container">
           <button
-            className="flex flex-col items-center px-6 py-2 text-sm border rounded color-bg-primary"
+            className="flex flex-col items-center px-6 py-2 text-sm border rounded color-bg-primary color-border-primary"
             onClick={() => setSize(size + 1)}
             disabled={isLoadingMore}
           >
@@ -164,7 +164,7 @@ export default function Giscussions({ repo, term }: IGiscussionsProps) {
           ))
         : null}
 
-      <div className="my-4 text-sm border-t-2" />
+      <div className="my-4 text-sm border-t-2 color-border-primary" />
 
       {!isLoading && !isNotFound ? (
         <CommentBox

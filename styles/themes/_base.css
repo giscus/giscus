@@ -40,6 +40,10 @@ a,
   background-color: var(--color-bg-canvas-inset);
 }
 
+.color-bg-overlay {
+  background-color: var(--color-bg-overlay);
+}
+
 .color-bg-info {
   background-color: var(--color-bg-info);
 }
@@ -60,6 +64,10 @@ a,
 
 .color-border-primary {
   border-color: var(--color-border-primary);
+}
+
+.color-border-tertiary {
+  border-color: var(--color-border-tertiary);
 }
 
 .color-border-info {
@@ -130,10 +138,6 @@ a,
   @apply fill-current;
 }
 
-.gsc-tl-line {
-  background-color: var(--color-border-secondary);
-}
-
 /* Compatibility shim for @primer/css to style GitHub-generated HTML */
 
 .border-0 {
@@ -191,10 +195,6 @@ a,
   @apply font-mono;
   font-size: 90%;
   color: var(--color-auto-gray-7);
-}
-
-.border {
-  border: 1px solid var(--color-border-primary);
 }
 
 .rounded-2 {
@@ -274,4 +274,47 @@ a,
 .zeroclipboard-link {
   @apply p-0 m-0 cursor-pointer;
   color: var(--color-text-link);
+}
+
+/* Giscussions-specific styles */
+
+.gsc-tl-line {
+  background-color: var(--color-border-secondary);
+}
+
+.popover::before {
+  position: absolute;
+  top: -16px;
+  left: 9px;
+  border: 8px solid transparent;
+  border-bottom-color: var(--color-border-primary);
+  content: '';
+}
+.popover::after {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  border: 7px solid transparent;
+  border-bottom: 8px solid var(--color-bg-overlay);
+  content: '';
+}
+.popover-only::before {
+  position: absolute;
+  top: -16px;
+  right: 9px;
+  border: 8px solid transparent;
+  border-bottom-color: var(--color-border-primary);
+  content: '';
+}
+.popover-only::after {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  border: 7px solid transparent;
+  border-bottom: 8px solid var(--color-bg-overlay);
+  content: '';
+}
+.gsc-emoji-button:focus .gsc-emoji,
+.gsc-emoji-button:hover .gsc-emoji {
+  transform: scaleX(1.5) scaleY(1.5);
 }

@@ -109,3 +109,37 @@ export function toggleEmail(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) 
     content.classList.toggle('expanded');
   }
 }
+
+export function clipboardCopy(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
+  const element = event.target as Element;
+  const button = element.closest<Element>('clipboard-copy');
+
+  if (button && event.currentTarget.contains(button)) {
+    event.preventDefault();
+
+    const placeholder = document.createElement('textarea');
+    document.body.appendChild(placeholder);
+
+    placeholder.value = button.getAttribute('value');
+    placeholder.select();
+    document.execCommand('copy');
+
+    document.body.removeChild(placeholder);
+
+    const clipboardIcon = button.querySelector<SVGElement>('svg.js-clipboard-clippy-icon');
+    const checkIcon = button.querySelector<SVGElement>('svg.js-clipboard-check-icon');
+
+    clipboardIcon.classList.add('d-none');
+    checkIcon.classList.remove('d-none');
+
+    setTimeout(() => {
+      clipboardIcon.classList.remove('d-none');
+      checkIcon.classList.add('d-none');
+    }, 3000);
+  }
+}
+
+export function handleCommentClick(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
+  toggleEmail(event);
+  clipboardCopy(event);
+}

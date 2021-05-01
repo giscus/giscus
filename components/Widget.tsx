@@ -54,11 +54,9 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
 
   const ready = (!session || token) && repo && term;
 
-  const theme = (router.query.theme as string) || 'light';
-
   return ready ? (
     <AuthContext.Provider value={{ token, origin }}>
-      <Giscussions repo={repo} term={term} theme={theme} />
+      <Giscussions repo={repo} term={term} />
     </AuthContext.Provider>
   ) : null;
 }

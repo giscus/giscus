@@ -4,7 +4,7 @@ import { IReply } from '../lib/models/adapter';
 import { useCallback } from 'react';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
-import { useToggleEmail } from '../lib/hooks';
+import { toggleEmail } from '../lib/adapter';
 
 export interface IReplyProps {
   reply: IReply;
@@ -17,8 +17,6 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
       onReplyUpdate(updateCommentReaction(reply, content), promise),
     [reply, onReplyUpdate],
   );
-
-  const toggleEmail = useToggleEmail();
 
   const hidden = reply.deletedAt || reply.isMinimized;
 

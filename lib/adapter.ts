@@ -1,3 +1,4 @@
+import { MouseEvent as ReactMouseEvent } from 'react';
 import { IComment, IGiscussion, IReactionGroups, IReply } from './models/adapter';
 import {
   GComment,
@@ -96,4 +97,15 @@ export function adaptDiscussion({
       comments,
     },
   };
+}
+
+export function toggleEmail(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
+  const element = event.target as Element;
+  const toggle = element.closest<HTMLAnchorElement>('.email-hidden-toggle a');
+  if (toggle && event.currentTarget.contains(toggle)) {
+    event.preventDefault();
+    const container = element.closest('div');
+    const content = container.querySelector('.email-hidden-reply');
+    content.classList.toggle('expanded');
+  }
 }

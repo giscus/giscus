@@ -1,6 +1,6 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { ReactElement, useCallback, useState } from 'react';
-import { useToggleEmail } from '../lib/hooks';
+import { toggleEmail } from '../lib/adapter';
 import { IComment, IReply } from '../lib/models/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
@@ -31,8 +31,6 @@ export default function Comment({
   );
 
   const incrementPage = () => page < 1 && setPage(page + 1);
-
-  const toggleEmail = useToggleEmail();
 
   const hidden = comment.deletedAt || comment.isMinimized;
 

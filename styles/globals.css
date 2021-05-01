@@ -10,16 +10,6 @@ a:hover {
   @apply break-words;
 }
 
-.markdown a {
-  color: var(--color-text-link);
-}
-
-.markdown .team-mention,
-.markdown .user-mention {
-  @apply font-semibold whitespace-nowrap;
-  color: var(--color-text-primary);
-}
-
 .markdown strong {
   @apply font-semibold;
 }
@@ -69,10 +59,19 @@ a:hover {
   background-color: var(--color-markdown-code-bg);
 }
 
+.markdown .highlight {
+  @apply mb-4;
+}
+
+.markdown .highlight pre,
 .markdown pre {
   @apply text-xs p-4 overflow-auto rounded-md;
   line-height: 1.45;
   background-color: var(--color-bg-tertiary);
+}
+
+.markdown .highlight pre {
+  @apply mb-0 break-normal;
 }
 
 .markdown pre > code {
@@ -140,15 +139,6 @@ a:hover {
   list-style-type: square;
 }
 
-.task-list-item {
-  @apply list-none;
-}
-
-.task-list-item-checkbox {
-  @apply align-middle;
-  margin: 0 0.2em 0.25em -1.6em;
-}
-
 .markdown ol {
   @apply list-decimal;
 }
@@ -175,137 +165,10 @@ a:hover {
   @apply mt-0;
 }
 
-/* GitHub Primer stuff */
-
-.markdown .position-relative {
-  @apply relative;
-}
-
-.markdown .position-absolute {
-  @apply absolute;
-}
-
-.markdown .d-none {
-  @apply hidden;
-}
-
-.markdown .btn {
-  @apply relative inline-block whitespace-nowrap align-middle rounded-md;
-}
-
-.markdown .btn .octicon {
-  @apply align-bottom;
-  color: var(--color-text-tertiary);
-}
-
-.markdown .rounded-1 {
-  @apply rounded-md;
-}
-
-.markdown .border-bottom {
-  @apply border-b;
-}
-
-.markdown .lh-condensed {
-  line-height: 1.25;
-}
-
-.markdown .f6 {
-  @apply text-xs;
-}
-
-.markdown .text-bold {
-  @apply font-semibold;
-}
-
-.markdown .commit-tease-sha {
-  @apply font-mono;
-  font-size: 90%;
-  color: var(--color-auto-gray-7);
-}
-
 .markdown .mb-0 {
   @apply mb-0;
 }
 
 .markdown .py-0 {
   @apply py-0;
-}
-
-.markdown .border-0 {
-  @apply border-none;
-}
-
-.markdown .border {
-  border: 1px solid var(--color-border-primary);
-}
-
-.markdown .rounded-2 {
-  @apply rounded-md;
-}
-
-.markdown .blob-wrapper {
-  @apply overflow-x-auto overflow-y-hidden;
-}
-
-.markdown .blob-wrapper-embedded {
-  @apply max-h-[240px] overflow-y-auto;
-}
-
-.markdown .blob-num {
-  @apply w-[1%] min-w-[50px] px-[10px] font-mono text-xs leading-5 text-right whitespace-nowrap align-top cursor-pointer select-none;
-  color: var(--color-diff-blob-num-text);
-}
-
-.markdown .blob-num:hover {
-  color: var(--color-diff-blob-num-hover-text);
-}
-
-.markdown .blob-num:before {
-  content: attr(data-line-number);
-}
-
-.markdown .blob-code-inner {
-  @apply overflow-visible font-mono text-xs whitespace-pre;
-  word-wrap: normal;
-}
-
-.markdown .blob-wrapper table tr:nth-child(2n) {
-  background-color: initial;
-}
-
-.markdown .email-hidden-toggle a {
-  @apply inline-block h-3 px-2 text-xs font-semibold leading-[6px] no-underline align-middle border;
-  color: var(--color-text-primary);
-  background: var(--color-hidden-text-expander-bg);
-}
-
-.markdown .email-quoted-reply,
-.markdown .email-signature-reply {
-  @apply px-4 my-4 border-l-4;
-  color: var(--color-text-secondary);
-  border-left-color: var(--color-border-primary);
-}
-
-.markdown .email-hidden-reply {
-  @apply whitespace-pre-wrap hidden;
-}
-
-.markdown .email-hidden-reply.expanded {
-  @apply block;
-}
-
-.markdown .highlight .zeroclipboard-container {
-  @apply opacity-0;
-  animation: fade-out 0.2s both;
-}
-
-.markdown .highlight:hover .zeroclipboard-container {
-  @apply opacity-100;
-  animation: fade-in 0.2s both;
-}
-
-.markdown .zeroclipboard-link {
-  @apply p-0 m-0 cursor-pointer;
-  color: var(--color-text-link);
 }

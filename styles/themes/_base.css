@@ -97,15 +97,15 @@ a,
 }
 
 .btn:hover {
+  @apply duration-100;
   background-color: var(--color-btn-hover-bg);
   border-color: var(--color-btn-hover-border);
-  transition-duration: 0.1s;
 }
 
 .btn:active {
+  @apply transition-none;
   background-color: var(--color-btn-active-bg);
   border-color: var(--color-btn-active-border);
-  transition: none;
 }
 
 .btn-primary {
@@ -127,9 +127,151 @@ a,
 }
 
 .octicon {
-  fill: currentColor;
+  @apply fill-current;
 }
 
 .gsc-tl-line {
   background-color: var(--color-border-secondary);
+}
+
+/* Compatibility shim for @primer/css to style GitHub-generated HTML */
+
+.border-0 {
+  @apply border-none;
+}
+
+.team-mention,
+.user-mention {
+  @apply font-semibold whitespace-nowrap;
+  color: var(--color-text-primary);
+}
+
+.position-relative {
+  @apply relative;
+}
+
+.position-absolute {
+  @apply absolute;
+}
+
+.d-none {
+  @apply hidden;
+}
+
+.btn {
+  @apply relative inline-block whitespace-nowrap align-middle rounded-md;
+}
+
+.btn .octicon {
+  @apply align-bottom;
+  color: var(--color-text-tertiary);
+}
+
+.rounded-1 {
+  @apply rounded-md;
+}
+
+.border-bottom {
+  @apply border-b;
+}
+
+.lh-condensed {
+  line-height: 1.25;
+}
+
+.f6 {
+  @apply text-xs;
+}
+
+.text-bold {
+  @apply font-semibold;
+}
+
+.commit-tease-sha {
+  @apply font-mono;
+  font-size: 90%;
+  color: var(--color-auto-gray-7);
+}
+
+.border {
+  border: 1px solid var(--color-border-primary);
+}
+
+.rounded-2 {
+  @apply rounded-md;
+}
+
+.task-list-item {
+  @apply list-none;
+}
+
+.task-list-item-checkbox {
+  @apply align-middle;
+  margin: 0 0.2em 0.25em -1.6em;
+}
+
+.blob-wrapper {
+  @apply overflow-x-auto overflow-y-hidden;
+}
+
+.blob-wrapper-embedded {
+  @apply max-h-[240px] overflow-y-auto;
+}
+
+.blob-num {
+  @apply w-[1%] min-w-[50px] px-[10px] font-mono text-xs leading-5 text-right whitespace-nowrap align-top cursor-pointer select-none;
+  color: var(--color-diff-blob-num-text);
+}
+
+.blob-num:hover {
+  color: var(--color-diff-blob-num-hover-text);
+}
+
+.blob-num:before {
+  content: attr(data-line-number);
+}
+
+.blob-code-inner {
+  @apply overflow-visible font-mono text-xs whitespace-pre;
+  word-wrap: normal;
+}
+
+.blob-wrapper table tr:nth-child(2n) {
+  background-color: initial;
+}
+
+.email-hidden-toggle a {
+  @apply inline-block h-3 px-2 text-xs font-semibold leading-[6px] no-underline align-middle border;
+  color: var(--color-text-primary);
+  background: var(--color-hidden-text-expander-bg);
+}
+
+.email-quoted-reply,
+.email-signature-reply {
+  @apply px-4 my-4 border-l-4;
+  color: var(--color-text-secondary);
+  border-left-color: var(--color-border-primary);
+}
+
+.email-hidden-reply {
+  @apply whitespace-pre-wrap hidden;
+}
+
+.email-hidden-reply.expanded {
+  @apply block;
+}
+
+.highlight .zeroclipboard-container {
+  @apply opacity-0;
+  animation: fade-out 0.2s both;
+}
+
+.highlight:hover .zeroclipboard-container {
+  @apply opacity-100;
+  animation: fade-in 0.2s both;
+}
+
+.zeroclipboard-link {
+  @apply p-0 m-0 cursor-pointer;
+  color: var(--color-text-link);
 }

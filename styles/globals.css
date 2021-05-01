@@ -219,8 +219,9 @@ a:hover {
 }
 
 .markdown .commit-tease-sha {
-  @apply font-mono text-gray-600;
+  @apply font-mono;
   font-size: 90%;
+  color: var(--color-auto-gray-7);
 }
 
 .markdown .mb-0 {

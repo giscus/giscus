@@ -193,7 +193,7 @@ export default function CommentBox({
         </a>
       ) : null}
       <button
-        className="w-full px-2 py-1 ml-2 text-left border rounded cursor-text form-control"
+        className="w-full px-2 py-1 ml-2 text-left border rounded cursor-text form-control color-text-secondary"
         onClick={() => setIsReplyOpen(true)}
       >
         Write a reply

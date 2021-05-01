@@ -177,6 +177,21 @@ a:hover {
 
 /* GitHub Primer stuff */
 
+.markdown .position-relative {
+  @apply relative;
+}
+
+.markdown .position-absolute {
+  @apply absolute;
+}
+
+.markdown .d-none {
+  @apply hidden;
+}
+
+.markdown .btn {
+  @apply relative inline-block whitespace-nowrap align-middle rounded-md;
+}
 
 .markdown .btn .octicon {
   @apply align-bottom;
@@ -222,6 +237,10 @@ a:hover {
 
 .markdown .border {
   border: 1px solid var(--color-border-primary);
+}
+
+.markdown .rounded-2 {
+  @apply rounded-md;
 }
 
 .markdown .blob-wrapper {
@@ -273,4 +292,19 @@ a:hover {
 
 .markdown .email-hidden-reply.expanded {
   @apply block;
+}
+
+.markdown .highlight .zeroclipboard-container {
+  @apply opacity-0;
+  animation: fade-out 0.2s both;
+}
+
+.markdown .highlight:hover .zeroclipboard-container {
+  @apply opacity-100;
+  animation: fade-in 0.2s both;
+}
+
+.markdown .zeroclipboard-link {
+  @apply p-0 m-0 cursor-pointer;
+  color: var(--color-text-link);
 }

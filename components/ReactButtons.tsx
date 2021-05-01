@@ -43,7 +43,9 @@ export default function ReactButtons({
         <div ref={ref} className="relative">
           <button
             className={`px-3 py-[3px] Link--secondary${
-              variant !== 'popoverOnly' ? ' mb-4 mr-3 border rounded color-bg-tertiary' : ''
+              variant !== 'popoverOnly'
+                ? ' mb-4 mr-3 border rounded color-bg-tertiary color-border-primary'
+                : ''
             }`}
             onClick={togglePopover}
           >
@@ -52,7 +54,7 @@ export default function ReactButtons({
           <div
             className={`absolute ${isOpen ? 'visible scale-100' : 'invisible scale-50'} ${
               variant === 'popoverOnly' ? 'popover-only right-0' : 'popover'
-            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] color-text-secondary color-bg-primary border rounded top-10`}
+            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] color-text-secondary color-bg-overlay border rounded top-10 color-border-primary`}
           >
             <p className="m-2">
               {token ? (
@@ -68,14 +70,16 @@ export default function ReactButtons({
                 </>
               )}
             </p>
-            <div className="my-2 border-t" />
+            <div className="my-2 border-t color-border-primary" />
             <div className="m-2">
               {Object.entries(Reactions).map(([key, { name, emoji }]) => (
                 <button
                   key={key}
                   type="button"
-                  className={`w-8 h-8 gsc-emoji-button ${
-                    reactionGroups[key].viewerHasReacted ? 'border color-bg-info' : ''
+                  className={`w-8 h-8 mr-[-1px] mt-[-1px] rounded-none gsc-emoji-button ${
+                    reactionGroups[key].viewerHasReacted
+                      ? 'border color-bg-info color-border-tertiary'
+                      : ''
                   }`}
                   onClick={() => {
                     react(key as Reactions);
@@ -91,46 +95,6 @@ export default function ReactButtons({
                 </button>
               ))}
             </div>
-            <style jsx>
-              {`
-                .popover::before {
-                  position: absolute;
-                  top: -16px;
-                  left: 9px;
-                  border: 8px solid transparent;
-                  border-bottom: 8px solid lightgray;
-                  content: '';
-                }
-                .popover::after {
-                  position: absolute;
-                  top: -15px;
-                  left: 10px;
-                  border: 7px solid transparent;
-                  border-bottom: 8px solid white;
-                  content: '';
-                }
-                .popover-only::before {
-                  position: absolute;
-                  top: -16px;
-                  right: 9px;
-                  border: 8px solid transparent;
-                  border-bottom: 8px solid lightgray;
-                  content: '';
-                }
-                .popover-only::after {
-                  position: absolute;
-                  top: -15px;
-                  right: 10px;
-                  border: 7px solid transparent;
-                  border-bottom: 8px solid white;
-                  content: '';
-                }
-                .gsc-emoji-button:focus .gsc-emoji,
-                .gsc-emoji-button:hover .gsc-emoji {
-                  transform: scaleX(1.5) scaleY(1.5);
-                }
-              `}
-            </style>
           </div>
         </div>
       ) : null}
@@ -141,7 +105,7 @@ export default function ReactButtons({
             count > 0 ? (
               <button
                 key={value}
-                className={`px-2 py-[3px] mb-4 mr-2 last:mr-0 border rounded${
+                className={`px-2 py-[3px] mb-4 mr-2 last:mr-0 border color-border-primary rounded${
                   viewerHasReacted ? ' color-bg-info' : ''
                 }`}
                 disabled={!token}

@@ -1,3 +1,7 @@
+body * {
+  border-color: var(--color-border-primary);
+}
+
 a {
   @apply no-underline;
 }

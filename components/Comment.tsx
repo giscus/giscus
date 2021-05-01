@@ -64,7 +64,7 @@ export default function Comment({
           </div>
         </div>
       ) : null}
-      <div className="w-full min-w-0 border rounded-md color-bg-primary">
+      <div className="w-full min-w-0 border rounded-md color-bg-primary color-border-primary">
         {!comment.isMinimized ? (
           <div className="flex items-center px-4">
             <h3 className="flex items-center flex-auto pt-2">
@@ -136,7 +136,7 @@ export default function Comment({
           </div>
         ) : null}
         {comment.replies.length > 0 ? (
-          <div className="pt-2 border-t rounded-b color-bg-canvas-inset">
+          <div className="pt-2 border-t rounded-b color-bg-canvas-inset color-border-primary">
             {replies.map((reply) => (
               <Reply key={reply.id} reply={reply} onReplyUpdate={onReplyUpdate} />
             ))}

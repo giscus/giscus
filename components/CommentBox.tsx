@@ -79,13 +79,17 @@ export default function CommentBox({
   }, [token, input, discussionId, replyToId, onSubmit, reset]);
 
   return !isReply || isReplyOpen ? (
-    <div className={`w-full text-sm ${replyToId ? 'border-t' : 'border rounded'} color-bg-primary`}>
-      <div className="flex border-b rounded-t color-bg-tertiary">
+    <div
+      className={`w-full text-sm ${
+        replyToId ? 'border-t' : 'border rounded'
+      } color-bg-primary color-border-primary`}
+    >
+      <div className="flex border-b rounded-t color-bg-tertiary color-border-primary">
         <div className="mx-2 mb-[-1px] mt-2">
           <button
             className={`px-4 py-2 border border-b-0 focus:outline-none ${
               !isPreview
-                ? 'color-text-primary color-bg-canvas rounded-t'
+                ? 'color-text-primary color-bg-canvas rounded-t color-border-primary'
                 : 'color-text-secondary border-transparent'
             }`}
             onClick={() => setIsPreview(false)}
@@ -95,7 +99,7 @@ export default function CommentBox({
           <button
             className={`px-4 py-2 border border-b-0 focus:outline-none ml-1 ${
               isPreview
-                ? 'color-text-primary color-bg-canvas rounded-t'
+                ? 'color-text-primary color-bg-canvas rounded-t color-border-primary'
                 : 'color-text-secondary border-transparent'
             }`}
             onClick={() => setIsPreview(true)}
@@ -107,7 +111,7 @@ export default function CommentBox({
       <div className="m-2">
         {isPreview ? (
           <div
-            className="px-2 pt-2 pb-4 min-h-[105px] border-b-2 markdown"
+            className="px-2 pt-2 pb-4 min-h-[105px] border-b-2 markdown color-border-primary"
             dangerouslySetInnerHTML={
               isLoading ? undefined : { __html: preview || 'Nothing to preview' }
             }
@@ -116,7 +120,7 @@ export default function CommentBox({
           </div>
         ) : (
           <textarea
-            className="w-full p-2 border rounded min-h-[100px] form-control"
+            className="w-full p-2 border rounded min-h-[100px] form-control color-border-primary"
             placeholder={token ? 'Write a comment' : 'Sign in to comment'}
             onChange={(event) => setInput(event.target.value)}
             value={input}
@@ -180,7 +184,7 @@ export default function CommentBox({
       </div>
     </div>
   ) : (
-    <div className="flex px-4 py-2 border-t color-bg-tertiary">
+    <div className="flex px-4 py-2 border-t color-bg-tertiary color-border-primary">
       {viewer ? (
         <a href={viewer.url} className="flex items-center flex-shrink-0" target="_top">
           <img
@@ -193,7 +197,7 @@ export default function CommentBox({
         </a>
       ) : null}
       <button
-        className="w-full px-2 py-1 ml-2 text-left border rounded cursor-text form-control color-text-secondary"
+        className="w-full px-2 py-1 ml-2 text-left border rounded cursor-text form-control color-text-secondary color-border-primary"
         onClick={() => setIsReplyOpen(true)}
       >
         Write a reply

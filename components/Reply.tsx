@@ -4,7 +4,7 @@ import { IReply } from '../lib/models/adapter';
 import { useCallback } from 'react';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
-import { toggleEmail } from '../lib/adapter';
+import { handleCommentClick } from '../lib/adapter';
 
 export interface IReplyProps {
   reply: IReply;
@@ -78,7 +78,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
           ) : null}
           <div
             className={`w-full pr-4 markdown ${!hidden ? 'pb-2' : ''}`}
-            onClick={toggleEmail}
+            onClick={handleCommentClick}
             dangerouslySetInnerHTML={hidden ? undefined : { __html: reply.bodyHTML }}
           >
             <em className="color-text-secondary">

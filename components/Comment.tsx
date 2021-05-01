@@ -1,6 +1,6 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { ReactElement, useCallback, useState } from 'react';
-import { toggleEmail } from '../lib/adapter';
+import { handleCommentClick } from '../lib/adapter';
 import { IComment, IReply } from '../lib/models/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
@@ -110,7 +110,7 @@ export default function Comment({
           className={`markdown rounded-t ${
             comment.isMinimized ? 'px-4 py-2 color-bg-tertiary' : 'p-4'
           }`}
-          onClick={toggleEmail}
+          onClick={handleCommentClick}
           dangerouslySetInnerHTML={hidden ? undefined : { __html: comment.bodyHTML }}
         >
           <em className="color-text-secondary">

@@ -93,7 +93,7 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
   return (
     <div className="w-full color-text-primary">
       <div className="flex flex-wrap items-center">
-        <h4 className="flex-auto my-2 mr-2 font-semibold">
+        <h4 className="flex-auto mb-2 mr-2 font-semibold">
           {isError
             ? `An error occurred${error.error ? `: ${error.error}` : ''}.`
             : isNotFound

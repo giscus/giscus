@@ -805,3 +805,7 @@ https://github.com/primer/primitives/blob/main/LICENSE
   --color-calendar-halloween-graph-day-L3-bg: #fe9600;
   --color-calendar-halloween-graph-day-L4-bg: #03001c;
 }
+
+[data-theme='light'] .pagination-loader-container {
+  background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg);
+}

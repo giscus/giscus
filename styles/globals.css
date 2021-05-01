@@ -1,11 +1,9 @@
-@import 'github-syntax-light/lib/github-light.css';
-
 a {
   @apply no-underline;
 }
 
 a:hover {
-  @apply text-blue-700 underline;
+  @apply underline;
 }
 
 .markdown {
@@ -13,7 +11,13 @@ a:hover {
 }
 
 .markdown a {
-  @apply text-blue-700;
+  color: var(--color-text-link);
+}
+
+.markdown .team-mention,
+.markdown .user-mention {
+  @apply font-semibold whitespace-nowrap;
+  color: var(--color-text-primary);
 }
 
 .markdown strong {
@@ -55,26 +59,24 @@ a:hover {
 }
 
 .markdown h6 {
-  @apply text-xs text-gray-500;
+  @apply text-xs;
+  color: var(--color-text-secondary);
+}
+
+.markdown code,
+.markdown tt {
+  @apply text-xs px-1 py-[2px] rounded-md;
+  background-color: var(--color-markdown-code-bg);
 }
 
 .markdown pre {
+  @apply text-xs p-4 overflow-auto rounded-md;
   line-height: 1.45;
-  @apply p-4 overflow-auto rounded-md;
+  background-color: var(--color-bg-tertiary);
 }
 
-.markdown pre,
-.markdown code {
-  @apply text-xs;
-}
-
-.markdown pre,
-.markdown p code {
-  @apply bg-gray-500 bg-opacity-5;
-}
-
-.markdown p code {
-  @apply px-1 py-[2px] rounded-md;
+.markdown pre > code {
+  background: transparent;
 }
 
 .markdown table th,
@@ -87,11 +89,12 @@ a:hover {
 }
 
 .markdown table tr:nth-child(2n) {
-  @apply bg-gray-500 bg-opacity-5;
+  background-color: var(--color-bg-tertiary);
 }
 
 .markdown blockquote {
-  @apply px-4 border-l-[3px] text-gray-500;
+  @apply px-4 border-l-[3px];
+  color: var(--color-text-tertiary);
 }
 
 .markdown blockquote,
@@ -151,11 +154,17 @@ a:hover {
 }
 
 .markdown kbd {
-  @apply px-[5px] py-[3px] text-[11px] align-middle border rounded-md shadow bg-gray-400 bg-opacity-5 text-gray-700;
+  @apply px-[5px] py-[3px] text-[11px] align-middle border rounded-md;
+  color: var(--color-auto-gray-7);
+  background-color: var(--color-bg-secondary);
+  border-bottom-color: var(--color-border-tertiary);
+  border: 1px solid var(--color-border-tertiary);
+  box-shadow: inset 0 -1px 0 var(--color-border-tertiary);
 }
 
 .markdown hr {
-  @apply h-[.25em] my-6 bg-gray-400 bg-opacity-20;
+  @apply h-[.25em] my-6;
+  background-color: var(--color-border-primary);
 }
 
 .markdown > :last-child {
@@ -168,16 +177,18 @@ a:hover {
 
 /* GitHub Primer stuff */
 
+
+.markdown .btn .octicon {
+  @apply align-bottom;
+  color: var(--color-text-tertiary);
+}
+
 .markdown .rounded-1 {
   @apply rounded-md;
 }
 
 .markdown .border-bottom {
   @apply border-b;
-}
-
-.markdown .color-bg-secondary {
-  @apply bg-gray-400 bg-opacity-5;
 }
 
 .markdown .lh-condensed {
@@ -190,10 +201,6 @@ a:hover {
 
 .markdown .text-bold {
   @apply font-semibold;
-}
-
-.markdown .color-text-tertiary {
-  @apply text-gray-500;
 }
 
 .markdown .commit-tease-sha {
@@ -213,6 +220,10 @@ a:hover {
   @apply border-none;
 }
 
+.markdown .border {
+  border: 1px solid var(--color-border-primary);
+}
+
 .markdown .blob-wrapper {
   @apply overflow-x-auto overflow-y-hidden;
 }
@@ -222,7 +233,12 @@ a:hover {
 }
 
 .markdown .blob-num {
-  @apply w-[1%] min-w-[50px] px-[10px] font-mono text-xs leading-5 text-gray-400 text-right whitespace-nowrap align-top cursor-pointer select-none;
+  @apply w-[1%] min-w-[50px] px-[10px] font-mono text-xs leading-5 text-right whitespace-nowrap align-top cursor-pointer select-none;
+  color: var(--color-diff-blob-num-text);
+}
+
+.markdown .blob-num:hover {
+  color: var(--color-diff-blob-num-hover-text);
 }
 
 .markdown .blob-num:before {
@@ -239,12 +255,16 @@ a:hover {
 }
 
 .markdown .email-hidden-toggle a {
-  @apply inline-block h-3 px-2 text-xs font-semibold leading-[6px] no-underline align-middle bg-gray-400 bg-opacity-20 border;
+  @apply inline-block h-3 px-2 text-xs font-semibold leading-[6px] no-underline align-middle border;
+  color: var(--color-text-primary);
+  background: var(--color-hidden-text-expander-bg);
 }
 
 .markdown .email-quoted-reply,
 .markdown .email-signature-reply {
-  @apply px-4 my-4 text-gray-500 border-l-4;
+  @apply px-4 my-4 border-l-4;
+  color: var(--color-text-secondary);
+  border-left-color: var(--color-border-primary);
 }
 
 .markdown .email-hidden-reply {

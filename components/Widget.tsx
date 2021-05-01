@@ -1,5 +1,5 @@
 import { useRouter } from 'next/dist/client/router';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Giscussions from '../components/Giscussions';
 import { AuthContext } from '../lib/context';
 import { getToken } from '../services/giscussions/token';
@@ -15,6 +15,11 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
     setOrigin((router.query.origin as string) || location.href || '');
   }, [origin, router.query.origin]);
 
+  const handleError = useCallback(() => {
+    localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
+    router.reload();
+  }, [router]);
+
   const querySession = router.query.giscussions as string;
 
   let savedSession: string;
@@ -26,13 +31,7 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
 
   const session = querySession || savedSession;
 
-  if (session)
-    getToken(session)
-      .then(setToken)
-      .catch(() => {
-        localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
-        router.reload();
-      });
+  if (session) getToken(session).then(setToken).catch(handleError);
 
   if (querySession) {
     const query = { ...router.query };
@@ -56,7 +55,7 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
 
   return ready ? (
     <AuthContext.Provider value={{ token, origin }}>
-      <Giscussions repo={repo} term={term} />
+      <Giscussions repo={repo} term={term} onError={handleError} />
     </AuthContext.Provider>
   ) : null;
 }

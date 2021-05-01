@@ -21,70 +21,74 @@ a,
 }
 
 .color-bg-primary {
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-primary) !important;
 }
 
 .color-bg-secondary {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-secondary) !important;
 }
 
 .color-bg-tertiary {
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-bg-tertiary) !important;
 }
 
 .color-bg-canvas {
-  background-color: var(--color-bg-canvas);
+  background-color: var(--color-bg-canvas) !important;
 }
 
 .color-bg-canvas-inset {
-  background-color: var(--color-bg-canvas-inset);
+  background-color: var(--color-bg-canvas-inset) !important;
 }
 
 .color-bg-overlay {
-  background-color: var(--color-bg-overlay);
+  background-color: var(--color-bg-overlay) !important;
 }
 
 .color-bg-info {
-  background-color: var(--color-bg-info);
+  background-color: var(--color-bg-info) !important;
 }
 
 .color-text-primary,
 .Link--primary {
-  color: var(--color-text-primary);
+  color: var(--color-text-primary) !important;
 }
 
 .color-text-secondary,
 .Link--secondary {
-  color: var(--color-text-secondary);
+  color: var(--color-text-secondary) !important;
 }
 
 .color-text-tertiary {
-  color: var(--color-text-tertiary);
+  color: var(--color-text-tertiary) !important;
+}
+
+.color-text-success {
+  color: var(--color-text-success) !important;
 }
 
 .color-border-primary {
-  border-color: var(--color-border-primary);
+  border-color: var(--color-border-primary) !important;
 }
 
 .color-border-tertiary {
-  border-color: var(--color-border-tertiary);
+  border-color: var(--color-border-tertiary) !important;
 }
 
 .color-border-info {
-  border-color: var(--color-border-info);
+  border-color: var(--color-border-info) !important;
 }
 
 .form-control {
-  background-color: var(--color-input-bg);
-  border-color: var(--color-input-border);
+  background-color: var(--color-input-bg) !important;
+  border-color: var(--color-input-border) !important;
 }
 
 .color-label-border {
-  border-color: var(--color-label-border);
+  border-color: var(--color-label-border) !important;
 }
 
 .color-upvote-icon-bg {
-  background-color: var(--color-upvote-icon-bg);
+  background-color: var(--color-upvote-icon-bg) !important;
 }
 
 .Counter--secondary {

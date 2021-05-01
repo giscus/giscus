@@ -7,6 +7,10 @@ https://github.com/primer/primitives/blob/main/LICENSE
 */
 
 [data-theme='dark'] {
+  color-scheme: dark;
+}
+
+[data-theme='dark'] {
   --color-scale-black: #010409;
   --color-scale-white: #f0f6fc;
   --color-scale-gray-0: #f0f6fc;

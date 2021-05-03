@@ -25,7 +25,12 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
       <div className="w-[2px] flex-shrink-0 absolute left-[30px] h-full top-0 gsc-tl-line" />
       <div className={`flex py-2 pl-4 ${hidden ? 'items-center' : ''}`}>
         <div className="z-10 flex-shrink-0">
-          <a href={reply.author.url} className="flex items-center">
+          <a
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            href={reply.author.url}
+            className="flex items-center"
+          >
             <img
               className="rounded-full"
               src={reply.author.avatarUrl}
@@ -39,10 +44,20 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
           {!hidden ? (
             <div className="flex">
               <h3 className="flex items-start flex-auto">
-                <a href={reply.author.url} className="flex items-center">
+                <a
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  href={reply.author.url}
+                  className="flex items-center"
+                >
                   <span className="font-semibold Link--primary">{reply.author.login}</span>
                 </a>
-                <a href={reply.url} className="ml-2 Link--secondary">
+                <a
+                  rel="nofollow noopener noreferrer"
+                  target="_blank"
+                  href={reply.url}
+                  className="ml-2 Link--secondary"
+                >
                   <div className="whitespace-nowrap" title={formatDate(reply.createdAt)}>
                     {formatDateDistance(reply.createdAt)}
                   </div>

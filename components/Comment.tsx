@@ -68,7 +68,12 @@ export default function Comment({
         {!comment.isMinimized ? (
           <div className="flex items-center px-4">
             <h3 className="flex items-center flex-auto pt-2">
-              <a href={comment.author.url} className="flex items-center">
+              <a
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                href={comment.author.url}
+                className="flex items-center"
+              >
                 <img
                   className="mr-2 rounded-full"
                   src={comment.author.avatarUrl}
@@ -78,7 +83,12 @@ export default function Comment({
                 />
                 <span className="font-semibold Link--primary">{comment.author.login}</span>
               </a>
-              <a href={comment.url} className="ml-2 Link--secondary">
+              <a
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                href={comment.url}
+                className="ml-2 Link--secondary"
+              >
                 <div className="whitespace-nowrap" title={formatDate(comment.createdAt)}>
                   {formatDateDistance(comment.createdAt)}
                 </div>

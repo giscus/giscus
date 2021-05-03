@@ -193,7 +193,12 @@ export default function CommentBox({
   ) : (
     <div className="flex px-4 py-2 border-t color-bg-tertiary color-border-primary">
       {viewer ? (
-        <a href={viewer.url} className="flex items-center flex-shrink-0" target="_top">
+        <a
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+          href={viewer.url}
+          className="flex items-center flex-shrink-0"
+        >
           <img
             className="inline-block rounded-full"
             src={viewer.avatarUrl}

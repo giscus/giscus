@@ -10,6 +10,7 @@ const ADD_DISCUSSION_REPLY_QUERY = `
           login
           url
         }
+        viewerDidAuthor
         createdAt
         url
         authorAssociation

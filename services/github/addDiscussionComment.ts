@@ -12,6 +12,7 @@ const ADD_DISCUSSION_COMMENT_QUERY = `
           login
           url
         }
+        viewerDidAuthor
         createdAt
         url
         authorAssociation

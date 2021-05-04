@@ -76,12 +76,12 @@ export function adaptDiscussion({
   const {
     id,
     repository,
-    comments: { pageInfo, totalCount, ...commentsData },
+    comments: { pageInfo, totalCount: totalCommentCount, ...commentsData },
   } = discussion;
 
-  const totalCountWithReplies = commentsData.nodes.reduce(
+  const totalReplyCount = commentsData.nodes.reduce(
     (acc, comment) => acc + comment.replies.totalCount,
-    commentsData.nodes.length,
+    0,
   );
 
   const comments = commentsData.nodes.map(adaptComment);
@@ -90,8 +90,8 @@ export function adaptDiscussion({
     viewer,
     discussion: {
       id,
-      totalCount,
-      totalCountWithReplies,
+      totalCommentCount,
+      totalReplyCount,
       pageInfo,
       repository,
       comments,

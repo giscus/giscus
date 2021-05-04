@@ -41,8 +41,8 @@ export interface IGiscussion {
   viewer: IUser;
   discussion: {
     id: string;
-    totalCount: number;
-    totalCountWithReplies: number;
+    totalCommentCount: number;
+    totalReplyCount: number;
     pageInfo: {
       startCursor: string;
       hasNextPage: boolean;

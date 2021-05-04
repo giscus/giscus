@@ -122,7 +122,9 @@ export default function Comment({
         ) : null}
         <div
           className={`markdown rounded-t ${
-            comment.isMinimized ? 'px-4 py-2 color-bg-tertiary' : 'p-4'
+            comment.isMinimized
+              ? 'px-4 py-2 color-bg-tertiary border-b border-color-primary'
+              : 'p-4'
           }`}
           onClick={handleCommentClick}
           dangerouslySetInnerHTML={hidden ? undefined : { __html: comment.bodyHTML }}
@@ -132,7 +134,11 @@ export default function Comment({
           </em>
         </div>
         {!comment.isMinimized ? (
-          <div className="flex content-center justify-between">
+          <div
+            className={`flex content-center justify-between${
+              children || comment.replies.length > 0 ? ' border-b' : ''
+            }${comment.replies.length > 0 ? ' rounded-b-md' : ''}`}
+          >
             <div className="flex mx-4">
               {!hidden ? (
                 <ReactButtons
@@ -150,7 +156,11 @@ export default function Comment({
           </div>
         ) : null}
         {comment.replies.length > 0 ? (
-          <div className="pt-2 border-t rounded-b color-bg-canvas-inset color-border-primary">
+          <div
+            className={`pt-2 color-bg-canvas-inset color-border-primary${
+              children ? ' border-b' : ''
+            }`}
+          >
             {replies.map((reply) => (
               <Reply key={reply.id} reply={reply} onReplyUpdate={onReplyUpdate} />
             ))}
@@ -164,7 +174,7 @@ export default function Comment({
             ) : null}
           </div>
         ) : null}
-        {!hidden ? children(incrementPage) : null}
+        {!hidden && children ? children(incrementPage) : null}
       </div>
     </div>
   );

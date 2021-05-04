@@ -87,9 +87,9 @@ export default function CommentBox({
 
   return !isReply || isReplyOpen ? (
     <div
-      className={`w-full text-sm ${
-        replyToId ? 'border-t' : 'border rounded'
-      } color-bg-primary color-border-primary`}
+      className={`w-full text-sm color-bg-primary color-border-primary${
+        replyToId ? '' : ' border rounded'
+      }`}
     >
       <div className="flex border-b rounded-t color-bg-tertiary color-border-primary">
         <div className="mx-2 mb-[-1px] mt-2">
@@ -191,7 +191,7 @@ export default function CommentBox({
       </div>
     </div>
   ) : (
-    <div className="flex px-4 py-2 border-t color-bg-tertiary color-border-primary">
+    <div className="flex px-4 py-2 color-bg-tertiary">
       {viewer ? (
         <a
           rel="nofollow noopener noreferrer"

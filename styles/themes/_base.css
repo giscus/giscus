@@ -82,8 +82,22 @@ a {
 }
 
 .form-control {
-  background-color: var(--color-input-bg) !important;
-  border-color: var(--color-input-border) !important;
+  background-color: var(--color-input-bg);
+  border-color: var(--color-input-border);
+}
+
+.form-control:focus {
+  border-color: var(--color-state-focus-border);
+  outline: none;
+  box-shadow: var(--color-state-focus-shadow);
+}
+
+.input-contrast {
+  background-color: var(--color-input-contrast-bg);
+}
+
+.input-contrast:focus {
+  background-color: var(--color-input-bg);
 }
 
 .color-label-border {

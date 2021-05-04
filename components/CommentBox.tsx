@@ -127,7 +127,7 @@ export default function CommentBox({
           </div>
         ) : (
           <textarea
-            className="w-full p-2 border rounded min-h-[100px] form-control color-border-primary"
+            className="w-full p-2 border rounded min-h-[100px] form-control input-contrast"
             placeholder={token ? 'Write a comment' : 'Sign in to comment'}
             onChange={(event) => setInput(event.target.value)}
             value={input}

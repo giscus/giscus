@@ -334,3 +334,9 @@ a {
   top: 16px;
   height: calc(100% - 16px);
 }
+
+/* Re-apply overridden tailwind */
+
+.inline-flex {
+  display: inline-flex;
+}

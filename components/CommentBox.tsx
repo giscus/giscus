@@ -147,7 +147,7 @@ export default function CommentBox({
           <MarkdownIcon className="mr-1" />
           Styling with Markdown is supported
         </a>
-        <div>
+        <div className="inline-flex flex-shrink-0">
           {isReply ? (
             <button
               className="px-4 py-[5px] ml-1 border rounded-md btn"
@@ -158,7 +158,7 @@ export default function CommentBox({
           ) : null}
           {token ? (
             <button
-              className="px-4 py-[5px] ml-1 rounded-md inline-flex items-center btn btn-primary"
+              className="px-4 py-[5px] ml-1 rounded-md items-center btn btn-primary"
               onClick={handleClick}
               disabled={(token && !input.trim()) || isSubmitting}
             >

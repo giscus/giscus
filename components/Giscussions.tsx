@@ -60,17 +60,17 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
       },
     };
 
-    // Fix the comment count.
-    newData.discussion.totalCountWithReplies = newData.discussion.comments.reduce(
+    // Fix the reply count.
+    newData.discussion.totalReplyCount = newData.discussion.comments.reduce(
       (prev, c) => prev + c.replyCount,
-      newData.discussion.comments.length,
+      0,
     );
 
     return newData;
   });
 
   const numHidden =
-    backData?.discussion?.totalCount -
+    backData?.discussion?.totalCommentCount -
     backData?.discussion?.comments.length -
     frontData?.reduce((prev, g) => prev + g.discussion.comments.length, 0);
 
@@ -82,28 +82,37 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
 
   const isNotFound = !isBackLoading && !backData?.discussion;
 
-  const totalCountWithReplies =
-    backData?.discussion?.totalCountWithReplies +
-    frontData?.reduce((prev, g) => prev + g.discussion.totalCountWithReplies, 0);
+  const totalCommentCount = backData?.discussion?.totalCommentCount;
+  const totalReplyCount =
+    backData?.discussion?.totalReplyCount +
+    frontData?.reduce((prev, g) => prev + g.discussion.totalReplyCount, 0);
 
   const context = backData?.discussion?.repository?.nameWithOwner;
 
   if (error?.error && onError) onError();
 
+  const shouldShowReplyCount = !isError && !isNotFound && !isLoading;
+
   return (
     <div className="w-full color-text-primary">
-      <div className="flex flex-wrap items-center">
-        <h4 className="flex-auto mb-2 mr-2 font-semibold">
+      <div className="flex flex-auto">
+        <h4 className="mb-2 mr-2 font-semibold">
           {isError
             ? `An error occurred${error.error ? `: ${error.error}` : ''}.`
             : isNotFound
             ? 'Discussion not found.'
             : isLoading
             ? 'Loading comments...'
-            : `${Number.isNaN(totalCountWithReplies) ? 0 : totalCountWithReplies}${
-                numHidden > 0 ? '+' : ''
-              } comment${totalCountWithReplies !== 1 ? 's' : ''}`}
+            : `${totalCommentCount} comment${totalCommentCount !== 1 ? 's' : ''}`}
         </h4>
+        {shouldShowReplyCount ? (
+          <>
+            <h4 className="mb-2 mr-2 font-semibold">·</h4>
+            <h4 className="mb-2 mr-2">{`${Number.isNaN(totalReplyCount) ? 0 : totalReplyCount}${
+              numHidden > 0 ? '+' : ''
+            } repl${totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
+          </>
+        ) : null}
       </div>
 
       {!isLoading

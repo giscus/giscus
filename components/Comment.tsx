@@ -99,7 +99,11 @@ export default function Comment({
               </a>
               {comment.authorAssociation ? (
                 <div className="hidden ml-2 text-xs sm:inline-flex">
-                  <span className="px-1 ml-1 capitalize border rounded-md color-label-border">
+                  <span
+                    className={`px-1 ml-1 capitalize border rounded-md ${
+                      comment.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
+                    }`}
+                  >
                     {comment.authorAssociation}
                   </span>
                 </div>

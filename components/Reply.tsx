@@ -64,7 +64,11 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                 </a>
                 {reply.authorAssociation ? (
                   <div className="hidden ml-2 text-xs sm:inline-flex">
-                    <span className="px-1 ml-1 capitalize border rounded-md color-label-border">
+                    <span
+                      className={`px-1 ml-1 capitalize border rounded-md ${
+                        reply.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
+                      }`}
+                    >
                       {reply.authorAssociation}
                     </span>
                   </div>

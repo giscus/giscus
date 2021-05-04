@@ -94,6 +94,10 @@ a {
   background-color: var(--color-upvote-icon-bg) !important;
 }
 
+.color-box-border-info {
+  border-color: var(--color-box-border-info);
+}
+
 .Counter--secondary {
   color: var(--color-counter-secondary-text);
   background-color: var(--color-counter-secondary-bg);

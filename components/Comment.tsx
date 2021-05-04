@@ -64,7 +64,11 @@ export default function Comment({
           </div>
         </div>
       ) : null}
-      <div className="w-full min-w-0 border rounded-md color-bg-primary color-border-primary">
+      <div
+        className={`w-full min-w-0 border rounded-md color-bg-primary ${
+          comment.viewerDidAuthor ? 'color-box-border-info' : 'color-border-primary'
+        }`}
+      >
         {!comment.isMinimized ? (
           <div className="flex items-center px-4">
             <h3 className="flex items-center flex-auto pt-2">

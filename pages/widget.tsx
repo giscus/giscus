@@ -14,6 +14,7 @@ export default function Home() {
       <Head>
         <title>Giscussions</title>
         <link rel="icon" href="/favicon.ico" />
+        <base target="_top" />
       </Head>
 
       <main className="w-full mx-auto" data-theme={theme}>

@@ -13,11 +13,14 @@ https://github.com/primer/css/blob/main/LICENSE
   border-color: var(--color-border-primary);
 }
 
-a,
+a {
+  color: var(--color-text-link);
+}
+
 .color-text-link,
 .Link--primary:hover,
 .Link--secondary:hover {
-  color: var(--color-text-link);
+  color: var(--color-text-link) !important;
 }
 
 .color-bg-primary {

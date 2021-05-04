@@ -124,18 +124,18 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
                 onCommentUpdate={frontMutators.updateComment}
                 onReplyUpdate={frontMutators.updateReply}
               >
-                {(viewMore) =>
-                  token ? (
-                    <CommentBox
-                      discussionId={backData?.discussion?.id}
-                      context={context}
-                      onSubmit={frontMutators.addNewReply}
-                      replyToId={comment.id}
-                      viewer={frontData && frontData[0].viewer}
-                      onReplyOpen={viewMore}
-                    />
-                  ) : null
-                }
+                {token
+                  ? (viewMore) => (
+                      <CommentBox
+                        discussionId={backData?.discussion?.id}
+                        context={context}
+                        onSubmit={frontMutators.addNewReply}
+                        replyToId={comment.id}
+                        viewer={frontData && frontData[0].viewer}
+                        onReplyOpen={viewMore}
+                      />
+                    )
+                  : undefined}
               </Comment>
             )),
           )
@@ -166,18 +166,18 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
               onCommentUpdate={backMutators.updateComment}
               onReplyUpdate={backMutators.updateReply}
             >
-              {(viewMore) =>
-                token ? (
-                  <CommentBox
-                    discussionId={backData?.discussion?.id}
-                    context={context}
-                    onSubmit={backMutators.addNewReply}
-                    replyToId={comment.id}
-                    viewer={backData?.viewer}
-                    onReplyOpen={viewMore}
-                  />
-                ) : null
-              }
+              {token
+                ? (viewMore) => (
+                    <CommentBox
+                      discussionId={backData?.discussion?.id}
+                      context={context}
+                      onSubmit={backMutators.addNewReply}
+                      replyToId={comment.id}
+                      viewer={backData?.viewer}
+                      onReplyOpen={viewMore}
+                    />
+                  )
+                : undefined}
             </Comment>
           ))
         : null}

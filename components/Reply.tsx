@@ -4,7 +4,7 @@ import { IReply } from '../lib/models/adapter';
 import { useCallback } from 'react';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
-import { handleCommentClick } from '../lib/adapter';
+import { handleCommentClick, processCommentBody } from '../lib/adapter';
 
 export interface IReplyProps {
   reply: IReply;
@@ -98,7 +98,9 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
           <div
             className={`w-full pr-4 markdown ${!hidden ? 'pb-2' : ''}`}
             onClick={handleCommentClick}
-            dangerouslySetInnerHTML={hidden ? undefined : { __html: reply.bodyHTML }}
+            dangerouslySetInnerHTML={
+              hidden ? undefined : { __html: processCommentBody(reply.bodyHTML) }
+            }
           >
             <em className="color-text-secondary">
               This comment {reply.deletedAt ? 'was deleted' : 'has been hidden'}.

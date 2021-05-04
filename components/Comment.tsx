@@ -1,6 +1,6 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { ReactElement, useCallback, useState } from 'react';
-import { handleCommentClick } from '../lib/adapter';
+import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { IComment, IReply } from '../lib/models/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
@@ -131,7 +131,9 @@ export default function Comment({
               : 'p-4'
           }`}
           onClick={handleCommentClick}
-          dangerouslySetInnerHTML={hidden ? undefined : { __html: comment.bodyHTML }}
+          dangerouslySetInnerHTML={
+            hidden ? undefined : { __html: processCommentBody(comment.bodyHTML) }
+          }
         >
           <em className="color-text-secondary">
             This comment {comment.deletedAt ? 'was deleted' : 'has been minimized'}.

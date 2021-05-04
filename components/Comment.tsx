@@ -158,7 +158,7 @@ export default function Comment({
         {comment.replies.length > 0 ? (
           <div
             className={`pt-2 color-bg-canvas-inset color-border-primary${
-              children ? ' border-b' : ''
+              children && !comment.isMinimized ? ' border-b' : ''
             }`}
           >
             {replies.map((reply) => (

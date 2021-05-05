@@ -1,6 +1,6 @@
 import { KebabHorizontalIcon } from '@primer/octicons-react';
 import ReactButtons from './ReactButtons';
-import { IReply } from '../lib/models/adapter';
+import { IReply } from '../lib/types/adapter';
 import { useCallback } from 'react';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';

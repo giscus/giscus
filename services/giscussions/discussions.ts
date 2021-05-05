@@ -1,8 +1,8 @@
 import { useCallback, useMemo } from 'react';
 import { useSWRInfinite } from 'swr';
 import { cleanParams, fetcher } from '../../lib/fetcher';
-import { IComment, IGiscussion, IReply } from '../../lib/models/adapter';
-import { DiscussionQuery, PaginationParams } from '../../lib/models/common';
+import { IComment, IGiscussion, IReply } from '../../lib/types/adapter';
+import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
 
 export function useDiscussions(
   query: DiscussionQuery,

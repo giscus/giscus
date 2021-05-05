@@ -1,5 +1,5 @@
 import { MouseEvent as ReactMouseEvent } from 'react';
-import { IComment, IGiscussion, IReactionGroups, IReply } from './models/adapter';
+import { IComment, IGiscussion, IReactionGroups, IReply } from './types/adapter';
 import {
   GComment,
   GCommentAuthorAssociation,
@@ -7,7 +7,7 @@ import {
   GReply,
   GRepositoryDiscussion,
   GUser,
-} from './models/github';
+} from './types/github';
 
 export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups {
   return reactionGroups.reduce((acc, group) => {

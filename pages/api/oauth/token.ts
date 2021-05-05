@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { env } from '../../../lib/variables';
 import { decodeState } from '../../../lib/oauth/state';
-import { ITokenRequest } from '../../../lib/models/giscussions';
+import { ITokenRequest } from '../../../lib/types/giscussions';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { session } = req.body as ITokenRequest;

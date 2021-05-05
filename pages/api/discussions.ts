@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getDiscussion } from '../../services/github/getDiscussion';
 import { adaptDiscussion } from '../../lib/adapter';
-import { IGiscussion } from '../../lib/models/adapter';
+import { IGiscussion } from '../../lib/types/adapter';
 
 export default async (
   req: NextApiRequest,

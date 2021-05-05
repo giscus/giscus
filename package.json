@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint . --cache"
   },
   "dependencies": {
     "@peculiar/webcrypto": "^1.1.6",

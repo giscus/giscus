@@ -1,7 +1,7 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { ReactElement, useCallback, useState } from 'react';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
-import { IComment, IReply } from '../lib/models/adapter';
+import { IComment, IReply } from '../lib/types/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
 import CommentBox from './CommentBox';

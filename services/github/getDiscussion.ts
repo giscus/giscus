@@ -1,5 +1,5 @@
-import { DiscussionQuery, PaginationParams } from '../../lib/models/common';
-import { GUser, GRepositoryDiscussion, GError } from '../../lib/models/github';
+import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
+import { GUser, GRepositoryDiscussion, GError } from '../../lib/types/github';
 import { getReadAccessToken } from './getReadAccessToken';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';

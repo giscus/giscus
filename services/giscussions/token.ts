@@ -1,4 +1,4 @@
-import { ITokenRequest, ITokenResponse } from '../../lib/models/giscussions';
+import { ITokenRequest, ITokenResponse } from '../../lib/types/giscussions';
 
 export async function getToken(session: string) {
   const { token }: ITokenResponse = await fetch('/api/oauth/token', {

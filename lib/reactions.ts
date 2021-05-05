@@ -1,4 +1,4 @@
-import { IComment, IReply } from './models/adapter';
+import { IComment, IReply } from './types/adapter';
 
 export const Reactions = {
   THUMBS_UP: { name: '+1', emoji: '👍' },

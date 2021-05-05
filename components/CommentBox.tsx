@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { adaptComment, adaptReply } from '../lib/adapter';
 import { AuthContext, getLoginUrl } from '../lib/context';
-import { IComment, IReply, IUser } from '../lib/models/adapter';
+import { IComment, IReply, IUser } from '../lib/types/adapter';
 import { addDiscussionComment } from '../services/github/addDiscussionComment';
 import { addDiscussionReply } from '../services/github/addDiscussionReply';
 import { renderMarkdown } from '../services/github/markdown';

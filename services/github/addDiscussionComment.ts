@@ -1,4 +1,4 @@
-import { GComment } from '../../lib/models/github';
+import { GComment } from '../../lib/types/github';
 
 const ADD_DISCUSSION_COMMENT_QUERY = `
   mutation($body: String!, $discussionId: ID!) {

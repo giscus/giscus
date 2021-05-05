@@ -1,4 +1,4 @@
-import { GReply } from '../../lib/models/github';
+import { GReply } from '../../lib/types/github';
 
 const ADD_DISCUSSION_REPLY_QUERY = `
   mutation($body: String!, $discussionId: ID!, $replyToId: ID!) {

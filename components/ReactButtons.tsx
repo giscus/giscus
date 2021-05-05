@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useCallback, useContext, useState } from 'react';
 import { AuthContext, getLoginUrl } from '../lib/context';
 import { useComponentVisible } from '../lib/hooks';
-import { IReactionGroups } from '../lib/models/adapter';
+import { IReactionGroups } from '../lib/types/adapter';
 import { Reactions } from '../lib/reactions';
 import { toggleReaction } from '../services/github/toggleReaction';
 

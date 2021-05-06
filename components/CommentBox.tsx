@@ -8,7 +8,7 @@ import { addDiscussionComment } from '../services/github/addDiscussionComment';
 import { addDiscussionReply } from '../services/github/addDiscussionReply';
 import { renderMarkdown } from '../services/github/markdown';
 
-export interface CommentBoxProps {
+interface CommentBoxProps {
   discussionId: string;
   context?: string;
   replyToId?: string;

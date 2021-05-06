@@ -7,7 +7,7 @@ import { IReactionGroups } from '../lib/types/adapter';
 import { Reactions } from '../lib/reactions';
 import { toggleReaction } from '../services/github/toggleReaction';
 
-export interface IReactButtonsProps {
+interface IReactButtonsProps {
   reactionGroups: IReactionGroups;
   subjectId: string;
   onReact: (content: Reactions, promise: Promise<unknown>) => void;

@@ -4,7 +4,7 @@ import { useDiscussions } from '../services/giscussions/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
 
-export interface IGiscussionsProps {
+interface IGiscussionsProps {
   repo: string;
   term: string;
   onError?: VoidFunction;

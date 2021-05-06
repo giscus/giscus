@@ -8,7 +8,7 @@ import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
 import Reply from './Reply';
 
-export interface ICommentProps {
+interface ICommentProps {
   comment: IComment;
   children?: (viewMore: VoidFunction) => ReactElement<typeof CommentBox>;
   onCommentUpdate: (newComment: IComment, promise: Promise<unknown>) => void;

@@ -6,7 +6,7 @@ import { Reactions, updateCommentReaction } from '../lib/reactions';
 import { formatDate, formatDateDistance } from '../lib/utils';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 
-export interface IReplyProps {
+interface IReplyProps {
   reply: IReply;
   onReplyUpdate: (newReply: IReply, promise: Promise<unknown>) => void;
 }

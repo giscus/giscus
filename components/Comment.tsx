@@ -1,5 +1,5 @@
 import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
-import { ReactElement, useCallback, useState } from 'react';
+import { ReactElement, ReactNode, useCallback, useState } from 'react';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { IComment, IReply } from '../lib/types/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
@@ -9,6 +9,7 @@ import ReactButtons from './ReactButtons';
 import Reply from './Reply';
 
 interface ICommentProps {
+  children?: ReactNode;
   comment: IComment;
   onCommentUpdate: (newComment: IComment, promise: Promise<unknown>) => void;
   onReplyUpdate: (newReply: IReply, promise: Promise<unknown>) => void;
@@ -16,6 +17,7 @@ interface ICommentProps {
 }
 
 export default function Comment({
+  children,
   comment,
   onCommentUpdate,
   onReplyUpdate,
@@ -132,12 +134,16 @@ export default function Comment({
           }`}
           onClick={handleCommentClick}
           dangerouslySetInnerHTML={
-            hidden ? undefined : { __html: processCommentBody(comment.bodyHTML) }
+            hidden || children ? undefined : { __html: processCommentBody(comment.bodyHTML) }
           }
         >
-          <em className="color-text-secondary">
-            This comment {comment.deletedAt ? 'was deleted' : 'has been minimized'}.
-          </em>
+          {!children ? (
+            <em className="color-text-secondary">
+              This comment {comment.deletedAt ? 'was deleted' : 'has been minimized'}.
+            </em>
+          ) : (
+            children
+          )}
         </div>
         {!comment.isMinimized ? (
           <div

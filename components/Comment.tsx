@@ -10,16 +10,16 @@ import Reply from './Reply';
 
 interface ICommentProps {
   comment: IComment;
-  children?: (viewMore: VoidFunction) => ReactElement<typeof CommentBox>;
   onCommentUpdate: (newComment: IComment, promise: Promise<unknown>) => void;
   onReplyUpdate: (newReply: IReply, promise: Promise<unknown>) => void;
+  renderReplyBox?: (viewMore: VoidFunction) => ReactElement<typeof CommentBox>;
 }
 
 export default function Comment({
   comment,
-  children,
   onCommentUpdate,
   onReplyUpdate,
+  renderReplyBox,
 }: ICommentProps) {
   const [page, setPage] = useState(0);
   const replies = comment.replies.slice(0, page === 0 ? 3 : undefined);
@@ -142,7 +142,7 @@ export default function Comment({
         {!comment.isMinimized ? (
           <div
             className={`flex content-center justify-between${
-              children || comment.replies.length > 0 ? ' border-b' : ''
+              renderReplyBox || comment.replies.length > 0 ? ' border-b' : ''
             }${comment.replies.length > 0 ? ' rounded-b-md' : ''}`}
           >
             <div className="flex mx-4">
@@ -164,7 +164,7 @@ export default function Comment({
         {comment.replies.length > 0 ? (
           <div
             className={`pt-2 color-bg-canvas-inset color-border-primary${
-              children && !comment.isMinimized ? ' border-b' : ''
+              renderReplyBox && !comment.isMinimized ? ' border-b' : ''
             }`}
           >
             {replies.map((reply) => (
@@ -180,7 +180,7 @@ export default function Comment({
             ) : null}
           </div>
         ) : null}
-        {!hidden && children ? children(incrementPage) : null}
+        {!hidden && renderReplyBox ? renderReplyBox(incrementPage) : null}
       </div>
     </div>
   );

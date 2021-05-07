@@ -123,20 +123,21 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
                 comment={comment}
                 onCommentUpdate={frontMutators.updateComment}
                 onReplyUpdate={frontMutators.updateReply}
-              >
-                {token
-                  ? (viewMore) => (
-                      <CommentBox
-                        discussionId={backData?.discussion?.id}
-                        context={context}
-                        onSubmit={frontMutators.addNewReply}
-                        replyToId={comment.id}
-                        viewer={frontData && frontData[0].viewer}
-                        onReplyOpen={viewMore}
-                      />
-                    )
-                  : undefined}
-              </Comment>
+                renderReplyBox={
+                  token
+                    ? (viewMore) => (
+                        <CommentBox
+                          discussionId={backData?.discussion?.id}
+                          context={context}
+                          onSubmit={frontMutators.addNewReply}
+                          replyToId={comment.id}
+                          viewer={frontData && frontData[0].viewer}
+                          onReplyOpen={viewMore}
+                        />
+                      )
+                    : undefined
+                }
+              />
             )),
           )
         : null}
@@ -165,20 +166,21 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
               comment={comment}
               onCommentUpdate={backMutators.updateComment}
               onReplyUpdate={backMutators.updateReply}
-            >
-              {token
-                ? (viewMore) => (
-                    <CommentBox
-                      discussionId={backData?.discussion?.id}
-                      context={context}
-                      onSubmit={backMutators.addNewReply}
-                      replyToId={comment.id}
-                      viewer={backData?.viewer}
-                      onReplyOpen={viewMore}
-                    />
-                  )
-                : undefined}
-            </Comment>
+              renderReplyBox={
+                token
+                  ? (viewMore) => (
+                      <CommentBox
+                        discussionId={backData?.discussion?.id}
+                        context={context}
+                        onSubmit={backMutators.addNewReply}
+                        replyToId={comment.id}
+                        viewer={backData?.viewer}
+                        onReplyOpen={viewMore}
+                      />
+                    )
+                  : undefined
+              }
+            />
           ))
         : null}
 

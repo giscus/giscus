@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "cscript": "tsc client.ts --outDir public",
+    "dev": "yarn cscript --watch --preserveWatchOutput & next dev",
+    "build": "yarn cscript && next build",
     "start": "next start",
     "lint": "eslint . --cache",
     "tscheck": "tsc --noEmit"

@@ -301,6 +301,11 @@ a {
   color: var(--color-text-link);
 }
 
+img.emoji {
+  @apply inline max-w-none align-top;
+  background-color: initial;
+}
+
 /* Giscussions-specific styles */
 
 .gsc-tl-line {

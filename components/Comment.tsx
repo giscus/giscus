@@ -11,8 +11,8 @@ import Reply from './Reply';
 interface ICommentProps {
   children?: ReactNode;
   comment: IComment;
-  onCommentUpdate: (newComment: IComment, promise: Promise<unknown>) => void;
-  onReplyUpdate: (newReply: IReply, promise: Promise<unknown>) => void;
+  onCommentUpdate?: (newComment: IComment, promise: Promise<unknown>) => void;
+  onReplyUpdate?: (newReply: IReply, promise: Promise<unknown>) => void;
   renderReplyBox?: (viewMore: VoidFunction) => ReactElement<typeof CommentBox>;
 }
 
@@ -38,7 +38,7 @@ export default function Comment({
 
   return (
     <div className="flex my-4 text-sm">
-      {!comment.isMinimized ? (
+      {!comment.isMinimized && onCommentUpdate ? (
         <div className="flex-shrink-0 mr-2 w-14">
           <div className="flex flex-col">
             <button
@@ -145,7 +145,7 @@ export default function Comment({
             children
           )}
         </div>
-        {!comment.isMinimized ? (
+        {!comment.isMinimized && onCommentUpdate ? (
           <div
             className={`flex content-center justify-between${
               renderReplyBox || comment.replies.length > 0 ? ' border-b' : ''
@@ -173,9 +173,11 @@ export default function Comment({
               renderReplyBox && !comment.isMinimized ? ' border-b' : ''
             }`}
           >
-            {replies.map((reply) => (
-              <Reply key={reply.id} reply={reply} onReplyUpdate={onReplyUpdate} />
-            ))}
+            {onReplyUpdate
+              ? replies.map((reply) => (
+                  <Reply key={reply.id} reply={reply} onReplyUpdate={onReplyUpdate} />
+                ))
+              : null}
             {page === 0 && comment.replies.length > 3 ? (
               <button
                 className="mb-2 ml-3 text-xs font-semibold color-text-link hover:underline"

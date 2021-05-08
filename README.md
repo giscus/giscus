@@ -1,24 +1,22 @@
 # giscussions
 
-A comments widget built on [GitHub Discussions][discussions]. It is heavily
-inspired by [utterances][utterances]. It is still in the early stages and under
-active development.
+A comments widget built on [GitHub Discussions][discussions]. Let visitors sign in with GitHub and leave comments on your website! Heavily inspired by [utterances][utterances].
 
-## Setup
+- Open source. 🌏
+- No tracking, no ads, always free. 📡 🚫
+- No database needed. All data is stored in GitHub Discussions. :octocat:
+- GitHub themes: light, dark, dark dimmed, and more! 🌗
+- Only ~30KB bundled. ⚡
+- Can be self-hosted! 🤳
 
-This project is built with [Next.js][next.js]. To get started:
+> **Note:**
+> giscussions is still in the early stages and under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscussions may break or change over time.
 
-1. `yarn`: install dependencies
-2. `yarn dev`: compile and hot-reload for development
-3. `yarn build`: compile and minify for production
-4. `yarn lint`: lint and fix files
-5. `yarn start`: serve the compiled build in production mode
+## how it works
 
-## License
+When giscussions loads, the GitHub Discussions search API is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.).
 
-This project is licensed under the [MIT][license] license.
+To comment, visitors must authorize the giscussions app to post on their behalf using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
 
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
-[next.js]: https://github.com/vercel/next.js
-[license]: LICENSE

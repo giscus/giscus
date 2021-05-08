@@ -23,3 +23,9 @@ export function useComponentVisible<T extends HTMLElement>(initialIsVisible: boo
     Dispatch<SetStateAction<boolean>>,
   ];
 }
+
+export function useIsMounted() {
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(true), []);
+  return isMounted;
+}

@@ -134,17 +134,14 @@ export default function Comment({
           }`}
           onClick={handleCommentClick}
           dangerouslySetInnerHTML={
-            hidden || children ? undefined : { __html: processCommentBody(comment.bodyHTML) }
+            hidden ? undefined : { __html: processCommentBody(comment.bodyHTML) }
           }
         >
-          {!children ? (
-            <em className="color-text-secondary">
-              This comment {comment.deletedAt ? 'was deleted' : 'has been minimized'}.
-            </em>
-          ) : (
-            children
-          )}
+          <em className="color-text-secondary">
+            This comment {comment.deletedAt ? 'was deleted' : 'has been minimized'}.
+          </em>
         </div>
+        {children}
         {!comment.isMinimized && onCommentUpdate ? (
           <div
             className={`flex content-center justify-between${

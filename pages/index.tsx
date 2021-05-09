@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import Comment from '../components/Comment';
-import Widget from '../components/Widget';
 import { Reactions } from '../lib/reactions';
 import { IComment, IReactionGroups } from '../lib/types/adapter';
 import { renderMarkdown } from '../services/github/markdown';
@@ -65,12 +64,34 @@ export default function Home({ content }: { content: string }) {
       <main className="w-full min-h-screen color-bg-canvas" data-theme={theme}>
         <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
           {isMounted ? (
-            <Comment comment={comment}>
-              <Configuration />
-            </Comment>
+            <>
+              <Comment comment={comment}>
+                <Configuration />
+              </Comment>
+
+              <div className="w-full mt-8 giscussions color-bg-canvas">
+                <style jsx>
+                  {`
+                    :global(.giscussions-frame) {
+                      width: 100%;
+                      color-scheme: light;
+                    }
+                  `}
+                </style>
+              </div>
+              {router.isReady ? (
+                <Head>
+                  <script
+                    src="/client.js"
+                    data-repo="laymonage/discussions-playground"
+                    data-mapping="specific"
+                    data-term="GraphQL"
+                    data-theme={theme}
+                  ></script>
+                </Head>
+              ) : null}
+            </>
           ) : null}
-          <div className="my-8" />
-          <Widget repo="laymonage/discussions-playground" term="GraphQL" />
         </div>
       </main>
     </>

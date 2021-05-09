@@ -2,7 +2,7 @@ const url = new URL(window.location.href);
 let session = url.searchParams.get('giscussions');
 
 if (session) {
-  localStorage.setItem('giscussions-session', session);
+  localStorage.setItem('giscussions-session', JSON.stringify(session));
   url.searchParams.delete('giscussions');
   history.replaceState(undefined, document.title, url.toString());
 } else {

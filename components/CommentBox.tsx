@@ -158,7 +158,7 @@ export default function CommentBox({
           ) : null}
           {token ? (
             <button
-              className="px-4 py-[5px] ml-1 rounded-md items-center btn btn-primary"
+              className="px-4 py-[5px] ml-1 border rounded-md items-center btn btn-primary"
               onClick={handleClick}
               disabled={(token && !input.trim()) || isSubmitting}
             >
@@ -167,7 +167,7 @@ export default function CommentBox({
           ) : (
             <Link href={loginUrl}>
               <a
-                className="px-4 py-[5px] ml-1 hover:no-underline rounded-md inline-flex items-center btn btn-primary"
+                className="px-4 py-[5px] ml-1 border hover:no-underline rounded-md inline-flex items-center btn btn-primary"
                 target="_top"
               >
                 <svg

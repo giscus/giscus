@@ -52,6 +52,7 @@ export default function Home({ content }: { content: string }) {
     url: 'https://github.com/laymonage/giscussions',
     viewerDidAuthor: false,
     viewerHasUpvoted: false,
+    viewerCanUpvote: false,
   };
 
   return (

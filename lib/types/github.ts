@@ -49,6 +49,7 @@ export interface GReply extends GBaseComment {
 export interface GComment extends GBaseComment {
   upvoteCount: number;
   viewerHasUpvoted: boolean;
+  viewerCanUpvote: boolean;
   replies: {
     totalCount: number;
     nodes: GReply[];

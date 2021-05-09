@@ -7,6 +7,7 @@ const ADD_DISCUSSION_COMMENT_QUERY = `
         id
         upvoteCount
         viewerHasUpvoted
+        viewerCanUpvote
         author {
           avatarUrl
           login

@@ -1,6 +1,7 @@
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 import { clipboardCopy } from '../lib/utils';
+import { themeOptions } from '../lib/variables';
 
 const mappingOptions = [
   {
@@ -69,12 +70,6 @@ const mappingOptions = [
       <>giscussions will search for a discussion whose title contains a specific term.</>
     ),
   },
-];
-
-const themeOptions = [
-  { label: 'GitHub Light', value: 'light' },
-  { label: 'GitHub Dark', value: 'dark' },
-  { label: 'GitHub Dark Dimmed', value: 'dark_dimmed' },
 ];
 
 export default function Configuration() {

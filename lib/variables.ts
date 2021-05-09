@@ -7,3 +7,9 @@ export const env = {
   private_key: process.env.GITHUB_PRIVATE_KEY,
   encryption_password: process.env.ENCRYPTION_PASSWORD,
 };
+
+export const themeOptions = [
+  { label: 'GitHub Light', value: 'light' },
+  { label: 'GitHub Dark', value: 'dark' },
+  { label: 'GitHub Dark Dimmed', value: 'dark_dimmed' },
+];

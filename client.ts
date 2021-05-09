@@ -16,7 +16,7 @@ for (const attr of Array.from(script.attributes)) {
 params.origin = location.href;
 params.term = location.pathname;
 params.title = document.title;
-params.giscussions = session || localStorage.getItem('giscussions-session') || '';
+params.session = session || localStorage.getItem('giscussions-session') || '';
 
 const iframeAttributes = {
   class: 'giscussions-frame',

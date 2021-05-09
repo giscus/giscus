@@ -20,7 +20,7 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
     router.reload();
   }, [router]);
 
-  const querySession = router.query.giscussions as string;
+  const querySession = router.query.session as string;
 
   let savedSession: string;
   try {
@@ -35,7 +35,7 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
 
   if (querySession) {
     const query = { ...router.query };
-    delete query.giscussions;
+    delete query.session;
 
     localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
     router.replace(

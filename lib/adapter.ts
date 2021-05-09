@@ -8,6 +8,7 @@ import {
   GRepositoryDiscussion,
   GUser,
 } from './types/github';
+import { clipboardCopy } from './utils';
 
 export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups {
   return reactionGroups.reduce((acc, group) => {
@@ -94,21 +95,14 @@ export function toggleEmail(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) 
   }
 }
 
-export function clipboardCopy(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
+export function handleClipboardCopy(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
   const element = event.target as Element;
   const button = element.closest<Element>('clipboard-copy');
 
   if (button && event.currentTarget.contains(button)) {
     event.preventDefault();
 
-    const placeholder = document.createElement('textarea');
-    document.body.appendChild(placeholder);
-
-    placeholder.value = button.getAttribute('value');
-    placeholder.select();
-    document.execCommand('copy');
-
-    document.body.removeChild(placeholder);
+    clipboardCopy(button.getAttribute('value'));
 
     const clipboardIcon = button.querySelector<SVGElement>('svg.js-clipboard-clippy-icon');
     const checkIcon = button.querySelector<SVGElement>('svg.js-clipboard-check-icon');
@@ -125,7 +119,7 @@ export function clipboardCopy(event: ReactMouseEvent<HTMLDivElement, MouseEvent>
 
 export function handleCommentClick(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
   toggleEmail(event);
-  clipboardCopy(event);
+  handleClipboardCopy(event);
 }
 
 export function processCommentBody(bodyHTML: string) {

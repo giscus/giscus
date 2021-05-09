@@ -22,3 +22,14 @@ export function formatDateDistance(dt: string) {
 export function isEmpty(v: unknown) {
   return v === null || v === undefined || v === '';
 }
+
+export function clipboardCopy(text: string) {
+  const placeholder = document.createElement('textarea');
+  document.body.appendChild(placeholder);
+
+  placeholder.value = text;
+  placeholder.select();
+  document.execCommand('copy');
+
+  document.body.removeChild(placeholder);
+}

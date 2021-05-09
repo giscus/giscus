@@ -1,4 +1,5 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { ThemeContext } from '../lib/context';
 import { clipboardCopy } from '../lib/utils';
 
 const mappingOptions = [
@@ -83,12 +84,17 @@ export default function Configuration() {
   const [theme, setTheme] = useState('light');
   const [isCopied, setIsCopied] = useState(false);
   const scriptBox = useRef<HTMLPreElement>();
+  const { setTheme: setGlobalTheme } = useContext(ThemeContext);
 
   const handleCopy = useCallback(() => {
     clipboardCopy(scriptBox.current.textContent);
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 3000);
   }, []);
+
+  useEffect(() => {
+    setGlobalTheme(theme);
+  }, [setGlobalTheme, theme]);
 
   return (
     <div className="p-4 pt-0 markdown">

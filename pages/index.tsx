@@ -84,9 +84,9 @@ export default function Home({ content }: { content: string }) {
                 <Head>
                   <script
                     src="/client.js"
-                    data-repo="laymonage/discussions-playground"
+                    data-repo="laymonage/giscussions"
                     data-mapping="specific"
-                    data-term="GraphQL"
+                    data-term="Welcome to giscussions!"
                     data-theme={theme}
                   ></script>
                 </Head>

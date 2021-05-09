@@ -1,8 +1,8 @@
-# giscussions
+# [giscussions][giscussions]
 
 A comments widget built on [GitHub Discussions][discussions]. Let visitors sign in with GitHub and leave comments on your website! Heavily inspired by [utterances][utterances].
 
-- Open source. 🌏
+- [Open source][repo]. 🌏
 - No tracking, no ads, always free. 📡 🚫
 - No database needed. All data is stored in GitHub Discussions. :octocat:
 - GitHub themes: light, dark, dark dimmed, and more! 🌗
@@ -14,9 +14,13 @@ A comments widget built on [GitHub Discussions][discussions]. Let visitors sign 
 
 ## how it works
 
-When giscussions loads, the GitHub Discussions search API is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.).
+When giscussions loads, the [GitHub Discussions search API][search-api] is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.).
 
-To comment, visitors must authorize the giscussions app to post on their behalf using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
+To comment, visitors must [authorize the giscussions app][authorization] to post on their behalf using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
 
+[giscussions]: https://giscussions.vercel.app
+[repo]: https://github.com/laymonage/giscussions
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
+[search-api]: https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search
+[authorization]: https://docs.github.com/en/developers/apps/identifying-and-authorizing-users-for-github-apps

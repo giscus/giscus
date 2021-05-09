@@ -41,9 +41,7 @@ switch (attributes.mapping) {
     break;
 }
 
-const giscussionsOrigin = script.src.match(
-  /^https:\/\/giscussions\.vercel\.app|http:\/\/localhost:\d+/,
-)[0];
+const giscussionsOrigin = new URL(script.src).origin;
 const src = `${giscussionsOrigin}/widget?${new URLSearchParams(params)}`;
 
 const iframeElement = document.createElement('iframe');

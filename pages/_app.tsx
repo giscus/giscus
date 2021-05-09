@@ -1,4 +1,5 @@
 import 'preact/devtools';
+import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import '../styles/base.css';
 import '../styles/globals.css';
@@ -8,29 +9,9 @@ import { useRouter } from 'next/dist/client/router';
 import { useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 
-function useTheme(theme: string) {
-  const themes = {
-    dark: () => {
-      import('../styles/themes/dark.css');
-      import('github-syntax-dark/lib/github-dark.css');
-    },
-    dark_dimmed: () => {
-      import('../styles/themes/dark_dimmed.css');
-      import('github-syntax-dark/lib/github-dark.css');
-    },
-    light: () => {
-      import('../styles/themes/light.css');
-      import('github-syntax-light/lib/github-light.css');
-    },
-  };
-
-  return themes[theme] || themes['light'];
-}
-
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [theme, setTheme] = useState((router.query.theme as string) || 'light');
-  useTheme(theme)();
 
   useEffect(() => {
     setTheme((router.query.theme as string) || 'light');
@@ -38,6 +19,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
+      <Head>
+        <link rel="stylesheet" crossOrigin="anonymous" href={`/themes/${theme}.css`} />
+      </Head>
       <Component {...pageProps} />
     </ThemeContext.Provider>
   );

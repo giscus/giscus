@@ -1,6 +1,6 @@
 import 'preact/devtools';
 import 'tailwindcss/tailwind.css';
-import '../styles/themes/_base.css';
+import '../styles/base.css';
 import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';

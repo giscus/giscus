@@ -38,3 +38,6 @@ yarn-error.log*
 
 # Compiled client script
 public/client.js
+
+# Compiled themes
+public/themes/

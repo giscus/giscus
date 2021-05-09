@@ -7,7 +7,7 @@ if (session) {
   history.replaceState(undefined, document.title, url.toString());
 } else {
   try {
-    session = JSON.parse(localStorage.getItem('giscussions-session'));
+    session = JSON.parse(localStorage.getItem('giscussions-session')) || '';
   } catch (e) {
     session = '';
     localStorage.removeItem('giscussions-session');

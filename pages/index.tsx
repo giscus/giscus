@@ -10,6 +10,8 @@ import { renderMarkdown } from '../services/github/markdown';
 import { getReadAccessToken } from '../services/github/getReadAccessToken';
 import { useIsMounted } from '../lib/hooks';
 import Configuration from '../components/Configuration';
+import { useContext } from 'react';
+import { ThemeContext } from '../lib/context';
 
 export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
@@ -26,7 +28,7 @@ export const getStaticProps = async () => {
 export default function Home({ content }: { content: string }) {
   const isMounted = useIsMounted();
   const router = useRouter();
-  const theme = (router.query.theme as string) || 'light';
+  const { theme } = useContext(ThemeContext);
 
   const comment: IComment = {
     author: {

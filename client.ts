@@ -10,6 +10,7 @@ if (session) {
     session = JSON.parse(localStorage.getItem('giscussions-session'));
   } catch (e) {
     session = '';
+    localStorage.removeItem('giscussions-session');
     console.error(e);
   }
 }

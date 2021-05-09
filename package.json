@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "cscript": "tsc client.ts --outDir public",
-    "dev": "yarn cscript --watch --preserveWatchOutput & next dev",
-    "build": "yarn cscript && next build",
+    "cthemes": "postcss styles/themes/*.css --dir public/themes --config styles/themes",
+    "dev": "yarn cscript --watch --preserveWatchOutput & yarn cthemes --watch & next dev",
+    "build": "yarn cscript && yarn cthemes && next build",
     "start": "next start",
     "lint": "eslint . --cache",
     "tscheck": "tsc --noEmit"

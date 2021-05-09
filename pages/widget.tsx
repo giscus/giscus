@@ -1,13 +1,15 @@
 import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
+import { useContext } from 'react';
 import Widget from '../components/Widget';
+import { ThemeContext } from '../lib/context';
 
 export default function Home() {
   const router = useRouter();
+  const { theme } = useContext(ThemeContext);
 
   const repo = router.query.repo as string;
   const term = router.query.term as string;
-  const theme = router.query.theme as string;
 
   return (
     <>

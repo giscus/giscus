@@ -5,6 +5,8 @@ import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/dist/client/router';
+import { useEffect, useState } from 'react';
+import { ThemeContext } from '../lib/context';
 
 function useTheme(theme: string) {
   const themes = {
@@ -25,12 +27,18 @@ function useTheme(theme: string) {
   return themes[theme] || themes['light'];
 }
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const theme = (router.query.theme as string) || 'light';
+  const [theme, setTheme] = useState((router.query.theme as string) || 'light');
   useTheme(theme)();
 
-  return <Component {...pageProps} />;
-}
+  useEffect(() => {
+    setTheme((router.query.theme as string) || 'light');
+  }, [router]);
 
-export default MyApp;
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <Component {...pageProps} />
+    </ThemeContext.Provider>
+  );
+}

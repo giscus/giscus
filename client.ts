@@ -1,10 +1,17 @@
 const url = new URL(window.location.href);
-const session = url.searchParams.get('giscussions');
+let session = url.searchParams.get('giscussions');
 
 if (session) {
   localStorage.setItem('giscussions-session', session);
   url.searchParams.delete('giscussions');
   history.replaceState(undefined, document.title, url.toString());
+} else {
+  try {
+    session = JSON.parse(localStorage.getItem('giscussions-session'));
+  } catch (e) {
+    session = '';
+    console.error(e);
+  }
 }
 
 const script = document.currentScript as HTMLScriptElement;
@@ -12,7 +19,7 @@ const attributes = script.dataset;
 const params: Record<string, string> = {};
 
 params.origin = location.href;
-params.session = session || localStorage.getItem('giscussions-session') || '';
+params.session = session;
 params.theme = attributes.theme;
 params.repo = attributes.repo;
 

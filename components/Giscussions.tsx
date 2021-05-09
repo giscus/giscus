@@ -48,8 +48,8 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
     const newData = {
       ...page,
       discussion: {
-        ...page.discussion,
-        comments: page.discussion.comments.filter((comment) => {
+        ...page?.discussion,
+        comments: page?.discussion?.comments?.filter((comment) => {
           if (comment.id === intersectId) {
             foundIntersect = true;
           }
@@ -59,7 +59,7 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
     };
 
     // Fix the reply count.
-    newData.discussion.totalReplyCount = newData.discussion.comments.reduce(
+    newData.discussion.totalReplyCount = newData.discussion.comments?.reduce(
       (prev, c) => prev + c.replyCount,
       0,
     );
@@ -69,8 +69,8 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
 
   const numHidden =
     backData?.discussion?.totalCommentCount -
-    backData?.discussion?.comments.length -
-    frontData?.reduce((prev, g) => prev + g.discussion.comments.length, 0);
+    backData?.discussion?.comments?.length -
+    frontData?.reduce((prev, g) => prev + g.discussion.comments?.length, 0);
 
   const needsFrontLoading = backData?.discussion?.pageInfo?.hasPreviousPage;
 
@@ -115,7 +115,7 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
 
       {!isLoading
         ? frontData?.map((page) =>
-            page.discussion.comments.map((comment) => (
+            page?.discussion?.comments?.map((comment) => (
               <Comment
                 key={comment.id}
                 comment={comment}

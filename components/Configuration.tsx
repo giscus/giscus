@@ -174,7 +174,7 @@ export default function Configuration() {
       <p>
         Choose a theme that matches your website. Can&apos;t find one that does?{' '}
         <a
-          href="https://github.com/laymonage/giscussions"
+          href="https://github.com/laymonage/giscussions/blob/main/CONTRIBUTING.md"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >

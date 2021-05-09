@@ -26,9 +26,7 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
   const backData = _backData && _backData[_backData.length - 1];
   const intersectId = backData?.discussion?.comments?.[0]?.id;
 
-  const frontParams = {
-    first: intersectId ? 15 : 0,
-  };
+  const frontParams = { first: 15 };
 
   const frontComments = useDiscussions(query, token, frontParams);
   const {

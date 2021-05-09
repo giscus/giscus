@@ -36,7 +36,8 @@ switch (attributes.mapping) {
     break;
   case 'pathname':
   default:
-    params.term = location.pathname;
+    params.term =
+      location.pathname.length < 2 ? 'index' : location.pathname.substr(1).replace(/\.\w+$/, '');
     break;
 }
 

@@ -69,7 +69,7 @@ export default function Comment({
               type="button"
               className={`${comment.viewerHasUpvoted ? 'color-text-link' : 'color-text-secondary'}`}
               onClick={upvote}
-              disabled={!token}
+              disabled={!token || !comment.viewerCanUpvote}
             >
               <ArrowUpIcon className="transform hover:translate-y-[-10%] transition-transform ease-in-out duration-150" />
             </button>

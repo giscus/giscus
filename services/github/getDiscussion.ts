@@ -31,6 +31,7 @@ const GET_DISCUSSION_QUERY = `
               id
               upvoteCount
               viewerHasUpvoted
+              viewerCanUpvote
               author {
                 avatarUrl
                 login

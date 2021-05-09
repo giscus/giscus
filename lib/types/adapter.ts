@@ -34,6 +34,7 @@ export interface IReply extends IBaseComment {
 export interface IComment extends IBaseComment {
   upvoteCount: number;
   viewerHasUpvoted: boolean;
+  viewerCanUpvote: boolean;
   replyCount: number;
   replies: IReply[];
 }

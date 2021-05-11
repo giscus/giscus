@@ -113,7 +113,7 @@ export function handleClipboardCopy(event: ReactMouseEvent<HTMLDivElement, Mouse
     setTimeout(() => {
       clipboardIcon.classList.remove('d-none');
       checkIcon.classList.add('d-none');
-    }, 3000);
+    }, 2000);
   }
 }
 

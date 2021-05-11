@@ -135,5 +135,9 @@ export function processCommentBody(bodyHTML: string) {
     .querySelectorAll<HTMLAnchorElement>('a.commit-tease-sha')
     .forEach((a) => (a.href = 'https://github.com' + a.pathname));
 
+  content
+    .querySelectorAll<SVGElement>('svg.js-clipboard-check-icon')
+    .forEach((svg) => svg.classList.replace('d-sm-none', 'd-none'));
+
   return content.innerHTML;
 }

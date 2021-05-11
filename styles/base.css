@@ -193,7 +193,7 @@ a {
 }
 
 .btn {
-  @apply relative inline-block whitespace-nowrap align-middle rounded-md;
+  @apply relative inline-block whitespace-nowrap align-middle rounded-md border cursor-pointer;
 }
 
 .btn .octicon {

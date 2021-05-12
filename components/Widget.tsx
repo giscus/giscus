@@ -1,7 +1,8 @@
-import { useRouter } from 'next/dist/client/router';
-import { useCallback, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useCallback, useState } from 'react';
 import Giscussions from '../components/Giscussions';
 import { AuthContext } from '../lib/context';
+import { useIsMounted } from '../lib/hooks';
 import { createDiscussion } from '../services/giscussions/createDiscussion';
 import { getToken } from '../services/giscussions/token';
 
@@ -17,26 +18,27 @@ interface IWidgetProps {
 
 export default function Widget({ repo, term, repoId, categoryId, description }: IWidgetProps) {
   const router = useRouter();
+  const isMounted = useIsMounted();
   const [token, setToken] = useState('');
-  const [origin, setOrigin] = useState('');
   const [isFetchingToken, setIsFetchingToken] = useState(false);
 
-  useEffect(() => {
-    setOrigin((router.query.origin as string) || location.href || '');
-  }, [origin, router.query.origin]);
+  const origin = (router.query.origin as string) || (isMounted ? location.href : '');
 
   const handleError = useCallback(() => {
     localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
     router.reload();
   }, [router]);
 
-  const querySession = router.query.session as string;
-
   let savedSession: string;
   try {
     savedSession = JSON.parse(localStorage.getItem(GISCUSSIONS_SESSION_KEY));
   } catch (err) {
     savedSession = '';
+  }
+
+  const querySession = router.query.session as string;
+  if (querySession) {
+    localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
   }
 
   const session = querySession || savedSession;
@@ -49,24 +51,6 @@ export default function Widget({ repo, term, repoId, categoryId, description }: 
         setIsFetchingToken(false);
       })
       .catch(handleError);
-  }
-
-  if (querySession) {
-    const query = { ...router.query };
-    delete query.session;
-
-    localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
-    router.replace(
-      {
-        pathname: router.pathname,
-        query,
-      },
-      undefined,
-      {
-        scroll: false,
-        shallow: true,
-      },
-    );
   }
 
   const handleDiscussionCreateRequest = async () =>

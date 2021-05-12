@@ -23,6 +23,8 @@ params.origin = location.href;
 params.session = session;
 params.theme = attributes.theme;
 params.repo = attributes.repo;
+params.repoId = attributes.repoId;
+params.categoryId = attributes.categoryId;
 
 switch (attributes.mapping) {
   case 'url':

@@ -1,5 +1,13 @@
 import { differenceInMonths, differenceInYears, format, formatDistanceStrict } from 'date-fns';
 
+export function getTheme(theme: string) {
+  if (!theme) theme = 'light';
+  if (theme === 'preferred_color_scheme') {
+    theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  return theme;
+}
+
 export function formatDate(dt: string) {
   return format(new Date(dt), 'LLL d, y, p O');
 }

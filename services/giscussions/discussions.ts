@@ -46,7 +46,7 @@ export function useDiscussions(
             ...lastPage,
             discussion: {
               ...lastPage.discussion,
-              comments: [...lastPage.discussion.comments, comment],
+              comments: [...(lastPage.discussion?.comments || []), comment],
             },
           },
         ],

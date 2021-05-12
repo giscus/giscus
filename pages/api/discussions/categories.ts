@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ICategories } from '../../lib/types/adapter';
-import { getDiscussionCategories } from '../../services/github/getDiscussionCategories';
+import { ICategories } from '../../../lib/types/adapter';
+import { getDiscussionCategories } from '../../../services/github/getDiscussionCategories';
 
 export default async (
   req: NextApiRequest,

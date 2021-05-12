@@ -1,12 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getDiscussion } from '../../services/github/getDiscussion';
-import { adaptDiscussion } from '../../lib/adapter';
-import { IGiscussion } from '../../lib/types/adapter';
+import { getDiscussion } from '../../../services/github/getDiscussion';
+import { adaptDiscussion } from '../../../lib/adapter';
+import { IGiscussion } from '../../../lib/types/adapter';
 
-export default async (
-  req: NextApiRequest,
-  res: NextApiResponse<IGiscussion | { error: string }>,
-) => {
+async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { error: string }>) {
   const token = req.headers.authorization?.split('Bearer ')[1];
 
   const params = {
@@ -38,4 +35,7 @@ export default async (
   const adapted = adaptDiscussion({ viewer, discussion });
 
   res.status(200).json(adapted);
+}
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  return get(req, res);
 };

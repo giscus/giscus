@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { getDiscussion } from '../../../services/github/getDiscussion';
 import { adaptDiscussion } from '../../../lib/adapter';
 import { IGiscussion } from '../../../lib/types/adapter';
+import { createDiscussion } from '../../../services/github/createDiscussion';
 
 async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { error: string }>) {
   const token = req.headers.authorization?.split('Bearer ')[1];
@@ -36,6 +37,21 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { err
 
   res.status(200).json(adapted);
 }
+
+async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | { error: string }>) {
+  const { repo, input } = req.body;
+  const response = await createDiscussion(repo, { input });
+  const id = response?.data?.createDiscussion?.discussion?.id;
+
+  if (!id) {
+    res.status(400).json({ error: 'Unable to create discussion with request body.' });
+    return;
+  }
+
+  res.status(200).json({ id });
+}
+
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  if (req.method === 'POST') return post(req, res);
   return get(req, res);
 };

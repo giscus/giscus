@@ -1,7 +1,7 @@
 import { ICategories } from '../../lib/types/adapter';
 
 export async function getCategories(repo: string): Promise<ICategories> {
-  const result = await fetch(`/api/categories?${new URLSearchParams({ repo })}`, {
+  const result = await fetch(`/api/discussions/categories?${new URLSearchParams({ repo })}`, {
     headers: {
       'Content-Type': 'application/json',
     },

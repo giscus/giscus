@@ -79,6 +79,13 @@ export interface GDiscussionCategory {
   emojiHTML: string;
 }
 
+export interface GCreateDiscussionInput {
+  repositoryId: string;
+  categoryId: string;
+  title: string;
+  body: string;
+}
+
 export interface GError {
   message: string;
   documentation_url: string;

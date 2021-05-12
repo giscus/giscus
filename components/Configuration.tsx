@@ -77,9 +77,9 @@ const mappingOptions = [
 
 export default function Configuration() {
   const [repository, setRepository] = useState('');
-  const [lastRepository, setLastRepository] = useState('');
   const [repositoryId, setRepositoryId] = useState('');
   const [categoryId, setCategoryId] = useState('');
+  const [error, setError] = useState('');
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [mapping, setMapping] = useState('pathname');
   const [term, setTerm] = useState('');
@@ -99,13 +99,22 @@ export default function Configuration() {
     setGlobalTheme(theme);
   }, [setGlobalTheme, theme]);
 
-  if (dRepository && dRepository !== lastRepository) {
-    getCategories(dRepository).then(({ repositoryId, categories }) => {
-      setRepositoryId(repositoryId);
-      setCategories(categories);
-      setLastRepository(dRepository);
-    });
-  }
+  useEffect(() => {
+    setError('');
+    setRepositoryId('');
+    setCategories([]);
+    if (dRepository) {
+      getCategories(dRepository)
+        .then(({ repositoryId, categories }) => {
+          setRepositoryId(repositoryId);
+          setCategories(categories);
+          setError('');
+        })
+        .catch(() => {
+          setError(`Unable to fetch discussion category details for the selected repository.`);
+        });
+    }
+  }, [dRepository]);
 
   return (
     <div className="p-4 pt-0 markdown">
@@ -174,6 +183,7 @@ export default function Configuration() {
           </option>
         ))}
       </select>
+      {error ? <p className="mt-2 text-xs text-red-500">{error}</p> : null}
 
       <h3>Page ↔️ Discussions Mapping</h3>
       <p>Choose the mapping between the embedding page and the embedded discussion.</p>

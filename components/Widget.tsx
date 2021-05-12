@@ -2,11 +2,20 @@ import { useRouter } from 'next/dist/client/router';
 import { useCallback, useEffect, useState } from 'react';
 import Giscussions from '../components/Giscussions';
 import { AuthContext } from '../lib/context';
+import { createDiscussion } from '../services/giscussions/createDiscussion';
 import { getToken } from '../services/giscussions/token';
 
 const GISCUSSIONS_SESSION_KEY = 'giscussions-session';
 
-export default function Widget({ repo, term }: { repo: string; term: string }) {
+interface IWidgetProps {
+  repo: string;
+  term: string;
+  repoId: string;
+  categoryId: string;
+  description?: string;
+}
+
+export default function Widget({ repo, term, repoId, categoryId, description }: IWidgetProps) {
   const router = useRouter();
   const [token, setToken] = useState('');
   const [origin, setOrigin] = useState('');
@@ -51,11 +60,24 @@ export default function Widget({ repo, term }: { repo: string; term: string }) {
     );
   }
 
+  const handleDiscussionCreateRequest = async () =>
+    createDiscussion(repo, {
+      repositoryId: repoId,
+      categoryId,
+      title: term,
+      body: `# ${term}\n\n${description || ''}\n\n${origin}`,
+    });
+
   const ready = (!session || token) && repo && term;
 
   return ready ? (
     <AuthContext.Provider value={{ token, origin }}>
-      <Giscussions repo={repo} term={term} onError={handleError} />
+      <Giscussions
+        repo={repo}
+        term={term}
+        onError={handleError}
+        onDiscussionCreateRequest={handleDiscussionCreateRequest}
+      />
     </AuthContext.Provider>
   ) : null;
 }

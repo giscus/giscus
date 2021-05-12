@@ -19,6 +19,7 @@ export default function Widget({ repo, term, repoId, categoryId, description }: 
   const router = useRouter();
   const [token, setToken] = useState('');
   const [origin, setOrigin] = useState('');
+  const [isFetchingToken, setIsFetchingToken] = useState(false);
 
   useEffect(() => {
     setOrigin((router.query.origin as string) || location.href || '');
@@ -40,7 +41,15 @@ export default function Widget({ repo, term, repoId, categoryId, description }: 
 
   const session = querySession || savedSession;
 
-  if (session) getToken(session).then(setToken).catch(handleError);
+  if (!isFetchingToken && session && !token) {
+    setIsFetchingToken(true);
+    getToken(session)
+      .then((token) => {
+        setToken(token);
+        setIsFetchingToken(false);
+      })
+      .catch(handleError);
+  }
 
   if (querySession) {
     const query = { ...router.query };

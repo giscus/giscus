@@ -1,5 +1,5 @@
-import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import Widget from '../components/Widget';
 import { ThemeContext } from '../lib/context';

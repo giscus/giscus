@@ -8,7 +8,7 @@ import '../styles/base.css';
 import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 import { getTheme } from '../lib/utils';

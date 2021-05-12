@@ -1,6 +1,6 @@
-import { useRouter } from 'next/dist/client/router';
-import Head from 'next/head';
 import { readFileSync } from 'fs';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { join } from 'path';
 import Comment from '../components/Comment';
 import { Reactions } from '../lib/reactions';

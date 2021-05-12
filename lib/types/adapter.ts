@@ -57,3 +57,14 @@ export interface IGiscussion {
     comments: IComment[];
   };
 }
+
+export interface ICategory {
+  id: string;
+  name: string;
+  emoji: string;
+}
+
+export interface ICategories {
+  repositoryId: string;
+  categories: ICategory[];
+}

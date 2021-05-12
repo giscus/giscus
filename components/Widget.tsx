@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import Giscussions from '../components/Giscussions';
 import { AuthContext } from '../lib/context';
@@ -16,19 +16,7 @@ interface IWidgetProps {
   description?: string;
 }
 
-export default function Widget({ repo, term, repoId, categoryId, description }: IWidgetProps) {
-  const router = useRouter();
-  const isMounted = useIsMounted();
-  const [token, setToken] = useState('');
-  const [isFetchingToken, setIsFetchingToken] = useState(false);
-
-  const origin = (router.query.origin as string) || (isMounted ? location.href : '');
-
-  const handleError = useCallback(() => {
-    localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
-    router.reload();
-  }, [router]);
-
+function getSession(router: NextRouter) {
   let savedSession: string;
   try {
     savedSession = JSON.parse(localStorage.getItem(GISCUSSIONS_SESSION_KEY));
@@ -41,7 +29,22 @@ export default function Widget({ repo, term, repoId, categoryId, description }: 
     localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
   }
 
-  const session = querySession || savedSession;
+  return querySession || savedSession;
+}
+
+export default function Widget({ repo, term, repoId, categoryId, description }: IWidgetProps) {
+  const router = useRouter();
+  const isMounted = useIsMounted();
+  const [token, setToken] = useState('');
+  const [isFetchingToken, setIsFetchingToken] = useState(false);
+
+  const session = getSession(router);
+  const origin = (router.query.origin as string) || (isMounted ? location.href : '');
+
+  const handleError = useCallback(() => {
+    localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
+    router.reload();
+  }, [router]);
 
   if (!isFetchingToken && session && !token) {
     setIsFetchingToken(true);

@@ -9,12 +9,13 @@ import { addDiscussionReply } from '../services/github/addDiscussionReply';
 import { renderMarkdown } from '../services/github/markdown';
 
 interface CommentBoxProps {
-  discussionId: string;
+  viewer?: IUser;
+  discussionId?: string;
   context?: string;
   replyToId?: string;
   onSubmit: (comment: IComment | IReply) => void;
   onReplyOpen?: VoidFunction;
-  viewer?: IUser;
+  onDiscussionCreateRequest?: () => Promise<string>;
 }
 
 export default function CommentBox({
@@ -24,6 +25,7 @@ export default function CommentBox({
   replyToId,
   onSubmit,
   onReplyOpen,
+  onDiscussionCreateRequest,
 }: CommentBoxProps) {
   const [isPreview, setIsPreview] = useState(false);
   const [input, setInput] = useState('');
@@ -57,9 +59,19 @@ export default function CommentBox({
     setIsReplyOpen(false);
   }, []);
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback(async () => {
+    if (isSubmitting) {
+      return;
+    }
     setIsSubmitting(true);
-    const payload = { body: input, discussionId, replyToId };
+
+    let id = discussionId;
+
+    if (!discussionId) {
+      id = await onDiscussionCreateRequest();
+    }
+
+    const payload = { body: input, discussionId: id, replyToId };
 
     if (replyToId) {
       addDiscussionReply(payload, token).then(({ data: { addDiscussionReply } }) => {
@@ -78,7 +90,16 @@ export default function CommentBox({
         reset();
       });
     }
-  }, [token, input, discussionId, replyToId, onSubmit, reset]);
+  }, [
+    isSubmitting,
+    discussionId,
+    input,
+    replyToId,
+    onDiscussionCreateRequest,
+    token,
+    onSubmit,
+    reset,
+  ]);
 
   const handleReplyOpen = useCallback(() => {
     onReplyOpen();

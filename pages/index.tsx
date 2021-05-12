@@ -85,6 +85,8 @@ export default function Home({ content }: { content: string }) {
                   <script
                     src="/client.js"
                     data-repo="laymonage/giscussions"
+                    data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
+                    data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
                     data-mapping="specific"
                     data-term="Welcome to giscussions!"
                     data-theme={theme}

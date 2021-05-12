@@ -10,6 +10,9 @@ export default function Home() {
 
   const repo = router.query.repo as string;
   const term = router.query.term as string;
+  const repoId = router.query.repoId as string;
+  const categoryId = router.query.categoryId as string;
+  const description = router.query.description as string;
 
   return (
     <>
@@ -20,7 +23,13 @@ export default function Home() {
       </Head>
 
       <main className="w-full mx-auto" data-theme={theme}>
-        <Widget repo={repo} term={term} />
+        <Widget
+          repo={repo}
+          term={term}
+          repoId={repoId}
+          categoryId={categoryId}
+          description={description}
+        />
       </main>
 
       <script

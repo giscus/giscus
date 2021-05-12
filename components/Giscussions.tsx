@@ -8,9 +8,15 @@ interface IGiscussionsProps {
   repo: string;
   term: string;
   onError?: VoidFunction;
+  onDiscussionCreateRequest?: () => Promise<string>;
 }
 
-export default function Giscussions({ repo, term, onError }: IGiscussionsProps) {
+export default function Giscussions({
+  repo,
+  term,
+  onError,
+  onDiscussionCreateRequest,
+}: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
   const query = { repo, term };
 
@@ -98,7 +104,7 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
           {isError
             ? `An error occurred${error.error ? `: ${error.error}` : ''}.`
             : isNotFound
-            ? 'Discussion not found.'
+            ? '0 comments'
             : isLoading
             ? 'Loading comments...'
             : `${totalCommentCount} comment${totalCommentCount !== 1 ? 's' : ''}`}
@@ -184,12 +190,13 @@ export default function Giscussions({ repo, term, onError }: IGiscussionsProps) 
 
       <div className="my-4 text-sm border-t-2 color-border-primary" />
 
-      {!isLoading && !isNotFound ? (
+      {!isLoading ? (
         <CommentBox
+          viewer={backData?.viewer}
           discussionId={backData?.discussion?.id}
           context={context}
           onSubmit={backMutators.addNewComment}
-          viewer={backData?.viewer}
+          onDiscussionCreateRequest={onDiscussionCreateRequest}
         />
       ) : null}
     </div>

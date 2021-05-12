@@ -73,6 +73,12 @@ export interface GRepositoryDiscussion {
   };
 }
 
+export interface GDiscussionCategory {
+  id: string;
+  name: string;
+  emojiHTML: string;
+}
+
 export interface GError {
   message: string;
   documentation_url: string;

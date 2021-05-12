@@ -18,6 +18,9 @@ if (session) {
 const script = document.currentScript as HTMLScriptElement;
 const attributes = script.dataset;
 const params: Record<string, string> = {};
+const ogDescriptionMeta = document.querySelector(
+  `meta[property='og:description'],meta[name='description']`,
+) as HTMLMetaElement;
 
 params.origin = location.href;
 params.session = session;
@@ -25,6 +28,7 @@ params.theme = attributes.theme;
 params.repo = attributes.repo;
 params.repoId = attributes.repoId;
 params.categoryId = attributes.categoryId;
+params.description = ogDescriptionMeta ? ogDescriptionMeta.content : '';
 
 switch (attributes.mapping) {
   case 'url':

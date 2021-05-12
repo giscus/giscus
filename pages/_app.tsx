@@ -8,19 +8,20 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/dist/client/router';
 import { useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
+import { getTheme } from '../lib/utils';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const [theme, setTheme] = useState((router.query.theme as string) || 'light');
+  const [theme, setTheme] = useState(router.query.theme as string);
 
   useEffect(() => {
-    setTheme((router.query.theme as string) || 'light');
+    setTheme(router.query.theme as string);
   }, [router]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme: getTheme(theme), setTheme }}>
       <Head>
-        <link rel="stylesheet" crossOrigin="anonymous" href={`/themes/${theme}.css`} />
+        <link rel="stylesheet" crossOrigin="anonymous" href={`/themes/${getTheme(theme)}.css`} />
       </Head>
       <Component {...pageProps} />
     </ThemeContext.Provider>

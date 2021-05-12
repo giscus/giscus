@@ -6,7 +6,7 @@ import Comment from '../components/Comment';
 import { Reactions } from '../lib/reactions';
 import { IComment, IReactionGroups } from '../lib/types/adapter';
 import { renderMarkdown } from '../services/github/markdown';
-import { getReadAccessToken } from '../services/github/getReadAccessToken';
+import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { useIsMounted } from '../lib/hooks';
 import Configuration from '../components/Configuration';
 import { useContext } from 'react';
@@ -15,7 +15,7 @@ import { ThemeContext } from '../lib/context';
 export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
   const readme = readFileSync(path, 'utf-8');
-  const token = await getReadAccessToken();
+  const token = await getAppAccessToken('laymonage/giscussions');
   const content = await renderMarkdown(readme, token, 'laymonage/giscussions');
   return {
     props: {

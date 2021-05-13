@@ -24,15 +24,16 @@ function getHeaders() {
   };
 }
 
-async function getInstallationId(repoWithOwner: string) {
+async function getInstallationId(repoWithOwner: string): Promise<string> {
   const { id } = await fetch(GITHUB_REPO_INSTALLATION_URL(repoWithOwner), {
     headers: getHeaders(),
   }).then((response) => response.json());
   return id;
 }
 
-export async function getAppAccessToken(repoWithOwner: string) {
+export async function getAppAccessToken(repoWithOwner: string): Promise<string> {
   const installationId = await getInstallationId(repoWithOwner);
+  if (!installationId) return '';
 
   const response: GResponse = await fetch(GITHUB_ACCESS_TOKEN_URL(installationId), {
     method: 'POST',

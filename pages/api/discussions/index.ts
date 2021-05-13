@@ -21,7 +21,8 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { err
 
   const response = await getDiscussion(params, token);
   if ('message' in response) {
-    res.status(500).json({ error: response.message });
+    const code = response.message.includes('not installed') ? 403 : 500;
+    res.status(code).json({ error: response.message });
     return;
   }
 
@@ -52,6 +53,9 @@ async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method === 'POST') return post(req, res);
-  return get(req, res);
+  if (req.method === 'POST') {
+    await post(req, res);
+    return;
+  }
+  await get(req, res);
 };

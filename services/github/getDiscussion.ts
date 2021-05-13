@@ -105,11 +105,18 @@ export async function getDiscussion(
 ): Promise<GetDiscussionResponse | GError> {
   const { repo, term, ...pagination } = params;
   const query = `repo:${repo} in:title ${term}`;
+  if (!token) token = await getAppAccessToken(repo);
+  if (!token)
+    return {
+      message: 'giscussions is not installed on this repository',
+      documentation_url:
+        'https://docs.github.com/en/rest/reference/apps#get-a-repository-installation-for-the-authenticated-app',
+    };
 
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${token || (await getAppAccessToken(repo))}`,
+      Authorization: `Bearer ${token}`,
       'GraphQL-Features': 'discussions_api',
     },
 

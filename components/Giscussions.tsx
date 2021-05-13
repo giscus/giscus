@@ -23,25 +23,22 @@ export default function Giscussions({
   const backComments = useDiscussions(query, token, { last: 15 });
   const {
     data: _backData,
-    isError: isBackError,
     isLoading: isBackLoading,
     mutators: backMutators,
-    error,
+    error: backError,
   } = backComments;
 
   const backData = _backData && _backData[_backData.length - 1];
   const intersectId = backData?.discussion?.comments?.[0]?.id;
 
-  const frontParams = { first: 15 };
-
-  const frontComments = useDiscussions(query, token, frontParams);
+  const frontComments = useDiscussions(query, token, { first: 15 });
   const {
     data: _frontData,
-    isError: isFrontError,
     isLoading: isFrontLoading,
     mutators: frontMutators,
     size,
     setSize,
+    error: frontError,
   } = frontComments;
 
   const frontData = _frontData?.map((page) => {
@@ -78,31 +75,30 @@ export default function Giscussions({
     backData?.discussion?.comments?.length -
     frontData?.reduce((prev, g) => prev + g.discussion.comments?.length, 0);
 
-  const needsFrontLoading = backData?.discussion?.pageInfo?.hasPreviousPage;
-
-  const isError = isFrontError || isBackError;
-  const isLoading = (needsFrontLoading && isFrontLoading) || isBackLoading;
-  const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
-
-  const isNotFound = !isBackLoading && !backData?.discussion;
-
   const totalCommentCount = backData?.discussion?.totalCommentCount;
   const totalReplyCount =
     backData?.discussion?.totalReplyCount +
     frontData?.reduce((prev, g) => prev + g.discussion.totalReplyCount, 0);
 
+  const needsFrontLoading = backData?.discussion?.pageInfo?.hasPreviousPage;
+
+  const isLoading = (needsFrontLoading && isFrontLoading) || isBackLoading;
+  const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
+  const isNotFound = !isBackLoading && !backData?.discussion;
+
   const context = backData?.discussion?.repository?.nameWithOwner;
 
-  if (error?.error && onError) onError();
+  const error = frontError || backError;
+  const shouldShowReplyCount = !error && !isNotFound && !isLoading;
 
-  const shouldShowReplyCount = !isError && !isNotFound && !isLoading;
+  if (error && !(error?.message || '').includes('not installed') && onError) onError();
 
   return (
     <div className="w-full color-text-primary">
       <div className="flex flex-auto">
         <h4 className="mb-2 mr-2 font-semibold">
-          {isError
-            ? `An error occurred${error.error ? `: ${error.error}` : ''}.`
+          {error
+            ? `An error occurred${error?.message ? `: ${error.message}` : ''}.`
             : isNotFound
             ? '0 comments'
             : isLoading

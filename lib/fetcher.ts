@@ -2,8 +2,11 @@ import { isEmpty } from './utils';
 
 export async function fetcher(input: RequestInfo, init?: RequestInit) {
   const res = await fetch(input, init);
-  if (!res.ok) throw await res.json();
-  return res.json();
+  const data = await res.json();
+  if (!res.ok) {
+    throw new Error(data?.error || 'An error occurred while fetching the data');
+  }
+  return data;
 }
 
 export function cleanParams(params: Record<string, unknown>) {

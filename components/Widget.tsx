@@ -42,8 +42,10 @@ export default function Widget({ repo, term, repoId, categoryId, description }: 
   const origin = (router.query.origin as string) || (isMounted ? location.href : '');
 
   const handleError = useCallback(() => {
-    localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
-    router.reload();
+    if (localStorage.getItem(GISCUSSIONS_SESSION_KEY) !== null) {
+      localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
+      router.reload();
+    }
   }, [router]);
 
   if (!isFetchingToken && session && !token) {

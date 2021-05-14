@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react';
-import { useSWRInfinite } from 'swr';
+import { SWRConfig, useSWRInfinite } from 'swr';
 import { cleanParams, fetcher } from '../../lib/fetcher';
 import { IComment, IGiscussion, IReply } from '../../lib/types/adapter';
 import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
@@ -33,6 +33,12 @@ export function useDiscussions(
   const { data, size, setSize, error, mutate, isValidating } = useSWRInfinite<IGiscussion>(
     getKey,
     fetcher,
+    {
+      onErrorRetry: (err, key, config, revalidate, opts) => {
+        if ((err?.message || '').includes('not installed')) return;
+        SWRConfig.default.onErrorRetry(err, key, config, revalidate, opts);
+      },
+    },
   );
 
   const addNewComment = useCallback(

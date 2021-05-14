@@ -28,7 +28,7 @@ export function formatDateDistance(dt: string) {
 }
 
 export function isEmpty(v: unknown) {
-  return v === null || v === undefined || v === '';
+  return v === null || v === undefined || v === '' || Number.isNaN(v);
 }
 
 export function clipboardCopy(text: string) {

@@ -10,7 +10,7 @@ A comments widget built on [GitHub Discussions][discussions]. Let visitors sign 
 - Can be self-hosted! 🤳
 
 > **Note:**\
-> giscussions is still in the early stages and under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscussions may break or change over time.
+> giscussions is still under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscussions may break or change over time.
 
 ## how it works
 

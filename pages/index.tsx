@@ -31,7 +31,7 @@ export default function Home({ content }: { content: string }) {
 
   const comment: IComment = {
     author: {
-      avatarUrl: 'https://github.com/identicons/app/app/giscussions',
+      avatarUrl: 'https://avatars.githubusercontent.com/in/106117',
       login: 'giscussions',
       url: 'https://github.com/apps/giscussions',
     },

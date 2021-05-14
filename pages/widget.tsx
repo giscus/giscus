@@ -10,6 +10,7 @@ export default function Home() {
 
   const repo = router.query.repo as string;
   const term = router.query.term as string;
+  const number = +router.query.number;
   const repoId = router.query.repoId as string;
   const categoryId = router.query.categoryId as string;
   const description = router.query.description as string;
@@ -26,6 +27,7 @@ export default function Home() {
         <Widget
           repo={repo}
           term={term}
+          number={number}
           repoId={repoId}
           categoryId={categoryId}
           description={description}

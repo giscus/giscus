@@ -8,4 +8,5 @@ export interface PaginationParams {
 export interface DiscussionQuery {
   repo: string;
   term: string;
+  number: number;
 }

@@ -10,7 +10,8 @@ const GISCUSSIONS_SESSION_KEY = 'giscussions-session';
 
 interface IWidgetProps {
   repo: string;
-  term: string;
+  term?: string;
+  number?: number;
   repoId: string;
   categoryId: string;
   description?: string;
@@ -32,7 +33,14 @@ function getSession(router: NextRouter) {
   return querySession || savedSession;
 }
 
-export default function Widget({ repo, term, repoId, categoryId, description }: IWidgetProps) {
+export default function Widget({
+  repo,
+  term,
+  number,
+  repoId,
+  categoryId,
+  description,
+}: IWidgetProps) {
   const router = useRouter();
   const isMounted = useIsMounted();
   const [token, setToken] = useState('');
@@ -66,13 +74,14 @@ export default function Widget({ repo, term, repoId, categoryId, description }: 
       body: `# ${term}\n\n${description || ''}\n\n${origin}`,
     });
 
-  const ready = (!session || token) && repo && term;
+  const ready = (!session || token) && repo && (term || number);
 
   return ready ? (
     <AuthContext.Provider value={{ token, origin }}>
       <Giscussions
         repo={repo}
         term={term}
+        number={number}
         onError={handleError}
         onDiscussionCreateRequest={handleDiscussionCreateRequest}
       />

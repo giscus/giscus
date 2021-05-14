@@ -8,7 +8,6 @@ interface IGiscussionsProps {
   repo: string;
   term?: string;
   number?: number;
-  onError?: VoidFunction;
   onDiscussionCreateRequest?: () => Promise<string>;
 }
 
@@ -16,7 +15,6 @@ export default function Giscussions({
   repo,
   term,
   number,
-  onError,
   onDiscussionCreateRequest,
 }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
@@ -92,8 +90,6 @@ export default function Giscussions({
 
   const shouldShowReplyCount = !error && !isNotFound && !isLoading;
   const shouldShowCommentBox = !isLoading && (!error || (isNotFound && !number));
-
-  if (error && onError && !isNotFound) onError();
 
   return (
     <div className="w-full color-text-primary">

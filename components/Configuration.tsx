@@ -162,8 +162,8 @@ export default function Configuration() {
             <>
               <XIcon className="inline-block ml-2 color-text-danger" />
               <p className="text-xs color-text-danger">
-                {`Couldn't`} use giscussions in this repository. Make sure all of the above criteria
-                has been met.
+                Cannot use giscussions in this repository. Make sure all of the above criteria has
+                been met.
               </p>
             </>
           ) : repositoryId && categories.length ? (

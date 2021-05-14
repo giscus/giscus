@@ -65,6 +65,9 @@ switch (attributes.mapping) {
   case 'specific':
     params.term = attributes.term;
     break;
+  case 'number':
+    params.number = attributes.term;
+    break;
   case 'pathname':
   default:
     params.term =

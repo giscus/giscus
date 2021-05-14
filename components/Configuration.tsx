@@ -16,7 +16,7 @@ const mappingOptions = [
     ),
     description: (
       <>
-        giscussions will search for a discussion whose title contains the page&apos;s{' '}
+        giscussions will search for a discussion whose title contains the {`page's `}
         <code>pathname</code> URL component.
       </>
     ),
@@ -25,26 +25,20 @@ const mappingOptions = [
     value: 'url',
     label: <>Discussion title contains page URL</>,
     description: (
-      <>giscussions will search for a discussion whose title contains the page&apos;s URL.</>
+      <>giscussions will search for a discussion whose title contains the {`page's`} URL.</>
     ),
   },
   {
     value: 'title',
     label: (
       <>
-        Discussion title contains page{' '}
-        <code>
-          {'<'}title{'>'}
-        </code>
+        Discussion title contains page <code>{'<title>'}</code>.
       </>
     ),
     description: (
       <>
-        giscussions will search for a discussion whose title contains the page&apos;s{' '}
-        <code>
-          {'<'}title{'>'}
-        </code>{' '}
-        HTML tag.
+        giscussions will search for a discussion whose title contains the {`page's `}
+        <code>{'<title>'}</code> HTML tag.
       </>
     ),
   },
@@ -58,17 +52,13 @@ const mappingOptions = [
     description: (
       <>
         giscussions will search for a discussion whose title contains the page&apos;s{' '}
-        <code>
-          {'<'}meta property={'"'}og:title{'"'}
-          {'>'}
-        </code>{' '}
-        HTML tag.
+        <code>{`<meta property="og:title">`}</code> HTML tag.
       </>
     ),
   },
   {
     value: 'specific',
-    label: <>Discussion title contains specific term</>,
+    label: <>Discussion title contains a specific term</>,
     description: (
       <>giscussions will search for a discussion whose title contains a specific term.</>
     ),
@@ -76,7 +66,12 @@ const mappingOptions = [
   {
     value: 'number',
     label: <>Specific discussion number</>,
-    description: <>giscussions will load a specific discussion by number.</>,
+    description: (
+      <>
+        giscussions will load a specific discussion by number. This option does not support
+        automatic discussion creation.
+      </>
+    ),
   },
 ];
 

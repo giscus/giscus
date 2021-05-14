@@ -14,9 +14,9 @@ A comments widget built on [GitHub Discussions][discussions]. Let visitors sign 
 
 ## how it works
 
-When giscussions loads, the [GitHub Discussions search API][search-api] is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.).
+When giscussions loads, the [GitHub Discussions search API][search-api] is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.). If a matching discussion cannot be found, the giscussions bot will automatically create a discussion the first time someone comments.
 
-To comment, visitors must [authorize the giscussions app][authorization] to post on their behalf using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
+To comment, visitors must authorize the [giscussions app][giscussions-app] to [post on their behalf][authorization] using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
 
 ## contributing
 
@@ -27,5 +27,6 @@ See [CONTRIBUTING.md][contributing]
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [search-api]: https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search
+[giscussions-app]: https://github.com/apps/giscussions
 [authorization]: https://docs.github.com/en/developers/apps/identifying-and-authorizing-users-for-github-apps
 [contributing]: https://github.com/laymonage/giscussions/blob/main/CONTRIBUTING.md

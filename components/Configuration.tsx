@@ -1,3 +1,4 @@
+import { CheckIcon, SyncIcon, XIcon } from '@primer/octicons-react';
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 import { useDebounce } from '../lib/hooks';
@@ -111,7 +112,9 @@ export default function Configuration() {
           setError('');
         })
         .catch(() => {
-          setError(`Unable to fetch discussion category details for the selected repository.`);
+          setError(
+            `Couldn't use giscussions in this repository. Make sure all of the above criteria has been met.`,
+          );
         });
     }
   }, [dRepository]);
@@ -157,10 +160,28 @@ export default function Configuration() {
             className="my-2 px-[12px] py-[5px] min-w-[50%] form-control border rounded-md placeholder-gray-500"
             placeholder="owner/repo"
           />
-          <p className="text-xs color-text-secondary">
-            A <strong>public</strong> GitHub repository. This is where the discussions will be
-            linked to.
-          </p>
+          {!error && !repositoryId && dRepository ? (
+            <SyncIcon className="inline-block ml-2 animate-spin" />
+          ) : null}
+          {!error && repositoryId && dRepository ? (
+            <CheckIcon className="inline-block ml-2 color-text-success" />
+          ) : null}
+          {error && !repositoryId && dRepository ? (
+            <XIcon className="inline-block ml-2 color-text-danger" />
+          ) : null}
+
+          {error ? (
+            <p className="text-xs color-text-danger">{error}</p>
+          ) : repositoryId ? (
+            <p className="text-xs color-text-success">
+              Success! This repository meets all of the above criteria.
+            </p>
+          ) : (
+            <p className="text-xs color-text-secondary">
+              A <strong>public</strong> GitHub repository. This is where the discussions will be
+              linked to.
+            </p>
+          )}
         </div>
       </fieldset>
 
@@ -183,7 +204,6 @@ export default function Configuration() {
           </option>
         ))}
       </select>
-      {error ? <p className="mt-2 text-xs text-red-500">{error}</p> : null}
 
       <h3>Page ↔️ Discussions Mapping</h3>
       <p>Choose the mapping between the embedding page and the embedded discussion.</p>

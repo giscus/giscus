@@ -1,12 +1,10 @@
 import { NextRouter, useRouter } from 'next/router';
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 import Giscussions from '../components/Giscussions';
 import { AuthContext } from '../lib/context';
 import { useIsMounted } from '../lib/hooks';
 import { createDiscussion } from '../services/giscussions/createDiscussion';
 import { getToken } from '../services/giscussions/token';
-
-const GISCUSSIONS_SESSION_KEY = 'giscussions-session';
 
 interface IWidgetProps {
   repo: string;
@@ -45,21 +43,12 @@ export default function Widget({
   const session = getSession(router);
   const origin = (router.query.origin as string) || (isMounted ? location.href : '');
 
-  const handleError = useCallback(() => {
-    if (localStorage.getItem(GISCUSSIONS_SESSION_KEY) !== null) {
-      localStorage.removeItem(GISCUSSIONS_SESSION_KEY);
-      router.reload();
-    }
-  }, [router]);
-
   if (!isFetchingToken && session && !token) {
     setIsFetchingToken(true);
-    getToken(session)
-      .then((token) => {
-        setToken(token);
-        setIsFetchingToken(false);
-      })
-      .catch(handleError);
+    getToken(session).then((token) => {
+      setToken(token);
+      setIsFetchingToken(false);
+    });
   }
 
   const handleDiscussionCreateRequest = async () =>
@@ -78,7 +67,6 @@ export default function Widget({
         repo={repo}
         term={term}
         number={number}
-        onError={handleError}
         onDiscussionCreateRequest={handleDiscussionCreateRequest}
       />
     </AuthContext.Provider>

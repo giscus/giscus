@@ -6,7 +6,8 @@ import CommentBox from './CommentBox';
 
 interface IGiscussionsProps {
   repo: string;
-  term: string;
+  term?: string;
+  number?: number;
   onError?: VoidFunction;
   onDiscussionCreateRequest?: () => Promise<string>;
 }
@@ -14,11 +15,12 @@ interface IGiscussionsProps {
 export default function Giscussions({
   repo,
   term,
+  number,
   onError,
   onDiscussionCreateRequest,
 }: IGiscussionsProps) {
   const { token } = useContext(AuthContext);
-  const query = { repo, term };
+  const query = { repo, term, number };
 
   const backComments = useDiscussions(query, token, { last: 15 });
   const {
@@ -97,10 +99,10 @@ export default function Giscussions({
     <div className="w-full color-text-primary">
       <div className="flex flex-auto">
         <h4 className="mb-2 mr-2 font-semibold">
-          {error
-            ? `An error occurred${error?.message ? `: ${error.message}` : ''}.`
-            : isNotFound
+          {isNotFound && !number
             ? '0 comments'
+            : error && !backData
+            ? `An error occurred${error?.message ? `: ${error.message}` : ''}.`
             : isLoading
             ? 'Loading comments...'
             : `${totalCommentCount} comment${totalCommentCount !== 1 ? 's' : ''}`}

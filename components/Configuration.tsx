@@ -154,7 +154,7 @@ export default function Configuration() {
             value={repository}
             onChange={(event) => setRepository(event.target.value)}
             type="text"
-            className="my-2 px-[12px] py-[5px] form-control border rounded-md placeholder-gray-500"
+            className="my-2 px-[12px] py-[5px] min-w-[50%] form-control border rounded-md placeholder-gray-500"
             placeholder="owner/repo"
           />
           <p className="text-xs color-text-secondary">

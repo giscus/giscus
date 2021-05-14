@@ -43,6 +43,7 @@ export function useDiscussions(
 
   const addNewComment = useCallback(
     (comment: IComment) => {
+      if (!data) return mutate();
       const firstPage = data.slice(0, data.length - 1);
       const [lastPage] = data.slice(-1);
       mutate(

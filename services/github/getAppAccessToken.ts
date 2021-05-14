@@ -1,4 +1,5 @@
 import { getJWT } from '../../lib/jwt';
+import { parseRepoWithOwner } from '../../lib/utils';
 
 const GITHUB_API_HOST = 'https://api.github.com';
 const GITHUB_REPO_INSTALLATION_URL = (repoWithOwner: string) =>
@@ -38,7 +39,7 @@ export async function getAppAccessToken(repoWithOwner: string): Promise<string> 
   const response: GResponse = await fetch(GITHUB_ACCESS_TOKEN_URL(installationId), {
     method: 'POST',
     headers: getHeaders(),
-    body: JSON.stringify({ repositories: [repoWithOwner.split('/')[1]] }),
+    body: JSON.stringify({ repositories: [parseRepoWithOwner(repoWithOwner).name] }),
   }).then((value) => value.json());
 
   return response.token;

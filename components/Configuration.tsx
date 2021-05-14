@@ -80,7 +80,7 @@ export default function Configuration() {
   const [repository, setRepository] = useState('');
   const [repositoryId, setRepositoryId] = useState('');
   const [categoryId, setCategoryId] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [mapping, setMapping] = useState('pathname');
   const [term, setTerm] = useState('');
@@ -101,7 +101,7 @@ export default function Configuration() {
   }, [setGlobalTheme, theme]);
 
   useEffect(() => {
-    setError('');
+    setError(false);
     setRepositoryId('');
     setCategories([]);
     if (dRepository) {
@@ -109,12 +109,9 @@ export default function Configuration() {
         .then(({ repositoryId, categories }) => {
           setRepositoryId(repositoryId);
           setCategories(categories);
-          setError('');
         })
         .catch(() => {
-          setError(
-            `Couldn't use giscussions in this repository. Make sure all of the above criteria has been met.`,
-          );
+          setError(true);
         });
     }
   }, [dRepository]);
@@ -160,27 +157,32 @@ export default function Configuration() {
             className="my-2 px-[12px] py-[5px] min-w-[50%] form-control border rounded-md placeholder-gray-500"
             placeholder="owner/repo"
           />
-          {!error && !repositoryId && dRepository ? (
-            <SyncIcon className="inline-block ml-2 animate-spin" />
-          ) : null}
-          {!error && repositoryId && dRepository ? (
-            <CheckIcon className="inline-block ml-2 color-text-success" />
-          ) : null}
-          {error && !repositoryId && dRepository ? (
-            <XIcon className="inline-block ml-2 color-text-danger" />
-          ) : null}
 
-          {error ? (
-            <p className="text-xs color-text-danger">{error}</p>
-          ) : repositoryId ? (
-            <p className="text-xs color-text-success">
-              Success! This repository meets all of the above criteria.
-            </p>
+          {error || (repositoryId && !categories.length) ? (
+            <>
+              <XIcon className="inline-block ml-2 color-text-danger" />
+              <p className="text-xs color-text-danger">
+                {`Couldn't`} use giscussions in this repository. Make sure all of the above criteria
+                has been met.
+              </p>
+            </>
+          ) : repositoryId && categories.length ? (
+            <>
+              <CheckIcon className="inline-block ml-2 color-text-success" />
+              <p className="text-xs color-text-success">
+                Success! This repository meets all of the above criteria.
+              </p>
+            </>
           ) : (
-            <p className="text-xs color-text-secondary">
-              A <strong>public</strong> GitHub repository. This is where the discussions will be
-              linked to.
-            </p>
+            <>
+              {!error && !repositoryId && dRepository ? (
+                <SyncIcon className="inline-block ml-2 animate-spin" />
+              ) : null}
+              <p className="text-xs color-text-secondary">
+                A <strong>public</strong> GitHub repository. This is where the discussions will be
+                linked to.
+              </p>
+            </>
           )}
         </div>
       </fieldset>

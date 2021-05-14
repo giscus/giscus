@@ -155,7 +155,7 @@ export default function Configuration() {
             value={repository}
             onChange={(event) => setRepository(event.target.value)}
             type="text"
-            className="my-2 px-[12px] py-[5px] min-w-[50%] form-control border rounded-md placeholder-gray-500"
+            className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
             placeholder="owner/repo"
           />
 
@@ -227,7 +227,7 @@ export default function Configuration() {
                 setMapping(event.target.value);
               }}
             />
-            <div className="ml-2">
+            <div className="w-full ml-2">
               <label className="cursor-pointer" htmlFor={value}>
                 {label}
                 <p className="text-xs color-text-secondary">{description}</p>
@@ -238,9 +238,7 @@ export default function Configuration() {
                   value={term}
                   onChange={(event) => setTerm(event.target.value)}
                   type={mapping === 'number' ? 'number' : 'text'}
-                  className={`px-[12px] py-[5px] form-control border rounded-md placeholder-gray-500 mb-4 ${
-                    mapping === 'number' ? 'min-w-[240px]' : 'min-w-[50%]'
-                  }`}
+                  className="px-[12px] py-[5px] form-control border rounded-md placeholder-gray-500 mb-4 min-w-[75%] sm:min-w-[50%]"
                   placeholder={
                     mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
                   }

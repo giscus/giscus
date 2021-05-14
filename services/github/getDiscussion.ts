@@ -1,7 +1,6 @@
 import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
 import { GUser, GRepositoryDiscussion, GError } from '../../lib/types/github';
 import { parseRepoWithOwner } from '../../lib/utils';
-import { getAppAccessToken } from './getAppAccessToken';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';
 
@@ -129,19 +128,11 @@ export type GetDiscussionResponse = SearchResponse | SpecificResponse;
 
 export async function getDiscussion(
   params: GetDiscussionParams,
-  token?: string,
+  token: string,
 ): Promise<GetDiscussionResponse | GError> {
   const { repo, term, number, ...pagination } = params;
   const query = `repo:${repo} in:title ${term}`;
   const gql = GET_DISCUSSION_QUERY(number ? 'number' : 'term');
-  if (!token) token = await getAppAccessToken(repo);
-  if (!token)
-    return {
-      message: 'giscussions is not installed on this repository',
-      documentation_url:
-        'https://docs.github.com/en/rest/reference/apps#get-a-repository-installation-for-the-authenticated-app',
-    };
-
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {

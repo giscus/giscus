@@ -18,24 +18,15 @@ interface IWidgetProps {
 }
 
 function getSession(router: NextRouter) {
-  let savedSession: string;
-  try {
-    savedSession = JSON.parse(localStorage.getItem(GISCUSSIONS_SESSION_KEY));
-  } catch (err) {
-    savedSession = '';
-  }
-
-  const querySession = router.query.session as string;
-  if (querySession) {
-    localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
+  const session = router.query.session as string;
+  if (session) {
     const query = { ...router.query };
     delete query.session;
     const url = { pathname: router.pathname, query };
     const options = { scroll: false, shallow: true };
     router.replace(url, undefined, options);
   }
-
-  return querySession || savedSession;
+  return session || '';
 }
 
 export default function Widget({

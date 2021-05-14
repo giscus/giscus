@@ -69,6 +69,10 @@ a {
   color: var(--color-text-success) !important;
 }
 
+.color-text-danger {
+  color: var(--color-text-danger) !important;
+}
+
 .color-border-primary {
   border-color: var(--color-border-primary) !important;
 }

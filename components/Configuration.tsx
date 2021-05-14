@@ -103,6 +103,7 @@ export default function Configuration() {
   useEffect(() => {
     setError(false);
     setRepositoryId('');
+    setCategoryId('');
     setCategories([]);
     if (dRepository) {
       getCategories(dRepository)
@@ -195,13 +196,15 @@ export default function Configuration() {
         disabled={!categories.length}
         value={categoryId}
         onChange={(event) => setCategoryId(event.target.value)}
-        className="px-[12px] py-[5px] pr-6 min-w-[200px] border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
+        className={`px-[12px] py-[5px] pr-6 min-w-[200px] border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary${
+          !categoryId ? ' color-text-secondary' : ''
+        }`}
       >
-        <option value="" disabled selected>
+        <option value="" disabled selected={!categoryId}>
           {categories.length ? 'Pick a category' : 'No categories found'}
         </option>
         {categories.map(({ id, emoji, name }) => (
-          <option key={id} value={id}>
+          <option key={id} value={id} className="color-text-primary">
             {emoji} {name}
           </option>
         ))}

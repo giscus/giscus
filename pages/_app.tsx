@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 import { getTheme } from '../lib/utils';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [theme, setTheme] = useState(router.query.theme as string);
 

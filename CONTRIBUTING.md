@@ -2,10 +2,10 @@
 
 Thanks for considering to contribute!
 
-GitHub currently requires authentication for all GraphQL API requests. With
-the way giscussions works, you'll need to create a GitHub App in order to get
-it running on your machine. This makes contributing to giscussions a bit
-tricky.
+GitHub's API for Discussions is currently only available through the GraphQL
+API, which currently requires authentication for all requests. With the way
+giscussions works, you'll need to create a GitHub App in order to get it
+running on your machine. This makes contributing to giscussions a bit tricky.
 
 For some of giscussions' features, you can use your personal access token
 (PAT) to authenticate with GitHub.

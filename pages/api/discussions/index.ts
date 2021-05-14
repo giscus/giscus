@@ -4,10 +4,9 @@ import { adaptDiscussion } from '../../../lib/adapter';
 import { IGiscussion } from '../../../lib/types/adapter';
 import { createDiscussion } from '../../../services/github/createDiscussion';
 import { GRepositoryDiscussion } from '../../../lib/types/github';
+import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
 
 async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { error: string }>) {
-  const token = req.headers.authorization?.split('Bearer ')[1];
-
   const params = {
     repo: req.query.repo as string,
     term: req.query.term as string,
@@ -21,10 +20,19 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { err
     params.first = 20;
   }
 
+  let token = req.headers.authorization?.split('Bearer ')[1];
+  if (!token) {
+    try {
+      token = await getAppAccessToken(params.repo);
+    } catch (error) {
+      res.status(403).json({ error: error.message });
+      return;
+    }
+  }
+
   const response = await getDiscussion(params, token);
   if ('message' in response) {
-    const code = response.message.includes('not installed') ? 403 : 500;
-    res.status(code).json({ error: response.message });
+    res.status(500).json({ error: response.message });
     return;
   }
 

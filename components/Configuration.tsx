@@ -73,6 +73,11 @@ const mappingOptions = [
       <>giscussions will search for a discussion whose title contains a specific term.</>
     ),
   },
+  {
+    value: 'number',
+    label: <>Specific discussion number</>,
+    description: <>giscussions will load a specific discussion by number.</>,
+  },
 ];
 
 export default function Configuration() {
@@ -189,27 +194,34 @@ export default function Configuration() {
       <p>Choose the mapping between the embedding page and the embedded discussion.</p>
       <fieldset className="mx-4">
         {mappingOptions.map(({ value, label, description }) => (
-          <div key={value}>
+          <div key={value} className="mt-4 first:mt-0">
             <input
               id={value}
               type="radio"
               name="mapping"
               value={value}
               checked={mapping === value}
-              onChange={(event) => setMapping(event.target.value)}
+              onChange={(event) => {
+                setTerm('');
+                setMapping(event.target.value);
+              }}
             />
             <label className="ml-2 align-text-bottom" htmlFor={value}>
               {label}
             </label>
             <p className="ml-[21px] text-xs color-text-secondary">{description}</p>
-            {value === 'specific' && mapping === 'specific' ? (
+            {['specific', 'number'].includes(mapping) && mapping === value ? (
               <input
                 id="term"
                 value={term}
                 onChange={(event) => setTerm(event.target.value)}
-                type="text"
-                className="px-[12px] py-[5px] ml-[21px] form-control border rounded-md placeholder-gray-500"
-                placeholder="Enter term here"
+                type={mapping === 'number' ? 'number' : 'text'}
+                className={`px-[12px] py-[5px] ml-[21px] form-control border rounded-md placeholder-gray-500 ${
+                  mapping === 'number' ? 'min-w-[240px]' : 'min-w-[50%]'
+                }`}
+                placeholder={
+                  mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
+                }
               />
             ) : null}
           </div>
@@ -267,7 +279,7 @@ export default function Configuration() {
           <span className="pl-c1">data-mapping</span>={'"'}
           <span className="pl-s">{mapping}</span>
           {'"\n        '}
-          {mapping === 'specific' ? (
+          {['specific', 'number'].includes(mapping) ? (
             <>
               <span className="pl-c1">data-term</span>={'"'}
               <span className="pl-s">{term || '[ENTER TERM HERE]'}</span>

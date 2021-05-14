@@ -1,5 +1,4 @@
 import { GCreateDiscussionInput } from '../../lib/types/github';
-import { getAppAccessToken } from './getAppAccessToken';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';
 
@@ -28,12 +27,13 @@ export interface CreateDiscussionResponse {
 
 export async function createDiscussion(
   repoWithOwner: string,
+  token: string,
   params: CreateDiscussionBody,
 ): Promise<CreateDiscussionResponse> {
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${await getAppAccessToken(repoWithOwner)}`,
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
       'GraphQL-Features': 'discussions_api',
     },

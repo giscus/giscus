@@ -1,4 +1,22 @@
-const url = new URL(window.location.href);
+const script = document.currentScript as HTMLScriptElement;
+const giscussionsOrigin = new URL(script.src).origin;
+
+// Set up iframeResizer
+declare let iFrameResize: (options: Record<string, unknown>) => void;
+
+function loadScript(url: string, callback: VoidFunction) {
+  const target = document.createElement('script');
+  target.setAttribute('src', url);
+  target.onload = callback;
+  script.insertAdjacentElement('beforeend', target);
+}
+
+loadScript('https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', () =>
+  iFrameResize({ checkOrigin: [giscussionsOrigin] }),
+);
+
+// Set up iframe src URL and params
+const url = new URL(location.href);
 let session = url.searchParams.get('giscussions');
 
 if (session) {
@@ -15,7 +33,6 @@ if (session) {
   }
 }
 
-const script = document.currentScript as HTMLScriptElement;
 const attributes = script.dataset;
 const params: Record<string, string> = {};
 const ogDescriptionMeta = document.querySelector(
@@ -55,9 +72,9 @@ switch (attributes.mapping) {
     break;
 }
 
-const giscussionsOrigin = new URL(script.src).origin;
 const src = `${giscussionsOrigin}/widget?${new URLSearchParams(params)}`;
 
+// Set up iframe element
 const iframeElement = document.createElement('iframe');
 const iframeAttributes = {
   class: 'giscussions-frame',
@@ -67,6 +84,7 @@ const iframeAttributes = {
 };
 Object.entries(iframeAttributes).forEach(([key, value]) => iframeElement.setAttribute(key, value));
 
+// Insert iframe element
 const existingContainer = document.querySelector('.giscussions');
 if (!existingContainer) {
   const iframeContainer = document.createElement('div');
@@ -78,18 +96,3 @@ if (!existingContainer) {
   while (existingContainer.firstChild) existingContainer.firstChild.remove();
   existingContainer.appendChild(iframeElement);
 }
-
-// Set up iframeResizer
-
-declare let iFrameResize: (options: Record<string, unknown>) => void;
-
-function loadScript(url: string, callback: VoidFunction) {
-  const target = document.createElement('script');
-  target.setAttribute('src', url);
-  target.onload = callback;
-  script.insertAdjacentElement('beforeend', target);
-}
-
-loadScript('https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', () =>
-  iFrameResize({ checkOrigin: [giscussionsOrigin] }),
-);

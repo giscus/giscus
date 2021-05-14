@@ -88,7 +88,7 @@ export default function Giscussions({
   const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
   const isNotFound = error?.status === 404;
 
-  const shouldShowReplyCount = !error && !isNotFound && !isLoading;
+  const shouldShowReplyCount = !error && !isNotFound && !isLoading && totalReplyCount > 0;
   const shouldShowCommentBox = !isLoading && (!error || (isNotFound && !number));
 
   return (

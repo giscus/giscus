@@ -28,6 +28,11 @@ function getSession(router: NextRouter) {
   const querySession = router.query.session as string;
   if (querySession) {
     localStorage.setItem(GISCUSSIONS_SESSION_KEY, JSON.stringify(querySession));
+    const query = { ...router.query };
+    delete query.session;
+    const url = { pathname: router.pathname, query };
+    const options = { scroll: false, shallow: true };
+    router.replace(url, undefined, options);
   }
 
   return querySession || savedSession;

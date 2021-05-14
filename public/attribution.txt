@@ -1,0 +1,4 @@
+Logos are adapted from Twitter's Twemoji, licensed under CC BY 4.0:
+https://github.com/twitter/twemoji/blob/master/LICENSE-GRAPHICS
+
+Modification is made by adding a stroke to the gem stone emoji icon.

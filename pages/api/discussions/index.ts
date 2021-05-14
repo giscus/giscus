@@ -3,6 +3,7 @@ import { getDiscussion } from '../../../services/github/getDiscussion';
 import { adaptDiscussion } from '../../../lib/adapter';
 import { IGiscussion } from '../../../lib/types/adapter';
 import { createDiscussion } from '../../../services/github/createDiscussion';
+import { GRepositoryDiscussion } from '../../../lib/types/github';
 
 async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { error: string }>) {
   const token = req.headers.authorization?.split('Bearer ')[1];
@@ -10,6 +11,7 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { err
   const params = {
     repo: req.query.repo as string,
     term: req.query.term as string,
+    number: +req.query.number,
     first: +req.query.first,
     last: +req.query.last,
     after: req.query.after as string,
@@ -26,16 +28,24 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { err
     return;
   }
 
-  const {
-    data: {
-      viewer,
-      search: { discussionCount, nodes },
-    },
-  } = response;
-  const discussion = discussionCount > 0 ? nodes[0] : null;
+  const { data } = response;
+  const { viewer } = data;
+
+  let discussion: GRepositoryDiscussion;
+  if ('search' in data) {
+    const { search } = data;
+    const { discussionCount, nodes } = search;
+    discussion = discussionCount > 0 ? nodes[0] : null;
+  } else {
+    discussion = data.repository.discussion;
+  }
+
+  if (!discussion) {
+    res.status(404).json({ error: 'Discussion not found' });
+    return;
+  }
 
   const adapted = adaptDiscussion({ viewer, discussion });
-
   res.status(200).json(adapted);
 }
 

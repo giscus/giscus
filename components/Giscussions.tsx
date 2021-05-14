@@ -91,7 +91,7 @@ export default function Giscussions({
   const error = frontError || backError;
   const shouldShowReplyCount = !error && !isNotFound && !isLoading;
 
-  if (error && !(error?.message || '').includes('not installed') && onError) onError();
+  if (error && onError) onError();
 
   return (
     <div className="w-full color-text-primary">

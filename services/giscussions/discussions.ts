@@ -35,7 +35,7 @@ export function useDiscussions(
     fetcher,
     {
       onErrorRetry: (err, key, config, revalidate, opts) => {
-        if ((err?.message || '').includes('not installed')) return;
+        if ([403, 404].includes(err?.status)) return;
         SWRConfig.default.onErrorRetry(err, key, config, revalidate, opts);
       },
     },

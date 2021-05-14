@@ -189,9 +189,10 @@ export default function Configuration() {
       <p>Choose the mapping between the embedding page and the embedded discussion.</p>
       <fieldset className="mx-4">
         {mappingOptions.map(({ value, label, description }) => (
-          <div key={value} className="mt-4 first:mt-0">
+          <div key={value} className="flex">
             <input
               id={value}
+              className="mt-[3.5px]"
               type="radio"
               name="mapping"
               value={value}
@@ -201,24 +202,26 @@ export default function Configuration() {
                 setMapping(event.target.value);
               }}
             />
-            <label className="ml-2 align-text-bottom" htmlFor={value}>
-              {label}
-            </label>
-            <p className="ml-[21px] text-xs color-text-secondary">{description}</p>
-            {['specific', 'number'].includes(mapping) && mapping === value ? (
-              <input
-                id="term"
-                value={term}
-                onChange={(event) => setTerm(event.target.value)}
-                type={mapping === 'number' ? 'number' : 'text'}
-                className={`px-[12px] py-[5px] ml-[21px] form-control border rounded-md placeholder-gray-500 ${
-                  mapping === 'number' ? 'min-w-[240px]' : 'min-w-[50%]'
-                }`}
-                placeholder={
-                  mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
-                }
-              />
-            ) : null}
+            <div className="ml-2">
+              <label className="cursor-pointer" htmlFor={value}>
+                {label}
+                <p className="text-xs color-text-secondary">{description}</p>
+              </label>
+              {['specific', 'number'].includes(mapping) && mapping === value ? (
+                <input
+                  id="term"
+                  value={term}
+                  onChange={(event) => setTerm(event.target.value)}
+                  type={mapping === 'number' ? 'number' : 'text'}
+                  className={`px-[12px] py-[5px] form-control border rounded-md placeholder-gray-500 mb-4 ${
+                    mapping === 'number' ? 'min-w-[240px]' : 'min-w-[50%]'
+                  }`}
+                  placeholder={
+                    mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
+                  }
+                />
+              ) : null}
+            </div>
           </div>
         ))}
       </fieldset>

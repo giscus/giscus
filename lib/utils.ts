@@ -41,3 +41,8 @@ export function clipboardCopy(text: string) {
 
   document.body.removeChild(placeholder);
 }
+
+export function parseRepoWithOwner(repoWithOwner: string) {
+  const [owner, name] = repoWithOwner.split('/');
+  return { owner, name };
+}

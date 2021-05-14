@@ -24,6 +24,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeContext.Provider value={{ theme: getTheme(theme), setTheme }}>
       <Head>
+        <title>Giscussions</title>
+        <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" crossOrigin="anonymous" href={`/themes/${getTheme(theme)}.css`} />
       </Head>
       <Component {...pageProps} />

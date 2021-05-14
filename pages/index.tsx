@@ -56,47 +56,40 @@ export default function Home({ content }: { content: string }) {
   };
 
   return (
-    <>
-      <Head>
-        <title>Giscussions</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <main className="w-full min-h-screen color-bg-canvas" data-theme={theme}>
+      <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
+        {isMounted ? (
+          <>
+            <Comment comment={comment}>
+              <Configuration />
+            </Comment>
 
-      <main className="w-full min-h-screen color-bg-canvas" data-theme={theme}>
-        <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
-          {isMounted ? (
-            <>
-              <Comment comment={comment}>
-                <Configuration />
-              </Comment>
-
-              <div className="w-full mt-8 giscussions color-bg-canvas">
-                <style jsx>
-                  {`
-                    :global(.giscussions-frame) {
-                      width: 100%;
-                      color-scheme: light;
-                    }
-                  `}
-                </style>
-              </div>
-              {router.isReady ? (
-                <Head>
-                  <script
-                    src="/client.js"
-                    data-repo="laymonage/giscussions"
-                    data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
-                    data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
-                    data-mapping="specific"
-                    data-term="Welcome to giscussions!"
-                    data-theme={theme}
-                  ></script>
-                </Head>
-              ) : null}
-            </>
-          ) : null}
-        </div>
-      </main>
-    </>
+            <div className="w-full mt-8 giscussions color-bg-canvas">
+              <style jsx>
+                {`
+                  :global(.giscussions-frame) {
+                    width: 100%;
+                    color-scheme: light;
+                  }
+                `}
+              </style>
+            </div>
+            {router.isReady ? (
+              <Head>
+                <script
+                  src="/client.js"
+                  data-repo="laymonage/giscussions"
+                  data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
+                  data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
+                  data-mapping="specific"
+                  data-term="Welcome to giscussions!"
+                  data-theme={theme}
+                ></script>
+              </Head>
+            ) : null}
+          </>
+        ) : null}
+      </div>
+    </main>
   );
 }

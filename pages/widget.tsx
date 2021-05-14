@@ -18,8 +18,6 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Giscussions</title>
-        <link rel="icon" href="/favicon.ico" />
         <base target="_top" />
       </Head>
 

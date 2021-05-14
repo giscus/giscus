@@ -1,15 +1,24 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ICategories } from '../../../lib/types/adapter';
+import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
 import { getDiscussionCategories } from '../../../services/github/getDiscussionCategories';
 
 export default async (
   req: NextApiRequest,
   res: NextApiResponse<ICategories | { error: string }>,
 ) => {
-  const token = req.headers.authorization?.split('Bearer ')[1];
-
   const params = { repo: req.query.repo as string };
   const result = { repositoryId: '', categories: [] };
+
+  let token = req.headers.authorization?.split('Bearer ')[1];
+  if (!token) {
+    try {
+      token = await getAppAccessToken(params.repo);
+    } catch (error) {
+      res.status(403).json({ error: error.message });
+      return;
+    }
+  }
 
   const response = await getDiscussionCategories(params, token);
 

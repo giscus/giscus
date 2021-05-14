@@ -1,4 +1,5 @@
 import { getJWT } from '../../lib/jwt';
+import { GError } from '../../lib/types/github';
 import { parseRepoWithOwner } from '../../lib/utils';
 
 const GITHUB_API_HOST = 'https://api.github.com';
@@ -34,7 +35,12 @@ async function getInstallationId(repoWithOwner: string): Promise<string> {
 
 export async function getAppAccessToken(repoWithOwner: string): Promise<string> {
   const installationId = await getInstallationId(repoWithOwner);
-  if (!installationId) return '';
+  if (!installationId)
+    throw {
+      message: 'giscussions is not installed on this repository',
+      documentation_url:
+        'https://docs.github.com/en/rest/reference/apps#get-a-repository-installation-for-the-authenticated-app',
+    };
 
   const response: GResponse = await fetch(GITHUB_ACCESS_TOKEN_URL(installationId), {
     method: 'POST',

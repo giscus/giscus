@@ -1,5 +1,4 @@
 import { GDiscussionCategory, GError } from '../../lib/types/github';
-import { getAppAccessToken } from './getAppAccessToken';
 
 const GITHUB_API_URL = 'https://api.github.com/graphql';
 
@@ -40,14 +39,14 @@ export interface GetDiscussionCategoriesResponse {
 
 export async function getDiscussionCategories(
   params: GetDiscussionCategoriesParams,
-  token?: string,
+  token: string,
 ): Promise<GetDiscussionCategoriesResponse | GError> {
   const query = `repo:${params.repo}`;
 
   return fetch(GITHUB_API_URL, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${token || (await getAppAccessToken(params.repo))}`,
+      Authorization: `Bearer ${token}`,
       'GraphQL-Features': 'discussions_api',
     },
 

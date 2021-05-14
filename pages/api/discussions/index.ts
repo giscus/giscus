@@ -59,7 +59,16 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { err
 
 async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | { error: string }>) {
   const { repo, input } = req.body;
-  const response = await createDiscussion(repo, { input });
+
+  let token: string;
+  try {
+    token = await getAppAccessToken(repo);
+  } catch (error) {
+    res.status(403).json({ error: error.message });
+    return;
+  }
+
+  const response = await createDiscussion(repo, token, { input });
   const id = response?.data?.createDiscussion?.discussion?.id;
 
   if (!id) {

@@ -82,18 +82,18 @@ export default function Giscussions({
     backData?.discussion?.totalReplyCount +
     frontData?.reduce((prev, g) => prev + g.discussion.totalReplyCount, 0);
 
+  const error = frontError || backError;
+  const context = backData?.discussion?.repository?.nameWithOwner;
   const needsFrontLoading = backData?.discussion?.pageInfo?.hasPreviousPage;
 
   const isLoading = (needsFrontLoading && isFrontLoading) || isBackLoading;
   const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
-  const isNotFound = !isBackLoading && !backData?.discussion;
+  const isNotFound = error?.status === 404;
 
-  const context = backData?.discussion?.repository?.nameWithOwner;
-
-  const error = frontError || backError;
   const shouldShowReplyCount = !error && !isNotFound && !isLoading;
+  const shouldShowCommentBox = !isLoading && (!error || (isNotFound && !number));
 
-  if (error && onError && !(error.status === 404)) onError();
+  if (error && onError && !isNotFound) onError();
 
   return (
     <div className="w-full color-text-primary">
@@ -188,7 +188,7 @@ export default function Giscussions({
 
       <div className="my-4 text-sm border-t-2 color-border-primary" />
 
-      {!isLoading ? (
+      {shouldShowCommentBox ? (
         <CommentBox
           viewer={backData?.viewer}
           discussionId={backData?.discussion?.id}

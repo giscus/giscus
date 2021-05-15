@@ -43,6 +43,7 @@ export interface IGiscussion {
   viewer: IUser;
   discussion: {
     id: string;
+    url: string;
     locked: boolean;
     totalCommentCount: number;
     totalReplyCount: number;

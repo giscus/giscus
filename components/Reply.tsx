@@ -90,6 +90,9 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   onReact={updateReactions}
                 />
                 <button className="hidden sm:inline-block Link--secondary">
+                  {
+                    // TODO: implement menu and add sm:inline-block class
+                  }
                   <KebabHorizontalIcon />
                 </button>
               </div>

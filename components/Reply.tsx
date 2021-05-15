@@ -89,7 +89,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   variant="popoverOnly"
                   onReact={updateReactions}
                 />
-                <button className="hidden sm:inline-block Link--secondary">
+                <button className="hidden Link--secondary">
                   {
                     // TODO: implement menu and add sm:inline-block class
                   }

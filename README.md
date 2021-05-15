@@ -6,7 +6,7 @@ A comments widget built on [GitHub Discussions][discussions]. Let visitors sign 
 - No tracking, no ads, always free. 📡 🚫
 - No database needed. All data is stored in GitHub Discussions. :octocat:
 - GitHub themes: light, dark, dark dimmed, and more! 🌗
-- Only ~40KB bundled. ⚡
+- Only ~40KB total chunks size. ⚡
 - Can be self-hosted! 🤳
 
 > **Note:**\

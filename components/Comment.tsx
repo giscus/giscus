@@ -146,7 +146,10 @@ export default function Comment({
                   edited
                 </button>
               ) : null}
-              <button className="hidden sm:inline-block Link--secondary">
+              <button className="hidden Link--secondary">
+                {
+                  // TODO: implement menu and add sm:inline-block class
+                }
                 <KebabHorizontalIcon />
               </button>
             </div>

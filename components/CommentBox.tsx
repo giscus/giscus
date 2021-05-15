@@ -1,6 +1,6 @@
 import { MarkdownIcon } from '@primer/octicons-react';
 import Link from 'next/link';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
 import { adaptComment, adaptReply } from '../lib/adapter';
 import { AuthContext, getLoginUrl } from '../lib/context';
 import { IComment, IReply, IUser } from '../lib/types/adapter';
@@ -99,6 +99,14 @@ export default function CommentBox({
     setIsReplyOpen(true);
   }, [onReplyOpen]);
 
+  const handleTextAreaChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(event.target.value);
+    const elem = event.target as HTMLTextAreaElement;
+    elem.style.height = `0px`;
+    const height = elem.scrollHeight <= 355 ? elem.scrollHeight : 355;
+    elem.style.height = `${height}px`;
+  }, []);
+
   return !isReply || isReplyOpen ? (
     <div
       className={`w-full text-sm color-bg-primary color-border-primary${
@@ -143,7 +151,7 @@ export default function CommentBox({
           <textarea
             className="w-full p-2 border rounded min-h-[100px] disabled:cursor-not-allowed form-control input-contrast"
             placeholder={token ? 'Write a comment' : 'Sign in to comment'}
-            onChange={(event) => setInput(event.target.value)}
+            onChange={handleTextAreaChange}
             value={input}
             disabled={!token || isSubmitting}
             ref={(textarea) => isReply && textarea && setTimeout(() => textarea.focus())}

@@ -60,6 +60,7 @@ export function adaptDiscussion({
 
   const {
     id,
+    locked,
     repository,
     comments: { pageInfo, totalCount: totalCommentCount, ...commentsData },
   } = discussion;
@@ -75,6 +76,7 @@ export function adaptDiscussion({
     viewer,
     discussion: {
       id,
+      locked,
       totalCommentCount,
       totalReplyCount,
       pageInfo,

@@ -52,7 +52,7 @@ const mappingOptions = [
     ),
     description: (
       <>
-        giscussions will search for a discussion whose title contains the page&apos;s{' '}
+        giscussions will search for a discussion whose title contains the {`page's `}
         <code>{`<meta property="og:title">`}</code> HTML tag.
       </>
     ),
@@ -251,7 +251,7 @@ export default function Configuration() {
 
       <h3>Theme</h3>
       <p>
-        Choose a theme that matches your website. Can&apos;t find one that does?{' '}
+        Choose a theme that matches your website. {`Can't`} find one that does?{' '}
         <a
           href="https://github.com/laymonage/giscussions/blob/main/CONTRIBUTING.md"
           target="_blank"

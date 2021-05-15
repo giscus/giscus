@@ -64,7 +64,7 @@ export default function Home({ content }: { content: string }) {
               <Configuration />
             </Comment>
 
-            <div className="w-full mt-8 giscussions color-bg-canvas">
+            <div className="w-full my-8 giscussions color-bg-canvas">
               <style jsx>
                 {`
                   :global(.giscussions-frame) {

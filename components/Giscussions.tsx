@@ -87,9 +87,10 @@ export default function Giscussions({
   const isLoading = (needsFrontLoading && isFrontLoading) || isBackLoading;
   const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
   const isNotFound = error?.status === 404;
+  const isLocked = backData?.discussion?.locked;
 
   const shouldShowReplyCount = !error && !isNotFound && !isLoading && totalReplyCount > 0;
-  const shouldShowCommentBox = !isLoading && (!error || (isNotFound && !number));
+  const shouldShowCommentBox = !isLoading && !isLocked && (!error || (isNotFound && !number));
 
   return (
     <div className="w-full color-text-primary">
@@ -122,7 +123,7 @@ export default function Giscussions({
                 onCommentUpdate={frontMutators.updateComment}
                 onReplyUpdate={frontMutators.updateReply}
                 renderReplyBox={
-                  token
+                  token && !isLocked
                     ? (viewMore) => (
                         <CommentBox
                           discussionId={backData?.discussion?.id}
@@ -165,7 +166,7 @@ export default function Giscussions({
               onCommentUpdate={backMutators.updateComment}
               onReplyUpdate={backMutators.updateReply}
               renderReplyBox={
-                token
+                token && !isLocked
                   ? (viewMore) => (
                       <CommentBox
                         discussionId={backData?.discussion?.id}
@@ -182,16 +183,17 @@ export default function Giscussions({
           ))
         : null}
 
-      <div className="my-4 text-sm border-t-2 color-border-primary" />
-
       {shouldShowCommentBox ? (
-        <CommentBox
-          viewer={backData?.viewer}
-          discussionId={backData?.discussion?.id}
-          context={context}
-          onSubmit={backMutators.addNewComment}
-          onDiscussionCreateRequest={onDiscussionCreateRequest}
-        />
+        <>
+          <div className="my-4 text-sm border-t-2 color-border-primary" />
+          <CommentBox
+            viewer={backData?.viewer}
+            discussionId={backData?.discussion?.id}
+            context={context}
+            onSubmit={backMutators.addNewComment}
+            onDiscussionCreateRequest={onDiscussionCreateRequest}
+          />
+        </>
       ) : null}
     </div>
   );

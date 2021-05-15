@@ -1,10 +1,10 @@
 import { NextRouter, useRouter } from 'next/router';
 import { useState } from 'react';
-import Giscussions from '../components/Giscussions';
+import Giscus from '../components/Giscus';
 import { AuthContext } from '../lib/context';
 import { useIsMounted } from '../lib/hooks';
-import { createDiscussion } from '../services/giscussions/createDiscussion';
-import { getToken } from '../services/giscussions/token';
+import { createDiscussion } from '../services/giscus/createDiscussion';
+import { getToken } from '../services/giscus/token';
 
 interface IWidgetProps {
   repo: string;
@@ -63,7 +63,7 @@ export default function Widget({
 
   return ready ? (
     <AuthContext.Provider value={{ token, origin }}>
-      <Giscussions
+      <Giscus
         repo={repo}
         term={term}
         number={number}

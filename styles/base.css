@@ -320,7 +320,7 @@ img.emoji {
   background-position: right 4px center;
 }
 
-/* Giscussions-specific styles */
+/* Giscus-specific styles */
 
 .gsc-tl-line {
   background-color: var(--color-border-secondary);

@@ -36,7 +36,7 @@ export async function getAppAccessToken(repoWithOwner: string): Promise<string> 
   const installationId = await getInstallationId(repoWithOwner);
   if (!installationId)
     throw {
-      message: 'giscussions is not installed on this repository',
+      message: 'giscus is not installed on this repository',
       documentation_url:
         'https://docs.github.com/en/rest/reference/apps#get-a-repository-installation-for-the-authenticated-app',
     };

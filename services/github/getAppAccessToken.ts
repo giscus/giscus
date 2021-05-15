@@ -1,5 +1,4 @@
 import { getJWT } from '../../lib/jwt';
-import { GError } from '../../lib/types/github';
 import { parseRepoWithOwner } from '../../lib/utils';
 
 const GITHUB_API_HOST = 'https://api.github.com';

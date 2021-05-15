@@ -90,12 +90,13 @@ export default function Giscussions({
   const isLocked = backData?.discussion?.locked;
 
   const shouldShowReplyCount = !error && !isNotFound && !isLoading && totalReplyCount > 0;
+  const shouldShowBranding = totalCommentCount || (isNotFound && !number);
   const shouldShowCommentBox = !isLoading && !isLocked && (!error || (isNotFound && !number));
 
   return (
     <div className="w-full color-text-primary">
-      <div className="flex flex-auto">
-        <h4 className="mb-2 mr-2 font-semibold">
+      <div className="flex items-center flex-auto pb-2">
+        <h4 className="mr-2 font-semibold">
           {isNotFound && !number && !totalCommentCount
             ? '0 comments'
             : error && !backData
@@ -106,11 +107,25 @@ export default function Giscussions({
         </h4>
         {shouldShowReplyCount ? (
           <>
-            <h4 className="mb-2 mr-2 font-semibold">·</h4>
-            <h4 className="mb-2 mr-2">{`${Number.isNaN(totalReplyCount) ? 0 : totalReplyCount}${
+            <h4 className="mr-2 font-semibold">·</h4>
+            <h4 className="mr-2">{`${Number.isNaN(totalReplyCount) ? 0 : totalReplyCount}${
               numHidden > 0 ? '+' : ''
             } repl${totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
           </>
+        ) : null}
+        {shouldShowBranding ? (
+          <em className="text-sm color-text-secondary">
+            {' '}
+            – powered by{' '}
+            <a
+              href="https://giscussions.vercel.app"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              className="Link--secondary"
+            >
+              giscussions
+            </a>
+          </em>
         ) : null}
       </div>
 

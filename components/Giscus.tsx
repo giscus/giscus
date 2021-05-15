@@ -92,13 +92,22 @@ export default function Giscus({ repo, term, number, onDiscussionCreateRequest }
     <div className="w-full color-text-primary">
       <div className="flex items-center flex-auto pb-2">
         <h4 className="mr-2 font-semibold">
-          {isNotFound && !number && !totalCommentCount
-            ? '0 comments'
-            : error && !backData
-            ? `An error occurred${error?.message ? `: ${error.message}` : ''}.`
-            : isLoading
-            ? 'Loading comments...'
-            : `${totalCommentCount} comment${totalCommentCount !== 1 ? 's' : ''}`}
+          {isNotFound && !number && !totalCommentCount ? (
+            '0 comments'
+          ) : error && !backData ? (
+            `An error occurred${error?.message ? `: ${error.message}` : ''}.`
+          ) : isLoading ? (
+            'Loading comments...'
+          ) : (
+            <a
+              href={backData?.discussion?.url}
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              className="color-text-primary"
+            >
+              {totalCommentCount} comment{totalCommentCount !== 1 ? 's' : ''}
+            </a>
+          )}
         </h4>
         {shouldShowReplyCount ? (
           <>

@@ -322,7 +322,9 @@ export default function Configuration() {
         </pre>
       </div>
       <div className="w-full mb-4 text-right">
-        <span className={`mr-2${!isCopied ? ' hidden' : ''}`}>✔️ Copied!</span>
+        <span className={`mr-2${!isCopied ? ' hidden' : ''}`}>
+          <CheckIcon className="color-text-success" /> Copied!
+        </span>
         <button
           className="px-4 py-[5px] ml-1 border rounded-md btn btn-primary"
           onClick={handleCopy}

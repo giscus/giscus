@@ -69,7 +69,7 @@ export default function Home({ content }: { content: string }) {
                 {`
                   :global(.giscussions-frame) {
                     width: 100%;
-                    color-scheme: light;
+                    color-scheme: auto;
                   }
                 `}
               </style>

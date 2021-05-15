@@ -58,6 +58,7 @@ export interface GComment extends GBaseComment {
 
 export interface GRepositoryDiscussion {
   id: string;
+  locked: boolean;
   repository: {
     nameWithOwner: string;
   };

@@ -37,7 +37,7 @@ export default function Home({ content }: { content: string }) {
     },
     authorAssociation: 'app',
     bodyHTML: content,
-    createdAt: '2021-05-07T13:21:14Z',
+    createdAt: '2021-05-15T13:21:14Z',
     deletedAt: null,
     id: 'onboarding',
     isMinimized: false,

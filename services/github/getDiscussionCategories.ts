@@ -41,7 +41,7 @@ export async function getDiscussionCategories(
   params: GetDiscussionCategoriesParams,
   token: string,
 ): Promise<GetDiscussionCategoriesResponse | GError> {
-  const query = `repo:${params.repo}`;
+  const query = `repo:${params.repo} fork:true`;
 
   return fetch(GITHUB_API_URL, {
     method: 'POST',

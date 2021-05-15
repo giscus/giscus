@@ -132,7 +132,7 @@ export async function getDiscussion(
   token: string,
 ): Promise<GetDiscussionResponse | GError> {
   const { repo, term, number, ...pagination } = params;
-  const query = `repo:${repo} fork:true in:title ${term}`;
+  const query = `repo:${repo} in:title ${term}`;
   const gql = GET_DISCUSSION_QUERY(number ? 'number' : 'term');
   return fetch(GITHUB_API_URL, {
     method: 'POST',

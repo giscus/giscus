@@ -59,10 +59,8 @@ export function adaptDiscussion({
   if (!discussion) return { viewer, discussion: null };
 
   const {
-    id,
-    locked,
-    repository,
     comments: { pageInfo, totalCount: totalCommentCount, ...commentsData },
+    ...rest
   } = discussion;
 
   const totalReplyCount = commentsData.nodes.reduce(
@@ -75,13 +73,11 @@ export function adaptDiscussion({
   return {
     viewer,
     discussion: {
-      id,
-      locked,
       totalCommentCount,
       totalReplyCount,
       pageInfo,
-      repository,
       comments,
+      ...rest,
     },
   };
 }

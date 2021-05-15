@@ -6,6 +6,7 @@ const GITHUB_API_URL = 'https://api.github.com/graphql';
 
 const DISCUSSION_QUERY = `
   id
+  url
   locked
   repository {
     nameWithOwner

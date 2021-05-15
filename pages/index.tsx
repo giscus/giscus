@@ -15,8 +15,8 @@ import { ThemeContext } from '../lib/context';
 export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
   const readme = readFileSync(path, 'utf-8');
-  const token = await getAppAccessToken('laymonage/giscussions');
-  const content = await renderMarkdown(readme, token, 'laymonage/giscussions');
+  const token = await getAppAccessToken('laymonage/giscus');
+  const content = await renderMarkdown(readme, token, 'laymonage/giscus');
   return {
     props: {
       content,
@@ -32,8 +32,8 @@ export default function Home({ content }: { content: string }) {
   const comment: IComment = {
     author: {
       avatarUrl: 'https://avatars.githubusercontent.com/in/106117',
-      login: 'giscussions',
-      url: 'https://github.com/apps/giscussions',
+      login: 'giscus',
+      url: 'https://github.com/apps/giscus',
     },
     authorAssociation: 'app',
     bodyHTML: content,
@@ -49,7 +49,7 @@ export default function Home({ content }: { content: string }) {
     replies: [],
     replyCount: 0,
     upvoteCount: 0,
-    url: 'https://github.com/laymonage/giscussions',
+    url: 'https://github.com/laymonage/giscus',
     viewerDidAuthor: false,
     viewerHasUpvoted: false,
     viewerCanUpvote: false,
@@ -64,10 +64,10 @@ export default function Home({ content }: { content: string }) {
               <Configuration />
             </Comment>
 
-            <div className="w-full my-8 giscussions color-bg-canvas">
+            <div className="w-full my-8 giscus color-bg-canvas">
               <style jsx>
                 {`
-                  :global(.giscussions-frame) {
+                  :global(.giscus-frame) {
                     width: 100%;
                     color-scheme: auto;
                   }
@@ -78,11 +78,11 @@ export default function Home({ content }: { content: string }) {
               <Head>
                 <script
                   src="/client.js"
-                  data-repo="laymonage/giscussions"
+                  data-repo="laymonage/giscus"
                   data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
                   data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
                   data-mapping="specific"
-                  data-term="Welcome to giscussions!"
+                  data-term="Welcome to giscus!"
                   data-theme={theme}
                 ></script>
               </Head>

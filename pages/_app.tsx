@@ -14,10 +14,10 @@ import { ThemeContext } from '../lib/context';
 import { getTheme } from '../lib/utils';
 
 const meta = {
-  title: 'giscussions',
+  title: 'giscus',
   description: 'A comments widget built on GitHub Discussions.',
   image:
-    'https://opengraph.githubassets.com/5500584364ff6fde70d120e51f28f33ffe97d8f4661517bba2ab9515d0765857/laymonage/giscussions',
+    'https://opengraph.githubassets.com/5500584364ff6fde70d120e51f28f33ffe97d8f4661517bba2ab9515d0765857/laymonage/giscus',
 };
 
 export default function App({ Component, pageProps }: AppProps) {

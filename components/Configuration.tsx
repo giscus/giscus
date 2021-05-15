@@ -5,7 +5,7 @@ import { useDebounce } from '../lib/hooks';
 import { ICategory } from '../lib/types/adapter';
 import { clipboardCopy } from '../lib/utils';
 import { themeOptions } from '../lib/variables';
-import { getCategories } from '../services/giscussions/categories';
+import { getCategories } from '../services/giscus/categories';
 
 const mappingOptions = [
   {
@@ -17,7 +17,7 @@ const mappingOptions = [
     ),
     description: (
       <>
-        giscussions will search for a discussion whose title contains the {`page's `}
+        giscus will search for a discussion whose title contains the {`page's `}
         <code>pathname</code> URL component.
       </>
     ),
@@ -25,9 +25,7 @@ const mappingOptions = [
   {
     value: 'url',
     label: <>Discussion title contains page URL</>,
-    description: (
-      <>giscussions will search for a discussion whose title contains the {`page's`} URL.</>
-    ),
+    description: <>giscus will search for a discussion whose title contains the {`page's`} URL.</>,
   },
   {
     value: 'title',
@@ -38,7 +36,7 @@ const mappingOptions = [
     ),
     description: (
       <>
-        giscussions will search for a discussion whose title contains the {`page's `}
+        giscus will search for a discussion whose title contains the {`page's `}
         <code>{'<title>'}</code> HTML tag.
       </>
     ),
@@ -52,7 +50,7 @@ const mappingOptions = [
     ),
     description: (
       <>
-        giscussions will search for a discussion whose title contains the {`page's `}
+        giscus will search for a discussion whose title contains the {`page's `}
         <code>{`<meta property="og:title">`}</code> HTML tag.
       </>
     ),
@@ -60,17 +58,15 @@ const mappingOptions = [
   {
     value: 'specific',
     label: <>Discussion title contains a specific term</>,
-    description: (
-      <>giscussions will search for a discussion whose title contains a specific term.</>
-    ),
+    description: <>giscus will search for a discussion whose title contains a specific term.</>,
   },
   {
     value: 'number',
     label: <>Specific discussion number</>,
     description: (
       <>
-        giscussions will load a specific discussion by number. This option does not support
-        automatic discussion creation.
+        giscus will load a specific discussion by number. This option does not support automatic
+        discussion creation.
       </>
     ),
   },
@@ -122,7 +118,7 @@ export default function Configuration() {
       <h2>configuration</h2>
 
       <h3>Repository</h3>
-      <p>Choose the repository giscussions will connect to.</p>
+      <p>Choose the repository giscus will connect to.</p>
       <ol>
         <li>
           Make sure the repository is public, otherwise your visitors will not be able to view the
@@ -131,11 +127,11 @@ export default function Configuration() {
         <li>
           Make sure the{' '}
           <a
-            href="https://github.com/apps/giscussions"
+            href="https://github.com/apps/giscus"
             target="_blank"
             rel="noreferrer noopener nofollow"
           >
-            giscussions
+            giscus
           </a>{' '}
           app is installed on the repository, otherwise visitors will not be able to post comments
           and replies.
@@ -163,8 +159,8 @@ export default function Configuration() {
             <>
               <XIcon className="inline-block ml-2 color-text-danger" />
               <p className="text-xs color-text-danger">
-                Cannot use giscussions in this repository. Make sure all of the above criteria has
-                been met.
+                Cannot use giscus in this repository. Make sure all of the above criteria has been
+                met.
               </p>
             </>
           ) : repositoryId && categories.length ? (
@@ -253,7 +249,7 @@ export default function Configuration() {
       <p>
         Choose a theme that matches your website. {`Can't`} find one that does?{' '}
         <a
-          href="https://github.com/laymonage/giscussions/blob/main/CONTRIBUTING.md"
+          href="https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >
@@ -275,18 +271,18 @@ export default function Configuration() {
         ))}
       </select>
 
-      <h3>Enable giscussions</h3>
+      <h3>Enable giscus</h3>
       <p>
         Add the following <code>{'<script>'}</code> tag to your {`website's`} template where you
-        want the comments to appear. If an element with the class <code>giscussions</code> exists,
-        the comments will be placed there instead. You can customize the layout using the{' '}
-        <code>.giscussions</code> and <code>.giscussions-frame</code> selectors.
+        want the comments to appear. If an element with the class <code>giscus</code> exists, the
+        comments will be placed there instead. You can customize the layout using the{' '}
+        <code>.giscus</code> and <code>.giscus-frame</code> selectors.
       </p>
       <div className="highlight highlight-text-html-basic">
         <pre ref={scriptBox}>
           <span className="pl-kos">{'<'}</span>
           <span className="pl-ent">script</span> <span className="pl-c1">src</span>={'"'}
-          <span className="pl-s">https://giscussions.vercel.app/client.js</span>
+          <span className="pl-s">https://giscus.vercel.app/client.js</span>
           {'"\n        '}
           <span className="pl-c1">data-repo</span>={'"'}
           <span className="pl-s">{repository || '[ENTER REPO HERE]'}</span>
@@ -333,13 +329,13 @@ export default function Configuration() {
         </button>
       </div>
       <p>
-        If {`you're`} using giscussions, consider{' '}
+        If {`you're`} using giscus, consider{' '}
         <a
           href="https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >
-          adding the <code>giscussions</code> topic to your repo
+          adding the <code>giscus</code> topic to your repo
         </a>
         ! 🎉
       </p>

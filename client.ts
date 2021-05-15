@@ -1,5 +1,5 @@
 const script = document.currentScript as HTMLScriptElement;
-const giscussionsOrigin = new URL(script.src).origin;
+const giscusOrigin = new URL(script.src).origin;
 
 // Set up iframeResizer
 declare let iFrameResize: (options: Record<string, unknown>) => void;
@@ -12,23 +12,23 @@ function loadScript(url: string, callback: VoidFunction) {
 }
 
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', () =>
-  iFrameResize({ checkOrigin: [giscussionsOrigin] }),
+  iFrameResize({ checkOrigin: [giscusOrigin] }),
 );
 
 // Set up iframe src URL and params
 const url = new URL(location.href);
-let session = url.searchParams.get('giscussions');
+let session = url.searchParams.get('giscus');
 
 if (session) {
-  localStorage.setItem('giscussions-session', JSON.stringify(session));
-  url.searchParams.delete('giscussions');
+  localStorage.setItem('giscus-session', JSON.stringify(session));
+  url.searchParams.delete('giscus');
   history.replaceState(undefined, document.title, url.toString());
 } else {
   try {
-    session = JSON.parse(localStorage.getItem('giscussions-session')) || '';
+    session = JSON.parse(localStorage.getItem('giscus-session')) || '';
   } catch (e) {
     session = '';
-    localStorage.removeItem('giscussions-session');
+    localStorage.removeItem('giscus-session');
     console.error(e);
   }
 }
@@ -75,12 +75,12 @@ switch (attributes.mapping) {
     break;
 }
 
-const src = `${giscussionsOrigin}/widget?${new URLSearchParams(params)}`;
+const src = `${giscusOrigin}/widget?${new URLSearchParams(params)}`;
 
 // Set up iframe element
 const iframeElement = document.createElement('iframe');
 const iframeAttributes = {
-  class: 'giscussions-frame',
+  class: 'giscus-frame',
   title: 'Comments',
   scrolling: 'no',
   src,
@@ -88,10 +88,10 @@ const iframeAttributes = {
 Object.entries(iframeAttributes).forEach(([key, value]) => iframeElement.setAttribute(key, value));
 
 // Insert iframe element
-const existingContainer = document.querySelector('.giscussions');
+const existingContainer = document.querySelector('.giscus');
 if (!existingContainer) {
   const iframeContainer = document.createElement('div');
-  iframeContainer.setAttribute('class', 'giscussions');
+  iframeContainer.setAttribute('class', 'giscus');
   iframeContainer.appendChild(iframeElement);
 
   script.insertAdjacentElement('afterend', iframeContainer);

@@ -29,7 +29,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     body: new URLSearchParams({ client_id, client_secret, code, state }),
     headers: {
       Accept: 'application/json',
-      'User-Agent': 'giscussions',
+      'User-Agent': 'giscus',
     },
   };
 
@@ -53,7 +53,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     encryption_password,
     Date.now() + TOKEN_VALIDITY_PERIOD,
   );
-  returnUrl.searchParams.set('giscussions', session);
+  returnUrl.searchParams.set('giscus', session);
 
   res.redirect(302, returnUrl.href);
 };

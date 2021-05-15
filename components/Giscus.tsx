@@ -1,22 +1,17 @@
 import { useContext } from 'react';
 import { AuthContext } from '../lib/context';
-import { useDiscussions } from '../services/giscussions/discussions';
+import { useDiscussions } from '../services/giscus/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
 
-interface IGiscussionsProps {
+interface IGiscusProps {
   repo: string;
   term?: string;
   number?: number;
   onDiscussionCreateRequest?: () => Promise<string>;
 }
 
-export default function Giscussions({
-  repo,
-  term,
-  number,
-  onDiscussionCreateRequest,
-}: IGiscussionsProps) {
+export default function Giscus({ repo, term, number, onDiscussionCreateRequest }: IGiscusProps) {
   const { token } = useContext(AuthContext);
   const query = { repo, term, number };
 
@@ -118,12 +113,12 @@ export default function Giscussions({
             {' '}
             – powered by{' '}
             <a
-              href="https://giscussions.vercel.app"
+              href="https://giscus.vercel.app"
               target="_blank"
               rel="noreferrer noopener nofollow"
               className="Link--secondary"
             >
-              giscussions
+              giscus
             </a>
           </em>
         ) : null}

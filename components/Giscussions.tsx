@@ -95,7 +95,7 @@ export default function Giscussions({
     <div className="w-full color-text-primary">
       <div className="flex flex-auto">
         <h4 className="mb-2 mr-2 font-semibold">
-          {isNotFound && !number
+          {isNotFound && !number && !totalCommentCount
             ? '0 comments'
             : error && !backData
             ? `An error occurred${error?.message ? `: ${error.message}` : ''}.`

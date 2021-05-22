@@ -1,9 +1,9 @@
-import { CheckIcon, SyncIcon, XIcon } from '@primer/octicons-react';
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { CheckIcon, ClippyIcon, SyncIcon, XIcon } from '@primer/octicons-react';
+import { useContext, useEffect, useState } from 'react';
+import { handleClipboardCopy } from '../lib/adapter';
 import { ThemeContext } from '../lib/context';
 import { useDebounce } from '../lib/hooks';
 import { ICategory } from '../lib/types/adapter';
-import { clipboardCopy } from '../lib/utils';
 import { themeOptions } from '../lib/variables';
 import { getCategories } from '../services/giscus/categories';
 
@@ -81,16 +81,8 @@ export default function Configuration() {
   const [mapping, setMapping] = useState('pathname');
   const [term, setTerm] = useState('');
   const [theme, setTheme] = useState('light');
-  const [isCopied, setIsCopied] = useState(false);
   const dRepository = useDebounce(repository);
-  const scriptBox = useRef<HTMLPreElement>();
   const { setTheme: setGlobalTheme } = useContext(ThemeContext);
-
-  const handleCopy = useCallback(() => {
-    clipboardCopy(scriptBox.current.textContent);
-    setIsCopied(true);
-    setTimeout(() => setIsCopied(false), 3000);
-  }, []);
 
   useEffect(() => {
     setGlobalTheme(theme);
@@ -278,8 +270,8 @@ export default function Configuration() {
         comments will be placed there instead. You can customize the layout using the{' '}
         <code>.giscus</code> and <code>.giscus-frame</code> selectors.
       </p>
-      <div className="highlight highlight-text-html-basic">
-        <pre ref={scriptBox}>
+      <div className="relative highlight highlight-text-html-basic">
+        <pre>
           <span className="pl-kos">{'<'}</span>
           <span className="pl-ent">script</span> <span className="pl-c1">src</span>={'"'}
           <span className="pl-s">https://giscus.vercel.app/client.js</span>
@@ -316,17 +308,21 @@ export default function Configuration() {
           <span className="pl-ent">script</span>
           <span className="pl-kos">{'>'}</span>
         </pre>
-      </div>
-      <div className="w-full mb-4 text-right">
-        <span className={`mr-2${!isCopied ? ' hidden' : ''}`}>
-          <CheckIcon className="color-text-success" /> Copied!
-        </span>
-        <button
-          className="px-4 py-[5px] ml-1 border rounded-md btn btn-primary"
-          onClick={handleCopy}
+        <div
+          className="top-0 right-0 zeroclipboard-container position-absolute"
+          onClick={handleClipboardCopy}
         >
-          Copy
-        </button>
+          <button
+            aria-label="Copy"
+            className="p-0 m-2 ClipboardButton btn js-clipboard-copy tooltipped-no-delay"
+            data-copy-feedback="Copied!"
+            tabIndex={0}
+            role="button"
+          >
+            <ClippyIcon className="m-2 octicon octicon-clippy js-clipboard-clippy-icon" />
+            <CheckIcon className="m-2 octicon octicon-check js-clipboard-check-icon color-text-success d-none" />
+          </button>
+        </div>
       </div>
       <p>
         If {`you're`} using giscus, consider{' '}

@@ -123,6 +123,7 @@ a {
 
 .btn {
   color: var(--color-btn-text);
+  background-color: var(--color-btn-bg);
   border-color: var(--color-btn-border);
   box-shadow: var(--color-btn-shadow), var(--color-btn-inset-shadow);
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
@@ -295,11 +296,13 @@ a {
   @apply block;
 }
 
+.snippet-clipboard-content .zeroclipboard-container,
 .highlight .zeroclipboard-container {
   @apply opacity-0;
   animation: fade-out 0.2s both;
 }
 
+.snippet-clipboard-content:hover .zeroclipboard-container,
 .highlight:hover .zeroclipboard-container {
   @apply opacity-100;
   animation: fade-in 0.2s both;

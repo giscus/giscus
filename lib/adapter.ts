@@ -10,6 +10,18 @@ import {
 } from './types/github';
 import { clipboardCopy } from './utils';
 
+const COPY_BUTTON_HTML = `
+<div class="zeroclipboard-container position-absolute right-0 top-0">
+  <button aria-label="Copy" class="ClipboardButton btn js-clipboard-copy m-2 p-0 tooltipped-no-delay" data-copy-feedback="Copied!" tabindex="0" role="button">
+    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" height="16" width="16" class="octicon octicon-clippy js-clipboard-clippy-icon m-2">
+      <path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path>
+    </svg>
+    <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" height="16" width="16" class="octicon octicon-check js-clipboard-check-icon color-text-success d-none m-2">
+      <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+    </svg>
+  </button>
+</div>`;
+
 export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups {
   return reactionGroups.reduce((acc, group) => {
     acc[group.content] = {
@@ -95,12 +107,17 @@ export function toggleEmail(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) 
 
 export function handleClipboardCopy(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
   const element = event.target as Element;
-  const button = element.closest<Element>('clipboard-copy');
+  const container = element.closest<HTMLDivElement>('.snippet-clipboard-content, .highlight');
+  const button = element.closest<HTMLButtonElement>('button.ClipboardButton');
 
-  if (button && event.currentTarget.contains(button)) {
+  if (container && button && event.currentTarget.contains(button)) {
     event.preventDefault();
+    const contents =
+      container.dataset.snippetClipboardCopyContent ||
+      container.querySelector('pre').textContent ||
+      '';
 
-    clipboardCopy(button.getAttribute('value'));
+    clipboardCopy(contents);
 
     const clipboardIcon = button.querySelector<SVGElement>('svg.js-clipboard-clippy-icon');
     const checkIcon = button.querySelector<SVGElement>('svg.js-clipboard-check-icon');
@@ -121,8 +138,9 @@ export function handleCommentClick(event: ReactMouseEvent<HTMLDivElement, MouseE
 }
 
 export function processCommentBody(bodyHTML: string) {
-  const content = document.createElement('div');
-  content.innerHTML = bodyHTML;
+  const template = document.createElement('template');
+  template.innerHTML = bodyHTML;
+  const content = template.content;
 
   content.querySelectorAll<HTMLAnchorElement>(':not(.email-hidden-toggle) > a').forEach((a) => {
     a.target = '_top';
@@ -134,8 +152,13 @@ export function processCommentBody(bodyHTML: string) {
     .forEach((a) => (a.href = 'https://github.com' + a.pathname));
 
   content
-    .querySelectorAll<SVGElement>('svg.js-clipboard-check-icon')
-    .forEach((svg) => svg.classList.replace('d-sm-none', 'd-none'));
+    .querySelectorAll<HTMLDivElement>('.snippet-clipboard-content, .highlight')
+    .forEach((div) => {
+      div.classList.add('position-relative');
+      const copyButton = document.createElement('template');
+      copyButton.innerHTML = COPY_BUTTON_HTML.trim();
+      div.appendChild(copyButton.content.firstChild);
+    });
 
-  return content.innerHTML;
+  return template.innerHTML;
 }

@@ -194,7 +194,7 @@ a {
 }
 
 .d-none {
-  @apply hidden;
+  display: none !important;
 }
 
 .btn {

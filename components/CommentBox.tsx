@@ -103,7 +103,7 @@ export default function CommentBox({
     setInput(event.target.value);
     const elem = event.target as HTMLTextAreaElement;
     elem.style.height = `0px`;
-    const height = elem.scrollHeight <= 355 ? elem.scrollHeight : 355;
+    const height = elem.scrollHeight <= 772 ? elem.scrollHeight : 772;
     elem.style.height = `${height}px`;
   }, []);
 

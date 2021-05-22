@@ -94,8 +94,8 @@ export function adaptDiscussion({
   };
 }
 
-export function toggleEmail(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
-  const element = event.target as Element;
+export function toggleEmail(event: ReactMouseEvent<HTMLElement, MouseEvent>) {
+  const element = event.target as HTMLElement;
   const toggle = element.closest<HTMLAnchorElement>('.email-hidden-toggle a');
   if (toggle && event.currentTarget.contains(toggle)) {
     event.preventDefault();
@@ -105,8 +105,8 @@ export function toggleEmail(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) 
   }
 }
 
-export function handleClipboardCopy(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
-  const element = event.target as Element;
+export function handleClipboardCopy(event: ReactMouseEvent<HTMLElement, MouseEvent>) {
+  const element = event.target as HTMLElement;
   const container = element.closest<HTMLDivElement>('.snippet-clipboard-content, .highlight');
   const button = element.closest<HTMLButtonElement>('button.ClipboardButton');
 
@@ -132,7 +132,7 @@ export function handleClipboardCopy(event: ReactMouseEvent<HTMLDivElement, Mouse
   }
 }
 
-export function handleCommentClick(event: ReactMouseEvent<HTMLDivElement, MouseEvent>) {
+export function handleCommentClick(event: ReactMouseEvent<HTMLElement, MouseEvent>) {
   toggleEmail(event);
   handleClipboardCopy(event);
 }

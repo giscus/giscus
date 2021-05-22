@@ -308,16 +308,14 @@ export default function Configuration() {
           <span className="pl-ent">script</span>
           <span className="pl-kos">{'>'}</span>
         </pre>
-        <div
-          className="top-0 right-0 zeroclipboard-container position-absolute"
-          onClick={handleClipboardCopy}
-        >
+        <div className="top-0 right-0 zeroclipboard-container position-absolute">
           <button
             aria-label="Copy"
             className="p-0 m-2 ClipboardButton btn js-clipboard-copy tooltipped-no-delay"
             data-copy-feedback="Copied!"
             tabIndex={0}
             role="button"
+            onClick={handleClipboardCopy}
           >
             <ClippyIcon className="m-2 octicon octicon-clippy js-clipboard-clippy-icon" />
             <CheckIcon className="m-2 octicon octicon-check js-clipboard-check-icon color-text-success d-none" />

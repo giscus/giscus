@@ -46,3 +46,9 @@ export function parseRepoWithOwner(repoWithOwner: string) {
   const [owner, name] = repoWithOwner.split('/');
   return { owner, name };
 }
+
+export function resizeTextArea(textarea: HTMLTextAreaElement) {
+  textarea.style.height = `0px`;
+  const height = textarea.scrollHeight <= 772 ? textarea.scrollHeight : 772;
+  textarea.style.height = `${height}px`;
+}

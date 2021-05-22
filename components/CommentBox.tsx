@@ -4,6 +4,7 @@ import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react
 import { adaptComment, adaptReply } from '../lib/adapter';
 import { AuthContext, getLoginUrl } from '../lib/context';
 import { IComment, IReply, IUser } from '../lib/types/adapter';
+import { resizeTextArea } from '../lib/utils';
 import { addDiscussionComment } from '../services/github/addDiscussionComment';
 import { addDiscussionReply } from '../services/github/addDiscussionReply';
 import { renderMarkdown } from '../services/github/markdown';
@@ -102,9 +103,7 @@ export default function CommentBox({
   const handleTextAreaChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
     setInput(event.target.value);
     const elem = event.target as HTMLTextAreaElement;
-    elem.style.height = `0px`;
-    const height = elem.scrollHeight <= 772 ? elem.scrollHeight : 772;
-    elem.style.height = `${height}px`;
+    resizeTextArea(elem);
   }, []);
 
   return !isReply || isReplyOpen ? (

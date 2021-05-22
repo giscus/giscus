@@ -106,6 +106,15 @@ export default function CommentBox({
     resizeTextArea(elem);
   }, []);
 
+  const handleTextAreaRef = useCallback(
+    (textarea: HTMLTextAreaElement) => {
+      if (!textarea) return;
+      resizeTextArea(textarea);
+      if (isReply) setTimeout(() => textarea.focus());
+    },
+    [isReply],
+  );
+
   return !isReply || isReplyOpen ? (
     <div
       className={`w-full text-sm color-bg-primary color-border-primary${
@@ -153,7 +162,7 @@ export default function CommentBox({
             onChange={handleTextAreaChange}
             value={input}
             disabled={!token || isSubmitting}
-            ref={(textarea) => isReply && textarea && setTimeout(() => textarea.focus())}
+            ref={handleTextAreaRef}
             onKeyDown={(event) => event.ctrlKey && event.key === 'Enter' && handleClick()}
           ></textarea>
         )}

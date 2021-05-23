@@ -152,7 +152,9 @@ export function processCommentBody(bodyHTML: string) {
     .forEach((a) => (a.href = 'https://github.com' + a.pathname));
 
   content
-    .querySelectorAll<HTMLDivElement>('.snippet-clipboard-content, .highlight')
+    .querySelectorAll<HTMLDivElement>(
+      '.snippet-clipboard-content, .highlight:not(.js-file-line-container)',
+    )
     .forEach((div) => {
       div.classList.add('position-relative');
       const copyButton = document.createElement('template');

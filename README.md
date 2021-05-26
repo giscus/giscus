@@ -23,7 +23,7 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 
 See [CONTRIBUTING.md][contributing]
 
-[giscus]: https://giscus.vercel.app
+[giscus]: https://giscus.app
 [repo]: https://github.com/laymonage/giscus
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances

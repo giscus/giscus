@@ -274,7 +274,7 @@ export default function Configuration() {
         <pre>
           <span className="pl-kos">{'<'}</span>
           <span className="pl-ent">script</span> <span className="pl-c1">src</span>={'"'}
-          <span className="pl-s">https://giscus.vercel.app/client.js</span>
+          <span className="pl-s">https://giscus.app/client.js</span>
           {'"\n        '}
           <span className="pl-c1">data-repo</span>={'"'}
           <span className="pl-s">{repository || '[ENTER REPO HERE]'}</span>

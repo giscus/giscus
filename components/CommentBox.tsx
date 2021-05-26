@@ -221,7 +221,7 @@ export default function CommentBox({
       </div>
     </div>
   ) : (
-    <div className="flex px-4 py-2 color-bg-tertiary">
+    <div className="flex px-4 py-2 color-bg-tertiary rounded-b-md">
       {viewer ? (
         <a
           rel="nofollow noopener noreferrer"

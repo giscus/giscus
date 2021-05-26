@@ -195,8 +195,8 @@ export default function Comment({
         ) : null}
         {comment.replies.length > 0 ? (
           <div
-            className={`pt-2 color-bg-canvas-inset color-border-primary${
-              renderReplyBox && !comment.isMinimized ? ' border-b' : ''
+            className={`pt-2 color-bg-canvas-inset color-border-primary ${
+              renderReplyBox && !comment.isMinimized ? 'border-b' : 'rounded-b-md'
             }`}
           >
             {onReplyUpdate

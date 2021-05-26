@@ -375,6 +375,15 @@ img.emoji {
   height: calc(100% - 16px);
 }
 
+.blob-wrapper {
+  @apply rounded-b-md;
+}
+
+.f6.px-3.py-2.lh-condensed.border-bottom.color-bg-secondary {
+  /* blob-wrapper header */
+  @apply rounded-t-md;
+}
+
 /* Re-apply overridden tailwind */
 
 .inline-flex {

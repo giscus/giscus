@@ -85,7 +85,7 @@ export default function Giscus({ repo, term, number, onDiscussionCreateRequest }
   const isLocked = backData?.discussion?.locked;
 
   const shouldShowReplyCount = !error && !isNotFound && !isLoading && totalReplyCount > 0;
-  const shouldShowBranding = totalCommentCount || (isNotFound && !number);
+  const shouldShowBranding = !!backData?.discussion?.url;
   const shouldShowCommentBox = !isLoading && !isLocked && (!error || (isNotFound && !number));
 
   return (

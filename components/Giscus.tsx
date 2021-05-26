@@ -122,7 +122,7 @@ export default function Giscus({ repo, term, number, onDiscussionCreateRequest }
             {' '}
             – powered by{' '}
             <a
-              href="https://giscus.vercel.app"
+              href="https://giscus.app"
               target="_blank"
               rel="noreferrer noopener nofollow"
               className="Link--secondary"

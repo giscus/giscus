@@ -53,6 +53,7 @@ const DISCUSSION_QUERY = `
             login
             url
           }
+          viewerDidAuthor
           createdAt
           url
           authorAssociation

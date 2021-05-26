@@ -177,7 +177,7 @@ export default function Comment({
               renderReplyBox || comment.replies.length > 0 ? ' border-b' : ''
             }${comment.replies.length > 0 ? ' rounded-b-md' : ''}`}
           >
-            <div className="flex mx-4">
+            <div className="flex items-start justify-end ml-4">
               {!hidden ? (
                 <ReactButtons
                   reactionGroups={comment.reactions}

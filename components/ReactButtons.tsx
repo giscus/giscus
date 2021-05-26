@@ -44,7 +44,7 @@ export default function ReactButtons({
           <button
             className={`px-3 py-[3px] Link--secondary${
               variant !== 'popoverOnly'
-                ? ' mb-4 mr-3 border rounded color-bg-tertiary color-border-primary'
+                ? ' mb-4 mr-4 border rounded-md color-bg-tertiary color-border-primary'
                 : ''
             }`}
             onClick={togglePopover}
@@ -105,7 +105,7 @@ export default function ReactButtons({
             count > 0 ? (
               <button
                 key={value}
-                className={`px-2 py-[3px] mb-4 mr-2 last:mr-0 border color-border-primary rounded${
+                className={`px-2 mb-1 md:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md${
                   viewerHasReacted ? ' color-bg-info' : ''
                 }`}
                 disabled={!token}
@@ -114,7 +114,7 @@ export default function ReactButtons({
                 ].name.toLowerCase()} emoji`}
                 onClick={() => react(value as Reactions)}
               >
-                <span className="mr-1">{Reactions[value].emoji}</span>
+                <span className="inline-block w-4 h-4 mr-2">{Reactions[value].emoji}</span>
                 <span className="text-xs color-text-link">{count}</span>
               </button>
             ) : null,

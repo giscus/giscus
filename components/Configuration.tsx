@@ -347,34 +347,6 @@ export default function Configuration() {
         </pre>
         <ClipboardCopy />
       </div>
-      <p>
-        If {`you're`} using giscus, consider{' '}
-        <a
-          href="https://github.com/laymonage/giscus"
-          target="_blank"
-          rel="noopener noreferrer nofollow"
-        >
-          starring 🌟 giscus on GitHub
-        </a>{' '}
-        and adding the{' '}
-        <a
-          href="https://github.com/topics/giscus"
-          target="_blank"
-          rel="noreferrer noopener nofollow"
-        >
-          <code>giscus</code>
-        </a>{' '}
-        topic{' '}
-        <a
-          href="https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics"
-          target="_blank"
-          rel="noreferrer noopener nofollow"
-        >
-          to your repository
-        </a>
-        ! 🎉
-      </p>
-      <h2>try it out 👇👇👇</h2>
     </div>
   );
 }

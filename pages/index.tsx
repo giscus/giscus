@@ -15,16 +15,28 @@ import { ThemeContext } from '../lib/context';
 export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
   const readme = readFileSync(path, 'utf-8');
+  const contents = readme.split('<!-- configuration -->');
+  contents[1] = `${contents[1]}\n## try it out 👇👇👇\n`;
+
   const token = await getAppAccessToken('laymonage/giscus');
-  const content = await renderMarkdown(readme, token, 'laymonage/giscus');
+  const [contentBefore, contentAfter] = await Promise.all(
+    contents.map(async (section) => await renderMarkdown(section, token, 'laymonage/giscus')),
+  );
+
   return {
     props: {
-      content,
+      contentBefore,
+      contentAfter,
     },
   };
 };
 
-export default function Home({ content }: { content: string }) {
+interface HomeProps {
+  contentBefore: string;
+  contentAfter: string;
+}
+
+export default function Home({ contentBefore, contentAfter }: HomeProps) {
   const isMounted = useIsMounted();
   const router = useRouter();
   const { theme } = useContext(ThemeContext);
@@ -36,7 +48,7 @@ export default function Home({ content }: { content: string }) {
       url: 'https://github.com/apps/giscus',
     },
     authorAssociation: 'app',
-    bodyHTML: content,
+    bodyHTML: contentBefore,
     createdAt: '2021-05-15T13:21:14Z',
     deletedAt: null,
     id: 'onboarding',
@@ -62,6 +74,10 @@ export default function Home({ content }: { content: string }) {
           <>
             <Comment comment={comment}>
               <Configuration />
+              <div
+                className="p-4 pt-0 markdown"
+                dangerouslySetInnerHTML={{ __html: contentAfter }}
+              />
             </Comment>
 
             <div className="w-full my-8 giscus color-bg-canvas">

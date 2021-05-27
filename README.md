@@ -19,10 +19,6 @@ When giscus loads, the [GitHub Discussions search API][search-api] is used to fi
 
 To comment, visitors must authorize the [giscus app][giscus-app] to [post on their behalf][authorization] using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
 
-## contributing
-
-See [CONTRIBUTING.md][contributing]
-
 [giscus]: https://giscus.app
 [repo]: https://github.com/laymonage/giscus
 [discussions]: https://docs.github.com/en/discussions
@@ -30,4 +26,16 @@ See [CONTRIBUTING.md][contributing]
 [search-api]: https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search
 [giscus-app]: https://github.com/apps/giscus
 [authorization]: https://docs.github.com/en/developers/apps/identifying-and-authorizing-users-for-github-apps
+
+<!-- configuration -->
+
+If you're using giscus, consider [starring 🌟 giscus on GitHub][giscus] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
+
+## contributing
+
+See [CONTRIBUTING.md][contributing]
+
+[giscus]: https://github.com/laymonage/giscus
+[giscus-topic]: https://github.com/topics/giscus
+[topic-howto]: https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics
 [contributing]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md

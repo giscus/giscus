@@ -268,7 +268,7 @@ export default function Configuration() {
       <p>
         Choose a theme that matches your website. {`Can't`} find one that does?{' '}
         <a
-          href="https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md"
+          href="https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md#creating-new-themes"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >

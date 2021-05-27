@@ -31,7 +31,7 @@ const mappingOptions = [
     value: 'title',
     label: (
       <>
-        Discussion title contains page <code>{'<title>'}</code>.
+        Discussion title contains page <code>{'<title>'}</code>
       </>
     ),
     description: (
@@ -51,7 +51,10 @@ const mappingOptions = [
     description: (
       <>
         giscus will search for a discussion whose title contains the {`page's `}
-        <code>{`<meta property="og:title">`}</code> HTML tag.
+        <a href="https://ogp.me" target="_blank" rel="noreferrer noopener nofollow">
+          <code>{`<meta property="og:title">`}</code>
+        </a>{' '}
+        HTML tag.
       </>
     ),
   },
@@ -65,8 +68,8 @@ const mappingOptions = [
     label: <>Specific discussion number</>,
     description: (
       <>
-        giscus will load a specific discussion by number. This option does not support automatic
-        discussion creation.
+        giscus will load a specific discussion by number. This option <strong>does not</strong>{' '}
+        support automatic discussion creation.
       </>
     ),
   },
@@ -219,7 +222,7 @@ export default function Configuration() {
       <h3>Page ↔️ Discussions Mapping</h3>
       <p>Choose the mapping between the embedding page and the embedded discussion.</p>
       <fieldset className="mx-4">
-        {mappingOptions.map(({ value, label, description }) => (
+        {mappingOptions.map(({ value, label, description }, idx) => (
           <div key={value} className="flex">
             <input
               id={value}
@@ -235,8 +238,14 @@ export default function Configuration() {
             />
             <div className="w-full ml-2">
               <label className="cursor-pointer" htmlFor={value}>
-                {label}
-                <p className="text-xs color-text-secondary">{description}</p>
+                <strong>{label}</strong>
+                <p
+                  className={`text-xs color-text-secondary${
+                    idx === mappingOptions.length - 1 ? ' mb-0' : ''
+                  }`}
+                >
+                  {description}
+                </p>
               </label>
               {['specific', 'number'].includes(mapping) && mapping === value ? (
                 <input

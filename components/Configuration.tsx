@@ -72,6 +72,24 @@ const mappingOptions = [
   },
 ];
 
+function ClipboardCopy() {
+  return (
+    <div className="top-0 right-0 zeroclipboard-container position-absolute">
+      <button
+        aria-label="Copy"
+        className="p-0 m-2 ClipboardButton btn js-clipboard-copy tooltipped-no-delay"
+        data-copy-feedback="Copied!"
+        tabIndex={0}
+        role="button"
+        onClick={handleClipboardCopy}
+      >
+        <ClippyIcon className="m-2 octicon octicon-clippy js-clipboard-clippy-icon" />
+        <CheckIcon className="m-2 octicon octicon-check js-clipboard-check-icon color-text-success d-none" />
+      </button>
+    </div>
+  );
+}
+
 export default function Configuration() {
   const [repository, setRepository] = useState('');
   const [repositoryId, setRepositoryId] = useState('');
@@ -267,8 +285,7 @@ export default function Configuration() {
       <p>
         Add the following <code>{'<script>'}</code> tag to your {`website's`} template where you
         want the comments to appear. If an element with the class <code>giscus</code> exists, the
-        comments will be placed there instead. You can customize the layout using the{' '}
-        <code>.giscus</code> and <code>.giscus-frame</code> selectors.
+        comments will be placed there instead.
       </p>
       <div className="relative highlight highlight-text-html-basic">
         <pre>
@@ -308,19 +325,27 @@ export default function Configuration() {
           <span className="pl-ent">script</span>
           <span className="pl-kos">{'>'}</span>
         </pre>
-        <div className="top-0 right-0 zeroclipboard-container position-absolute">
-          <button
-            aria-label="Copy"
-            className="p-0 m-2 ClipboardButton btn js-clipboard-copy tooltipped-no-delay"
-            data-copy-feedback="Copied!"
-            tabIndex={0}
-            role="button"
-            onClick={handleClipboardCopy}
-          >
-            <ClippyIcon className="m-2 octicon octicon-clippy js-clipboard-clippy-icon" />
-            <CheckIcon className="m-2 octicon octicon-check js-clipboard-check-icon color-text-success d-none" />
-          </button>
-        </div>
+        <ClipboardCopy />
+      </div>
+      <p>
+        You can customize the layout using the <code>.giscus</code> and <code>.giscus-frame</code>{' '}
+        selectors. For example, you can add the following rules to your CSS file.
+      </p>
+      <div className="relative highlight highlight-source-css">
+        <pre>
+          .<span className="pl-c1">giscus</span>
+          <span className="pl-kos">,</span> .<span className="pl-c1">giscus-frame</span> {'{\n  '}
+          <span className="pl-c1">width</span>
+          <span className="pl-kos">:</span>{' '}
+          <span className="pl-c1">
+            100<span className="pl-smi">%</span>
+          </span>
+          ;{'\n}\n\n'}.<span className="pl-c1">giscus-frame</span> {'{\n  '}
+          <span className="pl-c1">border</span>
+          <span className="pl-kos">:</span> none;
+          {'\n}'}
+        </pre>
+        <ClipboardCopy />
       </div>
       <p>
         If {`you're`} using giscus, consider{' '}

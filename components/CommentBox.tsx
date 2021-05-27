@@ -1,7 +1,7 @@
 import { MarkdownIcon } from '@primer/octicons-react';
 import Link from 'next/link';
 import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
-import { adaptComment, adaptReply } from '../lib/adapter';
+import { adaptComment, adaptReply, handleCommentClick, processCommentBody } from '../lib/adapter';
 import { AuthContext, getLoginUrl } from '../lib/context';
 import { IComment, IReply, IUser } from '../lib/types/adapter';
 import { resizeTextArea } from '../lib/utils';
@@ -44,7 +44,8 @@ export default function CommentBox({
       if (input) {
         setIsLoading(true);
         renderMarkdown(input, token, context).then((value) => {
-          setPreview(value);
+          const processed = processCommentBody(value);
+          setPreview(processed);
           setIsLoading(false);
         });
       }
@@ -152,6 +153,7 @@ export default function CommentBox({
             dangerouslySetInnerHTML={
               isLoading ? undefined : { __html: preview || 'Nothing to preview' }
             }
+            onClick={handleCommentClick}
           >
             {isLoading ? 'Loading preview...' : undefined}
           </div>

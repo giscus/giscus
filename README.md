@@ -29,13 +29,13 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 
 <!-- configuration -->
 
-If you're using giscus, consider [starring 🌟 giscus on GitHub][giscus] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
+If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
 
 ## contributing
 
 See [CONTRIBUTING.md][contributing]
 
-[giscus]: https://github.com/laymonage/giscus
+[repo]: https://github.com/laymonage/giscus
 [giscus-topic]: https://github.com/topics/giscus
 [topic-howto]: https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics
 [contributing]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md

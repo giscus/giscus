@@ -12,7 +12,7 @@ function loadScript(url: string, callback: VoidFunction) {
 }
 
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', () =>
-  iFrameResize({ checkOrigin: [giscusOrigin] }),
+  iFrameResize({ checkOrigin: [giscusOrigin], resizeFrom: 'child' }),
 );
 
 // Set up iframe src URL and params

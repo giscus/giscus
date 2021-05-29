@@ -222,8 +222,8 @@ export default function Configuration() {
       <h3>Page ↔️ Discussions Mapping</h3>
       <p>Choose the mapping between the embedding page and the embedded discussion.</p>
       <fieldset className="mx-4">
-        {mappingOptions.map(({ value, label, description }, idx) => (
-          <div key={value} className="flex">
+        {mappingOptions.map(({ value, label, description }) => (
+          <div key={value} className="flex mt-4 first:mt-0">
             <input
               id={value}
               className="mt-[3.5px]"
@@ -239,13 +239,7 @@ export default function Configuration() {
             <div className="w-full ml-2">
               <label className="cursor-pointer" htmlFor={value}>
                 <strong>{label}</strong>
-                <p
-                  className={`text-xs color-text-secondary${
-                    idx === mappingOptions.length - 1 ? ' mb-0' : ''
-                  }`}
-                >
-                  {description}
-                </p>
+                <p className="mb-0 text-xs color-text-secondary">{description}</p>
               </label>
               {['specific', 'number'].includes(mapping) && mapping === value ? (
                 <input
@@ -253,7 +247,7 @@ export default function Configuration() {
                   value={term}
                   onChange={(event) => setTerm(event.target.value)}
                   type={mapping === 'number' ? 'number' : 'text'}
-                  className="px-[12px] py-[5px] form-control border rounded-md placeholder-gray-500 mb-4 min-w-[75%] sm:min-w-[50%]"
+                  className="px-[12px] py-[5px] mt-4 form-control border rounded-md placeholder-gray-500 min-w-[75%] sm:min-w-[50%]"
                   placeholder={
                     mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
                   }

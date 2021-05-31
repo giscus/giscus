@@ -72,6 +72,7 @@ export function adaptDiscussion({
 
   const {
     comments: { pageInfo, totalCount: totalCommentCount, ...commentsData },
+    reactions: { totalCount: reactionCount },
     reactionGroups,
     ...rest
   } = discussion;
@@ -90,6 +91,7 @@ export function adaptDiscussion({
       totalCommentCount,
       totalReplyCount,
       pageInfo,
+      reactionCount,
       reactions,
       comments,
       ...rest,

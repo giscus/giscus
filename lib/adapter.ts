@@ -72,6 +72,7 @@ export function adaptDiscussion({
 
   const {
     comments: { pageInfo, totalCount: totalCommentCount, ...commentsData },
+    reactionGroups,
     ...rest
   } = discussion;
 
@@ -80,6 +81,7 @@ export function adaptDiscussion({
     0,
   );
 
+  const reactions = adaptReactionGroups(reactionGroups);
   const comments = commentsData.nodes.map(adaptComment);
 
   return {
@@ -88,6 +90,7 @@ export function adaptDiscussion({
       totalCommentCount,
       totalReplyCount,
       pageInfo,
+      reactions,
       comments,
       ...rest,
     },

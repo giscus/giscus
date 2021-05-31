@@ -63,6 +63,7 @@ export interface GRepositoryDiscussion {
   repository: {
     nameWithOwner: string;
   };
+  reactionGroups: GReactionGroup[];
   comments: {
     totalCount: number;
     pageInfo: {

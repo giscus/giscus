@@ -76,11 +76,11 @@ export default function ReactButtons({
                 <button
                   key={key}
                   type="button"
-                  className={`w-8 h-8 mr-[-1px] mt-[-1px] rounded-none gsc-emoji-button ${
+                  className={`w-8 h-8 mr-[-1px] mt-[-1px] rounded-none gsc-emoji-button${
                     reactionGroups[key].viewerHasReacted
-                      ? 'border color-bg-info color-border-tertiary'
+                      ? ' border color-bg-info color-border-tertiary'
                       : ''
-                  }`}
+                  }${!token ? ' cursor-not-allowed' : ''}`}
                   onClick={() => {
                     react(key as Reactions);
                     togglePopover();
@@ -107,11 +107,15 @@ export default function ReactButtons({
                 key={value}
                 className={`px-2 mb-1 dmd:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md${
                   viewerHasReacted ? ' color-bg-info' : ''
-                }`}
+                }${!token ? ' cursor-not-allowed' : ''}`}
                 disabled={!token}
-                title={`${count} ${count === 1 ? 'person' : 'people'} reacted with ${Reactions[
-                  value
-                ].name.toLowerCase()} emoji`}
+                title={
+                  token
+                    ? `${count} ${count === 1 ? 'person' : 'people'} reacted with ${Reactions[
+                        value
+                      ].name.toLowerCase()} emoji`
+                    : 'You must be signed in to add reactions.'
+                }
                 onClick={() => react(value as Reactions)}
               >
                 <span className="inline-block w-4 h-4 mr-2">{Reactions[value].emoji}</span>

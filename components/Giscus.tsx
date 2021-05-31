@@ -1,8 +1,10 @@
-import { useContext } from 'react';
+import { useCallback, useContext } from 'react';
 import { AuthContext } from '../lib/context';
+import { Reactions, updateDiscussionReaction } from '../lib/reactions';
 import { useDiscussions } from '../services/giscus/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
+import ReactButtons from './ReactButtons';
 
 interface IGiscusProps {
   repo: string;
@@ -65,6 +67,12 @@ export default function Giscus({ repo, term, number, onDiscussionCreateRequest }
     return newData;
   });
 
+  const updateReactions = useCallback(
+    (reaction: Reactions, promise: Promise<unknown>) =>
+      backMutators.updateDiscussion([updateDiscussionReaction(backData, reaction)], promise),
+    [backData, backMutators],
+  );
+
   const numHidden =
     backData?.discussion?.totalCommentCount -
     backData?.discussion?.comments?.length -
@@ -90,6 +98,15 @@ export default function Giscus({ repo, term, number, onDiscussionCreateRequest }
 
   return (
     <div className="w-full color-text-primary">
+      {backData?.discussion?.id ? (
+        <div className="flex items-center flex-auto pb-2 text-sm">
+          <ReactButtons
+            subjectId={backData.discussion.id}
+            reactionGroups={backData.discussion.reactions}
+            onReact={updateReactions}
+          />
+        </div>
+      ) : null}
       <div className="flex items-center flex-auto pb-2">
         <h4 className="mr-2 font-semibold">
           {isNotFound && !number && !totalCommentCount ? (

@@ -37,6 +37,40 @@ export default function ReactButtons({
     [onReact, reactionGroups, subjectId, token],
   );
 
+  const createReactionButton = useCallback(
+    ([value, { count, viewerHasReacted }]: [
+      keyof IReactionGroups,
+      typeof reactionGroups[keyof IReactionGroups],
+    ]) => (
+      <button
+        key={value}
+        className={`px-2 mb-1 dmd:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md${
+          viewerHasReacted ? ' color-bg-info' : ''
+        }${!token ? ' cursor-not-allowed' : ''}`}
+        disabled={!token}
+        title={
+          token
+            ? `${count} ${count === 1 ? 'person' : 'people'} reacted with ${Reactions[
+                value
+              ].name.toLowerCase()} emoji`
+            : 'You must be signed in to add reactions.'
+        }
+        onClick={() => react(value as Reactions)}
+      >
+        <span className="inline-block w-4 h-4 mr-2">{Reactions[value].emoji}</span>
+        <span className="text-xs color-text-link">{count}</span>
+      </button>
+    ),
+    [react, token],
+  );
+
+  const directReactionButtons =
+    variant !== 'popoverOnly'
+      ? Object.entries(reactionGroups)
+          .filter(([, { count }]) => count > 0)
+          .map(createReactionButton)
+      : [];
+
   return (
     <>
       {variant !== 'groupsOnly' ? (
@@ -44,9 +78,9 @@ export default function ReactButtons({
           <button
             className={`px-3 py-[3px] Link--secondary${
               variant !== 'popoverOnly'
-                ? ' mb-1 dmd:mb-4 mr-4 border rounded-md color-bg-tertiary color-border-primary'
+                ? ' mb-1 dmd:mb-4 border rounded-md color-bg-tertiary color-border-primary'
                 : ''
-            }`}
+            }${directReactionButtons.length > 0 ? ' mr-4' : ''}`}
             onClick={togglePopover}
           >
             <SmileyIcon size={18} />
@@ -100,30 +134,7 @@ export default function ReactButtons({
       ) : null}
 
       {variant !== 'popoverOnly' ? (
-        <div className="flex flex-wrap">
-          {Object.entries(reactionGroups).map(([value, { count, viewerHasReacted }]) =>
-            count > 0 ? (
-              <button
-                key={value}
-                className={`px-2 mb-1 dmd:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md${
-                  viewerHasReacted ? ' color-bg-info' : ''
-                }${!token ? ' cursor-not-allowed' : ''}`}
-                disabled={!token}
-                title={
-                  token
-                    ? `${count} ${count === 1 ? 'person' : 'people'} reacted with ${Reactions[
-                        value
-                      ].name.toLowerCase()} emoji`
-                    : 'You must be signed in to add reactions.'
-                }
-                onClick={() => react(value as Reactions)}
-              >
-                <span className="inline-block w-4 h-4 mr-2">{Reactions[value].emoji}</span>
-                <span className="text-xs color-text-link">{count}</span>
-              </button>
-            ) : null,
-          )}
-        </div>
+        <div className="flex flex-wrap">{directReactionButtons}</div>
       ) : null}
     </>
   );

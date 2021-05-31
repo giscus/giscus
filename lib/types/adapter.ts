@@ -56,6 +56,7 @@ export interface IGiscussion {
     repository: {
       nameWithOwner: string;
     };
+    reactions: IReactionGroups;
     comments: IComment[];
   };
 }

@@ -11,6 +11,13 @@ const DISCUSSION_QUERY = `
   repository {
     nameWithOwner
   }
+  reactionGroups {
+    content
+    users {
+      totalCount
+    }
+    viewerHasReacted
+  }
   comments(first: $first last: $last after: $after before: $before) {
     totalCount
     pageInfo {

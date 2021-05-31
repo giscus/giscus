@@ -14,23 +14,27 @@ export const Reactions = {
 export type Reactions = keyof typeof Reactions;
 
 function updateReactionGroups(reactionGroups: IReactionGroups, reaction: Reactions) {
-  return {
-    ...reactionGroups,
-    [reaction]: {
-      count: reactionGroups[reaction].viewerHasReacted
-        ? reactionGroups[reaction].count - 1
-        : reactionGroups[reaction].count + 1,
-      viewerHasReacted: !reactionGroups[reaction].viewerHasReacted,
+  const diff = reactionGroups[reaction].viewerHasReacted ? -1 : 1;
+  return [
+    {
+      ...reactionGroups,
+      [reaction]: {
+        count: reactionGroups[reaction].count + diff,
+        viewerHasReacted: !reactionGroups[reaction].viewerHasReacted,
+      },
     },
-  };
+    diff,
+  ] as [IReactionGroups, number];
 }
 
 export function updateDiscussionReaction(page: IGiscussion, reaction: Reactions) {
+  const [newReactions, diff] = updateReactionGroups(page.discussion.reactions, reaction);
   return {
     ...page,
     discussion: {
       ...page.discussion,
-      reactions: updateReactionGroups(page.discussion.reactions, reaction),
+      reactionCount: page.discussion.reactionCount + diff,
+      reactions: newReactions,
     },
   } as IGiscussion;
 }
@@ -39,8 +43,9 @@ export function updateCommentReaction<T extends IComment | IReply = IComment>(
   comment: T,
   reaction: Reactions,
 ) {
+  const [newReactions] = updateReactionGroups(comment.reactions, reaction);
   return {
     ...comment,
-    reactions: updateReactionGroups(comment.reactions, reaction),
+    reactions: newReactions,
   } as T;
 }

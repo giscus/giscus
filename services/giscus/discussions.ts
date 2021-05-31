@@ -83,6 +83,12 @@ export function useDiscussions(
     [data, mutate],
   );
 
+  const updateDiscussion = useCallback(
+    (newDiscussions: IGiscussion[], promise?: Promise<unknown>) =>
+      mutate(newDiscussions, !promise) && promise?.then(() => mutate()),
+    [mutate],
+  );
+
   const updateComment = useCallback(
     (newComment: IComment, promise?: Promise<unknown>) =>
       mutate(
@@ -132,6 +138,12 @@ export function useDiscussions(
     isValidating,
     isLoading: !error && !data,
     isError: !!error,
-    mutators: { addNewComment, addNewReply, updateComment, updateReply },
+    mutators: {
+      addNewComment,
+      addNewReply,
+      updateDiscussion,
+      updateComment,
+      updateReply,
+    },
   };
 }

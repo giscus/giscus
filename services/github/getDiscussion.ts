@@ -11,6 +11,9 @@ const DISCUSSION_QUERY = `
   repository {
     nameWithOwner
   }
+  reactions {
+    totalCount
+  }
   reactionGroups {
     content
     users {

@@ -99,12 +99,25 @@ export default function Giscus({ repo, term, number, onDiscussionCreateRequest }
   return (
     <div className="w-full color-text-primary">
       {backData?.discussion?.id ? (
-        <div className="flex items-center flex-auto pb-2 text-sm">
-          <ReactButtons
-            subjectId={backData.discussion.id}
-            reactionGroups={backData.discussion.reactions}
-            onReact={updateReactions}
-          />
+        <div className="flex flex-col justify-center flex-auto mb-3 dmd:mb-1">
+          <h4 className="font-semibold text-center">
+            <a
+              href={backData.discussion.url}
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+              className="color-text-primary"
+            >
+              {backData.discussion.reactionCount} reaction
+              {backData.discussion.reactionCount !== 1 ? 's' : ''}
+            </a>
+          </h4>
+          <div className="flex justify-center flex-auto mt-2 text-sm">
+            <ReactButtons
+              subjectId={backData.discussion.id}
+              reactionGroups={backData.discussion.reactions}
+              onReact={updateReactions}
+            />
+          </div>
         </div>
       ) : null}
       <div className="flex items-center flex-auto pb-2">

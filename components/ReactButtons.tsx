@@ -44,7 +44,7 @@ export default function ReactButtons({
           <button
             className={`px-3 py-[3px] Link--secondary${
               variant !== 'popoverOnly'
-                ? ' mb-4 mr-4 border rounded-md color-bg-tertiary color-border-primary'
+                ? ' mb-1 dmd:mb-4 mr-4 border rounded-md color-bg-tertiary color-border-primary'
                 : ''
             }`}
             onClick={togglePopover}
@@ -105,7 +105,7 @@ export default function ReactButtons({
             count > 0 ? (
               <button
                 key={value}
-                className={`px-2 mb-1 md:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md${
+                className={`px-2 mb-1 dmd:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md${
                   viewerHasReacted ? ' color-bg-info' : ''
                 }`}
                 disabled={!token}

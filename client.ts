@@ -42,6 +42,7 @@ const ogDescriptionMeta = document.querySelector(
 params.origin = location.href;
 params.session = session;
 params.theme = attributes.theme;
+params.reactionsEnabled = attributes.reactionsEnabled || '1';
 params.repo = attributes.repo;
 params.repoId = attributes.repoId;
 params.categoryId = attributes.categoryId;

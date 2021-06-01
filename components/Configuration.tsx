@@ -134,27 +134,29 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
       <h2>configuration</h2>
 
       <h3>Repository</h3>
-      <p>Choose the repository giscus will connect to.</p>
+      <p>Choose the repository giscus will connect to. Make sure that:</p>
       <ol>
         <li>
-          Make sure the repository is public, otherwise your visitors will not be able to view the
-          discussion.
+          The <strong>repository is public</strong>, otherwise your visitors will not be able to
+          view the discussion.
         </li>
         <li>
-          Make sure the{' '}
-          <a
-            href="https://github.com/apps/giscus"
-            target="_blank"
-            rel="noreferrer noopener nofollow"
-          >
-            giscus
-          </a>{' '}
-          app is installed on the repository, otherwise visitors will not be able to post comments
-          and replies.
+          The{' '}
+          <strong>
+            <a
+              href="https://github.com/apps/giscus"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+            >
+              giscus
+            </a>{' '}
+            app is installed on the repository
+          </strong>
+          , otherwise visitors will not be able to comment and react.
         </li>
         <li>
-          Make sure the Discussions feature is turned <strong>on</strong> by enabling it in the
-          settings tab of the repository.
+          The <strong>Discussions feature is turned on</strong> by enabling it in the settings tab
+          of the repository.
         </li>
       </ol>
       <fieldset>
@@ -199,7 +201,11 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
       </fieldset>
 
       <h3>Discussion Category</h3>
-      <p>Choose the discussion category where new discussions will be created.</p>
+      <p>
+        Choose the discussion category where new discussions will be created. This is only used for
+        discussion creation and <strong>does not</strong> affect how giscus searches for
+        discussions.
+      </p>
       <select
         name="category"
         id="category"

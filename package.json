@@ -1,7 +1,13 @@
 {
   "name": "giscus",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
   "scripts": {
     "cscript": "tsc client.ts --outDir public",
     "cthemes": "postcss styles/themes/*.css --dir public/themes --config styles/themes",

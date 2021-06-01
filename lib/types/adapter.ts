@@ -72,3 +72,7 @@ export interface ICategories {
   repositoryId: string;
   categories: ICategory[];
 }
+
+export interface IError {
+  error: string;
+}

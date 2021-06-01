@@ -8,10 +8,36 @@ import { Reactions } from '../lib/reactions';
 import { toggleReaction } from '../services/github/toggleReaction';
 
 interface IReactButtonsProps {
-  reactionGroups: IReactionGroups;
-  subjectId: string;
+  reactionGroups?: IReactionGroups;
+  subjectId?: string;
   onReact: (content: Reactions, promise: Promise<unknown>) => void;
   variant?: 'groupsOnly' | 'popoverOnly' | 'all';
+  onDiscussionCreateRequest?: () => Promise<string>;
+}
+
+function PopupInfo({
+  isLoggedIn,
+  isLoading,
+  current,
+  loginUrl,
+}: {
+  isLoggedIn: boolean;
+  isLoading: boolean;
+  current: string;
+  loginUrl: string;
+}) {
+  if (isLoading) return <>Please wait...</>;
+  if (isLoggedIn) return <>{current || 'Pick your reaction'}</>;
+  return (
+    <>
+      <Link href={loginUrl}>
+        <a className="color-text-link" target="_top">
+          Sign in
+        </a>
+      </Link>{' '}
+      to add your reaction.
+    </>
+  );
 }
 
 export default function ReactButtons({
@@ -19,8 +45,10 @@ export default function ReactButtons({
   subjectId,
   onReact,
   variant = 'all',
+  onDiscussionCreateRequest,
 }: IReactButtonsProps) {
   const [current, setCurrent] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [ref, isOpen, setIsOpen] = useComponentVisible<HTMLDivElement>(false);
   const { token, origin } = useContext(AuthContext);
   const loginUrl = getLoginUrl(origin);
@@ -28,13 +56,22 @@ export default function ReactButtons({
   const togglePopover = useCallback(() => setIsOpen(!isOpen), [isOpen, setIsOpen]);
 
   const react = useCallback(
-    (content: Reactions) => {
+    async (content: Reactions) => {
+      if (isSubmitting || (!subjectId && !onDiscussionCreateRequest)) return;
+      setIsSubmitting(!subjectId);
+
+      const id = subjectId ? subjectId : await onDiscussionCreateRequest();
+
       onReact(
         content,
-        toggleReaction({ content, subjectId }, token, reactionGroups[content].viewerHasReacted),
+        toggleReaction(
+          { content, subjectId: id },
+          token,
+          !!reactionGroups?.[content]?.viewerHasReacted,
+        ).then(() => setIsSubmitting(false)),
       );
     },
-    [onReact, reactionGroups, subjectId, token],
+    [isSubmitting, onDiscussionCreateRequest, onReact, reactionGroups, subjectId, token],
   );
 
   const createReactionButton = useCallback(
@@ -66,7 +103,7 @@ export default function ReactButtons({
 
   const directReactionButtons =
     variant !== 'popoverOnly'
-      ? Object.entries(reactionGroups)
+      ? Object.entries(reactionGroups || {})
           .filter(([, { count }]) => count > 0)
           .map(createReactionButton)
       : [];
@@ -91,18 +128,12 @@ export default function ReactButtons({
             } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] color-text-secondary color-bg-overlay border rounded top-10 color-border-primary`}
           >
             <p className="m-2">
-              {token ? (
-                current || 'Pick your reaction'
-              ) : (
-                <>
-                  <Link href={loginUrl}>
-                    <a className="color-text-link" target="_top">
-                      Sign in
-                    </a>
-                  </Link>{' '}
-                  to add your reaction.
-                </>
-              )}
+              <PopupInfo
+                isLoading={isSubmitting}
+                isLoggedIn={!!token}
+                loginUrl={loginUrl}
+                current={current}
+              />
             </p>
             <div className="my-2 border-t color-border-primary" />
             <div className="m-2">
@@ -111,7 +142,7 @@ export default function ReactButtons({
                   key={key}
                   type="button"
                   className={`w-8 h-8 mr-[-1px] mt-[-1px] rounded-none gsc-emoji-button${
-                    reactionGroups[key].viewerHasReacted
+                    reactionGroups?.[key]?.viewerHasReacted
                       ? ' border color-bg-info color-border-tertiary'
                       : ''
                   }${!token ? ' cursor-not-allowed' : ''}`}

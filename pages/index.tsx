@@ -116,7 +116,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
                   data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
                   data-mapping="specific"
                   data-term="Welcome to giscus!"
-                  data-theme={theme}
+                  data-theme={directConfig.theme}
                   data-reactions-enabled={`${+directConfig.reactionsEnabled}`}
                 ></script>
               </Head>

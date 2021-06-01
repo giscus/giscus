@@ -9,7 +9,7 @@ import { renderMarkdown } from '../services/github/markdown';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { useIsMounted } from '../lib/hooks';
 import Configuration from '../components/Configuration';
-import { useContext } from 'react';
+import { ComponentProps, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 
 export const getStaticProps = async () => {
@@ -36,10 +36,23 @@ interface HomeProps {
   contentAfter: string;
 }
 
+type DirectConfig = ComponentProps<typeof Configuration>['directConfig'];
+type DirectConfigHandler = ComponentProps<typeof Configuration>['onDirectConfigChange'];
+
 export default function Home({ contentBefore, contentAfter }: HomeProps) {
   const isMounted = useIsMounted();
   const router = useRouter();
-  const { theme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
+  const [directConfig, setDirectConfig] = useState<DirectConfig>({
+    theme: 'light',
+  });
+
+  const handleDirectConfigChange: DirectConfigHandler = (key, value) =>
+    setDirectConfig({ ...directConfig, [key]: value });
+
+  useEffect(() => {
+    setTheme(directConfig.theme);
+  }, [setTheme, directConfig.theme]);
 
   const comment: IComment = {
     author: {
@@ -73,7 +86,10 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
         {isMounted ? (
           <>
             <Comment comment={comment}>
-              <Configuration />
+              <Configuration
+                directConfig={directConfig}
+                onDirectConfigChange={handleDirectConfigChange}
+              />
               <div
                 className="p-4 pt-0 markdown"
                 dangerouslySetInnerHTML={{ __html: contentAfter }}

@@ -323,6 +323,14 @@ img.emoji {
   background-position: right 4px center;
 }
 
+.form-checkbox {
+  @apply pl-5 my-[15px] align-middle;
+}
+
+.form-checkbox input[type='checkbox'] {
+  @apply float-left mt-[3px] -ml-5 align-middle;
+}
+
 /* Giscus-specific styles */
 
 .gsc-tl-line {

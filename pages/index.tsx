@@ -45,6 +45,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
     theme: 'light',
+    reactionsEnabled: true,
   });
 
   const handleDirectConfigChange: DirectConfigHandler = (key, value) =>
@@ -116,6 +117,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
                   data-mapping="specific"
                   data-term="Welcome to giscus!"
                   data-theme={theme}
+                  data-reactions-enabled={`${+directConfig.reactionsEnabled}`}
                 ></script>
               </Head>
             ) : null}

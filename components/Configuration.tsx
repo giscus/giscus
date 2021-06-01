@@ -94,6 +94,7 @@ function ClipboardCopy() {
 
 interface DirectConfig {
   theme: string;
+  reactionsEnabled: boolean;
 }
 
 interface ConfigurationProps {
@@ -260,6 +261,24 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
         ))}
       </fieldset>
 
+      <h3>Features</h3>
+      <p>Choose whether specific features should be enabled.</p>
+      <div className="form-checkbox">
+        <input
+          type="checkbox"
+          id="reactionsEnabled"
+          checked={directConfig.reactionsEnabled}
+          value={`${+directConfig.reactionsEnabled}`}
+          onChange={(event) => onDirectConfigChange('reactionsEnabled', event.target.checked)}
+        ></input>
+        <label htmlFor="reactionsEnabled">
+          <strong>Enable reactions for the main post</strong>
+        </label>
+        <p className="mb-0 text-xs color-text-secondary">
+          The reactions for the {`discussion's`} main post will be shown before the comments.
+        </p>
+      </div>
+
       <h3>Theme</h3>
       <p>
         Choose a theme that matches your website. {`Can't`} find one that does?{' '}
@@ -317,6 +336,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
               {'"\n        '}
             </>
           ) : null}
+          <span className="pl-c1">data-reactions-enabled</span>={'"'}
+          <span className="pl-s">{Number(directConfig.reactionsEnabled)}</span>
+          {'"\n        '}
           <span className="pl-c1">data-theme</span>={'"'}
           <span className="pl-s">{directConfig.theme}</span>
           {'"\n        '}

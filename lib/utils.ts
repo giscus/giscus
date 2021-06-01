@@ -1,4 +1,7 @@
-import { differenceInMonths, differenceInYears, format, formatDistanceStrict } from 'date-fns';
+import differenceInMonths from 'date-fns/differenceInMonths';
+import differenceInYears from 'date-fns/differenceInYears';
+import format from 'date-fns/format';
+import formatDistanceStrict from 'date-fns/formatDistanceStrict';
 
 export function getTheme(theme: string) {
   if (!theme) theme = 'light';

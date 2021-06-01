@@ -144,6 +144,7 @@ export function useDiscussions(
       updateDiscussion,
       updateComment,
       updateReply,
+      mutate,
     },
   };
 }

@@ -15,7 +15,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     token = await decodeState(session, encryption_password);
   } catch (err) {
-    res.status(503).json({ error: err.message });
+    res.status(400).json({ error: err.message });
     return;
   }
 

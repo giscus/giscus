@@ -1,5 +1,10 @@
+const GISCUS_SESSION_KEY = 'giscus-session';
 const script = document.currentScript as HTMLScriptElement;
 const giscusOrigin = new URL(script.src).origin;
+
+function formatError(message: string) {
+  return `[giscus] An error occurred. Error message: "${message}".`;
+}
 
 // Set up iframeResizer
 declare let iFrameResize: (options: Record<string, unknown>) => void;
@@ -18,18 +23,19 @@ loadScript('https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeRe
 // Set up iframe src URL and params
 const url = new URL(location.href);
 let session = url.searchParams.get('giscus');
+const savedSession = localStorage.getItem(GISCUS_SESSION_KEY);
 
 if (session) {
-  localStorage.setItem('giscus-session', JSON.stringify(session));
+  localStorage.setItem(GISCUS_SESSION_KEY, JSON.stringify(session));
   url.searchParams.delete('giscus');
   history.replaceState(undefined, document.title, url.toString());
 } else {
   try {
-    session = JSON.parse(localStorage.getItem('giscus-session')) || '';
+    session = JSON.parse(savedSession) || '';
   } catch (e) {
     session = '';
-    localStorage.removeItem('giscus-session');
-    console.error(e);
+    localStorage.removeItem(GISCUS_SESSION_KEY);
+    console.warn(`${formatError(e?.message)} Session has been cleared.`);
   }
 }
 
@@ -100,3 +106,32 @@ if (!existingContainer) {
   while (existingContainer.firstChild) existingContainer.firstChild.remove();
   existingContainer.appendChild(iframeElement);
 }
+const suggestion = `Please consider reporting this error at https://github.com/laymonage/giscus/issues/new.`;
+
+// Listen to error messages
+window.addEventListener('message', (event) => {
+  if (event.origin !== giscusOrigin) return;
+
+  const { data } = event;
+  if (!(typeof data === 'object' && data?.giscus?.error)) return;
+
+  const message: string = data.giscus.error;
+
+  if (message.includes('Bad credentials')) {
+    // Might be because token is expired or other causes
+    if (localStorage.getItem(GISCUS_SESSION_KEY) !== null) {
+      localStorage.removeItem(GISCUS_SESSION_KEY);
+      console.warn(`${formatError(message)} Session has been cleared.`);
+
+      iframeElement.contentWindow.location.reload();
+    } else if (!savedSession) {
+      console.error(`${formatError(message)} No session is stored initially. ${suggestion}`);
+    }
+  } else if (message.includes('Discussion not found')) {
+    console.warn(
+      `[giscus] ${message}. A new discussion will be created if a comment/reaction is submitted.`,
+    );
+  } else {
+    console.error(`${formatError(message)} ${suggestion}`);
+  }
+});

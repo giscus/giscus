@@ -12,6 +12,7 @@ interface IGiscusProps {
   number?: number;
   reactionsEnabled: boolean;
   onDiscussionCreateRequest?: () => Promise<string>;
+  onError?: (message: string) => void;
 }
 
 export default function Giscus({
@@ -20,6 +21,7 @@ export default function Giscus({
   number,
   reactionsEnabled,
   onDiscussionCreateRequest,
+  onError,
 }: IGiscusProps) {
   const { token } = useContext(AuthContext);
   const query = { repo, term, number };
@@ -107,9 +109,21 @@ export default function Giscus({
   const shouldShowCommentBox = !isLoading && !isLocked && (!error || (isNotFound && !number));
   const shouldCreateDiscussion = isNotFound && !number;
 
+  if (error && onError) {
+    onError(error?.message);
+  }
+
+  const handleDiscussionCreateRequest = async () => {
+    const id = await onDiscussionCreateRequest();
+    // Force revalidate
+    frontMutators.mutate();
+    backMutators.mutate();
+    return id;
+  };
+
   return (
     <div className="w-full color-text-primary">
-      {reactionsEnabled && !isLoading ? (
+      {reactionsEnabled && !isLoading && (shouldCreateDiscussion || !error) ? (
         <div className="flex flex-col justify-center flex-auto mb-3 dmd:mb-1">
           <h4 className="font-semibold text-center">
             {shouldCreateDiscussion && !totalReactionCount ? (
@@ -131,7 +145,7 @@ export default function Giscus({
               subjectId={backData?.discussion?.id}
               reactionGroups={backData?.discussion?.reactions}
               onReact={updateReactions}
-              onDiscussionCreateRequest={onDiscussionCreateRequest}
+              onDiscussionCreateRequest={handleDiscussionCreateRequest}
             />
           </div>
         </div>
@@ -256,7 +270,7 @@ export default function Giscus({
             discussionId={backData?.discussion?.id}
             context={context}
             onSubmit={backMutators.addNewComment}
-            onDiscussionCreateRequest={onDiscussionCreateRequest}
+            onDiscussionCreateRequest={handleDiscussionCreateRequest}
           />
         </>
       ) : null}

@@ -1,5 +1,5 @@
 import { NextRouter, useRouter } from 'next/router';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Giscus from '../components/Giscus';
 import { AuthContext } from '../lib/context';
 import { useIsMounted } from '../lib/hooks';
@@ -61,6 +61,13 @@ export default function Widget({
       body: `# ${term}\n\n${description || ''}\n\n${origin}`,
     });
 
+  const handleError = useCallback(
+    (message: string) => {
+      window.parent.postMessage({ giscus: { error: message } }, origin);
+    },
+    [origin],
+  );
+
   const ready = (!session || token) && repo && (term || number);
 
   return ready ? (
@@ -71,6 +78,7 @@ export default function Widget({
         number={number}
         reactionsEnabled={reactionsEnabled}
         onDiscussionCreateRequest={handleDiscussionCreateRequest}
+        onError={handleError}
       />
     </AuthContext.Provider>
   ) : null;

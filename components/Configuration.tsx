@@ -1,7 +1,6 @@
 import { CheckIcon, ClippyIcon, SyncIcon, XIcon } from '@primer/octicons-react';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { handleClipboardCopy } from '../lib/adapter';
-import { ThemeContext } from '../lib/context';
 import { useDebounce } from '../lib/hooks';
 import { ICategory } from '../lib/types/adapter';
 import { themeOptions } from '../lib/variables';
@@ -93,7 +92,16 @@ function ClipboardCopy() {
   );
 }
 
-export default function Configuration() {
+interface DirectConfig {
+  theme: string;
+}
+
+interface ConfigurationProps {
+  directConfig: DirectConfig;
+  onDirectConfigChange: (key: keyof DirectConfig, value: DirectConfig[keyof DirectConfig]) => void;
+}
+
+export default function Configuration({ directConfig, onDirectConfigChange }: ConfigurationProps) {
   const [repository, setRepository] = useState('');
   const [repositoryId, setRepositoryId] = useState('');
   const [categoryId, setCategoryId] = useState('');
@@ -101,13 +109,7 @@ export default function Configuration() {
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [mapping, setMapping] = useState('pathname');
   const [term, setTerm] = useState('');
-  const [theme, setTheme] = useState('light');
   const dRepository = useDebounce(repository);
-  const { setTheme: setGlobalTheme } = useContext(ThemeContext);
-
-  useEffect(() => {
-    setGlobalTheme(theme);
-  }, [setGlobalTheme, theme]);
 
   useEffect(() => {
     setError(false);
@@ -273,8 +275,8 @@ export default function Configuration() {
       <select
         name="theme"
         id="theme"
-        value={theme}
-        onChange={(event) => setTheme(event.target.value)}
+        value={directConfig.theme}
+        onChange={(event) => onDirectConfigChange('theme', event.target.value)}
         className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
       >
         {themeOptions.map(({ label, value }) => (
@@ -316,7 +318,7 @@ export default function Configuration() {
             </>
           ) : null}
           <span className="pl-c1">data-theme</span>={'"'}
-          <span className="pl-s">{theme}</span>
+          <span className="pl-s">{directConfig.theme}</span>
           {'"\n        '}
           <span className="pl-c1">crossorigin</span>={'"'}
           <span className="pl-s">anonymous</span>

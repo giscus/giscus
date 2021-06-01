@@ -76,7 +76,9 @@ export default function Giscus({
 
   const updateReactions = useCallback(
     (reaction: Reactions, promise: Promise<unknown>) =>
-      backMutators.updateDiscussion([updateDiscussionReaction(backData, reaction)], promise),
+      backData
+        ? backMutators.updateDiscussion([updateDiscussionReaction(backData, reaction)], promise)
+        : promise.then(() => backMutators.mutate()),
     [backData, backMutators],
   );
 
@@ -85,6 +87,7 @@ export default function Giscus({
     backData?.discussion?.comments?.length -
     frontData?.reduce((prev, g) => prev + g.discussion.comments?.length, 0);
 
+  const totalReactionCount = backData?.discussion?.reactionCount;
   const totalCommentCount = backData?.discussion?.totalCommentCount;
   const totalReplyCount =
     backData?.discussion?.totalReplyCount +
@@ -99,37 +102,43 @@ export default function Giscus({
   const isNotFound = error?.status === 404;
   const isLocked = backData?.discussion?.locked;
 
-  const shouldShowReplyCount = !error && !isNotFound && !isLoading && totalReplyCount > 0;
   const shouldShowBranding = !!backData?.discussion?.url;
+  const shouldShowReplyCount = !error && !isNotFound && !isLoading && totalReplyCount > 0;
   const shouldShowCommentBox = !isLoading && !isLocked && (!error || (isNotFound && !number));
+  const shouldCreateDiscussion = isNotFound && !number;
 
   return (
     <div className="w-full color-text-primary">
-      {reactionsEnabled && backData?.discussion?.id ? (
+      {reactionsEnabled && !isLoading ? (
         <div className="flex flex-col justify-center flex-auto mb-3 dmd:mb-1">
           <h4 className="font-semibold text-center">
-            <a
-              href={backData.discussion.url}
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              className="color-text-primary"
-            >
-              {backData.discussion.reactionCount} reaction
-              {backData.discussion.reactionCount !== 1 ? 's' : ''}
-            </a>
+            {shouldCreateDiscussion && !totalReactionCount ? (
+              '0 reactions'
+            ) : (
+              <a
+                href={backData?.discussion?.url}
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                className="color-text-primary"
+              >
+                {totalReactionCount || 0} reaction
+                {totalReactionCount !== 1 ? 's' : ''}
+              </a>
+            )}
           </h4>
           <div className="flex justify-center flex-auto mt-2 text-sm">
             <ReactButtons
-              subjectId={backData.discussion.id}
-              reactionGroups={backData.discussion.reactions}
+              subjectId={backData?.discussion?.id}
+              reactionGroups={backData?.discussion?.reactions}
               onReact={updateReactions}
+              onDiscussionCreateRequest={onDiscussionCreateRequest}
             />
           </div>
         </div>
       ) : null}
       <div className="flex items-center flex-auto pb-2">
         <h4 className="mr-2 font-semibold">
-          {isNotFound && !number && !totalCommentCount ? (
+          {shouldCreateDiscussion && !totalCommentCount ? (
             '0 comments'
           ) : error && !backData ? (
             `An error occurred${error?.message ? `: ${error.message}` : ''}.`

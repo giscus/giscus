@@ -123,7 +123,9 @@ window.addEventListener('message', (event) => {
       localStorage.removeItem(GISCUS_SESSION_KEY);
       console.warn(`${formatError(message)} Session has been cleared.`);
 
-      iframeElement.src += ''; // Force reload
+      delete params.session;
+      const src = `${giscusOrigin}/widget?${new URLSearchParams(params)}`;
+      iframeElement.src = src; // Force reload
     } else if (!savedSession) {
       console.error(`${formatError(message)} No session is stored initially. ${suggestion}`);
     }

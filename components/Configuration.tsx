@@ -157,47 +157,45 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
           settings tab of the repository.
         </li>
       </ol>
-      <fieldset className="mx-4">
-        <div>
-          <label htmlFor="repository" className="block font-semibold">
-            repository:
-          </label>
-          <input
-            id="repository"
-            value={repository}
-            onChange={(event) => setRepository(event.target.value)}
-            type="text"
-            className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
-            placeholder="owner/repo"
-          />
+      <fieldset>
+        <label htmlFor="repository" className="block font-semibold">
+          repository:
+        </label>
+        <input
+          id="repository"
+          value={repository}
+          onChange={(event) => setRepository(event.target.value)}
+          type="text"
+          className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
+          placeholder="owner/repo"
+        />
 
-          {error || (repositoryId && !categories.length) ? (
-            <>
-              <XIcon className="inline-block ml-2 color-text-danger" />
-              <p className="text-xs color-text-danger">
-                Cannot use giscus in this repository. Make sure all of the above criteria has been
-                met.
-              </p>
-            </>
-          ) : repositoryId && categories.length ? (
-            <>
-              <CheckIcon className="inline-block ml-2 color-text-success" />
-              <p className="text-xs color-text-success">
-                Success! This repository meets all of the above criteria.
-              </p>
-            </>
-          ) : (
-            <>
-              {!error && !repositoryId && dRepository ? (
-                <SyncIcon className="inline-block ml-2 animate-spin" />
-              ) : null}
-              <p className="text-xs color-text-secondary">
-                A <strong>public</strong> GitHub repository. This is where the discussions will be
-                linked to.
-              </p>
-            </>
-          )}
-        </div>
+        {error || (repositoryId && !categories.length) ? (
+          <>
+            <XIcon className="inline-block ml-2 color-text-danger" />
+            <p className="text-xs color-text-danger">
+              Cannot use giscus in this repository. Make sure all of the above criteria has been
+              met.
+            </p>
+          </>
+        ) : repositoryId && categories.length ? (
+          <>
+            <CheckIcon className="inline-block ml-2 color-text-success" />
+            <p className="text-xs color-text-success">
+              Success! This repository meets all of the above criteria.
+            </p>
+          </>
+        ) : (
+          <>
+            {!error && !repositoryId && dRepository ? (
+              <SyncIcon className="inline-block ml-2 animate-spin" />
+            ) : null}
+            <p className="text-xs color-text-secondary">
+              A <strong>public</strong> GitHub repository. This is where the discussions will be
+              linked to.
+            </p>
+          </>
+        )}
       </fieldset>
 
       <h3>Discussion Category</h3>
@@ -224,9 +222,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
 
       <h3>Page ↔️ Discussions Mapping</h3>
       <p>Choose the mapping between the embedding page and the embedded discussion.</p>
-      <fieldset className="mx-4">
+      <fieldset>
         {mappingOptions.map(({ value, label, description }) => (
-          <div key={value} className="flex mt-4 first:mt-0">
+          <div key={value} className="mt-4 first:mt-0 form-checkbox">
             <input
               id={value}
               className="mt-[3.5px]"
@@ -239,24 +237,22 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
                 setMapping(event.target.value);
               }}
             />
-            <div className="w-full ml-2">
-              <label className="cursor-pointer" htmlFor={value}>
-                <strong>{label}</strong>
-                <p className="mb-0 text-xs color-text-secondary">{description}</p>
-              </label>
-              {['specific', 'number'].includes(mapping) && mapping === value ? (
-                <input
-                  id="term"
-                  value={term}
-                  onChange={(event) => setTerm(event.target.value)}
-                  type={mapping === 'number' ? 'number' : 'text'}
-                  className="px-[12px] py-[5px] mt-4 form-control border rounded-md placeholder-gray-500 min-w-[75%] sm:min-w-[50%]"
-                  placeholder={
-                    mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
-                  }
-                />
-              ) : null}
-            </div>
+            <label className="cursor-pointer" htmlFor={value}>
+              <strong>{label}</strong>
+            </label>
+            <p className="mb-0 text-xs color-text-secondary">{description}</p>
+            {['specific', 'number'].includes(mapping) && mapping === value ? (
+              <input
+                id="term"
+                value={term}
+                onChange={(event) => setTerm(event.target.value)}
+                type={mapping === 'number' ? 'number' : 'text'}
+                className="px-[12px] py-[5px] mt-4 form-control border rounded-md placeholder-gray-500 min-w-[75%] sm:min-w-[50%]"
+                placeholder={
+                  mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
+                }
+              />
+            ) : null}
           </div>
         ))}
       </fieldset>

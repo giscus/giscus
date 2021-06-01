@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { SWRConfig, useSWRInfinite } from 'swr';
 import { cleanParams, fetcher } from '../../lib/fetcher';
 import { IComment, IGiscussion, IReply } from '../../lib/types/adapter';
@@ -9,6 +9,7 @@ export function useDiscussions(
   token?: string,
   pagination: PaginationParams = {},
 ) {
+  const [errorStatus, setErrorStatus] = useState(0);
   const urlParams = new URLSearchParams(cleanParams({ ...query, ...pagination }));
 
   const headers = useMemo(() => {
@@ -30,16 +31,27 @@ export function useDiscussions(
     return [`/api/discussions?${params}`, headers];
   };
 
+  const shouldRevalidate = (status: number) => ![403, 404].includes(status);
+
   const { data, size, setSize, error, mutate, isValidating } = useSWRInfinite<IGiscussion>(
     getKey,
     fetcher,
     {
       onErrorRetry: (err, key, config, revalidate, opts) => {
-        if ([403, 404].includes(err?.status)) return;
+        if (!shouldRevalidate(err?.status)) return;
         SWRConfig.default.onErrorRetry(err, key, config, revalidate, opts);
       },
+      revalidateOnMount: shouldRevalidate(errorStatus),
+      revalidateOnFocus: shouldRevalidate(errorStatus),
+      revalidateOnReconnect: shouldRevalidate(errorStatus),
     },
   );
+
+  if (error?.status && error.status !== errorStatus) {
+    setErrorStatus(error.status);
+  } else if (!error?.status && errorStatus) {
+    setErrorStatus(0); // Clear error
+  }
 
   const addNewComment = useCallback(
     (comment: IComment) => {

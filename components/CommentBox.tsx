@@ -62,7 +62,7 @@ export default function CommentBox({
   }, []);
 
   const handleClick = useCallback(async () => {
-    if (isSubmitting) return;
+    if (isSubmitting || (!discussionId && !onDiscussionCreateRequest)) return;
     setIsSubmitting(true);
 
     const id = discussionId ? discussionId : await onDiscussionCreateRequest();

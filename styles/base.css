@@ -327,8 +327,9 @@ img.emoji {
   @apply pl-5 my-[15px] align-middle;
 }
 
-.form-checkbox input[type='checkbox'] {
-  @apply float-left mt-[3px] -ml-5 align-middle;
+.form-checkbox input[type='checkbox'],
+.form-checkbox input[type='radio'] {
+  @apply float-left mt-1 -ml-5 align-middle;
 }
 
 /* Giscus-specific styles */

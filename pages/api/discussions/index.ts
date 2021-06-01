@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getDiscussion } from '../../../services/github/getDiscussion';
 import { adaptDiscussion } from '../../../lib/adapter';
-import { IGiscussion } from '../../../lib/types/adapter';
+import { IError, IGiscussion } from '../../../lib/types/adapter';
 import { createDiscussion } from '../../../services/github/createDiscussion';
 import { GRepositoryDiscussion } from '../../../lib/types/github';
 import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
 
-async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { error: string }>) {
+async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IError>) {
   const params = {
     repo: req.query.repo as string,
     term: req.query.term as string,
@@ -61,7 +61,7 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { err
   res.status(200).json(adapted);
 }
 
-async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | { error: string }>) {
+async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | IError>) {
   const { repo, input } = req.body;
 
   let token: string;

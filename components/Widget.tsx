@@ -45,14 +45,6 @@ export default function Widget({
   const session = getSession(router);
   const origin = (router.query.origin as string) || (isMounted ? location.href : '');
 
-  if (!isFetchingToken && session && !token) {
-    setIsFetchingToken(true);
-    getToken(session).then((token) => {
-      setToken(token);
-      setIsFetchingToken(false);
-    });
-  }
-
   const handleDiscussionCreateRequest = async () =>
     createDiscussion(repo, {
       repositoryId: repoId,
@@ -68,7 +60,18 @@ export default function Widget({
     [origin],
   );
 
-  const ready = (!session || token) && repo && (term || number);
+  if (!isFetchingToken && session && !token) {
+    setIsFetchingToken(true);
+    getToken(session)
+      .then((token) => {
+        setToken(token);
+        setIsFetchingToken(false);
+      })
+      .catch((err) => handleError(err?.message));
+  }
+
+  const ready =
+    router.isReady && (!session || token) && !isFetchingToken && repo && (term || number);
 
   return ready ? (
     <AuthContext.Provider value={{ token, origin }}>

@@ -14,6 +14,7 @@ export default function Home() {
   const repoId = router.query.repoId as string;
   const categoryId = router.query.categoryId as string;
   const description = router.query.description as string;
+  const reactionsEnabled = Boolean(+router.query.reactionsEnabled);
 
   return (
     <>
@@ -29,6 +30,7 @@ export default function Home() {
           repoId={repoId}
           categoryId={categoryId}
           description={description}
+          reactionsEnabled={reactionsEnabled}
         />
       </main>
 

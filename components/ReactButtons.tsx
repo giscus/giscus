@@ -1,5 +1,4 @@
 import { SmileyIcon } from '@primer/octicons-react';
-import Link from 'next/link';
 import { useCallback, useContext, useState } from 'react';
 import { AuthContext, getLoginUrl } from '../lib/context';
 import { useComponentVisible } from '../lib/hooks';
@@ -30,11 +29,9 @@ function PopupInfo({
   if (isLoggedIn) return <>{current || 'Pick your reaction'}</>;
   return (
     <>
-      <Link href={loginUrl}>
-        <a className="color-text-link" target="_top">
-          Sign in
-        </a>
-      </Link>{' '}
+      <a href={loginUrl} className="color-text-link" target="_top">
+        Sign in
+      </a>
       to add your reaction.
     </>
   );

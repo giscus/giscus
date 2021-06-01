@@ -28,6 +28,7 @@
     "swr": "^0.5.4"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^10.2.3",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/node": "^14.14.35",
     "@types/react": "^17.0.3",

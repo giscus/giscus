@@ -10,10 +10,17 @@ interface IGiscusProps {
   repo: string;
   term?: string;
   number?: number;
+  reactionsEnabled: boolean;
   onDiscussionCreateRequest?: () => Promise<string>;
 }
 
-export default function Giscus({ repo, term, number, onDiscussionCreateRequest }: IGiscusProps) {
+export default function Giscus({
+  repo,
+  term,
+  number,
+  reactionsEnabled,
+  onDiscussionCreateRequest,
+}: IGiscusProps) {
   const { token } = useContext(AuthContext);
   const query = { repo, term, number };
 
@@ -98,7 +105,7 @@ export default function Giscus({ repo, term, number, onDiscussionCreateRequest }
 
   return (
     <div className="w-full color-text-primary">
-      {backData?.discussion?.id ? (
+      {reactionsEnabled && backData?.discussion?.id ? (
         <div className="flex flex-col justify-center flex-auto mb-3 dmd:mb-1">
           <h4 className="font-semibold text-center">
             <a

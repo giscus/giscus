@@ -32,6 +32,10 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | { err
 
   const response = await getDiscussion(params, token);
   if ('message' in response) {
+    if (response.message.includes('Bad credentials')) {
+      res.status(403).json({ error: response.message });
+      return;
+    }
     res.status(500).json({ error: response.message });
     return;
   }

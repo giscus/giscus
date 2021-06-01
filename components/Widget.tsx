@@ -13,6 +13,7 @@ interface IWidgetProps {
   repoId: string;
   categoryId: string;
   description?: string;
+  reactionsEnabled?: boolean;
 }
 
 function getSession(router: NextRouter) {
@@ -34,6 +35,7 @@ export default function Widget({
   repoId,
   categoryId,
   description,
+  reactionsEnabled = true,
 }: IWidgetProps) {
   const router = useRouter();
   const isMounted = useIsMounted();
@@ -67,6 +69,7 @@ export default function Widget({
         repo={repo}
         term={term}
         number={number}
+        reactionsEnabled={reactionsEnabled}
         onDiscussionCreateRequest={handleDiscussionCreateRequest}
       />
     </AuthContext.Provider>

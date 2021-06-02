@@ -3,6 +3,24 @@
 To self-host giscus, you need to create a new [GitHub App][app-doc] and deploy
 the web app. You can use this guide as a reference.
 
+- [create a new GitHub App](#create-a-new-github-app)
+  - [Register new GitHub App](#register-new-github-app)
+  - [Identifying and authorizing users](#identifying-and-authorizing-users)
+  - [Post installation](#post-installation)
+  - [Webhook](#webhook)
+  - [Repository permissions](#repository-permissions)
+  - [Organization permissions](#organization-permissions)
+  - [User permissions](#user-permissions)
+  - [Create GitHub App](#create-github-app)
+- [generate a private key](#generate-a-private-key)
+- [generate a client secret](#generate-a-client-secret)
+- [copy App ID and Client ID](#copy-app-id-and-client-id)
+- [install the app](#install-the-app)
+- [deploy giscus](#deploy-giscus)
+  - [As a Next.js application with API routes](#as-a-nextjs-application-with-api-routes)
+  - [As a static website and separate serverless functions](#as-a-static-website-and-separate-serverless-functions)
+- [use the deployed self-hosted giscus](#use-the-deployed-self-hosted-giscus)
+
 ## create a new GitHub App
 
 - Go to the [GitHub App creation page][create-app].

@@ -7,7 +7,7 @@ A comments system powered by [GitHub Discussions][discussions]. Let visitors lea
 - No database needed. All data is stored in GitHub Discussions. :octocat:
 - GitHub themes: light, dark, dark dimmed, and more! 🌗
 - Automatically fetches new comments and edits from GitHub. 🔃
-- Can be self-hosted! 🤳
+- [Can be self-hosted][self-hosting]! 🤳
 
 > **Note:**\
 > giscus is still under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscus may break or change over time.
@@ -19,9 +19,10 @@ When giscus loads, the [GitHub Discussions search API][search-api] is used to fi
 To comment, visitors must authorize the [giscus app][giscus-app] to [post on their behalf][authorization] using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
 
 [giscus]: https://giscus.app
-[repo]: https://github.com/laymonage/giscus
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
+[repo]: https://github.com/laymonage/giscus
+[self-hosting]: https://github.com/laymonage/giscus/blob/main/SELF-HOSTING.md
 [search-api]: https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search
 [giscus-app]: https://github.com/apps/giscus
 [authorization]: https://docs.github.com/en/developers/apps/identifying-and-authorizing-users-for-github-apps

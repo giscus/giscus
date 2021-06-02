@@ -5,14 +5,8 @@ Thanks for considering to contribute!
 GitHub's API for Discussions is currently only available through the GraphQL
 API, which currently requires authentication for all requests. With the way
 giscus works, you'll need to create a GitHub App in order to get it
-running on your machine. This makes contributing to giscus a bit tricky.
-
-For some of giscus' features, you can use your personal access token
-(PAT) to authenticate with GitHub.
-
-I haven't been able to write a thorough guide on this, but you can try to
-figure things out from the code. There are also environment variable examples
-in [`.env.example`][env-example].
+running on your machine. Follow the [self-hosting guide][self-hosting] to get
+it running.
 
 ## Setup
 
@@ -35,7 +29,7 @@ setup.)
 Once you've added the theme file, add the key and name to `themeOptions` in
 [`lib/variables.ts`][variables] so that it shows up in the setup guide.
 
-[env-example]: .env.example
+[self-hosting]: SELF-HOSTING.md
 [next.js]: https://github.com/vercel/next.js
 [themes-dir]: styles/themes
 [variables]: lib/variables.ts

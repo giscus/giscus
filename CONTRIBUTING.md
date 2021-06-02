@@ -1,4 +1,4 @@
-# Contributing
+# contributing
 
 Thanks for considering to contribute!
 
@@ -8,7 +8,7 @@ giscus works, you'll need to create a GitHub App in order to get it
 running on your machine. Follow the [self-hosting guide][self-hosting] to get
 it running.
 
-## Setup
+## setup
 
 This project is built with [Next.js][next.js]. To get started:
 
@@ -18,7 +18,7 @@ This project is built with [Next.js][next.js]. To get started:
 4. `yarn lint`: lint and fix files
 5. `yarn start`: serve the compiled build in production mode
 
-## Creating new themes
+## creating new themes
 
 Create a new file in [`styles/themes`][themes-dir]. The file name (without
 `.css`) will be the theme's key. You can use the other theme files as reference.

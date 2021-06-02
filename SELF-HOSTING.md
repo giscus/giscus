@@ -1,9 +1,9 @@
-# Self-hosting
+# self-hosting
 
 To self-host giscus, you need to create a new [GitHub App][app-doc] and deploy
 the web app. You can use this guide as a reference.
 
-## Creating a new GitHub App
+## create a new GitHub App
 
 - Go to the [GitHub App creation page][create-app].
 
@@ -79,7 +79,7 @@ the web app. You can use this guide as a reference.
 
   - Click the button.
 
-## Generate a private key
+## generate a private key
 
 - \
   ![image](https://user-images.githubusercontent.com/6379424/120403315-29339f80-c36e-11eb-93c1-c63bd588bdb9.png)
@@ -97,7 +97,7 @@ the web app. You can use this guide as a reference.
 
   - The private key will be downloaded to your device.
 
-## Generate a client secret
+## generate a client secret
 
 - \
   ![image](https://user-images.githubusercontent.com/6379424/120403617-bd056b80-c36e-11eb-8f6f-c2063156c0e6.png)
@@ -109,14 +109,14 @@ the web app. You can use this guide as a reference.
 
   - Copy your client secret and store it somewhere safe.
 
-## Copy App ID and Client ID
+## copy App ID and Client ID
 
 - \
   ![image](https://user-images.githubusercontent.com/6379424/120403799-27b6a700-c36f-11eb-9e49-68270f3b4b6a.png)
 
   - Copy the "**App ID**" and "**Client ID**" values and store them somewhere.
 
-## Install the App
+## install the app
 
 - \
   ![image](https://user-images.githubusercontent.com/6379424/120403963-84b25d00-c36f-11eb-9a71-534fac375a08.png)
@@ -141,7 +141,7 @@ the web app. You can use this guide as a reference.
 
   - Click the button.
 
-## Deploying giscus
+## deploy giscus
 
 The [giscus.app][giscus] website is hosted on [Vercel][vercel], but you can
 deploy it anywhere that can run a Next.js application and its serverless
@@ -200,7 +200,7 @@ separately, you'll need to:
     with [`yarn next export`][next-export].
   - Serve the `out` directory, which contains the static website.
 
-### Using the deployed self-hosted giscus
+## use the deployed self-hosted giscus
 
 - You can use the main page of the website to generate the client script
   configurations (e.g. `data-repo-id`, `data-category-id`) just like on

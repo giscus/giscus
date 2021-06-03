@@ -1,4 +1,5 @@
 import { Reactions } from '../../lib/reactions';
+import { GITHUB_GRAPHQL_API_URL } from '../config';
 
 const TOGGLE_REACTION_QUERY = (mode: 'add' | 'remove') => `
   mutation($content: ReactionContent!, $subjectId: ID!) {
@@ -31,7 +32,7 @@ export async function toggleReaction(
   token: string,
   viewerHasReacted: boolean,
 ): Promise<ToggleReactionResponse> {
-  return fetch('/api/graphql', {
+  return fetch(GITHUB_GRAPHQL_API_URL, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,

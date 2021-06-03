@@ -31,7 +31,7 @@ function PopupInfo({
     <>
       <a href={loginUrl} className="color-text-link" target="_top">
         Sign in
-      </a>
+      </a>{' '}
       to add your reaction.
     </>
   );

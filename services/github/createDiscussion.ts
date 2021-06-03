@@ -1,6 +1,5 @@
 import { GCreateDiscussionInput } from '../../lib/types/github';
-
-const GITHUB_API_URL = 'https://api.github.com/graphql';
+import { GITHUB_GRAPHQL_API_URL } from '../config';
 
 const CREATE_DISCUSSION_QUERY = `
   mutation($input: CreateDiscussionInput!) {
@@ -30,7 +29,7 @@ export async function createDiscussion(
   token: string,
   params: CreateDiscussionBody,
 ): Promise<CreateDiscussionResponse> {
-  return fetch(GITHUB_API_URL, {
+  return fetch(GITHUB_GRAPHQL_API_URL, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,

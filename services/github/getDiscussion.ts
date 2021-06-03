@@ -1,8 +1,7 @@
 import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
 import { GUser, GRepositoryDiscussion, GError } from '../../lib/types/github';
 import { parseRepoWithOwner } from '../../lib/utils';
-
-const GITHUB_API_URL = 'https://api.github.com/graphql';
+import { GITHUB_GRAPHQL_API_URL } from '../config';
 
 const DISCUSSION_QUERY = `
   id
@@ -146,11 +145,10 @@ export async function getDiscussion(
   const { repo, term, number, ...pagination } = params;
   const query = `repo:${repo} in:title ${term}`;
   const gql = GET_DISCUSSION_QUERY(number ? 'number' : 'term');
-  return fetch(GITHUB_API_URL, {
+
+  return fetch(GITHUB_GRAPHQL_API_URL, {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+    headers: { Authorization: `Bearer ${token}` },
 
     body: JSON.stringify({
       query: gql,

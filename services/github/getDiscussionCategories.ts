@@ -1,6 +1,5 @@
 import { GDiscussionCategory, GError } from '../../lib/types/github';
-
-const GITHUB_API_URL = 'https://api.github.com/graphql';
+import { GITHUB_GRAPHQL_API_URL } from '../config';
 
 const GET_DISCUSSION_CATEGORIES_QUERY = `
   query($query: String!) {
@@ -43,11 +42,9 @@ export async function getDiscussionCategories(
 ): Promise<GetDiscussionCategoriesResponse | GError> {
   const query = `repo:${params.repo} fork:true`;
 
-  return fetch(GITHUB_API_URL, {
+  return fetch(GITHUB_GRAPHQL_API_URL, {
     method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+    headers: { Authorization: `Bearer ${token}` },
 
     body: JSON.stringify({
       query: GET_DISCUSSION_CATEGORIES_QUERY,

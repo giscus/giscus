@@ -1,4 +1,5 @@
 import { GComment } from '../../lib/types/github';
+import { GITHUB_GRAPHQL_API_URL } from '../config';
 
 const ADD_DISCUSSION_COMMENT_QUERY = `
   mutation($body: String!, $discussionId: ID!) {
@@ -74,7 +75,7 @@ export async function addDiscussionComment(
   params: AddDiscussionCommentBody,
   token: string,
 ): Promise<AddDiscussionCommentResponse> {
-  return fetch('/api/graphql', {
+  return fetch(GITHUB_GRAPHQL_API_URL, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,

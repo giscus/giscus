@@ -1,3 +1,5 @@
+import { GITHUB_GRAPHQL_API_URL } from '../config';
+
 const TOGGLE_UPVOTE_QUERY = (mode: 'Add' | 'Remove') => `
   mutation($upvoteInput: ${mode}UpvoteInput!) {
     toggleUpvote: ${mode.toLowerCase()}Upvote(input: $upvoteInput) {
@@ -26,7 +28,7 @@ export async function toggleUpvote(
   token: string,
   viewerHasUpvoted: boolean,
 ): Promise<ToggleUpvoteResponse> {
-  return fetch('/api/graphql', {
+  return fetch(GITHUB_GRAPHQL_API_URL, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,

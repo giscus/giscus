@@ -1,4 +1,5 @@
 import { GReply } from '../../lib/types/github';
+import { GITHUB_GRAPHQL_API_URL } from '../config';
 
 const ADD_DISCUSSION_REPLY_QUERY = `
   mutation($body: String!, $discussionId: ID!, $replyToId: ID!) {
@@ -49,7 +50,7 @@ export async function addDiscussionReply(
   params: AddDiscussionReplyBody,
   token: string,
 ): Promise<AddDiscussionReplyResponse> {
-  return fetch('/api/graphql', {
+  return fetch(GITHUB_GRAPHQL_API_URL, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,

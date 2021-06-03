@@ -72,7 +72,7 @@ async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | I
     return;
   }
 
-  const response = await createDiscussion(repo, token, { input });
+  const response = await createDiscussion(token, { input });
   const id = response?.data?.createDiscussion?.discussion?.id;
 
   if (!id) {

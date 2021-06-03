@@ -25,7 +25,6 @@ export interface CreateDiscussionResponse {
 }
 
 export async function createDiscussion(
-  repoWithOwner: string,
   token: string,
   params: CreateDiscussionBody,
 ): Promise<CreateDiscussionResponse> {

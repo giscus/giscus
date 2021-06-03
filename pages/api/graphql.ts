@@ -10,7 +10,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     headers: {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
-      'GraphQL-Features': 'discussions_api',
     },
     body: JSON.stringify(req.body),
   }).then((r) => r.json());

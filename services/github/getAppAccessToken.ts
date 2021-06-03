@@ -1,11 +1,7 @@
 import { getJWT } from '../../lib/jwt';
 import { parseRepoWithOwner } from '../../lib/utils';
 
-const GITHUB_API_HOST = 'https://api.github.com';
-const GITHUB_REPO_INSTALLATION_URL = (repoWithOwner: string) =>
-  `${GITHUB_API_HOST}/repos/${repoWithOwner}/installation`;
-const GITHUB_INSTALLATIONS_URL = `${GITHUB_API_HOST}/app/installations`;
-const GITHUB_ACCESS_TOKEN_URL = (id: string) => `${GITHUB_INSTALLATIONS_URL}/${id}/access_tokens`;
+import { GITHUB_REPO_INSTALLATION_URL, GITHUB_ACCESS_TOKEN_URL } from '../config';
 
 interface GResponse {
   token: string;

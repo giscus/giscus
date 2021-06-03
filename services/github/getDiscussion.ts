@@ -150,7 +150,6 @@ export async function getDiscussion(
     method: 'POST',
     headers: {
       Authorization: `Bearer ${token}`,
-      'GraphQL-Features': 'discussions_api',
     },
 
     body: JSON.stringify({

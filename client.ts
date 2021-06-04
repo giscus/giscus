@@ -94,6 +94,21 @@ const iframeAttributes = {
 };
 Object.entries(iframeAttributes).forEach(([key, value]) => iframeElement.setAttribute(key, value));
 
+// Create default style and prepend as <head>'s first child to make override possible.
+const style = document.getElementById('giscus-css') || document.createElement('style');
+style.id = 'giscus-css';
+style.textContent = `
+  .giscus, .giscus-frame {
+    width: 100%;
+  }
+
+  .giscus-frame {
+    border: none;
+    color-scheme: auto;
+  }
+`;
+document.head.prepend(style);
+
 // Insert iframe element
 const existingContainer = document.querySelector('.giscus');
 if (!existingContainer) {

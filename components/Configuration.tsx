@@ -358,24 +358,8 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
       </div>
       <p>
         You can customize the layout using the <code>.giscus</code> and <code>.giscus-frame</code>{' '}
-        selectors. For example, you can add the following rules to your CSS file.
+        selectors.
       </p>
-      <div className="relative highlight highlight-source-css">
-        <pre>
-          .<span className="pl-c1">giscus</span>
-          <span className="pl-kos">,</span> .<span className="pl-c1">giscus-frame</span> {'{\n  '}
-          <span className="pl-c1">width</span>
-          <span className="pl-kos">:</span>{' '}
-          <span className="pl-c1">
-            100<span className="pl-smi">%</span>
-          </span>
-          ;{'\n}\n\n'}.<span className="pl-c1">giscus-frame</span> {'{\n  '}
-          <span className="pl-c1">border</span>
-          <span className="pl-kos">:</span> none;
-          {'\n}'}
-        </pre>
-        <ClipboardCopy />
-      </div>
     </div>
   );
 }

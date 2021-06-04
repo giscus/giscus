@@ -97,16 +97,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
               />
             </Comment>
 
-            <div className="w-full my-8 giscus color-bg-canvas">
-              <style jsx>
-                {`
-                  :global(.giscus-frame) {
-                    width: 100%;
-                    color-scheme: auto;
-                  }
-                `}
-              </style>
-            </div>
+            <div className="w-full my-8 giscus color-bg-canvas" />
             {router.isReady ? (
               <Head>
                 <script
@@ -118,7 +109,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
                   data-term="Welcome to giscus!"
                   data-theme={directConfig.theme}
                   data-reactions-enabled={`${+directConfig.reactionsEnabled}`}
-                ></script>
+                />
               </Head>
             ) : null}
           </>

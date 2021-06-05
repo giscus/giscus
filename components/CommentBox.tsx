@@ -1,7 +1,7 @@
 import { MarkdownIcon } from '@primer/octicons-react';
 import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
 import { adaptComment, adaptReply, handleCommentClick, processCommentBody } from '../lib/adapter';
-import { AuthContext, getLoginUrl } from '../lib/context';
+import { AuthContext } from '../lib/context';
 import { IComment, IReply, IUser } from '../lib/types/adapter';
 import { resizeTextArea } from '../lib/utils';
 import { addDiscussionComment } from '../services/github/addDiscussionComment';
@@ -34,7 +34,7 @@ export default function CommentBox({
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isReplyOpen, setIsReplyOpen] = useState(false);
-  const { token, origin } = useContext(AuthContext);
+  const { token, origin, getLoginUrl } = useContext(AuthContext);
   const loginUrl = getLoginUrl(origin);
   const isReply = !!replyToId;
 

@@ -18,7 +18,7 @@ export const getStaticProps = async () => {
   const contents = readme.split('<!-- configuration -->');
   contents[1] = `${contents[1]}\n## try it out 👇👇👇\n`;
 
-  const token = await getAppAccessToken('laymonage/giscus');
+  const token = await getAppAccessToken('laymonage/giscus').catch(() => '');
   const [contentBefore, contentAfter] = await Promise.all(
     contents.map(async (section) => await renderMarkdown(section, token, 'laymonage/giscus')),
   );

@@ -1,12 +1,31 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 import { useContext } from 'react';
 import Widget from '../components/Widget';
 import { ThemeContext } from '../lib/context';
+import { useIsMounted } from '../lib/hooks';
 
-export default function Home() {
+function popSession(router: NextRouter) {
+  const session = router.query.session as string;
+  if (session) {
+    const query = { ...router.query };
+    delete query.session;
+    const url = { pathname: router.pathname, query };
+    const options = { scroll: false, shallow: true };
+    router.replace(url, undefined, options);
+  }
+  return session || '';
+}
+
+export default function WidgetPage() {
   const router = useRouter();
+  const isMounted = useIsMounted();
   const { theme } = useContext(ThemeContext);
+
+  if (!router.isReady) return null;
+
+  const origin = (router.query.origin as string) || (isMounted ? location.href : '');
+  const session = popSession(router);
 
   const repo = router.query.repo as string;
   const term = router.query.term as string;
@@ -24,6 +43,8 @@ export default function Home() {
 
       <main className="w-full mx-auto" data-theme={theme}>
         <Widget
+          origin={origin}
+          session={session}
           repo={repo}
           term={term}
           number={number}

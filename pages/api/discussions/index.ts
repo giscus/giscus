@@ -11,6 +11,7 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
     repo: req.query.repo as string,
     term: req.query.term as string,
     number: +req.query.number,
+    category: req.query.category as string,
     first: +req.query.first,
     last: +req.query.last,
     after: req.query.after as string,

@@ -9,4 +9,5 @@ export interface DiscussionQuery {
   repo: string;
   term: string;
   number: number;
+  category: string;
 }

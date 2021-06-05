@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import Giscus from '../components/Giscus';
-import { AuthContext, getLoginUrl } from '../lib/context';
+import { AuthContext, ConfigContext, getLoginUrl } from '../lib/context';
 import { createDiscussion } from '../services/giscus/createDiscussion';
 import { getToken } from '../services/giscus/token';
 
@@ -59,14 +59,9 @@ export default function Widget({
 
   return ready ? (
     <AuthContext.Provider value={{ token, origin, getLoginUrl }}>
-      <Giscus
-        repo={repo}
-        term={term}
-        number={number}
-        reactionsEnabled={reactionsEnabled}
-        onDiscussionCreateRequest={handleDiscussionCreateRequest}
-        onError={handleError}
-      />
+      <ConfigContext.Provider value={{ repo, term, number, reactionsEnabled }}>
+        <Giscus onDiscussionCreateRequest={handleDiscussionCreateRequest} onError={handleError} />
+      </ConfigContext.Provider>
     </AuthContext.Provider>
   ) : null;
 }

@@ -1,7 +1,7 @@
 import { NextRouter, useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 import Giscus from '../components/Giscus';
-import { AuthContext } from '../lib/context';
+import { AuthContext, getLoginUrl } from '../lib/context';
 import { useIsMounted } from '../lib/hooks';
 import { createDiscussion } from '../services/giscus/createDiscussion';
 import { getToken } from '../services/giscus/token';
@@ -74,7 +74,7 @@ export default function Widget({
     router.isReady && (!session || token) && !isFetchingToken && repo && (term || number);
 
   return ready ? (
-    <AuthContext.Provider value={{ token, origin }}>
+    <AuthContext.Provider value={{ token, origin, getLoginUrl }}>
       <Giscus
         repo={repo}
         term={term}

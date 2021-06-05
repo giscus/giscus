@@ -1,6 +1,6 @@
 import { SmileyIcon } from '@primer/octicons-react';
 import { useCallback, useContext, useState } from 'react';
-import { AuthContext, getLoginUrl } from '../lib/context';
+import { AuthContext } from '../lib/context';
 import { useComponentVisible } from '../lib/hooks';
 import { IReactionGroups } from '../lib/types/adapter';
 import { Reactions } from '../lib/reactions';
@@ -47,7 +47,7 @@ export default function ReactButtons({
   const [current, setCurrent] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [ref, isOpen, setIsOpen] = useComponentVisible<HTMLDivElement>(false);
-  const { token, origin } = useContext(AuthContext);
+  const { token, origin, getLoginUrl } = useContext(AuthContext);
   const loginUrl = getLoginUrl(origin);
 
   const togglePopover = useCallback(() => setIsOpen(!isOpen), [isOpen, setIsOpen]);

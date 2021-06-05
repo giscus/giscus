@@ -29,6 +29,7 @@ export default function WidgetPage() {
 
   const repo = router.query.repo as string;
   const term = router.query.term as string;
+  const category = router.query.category as string;
   const number = +router.query.number;
   const repoId = router.query.repoId as string;
   const categoryId = router.query.categoryId as string;
@@ -48,6 +49,7 @@ export default function WidgetPage() {
           repo={repo}
           term={term}
           number={number}
+          category={category}
           repoId={repoId}
           categoryId={categoryId}
           description={description}

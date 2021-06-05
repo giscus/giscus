@@ -29,6 +29,7 @@ interface IConfigContext {
   repo: string;
   term: string;
   number: number;
+  category: string;
   reactionsEnabled: boolean;
 }
 
@@ -36,5 +37,6 @@ export const ConfigContext = createContext<IConfigContext>({
   repo: '',
   term: '',
   number: 0,
+  category: '',
   reactionsEnabled: true,
 });

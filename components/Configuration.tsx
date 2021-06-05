@@ -200,32 +200,6 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
         )}
       </fieldset>
 
-      <h3>Discussion Category</h3>
-      <p>
-        Choose the discussion category where new discussions will be created. This is only used for
-        discussion creation and <strong>does not</strong> affect how giscus searches for
-        discussions.
-      </p>
-      <select
-        name="category"
-        id="category"
-        disabled={!categories.length}
-        value={categoryId}
-        onChange={(event) => setCategoryId(event.target.value)}
-        className={`px-[12px] py-[5px] pr-6 min-w-[200px] border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary${
-          !categoryId ? ' color-text-secondary' : ''
-        }`}
-      >
-        <option value="" disabled selected={!categoryId}>
-          {categories.length ? 'Pick a category' : 'No categories found'}
-        </option>
-        {categories.map(({ id, emoji, name }) => (
-          <option key={id} value={id} className="color-text-primary">
-            {emoji} {name}
-          </option>
-        ))}
-      </select>
-
       <h3>Page ↔️ Discussions Mapping</h3>
       <p>Choose the mapping between the embedding page and the embedded discussion.</p>
       <fieldset>
@@ -262,6 +236,32 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
           </div>
         ))}
       </fieldset>
+
+      <h3>Discussion Category</h3>
+      <p>
+        Choose the discussion category where new discussions will be created. This is only used for
+        discussion creation and <strong>does not</strong> affect how giscus searches for
+        discussions.
+      </p>
+      <select
+        name="category"
+        id="category"
+        disabled={!categories.length}
+        value={categoryId}
+        onChange={(event) => setCategoryId(event.target.value)}
+        className={`px-[12px] py-[5px] pr-6 min-w-[200px] border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary${
+          !categoryId ? ' color-text-secondary' : ''
+        }`}
+      >
+        <option value="" disabled selected={!categoryId}>
+          {categories.length ? 'Pick a category' : 'No categories found'}
+        </option>
+        {categories.map(({ id, emoji, name }) => (
+          <option key={id} value={id} className="color-text-primary">
+            {emoji} {name}
+          </option>
+        ))}
+      </select>
 
       <h3>Features</h3>
       <p>Choose whether specific features should be enabled.</p>

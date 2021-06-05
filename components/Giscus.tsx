@@ -1,5 +1,5 @@
 import { useCallback, useContext } from 'react';
-import { AuthContext } from '../lib/context';
+import { AuthContext, ConfigContext } from '../lib/context';
 import { Reactions, updateDiscussionReaction } from '../lib/reactions';
 import { useDiscussions } from '../services/giscus/discussions';
 import Comment from './Comment';
@@ -7,23 +7,13 @@ import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
 
 interface IGiscusProps {
-  repo: string;
-  term?: string;
-  number?: number;
-  reactionsEnabled: boolean;
   onDiscussionCreateRequest?: () => Promise<string>;
   onError?: (message: string) => void;
 }
 
-export default function Giscus({
-  repo,
-  term,
-  number,
-  reactionsEnabled,
-  onDiscussionCreateRequest,
-  onError,
-}: IGiscusProps) {
+export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusProps) {
   const { token } = useContext(AuthContext);
+  const { repo, term, number, reactionsEnabled } = useContext(ConfigContext);
   const query = { repo, term, number };
 
   const backComments = useDiscussions(query, token, { last: 15 });

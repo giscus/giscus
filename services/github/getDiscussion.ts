@@ -142,8 +142,9 @@ export async function getDiscussion(
   params: GetDiscussionParams,
   token: string,
 ): Promise<GetDiscussionResponse | GError> {
-  const { repo, term, number, ...pagination } = params;
-  const query = `repo:${repo} in:title ${term}`;
+  const { repo, term, number, category, ...pagination } = params;
+  const categoryQuery = category ? `category:${JSON.stringify(category)}` : '';
+  const query = `repo:${repo} ${categoryQuery} in:title ${term}`;
   const gql = GET_DISCUSSION_QUERY(number ? 'number' : 'term');
 
   return fetch(GITHUB_GRAPHQL_API_URL, {

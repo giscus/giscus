@@ -24,3 +24,17 @@ interface IThemeContext {
 export const ThemeContext = createContext<IThemeContext>({
   theme: '',
 });
+
+interface IConfigContext {
+  repo: string;
+  term: string;
+  number: number;
+  reactionsEnabled: boolean;
+}
+
+export const ConfigContext = createContext<IConfigContext>({
+  repo: '',
+  term: '',
+  number: 0,
+  reactionsEnabled: true,
+});

@@ -51,6 +51,7 @@ params.theme = attributes.theme;
 params.reactionsEnabled = attributes.reactionsEnabled || '1';
 params.repo = attributes.repo;
 params.repoId = attributes.repoId;
+params.category = attributes.category || '';
 params.categoryId = attributes.categoryId;
 params.description = ogDescriptionMeta ? ogDescriptionMeta.content : '';
 

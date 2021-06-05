@@ -13,8 +13,8 @@ interface IGiscusProps {
 
 export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusProps) {
   const { token } = useContext(AuthContext);
-  const { repo, term, number, reactionsEnabled } = useContext(ConfigContext);
-  const query = { repo, term, number };
+  const { repo, term, number, category, reactionsEnabled } = useContext(ConfigContext);
+  const query = { repo, term, category, number };
 
   const backComments = useDiscussions(query, token, { last: 15 });
   const {

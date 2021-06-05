@@ -10,6 +10,7 @@ interface IWidgetProps {
   repo: string;
   term: string;
   number: number;
+  category: string;
   repoId: string;
   categoryId: string;
   description: string;
@@ -22,6 +23,7 @@ export default function Widget({
   repo,
   term,
   number,
+  category,
   repoId,
   categoryId,
   description,
@@ -59,7 +61,7 @@ export default function Widget({
 
   return ready ? (
     <AuthContext.Provider value={{ token, origin, getLoginUrl }}>
-      <ConfigContext.Provider value={{ repo, term, number, reactionsEnabled }}>
+      <ConfigContext.Provider value={{ repo, term, number, category, reactionsEnabled }}>
         <Giscus onDiscussionCreateRequest={handleDiscussionCreateRequest} onError={handleError} />
       </ConfigContext.Provider>
     </AuthContext.Provider>

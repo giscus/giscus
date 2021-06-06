@@ -276,7 +276,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         onChange={(event) =>
           setConfig((current) => ({
             ...current,
-            category: event.target.selectedOptions[0]?.textContent.substr(3),
+            category: event.target.selectedOptions[0]?.dataset.category,
             categoryId: event.target.value,
           }))
         }
@@ -284,11 +284,11 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           !config.categoryId ? ' color-text-secondary' : ''
         }`}
       >
-        <option value="" disabled selected={!config.categoryId}>
+        <option value="" disabled selected={!config.categoryId} data-category="">
           {categories.length ? 'Pick a category' : 'No categories found'}
         </option>
         {categories.map(({ id, emoji, name }) => (
-          <option key={id} value={id} className="color-text-primary">
+          <option key={id} value={id} className="color-text-primary" data-category={name}>
             {emoji} {name}
           </option>
         ))}

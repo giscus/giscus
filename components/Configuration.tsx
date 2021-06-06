@@ -267,11 +267,24 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
       </fieldset>
 
       <h3>Discussion Category</h3>
-      <p>Choose the discussion category where new discussions will be created.</p>
+      <p>
+        Choose the discussion category where new discussions will be created.{' '}
+        {config.mapping === 'number' ? (
+          <>
+            This feature is not supported if you use the <strong>specific discussion number</strong>{' '}
+            mapping.
+          </>
+        ) : (
+          <>
+            It is recommended to use a category with the <strong>Announcements</strong> type so that
+            new discussions can only be created by maintainers and giscus.
+          </>
+        )}
+      </p>
       <select
         name="category"
         id="category"
-        disabled={!categories.length}
+        disabled={!categories.length || config.mapping === 'number'}
         value={config.categoryId}
         onChange={(event) =>
           setConfig((current) => ({
@@ -285,7 +298,11 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         }`}
       >
         <option value="" disabled selected={!config.categoryId} data-category="">
-          {categories.length ? 'Pick a category' : 'No categories found'}
+          {config.mapping === 'number'
+            ? 'Not supported'
+            : categories.length
+            ? 'Pick a category'
+            : 'No categories found'}
         </option>
         {categories.map(({ id, emoji, name }) => (
           <option key={id} value={id} className="color-text-primary" data-category={name}>
@@ -293,25 +310,24 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           </option>
         ))}
       </select>
-      {config.mapping !== 'number' ? (
-        <div className="form-checkbox">
-          <input
-            type="checkbox"
-            id="useCategory"
-            checked={config.useCategory}
-            value={config.category}
-            onChange={(event) =>
-              setConfig((current) => ({ ...current, useCategory: event.target.checked }))
-            }
-          ></input>
-          <label htmlFor="useCategory">
-            <strong>Only search for discussions in this category</strong>
-          </label>
-          <p className="mb-0 text-xs color-text-secondary">
-            When searching for a matching discussion, giscus will only search in this category.
-          </p>
-        </div>
-      ) : null}
+      <div className="form-checkbox">
+        <input
+          disabled={config.mapping === 'number'}
+          type="checkbox"
+          id="useCategory"
+          checked={config.useCategory}
+          value={config.category}
+          onChange={(event) =>
+            setConfig((current) => ({ ...current, useCategory: event.target.checked }))
+          }
+        ></input>
+        <label htmlFor="useCategory">
+          <strong>Only search for discussions in this category</strong>
+        </label>
+        <p className="mb-0 text-xs color-text-secondary">
+          When searching for a matching discussion, giscus will only search in this category.
+        </p>
+      </div>
 
       <h3>Features</h3>
       <p>Choose whether specific features should be enabled.</p>
@@ -375,23 +391,29 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <span className="pl-c1">data-repo-id</span>={'"'}
           <span className="pl-s">{config.repositoryId || '[ENTER REPO ID HERE]'}</span>
           {'"\n        '}
-          {config.useCategory ? (
+          {config.mapping !== 'number' ? (
             <>
-              <span className="pl-c1">data-category</span>={'"'}
-              <span className="pl-s">{config.category || '[ENTER CATEGORY NAME HERE]'}</span>
+              {config.useCategory ? (
+                <>
+                  <span className="pl-c1">data-category</span>={'"'}
+                  <span className="pl-s">{config.category || '[ENTER CATEGORY NAME HERE]'}</span>
+                  {'"\n        '}
+                </>
+              ) : null}
+              <span className="pl-c1">data-category-id</span>={'"'}
+              <span className="pl-s">{config.categoryId || '[ENTER CATEGORY ID HERE]'}</span>
               {'"\n        '}
             </>
           ) : null}
-          <span className="pl-c1">data-category-id</span>={'"'}
-          <span className="pl-s">{config.categoryId || '[ENTER CATEGORY ID HERE]'}</span>
-          {'"\n        '}
           <span className="pl-c1">data-mapping</span>={'"'}
           <span className="pl-s">{config.mapping}</span>
           {'"\n        '}
           {['specific', 'number'].includes(config.mapping) ? (
             <>
               <span className="pl-c1">data-term</span>={'"'}
-              <span className="pl-s">{config.term || '[ENTER TERM HERE]'}</span>
+              <span className="pl-s">
+                {config.term || `[ENTER ${config.mapping === 'number' ? 'NUMBER' : 'TERM'} HERE]`}
+              </span>
               {'"\n        '}
             </>
           ) : null}

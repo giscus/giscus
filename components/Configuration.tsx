@@ -105,7 +105,9 @@ interface ConfigurationProps {
 export default function Configuration({ directConfig, onDirectConfigChange }: ConfigurationProps) {
   const [repository, setRepository] = useState('');
   const [repositoryId, setRepositoryId] = useState('');
+  const [category, setCategory] = useState('');
   const [categoryId, setCategoryId] = useState('');
+  const [useCategory, setUseCategory] = useState(true);
   const [error, setError] = useState(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [mapping, setMapping] = useState('pathname');
@@ -116,6 +118,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
     setError(false);
     setRepositoryId('');
     setCategoryId('');
+    setCategory('');
     setCategories([]);
     if (dRepository) {
       getCategories(dRepository)
@@ -238,17 +241,16 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
       </fieldset>
 
       <h3>Discussion Category</h3>
-      <p>
-        Choose the discussion category where new discussions will be created. This is only used for
-        discussion creation and <strong>does not</strong> affect how giscus searches for
-        discussions.
-      </p>
+      <p>Choose the discussion category where new discussions will be created.</p>
       <select
         name="category"
         id="category"
         disabled={!categories.length}
         value={categoryId}
-        onChange={(event) => setCategoryId(event.target.value)}
+        onChange={(event) => {
+          setCategoryId(event.target.value);
+          setCategory(event.target.selectedOptions[0]?.textContent.substr(3));
+        }}
         className={`px-[12px] py-[5px] pr-6 min-w-[200px] border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary${
           !categoryId ? ' color-text-secondary' : ''
         }`}
@@ -262,6 +264,23 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
           </option>
         ))}
       </select>
+      {mapping !== 'number' ? (
+        <div className="form-checkbox">
+          <input
+            type="checkbox"
+            id="useCategory"
+            checked={useCategory}
+            value={category}
+            onChange={(event) => setUseCategory(event.target.checked)}
+          ></input>
+          <label htmlFor="useCategory">
+            <strong>Only search for discussions in this category</strong>
+          </label>
+          <p className="mb-0 text-xs color-text-secondary">
+            When searching for a matching discussion, giscus will only search in this category.
+          </p>
+        </div>
+      ) : null}
 
       <h3>Features</h3>
       <p>Choose whether specific features should be enabled.</p>
@@ -325,6 +344,13 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
           <span className="pl-c1">data-repo-id</span>={'"'}
           <span className="pl-s">{repositoryId || '[ENTER REPO ID HERE]'}</span>
           {'"\n        '}
+          {useCategory ? (
+            <>
+              <span className="pl-c1">data-category</span>={'"'}
+              <span className="pl-s">{category || '[ENTER CATEGORY NAME HERE]'}</span>
+              {'"\n        '}
+            </>
+          ) : null}
           <span className="pl-c1">data-category-id</span>={'"'}
           <span className="pl-s">{categoryId || '[ENTER CATEGORY ID HERE]'}</span>
           {'"\n        '}

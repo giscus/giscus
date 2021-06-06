@@ -1,12 +1,41 @@
 import { CheckIcon, ClippyIcon, SyncIcon, XIcon } from '@primer/octicons-react';
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { handleClipboardCopy } from '../lib/adapter';
 import { useDebounce } from '../lib/hooks';
 import { ICategory } from '../lib/types/adapter';
 import { themeOptions } from '../lib/variables';
 import { getCategories } from '../services/giscus/categories';
 
-const mappingOptions = [
+interface IDirectConfig {
+  theme: string;
+  reactionsEnabled: boolean;
+}
+
+interface IConfigurationProps {
+  directConfig: IDirectConfig;
+  onDirectConfigChange: (
+    key: keyof IDirectConfig,
+    value: IDirectConfig[keyof IDirectConfig],
+  ) => void;
+}
+
+type Mapping = 'pathname' | 'url' | 'title' | 'og:title' | 'specific' | 'number';
+
+interface IConfig {
+  repository: string;
+  repositoryId: string;
+  mapping: Mapping;
+  term: string;
+  category: string;
+  categoryId: string;
+  useCategory: boolean;
+}
+
+const mappingOptions: Array<{
+  value: Mapping;
+  label: ReactNode;
+  description: ReactNode;
+}> = [
   {
     value: 'pathname',
     label: (
@@ -92,38 +121,28 @@ function ClipboardCopy() {
   );
 }
 
-interface DirectConfig {
-  theme: string;
-  reactionsEnabled: boolean;
-}
-
-interface ConfigurationProps {
-  directConfig: DirectConfig;
-  onDirectConfigChange: (key: keyof DirectConfig, value: DirectConfig[keyof DirectConfig]) => void;
-}
-
-export default function Configuration({ directConfig, onDirectConfigChange }: ConfigurationProps) {
-  const [repository, setRepository] = useState('');
-  const [repositoryId, setRepositoryId] = useState('');
-  const [category, setCategory] = useState('');
-  const [categoryId, setCategoryId] = useState('');
-  const [useCategory, setUseCategory] = useState(true);
+export default function Configuration({ directConfig, onDirectConfigChange }: IConfigurationProps) {
+  const [config, setConfig] = useState<IConfig>({
+    repository: '',
+    repositoryId: '',
+    mapping: 'pathname',
+    term: '',
+    category: '',
+    categoryId: '',
+    useCategory: true,
+  });
   const [error, setError] = useState(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
-  const [mapping, setMapping] = useState('pathname');
-  const [term, setTerm] = useState('');
-  const dRepository = useDebounce(repository);
+  const dRepository = useDebounce(config.repository);
 
   useEffect(() => {
     setError(false);
-    setRepositoryId('');
-    setCategoryId('');
-    setCategory('');
+    setConfig((current) => ({ ...current, repositoryId: '', category: '', categoryId: '' }));
     setCategories([]);
     if (dRepository) {
       getCategories(dRepository)
         .then(({ repositoryId, categories }) => {
-          setRepositoryId(repositoryId);
+          setConfig((current) => ({ ...current, repositoryId }));
           setCategories(categories);
         })
         .catch(() => {
@@ -168,14 +187,16 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
         </label>
         <input
           id="repository"
-          value={repository}
-          onChange={(event) => setRepository(event.target.value)}
+          value={config.repository}
+          onChange={(event) =>
+            setConfig((current) => ({ ...current, repository: event.target.value }))
+          }
           type="text"
           className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
           placeholder="owner/repo"
         />
 
-        {error || (repositoryId && !categories.length) ? (
+        {error || (config.repositoryId && !categories.length) ? (
           <>
             <XIcon className="inline-block ml-2 color-text-danger" />
             <p className="text-xs color-text-danger">
@@ -183,7 +204,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
               met.
             </p>
           </>
-        ) : repositoryId && categories.length ? (
+        ) : config.repositoryId && categories.length ? (
           <>
             <CheckIcon className="inline-block ml-2 color-text-success" />
             <p className="text-xs color-text-success">
@@ -192,7 +213,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
           </>
         ) : (
           <>
-            {!error && !repositoryId && dRepository ? (
+            {!error && !config.repositoryId && dRepository ? (
               <SyncIcon className="inline-block ml-2 animate-spin" />
             ) : null}
             <p className="text-xs color-text-secondary">
@@ -214,25 +235,30 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
               type="radio"
               name="mapping"
               value={value}
-              checked={mapping === value}
-              onChange={(event) => {
-                setTerm('');
-                setMapping(event.target.value);
-              }}
+              checked={config.mapping === value}
+              onChange={(event) =>
+                setConfig((current) => ({
+                  ...current,
+                  term: '',
+                  mapping: event.target.value as Mapping,
+                }))
+              }
             />
             <label className="cursor-pointer" htmlFor={value}>
               <strong>{label}</strong>
             </label>
             <p className="mb-0 text-xs color-text-secondary">{description}</p>
-            {['specific', 'number'].includes(mapping) && mapping === value ? (
+            {['specific', 'number'].includes(config.mapping) && config.mapping === value ? (
               <input
                 id="term"
-                value={term}
-                onChange={(event) => setTerm(event.target.value)}
-                type={mapping === 'number' ? 'number' : 'text'}
+                value={config.term}
+                onChange={(event) =>
+                  setConfig((current) => ({ ...current, term: event.target.value }))
+                }
+                type={config.mapping === 'number' ? 'number' : 'text'}
                 className="px-[12px] py-[5px] mt-4 form-control border rounded-md placeholder-gray-500 min-w-[75%] sm:min-w-[50%]"
                 placeholder={
-                  mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
+                  config.mapping === 'number' ? 'Enter discussion number here' : 'Enter term here'
                 }
               />
             ) : null}
@@ -246,16 +272,19 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
         name="category"
         id="category"
         disabled={!categories.length}
-        value={categoryId}
-        onChange={(event) => {
-          setCategoryId(event.target.value);
-          setCategory(event.target.selectedOptions[0]?.textContent.substr(3));
-        }}
+        value={config.categoryId}
+        onChange={(event) =>
+          setConfig((current) => ({
+            ...current,
+            category: event.target.selectedOptions[0]?.textContent.substr(3),
+            categoryId: event.target.value,
+          }))
+        }
         className={`px-[12px] py-[5px] pr-6 min-w-[200px] border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary${
-          !categoryId ? ' color-text-secondary' : ''
+          !config.categoryId ? ' color-text-secondary' : ''
         }`}
       >
-        <option value="" disabled selected={!categoryId}>
+        <option value="" disabled selected={!config.categoryId}>
           {categories.length ? 'Pick a category' : 'No categories found'}
         </option>
         {categories.map(({ id, emoji, name }) => (
@@ -264,14 +293,16 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
           </option>
         ))}
       </select>
-      {mapping !== 'number' ? (
+      {config.mapping !== 'number' ? (
         <div className="form-checkbox">
           <input
             type="checkbox"
             id="useCategory"
-            checked={useCategory}
-            value={category}
-            onChange={(event) => setUseCategory(event.target.checked)}
+            checked={config.useCategory}
+            value={config.category}
+            onChange={(event) =>
+              setConfig((current) => ({ ...current, useCategory: event.target.checked }))
+            }
           ></input>
           <label htmlFor="useCategory">
             <strong>Only search for discussions in this category</strong>
@@ -339,28 +370,28 @@ export default function Configuration({ directConfig, onDirectConfigChange }: Co
           <span className="pl-s">https://giscus.app/client.js</span>
           {'"\n        '}
           <span className="pl-c1">data-repo</span>={'"'}
-          <span className="pl-s">{repository || '[ENTER REPO HERE]'}</span>
+          <span className="pl-s">{config.repository || '[ENTER REPO HERE]'}</span>
           {'"\n        '}
           <span className="pl-c1">data-repo-id</span>={'"'}
-          <span className="pl-s">{repositoryId || '[ENTER REPO ID HERE]'}</span>
+          <span className="pl-s">{config.repositoryId || '[ENTER REPO ID HERE]'}</span>
           {'"\n        '}
-          {useCategory ? (
+          {config.useCategory ? (
             <>
               <span className="pl-c1">data-category</span>={'"'}
-              <span className="pl-s">{category || '[ENTER CATEGORY NAME HERE]'}</span>
+              <span className="pl-s">{config.category || '[ENTER CATEGORY NAME HERE]'}</span>
               {'"\n        '}
             </>
           ) : null}
           <span className="pl-c1">data-category-id</span>={'"'}
-          <span className="pl-s">{categoryId || '[ENTER CATEGORY ID HERE]'}</span>
+          <span className="pl-s">{config.categoryId || '[ENTER CATEGORY ID HERE]'}</span>
           {'"\n        '}
           <span className="pl-c1">data-mapping</span>={'"'}
-          <span className="pl-s">{mapping}</span>
+          <span className="pl-s">{config.mapping}</span>
           {'"\n        '}
-          {['specific', 'number'].includes(mapping) ? (
+          {['specific', 'number'].includes(config.mapping) ? (
             <>
               <span className="pl-c1">data-term</span>={'"'}
-              <span className="pl-s">{term || '[ENTER TERM HERE]'}</span>
+              <span className="pl-s">{config.term || '[ENTER TERM HERE]'}</span>
               {'"\n        '}
             </>
           ) : null}

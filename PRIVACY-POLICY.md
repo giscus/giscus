@@ -21,7 +21,6 @@ Topics:
 - [Changes to our privacy policy](#changes-to-our-privacy-policy)
 - [How to contact us](#how-to-contact-us)
 - [How to contact the appropriate authorities](#how-to-contact-the-appropriate-authorities)
-  rights?](#what-are-your-data-protection-rights)
 
 ## What data do we collect?
 

@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Giscus from '../components/Giscus';
 import { AuthContext, ConfigContext, getLoginUrl } from '../lib/context';
 import { createDiscussion } from '../services/giscus/createDiscussion';
@@ -30,7 +30,6 @@ export default function Widget({
   reactionsEnabled,
 }: IWidgetProps) {
   const [token, setToken] = useState('');
-  const [isFetchingToken, setIsFetchingToken] = useState(false);
 
   const handleDiscussionCreateRequest = async () =>
     createDiscussion(repo, {
@@ -47,17 +46,15 @@ export default function Widget({
     [origin],
   );
 
-  if (!isFetchingToken && session && !token) {
-    setIsFetchingToken(true);
-    getToken(session)
-      .then((token) => {
-        setToken(token);
-        setIsFetchingToken(false);
-      })
-      .catch((err) => handleError(err?.message));
-  }
+  useEffect(() => {
+    if (session && !token) {
+      getToken(session)
+        .then(setToken)
+        .catch((err) => handleError(err?.message));
+    }
+  }, [handleError, session, token]);
 
-  const ready = (!session || token) && !isFetchingToken && repo && (term || number);
+  const ready = (!session || token) && repo && (term || number);
 
   return ready ? (
     <AuthContext.Provider value={{ token, origin, getLoginUrl }}>

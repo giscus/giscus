@@ -12,6 +12,6 @@ export const themeOptions = [
   { label: 'GitHub Light', value: 'light' },
   { label: 'GitHub Dark', value: 'dark' },
   { label: 'GitHub Dark Dimmed', value: 'dark_dimmed' },
-  { label: 'Transparent', value: 'transparent' },
+  { label: 'Transparent Dark', value: 'transparent_light' },
   { label: 'Preferred color scheme', value: 'preferred_color_scheme' },
 ];

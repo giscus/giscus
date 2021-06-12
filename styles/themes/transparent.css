@@ -2,17 +2,19 @@
 
 /*
 
+Modified from GitHub's dark theme in primer/primitives.
+
 MIT License
 Copyright (c) 2018 GitHub Inc.
 https://github.com/primer/primitives/blob/main/LICENSE
 
 */
 
-[data-theme='dark'] {
+[data-theme='transparent'] {
   color-scheme: dark;
 }
 
-[data-theme='dark'] {
+[data-theme='transparent'] {
   --color-scale-black: #010409;
   --color-scale-white: #f0f6fc;
   --color-scale-gray-0: #f0f6fc;

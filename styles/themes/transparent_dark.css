@@ -10,11 +10,11 @@ https://github.com/primer/primitives/blob/main/LICENSE
 
 */
 
-[data-theme='transparent'] {
+[data-theme='transparent_dark'] {
   color-scheme: dark;
 }
 
-[data-theme='transparent'] {
+[data-theme='transparent_dark'] {
   --color-scale-black: #010409;
   --color-scale-white: #f0f6fc;
   --color-scale-gray-0: #f0f6fc;
@@ -814,6 +814,6 @@ https://github.com/primer/primitives/blob/main/LICENSE
   --color-calendar-halloween-graph-day-L4-bg: transparent;
 }
 
-[data-theme='transparent'] .pagination-loader-container {
+[data-theme='transparent_dark'] .pagination-loader-container {
   background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
 }

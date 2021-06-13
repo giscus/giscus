@@ -35,6 +35,13 @@ If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and addi
 
 If you've previously used other systems that utilize GitHub Issues (e.g. [utterances][utterances], [gitalk][gitalk]), you can [convert the existing issues into discussions][convert]. After the conversion, just make sure that the mapping between the discussion titles and the pages are correct, then giscus will automatically use the discussions.
 
+## sites using giscus
+
+- [laymonage.com][laymonage-website]
+- [Stats and R][statsandr]
+- [Tech Debt Burndown Podcast][techdebtburndown]
+- [**and many more!**][giscus-topic]
+
 ## contributing
 
 See [CONTRIBUTING.md][contributing]
@@ -45,4 +52,7 @@ See [CONTRIBUTING.md][contributing]
 [utterances]: https://github.com/utterance/utterances
 [gitalk]: https://github.com/gitalk/gitalk
 [convert]: https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion
+[laymonage-website]: https://laymonage.com/posts/giscus
+[statsandr]: https://statsandr.com
+[techdebtburndown]: https://techdebtburndown.com
 [contributing]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md

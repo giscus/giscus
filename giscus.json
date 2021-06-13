@@ -1,0 +1,10 @@
+{
+  "origins": [
+    "https://giscus.app",
+    "https://giscus.vercel.app"
+  ],
+  "originsRegex": [
+    "https:\/\/giscus-git-([A-z]|-)*laymonage\\.vercel\\.app",
+    "http:\/\/localhost:[0-9]+"
+  ]
+}

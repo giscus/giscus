@@ -142,7 +142,11 @@ export async function getDiscussion(
   params: GetDiscussionParams,
   token: string,
 ): Promise<GetDiscussionResponse | GError> {
-  const { repo, term, number, category, ...pagination } = params;
+  const { repo: repoWithOwner, term, number, category, ...pagination } = params;
+
+  // Force repo to lowercase to prevent GitHub's bug when using category in query.
+  // https://github.com/laymonage/giscus/issues/118
+  const repo = repoWithOwner.toLowerCase();
   const categoryQuery = category ? `category:${JSON.stringify(category)}` : '';
   const query = `repo:${repo} ${categoryQuery} in:title ${term}`;
   const gql = GET_DISCUSSION_QUERY(number ? 'number' : 'term');

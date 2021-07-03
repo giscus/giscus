@@ -41,7 +41,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<ICategories | IE
     discussionCategories: { nodes },
   } = repository;
   const categories = nodes.map(({ emojiHTML, ...rest }) => ({
-    emoji: emojiHTML?.match(/">(.*?)<\/g-emoji/)[1] || '',
+    emoji: emojiHTML?.match(/">(.*?)<\/g-emoji/)?.[1] || '',
     ...rest,
   }));
 

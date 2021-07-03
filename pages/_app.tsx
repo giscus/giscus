@@ -23,10 +23,18 @@ const meta = {
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [theme, setTheme] = useState(router.query.theme as string);
+  const [, rerender] = useState({});
 
   useEffect(() => {
     setTheme(router.query.theme as string);
-  }, [router]);
+  }, [router.query.theme]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const listener = () => rerender({});
+    mediaQuery.addEventListener('change', listener);
+    return () => mediaQuery.removeEventListener('change', listener);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme: getTheme(theme), setTheme }}>

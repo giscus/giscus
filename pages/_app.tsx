@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
     const listener = () => rerender({});
     mediaQuery.addEventListener('change', listener);
     return () => mediaQuery.removeEventListener('change', listener);
-  }, [theme]);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme: getTheme(theme), setTheme }}>

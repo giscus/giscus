@@ -2,13 +2,15 @@ import differenceInMonths from 'date-fns/differenceInMonths';
 import differenceInYears from 'date-fns/differenceInYears';
 import format from 'date-fns/format';
 import formatDistanceStrict from 'date-fns/formatDistanceStrict';
+import { Theme } from './variables';
 
-export function getTheme(theme: string) {
-  if (!theme) theme = 'light';
+export function getTheme(theme: string): Theme {
   if (theme === 'preferred_color_scheme') {
-    theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
-  return theme;
+  if (!theme) return 'light';
+  if (theme in Theme) return theme as Theme;
+  return 'custom';
 }
 
 export function getOriginHost(origin: string) {

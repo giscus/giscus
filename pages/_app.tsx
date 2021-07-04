@@ -30,8 +30,11 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => mediaQuery.removeEventListener('change', listener);
   }, []);
 
+  const resolvedTheme = getTheme(theme);
+  const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
+
   return (
-    <ThemeContext.Provider value={{ theme: getTheme(theme), setTheme }}>
+    <ThemeContext.Provider value={{ theme: resolvedTheme, setTheme }}>
       <Head>
         <title>{meta.title}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -46,7 +49,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        <link rel="stylesheet" crossOrigin="anonymous" href={`/themes/${getTheme(theme)}.css`} />
+        <link rel="stylesheet" crossOrigin="anonymous" href={themeUrl} />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

@@ -24,7 +24,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
     <div className="relative gsc-reply">
       <div className="w-[2px] flex-shrink-0 absolute left-[30px] h-full top-0 gsc-tl-line" />
       <div className={`flex py-2 pl-4 ${hidden ? 'items-center' : ''}`}>
-        <div className="z-10 flex-shrink-0">
+        <div className="z-10 flex-shrink-0 gsc-reply-author-avatar">
           <a
             rel="nofollow noopener noreferrer"
             target="_blank"
@@ -42,8 +42,8 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
         </div>
         <div className="w-full min-w-0 ml-2">
           {!hidden ? (
-            <div className="flex">
-              <h3 className="flex items-start flex-auto">
+            <div className="flex gsc-reply-header">
+              <h3 className="flex items-start flex-auto gsc-reply-author">
                 <a
                   rel="nofollow noopener noreferrer"
                   target="_blank"
@@ -77,7 +77,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
               <div className="flex pr-4">
                 {reply.lastEditedAt ? (
                   <button
-                    className="hidden mr-2 sm:inline-block color-text-secondary"
+                    className="hidden mr-2 sm:inline-block color-text-secondary gsc-reply-edited"
                     title={`Last edited at ${formatDate(reply.lastEditedAt)}`}
                   >
                     edited
@@ -99,7 +99,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
             </div>
           ) : null}
           <div
-            className={`w-full pr-4 markdown ${!hidden ? 'pb-2' : ''}`}
+            className={`w-full pr-4 markdown gsc-reply-content ${!hidden ? 'pb-2' : ''}`}
             onClick={handleCommentClick}
             dangerouslySetInnerHTML={
               hidden ? undefined : { __html: processCommentBody(reply.bodyHTML) }
@@ -110,7 +110,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
             </em>
           </div>
           {!hidden ? (
-            <div className="flex content-center mr-4">
+            <div className="flex content-center mr-4 gsc-reply-reactions">
               <ReactButtons
                 reactionGroups={reply.reactions}
                 subjectId={reply.id}

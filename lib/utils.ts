@@ -11,6 +11,14 @@ export function getTheme(theme: string) {
   return theme;
 }
 
+export function getOriginHost(origin: string) {
+  try {
+    return new URL(origin).origin;
+  } catch (err) {
+    return '';
+  }
+}
+
 export function formatDate(dt: string) {
   return format(new Date(dt), 'LLL d, y, p O');
 }

@@ -31,6 +31,10 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 
 If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
 
+## advanced usage
+
+You can add additional configurations (e.g. allowing specific origins) by following the [advanced usage guide][advanced-usage].
+
 ## migrating
 
 If you've previously used other systems that utilize GitHub Issues (e.g. [utterances][utterances], [gitalk][gitalk]), you can [convert the existing issues into discussions][convert]. After the conversion, just make sure that the mapping between the discussion titles and the pages are correct, then giscus will automatically use the discussions.
@@ -49,6 +53,7 @@ See [CONTRIBUTING.md][contributing]
 [repo]: https://github.com/laymonage/giscus
 [giscus-topic]: https://github.com/topics/giscus
 [topic-howto]: https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics
+[advanced-usage]: https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md
 [utterances]: https://github.com/utterance/utterances
 [gitalk]: https://github.com/gitalk/gitalk
 [convert]: https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion

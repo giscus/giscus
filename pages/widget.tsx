@@ -1,40 +1,51 @@
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import Widget from '../components/Widget';
 import { ThemeContext } from '../lib/context';
-import { useIsMounted } from '../lib/hooks';
 
-export default function WidgetPage() {
-  const router = useRouter();
-  const isMounted = useIsMounted();
+export async function getServerSideProps({ query }: GetServerSidePropsContext) {
+  const origin = (query.origin as string) || '';
+  const session = (query.session as string) || '';
+  const repo = (query.repo as string) || '';
+  const term = (query.term as string) || '';
+  const category = (query.category as string) || '';
+  const number = +query.number || 0;
+  const repoId = (query.repoId as string) || '';
+  const categoryId = (query.categoryId as string) || '';
+  const description = (query.description as string) || '';
+  const reactionsEnabled = Boolean(+query.reactionsEnabled);
+
+  return {
+    props: {
+      origin,
+      session,
+      repo,
+      term,
+      category,
+      number,
+      repoId,
+      categoryId,
+      description,
+      reactionsEnabled,
+    },
+  };
+}
+
+export default function WidgetPage({
+  origin,
+  session,
+  repo,
+  term,
+  number,
+  category,
+  repoId,
+  categoryId,
+  description,
+  reactionsEnabled,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  const resolvedOrigin = origin || (typeof location === 'undefined' ? '' : location.href);
   const { theme } = useContext(ThemeContext);
-  const [session, setSession] = useState('');
-
-  const origin = (router.query.origin as string) || (isMounted ? location.href : '');
-
-  useEffect(() => {
-    if (router.query.session && !session) {
-      const { session: querySession, ...query } = router.query;
-      setSession(querySession as string);
-
-      const url = { pathname: router.pathname, query };
-      const options = { scroll: false, shallow: true };
-
-      router.replace(url, undefined, options);
-    }
-  }, [router, session]);
-
-  if (!router.isReady || (router.query.session && !session)) return null;
-
-  const repo = router.query.repo as string;
-  const term = router.query.term as string;
-  const category = router.query.category as string;
-  const number = +router.query.number;
-  const repoId = router.query.repoId as string;
-  const categoryId = router.query.categoryId as string;
-  const description = router.query.description as string;
-  const reactionsEnabled = Boolean(+router.query.reactionsEnabled);
 
   return (
     <>
@@ -44,7 +55,7 @@ export default function WidgetPage() {
 
       <main className="w-full mx-auto" data-theme={theme}>
         <Widget
-          origin={origin}
+          origin={resolvedOrigin}
           session={session}
           repo={repo}
           term={term}

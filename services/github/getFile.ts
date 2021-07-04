@@ -37,7 +37,7 @@ export async function getFile(repoWithOwner: string, path: string, token?: strin
     );
   }
 
-  return atob(data.content);
+  return Buffer.from(data.content, 'base64').toString();
 }
 
 export async function getJSONFile<T>(

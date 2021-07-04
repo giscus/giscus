@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useState } from 'react';
 import { handleClipboardCopy } from '../lib/adapter';
 import { useDebounce } from '../lib/hooks';
 import { ICategory } from '../lib/types/adapter';
-import { themeOptions } from '../lib/variables';
+import { Theme } from '../lib/variables';
 import { getCategories } from '../services/giscus/categories';
 
 interface IDirectConfig {
@@ -366,7 +366,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         onChange={(event) => onDirectConfigChange('theme', event.target.value)}
         className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
       >
-        {themeOptions.map(({ label, value }) => (
+        {Object.entries(Theme).map(([value, label]) => (
           <option key={value} value={value}>
             {label}
           </option>

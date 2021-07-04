@@ -23,6 +23,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState('');
   const [, rerender] = useState({});
 
+  const resolvedTheme = getTheme(theme);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const listener = () => rerender({});
@@ -30,8 +32,20 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => mediaQuery.removeEventListener('change', listener);
   }, []);
 
-  const resolvedTheme = getTheme(theme);
-  const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
+  useEffect(() => {
+    const link =
+      document.querySelector<HTMLLinkElement>('link#giscus-theme') ||
+      document.createElement('link');
+
+    const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
+
+    link.id = 'giscus-theme';
+    link.rel = 'stylesheet';
+    link.crossOrigin = 'anonymous';
+    link.href = themeUrl;
+
+    document.head.appendChild(link);
+  }, [resolvedTheme, theme]);
 
   return (
     <ThemeContext.Provider value={{ theme: resolvedTheme, setTheme }}>
@@ -49,7 +63,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />
-        <link rel="stylesheet" crossOrigin="anonymous" href={themeUrl} />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

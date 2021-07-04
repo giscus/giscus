@@ -108,9 +108,9 @@ export default function ReactButtons({
   return (
     <>
       {variant !== 'groupsOnly' ? (
-        <div ref={ref} className="relative">
+        <div ref={ref} className="relative gsc-reactions-menu">
           <button
-            className={`px-3 py-[3px] Link--secondary${
+            className={`px-3 py-[3px] Link--secondary gsc-reactions-button${
               variant !== 'popoverOnly'
                 ? ' mb-1 dmd:mb-4 border rounded-md color-bg-tertiary color-border-primary'
                 : ''
@@ -122,7 +122,7 @@ export default function ReactButtons({
           <div
             className={`absolute ${isOpen ? 'visible scale-100' : 'invisible scale-50'} ${
               variant === 'popoverOnly' ? 'popover-only right-0' : 'popover'
-            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] color-text-secondary color-bg-overlay border rounded top-10 color-border-primary`}
+            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] color-text-secondary color-bg-overlay border rounded top-10 color-border-primary gsc-reactions-popover`}
           >
             <p className="m-2">
               <PopupInfo
@@ -162,7 +162,7 @@ export default function ReactButtons({
       ) : null}
 
       {variant !== 'popoverOnly' ? (
-        <div className="flex flex-wrap">{directReactionButtons}</div>
+        <div className="flex flex-wrap gsc-direct-reaction-buttons">{directReactionButtons}</div>
       ) : null}
     </>
   );

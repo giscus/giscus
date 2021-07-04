@@ -114,8 +114,8 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
   return (
     <div className="w-full color-text-primary">
       {reactionsEnabled && !isLoading && (shouldCreateDiscussion || !error) ? (
-        <div className="flex flex-col justify-center flex-auto mb-4">
-          <h4 className="font-semibold text-center">
+        <div className="flex flex-col justify-center flex-auto mb-4 gsc-reactions">
+          <h4 className="font-semibold text-center gsc-reactions-count">
             {shouldCreateDiscussion && !totalReactionCount ? (
               '0 reactions'
             ) : (
@@ -140,8 +140,8 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
           </div>
         </div>
       ) : null}
-      <div className="flex items-center flex-auto pb-2">
-        <h4 className="mr-2 font-semibold">
+      <div className="flex items-center flex-auto pb-2 gsc-header">
+        <h4 className="mr-2 font-semibold gsc-comments-count">
           {shouldCreateDiscussion && !totalCommentCount ? (
             '0 comments'
           ) : error && !backData ? (
@@ -161,10 +161,10 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
         </h4>
         {shouldShowReplyCount ? (
           <>
-            <h4 className="mr-2 font-semibold">·</h4>
-            <h4 className="mr-2">{`${Number.isNaN(totalReplyCount) ? 0 : totalReplyCount}${
-              numHidden > 0 ? '+' : ''
-            } repl${totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
+            <h4 className="mr-2 font-semibold gsc-comments-count-separator">·</h4>
+            <h4 className="mr-2 gsc-replies-count">{`${
+              Number.isNaN(totalReplyCount) ? 0 : totalReplyCount
+            }${numHidden > 0 ? '+' : ''} repl${totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
           </>
         ) : null}
         {shouldShowBranding ? (

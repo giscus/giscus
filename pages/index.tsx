@@ -1,6 +1,5 @@
 import { readFileSync } from 'fs';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import { join } from 'path';
 import Comment from '../components/Comment';
 import { Reactions } from '../lib/reactions';
@@ -41,7 +40,6 @@ type DirectConfigHandler = ComponentProps<typeof Configuration>['onDirectConfigC
 
 export default function Home({ contentBefore, contentAfter }: HomeProps) {
   const isMounted = useIsMounted();
-  const router = useRouter();
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
     theme: 'light',
@@ -98,20 +96,18 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
             </Comment>
 
             <div className="w-full my-8 giscus color-bg-canvas" />
-            {router.isReady ? (
-              <Head>
-                <script
-                  src="/client.js"
-                  data-repo="laymonage/giscus"
-                  data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
-                  data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
-                  data-mapping="specific"
-                  data-term="Welcome to giscus!"
-                  data-theme={directConfig.theme}
-                  data-reactions-enabled={`${+directConfig.reactionsEnabled}`}
-                />
-              </Head>
-            ) : null}
+            <Head>
+              <script
+                src="/client.js"
+                data-repo="laymonage/giscus"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
+                data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
+                data-mapping="specific"
+                data-term="Welcome to giscus!"
+                data-theme={directConfig.theme}
+                data-reactions-enabled={`${+directConfig.reactionsEnabled}`}
+              />
+            </Head>
           </>
         ) : null}
       </div>

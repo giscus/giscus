@@ -173,6 +173,12 @@ a {
   @apply fill-current;
 }
 
+.flash-error {
+  color: var(--color-alert-error-text);
+  background-image: linear-gradient(var(--color-alert-error-bg), var(--color-alert-error-bg));
+  border-color: var(--color-alert-error-border);
+}
+
 /* Compatibility shim for @primer/css to style GitHub-generated HTML */
 
 .border-0 {
@@ -198,7 +204,7 @@ a {
 }
 
 .btn {
-  @apply relative inline-block whitespace-nowrap align-middle rounded-md border cursor-pointer;
+  @apply relative inline-block align-middle border rounded-md cursor-pointer whitespace-nowrap;
 }
 
 .btn .octicon {
@@ -289,7 +295,7 @@ a {
 }
 
 .email-hidden-reply {
-  @apply whitespace-pre-wrap hidden;
+  @apply hidden whitespace-pre-wrap;
 }
 
 .email-hidden-reply.expanded {
@@ -314,7 +320,7 @@ a {
 }
 
 img.emoji {
-  @apply inline max-w-none align-top;
+  @apply inline align-top max-w-none;
   background-color: initial;
 }
 

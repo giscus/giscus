@@ -2,7 +2,15 @@ import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import { useContext, useEffect } from 'react';
 import Widget from '../components/Widget';
+import { assertOrigin } from '../lib/config';
 import { ThemeContext } from '../lib/context';
+import { decodeState } from '../lib/oauth/state';
+import { getOriginHost } from '../lib/utils';
+import { env } from '../lib/variables';
+import { getAppAccessToken } from '../services/github/getAppAccessToken';
+import { getRepoConfig } from '../services/github/getConfig';
+
+type ErrorType = 'ORIGIN' | null;
 
 export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   const origin = (query.origin as string) || '';
@@ -16,6 +24,18 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   const description = (query.description as string) || '';
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
   const theme = (query.theme as string) || '';
+  const originHost = getOriginHost(origin);
+  let error: ErrorType = null;
+
+  const { encryption_password } = env;
+  const token = await decodeState(session, encryption_password)
+    .catch(() => getAppAccessToken(repo))
+    .catch(() => '');
+
+  const repoConfig = await getRepoConfig(repo, token);
+  if (!assertOrigin(originHost, repoConfig)) {
+    error = 'ORIGIN';
+  }
 
   return {
     props: {
@@ -30,6 +50,8 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       description,
       reactionsEnabled,
       theme,
+      originHost,
+      error,
     },
   };
 }
@@ -46,6 +68,8 @@ export default function WidgetPage({
   description,
   reactionsEnabled,
   theme,
+  originHost,
+  error,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const resolvedOrigin = origin || (typeof location === 'undefined' ? '' : location.href);
   const { theme: resolvedTheme, setTheme } = useContext(ThemeContext);
@@ -59,18 +83,30 @@ export default function WidgetPage({
       </Head>
 
       <main className="w-full mx-auto" data-theme={resolvedTheme}>
-        <Widget
-          origin={resolvedOrigin}
-          session={session}
-          repo={repo}
-          term={term}
-          number={number}
-          category={category}
-          repoId={repoId}
-          categoryId={categoryId}
-          description={description}
-          reactionsEnabled={reactionsEnabled}
-        />
+        {error ? (
+          <div className="px-4 py-5 text-sm border rounded-md flash-error">
+            Origin <code>{originHost}</code> is not allowed by{' '}
+            <span className="font-semibold">{repo}</span>. If you own the repository, include{' '}
+            <code>{originHost}</code> in the allowed origins list in{' '}
+            <code>
+              <a href={`https://github.com/${repo}/blob/HEAD/giscus.json`}>giscus.json</a>
+            </code>
+            .
+          </div>
+        ) : (
+          <Widget
+            origin={resolvedOrigin}
+            session={session}
+            repo={repo}
+            term={term}
+            number={number}
+            category={category}
+            repoId={repoId}
+            categoryId={categoryId}
+            description={description}
+            reactionsEnabled={reactionsEnabled}
+          />
+        )}
       </main>
 
       <script

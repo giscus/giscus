@@ -1,6 +1,6 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import Widget from '../components/Widget';
 import { ThemeContext } from '../lib/context';
 
@@ -15,6 +15,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   const categoryId = (query.categoryId as string) || '';
   const description = (query.description as string) || '';
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
+  const theme = (query.theme as string) || '';
 
   return {
     props: {
@@ -28,6 +29,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       categoryId,
       description,
       reactionsEnabled,
+      theme,
     },
   };
 }
@@ -43,9 +45,12 @@ export default function WidgetPage({
   categoryId,
   description,
   reactionsEnabled,
+  theme,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const resolvedOrigin = origin || (typeof location === 'undefined' ? '' : location.href);
-  const { theme } = useContext(ThemeContext);
+  const { theme: resolvedTheme, setTheme } = useContext(ThemeContext);
+
+  useEffect(() => setTheme(theme), [setTheme, theme]);
 
   return (
     <>
@@ -53,7 +58,7 @@ export default function WidgetPage({
         <base target="_top" />
       </Head>
 
-      <main className="w-full mx-auto" data-theme={theme}>
+      <main className="w-full mx-auto" data-theme={resolvedTheme}>
         <Widget
           origin={resolvedOrigin}
           session={session}

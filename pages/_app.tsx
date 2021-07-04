@@ -8,7 +8,6 @@ import '../styles/base.css';
 import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 import { getTheme } from '../lib/utils';
@@ -21,13 +20,8 @@ const meta = {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-  const [theme, setTheme] = useState(router.query.theme as string);
+  const [theme, setTheme] = useState('');
   const [, rerender] = useState({});
-
-  useEffect(() => {
-    setTheme(router.query.theme as string);
-  }, [router.query.theme]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');

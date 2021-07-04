@@ -51,7 +51,7 @@ Example `giscus.json`:
 ```json
 {
   "origins": ["https://giscus.app"],
-  "originsRegex": ["http://localhost:[0-9]+"]
+  "originsRegex": ["http:\/\/localhost:[0-9]+"]
 }
 ```
 

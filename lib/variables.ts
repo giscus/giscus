@@ -15,6 +15,7 @@ export const Theme = {
   dark_high_contrast: 'GitHub Dark High Contrast',
   transparent_dark: 'Transparent Dark',
   preferred_color_scheme: 'Preferred color scheme',
+  custom: 'Custom (experimental)',
 } as const;
 
 export type Theme = keyof typeof Theme;

@@ -8,6 +8,7 @@ import { getCategories } from '../services/giscus/categories';
 
 interface IDirectConfig {
   theme: string;
+  themeUrl: string;
   reactionsEnabled: boolean;
 }
 
@@ -373,6 +374,27 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         ))}
       </select>
 
+      {directConfig.theme === 'custom' ? (
+        <fieldset className="mt-4">
+          <label htmlFor="themeUrl" className="block font-semibold">
+            URL to theme CSS file:
+          </label>
+          <input
+            id="themeUrl"
+            value={directConfig.themeUrl}
+            onChange={(event) => onDirectConfigChange('themeUrl', event.target.value)}
+            type="text"
+            className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
+            placeholder="https://giscus.app/themes/custom_example.css"
+          />
+
+          <p className="text-xs color-text-danger">
+            Warning: loading external CSS may be unsafe. Make sure you trust the author and provider
+            of the CSS file.
+          </p>
+        </fieldset>
+      ) : null}
+
       <h3>Enable giscus</h3>
       <p>
         Add the following <code>{'<script>'}</code> tag to your {`website's`} template where you
@@ -421,7 +443,11 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <span className="pl-s">{Number(directConfig.reactionsEnabled)}</span>
           {'"\n        '}
           <span className="pl-c1">data-theme</span>={'"'}
-          <span className="pl-s">{directConfig.theme}</span>
+          <span className="pl-s">
+            {directConfig.theme === 'custom'
+              ? directConfig.themeUrl || '[ENTER THEME CSS URL HERE]'
+              : directConfig.theme}
+          </span>
           {'"\n        '}
           <span className="pl-c1">crossorigin</span>={'"'}
           <span className="pl-s">anonymous</span>

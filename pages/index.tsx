@@ -6,7 +6,7 @@ import { Reactions } from '../lib/reactions';
 import { IComment, IReactionGroups } from '../lib/types/adapter';
 import { renderMarkdown } from '../services/github/markdown';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
-import { useIsMounted } from '../lib/hooks';
+import { useDebounce, useIsMounted } from '../lib/hooks';
 import Configuration from '../components/Configuration';
 import { ComponentProps, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
@@ -43,15 +43,18 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
     theme: 'light',
+    themeUrl: '',
     reactionsEnabled: true,
   });
+  const themeUrl = useDebounce(directConfig.themeUrl);
+  const resolvedTheme = directConfig.theme === 'custom' ? themeUrl : directConfig.theme;
 
   const handleDirectConfigChange: DirectConfigHandler = (key, value) =>
     setDirectConfig({ ...directConfig, [key]: value });
 
   useEffect(() => {
-    setTheme(directConfig.theme);
-  }, [setTheme, directConfig.theme]);
+    setTheme(resolvedTheme);
+  }, [setTheme, resolvedTheme]);
 
   const comment: IComment = {
     author: {
@@ -104,7 +107,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
                 data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
                 data-mapping="specific"
                 data-term="Welcome to giscus!"
-                data-theme={directConfig.theme}
+                data-theme={resolvedTheme}
                 data-reactions-enabled={`${+directConfig.reactionsEnabled}`}
               />
             </Head>

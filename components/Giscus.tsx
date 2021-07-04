@@ -114,7 +114,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
   return (
     <div className="w-full color-text-primary">
       {reactionsEnabled && !isLoading && (shouldCreateDiscussion || !error) ? (
-        <div className="flex flex-col justify-center flex-auto mb-3 dmd:mb-1">
+        <div className="flex flex-col justify-center flex-auto mb-4">
           <h4 className="font-semibold text-center">
             {shouldCreateDiscussion && !totalReactionCount ? (
               '0 reactions'

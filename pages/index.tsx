@@ -83,7 +83,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
   };
 
   return (
-    <main className="w-full min-h-screen color-bg-canvas" data-theme={theme}>
+    <main className="w-full min-h-screen gsc-homepage-bg" data-theme={theme}>
       <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
         {isMounted ? (
           <>
@@ -98,7 +98,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
               />
             </Comment>
 
-            <div className="w-full my-8 giscus color-bg-canvas" />
+            <div className="w-full my-8 giscus" />
             <Head>
               <script
                 src="/client.js"

@@ -817,3 +817,22 @@ https://github.com/primer/primitives/blob/main/LICENSE
 [data-theme='transparent_dark'] .pagination-loader-container {
   background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
 }
+
+.gsc-homepage-bg {
+  background: linear-gradient(135deg, #00468a, #510069, #005c6b);
+  background-size: 600% 600%;
+
+  animation: gradient 30s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

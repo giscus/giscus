@@ -390,6 +390,10 @@ img.emoji {
   height: calc(100% - 16px);
 }
 
+.gsc-homepage-bg {
+  background-color: var(--color-bg-canvas);
+}
+
 .blob-wrapper {
   @apply rounded-b-md;
 }

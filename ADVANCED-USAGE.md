@@ -3,6 +3,12 @@
 This guide highlights advanced usage of giscus through additional
 configurations.
 
+- [`giscus.json`](#giscusjson)
+  - [`origins`](#origins)
+  - [`originsRegex`](#originsregex)
+- [`data-` attributes](#data--attributes)
+  - [`data-theme`](#data-theme)
+
 ## `giscus.json`
 
 Additional configurations can be made by creating a `giscus.json` file at
@@ -55,4 +61,41 @@ Example `giscus.json`:
 }
 ```
 
+## `data-` attributes
+
+Some of the `data-` attributes of the `<script>` tag may be used to further
+customize giscus.
+
+### `data-theme`
+
+Instead of the built-in themes, you can supply a URL to a CSS file as the value
+for the `data-theme` attribute. The URL will be used by giscus to construct a
+`<link rel="stylesheet">` element as the last child of the `<head>` element.
+
+For example, given the following `<script>` tag:
+
+```html
+<script src="https://giscus.app/client.js"
+        data-repo="laymonage/giscus"
+        ...
+        data-theme="https://giscus.app/themes/custom_example.css"
+        ...>
+</script>
+```
+
+then giscus will add the following element:
+
+
+```html
+<link id="giscus-theme" rel="stylesheet" crossorigin="anonymous" href="https://giscus.app/themes/custom_example.css">
+```
+
+Please note that loading an external CSS file **may be unsafe**. Make sure that
+you trust the author and provider of the CSS file. We are not responsible if
+the CSS file that you use opens a security vulnerability to giscus users on
+your website. Make sure that your users are aware of this.
+
+For more details, see [creating new themes][creating-new-themes].
+
 [giscus.json]: giscus.json
+[creating-new-themes]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md#creating-new-themes

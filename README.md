@@ -5,7 +5,7 @@ A comments system powered by [GitHub Discussions][discussions]. Let visitors lea
 - [Open source][repo]. 🌏
 - No tracking, no ads, always free. 📡 🚫
 - No database needed. All data is stored in GitHub Discussions. :octocat:
-- GitHub themes: light, dark, dark dimmed, and more! 🌗
+- Supports [custom themes][creating-custom-themes]! 🌗
 - Automatically fetches new comments and edits from GitHub. 🔃
 - [Can be self-hosted][self-hosting]! 🤳
 
@@ -22,6 +22,7 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/laymonage/giscus
+[creating-custom-themes]: https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md#data-theme
 [self-hosting]: https://github.com/laymonage/giscus/blob/main/SELF-HOSTING.md
 [search-api]: https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search
 [giscus-app]: https://github.com/apps/giscus

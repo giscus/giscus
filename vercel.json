@@ -1,6 +1,6 @@
 {
   "functions": {
-    "pages/**/*.js": {
+    "pages/**/*.ts": {
       "memory": 256
     }
   }

@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "pages/**/*.js": {
+      "memory": 256
+    }
+  }
+}

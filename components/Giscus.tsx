@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AuthContext, ConfigContext } from '../lib/context';
 import { useFrontBackDiscussion } from '../services/giscus/discussions';
 import Comment from './Comment';
@@ -23,9 +23,11 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     ...data
   } = useFrontBackDiscussion(query, token);
 
-  if (data.error && onError) {
-    onError(data.error?.message);
-  }
+  useEffect(() => {
+    if (data.error && onError) {
+      onError(data.error?.message);
+    }
+  }, [data.error, onError]);
 
   const handleDiscussionCreateRequest = async () => {
     const id = await onDiscussionCreateRequest();

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Giscus from '../components/Giscus';
 import { AuthContext, ConfigContext, getLoginUrl } from '../lib/context';
+import { emitData } from '../lib/messages';
 import { createDiscussion } from '../services/giscus/createDiscussion';
 import { getToken } from '../services/giscus/token';
 
@@ -41,7 +42,7 @@ export default function Widget({
 
   const handleError = useCallback(
     (message: string) => {
-      window.parent.postMessage({ giscus: { error: message } }, origin);
+      emitData({ error: message }, origin);
     },
     [origin],
   );

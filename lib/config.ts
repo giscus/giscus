@@ -1,6 +1,6 @@
-import { RepoConfig } from './types/giscus';
+import { IRepoConfig } from './types/giscus';
 
-export function assertOrigin(origin: string, { origins = [], originsRegex = [] }: RepoConfig) {
+export function assertOrigin(origin: string, { origins = [], originsRegex = [] }: IRepoConfig) {
   if (!origins.length && !originsRegex.length) return true;
 
   for (let i = 0; i < origins.length; i++) {

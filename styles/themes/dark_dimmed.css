@@ -8,11 +8,11 @@ https://github.com/primer/primitives/blob/main/LICENSE
 
 */
 
-[data-theme='dark_dimmed'] {
+main {
   color-scheme: dark;
 }
 
-[data-theme='dark_dimmed'] {
+main {
   --color-text-primary: #adbac7;
   --color-text-secondary: #768390;
   --color-text-tertiary: #768390;
@@ -69,9 +69,8 @@ https://github.com/primer/primitives/blob/main/LICENSE
 
   /* Extensions from color-modes.scss */
   --color-upvote-icon-bg: var(--color-scale-blue-8);
-
 }
 
-[data-theme='dark_dimmed'] .pagination-loader-container {
+main .pagination-loader-container {
   background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
 }

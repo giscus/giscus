@@ -19,11 +19,24 @@ const meta = {
     'https://opengraph.githubassets.com/5500584364ff6fde70d120e51f28f33ffe97d8f4661517bba2ab9515d0765857/laymonage/giscus',
 };
 
+function onError() {
+  document.head.removeChild(this);
+}
+
+function onLoad() {
+  const existingLink = document.querySelector<HTMLLinkElement>('link#giscus-theme');
+  if (existingLink) document.head.removeChild(existingLink);
+  this.id = 'giscus-theme';
+  this.removeEventListener('load', onLoad);
+  this.removeEventListener('error', onError);
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState('');
   const [, rerender] = useState({});
 
   const resolvedTheme = getTheme(theme);
+  const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -33,19 +46,17 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   useEffect(() => {
-    const link =
-      document.querySelector<HTMLLinkElement>('link#giscus-theme') ||
-      document.createElement('link');
+    const link = document.createElement('link');
 
-    const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
-
-    link.id = 'giscus-theme';
+    link.id = 'giscus-theme-temp';
     link.rel = 'stylesheet';
     link.crossOrigin = 'anonymous';
     link.href = themeUrl;
+    link.addEventListener('load', onLoad);
+    link.addEventListener('error', onError);
 
     document.head.appendChild(link);
-  }, [resolvedTheme, theme]);
+  }, [themeUrl]);
 
   return (
     <ThemeContext.Provider value={{ theme: resolvedTheme, setTheme }}>

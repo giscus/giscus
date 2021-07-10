@@ -1,12 +1,9 @@
 @import 'github-syntax-dark/lib/github-dark.css';
 
-/*
-
-MIT License
-Copyright (c) 2018 GitHub Inc.
-https://github.com/primer/primitives/blob/main/LICENSE
-
-*/
+/*! MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
 
 main {
   color-scheme: dark;

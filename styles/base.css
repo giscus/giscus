@@ -1,13 +1,9 @@
-/*
-
-This file contains adapted styles from the Primer CSS
-design system, original styles licensed under:
-
-MIT License
-Copyright (c) 2021 GitHub Inc.
-https://github.com/primer/css/blob/main/LICENSE
-
-*/
+/*! This file contains adapted styles from the Primer CSS
+ * design system, original styles licensed under:
+ * MIT License
+ * Copyright (c) 2021 GitHub Inc.
+ * https://github.com/primer/css/blob/main/LICENSE
+ */
 
 * {
   border-color: var(--color-border-primary);
@@ -179,7 +175,7 @@ a {
   border-color: var(--color-alert-error-border);
 }
 
-/* Compatibility shim for @primer/css to style GitHub-generated HTML */
+/*! Compatibility shim for @primer/css to style GitHub-generated HTML */
 
 .border-0 {
   @apply border-none;
@@ -338,7 +334,7 @@ img.emoji {
   @apply float-left mt-1 -ml-5 align-middle;
 }
 
-/* Giscus-specific styles */
+/*! Giscus-specific styles */
 
 .gsc-tl-line {
   background-color: var(--color-border-secondary);

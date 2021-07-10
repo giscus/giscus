@@ -10,11 +10,11 @@ https://github.com/primer/primitives/blob/main/LICENSE
 
 */
 
-[data-theme='transparent_dark'] {
+main {
   color-scheme: dark;
 }
 
-[data-theme='transparent_dark'] {
+main {
   --color-scale-blue-8: #0c2d6b;
   --color-text-primary: #c9d1d9;
   --color-text-secondary: #8b949e;
@@ -73,7 +73,7 @@ https://github.com/primer/primitives/blob/main/LICENSE
   --color-upvote-icon-bg: transparent;
 }
 
-[data-theme='transparent_dark'] .pagination-loader-container {
+main .pagination-loader-container {
   background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
 }
 

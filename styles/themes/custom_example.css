@@ -1,18 +1,10 @@
 @import 'github-syntax-dark/lib/github-dark.css';
 
-/*
-
-Modified from GitHub's Dark Dimmed theme,
-licensed under the MIT License
-
-Copyright (c) 2018 GitHub Inc.
-https://github.com/primer/primitives/blob/main/LICENSE
-
-*/
-
-main {
-  color-scheme: dark;
-}
+/*!
+ * Modified from GitHub's Dark Dimmed theme, licensed under the MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
 
 main {
   --color-text-primary: #adbac7;
@@ -74,6 +66,12 @@ main {
 
 main .pagination-loader-container {
   background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
+}
+
+/*! Custom CSS */
+
+main {
+  color-scheme: dark;
 }
 
 .gsc-reactions-count,

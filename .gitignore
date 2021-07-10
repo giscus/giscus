@@ -41,3 +41,6 @@ public/client.js
 
 # Compiled themes
 public/themes/
+
+# CSS variables purging script (for development)
+styles/themes/purge.py

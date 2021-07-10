@@ -1,4 +1,4 @@
-import { IReactionGroups, IComment } from './adapter';
+import { IReactionGroups } from './adapter';
 
 export interface ITokenRequest {
   session: string;
@@ -24,6 +24,4 @@ export interface IDiscussionData {
   totalCommentCount: number;
   totalReplyCount: number;
   reactions: IReactionGroups;
-  frontComments: IComment[];
-  backComments: IComment[];
 }

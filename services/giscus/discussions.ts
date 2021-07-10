@@ -252,8 +252,6 @@ export function useFrontBackDiscussion(query: DiscussionQuery, token?: string) {
     locked: backData?.discussion?.locked,
     reactions: backData?.discussion?.reactions,
     repository: backData?.discussion?.repository,
-    frontComments,
-    backComments,
     reactionCount,
     totalCommentCount,
     totalReplyCount,

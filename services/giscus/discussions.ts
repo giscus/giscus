@@ -4,6 +4,7 @@ import { cleanParams, fetcher } from '../../lib/fetcher';
 import { Reactions, updateDiscussionReaction } from '../../lib/reactions';
 import { IComment, IGiscussion, IReply } from '../../lib/types/adapter';
 import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
+import { IDiscussionData } from '../../lib/types/giscus';
 
 export function useDiscussion(
   query: DiscussionQuery,
@@ -245,7 +246,7 @@ export function useFrontBackDiscussion(query: DiscussionQuery, token?: string) {
   const isNotFound = error?.status === 404;
   const isLocked = backData?.discussion?.locked;
 
-  const discussion = {
+  const discussion: IDiscussionData = {
     id: backData?.discussion?.id,
     url: backData?.discussion?.url,
     locked: backData?.discussion?.locked,

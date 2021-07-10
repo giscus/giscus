@@ -8,9 +8,8 @@ import '../styles/base.css';
 import '../styles/globals.css';
 
 import type { AppProps } from 'next/app';
-import { useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
-import { getTheme } from '../lib/utils';
+import { useTheme } from '../lib/hooks';
 
 const meta = {
   title: 'giscus',
@@ -19,44 +18,8 @@ const meta = {
     'https://opengraph.githubassets.com/5500584364ff6fde70d120e51f28f33ffe97d8f4661517bba2ab9515d0765857/laymonage/giscus',
 };
 
-function onError() {
-  document.head.removeChild(this);
-}
-
-function onLoad() {
-  const existingLink = document.querySelector<HTMLLinkElement>('link#giscus-theme');
-  if (existingLink) document.head.removeChild(existingLink);
-  this.id = 'giscus-theme';
-  this.removeEventListener('load', onLoad);
-  this.removeEventListener('error', onError);
-}
-
 export default function App({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState('');
-  const [, rerender] = useState({});
-
-  const resolvedTheme = getTheme(theme);
-  const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const listener = () => rerender({});
-    mediaQuery.addEventListener('change', listener);
-    return () => mediaQuery.removeEventListener('change', listener);
-  }, []);
-
-  useEffect(() => {
-    const link = document.createElement('link');
-
-    link.id = 'giscus-theme-temp';
-    link.rel = 'stylesheet';
-    link.crossOrigin = 'anonymous';
-    link.href = themeUrl;
-    link.addEventListener('load', onLoad);
-    link.addEventListener('error', onError);
-
-    document.head.appendChild(link);
-  }, [themeUrl]);
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <ThemeContext.Provider value={{ theme: resolvedTheme, setTheme }}>

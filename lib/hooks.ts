@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, MutableRefObject, Dispatch, SetStateAction } from 'react';
+import { getTheme } from './utils';
 
 export function useComponentVisible<T extends HTMLElement>(initialIsVisible: boolean) {
   const [isComponentVisible, setIsComponentVisible] = useState(initialIsVisible);
@@ -39,4 +40,54 @@ export function useDebounce<T>(value: T, delay = 300) {
   }, [value, delay]);
 
   return debouncedValue;
+}
+
+function onThemeError() {
+  document.head.removeChild(this);
+}
+
+function onThemeLoad() {
+  const existingLink = document.querySelector<HTMLLinkElement>('link#giscus-theme');
+  if (existingLink) document.head.removeChild(existingLink);
+  this.id = 'giscus-theme';
+  this.removeEventListener('load', onThemeLoad);
+  this.removeEventListener('error', onThemeError);
+}
+
+export function useThemeChanger(themeUrl: string) {
+  useEffect(() => {
+    const link = document.createElement('link');
+
+    link.id = 'giscus-theme-temp';
+    link.rel = 'stylesheet';
+    link.crossOrigin = 'anonymous';
+    link.href = themeUrl;
+    link.addEventListener('load', onThemeLoad, { once: true });
+    link.addEventListener('error', onThemeError, { once: true });
+
+    document.head.appendChild(link);
+  }, [themeUrl]);
+}
+
+export function useColorSchemeListener() {
+  const [, rerender] = useState({});
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const listener = () => rerender({});
+    mediaQuery.addEventListener('change', listener);
+    return () => mediaQuery.removeEventListener('change', listener);
+  }, []);
+}
+
+export function useTheme() {
+  const [theme, setTheme] = useState('');
+
+  const resolvedTheme = getTheme(theme);
+  const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
+
+  useThemeChanger(themeUrl);
+  useColorSchemeListener();
+
+  return { theme, resolvedTheme, themeUrl, setTheme };
 }

@@ -1,7 +1,6 @@
-import { useCallback, useContext } from 'react';
+import { useContext } from 'react';
 import { AuthContext, ConfigContext } from '../lib/context';
-import { Reactions, updateDiscussionReaction } from '../lib/reactions';
-import { useDiscussions } from '../services/giscus/discussions';
+import { useFrontBackDiscussion } from '../services/giscus/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
@@ -16,91 +15,16 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
   const { repo, term, number, category, reactionsEnabled } = useContext(ConfigContext);
   const query = { repo, term, category, number };
 
-  const backComments = useDiscussions(query, token, { last: 15 });
   const {
-    data: _backData,
-    isLoading: isBackLoading,
-    mutators: backMutators,
-    error: backError,
-  } = backComments;
+    updateReactions,
+    increaseSize,
+    backMutators,
+    frontMutators,
+    ...data
+  } = useFrontBackDiscussion(query, token);
 
-  const backData = _backData && _backData[_backData.length - 1];
-  const intersectId = backData?.discussion?.comments?.[0]?.id;
-
-  const frontComments = useDiscussions(query, token, { first: 15 });
-  const {
-    data: _frontData,
-    isLoading: isFrontLoading,
-    mutators: frontMutators,
-    size,
-    setSize,
-    error: frontError,
-  } = frontComments;
-
-  const frontData = _frontData?.map((page) => {
-    let foundIntersect = false;
-
-    // We couldn't make use of GitHub API's `before` parameter to prevent
-    // duplicates because that would change our key for SWR. Therefore,
-    // we need to get rid of duplicates manually by removing the comments
-    // that are already in backData.
-    const newData = {
-      ...page,
-      discussion: {
-        ...page?.discussion,
-        comments: page?.discussion?.comments?.filter((comment) => {
-          if (comment.id === intersectId) {
-            foundIntersect = true;
-          }
-          return foundIntersect ? false : true;
-        }),
-      },
-    };
-
-    // Fix the reply count.
-    newData.discussion.totalReplyCount = newData.discussion.comments?.reduce(
-      (prev, c) => prev + c.replyCount,
-      0,
-    );
-
-    return newData;
-  });
-
-  const updateReactions = useCallback(
-    (reaction: Reactions, promise: Promise<unknown>) =>
-      backData
-        ? backMutators.updateDiscussion([updateDiscussionReaction(backData, reaction)], promise)
-        : promise.then(() => backMutators.mutate()),
-    [backData, backMutators],
-  );
-
-  const numHidden =
-    backData?.discussion?.totalCommentCount -
-    backData?.discussion?.comments?.length -
-    frontData?.reduce((prev, g) => prev + g.discussion.comments?.length, 0);
-
-  const totalReactionCount = backData?.discussion?.reactionCount;
-  const totalCommentCount = backData?.discussion?.totalCommentCount;
-  const totalReplyCount =
-    backData?.discussion?.totalReplyCount +
-    frontData?.reduce((prev, g) => prev + g.discussion.totalReplyCount, 0);
-
-  const error = frontError || backError;
-  const context = backData?.discussion?.repository?.nameWithOwner;
-  const needsFrontLoading = backData?.discussion?.pageInfo?.hasPreviousPage;
-
-  const isLoading = (needsFrontLoading && isFrontLoading) || isBackLoading;
-  const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
-  const isNotFound = error?.status === 404;
-  const isLocked = backData?.discussion?.locked;
-
-  const shouldShowBranding = !!backData?.discussion?.url;
-  const shouldShowReplyCount = !error && !isNotFound && !isLoading && totalReplyCount > 0;
-  const shouldShowCommentBox = !isLoading && !isLocked && (!error || (isNotFound && !number));
-  const shouldCreateDiscussion = isNotFound && !number;
-
-  if (error && onError) {
-    onError(error?.message);
+  if (data.error && onError) {
+    onError(data.error?.message);
   }
 
   const handleDiscussionCreateRequest = async () => {
@@ -111,29 +35,38 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     return id;
   };
 
+  const shouldCreateDiscussion = data.isNotFound && !number;
+  const shouldShowBranding = !!data.discussion.url;
+
+  const shouldShowReplyCount =
+    !data.error && !data.isNotFound && !data.isLoading && data.totalReplyCount > 0;
+
+  const shouldShowCommentBox =
+    !data.isLoading && !data.isLocked && (!data.error || (data.isNotFound && !number));
+
   return (
     <div className="w-full color-text-primary">
-      {reactionsEnabled && !isLoading && (shouldCreateDiscussion || !error) ? (
+      {reactionsEnabled && !data.isLoading && (shouldCreateDiscussion || !data.error) ? (
         <div className="flex flex-col justify-center flex-auto mb-4 gsc-reactions">
           <h4 className="font-semibold text-center gsc-reactions-count">
-            {shouldCreateDiscussion && !totalReactionCount ? (
+            {shouldCreateDiscussion && !data.reactionCount ? (
               '0 reactions'
             ) : (
               <a
-                href={backData?.discussion?.url}
+                href={data.discussion.url}
                 target="_blank"
                 rel="noreferrer noopener nofollow"
                 className="color-text-primary"
               >
-                {totalReactionCount || 0} reaction
-                {totalReactionCount !== 1 ? 's' : ''}
+                {data.reactionCount || 0} reaction
+                {data.reactionCount !== 1 ? 's' : ''}
               </a>
             )}
           </h4>
           <div className="flex justify-center flex-auto mt-2 text-sm">
             <ReactButtons
-              subjectId={backData?.discussion?.id}
-              reactionGroups={backData?.discussion?.reactions}
+              subjectId={data.discussion.id}
+              reactionGroups={data.discussion.reactions}
               onReact={updateReactions}
               onDiscussionCreateRequest={handleDiscussionCreateRequest}
             />
@@ -142,20 +75,20 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
       ) : null}
       <div className="flex items-center flex-auto pb-2 gsc-header">
         <h4 className="mr-2 font-semibold gsc-comments-count">
-          {shouldCreateDiscussion && !totalCommentCount ? (
+          {shouldCreateDiscussion && !data.totalCommentCount ? (
             '0 comments'
-          ) : error && !backData ? (
-            `An error occurred${error?.message ? `: ${error.message}` : ''}.`
-          ) : isLoading ? (
+          ) : data.error && !data.backData ? (
+            `An error occurred${data.error?.message ? `: ${data.error.message}` : ''}.`
+          ) : data.isLoading ? (
             'Loading comments...'
           ) : (
             <a
-              href={backData?.discussion?.url}
+              href={data.discussion.url}
               target="_blank"
               rel="noreferrer noopener nofollow"
               className="color-text-primary"
             >
-              {totalCommentCount} comment{totalCommentCount !== 1 ? 's' : ''}
+              {data.totalCommentCount} comment{data.totalCommentCount !== 1 ? 's' : ''}
             </a>
           )}
         </h4>
@@ -163,8 +96,8 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
           <>
             <h4 className="mr-2 font-semibold gsc-comments-count-separator">·</h4>
             <h4 className="mr-2 gsc-replies-count">{`${
-              Number.isNaN(totalReplyCount) ? 0 : totalReplyCount
-            }${numHidden > 0 ? '+' : ''} repl${totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
+              Number.isNaN(data.totalReplyCount) ? 0 : data.totalReplyCount
+            }${data.numHidden > 0 ? '+' : ''} repl${data.totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
           </>
         ) : null}
         {shouldShowBranding ? (
@@ -183,66 +116,64 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
         ) : null}
       </div>
 
-      {!isLoading
-        ? frontData?.map((page) =>
-            page?.discussion?.comments?.map((comment) => (
-              <Comment
-                key={comment.id}
-                comment={comment}
-                onCommentUpdate={frontMutators.updateComment}
-                onReplyUpdate={frontMutators.updateReply}
-                renderReplyBox={
-                  token && !isLocked
-                    ? (viewMore) => (
-                        <CommentBox
-                          discussionId={backData?.discussion?.id}
-                          context={context}
-                          onSubmit={frontMutators.addNewReply}
-                          replyToId={comment.id}
-                          viewer={frontData && frontData[0].viewer}
-                          onReplyOpen={viewMore}
-                        />
-                      )
-                    : undefined
-                }
-              />
-            )),
-          )
+      {!data.isLoading
+        ? data.frontComments.map((comment) => (
+            <Comment
+              key={comment.id}
+              comment={comment}
+              onCommentUpdate={frontMutators.updateComment}
+              onReplyUpdate={frontMutators.updateReply}
+              renderReplyBox={
+                token && !data.isLocked
+                  ? (viewMore) => (
+                      <CommentBox
+                        discussionId={data.discussion.id}
+                        context={repo}
+                        onSubmit={frontMutators.addNewReply}
+                        replyToId={comment.id}
+                        viewer={data.viewer}
+                        onReplyOpen={viewMore}
+                      />
+                    )
+                  : undefined
+              }
+            />
+          ))
         : null}
 
-      {numHidden > 0 ? (
+      {data.numHidden > 0 ? (
         <div className="flex justify-center py-2 my-4 bg-center bg-repeat-x pagination-loader-container">
           <button
             className="flex flex-col items-center px-6 py-2 text-sm border rounded color-bg-primary color-border-primary"
-            onClick={() => setSize(size + 1)}
-            disabled={isLoadingMore}
+            onClick={increaseSize}
+            disabled={data.isLoadingMore}
           >
             <span className="color-text-secondary">
-              {numHidden} hidden item{numHidden !== 1 ? 's' : ''}
+              {data.numHidden} hidden item{data.numHidden !== 1 ? 's' : ''}
             </span>
             <span className="font-semibold color-text-link">
-              {isLoadingMore ? 'Loading' : 'Load more'}...
+              {data.isLoadingMore ? 'Loading' : 'Load more'}...
             </span>
           </button>
         </div>
       ) : null}
 
-      {!isLoading
-        ? backData?.discussion?.comments?.map((comment) => (
+      {!data.isLoading
+        ? data.backComments?.map((comment) => (
             <Comment
               key={comment.id}
               comment={comment}
               onCommentUpdate={backMutators.updateComment}
               onReplyUpdate={backMutators.updateReply}
               renderReplyBox={
-                token && !isLocked
+                token && !data.isLocked
                   ? (viewMore) => (
                       <CommentBox
-                        discussionId={backData?.discussion?.id}
-                        context={context}
+                        discussionId={data.discussion.id}
+                        context={repo}
                         onSubmit={backMutators.addNewReply}
                         replyToId={comment.id}
-                        viewer={backData?.viewer}
+                        viewer={data.viewer}
                         onReplyOpen={viewMore}
                       />
                     )
@@ -256,9 +187,9 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
         <>
           <div className="my-4 text-sm border-t-2 color-border-primary" />
           <CommentBox
-            viewer={backData?.viewer}
-            discussionId={backData?.discussion?.id}
-            context={context}
+            viewer={data.viewer}
+            discussionId={data.discussion.id}
+            context={repo}
             onSubmit={backMutators.addNewComment}
             onDiscussionCreateRequest={handleDiscussionCreateRequest}
           />

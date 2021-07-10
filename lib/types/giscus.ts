@@ -8,7 +8,7 @@ export interface ITokenResponse {
   token: string;
 }
 
-export interface RepoConfig {
+export interface IRepoConfig {
   origins?: string[];
   originsRegex?: string[];
 }

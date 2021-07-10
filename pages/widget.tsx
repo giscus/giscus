@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useContext, useEffect } from 'react';
 import Widget from '../components/Widget';
 import { assertOrigin } from '../lib/config';
-import { ThemeContext } from '../lib/context';
+import { ConfigContext, ThemeContext } from '../lib/context';
 import { decodeState } from '../lib/oauth/state';
 import { getOriginHost } from '../lib/utils';
 import { env } from '../lib/variables';
@@ -94,18 +94,15 @@ export default function WidgetPage({
             .
           </div>
         ) : (
-          <Widget
-            origin={resolvedOrigin}
-            session={session}
-            repo={repo}
-            term={term}
-            number={number}
-            category={category}
-            repoId={repoId}
-            categoryId={categoryId}
-            description={description}
-            reactionsEnabled={reactionsEnabled}
-          />
+          <ConfigContext.Provider value={{ repo, term, number, category, reactionsEnabled }}>
+            <Widget
+              origin={resolvedOrigin}
+              session={session}
+              repoId={repoId}
+              categoryId={categoryId}
+              description={description}
+            />
+          </ConfigContext.Provider>
         )}
       </main>
 

@@ -141,7 +141,7 @@ interface IErrorMessage {
 }
 ```
 
-Following the above `handleMessage` example, that means `giscusData` will be of
+Following the `handleMessage` example above, that means `giscusData` will be of
 type `IErrorMessage`:
 
 ```ts
@@ -165,7 +165,7 @@ interface IMetadataMessage {
 }
 ```
 
-Following the above `handleMessage` example, that means `giscusData` will be of
+Following the `handleMessage` example above, that means `giscusData` will be of
 type `IMetadataMessage`:
 
 ```ts
@@ -174,6 +174,58 @@ if ('discussion' in giscusData) {
   console.log(metadataMessage.discussion);
   console.log(metadataMessage.viewer);
 }
+```
+
+## parent-to-giscus `message` events
+
+The `contentWindow` of giscus' `<iframe>` element also listens to `message`
+events. You can send these events to update giscus based on your page's state.
+For example:
+
+```ts
+function sendMessage<T>(message: T) {
+  const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+  if (!iframe) return;
+  iframe.contentWindow.postMessage({ giscus: message }, location.origin);
+}
+```
+
+The `T` type of the `message` in the above example can be any of the following
+interfaces. For more details of the interfaces, see
+[`lib/types/giscus.ts`][giscus.ts] and the interfaces imported inside that
+module.
+
+### `ISetConfigMessage`
+
+The `ISetConfigMessage` interface lets you change giscus' config on-the-fly
+without having to reload the `<script>` or `<iframe>` elements. All of the
+properties inside the `setConfig` property are optional, which means that
+you can update a specific subset of the config and leave everything else as-is.
+
+```ts
+interface ISetConfigMessage {
+  setConfig: {
+    theme?: string;
+    repo?: string;
+    term?: string;
+    number?: number;
+    category?: string;
+    reactionsEnabled?: boolean;
+    emitMetadata?: boolean;
+  };
+}
+```
+
+Following the `sendMessage` example above, that means `message` will be of
+type `IMetadataMessage`:
+
+```ts
+sendMessage({
+  setConfig: {
+    theme: 'https://giscus.app/themes/custom_example.css',
+    reactionsEnabled: false,
+  }
+});
 ```
 
 [giscus.json]: giscus.json

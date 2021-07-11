@@ -23,6 +23,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   const categoryId = (query.categoryId as string) || '';
   const description = (query.description as string) || '';
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
+  const emitMetadata = Boolean(+query.emitMetadata);
   const theme = (query.theme as string) || '';
   const originHost = getOriginHost(origin);
   let error: ErrorType = null;
@@ -49,6 +50,7 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
       categoryId,
       description,
       reactionsEnabled,
+      emitMetadata,
       theme,
       originHost,
       error,
@@ -67,6 +69,7 @@ export default function WidgetPage({
   categoryId,
   description,
   reactionsEnabled,
+  emitMetadata,
   theme,
   originHost,
   error,
@@ -94,7 +97,9 @@ export default function WidgetPage({
             .
           </div>
         ) : (
-          <ConfigContext.Provider value={{ repo, term, number, category, reactionsEnabled }}>
+          <ConfigContext.Provider
+            value={{ repo, term, number, category, reactionsEnabled, emitMetadata }}
+          >
             <Widget
               origin={resolvedOrigin}
               session={session}

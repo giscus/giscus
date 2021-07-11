@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { AuthContext, ConfigContext } from '../lib/context';
+import { emitData } from '../lib/messages';
 import { useFrontBackDiscussion } from '../services/giscus/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
@@ -11,8 +12,10 @@ interface IGiscusProps {
 }
 
 export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusProps) {
-  const { token } = useContext(AuthContext);
-  const { repo, term, number, category, reactionsEnabled } = useContext(ConfigContext);
+  const { token, origin } = useContext(AuthContext);
+  const { repo, term, number, category, reactionsEnabled, emitMetadata } = useContext(
+    ConfigContext,
+  );
   const query = { repo, term, category, number };
 
   const {
@@ -28,6 +31,11 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
       onError(data.error?.message);
     }
   }, [data.error, onError]);
+
+  useEffect(() => {
+    if (!emitMetadata || !data.discussion.id) return;
+    emitData({ discussion: data.discussion, viewer: data.viewer }, origin);
+  }, [data.discussion, data.viewer, emitMetadata, origin]);
 
   const handleDiscussionCreateRequest = async () => {
     const id = await onDiscussionCreateRequest();

@@ -58,7 +58,7 @@ main {
   --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
   --color-btn-primary-disabled-bg: #94d3a2;
   --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
-  --color-scale-blue-8: #0a3069;
+  --color-scale-blue-1: #b6e3ff;
 
   /* Extensions from color-modes.scss */
   --color-upvote-icon-bg: var(--color-scale-blue-1);

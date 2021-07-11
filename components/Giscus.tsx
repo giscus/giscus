@@ -97,9 +97,9 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
         {shouldShowReplyCount ? (
           <>
             <h4 className="mr-2 font-semibold gsc-comments-count-separator">·</h4>
-            <h4 className="mr-2 gsc-replies-count">{`${
-              Number.isNaN(data.totalReplyCount) ? 0 : data.totalReplyCount
-            }${data.numHidden > 0 ? '+' : ''} repl${data.totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
+            <h4 className="mr-2 gsc-replies-count">{`${data.totalReplyCount}${
+              data.numHidden > 0 ? '+' : ''
+            } repl${data.totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
           </>
         ) : null}
         {shouldShowBranding ? (

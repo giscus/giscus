@@ -235,8 +235,8 @@ export function useFrontBackDiscussion(query: DiscussionQuery, token?: string) {
   const reactionCount = backData?.discussion?.reactionCount;
   const totalCommentCount = backData?.discussion?.totalCommentCount;
   const totalReplyCount =
-    backData?.discussion?.totalReplyCount +
-    frontData?.reduce((prev, g) => prev + g.discussion.totalReplyCount, 0);
+    (backData?.discussion?.totalReplyCount || 0) +
+    (frontData?.reduce((prev, g) => prev + g.discussion.totalReplyCount, 0) || 0);
 
   const error = frontError || backError;
   const needsFrontLoading = backData?.discussion?.pageInfo?.hasPreviousPage;

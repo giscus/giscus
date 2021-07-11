@@ -31,6 +31,7 @@ interface IConfigContext {
   number: number;
   category: string;
   reactionsEnabled: boolean;
+  emitMetadata: boolean;
 }
 
 export const ConfigContext = createContext<IConfigContext>({
@@ -39,4 +40,5 @@ export const ConfigContext = createContext<IConfigContext>({
   number: 0,
   category: '',
   reactionsEnabled: true,
+  emitMetadata: false,
 });

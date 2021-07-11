@@ -43,6 +43,7 @@ If you've previously used other systems that utilize GitHub Issues (e.g. [uttera
 ## sites using giscus
 
 - [laymonage.com][laymonage-website]
+- [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
 - [**and many more!**][giscus-topic]
@@ -59,6 +60,7 @@ See [CONTRIBUTING.md][contributing]
 [gitalk]: https://github.com/gitalk/gitalk
 [convert]: https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion
 [laymonage-website]: https://laymonage.com/posts/giscus
+[os-phil-opp]: https://os.phil-opp.com
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
 [contributing]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md

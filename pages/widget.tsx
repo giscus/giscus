@@ -71,6 +71,7 @@ export default function WidgetPage({
   description,
   reactionsEnabled,
   emitMetadata,
+  theme,
   originHost,
   error,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -107,6 +108,8 @@ export default function WidgetPage({
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
   }, [originHost, setTheme]);
+
+  useEffect(() => setTheme(theme), [setTheme, theme]);
 
   return (
     <>

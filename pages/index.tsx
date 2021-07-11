@@ -1,5 +1,4 @@
 import { readFileSync } from 'fs';
-import Head from 'next/head';
 import { join } from 'path';
 import Comment from '../components/Comment';
 import { Reactions } from '../lib/reactions';
@@ -10,6 +9,8 @@ import { useDebounce, useIsMounted } from '../lib/hooks';
 import Configuration from '../components/Configuration';
 import { ComponentProps, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
+import { sendData } from '../lib/messages';
+import { ISetConfigMessage } from '../lib/types/giscus';
 
 export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
@@ -57,6 +58,34 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
     setTheme(resolvedTheme);
   }, [setTheme, resolvedTheme]);
 
+  useEffect(() => {
+    const data: ISetConfigMessage = {
+      setConfig: {
+        theme: resolvedTheme,
+        reactionsEnabled: directConfig.reactionsEnabled,
+        emitMetadata: directConfig.emitMetadata,
+      },
+    };
+    sendData(data, location.origin);
+  }, [directConfig.emitMetadata, directConfig.reactionsEnabled, resolvedTheme, themeUrl]);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    const attributes = {
+      'data-repo': 'laymonage/giscus',
+      'data-repo-id': 'MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM=',
+      'data-category-id': 'MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1',
+      'data-mapping': 'specific',
+      'data-term': 'Welcome to giscus!',
+      'data-theme': 'light',
+      'data-reactions-enabled': '1',
+      'data-emit-metadata': '0',
+    };
+    script.src = '/client.js';
+    Object.entries(attributes).forEach(([key, value]) => script.setAttribute(key, value));
+    document.body.appendChild(script);
+  }, []);
+
   const comment: IComment = {
     author: {
       avatarUrl: 'https://avatars.githubusercontent.com/in/106117',
@@ -87,34 +116,16 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
     <main className="w-full min-h-screen gsc-homepage-bg" data-theme={theme}>
       <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
         {isMounted ? (
-          <>
-            <Comment comment={comment}>
-              <Configuration
-                directConfig={directConfig}
-                onDirectConfigChange={handleDirectConfigChange}
-              />
-              <div
-                className="p-4 pt-0 markdown"
-                dangerouslySetInnerHTML={{ __html: contentAfter }}
-              />
-            </Comment>
-
-            <div className="w-full my-8 giscus" />
-            <Head>
-              <script
-                src="/client.js"
-                data-repo="laymonage/giscus"
-                data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
-                data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
-                data-mapping="specific"
-                data-term="Welcome to giscus!"
-                data-theme={resolvedTheme}
-                data-reactions-enabled={`${+directConfig.reactionsEnabled}`}
-                data-emit-metadata={`${+directConfig.emitMetadata}`}
-              />
-            </Head>
-          </>
+          <Comment comment={comment}>
+            <Configuration
+              directConfig={directConfig}
+              onDirectConfigChange={handleDirectConfigChange}
+            />
+            <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
+          </Comment>
         ) : null}
+
+        <div className="w-full my-8 giscus" />
       </div>
     </main>
   );

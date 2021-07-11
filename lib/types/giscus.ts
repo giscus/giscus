@@ -30,6 +30,7 @@ export interface IMessage<T> {
   giscus: T;
 }
 
+// giscus-to-parent messages
 export interface IErrorMessage {
   error: string;
 }
@@ -37,4 +38,17 @@ export interface IErrorMessage {
 export interface IMetadataMessage {
   discussion: IDiscussionData;
   viewer: IUser;
+}
+
+// parent-to-giscus messages
+export interface ISetConfigMessage {
+  setConfig: {
+    theme?: string;
+    repo?: string;
+    term?: string;
+    number?: number;
+    category?: string;
+    reactionsEnabled?: boolean;
+    emitMetadata?: boolean;
+  };
 }

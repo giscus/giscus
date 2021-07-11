@@ -10,6 +10,7 @@ interface IDirectConfig {
   theme: string;
   themeUrl: string;
   reactionsEnabled: boolean;
+  emitMetadata: boolean;
 }
 
 interface IConfigurationProps {
@@ -151,6 +152,19 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         });
     }
   }, [dRepository]);
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      const { data } = event;
+      if (!(typeof data === 'object' && data?.giscus?.discussion)) return;
+      console.log(data);
+    };
+
+    if (directConfig.emitMetadata) {
+      window.addEventListener('message', handleMessage);
+    }
+    return () => window.removeEventListener('message', handleMessage);
+  }, [directConfig.emitMetadata]);
 
   return (
     <div className="p-4 pt-0 markdown">
@@ -347,6 +361,23 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           The reactions for the {`discussion's`} main post will be shown before the comments.
         </p>
       </div>
+      <div className="form-checkbox">
+        <input
+          type="checkbox"
+          id="emitMetadata"
+          checked={directConfig.emitMetadata}
+          value={`${+directConfig.emitMetadata}`}
+          onChange={(event) => onDirectConfigChange('emitMetadata', event.target.checked)}
+        ></input>
+        <label htmlFor="emitMetadata">
+          <strong>Emit discussion metadata</strong>
+        </label>
+        <p className="mb-0 text-xs color-text-secondary">
+          Discussion metadata will be sent using <code>window.postMessage()</code> and you can
+          listen to the updates using <code>window.addEventListener({`'message'`}, ...)</code>.
+          Enable this option and open your {`browser's`} console for demonstration.
+        </p>
+      </div>
 
       <h3>Theme</h3>
       <p>
@@ -441,6 +472,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           ) : null}
           <span className="pl-c1">data-reactions-enabled</span>={'"'}
           <span className="pl-s">{Number(directConfig.reactionsEnabled)}</span>
+          {'"\n        '}
+          <span className="pl-c1">data-emit-metadata</span>={'"'}
+          <span className="pl-s">{Number(directConfig.emitMetadata)}</span>
           {'"\n        '}
           <span className="pl-c1">data-theme</span>={'"'}
           <span className="pl-s">

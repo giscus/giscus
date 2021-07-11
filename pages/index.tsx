@@ -45,6 +45,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
     theme: 'light',
     themeUrl: '',
     reactionsEnabled: true,
+    emitMetadata: false,
   });
   const themeUrl = useDebounce(directConfig.themeUrl);
   const resolvedTheme = directConfig.theme === 'custom' ? themeUrl : directConfig.theme;
@@ -109,6 +110,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
                 data-term="Welcome to giscus!"
                 data-theme={resolvedTheme}
                 data-reactions-enabled={`${+directConfig.reactionsEnabled}`}
+                data-emit-metadata={`${+directConfig.emitMetadata}`}
               />
             </Head>
           </>

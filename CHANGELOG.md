@@ -22,6 +22,8 @@ major updates to the project.
 - Minor fixes ([#137](https://github.com/laymonage/giscus/pull/137)).
 - Fix unchanged theme on initial load
   ([#140](https://github.com/laymonage/giscus/pull/140)).
+- Fix `sendMessage` example
+  ([#141](https://github.com/laymonage/giscus/pull/141)).
 
 ## 2021-07-10
 

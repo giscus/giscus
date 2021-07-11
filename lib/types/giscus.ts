@@ -1,4 +1,4 @@
-import { IReactionGroups } from './adapter';
+import { IReactionGroups, IUser } from './adapter';
 
 export interface ITokenRequest {
   session: string;
@@ -24,4 +24,17 @@ export interface IDiscussionData {
   totalCommentCount: number;
   totalReplyCount: number;
   reactions: IReactionGroups;
+}
+
+export interface IMessage<T> {
+  giscus: T;
+}
+
+export interface IErrorMessage {
+  error: string;
+}
+
+export interface IMetadataMessage {
+  discussion: IDiscussionData;
+  viewer: IUser;
 }

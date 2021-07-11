@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { AuthContext, ConfigContext } from '../lib/context';
 import { emitData } from '../lib/messages';
+import { IMetadataMessage } from '../lib/types/giscus';
 import { useFrontBackDiscussion } from '../services/giscus/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
@@ -34,7 +35,11 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
 
   useEffect(() => {
     if (!emitMetadata || !data.discussion.id) return;
-    emitData({ discussion: data.discussion, viewer: data.viewer }, origin);
+    const message: IMetadataMessage = {
+      discussion: data.discussion,
+      viewer: data.viewer,
+    };
+    emitData(message, origin);
   }, [data.discussion, data.viewer, emitMetadata, origin]);
 
   const handleDiscussionCreateRequest = async () => {

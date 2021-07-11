@@ -11,6 +11,8 @@ configurations.
 - [giscus-to-parent `message` events](#giscus-to-parent-message-events)
   - [`IErrorMessage`](#ierrormessage)
   - [`IMetadataMessage`](#imetadatamessage)
+- [parent-to-giscus `message` events](#parent-to-giscus-message-events)
+  - [`ISetConfigMessage`](#isetconfigmessage)
 
 ## `giscus.json`
 

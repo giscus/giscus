@@ -8,6 +8,9 @@ configurations.
   - [`originsRegex`](#originsregex)
 - [`data-` attributes](#data--attributes)
   - [`data-theme`](#data-theme)
+- [giscus-to-parent `message` events](#giscus-to-parent-message-events)
+  - [`IErrorMessage`](#ierrormessage)
+  - [`IMetadataMessage`](#imetadatamessage)
 
 ## `giscus.json`
 
@@ -97,5 +100,82 @@ your website. Make sure that your users are aware of this.
 
 For more details, see [creating new themes][creating-new-themes].
 
+## giscus-to-parent `message` events
+
+There are `message` events emitted by giscus to the parent `window` using
+`window.parent.postMessage()`. You can listen to these events to update your
+page based on giscus' state. For example:
+
+```ts
+function handleMessage(event: MessageEvent) {
+  if (event.origin !== 'https://giscus.app') return;
+  if (!(typeof event.data === 'object' && event.data.giscus)) return;
+
+  const giscusData = event.data.giscus;
+  // Do whatever you want with it, e.g. `console.log(giscusData)`.
+  // You'll need to make sure that `giscusData` contains the message you're
+  // expecting, e.g. by using `if ('discussion' in giscusData)`.
+}
+
+window.addEventListener('message', handleMessage);
+// Some time later...
+window.removeEventListener('message', handleMessage);
+```
+
+The `giscusData` constant in the above example will dynamically contain the
+message data as shown in the following interfaces. For more details of the
+interfaces, see [`lib/types/giscus.ts`][giscus.ts] and the interfaces imported
+inside that module.
+
+### `IErrorMessage`
+
+By default, giscus emits an error message to the parent whenever it encounters
+an error. This is used by the client script to automatically delete invalid or
+expired session data from the parent's `localStorage`. This isn't really useful
+for most users, but you can receive the data if you need it. The message
+interface is specified as the following:
+
+```ts
+interface IErrorMessage {
+  error: string;
+}
+```
+
+Following the above `handleMessage` example, that means `giscusData` will be of
+type `IErrorMessage`:
+
+```ts
+if ('error' in giscusData) {
+  const errorMessage: IErrorMessage = giscusData;
+  console.error(errorMessage.error);
+}
+```
+
+### `IMetadataMessage`
+
+If you enable the "Emit discussion metadata" feature by setting
+`data-emit-metadata="1"` in the `<script>` tag, giscus will periodically emit
+the discussion metadata using the following interface. Note that the data will
+only be emitted if the discussion exists.
+
+```ts
+interface IMetadataMessage {
+  discussion: IDiscussionData;
+  viewer: IUser;
+}
+```
+
+Following the above `handleMessage` example, that means `giscusData` will be of
+type `IMetadataMessage`:
+
+```ts
+if ('discussion' in giscusData) {
+  const metadataMessage: IMetadataMessage = giscusData;
+  console.log(metadataMessage.discussion);
+  console.log(metadataMessage.viewer);
+}
+```
+
 [giscus.json]: giscus.json
 [creating-new-themes]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md#creating-new-themes
+[giscus.ts]: lib/types/giscus.ts

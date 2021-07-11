@@ -373,9 +373,16 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <strong>Emit discussion metadata</strong>
         </label>
         <p className="mb-0 text-xs color-text-secondary">
-          Discussion metadata will be sent using <code>window.postMessage()</code> and you can
-          listen to the updates using <code>window.addEventListener({`'message'`}, ...)</code>.
-          Enable this option and open your {`browser's`} console for demonstration.
+          Discussion metadata will be sent periodically to the parent window. For demonstration,
+          enable this option and open your {`browser's`} console on this page. See{' '}
+          <a
+            href="https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md#imetadatamessage"
+            target="_blank"
+            rel="noreferrer noopener nofollow"
+          >
+            the documentation
+          </a>{' '}
+          for more details.
         </p>
       </div>
 

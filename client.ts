@@ -49,6 +49,7 @@ params.origin = location.href;
 params.session = session;
 params.theme = attributes.theme;
 params.reactionsEnabled = attributes.reactionsEnabled || '1';
+params.emitMetadata = attributes.emitMetadata || '0';
 params.repo = attributes.repo;
 params.repoId = attributes.repoId;
 params.category = attributes.category || '';

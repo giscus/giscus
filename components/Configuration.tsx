@@ -174,8 +174,18 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
       <p>Choose the repository giscus will connect to. Make sure that:</p>
       <ol>
         <li>
-          The <strong>repository is public</strong>, otherwise your visitors will not be able to
-          view the discussion.
+          The{' '}
+          <strong>
+            repository is{' '}
+            <a
+              href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/setting-repository-visibility#making-a-repository-public"
+              target="_blank"
+              rel="noreferrer noopener nofollow"
+            >
+              public
+            </a>
+          </strong>
+          , otherwise your visitors will not be able to view the discussion.
         </li>
         <li>
           The{' '}
@@ -192,8 +202,15 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           , otherwise visitors will not be able to comment and react.
         </li>
         <li>
-          The <strong>Discussions feature is turned on</strong> by enabling it in the settings tab
-          of the repository.
+          The <strong>Discussions feature is turned on</strong> by{' '}
+          <a
+            href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository"
+            target="_blank"
+            rel="noreferrer noopener nofollow"
+          >
+            enabling it for your repository
+          </a>
+          .
         </li>
       </ol>
       <fieldset>

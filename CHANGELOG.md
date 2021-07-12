@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-07-12
+
+### added
+
+- Link to GitHub guides for the repository requirements
+  ([#142](https://github.com/laymonage/giscus/pull/142)).
+
 ## 2021-07-11
 
 ### added

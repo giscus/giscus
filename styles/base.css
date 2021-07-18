@@ -16,69 +16,69 @@ a {
 .color-text-link,
 .Link--primary:hover,
 .Link--secondary:hover {
-  color: var(--color-text-link) !important;
+  color: var(--color-text-link);
 }
 
 .color-bg-primary {
-  background-color: var(--color-bg-primary) !important;
+  background-color: var(--color-bg-primary);
 }
 
 .color-bg-secondary {
-  background-color: var(--color-bg-secondary) !important;
+  background-color: var(--color-bg-secondary);
 }
 
 .color-bg-tertiary {
-  background-color: var(--color-bg-tertiary) !important;
+  background-color: var(--color-bg-tertiary);
 }
 
 .color-bg-canvas {
-  background-color: var(--color-bg-canvas) !important;
+  background-color: var(--color-bg-canvas);
 }
 
 .color-bg-canvas-inset {
-  background-color: var(--color-bg-canvas-inset) !important;
+  background-color: var(--color-bg-canvas-inset);
 }
 
 .color-bg-overlay {
-  background-color: var(--color-bg-overlay) !important;
+  background-color: var(--color-bg-overlay);
 }
 
 .color-bg-info {
-  background-color: var(--color-bg-info) !important;
+  background-color: var(--color-bg-info);
 }
 
 .color-text-primary,
 .Link--primary {
-  color: var(--color-text-primary) !important;
+  color: var(--color-text-primary);
 }
 
 .color-text-secondary,
 .Link--secondary {
-  color: var(--color-text-secondary) !important;
+  color: var(--color-text-secondary);
 }
 
 .color-text-tertiary {
-  color: var(--color-text-tertiary) !important;
+  color: var(--color-text-tertiary);
 }
 
 .color-text-success {
-  color: var(--color-text-success) !important;
+  color: var(--color-text-success);
 }
 
 .color-text-danger {
-  color: var(--color-text-danger) !important;
+  color: var(--color-text-danger);
 }
 
 .color-border-primary {
-  border-color: var(--color-border-primary) !important;
+  border-color: var(--color-border-primary);
 }
 
 .color-border-tertiary {
-  border-color: var(--color-border-tertiary) !important;
+  border-color: var(--color-border-tertiary);
 }
 
 .color-border-info {
-  border-color: var(--color-border-info) !important;
+  border-color: var(--color-border-info);
 }
 
 .form-control {
@@ -101,11 +101,11 @@ a {
 }
 
 .color-label-border {
-  border-color: var(--color-label-border) !important;
+  border-color: var(--color-label-border);
 }
 
 .color-upvote-icon-bg {
-  background-color: var(--color-upvote-icon-bg) !important;
+  background-color: var(--color-upvote-icon-bg);
 }
 
 .color-box-border-info {

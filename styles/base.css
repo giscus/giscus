@@ -399,6 +399,20 @@ img.emoji {
   @apply rounded-t-md;
 }
 
+/* New gsc- tailwind replacement */
+
+.gsc-comment {
+  @apply flex my-4 text-sm;
+}
+
+.gsc-upvotes {
+  @apply flex-shrink-0 mr-2 text-center w-14;
+}
+
+.gsc-upvote-count {
+  @apply overflow-x-hidden overflow-ellipsis text-xs leading-5 min-w-[26px] w-min mx-auto rounded-full;
+}
+
 /* Re-apply overridden tailwind */
 
 .inline-flex {

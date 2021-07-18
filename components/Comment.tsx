@@ -61,34 +61,28 @@ export default function Comment({
   const hidden = comment.deletedAt || comment.isMinimized;
 
   return (
-    <div className="flex my-4 text-sm gsc-comment">
+    <div className="gsc-comment">
       {!comment.isMinimized && onCommentUpdate ? (
-        <div className="flex-shrink-0 mr-2 w-14 gsc-upvotes">
-          <div className="flex flex-col">
-            <button
-              type="button"
-              className={`${comment.viewerHasUpvoted ? 'color-text-link' : 'color-text-secondary'}`}
-              onClick={upvote}
-              disabled={!token || !comment.viewerCanUpvote}
-            >
-              <ArrowUpIcon className="transform hover:translate-y-[-10%] transition-transform ease-in-out duration-150" />
-            </button>
-            <div className="flex justify-center w-full">
-              <div
-                className={`flex flex-row justify-center min-w-[26px] px-2 py-1 rounded-full ${
-                  comment.viewerHasUpvoted
-                    ? 'color-text-link color-upvote-icon-bg'
-                    : 'Counter--secondary'
-                }`}
-              >
-                <div
-                  className="overflow-hidden text-xs"
-                  title={`${comment.upvoteCount} upvote${comment.upvoteCount !== 1 ? 's' : ''}`}
-                >
-                  {comment.upvoteCount}
-                </div>
-              </div>
-            </div>
+        <div className="gsc-upvotes">
+          <button
+            type="button"
+            className={`gsc-upvote-button ${
+              comment.viewerHasUpvoted ? 'color-text-link' : 'color-text-secondary'
+            }`}
+            onClick={upvote}
+            disabled={!token || !comment.viewerCanUpvote}
+          >
+            <ArrowUpIcon className="transform hover:translate-y-[-10%] transition-transform ease-in-out duration-150" />
+          </button>
+          <div
+            className={`gsc-upvote-count ${
+              comment.viewerHasUpvoted
+                ? 'color-text-link color-upvote-icon-bg'
+                : 'Counter--secondary'
+            }`}
+            title={`${comment.upvoteCount} upvote${comment.upvoteCount !== 1 ? 's' : ''}`}
+          >
+            {comment.upvoteCount}
           </div>
         </div>
       ) : null}

@@ -181,6 +181,8 @@ functions.
   GITHUB_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nENTER-KEY-HERE-WITHOUT-LINE-BREAKS\n-----END RSA PRIVATE
   KEY-----"
   ENCRYPTION_PASSWORD=s0m3r4nd0mstr1ngw1thh1gh3ntr0py
+  ORIGINS=["https://giscus.app", "https://giscus.vercel.app"]
+  ORIGINS_REGEX=["http://localhost:[0-9]+"]
   ```
 
 - Install the dependencies.

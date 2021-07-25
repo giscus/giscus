@@ -5,6 +5,7 @@ import { IError, IGiscussion } from '../../../lib/types/adapter';
 import { createDiscussion } from '../../../services/github/createDiscussion';
 import { GRepositoryDiscussion } from '../../../lib/types/github';
 import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
+import { addCorsHeaders } from '../../../lib/cors';
 
 async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IError>) {
   const params = {
@@ -85,6 +86,7 @@ async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | I
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+  addCorsHeaders(req, res);
   if (req.method === 'POST') {
     await post(req, res);
     return;

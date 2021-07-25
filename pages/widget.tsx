@@ -11,8 +11,6 @@ import { env } from '../lib/variables';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { getRepoConfig } from '../services/github/getConfig';
 
-type ErrorType = 'ORIGIN' | null;
-
 export async function getServerSideProps({ query, res }: GetServerSidePropsContext) {
   const origin = (query.origin as string) || '';
   const session = (query.session as string) || '';
@@ -27,7 +25,6 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const emitMetadata = Boolean(+query.emitMetadata);
   const theme = (query.theme as string) || '';
   const originHost = getOriginHost(origin);
-  let error: ErrorType = null;
 
   const { encryption_password } = env;
   const token = await decodeState(session, encryption_password)
@@ -37,7 +34,6 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const repoConfig = await getRepoConfig(repo, token);
 
   if (!assertOrigin(originHost, repoConfig)) {
-    error = 'ORIGIN';
     res.setHeader('Content-Security-Policy', `frame-ancestors 'self';`);
     res.setHeader('X-Frame-Options', 'SAMEORIGIN');
   } else {
@@ -65,7 +61,6 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       emitMetadata,
       theme,
       originHost,
-      error,
     },
   };
 }
@@ -84,7 +79,6 @@ export default function WidgetPage({
   emitMetadata,
   theme,
   originHost,
-  error,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const resolvedOrigin = origin || (typeof location === 'undefined' ? '' : location.href);
   const { theme: resolvedTheme, setTheme } = useContext(ThemeContext);
@@ -129,27 +123,15 @@ export default function WidgetPage({
       </Head>
 
       <main className="w-full mx-auto" data-theme={resolvedTheme}>
-        {error ? (
-          <div className="px-4 py-5 text-sm border rounded-md flash-error">
-            Origin <code>{originHost}</code> is not allowed by{' '}
-            <span className="font-semibold">{repo}</span>. If you own the repository, include{' '}
-            <code>{originHost}</code> in the allowed origins list in{' '}
-            <code>
-              <a href={`https://github.com/${repo}/blob/HEAD/giscus.json`}>giscus.json</a>
-            </code>
-            .
-          </div>
-        ) : (
-          <ConfigContext.Provider value={config}>
-            <Widget
-              origin={resolvedOrigin}
-              session={session}
-              repoId={repoId}
-              categoryId={categoryId}
-              description={description}
-            />
-          </ConfigContext.Provider>
-        )}
+        <ConfigContext.Provider value={config}>
+          <Widget
+            origin={resolvedOrigin}
+            session={session}
+            repoId={repoId}
+            categoryId={categoryId}
+            description={description}
+          />
+        </ConfigContext.Provider>
       </main>
 
       <script

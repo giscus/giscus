@@ -9,10 +9,19 @@ major updates to the project.
 
 ## 2021-07-25
 
+### added
+
+- Add security headers ([#147](https://github.com/laymonage/giscus/pull/147)).
+
 ### changed
 
 - Use media query in CSS for `preferred_color_scheme` theme
   ([#146](https://github.com/laymonage/giscus/pull/146)).
+- The "origin not allowed" error message implemented in
+  [#125](https://github.com/laymonage/giscus/pull/125) is no longer shown.
+  Instead, the browser will now refuse to load the `iframe` as a result of
+  the `frame-ancestors` value in the `Content-Security-Policy` header
+  ([#147](https://github.com/laymonage/giscus/pull/147)).
 
 ## 2021-07-12
 

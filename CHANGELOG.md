@@ -23,6 +23,12 @@ major updates to the project.
   the `frame-ancestors` value in the `Content-Security-Policy` header
   ([#147](https://github.com/laymonage/giscus/pull/147)).
 
+### fixed
+
+- Fix unreadable reactions popup menu due to transparent background in
+  Transparent Dark theme
+  ([#148](https://github.com/laymonage/giscus/pull/148)).
+
 ## 2021-07-12
 
 ### added

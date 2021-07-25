@@ -23,7 +23,7 @@ main {
   --color-bg-primary: transparent;
   --color-bg-secondary: transparent;
   --color-bg-tertiary: transparent;
-  --color-bg-overlay: transparent;
+  --color-bg-overlay: rgba(22, 27, 34, 0.9);
   --color-bg-info: transparent;
   --color-state-focus-border: #388bfd;
   --color-state-focus-shadow: 0 0 0 3px #0c2d6b;
@@ -75,20 +75,20 @@ main {
 }
 
 .gsc-homepage-bg {
-  background: linear-gradient(135deg, #00468a, #510069, #005c6b);
+  background: linear-gradient(135deg, #05485c, #032e58, #2f0154);
   background-size: 600% 600%;
 
-  animation: gradient 30s ease infinite;
+  animation: gradient 21s ease infinite;
 }
 
 @keyframes gradient {
   0% {
-    background-position: 0% 50%;
+    background-position: 2% 0%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 99% 100%;
   }
   100% {
-    background-position: 0% 50%;
+    background-position: 2% 0%;
   }
 }

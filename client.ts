@@ -7,7 +7,7 @@ function formatError(message: string) {
 }
 
 // Set up iframeResizer
-declare let iFrameResize: (options: Record<string, unknown>) => void;
+declare let iFrameResize: (options: Record<string, unknown>, selector: string) => void;
 
 function loadScript(url: string, callback: VoidFunction) {
   const target = document.createElement('script');
@@ -17,7 +17,7 @@ function loadScript(url: string, callback: VoidFunction) {
 }
 
 loadScript('https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', () =>
-  iFrameResize({ checkOrigin: [giscusOrigin], resizeFrom: 'child' }),
+  iFrameResize({ checkOrigin: [giscusOrigin], resizeFrom: 'child' }, '.giscus-frame'),
 );
 
 // Set up iframe src URL and params

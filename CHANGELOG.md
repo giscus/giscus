@@ -24,6 +24,8 @@ major updates to the project.
   ([#147](https://github.com/laymonage/giscus/pull/147)).
 - Upgrade Next.js to 11 and update other dependencies
   ([#149](https://github.com/laymonage/giscus/pull/149)).
+- Only apply `iFrameResize` to `.giscus-frame` iframes
+  ([#150](https://github.com/laymonage/giscus/pull/150)).
 
 ### fixed
 

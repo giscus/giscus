@@ -22,6 +22,8 @@ major updates to the project.
   Instead, the browser will now refuse to load the `iframe` as a result of
   the `frame-ancestors` value in the `Content-Security-Policy` header
   ([#147](https://github.com/laymonage/giscus/pull/147)).
+- Upgrade Next.js to 11 and update other dependencies
+  ([#149](https://github.com/laymonage/giscus/pull/149)).
 
 ### fixed
 

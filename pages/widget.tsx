@@ -13,7 +13,7 @@ import { getRepoConfig } from '../services/github/getConfig';
 
 type ErrorType = 'ORIGIN' | null;
 
-export async function getServerSideProps({ query }: GetServerSidePropsContext) {
+export async function getServerSideProps({ query, res }: GetServerSidePropsContext) {
   const origin = (query.origin as string) || '';
   const session = (query.session as string) || '';
   const repo = (query.repo as string) || '';
@@ -35,8 +35,19 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
     .catch(() => '');
 
   const repoConfig = await getRepoConfig(repo, token);
+
   if (!assertOrigin(originHost, repoConfig)) {
     error = 'ORIGIN';
+    res.setHeader('Content-Security-Policy', `frame-ancestors 'self';`);
+    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  } else {
+    let origins = repoConfig.origins || [];
+    if (origins.indexOf(originHost) === -1) {
+      origins = [...origins, originHost];
+    }
+    const originsStr = origins.join(' ');
+
+    res.setHeader('Content-Security-Policy', `frame-ancestors 'self' ${originsStr};`);
   }
 
   return {

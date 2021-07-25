@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-07-25
+
+### changed
+
+- Use media query in CSS for `preferred_color_scheme` theme
+  ([#146](https://github.com/laymonage/giscus/pull/146)).
+
 ## 2021-07-12
 
 ### added

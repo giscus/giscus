@@ -1,0 +1,151 @@
+@import 'github-syntax-light/lib/github-light.css';
+@import 'github-syntax-dark/lib/github-dark.css' (prefers-color-scheme: dark);
+
+/*! MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+
+main {
+  --color-text-primary: #24292f;
+  --color-text-secondary: #57606a;
+  --color-text-tertiary: #57606a;
+  --color-text-link: #0969da;
+  --color-text-danger: #cf222e;
+  --color-text-success: #1a7f37;
+  --color-border-primary: #d0d7de;
+  --color-border-secondary: #d8dee4;
+  --color-border-tertiary: rgba(175, 184, 193, 0.4);
+  --color-border-info: #0969da;
+  --color-bg-canvas: #fff;
+  --color-bg-canvas-inset: #f6f8fa;
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #f6f8fa;
+  --color-bg-tertiary: #f6f8fa;
+  --color-bg-overlay: #fff;
+  --color-bg-info: #ddf4ff;
+  --color-state-focus-border: #0969da;
+  --color-state-focus-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
+  --color-alert-error-text: #cf222e;
+  --color-alert-error-bg: #ffe7e5;
+  --color-alert-error-border: rgba(255, 129, 130, 0.4);
+  --color-counter-secondary-text: #57606a;
+  --color-counter-secondary-bg: rgba(234, 238, 242, 0.5);
+  --color-box-border-info: rgba(84, 174, 255, 0.4);
+  --color-markdown-code-bg: rgba(234, 238, 242, 0.5);
+  --color-hidden-text-expander-bg: rgba(175, 184, 193, 0.4);
+  --color-label-border: #d0d7de;
+  --color-input-bg: #fff;
+  --color-input-contrast-bg: #f6f8fa;
+  --color-input-border: #d0d7de;
+  --color-btn-text: #24292f;
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: rgba(27, 31, 36, 0.15);
+  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-active-bg: #ebecf0;
+  --color-btn-active-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-text: #fff;
+  --color-btn-primary-bg: #2da44e;
+  --color-btn-primary-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+  --color-btn-primary-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --color-btn-primary-hover-bg: #2c974b;
+  --color-btn-primary-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-selected-bg: #298e46;
+  --color-btn-primary-selected-shadow: inset 0 1px 0 rgba(0, 45, 17, 0.2);
+  --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
+  --color-btn-primary-disabled-bg: #94d3a2;
+  --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
+  --color-scale-blue-1: #b6e3ff;
+
+  /* Extensions from color-modes.scss */
+  --color-upvote-icon-bg: var(--color-scale-blue-1);
+}
+
+main .pagination-loader-container {
+  background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg);
+}
+
+/*! Custom CSS */
+main {
+  color-scheme: light;
+}
+
+/*! Dark mode */
+@media (prefers-color-scheme: dark) {
+  /*! MIT License
+   * Copyright (c) 2018 GitHub Inc.
+   * https://github.com/primer/primitives/blob/main/LICENSE
+   */
+
+  main {
+    --color-text-primary: #c9d1d9;
+    --color-text-secondary: #8b949e;
+    --color-text-tertiary: #8b949e;
+    --color-text-link: #58a6ff;
+    --color-text-danger: #f85149;
+    --color-text-success: #3fb950;
+    --color-border-primary: #30363d;
+    --color-border-secondary: #21262d;
+    --color-border-tertiary: rgba(110, 118, 129, 0.4);
+    --color-border-info: #1f6feb;
+    --color-bg-canvas: #0d1117;
+    --color-bg-canvas-inset: #010409;
+    --color-bg-primary: #0d1117;
+    --color-bg-secondary: #161b22;
+    --color-bg-tertiary: #161b22;
+    --color-bg-overlay: #161b22;
+    --color-bg-info: rgba(56, 139, 253, 0.15);
+    --color-state-focus-border: #1f6feb;
+    --color-state-focus-shadow: 0 0 0 3px #0c2d6b;
+    --color-alert-error-text: #f85149;
+    --color-alert-error-bg: rgba(248, 81, 73, 0.15);
+    --color-alert-error-border: rgba(248, 81, 73, 0.4);
+    --color-counter-secondary-text: #8b949e;
+    --color-counter-secondary-bg: rgba(110, 118, 129, 0.1);
+    --color-box-border-info: rgba(56, 139, 253, 0.4);
+    --color-markdown-code-bg: rgba(110, 118, 129, 0.1);
+    --color-hidden-text-expander-bg: rgba(110, 118, 129, 0.4);
+    --color-label-border: #30363d;
+    --color-input-bg: #0d1117;
+    --color-input-contrast-bg: #010409;
+    --color-input-border: #30363d;
+    --color-btn-text: #c9d1d9;
+    --color-btn-bg: #21262d;
+    --color-btn-border: rgba(240, 246, 252, 0.1);
+    --color-btn-shadow: 0 0 transparent;
+    --color-btn-inset-shadow: 0 0 transparent;
+    --color-btn-hover-bg: #30363d;
+    --color-btn-hover-border: #8b949e;
+    --color-btn-active-bg: #282e33;
+    --color-btn-active-border: #6e7681;
+    --color-btn-primary-text: #fff;
+    --color-btn-primary-bg: #238636;
+    --color-btn-primary-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-shadow: 0 0 transparent;
+    --color-btn-primary-inset-shadow: 0 0 transparent;
+    --color-btn-primary-hover-bg: #2ea043;
+    --color-btn-primary-hover-border: rgba(240, 246, 252, 0.1);
+    --color-btn-primary-selected-bg: #238636;
+    --color-btn-primary-selected-shadow: 0 0 transparent;
+    --color-btn-primary-disabled-text: rgba(240, 246, 252, 0.5);
+    --color-btn-primary-disabled-bg: rgba(35, 134, 54, 0.6);
+    --color-btn-primary-disabled-border: rgba(240, 246, 252, 0.1);
+    --color-scale-blue-8: #0c2d6b;
+
+    /* Extensions from color-modes.scss */
+    --color-upvote-icon-bg: var(--color-scale-blue-8);
+  }
+
+  main .pagination-loader-container {
+    background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
+  }
+
+  /*! Custom CSS */
+  main {
+    color-scheme: dark;
+  }
+}

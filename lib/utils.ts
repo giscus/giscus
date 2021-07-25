@@ -5,9 +5,6 @@ import formatDistanceStrict from 'date-fns/formatDistanceStrict';
 import { Theme } from './variables';
 
 export function getTheme(theme: string): Theme {
-  if (theme === 'preferred_color_scheme') {
-    return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
   if (!theme) return 'light';
   if (theme in Theme) return theme as Theme;
   return 'custom';

@@ -69,17 +69,6 @@ export function useThemeChanger(themeUrl: string) {
   }, [themeUrl]);
 }
 
-export function useColorSchemeListener() {
-  const [, rerender] = useState({});
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const listener = () => rerender({});
-    mediaQuery.addEventListener('change', listener);
-    return () => mediaQuery.removeEventListener('change', listener);
-  }, []);
-}
-
 export function useTheme() {
   const [theme, setTheme] = useState('');
 
@@ -87,7 +76,6 @@ export function useTheme() {
   const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
 
   useThemeChanger(themeUrl);
-  useColorSchemeListener();
 
   return { theme, resolvedTheme, themeUrl, setTheme };
 }

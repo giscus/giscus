@@ -6,7 +6,9 @@ export const env = {
   token: process.env.GITHUB_TOKEN,
   private_key: process.env.GITHUB_PRIVATE_KEY,
   encryption_password: process.env.ENCRYPTION_PASSWORD,
-};
+  origins: JSON.parse(process.env.ORIGINS || '[]') as string[],
+  origins_regex: JSON.parse(process.env.ORIGINS_REGEX || '[]') as string[],
+} as const;
 
 export const Theme = {
   light: 'GitHub Light',

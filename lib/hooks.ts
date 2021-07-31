@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, MutableRefObject, Dispatch, SetStateAction } from 'react';
-import { resolveTheme } from './utils';
+import { getThemeUrl, resolveTheme } from './utils';
 
 export function useComponentVisible<T extends HTMLElement>(initialIsVisible: boolean) {
   const [isComponentVisible, setIsComponentVisible] = useState(initialIsVisible);
@@ -73,7 +73,7 @@ export function useTheme() {
   const [theme, setTheme] = useState('');
 
   const resolvedTheme = resolveTheme(theme);
-  const themeUrl = resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
+  const themeUrl = getThemeUrl(resolvedTheme, theme);
 
   useThemeChanger(themeUrl);
 

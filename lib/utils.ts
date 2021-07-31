@@ -10,6 +10,10 @@ export function resolveTheme(theme: string): Theme {
   return 'custom';
 }
 
+export function getThemeUrl(resolvedTheme: Theme, theme: string) {
+  return resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
+}
+
 export function getOriginHost(origin: string) {
   try {
     return new URL(origin).origin;

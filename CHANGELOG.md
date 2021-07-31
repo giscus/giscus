@@ -13,6 +13,8 @@ major updates to the project.
 
 - Use strict-origin Referrer-Policy to avoid excessive header length
   ([#154](https://github.com/laymonage/giscus/pull/154)).
+- Improve theme performance on initial load to prevent flashing
+  ([#155](https://github.com/laymonage/giscus/pull/155)).
 
 ## 2021-07-25
 

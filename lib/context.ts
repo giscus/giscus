@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+import { Theme } from './variables';
 
 interface IAuthContext {
   token: string;
@@ -17,12 +18,12 @@ export const AuthContext = createContext<IAuthContext>({
 });
 
 interface IThemeContext {
-  theme: string;
-  setTheme?: (theme: string) => void;
+  theme: Theme;
+  setTheme?: (theme: Theme) => void;
 }
 
 export const ThemeContext = createContext<IThemeContext>({
-  theme: '',
+  theme: 'light',
 });
 
 interface IConfigContext {

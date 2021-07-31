@@ -1,3 +1,4 @@
+import { Theme } from '../variables';
 import { IReactionGroups, IUser } from './adapter';
 
 export interface ITokenRequest {
@@ -43,7 +44,7 @@ export interface IMetadataMessage {
 // parent-to-giscus messages
 export interface ISetConfigMessage {
   setConfig: {
-    theme?: string;
+    theme?: Theme;
     repo?: string;
     term?: string;
     number?: number;

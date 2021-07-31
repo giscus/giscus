@@ -20,4 +20,4 @@ export const Theme = {
   custom: 'Custom (experimental)',
 } as const;
 
-export type Theme = keyof typeof Theme;
+export type Theme = keyof typeof Theme | `/${string}` | `https://${string}`;

@@ -4,13 +4,13 @@ import format from 'date-fns/format';
 import formatDistanceStrict from 'date-fns/formatDistanceStrict';
 import { Theme } from './variables';
 
-export function resolveTheme(theme: string): Theme {
+export function resolveTheme(theme: Theme): Theme {
   if (!theme) return 'light';
   if (theme in Theme) return theme as Theme;
   return 'custom';
 }
 
-export function getThemeUrl(resolvedTheme: Theme, theme: string) {
+export function getThemeUrl(resolvedTheme: Theme, theme: Theme): Theme {
   return resolvedTheme === 'custom' ? theme : `/themes/${resolvedTheme}.css`;
 }
 

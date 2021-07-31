@@ -12,7 +12,6 @@ import { ThemeContext } from '../lib/context';
 import { sendData } from '../lib/messages';
 import { ISetConfigMessage } from '../lib/types/giscus';
 import { getThemeUrl } from '../lib/utils';
-import { Theme } from '../lib/variables';
 
 export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
@@ -46,12 +45,12 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
     theme: 'light',
-    themeUrl: '',
+    themeUrl: 'https://',
     reactionsEnabled: true,
     emitMetadata: false,
   });
   const themeUrl = useDebounce(directConfig.themeUrl);
-  const configTheme = getThemeUrl(directConfig.theme as Theme, themeUrl);
+  const configTheme = getThemeUrl(directConfig.theme, themeUrl);
 
   const handleDirectConfigChange: DirectConfigHandler = (key, value) =>
     setDirectConfig({ ...directConfig, [key]: value });

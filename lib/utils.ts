@@ -4,7 +4,7 @@ import format from 'date-fns/format';
 import formatDistanceStrict from 'date-fns/formatDistanceStrict';
 import { Theme } from './variables';
 
-export function getTheme(theme: string): Theme {
+export function resolveTheme(theme: string): Theme {
   if (!theme) return 'light';
   if (theme in Theme) return theme as Theme;
   return 'custom';

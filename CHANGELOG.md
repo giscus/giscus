@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-07-31
+
+### changed
+
+- Use strict-origin Referrer-Policy to avoid excessive header length
+  ([#154](https://github.com/laymonage/giscus/pull/154)).
+
 ## 2021-07-25
 
 ### added

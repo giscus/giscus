@@ -19,7 +19,7 @@ const meta = {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme(pageProps.theme);
 
   return (
     <ThemeContext.Provider value={{ theme: resolvedTheme, setTheme }}>

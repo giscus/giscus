@@ -7,8 +7,8 @@ import { Theme } from '../lib/variables';
 import { getCategories } from '../services/giscus/categories';
 
 interface IDirectConfig {
-  theme: string;
-  themeUrl: string;
+  theme: Theme;
+  themeUrl: Theme;
   reactionsEnabled: boolean;
   emitMetadata: boolean;
 }
@@ -419,7 +419,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         name="theme"
         id="theme"
         value={directConfig.theme}
-        onChange={(event) => onDirectConfigChange('theme', event.target.value)}
+        onChange={(event) => onDirectConfigChange('theme', event.target.value as Theme)}
         className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
       >
         {Object.entries(Theme).map(([value, label]) => (
@@ -437,7 +437,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <input
             id="themeUrl"
             value={directConfig.themeUrl}
-            onChange={(event) => onDirectConfigChange('themeUrl', event.target.value)}
+            onChange={(event) => onDirectConfigChange('themeUrl', event.target.value as Theme)}
             type="text"
             className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
             placeholder="https://giscus.app/themes/custom_example.css"

@@ -7,7 +7,7 @@ import { ConfigContext, ThemeContext } from '../lib/context';
 import { decodeState } from '../lib/oauth/state';
 import { ISetConfigMessage } from '../lib/types/giscus';
 import { getOriginHost } from '../lib/utils';
-import { env } from '../lib/variables';
+import { env, Theme } from '../lib/variables';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { getRepoConfig } from '../services/github/getConfig';
 
@@ -23,7 +23,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const description = (query.description as string) || '';
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
   const emitMetadata = Boolean(+query.emitMetadata);
-  const theme = (query.theme as string) || '';
+  const theme = ((query.theme as string) || 'light') as Theme;
   const originHost = getOriginHost(origin);
 
   const { encryption_password } = env;

@@ -11,6 +11,8 @@ import { ComponentProps, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 import { sendData } from '../lib/messages';
 import { ISetConfigMessage } from '../lib/types/giscus';
+import { getThemeUrl } from '../lib/utils';
+import { Theme } from '../lib/variables';
 
 export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
@@ -49,25 +51,25 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
     emitMetadata: false,
   });
   const themeUrl = useDebounce(directConfig.themeUrl);
-  const resolvedTheme = directConfig.theme === 'custom' ? themeUrl : directConfig.theme;
+  const configTheme = getThemeUrl(directConfig.theme as Theme, themeUrl);
 
   const handleDirectConfigChange: DirectConfigHandler = (key, value) =>
     setDirectConfig({ ...directConfig, [key]: value });
 
   useEffect(() => {
-    setTheme(resolvedTheme);
-  }, [setTheme, resolvedTheme]);
+    setTheme(configTheme);
+  }, [setTheme, configTheme]);
 
   useEffect(() => {
     const data: ISetConfigMessage = {
       setConfig: {
-        theme: resolvedTheme,
+        theme: configTheme,
         reactionsEnabled: directConfig.reactionsEnabled,
         emitMetadata: directConfig.emitMetadata,
       },
     };
     sendData(data, location.origin);
-  }, [directConfig.emitMetadata, directConfig.reactionsEnabled, resolvedTheme, themeUrl]);
+  }, [directConfig.emitMetadata, directConfig.reactionsEnabled, configTheme, themeUrl]);
 
   useEffect(() => {
     const script = document.createElement('script');

@@ -70,8 +70,8 @@ export function useThemeChanger(themeUrl: string) {
   }, [themeUrl]);
 }
 
-export function useTheme() {
-  const [theme, setTheme] = useState<Theme>('light');
+export function useTheme(initialTheme: Theme) {
+  const [theme, setTheme] = useState<Theme>(initialTheme);
 
   const resolvedTheme = resolveTheme(theme);
   const themeUrl = getThemeUrl(resolvedTheme, theme);

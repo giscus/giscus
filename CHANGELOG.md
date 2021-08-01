@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-08-01
+
+### added
+
+- Add link to giscus-component
+  ([#155](https://github.com/laymonage/giscus/pull/155)).
+
 ## 2021-07-31
 
 ### changed

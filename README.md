@@ -38,6 +38,8 @@ If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and addi
 
 You can add additional configurations (e.g. allowing specific origins) by following the [advanced usage guide][advanced-usage].
 
+To use giscus with React, Vue, or Svelte, check out the [giscus component library][giscus-component].
+
 ## migrating
 
 If you've previously used other systems that utilize GitHub Issues (e.g. [utterances][utterances], [gitalk][gitalk]), you can [convert the existing issues into discussions][convert]. After the conversion, just make sure that the mapping between the discussion titles and the pages are correct, then giscus will automatically use the discussions.
@@ -54,6 +56,7 @@ If you've previously used other systems that utilize GitHub Issues (e.g. [uttera
 
 See [CONTRIBUTING.md][contributing]
 
+[giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/laymonage/giscus
 [giscus-topic]: https://github.com/topics/giscus
 [topic-howto]: https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics

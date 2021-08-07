@@ -334,7 +334,7 @@ img.emoji {
   @apply float-left mt-1 -ml-5 align-middle;
 }
 
-/*! Giscus-specific styles */
+/*! giscus-specific styles */
 
 .gsc-tl-line {
   background-color: var(--color-border-secondary);
@@ -399,8 +399,6 @@ img.emoji {
   @apply rounded-t-md;
 }
 
-/* New gsc- tailwind replacement */
-
 .gsc-comment {
   @apply flex my-4 text-sm;
 }
@@ -411,6 +409,11 @@ img.emoji {
 
 .gsc-upvote-count {
   @apply overflow-x-hidden overflow-ellipsis text-xs leading-5 min-w-[26px] w-min mx-auto rounded-full;
+}
+
+.gsc-comments,
+.gsc-timeline {
+  @apply flex flex-col;
 }
 
 /* Re-apply overridden tailwind */

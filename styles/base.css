@@ -340,7 +340,7 @@ img.emoji {
   background-color: var(--color-border-secondary);
 }
 
-.popover::before {
+.gsc-reactions-popover.open.popover::before {
   position: absolute;
   top: -16px;
   left: 9px;
@@ -349,7 +349,7 @@ img.emoji {
   content: '';
 }
 
-.popover::after {
+.gsc-reactions-popover.open.popover::after {
   position: absolute;
   top: -15px;
   left: 10px;
@@ -358,7 +358,7 @@ img.emoji {
   content: '';
 }
 
-.popover-only::before {
+.gsc-reactions-popover.open.popover-only::before {
   position: absolute;
   top: -16px;
   right: 9px;
@@ -367,7 +367,7 @@ img.emoji {
   content: '';
 }
 
-.popover-only::after {
+.gsc-reactions-popover.open.popover-only::after {
   position: absolute;
   top: -15px;
   right: 10px;

@@ -14,18 +14,12 @@ interface IGiscusProps {
 
 export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusProps) {
   const { token, origin } = useContext(AuthContext);
-  const { repo, term, number, category, reactionsEnabled, emitMetadata } = useContext(
-    ConfigContext,
-  );
+  const { repo, term, number, category, reactionsEnabled, emitMetadata } =
+    useContext(ConfigContext);
   const query = { repo, term, category, number };
 
-  const {
-    updateReactions,
-    increaseSize,
-    backMutators,
-    frontMutators,
-    ...data
-  } = useFrontBackDiscussion(query, token);
+  const { updateReactions, increaseSize, backMutators, frontMutators, ...data } =
+    useFrontBackDiscussion(query, token);
 
   useEffect(() => {
     if (data.error && onError) {
@@ -60,7 +54,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     !data.isLoading && !data.isLocked && (!data.error || (data.isNotFound && !number));
 
   return (
-    <div className="w-full color-text-primary">
+    <div className="w-full color-text-primary gsc-main">
       {reactionsEnabled && !data.isLoading && (shouldCreateDiscussion || !data.error) ? (
         <div className="flex flex-col justify-center flex-auto mb-4 gsc-reactions">
           <h4 className="font-semibold text-center gsc-reactions-count">
@@ -88,128 +82,133 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
           </div>
         </div>
       ) : null}
-      <div className="flex items-center flex-auto pb-2 gsc-header">
-        <h4 className="mr-2 font-semibold gsc-comments-count">
-          {shouldCreateDiscussion && !data.totalCommentCount ? (
-            '0 comments'
-          ) : data.error && !data.backData ? (
-            `An error occurred${data.error?.message ? `: ${data.error.message}` : ''}.`
-          ) : data.isLoading ? (
-            'Loading comments...'
-          ) : (
-            <a
-              href={data.discussion.url}
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              className="color-text-primary"
-            >
-              {data.totalCommentCount} comment{data.totalCommentCount !== 1 ? 's' : ''}
-            </a>
-          )}
-        </h4>
-        {shouldShowReplyCount ? (
+
+      <div className="gsc-comments">
+        <div className="flex items-center flex-auto pb-2 gsc-header">
+          <h4 className="mr-2 font-semibold gsc-comments-count">
+            {shouldCreateDiscussion && !data.totalCommentCount ? (
+              '0 comments'
+            ) : data.error && !data.backData ? (
+              `An error occurred${data.error?.message ? `: ${data.error.message}` : ''}.`
+            ) : data.isLoading ? (
+              'Loading comments...'
+            ) : (
+              <a
+                href={data.discussion.url}
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                className="color-text-primary"
+              >
+                {data.totalCommentCount} comment{data.totalCommentCount !== 1 ? 's' : ''}
+              </a>
+            )}
+          </h4>
+          {shouldShowReplyCount ? (
+            <>
+              <h4 className="mr-2 font-semibold gsc-comments-count-separator">·</h4>
+              <h4 className="mr-2 gsc-replies-count">{`${data.totalReplyCount}${
+                data.numHidden > 0 ? '+' : ''
+              } repl${data.totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
+            </>
+          ) : null}
+          {shouldShowBranding ? (
+            <em className="text-sm color-text-secondary">
+              {' '}
+              – powered by{' '}
+              <a
+                href="https://giscus.app"
+                target="_blank"
+                rel="noreferrer noopener nofollow"
+                className="Link--secondary"
+              >
+                giscus
+              </a>
+            </em>
+          ) : null}
+        </div>
+
+        <div className="gsc-timeline">
+          {!data.isLoading
+            ? data.frontComments.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  comment={comment}
+                  onCommentUpdate={frontMutators.updateComment}
+                  onReplyUpdate={frontMutators.updateReply}
+                  renderReplyBox={
+                    token && !data.isLocked
+                      ? (viewMore) => (
+                          <CommentBox
+                            discussionId={data.discussion.id}
+                            context={repo}
+                            onSubmit={frontMutators.addNewReply}
+                            replyToId={comment.id}
+                            viewer={data.viewer}
+                            onReplyOpen={viewMore}
+                          />
+                        )
+                      : undefined
+                  }
+                />
+              ))
+            : null}
+
+          {data.numHidden > 0 ? (
+            <div className="flex justify-center py-2 my-4 bg-center bg-repeat-x pagination-loader-container">
+              <button
+                className="flex flex-col items-center px-6 py-2 text-sm border rounded color-bg-primary color-border-primary"
+                onClick={increaseSize}
+                disabled={data.isLoadingMore}
+              >
+                <span className="color-text-secondary">
+                  {data.numHidden} hidden item{data.numHidden !== 1 ? 's' : ''}
+                </span>
+                <span className="font-semibold color-text-link">
+                  {data.isLoadingMore ? 'Loading' : 'Load more'}...
+                </span>
+              </button>
+            </div>
+          ) : null}
+
+          {!data.isLoading
+            ? data.backComments?.map((comment) => (
+                <Comment
+                  key={comment.id}
+                  comment={comment}
+                  onCommentUpdate={backMutators.updateComment}
+                  onReplyUpdate={backMutators.updateReply}
+                  renderReplyBox={
+                    token && !data.isLocked
+                      ? (viewMore) => (
+                          <CommentBox
+                            discussionId={data.discussion.id}
+                            context={repo}
+                            onSubmit={backMutators.addNewReply}
+                            replyToId={comment.id}
+                            viewer={data.viewer}
+                            onReplyOpen={viewMore}
+                          />
+                        )
+                      : undefined
+                  }
+                />
+              ))
+            : null}
+        </div>
+
+        {shouldShowCommentBox ? (
           <>
-            <h4 className="mr-2 font-semibold gsc-comments-count-separator">·</h4>
-            <h4 className="mr-2 gsc-replies-count">{`${data.totalReplyCount}${
-              data.numHidden > 0 ? '+' : ''
-            } repl${data.totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
+            <hr className="my-4 text-sm border-t-2 color-border-primary" />
+            <CommentBox
+              viewer={data.viewer}
+              discussionId={data.discussion.id}
+              context={repo}
+              onSubmit={backMutators.addNewComment}
+              onDiscussionCreateRequest={handleDiscussionCreateRequest}
+            />
           </>
         ) : null}
-        {shouldShowBranding ? (
-          <em className="text-sm color-text-secondary">
-            {' '}
-            – powered by{' '}
-            <a
-              href="https://giscus.app"
-              target="_blank"
-              rel="noreferrer noopener nofollow"
-              className="Link--secondary"
-            >
-              giscus
-            </a>
-          </em>
-        ) : null}
       </div>
-
-      {!data.isLoading
-        ? data.frontComments.map((comment) => (
-            <Comment
-              key={comment.id}
-              comment={comment}
-              onCommentUpdate={frontMutators.updateComment}
-              onReplyUpdate={frontMutators.updateReply}
-              renderReplyBox={
-                token && !data.isLocked
-                  ? (viewMore) => (
-                      <CommentBox
-                        discussionId={data.discussion.id}
-                        context={repo}
-                        onSubmit={frontMutators.addNewReply}
-                        replyToId={comment.id}
-                        viewer={data.viewer}
-                        onReplyOpen={viewMore}
-                      />
-                    )
-                  : undefined
-              }
-            />
-          ))
-        : null}
-
-      {data.numHidden > 0 ? (
-        <div className="flex justify-center py-2 my-4 bg-center bg-repeat-x pagination-loader-container">
-          <button
-            className="flex flex-col items-center px-6 py-2 text-sm border rounded color-bg-primary color-border-primary"
-            onClick={increaseSize}
-            disabled={data.isLoadingMore}
-          >
-            <span className="color-text-secondary">
-              {data.numHidden} hidden item{data.numHidden !== 1 ? 's' : ''}
-            </span>
-            <span className="font-semibold color-text-link">
-              {data.isLoadingMore ? 'Loading' : 'Load more'}...
-            </span>
-          </button>
-        </div>
-      ) : null}
-
-      {!data.isLoading
-        ? data.backComments?.map((comment) => (
-            <Comment
-              key={comment.id}
-              comment={comment}
-              onCommentUpdate={backMutators.updateComment}
-              onReplyUpdate={backMutators.updateReply}
-              renderReplyBox={
-                token && !data.isLocked
-                  ? (viewMore) => (
-                      <CommentBox
-                        discussionId={data.discussion.id}
-                        context={repo}
-                        onSubmit={backMutators.addNewReply}
-                        replyToId={comment.id}
-                        viewer={data.viewer}
-                        onReplyOpen={viewMore}
-                      />
-                    )
-                  : undefined
-              }
-            />
-          ))
-        : null}
-
-      {shouldShowCommentBox ? (
-        <>
-          <div className="my-4 text-sm border-t-2 color-border-primary" />
-          <CommentBox
-            viewer={data.viewer}
-            discussionId={data.discussion.id}
-            context={repo}
-            onSubmit={backMutators.addNewComment}
-            onDiscussionCreateRequest={handleDiscussionCreateRequest}
-          />
-        </>
-      ) : null}
     </div>
   );
 }

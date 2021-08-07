@@ -7,6 +7,18 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-08-07
+
+### changed
+
+- Refactor markup and CSS to improve customizability
+  ([#158](https://github.com/laymonage/giscus/pull/158)). \
+  **Note:** this might be a **BREAKING** change if you use a custom CSS.
+- Use `Navigator.clipboard` API to copy to clipboard
+  ([#159](https://github.com/laymonage/giscus/pull/159)).
+- Use `stale-while-revalidate` for theme files
+  ([#159](https://github.com/laymonage/giscus/pull/159)).
+
 ## 2021-08-01
 
 ### added

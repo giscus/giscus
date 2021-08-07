@@ -115,9 +115,13 @@ export default function Comment({
                 href={comment.url}
                 className="ml-2 Link--secondary"
               >
-                <div className="whitespace-nowrap" title={formatDate(comment.createdAt)}>
+                <time
+                  className="whitespace-nowrap"
+                  title={formatDate(comment.createdAt)}
+                  dateTime={comment.createdAt}
+                >
                   {formatDateDistance(comment.createdAt)}
-                </div>
+                </time>
               </a>
               {comment.authorAssociation ? (
                 <div className="hidden ml-2 text-xs sm:inline-flex">

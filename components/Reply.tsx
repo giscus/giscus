@@ -58,9 +58,13 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   href={reply.url}
                   className="ml-2 Link--secondary"
                 >
-                  <div className="whitespace-nowrap" title={formatDate(reply.createdAt)}>
+                  <time
+                    className="whitespace-nowrap"
+                    title={formatDate(reply.createdAt)}
+                    dateTime={reply.createdAt}
+                  >
                     {formatDateDistance(reply.createdAt)}
-                  </div>
+                  </time>
                 </a>
                 {reply.authorAssociation ? (
                   <div className="hidden ml-2 text-xs sm:inline-flex">

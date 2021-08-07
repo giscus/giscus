@@ -92,13 +92,13 @@ export default function Comment({
         }`}
       >
         {!comment.isMinimized ? (
-          <div className="flex items-center px-4 gsc-comment-header">
-            <h3 className="flex items-center flex-auto pt-2 gsc-comment-author">
+          <div className="gsc-comment-header">
+            <h3 className="gsc-comment-author">
               <a
                 rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={comment.author.url}
-                className="flex items-center gsc-comment-author-avatar"
+                className="gsc-comment-author-avatar"
               >
                 <img
                   className="mr-2 rounded-full"
@@ -134,7 +134,7 @@ export default function Comment({
             <div className="flex">
               {comment.lastEditedAt ? (
                 <button
-                  className="hidden mr-2 sm:inline-block color-text-secondary gsc-comment-edited"
+                  className="color-text-secondary gsc-comment-edited"
                   title={`Last edited at ${formatDate(comment.lastEditedAt)}`}
                 >
                   edited
@@ -150,10 +150,8 @@ export default function Comment({
           </div>
         ) : null}
         <div
-          className={`markdown rounded-t gsc-comment-content ${
-            comment.isMinimized
-              ? 'px-4 py-2 color-bg-tertiary border-b border-color-primary'
-              : 'p-4'
+          className={`markdown gsc-comment-content${
+            comment.isMinimized ? ' minimized color-bg-tertiary border-color-primary' : ''
           }`}
           onClick={handleCommentClick}
           dangerouslySetInnerHTML={
@@ -171,7 +169,7 @@ export default function Comment({
               renderReplyBox || comment.replies.length > 0 ? ' border-b' : ''
             }${comment.replies.length > 0 ? ' rounded-b-md' : ''}`}
           >
-            <div className="flex items-start justify-end ml-4 gsc-comment-reactions">
+            <div className="gsc-comment-reactions">
               {!hidden ? (
                 <ReactButtons
                   reactionGroups={comment.reactions}
@@ -180,7 +178,7 @@ export default function Comment({
                 />
               ) : null}
             </div>
-            <div className="mb-4 mr-4 gsc-comment-replies-count">
+            <div className="gsc-comment-replies-count">
               <span className="text-xs color-text-tertiary">
                 {comment.replies.length}&nbsp;{comment.replies.length === 1 ? 'reply' : 'replies'}
               </span>
@@ -189,7 +187,7 @@ export default function Comment({
         ) : null}
         {comment.replies.length > 0 ? (
           <div
-            className={`pt-2 color-bg-canvas-inset color-border-primary gsc-replies ${
+            className={`color-bg-canvas-inset color-border-primary gsc-replies ${
               renderReplyBox && !comment.isMinimized ? 'border-b' : 'rounded-b-md'
             }`}
           >

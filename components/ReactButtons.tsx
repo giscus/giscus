@@ -108,11 +108,11 @@ export default function ReactButtons({
   return (
     <>
       {variant !== 'groupsOnly' ? (
-        <div ref={ref} className="relative gsc-reactions-menu">
+        <div ref={ref} className="gsc-reactions-menu">
           <button
-            className={`px-3 py-[3px] Link--secondary gsc-reactions-button${
+            className={`Link--secondary gsc-reactions-button${
               variant !== 'popoverOnly'
-                ? ' mb-1 dmd:mb-4 border rounded-md color-bg-tertiary color-border-primary'
+                ? ' popover-only color-bg-tertiary color-border-primary'
                 : ''
             }${directReactionButtons.length > 0 ? ' mr-4' : ''}`}
             onClick={togglePopover}
@@ -120,9 +120,9 @@ export default function ReactButtons({
             <SmileyIcon size={18} />
           </button>
           <div
-            className={`absolute ${isOpen ? 'visible scale-100' : 'invisible scale-50'} ${
-              variant === 'popoverOnly' ? 'popover-only right-0' : 'popover'
-            } ease-in-out duration-100 origin-center transform transition z-20 w-[146px] color-text-secondary color-bg-overlay border rounded top-10 color-border-primary gsc-reactions-popover`}
+            className={`color-border-primary color-text-secondary color-bg-overlay gsc-reactions-popover${
+              isOpen ? ' open' : ''
+            } ${variant === 'popoverOnly' ? 'popover-only' : 'popover'}`}
           >
             <p className="m-2">
               <PopupInfo
@@ -138,11 +138,11 @@ export default function ReactButtons({
                 <button
                   key={key}
                   type="button"
-                  className={`w-8 h-8 mr-[-1px] mt-[-1px] rounded-none gsc-emoji-button${
+                  className={`gsc-emoji-button${
                     reactionGroups?.[key]?.viewerHasReacted
-                      ? ' border color-bg-info color-border-tertiary'
+                      ? ' has-reacted color-bg-info color-border-tertiary'
                       : ''
-                  }${!token ? ' cursor-not-allowed' : ''}`}
+                  }${!token ? ' no-token' : ''}`}
                   onClick={() => {
                     react(key as Reactions);
                     togglePopover();
@@ -162,7 +162,7 @@ export default function ReactButtons({
       ) : null}
 
       {variant !== 'popoverOnly' ? (
-        <div className="flex flex-wrap gsc-direct-reaction-buttons">{directReactionButtons}</div>
+        <div className="gsc-direct-reaction-buttons">{directReactionButtons}</div>
       ) : null}
     </>
   );

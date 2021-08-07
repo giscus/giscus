@@ -117,11 +117,11 @@ export default function CommentBox({
 
   return !isReply || isReplyOpen ? (
     <div
-      className={`w-full text-sm color-bg-primary color-border-primary gsc-comment-box${
+      className={`color-bg-primary color-border-primary gsc-comment-box${
         replyToId ? '' : ' border rounded'
       }`}
     >
-      <div className="flex border-b rounded-t color-bg-tertiary color-border-primary gsc-comment-box-tabs">
+      <div className="color-bg-tertiary color-border-primary gsc-comment-box-tabs">
         <div className="mx-2 mb-[-1px] mt-2">
           <button
             className={`px-4 py-2 border border-b-0 focus:outline-none ${
@@ -145,10 +145,10 @@ export default function CommentBox({
           </button>
         </div>
       </div>
-      <div className="m-2 gsc-comment-box-main">
+      <div className="gsc-comment-box-main">
         {isPreview ? (
           <div
-            className="px-2 pt-2 pb-4 min-h-[105px] border-b-2 markdown color-border-primary gsc-comment-box-preview"
+            className="markdown color-border-primary gsc-comment-box-preview"
             dangerouslySetInnerHTML={
               isLoading ? undefined : { __html: preview || 'Nothing to preview' }
             }
@@ -158,7 +158,7 @@ export default function CommentBox({
           </div>
         ) : (
           <textarea
-            className="w-full p-2 border rounded min-h-[100px] disabled:cursor-not-allowed form-control input-contrast gsc-comment-box-textarea"
+            className="form-control input-contrast gsc-comment-box-textarea"
             placeholder={token ? 'Write a comment' : 'Sign in to comment'}
             onChange={handleTextAreaChange}
             value={input}
@@ -168,9 +168,9 @@ export default function CommentBox({
           ></textarea>
         )}
       </div>
-      <div className="flex items-center justify-between m-2 gsc-comment-box-bottom">
+      <div className="gsc-comment-box-bottom">
         <a
-          className="text-xs hover:no-underline Link--secondary gsc-comment-box-markdown-hint"
+          className="Link--secondary gsc-comment-box-markdown-hint"
           rel="nofollow noopener noreferrer"
           target="_blank"
           href="https://guides.github.com/features/mastering-markdown/"
@@ -178,7 +178,7 @@ export default function CommentBox({
           <MarkdownIcon className="mr-1" />
           Styling with Markdown is supported
         </a>
-        <div className="inline-flex flex-shrink-0 gsc-comment-box-buttons">
+        <div className="gsc-comment-box-buttons">
           {isReply ? (
             <button
               className="px-4 py-[5px] ml-1 border rounded-md btn"
@@ -221,7 +221,7 @@ export default function CommentBox({
       </div>
     </div>
   ) : (
-    <div className="flex px-4 py-2 color-bg-tertiary rounded-b-md gsc-reply-box">
+    <div className="color-bg-tertiary gsc-reply-box">
       {viewer ? (
         <a
           rel="nofollow noopener noreferrer"

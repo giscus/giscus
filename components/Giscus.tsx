@@ -54,10 +54,10 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     !data.isLoading && !data.isLocked && (!data.error || (data.isNotFound && !number));
 
   return (
-    <div className="w-full color-text-primary gsc-main">
+    <div className="color-text-primary gsc-main">
       {reactionsEnabled && !data.isLoading && (shouldCreateDiscussion || !data.error) ? (
-        <div className="flex flex-col justify-center flex-auto mb-4 gsc-reactions">
-          <h4 className="font-semibold text-center gsc-reactions-count">
+        <div className="gsc-reactions">
+          <h4 className="gsc-reactions-count">
             {shouldCreateDiscussion && !data.reactionCount ? (
               '0 reactions'
             ) : (
@@ -84,8 +84,8 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
       ) : null}
 
       <div className="gsc-comments">
-        <div className="flex items-center flex-auto pb-2 gsc-header">
-          <h4 className="mr-2 font-semibold gsc-comments-count">
+        <div className="gsc-header">
+          <h4 className="gsc-comments-count">
             {shouldCreateDiscussion && !data.totalCommentCount ? (
               '0 comments'
             ) : data.error && !data.backData ? (
@@ -105,8 +105,8 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
           </h4>
           {shouldShowReplyCount ? (
             <>
-              <h4 className="mr-2 font-semibold gsc-comments-count-separator">·</h4>
-              <h4 className="mr-2 gsc-replies-count">{`${data.totalReplyCount}${
+              <h4 className="gsc-comments-count-separator">·</h4>
+              <h4 className="gsc-replies-count">{`${data.totalReplyCount}${
                 data.numHidden > 0 ? '+' : ''
               } repl${data.totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
             </>
@@ -154,7 +154,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
             : null}
 
           {data.numHidden > 0 ? (
-            <div className="flex justify-center py-2 my-4 bg-center bg-repeat-x pagination-loader-container">
+            <div className="pagination-loader-container gsc-pagination">
               <button
                 className="flex flex-col items-center px-6 py-2 text-sm border rounded color-bg-primary color-border-primary"
                 onClick={increaseSize}
@@ -198,7 +198,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
 
         {shouldShowCommentBox ? (
           <>
-            <hr className="my-4 text-sm border-t-2 color-border-primary" />
+            <hr className="gsc-comment-box-separator color-border-primary" />
             <CommentBox
               viewer={data.viewer}
               discussionId={data.discussion.id}

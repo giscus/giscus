@@ -122,18 +122,18 @@ export function handleClipboardCopy(event: ReactMouseEvent<HTMLElement, MouseEve
       container.querySelector('pre').textContent ||
       '';
 
-    clipboardCopy(contents);
+    clipboardCopy(contents).then(() => {
+      const clipboardIcon = button.querySelector<SVGElement>('svg.js-clipboard-clippy-icon');
+      const checkIcon = button.querySelector<SVGElement>('svg.js-clipboard-check-icon');
 
-    const clipboardIcon = button.querySelector<SVGElement>('svg.js-clipboard-clippy-icon');
-    const checkIcon = button.querySelector<SVGElement>('svg.js-clipboard-check-icon');
+      clipboardIcon.classList.add('d-none');
+      checkIcon.classList.remove('d-none');
 
-    clipboardIcon.classList.add('d-none');
-    checkIcon.classList.remove('d-none');
-
-    setTimeout(() => {
-      clipboardIcon.classList.remove('d-none');
-      checkIcon.classList.add('d-none');
-    }, 2000);
+      setTimeout(() => {
+        clipboardIcon.classList.remove('d-none');
+        checkIcon.classList.add('d-none');
+      }, 2000);
+    });
   }
 }
 

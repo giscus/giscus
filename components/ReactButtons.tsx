@@ -78,7 +78,7 @@ export default function ReactButtons({
     ]) => (
       <button
         key={value}
-        className={`px-2 mb-1 dmd:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md${
+        className={`px-2 mb-1 dmd:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md ${
           viewerHasReacted ? ' color-bg-info' : ''
         }${!token ? ' cursor-not-allowed' : ''}`}
         disabled={!token}

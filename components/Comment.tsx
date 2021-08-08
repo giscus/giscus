@@ -169,8 +169,8 @@ export default function Comment({
         {children}
         {!comment.isMinimized && onCommentUpdate ? (
           <div
-            className={`flex content-center justify-between${
-              renderReplyBox || comment.replies.length > 0 ? ' border-b' : ''
+            className={`flex content-center justify-between ${
+              renderReplyBox || comment.replies.length > 0 ? 'border-b' : ''
             }${comment.replies.length > 0 ? ' rounded-b-md' : ''}`}
           >
             <div className="gsc-comment-reactions">

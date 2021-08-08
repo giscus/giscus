@@ -216,12 +216,12 @@ a {
   @apply border-b;
 }
 
-.lh-condensed {
-  line-height: 1.25;
-}
-
 .f6 {
   @apply text-xs;
+}
+
+.lh-condensed {
+  line-height: 1.25;
 }
 
 .text-bold {
@@ -231,7 +231,7 @@ a {
 .commit-tease-sha {
   @apply font-mono;
   font-size: 90%;
-  color: var(--color-auto-gray-7);
+  color: var(--color-text-primary);
 }
 
 .rounded-2 {
@@ -396,7 +396,7 @@ img.emoji {
 
 .f6.px-3.py-2.lh-condensed.border-bottom.color-bg-secondary {
   /* blob-wrapper header */
-  @apply rounded-t-md;
+  @apply px-3 py-2 rounded-t-md;
 }
 
 .gsc-comments,

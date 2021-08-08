@@ -37,6 +37,8 @@ main {
   --color-input-bg: #0d1117;
   --color-input-contrast-bg: #010409;
   --color-input-border: #30363d;
+  --color-diff-blob-num-text: #8b949e;
+  --color-diff-blob-num-hover-text: #c9d1d9;
   --color-btn-text: #c9d1d9;
   --color-btn-bg: #21262d;
   --color-btn-border: rgba(240, 246, 252, 0.1);

@@ -41,6 +41,8 @@ main {
   --color-input-bg: #0a0c10;
   --color-input-contrast-bg: #010409;
   --color-input-border: #7a828e;
+  --color-diff-blob-num-text: #f0f3f6;
+  --color-diff-blob-num-hover-text: #f0f3f6;
   --color-btn-text: #f0f3f6;
   --color-btn-bg: #272b33;
   --color-btn-border: #7a828e;

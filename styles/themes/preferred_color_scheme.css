@@ -38,6 +38,8 @@ main {
   --color-input-bg: #fff;
   --color-input-contrast-bg: #f6f8fa;
   --color-input-border: #d0d7de;
+  --color-diff-blob-num-text: #57606a;
+  --color-diff-blob-num-hover-text: #24292f;
   --color-btn-text: #24292f;
   --color-btn-bg: #f6f8fa;
   --color-btn-border: rgba(27, 31, 36, 0.15);
@@ -113,6 +115,8 @@ main {
     --color-input-bg: #0d1117;
     --color-input-contrast-bg: #010409;
     --color-input-border: #30363d;
+    --color-diff-blob-num-text: #8b949e;
+    --color-diff-blob-num-hover-text: #c9d1d9;
     --color-btn-text: #c9d1d9;
     --color-btn-bg: #21262d;
     --color-btn-border: rgba(240, 246, 252, 0.1);

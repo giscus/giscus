@@ -38,6 +38,8 @@ main {
   --color-input-bg: #15202b;
   --color-input-contrast-bg: rgba(21, 32, 43, 1);
   --color-input-border: #30363d;
+  --color-diff-blob-num-text: #768390;
+  --color-diff-blob-num-hover-text: #adbac7;
   --color-btn-text: #c9d1d9;
   --color-btn-bg: #21262d;
   --color-btn-border: rgba(240, 246, 252, 0.1);

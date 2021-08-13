@@ -1,5 +1,7 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import Script from 'next/script';
+import { ComponentProps, useContext, useEffect, useState } from 'react';
 import Comment from '../components/Comment';
 import { Reactions } from '../lib/reactions';
 import { IComment, IReactionGroups } from '../lib/types/adapter';
@@ -7,7 +9,6 @@ import { renderMarkdown } from '../services/github/markdown';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { useDebounce, useIsMounted } from '../lib/hooks';
 import Configuration from '../components/Configuration';
-import { ComponentProps, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../lib/context';
 import { sendData } from '../lib/messages';
 import { ISetConfigMessage } from '../lib/types/giscus';
@@ -70,23 +71,6 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
     sendData(data, location.origin);
   }, [directConfig.emitMetadata, directConfig.reactionsEnabled, configTheme, themeUrl]);
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    const attributes = {
-      'data-repo': 'laymonage/giscus',
-      'data-repo-id': 'MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM=',
-      'data-category-id': 'MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1',
-      'data-mapping': 'specific',
-      'data-term': 'Welcome to giscus!',
-      'data-theme': 'light',
-      'data-reactions-enabled': '1',
-      'data-emit-metadata': '0',
-    };
-    script.src = '/client.js';
-    Object.entries(attributes).forEach(([key, value]) => script.setAttribute(key, value));
-    document.body.appendChild(script);
-  }, []);
-
   const comment: IComment = {
     author: {
       avatarUrl: 'https://avatars.githubusercontent.com/in/106117',
@@ -127,6 +111,17 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
         ) : null}
 
         <div className="w-full my-8 giscus" />
+        <Script
+          src="/client.js"
+          data-repo="laymonage/giscus"
+          data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
+          data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
+          data-mapping="specific"
+          data-term="Welcome to giscus!"
+          data-theme="light"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+        />
       </div>
     </main>
   );

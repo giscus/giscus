@@ -3,9 +3,11 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended'],
-  plugins: ['@typescript-eslint', 'react'],
-  rules: {},
+  extends: ['eslint:recommended', 'next/core-web-vitals'],
+  plugins: ['@typescript-eslint'],
+  rules: {
+    '@next/next/no-img-element': 'off',
+  },
   globals: {
     React: 'writable',
   },
@@ -23,4 +25,5 @@ module.exports = {
       version: 'detect',
     },
   },
+  ignorePatterns: ['public/client.js'],
 };

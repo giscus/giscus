@@ -7,6 +7,15 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-08-13
+
+### changed
+
+- Upgrade Next.js to 11.1
+  ([#161](https://github.com/laymonage/giscus/pull/161)).
+- Use `next/script` to load scripts
+  ([#161](https://github.com/laymonage/giscus/pull/161)).
+
 ## 2021-08-07
 
 ### changed

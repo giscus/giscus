@@ -4,7 +4,7 @@ import { decodeState } from '../../../lib/oauth/state';
 import { ITokenRequest } from '../../../lib/types/giscus';
 import { addCorsHeaders } from '../../../lib/cors';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function OAuthTokenApi(req: NextApiRequest, res: NextApiResponse) {
   addCorsHeaders(req, res);
 
   const { session } = req.body as ITokenRequest;
@@ -23,4 +23,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   res.status(200).json({ token });
-};
+}

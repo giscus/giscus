@@ -4,7 +4,10 @@ import { ICategories, IError } from '../../../lib/types/adapter';
 import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
 import { getDiscussionCategories } from '../../../services/github/getDiscussionCategories';
 
-export default async (req: NextApiRequest, res: NextApiResponse<ICategories | IError>) => {
+export default async function DiscussionCategoriesApi(
+  req: NextApiRequest,
+  res: NextApiResponse<ICategories | IError>,
+) {
   addCorsHeaders(req, res);
 
   const params = { repo: req.query.repo as string };
@@ -49,4 +52,4 @@ export default async (req: NextApiRequest, res: NextApiResponse<ICategories | IE
   }));
 
   res.status(200).json({ repositoryId, categories });
-};
+}

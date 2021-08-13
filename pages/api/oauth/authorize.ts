@@ -4,7 +4,7 @@ import { env } from '../../../lib/variables';
 
 const GITHUB_OAUTH_AUTHORIZE_URL = 'https://github.com/login/oauth/authorize';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function OAuthAuthorizeApi(req: NextApiRequest, res: NextApiResponse) {
   const appReturnUrl = req.query.redirect_uri as string;
 
   if (!appReturnUrl) {
@@ -19,4 +19,4 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const oauthParams = new URLSearchParams({ client_id, redirect_uri, state });
   res.redirect(302, `${GITHUB_OAUTH_AUTHORIZE_URL}?${oauthParams}`);
-};
+}

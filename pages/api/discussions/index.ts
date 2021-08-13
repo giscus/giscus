@@ -85,11 +85,11 @@ async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | I
   res.status(200).json({ id });
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async function DiscussionsApi(req: NextApiRequest, res: NextApiResponse) {
   addCorsHeaders(req, res);
   if (req.method === 'POST') {
     await post(req, res);
     return;
   }
   await get(req, res);
-};
+}

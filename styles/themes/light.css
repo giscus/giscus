@@ -25,13 +25,13 @@ main {
   --color-bg-info: #ddf4ff;
   --color-state-focus-border: #0969da;
   --color-state-focus-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
-  --color-alert-error-text: #cf222e;
-  --color-alert-error-bg: #ffe7e5;
+  --color-alert-error-text: #24292f;
+  --color-alert-error-bg: #ffebe9;
   --color-alert-error-border: rgba(255, 129, 130, 0.4);
   --color-counter-secondary-text: #57606a;
   --color-counter-secondary-bg: rgba(234, 238, 242, 0.5);
   --color-box-border-info: rgba(84, 174, 255, 0.4);
-  --color-markdown-code-bg: rgba(234, 238, 242, 0.5);
+  --color-markdown-code-bg: rgba(175, 184, 193, 0.4);
   --color-hidden-text-expander-bg: rgba(175, 184, 193, 0.4);
   --color-label-border: #d0d7de;
   --color-input-bg: #fff;

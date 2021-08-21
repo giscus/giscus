@@ -15,7 +15,7 @@ main {
   --color-text-tertiary: #f0f3f6;
   --color-text-link: #71b7ff;
   --color-text-danger: #ff6a69;
-  --color-text-success: #26cd41;
+  --color-text-success: #26cd4d;
   --color-border-primary: #7a828e;
   --color-border-secondary: #7a828e;
   --color-border-tertiary: rgba(158, 167, 179, 0.4);
@@ -29,13 +29,13 @@ main {
   --color-bg-info: rgba(64, 158, 255, 0.15);
   --color-state-focus-border: #409eff;
   --color-state-focus-shadow: 0 0 0 3px #1e60d5;
-  --color-alert-error-text: #ff6a69;
+  --color-alert-error-text: #f0f3f6;
   --color-alert-error-bg: rgba(255, 106, 105, 0.15);
   --color-alert-error-border: #ff6a69;
   --color-counter-secondary-text: #f0f3f6;
   --color-counter-secondary-bg: rgba(158, 167, 179, 0.1);
   --color-box-border-info: #409eff;
-  --color-markdown-code-bg: rgba(158, 167, 179, 0.1);
+  --color-markdown-code-bg: rgba(158, 167, 179, 0.4);
   --color-hidden-text-expander-bg: rgba(158, 167, 179, 0.4);
   --color-label-border: #7a828e;
   --color-input-bg: #0a0c10;
@@ -53,17 +53,17 @@ main {
   --color-btn-active-bg: #4c525d;
   --color-btn-active-border: #9ea7b3;
   --color-btn-primary-text: #0a0c10;
-  --color-btn-primary-bg: #09b432;
-  --color-btn-primary-border: #4ae15e;
+  --color-btn-primary-bg: #09b43a;
+  --color-btn-primary-border: #4ae168;
   --color-btn-primary-shadow: 0 0 transparent;
   --color-btn-primary-inset-shadow: 0 0 transparent;
-  --color-btn-primary-hover-bg: #26cd41;
-  --color-btn-primary-hover-border: #4ae15e;
-  --color-btn-primary-selected-bg: rgba(82, 89, 100, 0.9);
+  --color-btn-primary-hover-bg: #26cd4d;
+  --color-btn-primary-hover-border: #4ae168;
+  --color-btn-primary-selected-bg: #09b43a;
   --color-btn-primary-selected-shadow: 0 0 transparent;
   --color-btn-primary-disabled-text: rgba(10, 12, 16, 0.5);
-  --color-btn-primary-disabled-bg: rgba(9, 180, 50, 0.6);
-  --color-btn-primary-disabled-border: rgba(74, 225, 94, 0.4);
+  --color-btn-primary-disabled-bg: rgba(9, 180, 58, 0.6);
+  --color-btn-primary-disabled-border: rgba(74, 225, 104, 0.4);
   --color-scale-blue-8: #1e60d5;
 
   /* Extensions from color-modes.scss */

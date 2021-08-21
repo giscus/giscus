@@ -60,10 +60,16 @@ main {
   --color-btn-primary-disabled-text: rgba(240, 246, 252, 0.5);
   --color-btn-primary-disabled-bg: rgba(35, 134, 54, 0.6);
   --color-btn-primary-disabled-border: rgba(240, 246, 252, 0.1);
+  --color-scale-gray-7: #21262d;
+  --color-scale-gray-8: #161b22;
   --color-scale-blue-8: #0c2d6b;
 
   /* Extensions from color-modes.scss */
   --color-upvote-icon-bg: var(--color-scale-blue-8);
+  --color-social-reaction-border: var(--color-scale-blue-8);
+  --color-social-reaction-bg: var(--color-scale-gray-8);
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
 main .pagination-loader-container {

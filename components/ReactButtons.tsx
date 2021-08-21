@@ -78,8 +78,8 @@ export default function ReactButtons({
     ]) => (
       <button
         key={value}
-        className={`px-2 mb-1 dmd:mb-4 mr-2 border leading-[26px] color-border-primary rounded-md ${
-          viewerHasReacted ? ' color-bg-info' : ''
+        className={`gsc-direct-reaction-button gsc-social-reaction-summary-item ${
+          viewerHasReacted ? 'has-reacted' : ''
         }${!token ? ' cursor-not-allowed' : ''}`}
         disabled={!token}
         title={
@@ -91,8 +91,8 @@ export default function ReactButtons({
         }
         onClick={() => react(value as Reactions)}
       >
-        <span className="inline-block w-4 h-4 mr-2">{Reactions[value].emoji}</span>
-        <span className="text-xs color-text-link">{count}</span>
+        <span className="inline-block w-4 h-4">{Reactions[value].emoji}</span>
+        <span className="text-xs ml-[2px] px-1">{count}</span>
       </button>
     ),
     [react, token],
@@ -110,17 +110,15 @@ export default function ReactButtons({
       {variant !== 'groupsOnly' ? (
         <div ref={ref} className="gsc-reactions-menu">
           <button
-            className={`Link--secondary gsc-reactions-button${
-              variant !== 'popoverOnly'
-                ? ' popover-only color-bg-tertiary color-border-primary'
-                : ''
-            }${directReactionButtons.length > 0 ? ' mr-4' : ''}`}
+            className={`Link--secondary gsc-reactions-button gsc-social-reaction-summary-item ${
+              variant === 'popoverOnly' ? 'popover-only' : 'popover'
+            }`}
             onClick={togglePopover}
           >
-            <SmileyIcon size={18} />
+            <SmileyIcon size={16} />
           </button>
           <div
-            className={`color-border-primary color-text-secondary color-bg-overlay gsc-reactions-popover${
+            className={`color-border-primary color-text-secondary color-bg-overlay gsc-reactions-popover ${
               isOpen ? ' open' : ''
             } ${variant === 'popoverOnly' ? 'popover-only' : 'popover'}`}
           >
@@ -153,7 +151,7 @@ export default function ReactButtons({
                   onBlur={() => setCurrent('')}
                   disabled={!token}
                 >
-                  <span className="inline-block transition-transform gsc-emoji">{emoji}</span>
+                  <span className="gsc-emoji">{emoji}</span>
                 </button>
               ))}
             </div>

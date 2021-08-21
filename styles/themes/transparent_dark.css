@@ -7,7 +7,6 @@
  */
 
 main {
-  --color-scale-blue-8: #0c2d6b;
   --color-text-primary: #c9d1d9;
   --color-text-secondary: #8b949e;
   --color-text-tertiary: #8b949e;
@@ -60,9 +59,16 @@ main {
   --color-box-border-info: rgba(56, 139, 253, 0.4);
   --color-markdown-code-bg: transparent;
   --color-hidden-text-expander-bg: transparent;
+  --color-scale-gray-7: rgba(55, 62, 71, 0.5);
+  --color-scale-gray-8: rgba(45, 51, 59, 0.5);
+  --color-scale-blue-8: rgba(20, 61, 121, 0.5);
 
   /* Extensions from color-modes.scss */
   --color-upvote-icon-bg: transparent;
+  --color-social-reaction-border: var(--color-scale-blue-8);
+  --color-social-reaction-bg: transparent;
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
 main .pagination-loader-container {

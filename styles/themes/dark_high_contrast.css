@@ -64,10 +64,16 @@ main {
   --color-btn-primary-disabled-text: rgba(10, 12, 16, 0.5);
   --color-btn-primary-disabled-bg: rgba(9, 180, 58, 0.6);
   --color-btn-primary-disabled-border: rgba(74, 225, 104, 0.4);
+  --color-scale-gray-7: #272b33;
+  --color-scale-gray-8: #272b33;
   --color-scale-blue-8: #1e60d5;
 
   /* Extensions from color-modes.scss */
   --color-upvote-icon-bg: var(--color-scale-blue-8);
+  --color-social-reaction-border: var(--color-scale-blue-8);
+  --color-social-reaction-bg: var(--color-scale-gray-8);
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
 main .pagination-loader-container {

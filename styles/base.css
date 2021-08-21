@@ -378,6 +378,7 @@ img.emoji {
 
 .gsc-emoji-button:focus .gsc-emoji,
 .gsc-emoji-button:hover .gsc-emoji {
+  @apply inline-block transition-transform;
   transform: scaleX(1.5) scaleY(1.5);
 }
 
@@ -522,20 +523,53 @@ img.emoji {
   @apply flex px-4 py-2 rounded-b-md;
 }
 
+.gsc-social-reaction-summary-item {
+  @apply px-[6px] rounded-full leading-[24px] border whitespace-nowrap;
+  background-color: var(--color-social-reaction-bg);
+  border-color: var(--color-border-primary);
+  color: var(--color-text-secondary);
+}
+
+.gsc-social-reaction-summary-item:hover {
+  background-color: var(--color-social-reaction-bg-hover);
+}
+
+.gsc-social-reaction-summary-item.has-reacted {
+  background-color: var(--color-bg-info);
+  border-color: var(--color-social-reaction-border);
+  color: var(--color-text-link);
+}
+
+.gsc-social-reaction-summary-item.has-reacted:hover {
+  background-color: var(--color-social-reaction-bg-reacted-hover);
+}
+
+.gsc-social-reaction-summary-item:disabled {
+  @apply cursor-not-allowed;
+}
+
 .gsc-reactions-menu {
   @apply relative;
 }
 
 .gsc-reactions-button {
-  @apply px-3 py-[3px];
+  @apply px-[5px] py-[3px] mr-2 leading-[inherit] text-xs;
+}
+
+.gsc-reactions-button:hover {
+  color: var(--color-text-tertiary);
 }
 
 .gsc-reactions-button.popover-only {
-  @apply mb-1 border rounded-md dmd:mb-4;
+  @apply bg-transparent border border-none;
+}
+
+.gsc-reactions-button.popover-only:hover {
+  color: var(--color-text-link);
 }
 
 .gsc-reactions-popover {
-  @apply ease-in-out duration-100 origin-center transform transition z-20 border rounded top-10 absolute invisible scale-50 w-[146px];
+  @apply ease-in-out duration-100 origin-center transform transition z-20 border rounded mt-[2px] absolute invisible scale-50 w-[146px];
 }
 
 .gsc-reactions-popover.open {
@@ -560,6 +594,10 @@ img.emoji {
 
 .gsc-direct-reaction-buttons {
   @apply flex flex-wrap;
+}
+
+.gsc-direct-reaction-button {
+  @apply mb-1 mr-2 border dmd:mb-4;
 }
 
 .gsc-reply {

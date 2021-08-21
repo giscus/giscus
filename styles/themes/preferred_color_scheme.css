@@ -61,10 +61,17 @@ main {
   --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
   --color-btn-primary-disabled-bg: #94d3a2;
   --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
+  --color-scale-gray-0: #f6f8fa;
+  --color-scale-gray-1: #eaeef2;
   --color-scale-blue-1: #b6e3ff;
+  --color-scale-blue-8: #0a3069;
 
   /* Extensions from color-modes.scss */
   --color-upvote-icon-bg: var(--color-scale-blue-1);
+  --color-social-reaction-border: var(--color-scale-blue-1);
+  --color-social-reaction-bg: var(--color-scale-gray-0);
+  --color-social-reaction-bg-hover: var(--color-scale-gray-1);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
 }
 
 main .pagination-loader-container {
@@ -138,10 +145,16 @@ main {
     --color-btn-primary-disabled-text: rgba(240, 246, 252, 0.5);
     --color-btn-primary-disabled-bg: rgba(35, 134, 54, 0.6);
     --color-btn-primary-disabled-border: rgba(240, 246, 252, 0.1);
+    --color-scale-gray-7: #21262d;
+    --color-scale-gray-8: #161b22;
     --color-scale-blue-8: #0c2d6b;
 
     /* Extensions from color-modes.scss */
     --color-upvote-icon-bg: var(--color-scale-blue-8);
+    --color-social-reaction-border: var(--color-scale-blue-8);
+    --color-social-reaction-bg: var(--color-scale-gray-8);
+    --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+    --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
   }
 
   main .pagination-loader-container {

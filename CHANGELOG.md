@@ -7,6 +7,18 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-08-22
+
+### changed
+
+- Update upvotes and reactions UI to match GitHub's new UI
+  ([#164](https://github.com/laymonage/giscus/pull/164)). \
+  **Note:** this might be a **BREAKING** change if you use a custom CSS.
+- Scale font size to 5% of viewport width on tiny screens
+  ([#164](https://github.com/laymonage/giscus/pull/164)).
+- Project configuration fixes
+  ([#164](https://github.com/laymonage/giscus/pull/164)).
+
 ## 2021-08-13
 
 ### changed

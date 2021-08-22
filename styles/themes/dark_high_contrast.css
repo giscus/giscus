@@ -69,7 +69,6 @@ main {
   --color-scale-blue-8: #1e60d5;
 
   /* Extensions from color-modes.scss */
-  --color-upvote-icon-bg: var(--color-scale-blue-8);
   --color-social-reaction-border: var(--color-scale-blue-8);
   --color-social-reaction-bg: var(--color-scale-gray-8);
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);

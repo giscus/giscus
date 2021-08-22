@@ -67,7 +67,6 @@ main {
   --color-scale-blue-8: #0a3069;
 
   /* Extensions from color-modes.scss */
-  --color-upvote-icon-bg: var(--color-scale-blue-1);
   --color-social-reaction-border: var(--color-scale-blue-1);
   --color-social-reaction-bg: var(--color-scale-gray-0);
   --color-social-reaction-bg-hover: var(--color-scale-gray-1);
@@ -150,7 +149,6 @@ main {
     --color-scale-blue-8: #0c2d6b;
 
     /* Extensions from color-modes.scss */
-    --color-upvote-icon-bg: var(--color-scale-blue-8);
     --color-social-reaction-border: var(--color-scale-blue-8);
     --color-social-reaction-bg: var(--color-scale-gray-8);
     --color-social-reaction-bg-hover: var(--color-scale-gray-7);

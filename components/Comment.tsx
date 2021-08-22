@@ -58,34 +58,10 @@ export default function Comment({
     );
   }, [comment, onCommentUpdate, token]);
 
-  const hidden = comment.deletedAt || comment.isMinimized;
+  const hidden = !!comment.deletedAt || comment.isMinimized;
 
   return (
     <div className="gsc-comment">
-      {!comment.isMinimized && onCommentUpdate ? (
-        <div className="gsc-upvotes">
-          <button
-            type="button"
-            className={`gsc-upvote-button ${
-              comment.viewerHasUpvoted ? 'color-text-link' : 'color-text-secondary'
-            }`}
-            onClick={upvote}
-            disabled={!token || !comment.viewerCanUpvote}
-          >
-            <ArrowUpIcon className="transform hover:translate-y-[-10%] transition-transform ease-in-out duration-150" />
-          </button>
-          <div
-            className={`gsc-upvote-count ${
-              comment.viewerHasUpvoted
-                ? 'color-text-link color-upvote-icon-bg'
-                : 'Counter--secondary'
-            }`}
-            title={`${comment.upvoteCount} upvote${comment.upvoteCount !== 1 ? 's' : ''}`}
-          >
-            {comment.upvoteCount}
-          </div>
-        </div>
-      ) : null}
       <div
         className={`w-full min-w-0 border rounded-md color-bg-primary ${
           comment.viewerDidAuthor ? 'color-box-border-info' : 'color-border-primary'
@@ -174,6 +150,23 @@ export default function Comment({
             }${comment.replies.length > 0 ? ' rounded-b-md' : ''}`}
           >
             <div className="gsc-comment-reactions">
+              <button
+                type="button"
+                className={`gsc-upvote-button gsc-social-reaction-summary-item ${
+                  comment.viewerHasUpvoted ? 'has-reacted' : ''
+                }`}
+                onClick={upvote}
+                disabled={!token || !comment.viewerCanUpvote}
+              >
+                <ArrowUpIcon />
+
+                <span
+                  className="gsc-upvote-count"
+                  title={`${comment.upvoteCount} upvote${comment.upvoteCount !== 1 ? 's' : ''}`}
+                >
+                  {comment.upvoteCount}
+                </span>
+              </button>
               {!hidden ? (
                 <ReactButtons
                   reactionGroups={comment.reactions}
@@ -192,7 +185,7 @@ export default function Comment({
         {comment.replies.length > 0 ? (
           <div
             className={`color-bg-canvas-inset color-border-primary gsc-replies ${
-              renderReplyBox && !comment.isMinimized ? 'border-b' : 'rounded-b-md'
+              renderReplyBox && !hidden ? 'border-b' : 'rounded-b-md'
             }`}
           >
             {onReplyUpdate
@@ -210,7 +203,7 @@ export default function Comment({
             ) : null}
           </div>
         ) : null}
-        {!hidden && renderReplyBox ? renderReplyBox(incrementPage) : null}
+        {!comment.isMinimized && renderReplyBox ? renderReplyBox(incrementPage) : null}
       </div>
     </div>
   );

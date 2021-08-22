@@ -104,10 +104,6 @@ a {
   border-color: var(--color-label-border);
 }
 
-.color-upvote-icon-bg {
-  background-color: var(--color-upvote-icon-bg);
-}
-
 .color-box-border-info {
   border-color: var(--color-box-border-info);
 }
@@ -405,14 +401,6 @@ img.emoji {
   @apply flex flex-col;
 }
 
-.gsc-upvotes {
-  @apply flex-shrink-0 mr-2 text-center w-14;
-}
-
-.gsc-upvote-count {
-  @apply overflow-x-hidden overflow-ellipsis text-xs leading-5 min-w-[26px] w-min mx-auto rounded-full;
-}
-
 .gsc-comment {
   @apply flex my-4 text-sm;
 }
@@ -546,6 +534,22 @@ img.emoji {
 
 .gsc-social-reaction-summary-item:disabled {
   @apply cursor-not-allowed;
+}
+
+.gsc-upvotes {
+  @apply flex-shrink-0 mr-2 text-center w-14;
+}
+
+.gsc-upvote-count {
+  @apply px-1 ml-[2px] overflow-x-hidden overflow-ellipsis text-xs leading-5 min-w-[26px] w-min mx-auto rounded-full;
+}
+
+.gsc-upvote-button {
+  @apply mr-2;
+}
+
+.gsc-upvote-button:hover svg {
+  @apply transform translate-y-[-10%] transition-transform ease-in-out duration-150;
 }
 
 .gsc-reactions-menu {

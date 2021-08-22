@@ -13,6 +13,12 @@ a {
   color: var(--color-text-link);
 }
 
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 5vw;
+  }
+}
+
 .color-text-link,
 .Link--primary:hover,
 .Link--secondary:hover {

@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-08-30
+
+### changed
+
+- Redirect to app return URL if access is denied by user
+  ([#167](https://github.com/laymonage/giscus/pull/167)).
+
 ## 2021-08-22
 
 ### changed

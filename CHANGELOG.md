@@ -7,6 +7,20 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-09-18
+
+### changed
+
+- Self-host iframeResizer
+  ([#172](https://github.com/laymonage/giscus/pull/172)).
+
+## 2021-09-17
+
+### changed
+
+- Upgrade dependencies
+  ([#171](https://github.com/laymonage/giscus/pull/171)).
+
 ## 2021-08-30
 
 ### changed

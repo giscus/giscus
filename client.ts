@@ -16,7 +16,7 @@ function loadScript(url: string, callback: VoidFunction) {
   script.insertAdjacentElement('beforeend', target);
 }
 
-loadScript('https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js', () =>
+loadScript(`${giscusOrigin}/js/iframeResizer.min.js`, () =>
   iFrameResize({ checkOrigin: [giscusOrigin], resizeFrom: 'child' }, '.giscus-frame'),
 );
 

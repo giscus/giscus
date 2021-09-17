@@ -12,7 +12,8 @@ major updates to the project.
 ### changed
 
 - Self-host iframeResizer
-  ([#172](https://github.com/laymonage/giscus/pull/172)).
+  ([#172](https://github.com/laymonage/giscus/pull/172),
+  [#173](https://github.com/laymonage/giscus/pull/173)).
 
 ## 2021-09-17
 

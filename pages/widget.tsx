@@ -136,7 +136,7 @@ export default function WidgetPage({
       </main>
 
       <Script
-        src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.2/js/iframeResizer.contentWindow.min.js"
+        src="/js/iframeResizer.contentWindow.min.js"
         integrity="sha256-rbC2imHDJIBYUIXvf+XiYY+2cXmiSlctlHgI+rrezQo="
         crossOrigin="anonymous"
       />

@@ -25,5 +25,5 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['public/client.js'],
+  ignorePatterns: ['public/client.js', 'public/js/iframeResizer.contentWindow.min.js'],
 };

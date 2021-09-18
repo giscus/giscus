@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2021-09-18
 
+### fixed
+
+- Improve accessibility and Lighthouse score
+  ([#175](https://github.com/laymonage/giscus/pull/175)).
+
 ### changed
 
 - Self-host iframeResizer

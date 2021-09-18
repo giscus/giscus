@@ -1,0 +1,4 @@
+User-agent: *
+
+Disallow: /widget
+Disallow: /api/*

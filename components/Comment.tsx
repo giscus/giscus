@@ -1,4 +1,4 @@
-import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
+import { ArrowUpIcon } from '@primer/octicons-react';
 import { ReactElement, ReactNode, useCallback, useContext, useState } from 'react';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { IComment, IReply } from '../lib/types/adapter';
@@ -120,12 +120,6 @@ export default function Comment({
                   edited
                 </button>
               ) : null}
-              <button className="hidden Link--secondary">
-                {
-                  // TODO: implement menu and add sm:inline-block class
-                }
-                <KebabHorizontalIcon />
-              </button>
             </div>
           </div>
         ) : null}

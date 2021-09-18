@@ -69,7 +69,7 @@ export default function Comment({
       >
         {!comment.isMinimized ? (
           <div className="gsc-comment-header">
-            <h3 className="gsc-comment-author">
+            <div className="gsc-comment-author">
               <a
                 rel="nofollow noopener noreferrer"
                 target="_blank"
@@ -110,7 +110,7 @@ export default function Comment({
                   </span>
                 </div>
               ) : null}
-            </h3>
+            </div>
             <div className="flex">
               {comment.lastEditedAt ? (
                 <button

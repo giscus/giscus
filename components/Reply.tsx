@@ -42,7 +42,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
         <div className="w-full min-w-0 ml-2">
           {!hidden ? (
             <div className="gsc-reply-header">
-              <h3 className="gsc-reply-author">
+              <div className="gsc-reply-author">
                 <a
                   rel="nofollow noopener noreferrer"
                   target="_blank"
@@ -76,7 +76,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                     </span>
                   </div>
                 ) : null}
-              </h3>
+              </div>
               <div className="flex pr-4">
                 {reply.lastEditedAt ? (
                   <button

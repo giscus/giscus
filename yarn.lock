@@ -1957,16 +1957,6 @@ get-symbol-description@^1.0.0:
     call-bind "^1.0.2"
     get-intrinsic "^1.1.1"
 
-github-syntax-dark@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/github-syntax-dark/-/github-syntax-dark-0.5.0.tgz#17046545ffaa041e582458001df968b7ec91c2ea"
-  integrity sha1-FwRlRf+qBB5YJFgAHflot+yRwuo=
-
-github-syntax-light@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/github-syntax-light/-/github-syntax-light-0.5.0.tgz#17466fdd3c08d756ce3f016ed18a2a1343ce0729"
-  integrity sha1-F0Zv3TwI11bOPwFu0YoqE0POByk=
-
 glob-parent@^5.1.2, glob-parent@~5.1.0, glob-parent@~5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.2.tgz#869832c58034fe68a4093c17dc15e8340d8401c4"

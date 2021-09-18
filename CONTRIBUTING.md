@@ -26,11 +26,9 @@ theme's key. You can use the other theme files as reference (see
 [`custom_example.css`][example]). Once you've added the theme file, add the key
 and name to `Theme` in [`lib/variables.ts`][variables] to register it.
 
-You can `@import` [`github-syntax-dark`][syntax-dark] or
-[`github-syntax-light`][syntax-light] for the syntax themes. If you want to
-customize the syntax themes, you can replace the `@import` with the actual CSS
-instead. The classes with the `pl-` prefix are for the syntax theme. See the
-[compiled example][example-compiled] for more details.
+If you want to customize the syntax themes, you can change the CSS variables
+that start with the `--color-prettylights-syntax-` prefix. See the
+[`custom_example.css`][example] file for more details.
 
 To support both light and dark mode based on the user's system preferences, you
 can use the `@media (prefers-color-scheme: dark)` query. For more details, see
@@ -54,7 +52,6 @@ use it easily.
 [example]: styles/themes/custom_example.css
 [syntax-dark]: https://github.com/primer/github-syntax-dark
 [syntax-light]: https://github.com/primer/github-syntax-light
-[example-compiled]: https://giscus.app/themes/custom_example.css
 [preferred-color-scheme]: styles/themes/preferred_color_scheme.css
 [gsc-classes]: https://github.com/laymonage/giscus/search?l=TSX&q=gsc
 [custom-theme-url]: https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md#data-theme

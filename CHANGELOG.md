@@ -23,6 +23,11 @@ major updates to the project.
   [#173](https://github.com/laymonage/giscus/pull/173)).
 - Upgrade SWR to 1.0
   ([#174](https://github.com/laymonage/giscus/pull/174)).
+- Get app host from environment variable
+  ([#177](https://github.com/laymonage/giscus/pull/177)). \
+  **Note:** if you self-host giscus, you need to set the
+  `NEXT_PUBLIC_GISCUS_APP_HOST` variable so that the domain correctly shows up
+  in the configuration step.
 
 ## 2021-09-17
 

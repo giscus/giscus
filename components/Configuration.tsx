@@ -4,6 +4,7 @@ import { handleClipboardCopy } from '../lib/adapter';
 import { useDebounce } from '../lib/hooks';
 import { ICategory } from '../lib/types/adapter';
 import { Theme } from '../lib/variables';
+import { GISCUS_APP_HOST } from '../services/config';
 import { getCategories } from '../services/giscus/categories';
 
 interface IDirectConfig {
@@ -446,7 +447,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             onChange={(event) => onDirectConfigChange('themeUrl', event.target.value as Theme)}
             type="text"
             className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
-            placeholder="https://giscus.app/themes/custom_example.css"
+            placeholder={`${GISCUS_APP_HOST}/themes/custom_example.css`}
           />
 
           <p className="text-xs color-text-danger">
@@ -466,7 +467,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <pre>
           <span className="pl-kos">{'<'}</span>
           <span className="pl-ent">script</span> <span className="pl-c1">src</span>={'"'}
-          <span className="pl-s">https://giscus.app/client.js</span>
+          <span className="pl-s">{GISCUS_APP_HOST}/client.js</span>
           {'"\n        '}
           <span className="pl-c1">data-repo</span>={'"'}
           <span className="pl-s">{config.repository || '[ENTER REPO HERE]'}</span>

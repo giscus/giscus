@@ -60,7 +60,7 @@ a:hover {
 .markdown code,
 .markdown tt {
   @apply text-xs px-1 py-[2px] rounded-md;
-  background-color: var(--color-markdown-code-bg);
+  background-color: var(--color-neutral-muted);
 }
 
 .markdown .highlight {
@@ -69,7 +69,7 @@ a:hover {
 
 .markdown .highlight pre,
 .markdown pre {
-  @apply text-xs p-4 overflow-auto rounded-md;
+  @apply p-4 overflow-auto text-xs rounded-md;
   line-height: 1.45;
   background-color: var(--color-bg-tertiary);
 }

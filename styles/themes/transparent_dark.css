@@ -55,8 +55,8 @@ main {
   --color-input-contrast-bg: transparent;
   --color-input-border: #21262d;
   --color-box-border-info: rgba(56, 139, 253, 0.4);
-  --color-markdown-code-bg: transparent;
   --color-hidden-text-expander-bg: transparent;
+  --color-neutral-muted: rgba(110, 118, 129, 0.4);
   --color-scale-gray-7: rgba(55, 62, 71, 0.5);
   --color-scale-gray-8: rgba(45, 51, 59, 0.5);
   --color-scale-blue-8: rgba(20, 61, 121, 0.5);

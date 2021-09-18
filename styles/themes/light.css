@@ -29,7 +29,6 @@ main {
   --color-counter-secondary-text: #57606a;
   --color-counter-secondary-bg: rgba(234, 238, 242, 0.5);
   --color-box-border-info: rgba(84, 174, 255, 0.4);
-  --color-markdown-code-bg: rgba(175, 184, 193, 0.4);
   --color-hidden-text-expander-bg: rgba(175, 184, 193, 0.4);
   --color-label-border: #d0d7de;
   --color-input-bg: #fff;
@@ -58,6 +57,7 @@ main {
   --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
   --color-btn-primary-disabled-bg: #94d3a2;
   --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
+  --color-neutral-muted: rgba(175, 184, 193, 0.2);
   --color-scale-gray-0: #f6f8fa;
   --color-scale-gray-1: #eaeef2;
   --color-scale-blue-1: #b6e3ff;

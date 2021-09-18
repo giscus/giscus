@@ -313,6 +313,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           </>
         )}
       </p>
+      <label htmlFor="category" className="sr-only">
+        Discussion category
+      </label>
       <select
         name="category"
         id="category"
@@ -415,6 +418,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         </a>{' '}
         a custom theme.
       </p>
+      <label htmlFor="theme" className="sr-only">
+        Theme
+      </label>
       <select
         name="theme"
         id="theme"

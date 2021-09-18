@@ -13,6 +13,7 @@ import { ThemeContext } from '../lib/context';
 import { sendData } from '../lib/messages';
 import { ISetConfigMessage } from '../lib/types/giscus';
 import { getThemeUrl } from '../lib/utils';
+import { GISCUS_APP_HOST } from '../services/config';
 
 export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
@@ -46,7 +47,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
     theme: 'light',
-    themeUrl: 'https://',
+    themeUrl: `${GISCUS_APP_HOST}/themes/custom_example.css`,
     reactionsEnabled: true,
     emitMetadata: false,
   });

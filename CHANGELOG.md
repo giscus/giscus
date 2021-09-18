@@ -13,6 +13,8 @@ major updates to the project.
 
 - Improve accessibility and Lighthouse score
   ([#175](https://github.com/laymonage/giscus/pull/175)).
+- Fix transparent background
+  ([#176](https://github.com/laymonage/giscus/pull/176)).
 
 ### changed
 

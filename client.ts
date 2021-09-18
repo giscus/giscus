@@ -106,7 +106,7 @@ style.textContent = `
 
   .giscus-frame {
     border: none;
-    color-scheme: light dark;
+    color-scheme: normal;
   }
 `;
 document.head.prepend(style);

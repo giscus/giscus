@@ -151,6 +151,7 @@ export default function Comment({
                 }`}
                 onClick={upvote}
                 disabled={!token || !comment.viewerCanUpvote}
+                aria-label="Upvote"
               >
                 <ArrowUpIcon />
 

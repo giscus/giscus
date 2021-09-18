@@ -77,6 +77,7 @@ export default function ReactButtons({
       typeof reactionGroups[keyof IReactionGroups],
     ]) => (
       <button
+        aria-label={`Add ${Reactions[value].name} reaction`}
         key={value}
         className={`gsc-direct-reaction-button gsc-social-reaction-summary-item ${
           viewerHasReacted ? 'has-reacted' : ''
@@ -110,6 +111,7 @@ export default function ReactButtons({
       {variant !== 'groupsOnly' ? (
         <div ref={ref} className="gsc-reactions-menu">
           <button
+            aria-label="Add reactions"
             className={`Link--secondary gsc-reactions-button gsc-social-reaction-summary-item ${
               variant === 'popoverOnly' ? 'popover-only' : 'popover'
             }`}
@@ -134,6 +136,7 @@ export default function ReactButtons({
             <div className="m-2">
               {Object.entries(Reactions).map(([key, { name, emoji }]) => (
                 <button
+                  aria-label={`Add ${name} reaction`}
                   key={key}
                   type="button"
                   className={`gsc-emoji-button${

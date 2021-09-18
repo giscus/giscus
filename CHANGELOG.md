@@ -14,6 +14,8 @@ major updates to the project.
 - Self-host iframeResizer
   ([#172](https://github.com/laymonage/giscus/pull/172),
   [#173](https://github.com/laymonage/giscus/pull/173)).
+- Upgrade SWR to 1.0
+  ([#174](https://github.com/laymonage/giscus/pull/174)).
 
 ## 2021-09-17
 

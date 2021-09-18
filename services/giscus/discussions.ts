@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
-import { SWRConfig, useSWRInfinite } from 'swr';
+import { SWRConfig } from 'swr';
+import useSWRInfinite from 'swr/infinite';
 import { cleanParams, fetcher } from '../../lib/fetcher';
 import { Reactions, updateDiscussionReaction } from '../../lib/reactions';
 import { IComment, IGiscussion, IReply } from '../../lib/types/adapter';

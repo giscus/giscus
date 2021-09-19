@@ -7,6 +7,15 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-09-19
+
+### changed
+
+- Reduce memory usage limit to 192MB
+  ([#178](https://github.com/laymonage/giscus/pull/178)). \
+  **Note:** please consider donating, I've been hitting my free usage limit on
+  Vercel 🙁
+
 ## 2021-09-18
 
 ### fixed

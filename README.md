@@ -69,3 +69,11 @@ See [CONTRIBUTING.md][contributing]
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
 [contributing]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md
+
+<!-- end -->
+
+---
+
+[![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
+
+[vercel]: https://vercel.com/?utm_source=giscus&utm_campaign=oss

@@ -19,7 +19,8 @@ export const getStaticProps = async () => {
   const path = join(process.cwd(), 'README.md');
   const readme = readFileSync(path, 'utf-8');
   const contents = readme.split('<!-- configuration -->');
-  contents[1] = `${contents[1]}\n## try it out 👇👇👇\n`;
+  const [afterConfig] = contents[1].split('<!-- end -->');
+  contents[1] = `${afterConfig}\n## try it out 👇👇👇\n`;
 
   const token = await getAppAccessToken('laymonage/giscus').catch(() => '');
   const [contentBefore, contentAfter] = await Promise.all(
@@ -123,6 +124,12 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
           data-reactions-enabled="1"
           data-emit-metadata="0"
         />
+        <a
+          className="block mx-auto mb-6 w-max"
+          href="https://vercel.com/?utm_source=giscus&utm_campaign=oss"
+        >
+          <img src="/powered-by-vercel.svg" alt="Powered by Vercel" />
+        </a>
       </div>
     </main>
   );

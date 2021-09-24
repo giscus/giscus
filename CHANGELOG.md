@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-09-24
+
+### added
+
+- Add Vercel banner
+  ([#179](https://github.com/laymonage/giscus/pull/179)).
+
 ## 2021-09-19
 
 ### changed

@@ -22,9 +22,9 @@ export const getStaticProps = async () => {
   const [afterConfig] = contents[1].split('<!-- end -->');
   contents[1] = `${afterConfig}\n## try it out 👇👇👇\n`;
 
-  const token = await getAppAccessToken('laymonage/giscus').catch(() => '');
+  const token = await getAppAccessToken('giscus/giscus').catch(() => '');
   const [contentBefore, contentAfter] = await Promise.all(
-    contents.map(async (section) => await renderMarkdown(section, token, 'laymonage/giscus')),
+    contents.map(async (section) => await renderMarkdown(section, token, 'giscus/giscus')),
   );
 
   return {
@@ -93,7 +93,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
     replies: [],
     replyCount: 0,
     upvoteCount: 0,
-    url: 'https://github.com/laymonage/giscus',
+    url: 'https://github.com/giscus/giscus',
     viewerDidAuthor: false,
     viewerHasUpvoted: false,
     viewerCanUpvote: false,
@@ -115,7 +115,7 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
         <div className="w-full my-8 giscus" />
         <Script
           src="/client.js"
-          data-repo="laymonage/giscus"
+          data-repo="giscus/giscus"
           data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
           data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
           data-mapping="specific"

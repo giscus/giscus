@@ -15,7 +15,7 @@ const meta = {
   title: 'giscus',
   description: 'A comments widget built on GitHub Discussions.',
   image:
-    'https://opengraph.githubassets.com/5500584364ff6fde70d120e51f28f33ffe97d8f4661517bba2ab9515d0765857/laymonage/giscus',
+    'https://opengraph.githubassets.com/4f866d5b634e7cd5422af77f8dbfb6d48dd288b7c5c18326544c1973210320ed/giscus/giscus',
 };
 
 export default function App({ Component, pageProps }: AppProps) {

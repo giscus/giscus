@@ -397,7 +397,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           Discussion metadata will be sent periodically to the parent window. For demonstration,
           enable this option and open your {`browser's`} console on this page. See{' '}
           <a
-            href="https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md#imetadatamessage"
+            href="https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#imetadatamessage"
             target="_blank"
             rel="noreferrer noopener nofollow"
           >
@@ -411,7 +411,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
       <p>
         Choose a theme that matches your website. {`Can't`} find one that does?{' '}
         <a
-          href="https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md#creating-new-themes"
+          href="https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#creating-new-themes"
           target="_blank"
           rel="noreferrer noopener nofollow"
         >

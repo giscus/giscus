@@ -123,7 +123,7 @@ if (!existingContainer) {
   while (existingContainer.firstChild) existingContainer.firstChild.remove();
   existingContainer.appendChild(iframeElement);
 }
-const suggestion = `Please consider reporting this error at https://github.com/laymonage/giscus/issues/new.`;
+const suggestion = `Please consider reporting this error at https://github.com/giscus/giscus/issues/new.`;
 
 // Listen to error messages
 window.addEventListener('message', (event) => {

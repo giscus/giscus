@@ -236,13 +236,13 @@ encounter any problems, [create a new issue][new-issue].
 [app-doc]: https://docs.github.com/apps/building-integrations
 [create-app]: https://github.com/settings/apps/new
 [giscus]: https://giscus.app
-[token-validity-period]: https://github.com/laymonage/giscus/blob/main/pages/api/oauth/authorized.ts#L6
+[token-validity-period]: https://github.com/giscus/giscus/blob/main/pages/api/oauth/authorized.ts#L6
 [vercel]: https://vercel.com
 [env-example]: .env.example
 [api-routes]: pages/api
 [services]: services
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 [next-export]: https://nextjs.org/docs/advanced-features/static-html-export
-[configuration]: https://github.com/laymonage/giscus/blob/main/components/Configuration.tsx#L320
-[discussion]: https://github.com/laymonage/giscus/discussions/categories/q-a
-[new-issue]: https://github.com/laymonage/giscus/issues/new
+[configuration]: https://github.com/giscus/giscus/blob/main/components/Configuration.tsx#L320
+[discussion]: https://github.com/giscus/giscus/discussions/categories/q-a
+[new-issue]: https://github.com/giscus/giscus/issues/new

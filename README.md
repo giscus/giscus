@@ -22,10 +22,10 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 [giscus]: https://giscus.app
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
-[repo]: https://github.com/laymonage/giscus
-[advanced-usage]: https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md
-[creating-custom-themes]: https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md#data-theme
-[self-hosting]: https://github.com/laymonage/giscus/blob/main/SELF-HOSTING.md
+[repo]: https://github.com/giscus/giscus
+[advanced-usage]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
+[creating-custom-themes]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme
+[self-hosting]: https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md
 [search-api]: https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search
 [giscus-app]: https://github.com/apps/giscus
 [authorization]: https://docs.github.com/en/developers/apps/identifying-and-authorizing-users-for-github-apps
@@ -57,10 +57,10 @@ If you've previously used other systems that utilize GitHub Issues (e.g. [uttera
 See [CONTRIBUTING.md][contributing]
 
 [giscus-component]: https://github.com/giscus/giscus-component
-[repo]: https://github.com/laymonage/giscus
+[repo]: https://github.com/giscus/giscus
 [giscus-topic]: https://github.com/topics/giscus
 [topic-howto]: https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics
-[advanced-usage]: https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md
+[advanced-usage]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
 [utterances]: https://github.com/utterance/utterances
 [gitalk]: https://github.com/gitalk/gitalk
 [convert]: https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion
@@ -68,7 +68,7 @@ See [CONTRIBUTING.md][contributing]
 [os-phil-opp]: https://os.phil-opp.com
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
-[contributing]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md
+[contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md
 
 <!-- end -->
 

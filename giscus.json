@@ -4,7 +4,7 @@
     "https://giscus.vercel.app"
   ],
   "originsRegex": [
-    "https:\/\/giscus-git-([A-z0-9]|-)*laymonage\\.vercel\\.app",
-    "http:\/\/localhost:[0-9]+"
+    "https://giscus-git-([A-z0-9]|-)*giscus\\.vercel\\.app",
+    "http://localhost:[0-9]+"
   ]
 }

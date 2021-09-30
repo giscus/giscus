@@ -81,7 +81,7 @@ For example, given the following `<script>` tag:
 
 ```html
 <script src="https://giscus.app/client.js"
-        data-repo="laymonage/giscus"
+        data-repo="giscus/giscus"
         ...
         data-theme="https://giscus.app/themes/custom_example.css"
         ...>
@@ -231,5 +231,5 @@ sendMessage({
 ```
 
 [giscus.json]: giscus.json
-[creating-new-themes]: https://github.com/laymonage/giscus/blob/main/CONTRIBUTING.md#creating-new-themes
+[creating-new-themes]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#creating-new-themes
 [giscus.ts]: lib/types/giscus.ts

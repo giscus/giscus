@@ -53,6 +53,6 @@ use it easily.
 [syntax-dark]: https://github.com/primer/github-syntax-dark
 [syntax-light]: https://github.com/primer/github-syntax-light
 [preferred-color-scheme]: styles/themes/preferred_color_scheme.css
-[gsc-classes]: https://github.com/laymonage/giscus/search?l=TSX&q=gsc
-[custom-theme-url]: https://github.com/laymonage/giscus/blob/main/ADVANCED-USAGE.md#data-theme
+[gsc-classes]: https://github.com/giscus/giscus/search?l=TSX&q=gsc
+[custom-theme-url]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme
 [variables]: lib/variables.ts

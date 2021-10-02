@@ -478,7 +478,7 @@ img.emoji {
 }
 
 .gsc-replies {
-  @apply pt-2;
+  @apply pt-2 border-t rounded-b-md;
 }
 
 .gsc-comment-box {
@@ -514,7 +514,7 @@ img.emoji {
 }
 
 .gsc-reply-box {
-  @apply flex px-4 py-2 rounded-b-md;
+  @apply flex px-4 py-2 border-t rounded-b-md;
 }
 
 .gsc-social-reaction-summary-item {

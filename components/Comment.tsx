@@ -152,11 +152,7 @@ export default function Comment({
         </div>
         {children}
         {!comment.isMinimized && onCommentUpdate ? (
-          <div
-            className={`flex content-center justify-between ${
-              !!replyBox || comment.replies.length > 0 ? 'border-b' : ''
-            }${comment.replies.length > 0 ? ' rounded-b-md' : ''}`}
-          >
+          <div className="flex content-center justify-between">
             <div className="gsc-comment-reactions">
               <button
                 type="button"
@@ -194,7 +190,7 @@ export default function Comment({
         {comment.replies.length > 0 ? (
           <div
             className={`color-bg-canvas-inset color-border-primary gsc-replies ${
-              !!replyBox && !hidden ? 'border-b' : 'rounded-b-md'
+              !replyBox || hidden ? 'rounded-b-md' : ''
             }`}
           >
             {hasNextPage || hasUnfetchedReplies ? (

@@ -11,6 +11,8 @@ major updates to the project.
 
 ### changed
 
+- Improve footnotes rendering
+  ([#185](https://github.com/giscus/giscus/pull/185)).
 - Improve comment replies pagination
   ([#184](https://github.com/giscus/giscus/pull/184)).
 - Statically render the onboarding comment

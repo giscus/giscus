@@ -161,6 +161,22 @@ a:hover {
   background-color: var(--color-border-primary);
 }
 
+.markdown .footnotes {
+  @apply text-xs border-t;
+}
+
+.markdown .footnotes ol {
+  @apply pl-4;
+}
+
+.markdown sup > a::before {
+  content: '[';
+}
+
+.markdown sup > a::after {
+  content: ']';
+}
+
 .markdown > :last-child {
   @apply mb-0;
 }

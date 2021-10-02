@@ -152,6 +152,15 @@ export function processCommentBody(bodyHTML: string) {
   const content = template.content;
 
   content.querySelectorAll<HTMLAnchorElement>(':not(.email-hidden-toggle) > a').forEach((a) => {
+    const currentLink = window.location.href;
+
+    if (a.href.startsWith(`${currentLink}#`)) {
+      const parentLocation = window.parent.location;
+      const parentLink = parentLocation.href.replace(parentLocation.hash, '');
+      a.href = `${parentLink}${a.href.substr(currentLink.length)}`;
+      return;
+    }
+
     a.target = '_top';
     a.rel = 'noopener noreferrer nofollow';
   });

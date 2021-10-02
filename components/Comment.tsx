@@ -186,7 +186,7 @@ export default function Comment({
             </div>
             <div className="gsc-comment-replies-count">
               <span className="text-xs color-text-tertiary">
-                {comment.replies.length}&nbsp;{pluralizeReply(comment.replies.length)}
+                {comment.replyCount}&nbsp;{pluralizeReply(comment.replyCount)}
               </span>
             </div>
           </div>

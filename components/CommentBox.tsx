@@ -14,7 +14,6 @@ interface CommentBoxProps {
   context?: string;
   replyToId?: string;
   onSubmit: (comment: IComment | IReply) => void;
-  onReplyOpen?: VoidFunction;
   onDiscussionCreateRequest?: () => Promise<string>;
 }
 
@@ -24,7 +23,6 @@ export default function CommentBox({
   context,
   replyToId,
   onSubmit,
-  onReplyOpen,
   onDiscussionCreateRequest,
 }: CommentBoxProps) {
   const [isPreview, setIsPreview] = useState(false);
@@ -95,10 +93,9 @@ export default function CommentBox({
     reset,
   ]);
 
-  const handleReplyOpen = useCallback(() => {
-    onReplyOpen();
+  const handleReplyOpen = () => {
     setIsReplyOpen(true);
-  }, [onReplyOpen]);
+  };
 
   const handleTextAreaChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
     setInput(event.target.value);

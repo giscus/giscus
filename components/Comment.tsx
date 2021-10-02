@@ -13,9 +13,9 @@ import { AuthContext } from '../lib/context';
 interface ICommentProps {
   children?: ReactNode;
   comment: IComment;
+  replyBox?: ReactElement<typeof CommentBox>;
   onCommentUpdate?: (newComment: IComment, promise: Promise<unknown>) => void;
   onReplyUpdate?: (newReply: IReply, promise: Promise<unknown>) => void;
-  renderReplyBox?: (viewMore: VoidFunction) => ReactElement<typeof CommentBox>;
 }
 
 function pluralizeUpvotes(count: number) {
@@ -29,9 +29,9 @@ function pluralizeReply(count: number) {
 export default function Comment({
   children,
   comment,
+  replyBox,
   onCommentUpdate,
   onReplyUpdate,
-  renderReplyBox,
 }: ICommentProps) {
   const [backPage, setBackPage] = useState(0);
 
@@ -154,7 +154,7 @@ export default function Comment({
         {!comment.isMinimized && onCommentUpdate ? (
           <div
             className={`flex content-center justify-between ${
-              renderReplyBox || comment.replies.length > 0 ? 'border-b' : ''
+              !!replyBox || comment.replies.length > 0 ? 'border-b' : ''
             }${comment.replies.length > 0 ? ' rounded-b-md' : ''}`}
           >
             <div className="gsc-comment-reactions">
@@ -194,7 +194,7 @@ export default function Comment({
         {comment.replies.length > 0 ? (
           <div
             className={`color-bg-canvas-inset color-border-primary gsc-replies ${
-              renderReplyBox && !hidden ? 'border-b' : 'rounded-b-md'
+              !!replyBox && !hidden ? 'border-b' : 'rounded-b-md'
             }`}
           >
             {hasNextPage || hasUnfetchedReplies ? (
@@ -230,7 +230,7 @@ export default function Comment({
           </div>
         ) : null}
 
-        {!comment.isMinimized && renderReplyBox ? renderReplyBox(incrementBackPage) : null}
+        {!comment.isMinimized && !!replyBox ? replyBox : null}
       </div>
     </div>
   );

@@ -18,6 +18,14 @@ interface ICommentProps {
   renderReplyBox?: (viewMore: VoidFunction) => ReactElement<typeof CommentBox>;
 }
 
+function pluralizeUpvotes(count: number) {
+  return count === 1 ? 'upvote' : 'upvotes';
+}
+
+function pluralizeReply(count: number) {
+  return count === 1 ? 'reply' : 'replies';
+}
+
 export default function Comment({
   children,
   comment,
@@ -31,6 +39,7 @@ export default function Comment({
   const remainingReplies = comment.replyCount - replies.length;
 
   const hasNextPage = replies.length < comment.replies.length;
+  const hasUnfetchedReplies = !hasNextPage && remainingReplies > 0;
 
   const { token } = useContext(AuthContext);
 
@@ -162,7 +171,7 @@ export default function Comment({
 
                 <span
                   className="gsc-upvote-count"
-                  title={`${comment.upvoteCount} upvote${comment.upvoteCount !== 1 ? 's' : ''}`}
+                  title={`${comment.upvoteCount} ${pluralizeUpvotes(comment.upvoteCount)}`}
                 >
                   {comment.upvoteCount}
                 </span>
@@ -177,7 +186,7 @@ export default function Comment({
             </div>
             <div className="gsc-comment-replies-count">
               <span className="text-xs color-text-tertiary">
-                {comment.replies.length}&nbsp;{comment.replies.length === 1 ? 'reply' : 'replies'}
+                {comment.replies.length}&nbsp;{pluralizeReply(comment.replies.length)}
               </span>
             </div>
           </div>
@@ -188,15 +197,28 @@ export default function Comment({
               renderReplyBox && !hidden ? 'border-b' : 'rounded-b-md'
             }`}
           >
-            {hasNextPage ? (
+            {hasNextPage || hasUnfetchedReplies ? (
               <div className="flex items-center h-8 pl-4 mb-2">
                 <div className="flex content-center flex-shrink-0 mr-[9px] w-[29px]">
                   <KebabHorizontalIcon className="w-full rotate-90 fill-[var(--color-border-muted)]" />
                 </div>
 
-                <button className="color-text-link hover:underline" onClick={incrementBackPage}>
-                  Show {remainingReplies} previous {remainingReplies === 1 ? 'reply' : 'replies'}
-                </button>
+                {hasNextPage ? (
+                  <button className="color-text-link hover:underline" onClick={incrementBackPage}>
+                    Show {remainingReplies} previous {pluralizeReply(remainingReplies)}
+                  </button>
+                ) : null}
+
+                {hasUnfetchedReplies ? (
+                  <a
+                    href={comment.url}
+                    className="color-text-link hover:underline"
+                    rel="nofollow noopener noreferrer"
+                    target="_blank"
+                  >
+                    See {remainingReplies} previous {pluralizeReply(remainingReplies)} on GitHub
+                  </a>
+                ) : null}
               </div>
             ) : null}
 

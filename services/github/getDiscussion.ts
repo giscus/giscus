@@ -53,7 +53,7 @@ const DISCUSSION_QUERY = `
         }
         viewerHasReacted
       }
-      replies(first: 100) {
+      replies(last: 100) {
         totalCount
         nodes {
           id

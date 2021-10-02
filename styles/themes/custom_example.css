@@ -15,6 +15,7 @@ main {
   --color-border-secondary: #21262d;
   --color-border-tertiary: rgba(110, 118, 129, 0.4);
   --color-border-info: #1f6feb;
+  --color-border-muted: #373e47;
   --color-bg-canvas: #15202b;
   --color-bg-canvas-inset: rgba(21, 32, 43, 1);
   --color-bg-primary: rgb(25, 39, 52);

@@ -14,6 +14,7 @@ main {
   --color-border-secondary: #d8dee4;
   --color-border-tertiary: rgba(175, 184, 193, 0.4);
   --color-border-info: #0969da;
+  --color-border-muted: hsla(210, 18%, 87%, 1);
   --color-bg-canvas: #fff;
   --color-bg-canvas-inset: #f6f8fa;
   --color-bg-primary: #fff;
@@ -129,6 +130,7 @@ main {
     --color-border-secondary: #21262d;
     --color-border-tertiary: rgba(110, 118, 129, 0.4);
     --color-border-info: #1f6feb;
+    --color-border-muted: #21262d;
     --color-bg-canvas: #0d1117;
     --color-bg-canvas-inset: #010409;
     --color-bg-primary: #0d1117;

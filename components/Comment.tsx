@@ -1,4 +1,4 @@
-import { ArrowUpIcon } from '@primer/octicons-react';
+import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { ReactElement, ReactNode, useCallback, useContext, useState } from 'react';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { IComment, IReply } from '../lib/types/adapter';
@@ -25,8 +25,13 @@ export default function Comment({
   onReplyUpdate,
   renderReplyBox,
 }: ICommentProps) {
-  const [page, setPage] = useState(0);
-  const replies = comment.replies.slice(0, page === 0 ? 3 : undefined);
+  const [backPage, setBackPage] = useState(0);
+
+  const replies = comment.replies.slice(-5 - backPage * 50);
+  const remainingReplies = comment.replyCount - replies.length;
+
+  const hasNextPage = replies.length < comment.replies.length;
+
   const { token } = useContext(AuthContext);
 
   const updateReactions = useCallback(
@@ -35,7 +40,7 @@ export default function Comment({
     [comment, onCommentUpdate],
   );
 
-  const incrementPage = () => page < 1 && setPage(page + 1);
+  const incrementBackPage = () => setBackPage(backPage + 1);
 
   const upvote = useCallback(() => {
     const upvoteCount = comment.viewerHasUpvoted
@@ -183,22 +188,27 @@ export default function Comment({
               renderReplyBox && !hidden ? 'border-b' : 'rounded-b-md'
             }`}
           >
+            {hasNextPage ? (
+              <div className="flex items-center h-8 pl-4 mb-2">
+                <div className="flex content-center flex-shrink-0 mr-[9px] w-[29px]">
+                  <KebabHorizontalIcon className="w-full rotate-90 fill-[var(--color-border-muted)]" />
+                </div>
+
+                <button className="color-text-link hover:underline" onClick={incrementBackPage}>
+                  Show {remainingReplies} previous {remainingReplies === 1 ? 'reply' : 'replies'}
+                </button>
+              </div>
+            ) : null}
+
             {onReplyUpdate
               ? replies.map((reply) => (
                   <Reply key={reply.id} reply={reply} onReplyUpdate={onReplyUpdate} />
                 ))
               : null}
-            {page === 0 && comment.replies.length > 3 ? (
-              <button
-                className="mb-2 ml-3 text-xs font-semibold color-text-link hover:underline"
-                onClick={incrementPage}
-              >
-                View more
-              </button>
-            ) : null}
           </div>
         ) : null}
-        {!comment.isMinimized && renderReplyBox ? renderReplyBox(incrementPage) : null}
+
+        {!comment.isMinimized && renderReplyBox ? renderReplyBox(incrementBackPage) : null}
       </div>
     </div>
   );

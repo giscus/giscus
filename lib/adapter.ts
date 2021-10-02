@@ -143,6 +143,10 @@ export function handleCommentClick(event: ReactMouseEvent<HTMLElement, MouseEven
 }
 
 export function processCommentBody(bodyHTML: string) {
+  if (typeof document === 'undefined') {
+    return bodyHTML.replace(/<a href/g, '<a target="_top" rel="noopener noreferrer nofollow" href');
+  }
+
   const template = document.createElement('template');
   template.innerHTML = bodyHTML;
   const content = template.content;

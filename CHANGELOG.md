@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-10-02
+
+### changed
+
+- Statically render the onboarding comment
+  ([#183](https://github.com/giscus/giscus/pull/183)).
+
 ## 2021-09-30
 
 ### changed

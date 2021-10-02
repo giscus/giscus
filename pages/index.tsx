@@ -7,15 +7,16 @@ import { Reactions } from '../lib/reactions';
 import { IComment, IReactionGroups } from '../lib/types/adapter';
 import { renderMarkdown } from '../services/github/markdown';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
-import { useDebounce, useIsMounted } from '../lib/hooks';
+import { useDebounce } from '../lib/hooks';
 import Configuration from '../components/Configuration';
 import { ThemeContext } from '../lib/context';
 import { sendData } from '../lib/messages';
 import { ISetConfigMessage } from '../lib/types/giscus';
 import { getThemeUrl } from '../lib/utils';
 import { GISCUS_APP_HOST } from '../services/config';
+import { InferGetStaticPropsType } from 'next';
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const path = join(process.cwd(), 'README.md');
   const readme = readFileSync(path, 'utf-8');
   const contents = readme.split('<!-- configuration -->');
@@ -27,24 +28,47 @@ export const getStaticProps = async () => {
     contents.map(async (section) => await renderMarkdown(section, token, 'giscus/giscus')),
   );
 
+  const comment: IComment = {
+    author: {
+      avatarUrl: 'https://avatars.githubusercontent.com/in/106117',
+      login: 'giscus',
+      url: 'https://github.com/apps/giscus',
+    },
+    authorAssociation: 'app',
+    bodyHTML: contentBefore,
+    createdAt: '2021-05-15T13:21:14Z',
+    deletedAt: null,
+    id: 'onboarding',
+    isMinimized: false,
+    lastEditedAt: null,
+    reactions: Object.keys(Reactions).reduce((prev, key) => {
+      prev[key] = { count: 0, viewerHasReacted: false };
+      return prev;
+    }, {}) as IReactionGroups,
+    replies: [],
+    replyCount: 0,
+    upvoteCount: 0,
+    url: 'https://github.com/giscus/giscus',
+    viewerDidAuthor: false,
+    viewerHasUpvoted: false,
+    viewerCanUpvote: false,
+  };
+
   return {
     props: {
-      contentBefore,
+      comment,
       contentAfter,
     },
   };
-};
-
-interface HomeProps {
-  contentBefore: string;
-  contentAfter: string;
 }
 
 type DirectConfig = ComponentProps<typeof Configuration>['directConfig'];
 type DirectConfigHandler = ComponentProps<typeof Configuration>['onDirectConfigChange'];
 
-export default function Home({ contentBefore, contentAfter }: HomeProps) {
-  const isMounted = useIsMounted();
+export default function Home({
+  comment,
+  contentAfter,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
     theme: 'light',
@@ -73,44 +97,16 @@ export default function Home({ contentBefore, contentAfter }: HomeProps) {
     sendData(data, location.origin);
   }, [directConfig.emitMetadata, directConfig.reactionsEnabled, configTheme, themeUrl]);
 
-  const comment: IComment = {
-    author: {
-      avatarUrl: 'https://avatars.githubusercontent.com/in/106117',
-      login: 'giscus',
-      url: 'https://github.com/apps/giscus',
-    },
-    authorAssociation: 'app',
-    bodyHTML: contentBefore,
-    createdAt: '2021-05-15T13:21:14Z',
-    deletedAt: null,
-    id: 'onboarding',
-    isMinimized: false,
-    lastEditedAt: null,
-    reactions: Object.keys(Reactions).reduce(
-      (prev, key) => ({ ...prev, [key]: { count: 0, viewerHasReacted: false } }),
-      {},
-    ) as IReactionGroups,
-    replies: [],
-    replyCount: 0,
-    upvoteCount: 0,
-    url: 'https://github.com/giscus/giscus',
-    viewerDidAuthor: false,
-    viewerHasUpvoted: false,
-    viewerCanUpvote: false,
-  };
-
   return (
     <main className="w-full min-h-screen gsc-homepage-bg" data-theme={theme}>
       <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
-        {isMounted ? (
-          <Comment comment={comment}>
-            <Configuration
-              directConfig={directConfig}
-              onDirectConfigChange={handleDirectConfigChange}
-            />
-            <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
-          </Comment>
-        ) : null}
+        <Comment comment={comment}>
+          <Configuration
+            directConfig={directConfig}
+            onDirectConfigChange={handleDirectConfigChange}
+          />
+          <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
+        </Comment>
 
         <div className="w-full my-8 giscus" />
         <Script

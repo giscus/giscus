@@ -11,6 +11,8 @@ major updates to the project.
 
 ### changed
 
+- Improve comment replies pagination
+  ([#184](https://github.com/giscus/giscus/pull/184)).
 - Statically render the onboarding comment
   ([#183](https://github.com/giscus/giscus/pull/183)).
 

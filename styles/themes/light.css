@@ -4,73 +4,6 @@
  */
 
 main {
-  --color-text-primary: #24292f;
-  --color-text-secondary: #57606a;
-  --color-text-tertiary: #57606a;
-  --color-text-link: #0969da;
-  --color-text-danger: #cf222e;
-  --color-text-success: #1a7f37;
-  --color-border-primary: #d0d7de;
-  --color-border-secondary: #d8dee4;
-  --color-border-tertiary: rgba(175, 184, 193, 0.4);
-  --color-border-info: #0969da;
-  --color-border-muted: hsla(210, 18%, 87%, 1);
-  --color-bg-canvas: #fff;
-  --color-bg-canvas-inset: #f6f8fa;
-  --color-bg-primary: #fff;
-  --color-bg-secondary: #f6f8fa;
-  --color-bg-tertiary: #f6f8fa;
-  --color-bg-overlay: #fff;
-  --color-bg-info: #ddf4ff;
-  --color-state-focus-border: #0969da;
-  --color-state-focus-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
-  --color-alert-error-text: #24292f;
-  --color-alert-error-bg: #ffebe9;
-  --color-alert-error-border: rgba(255, 129, 130, 0.4);
-  --color-counter-secondary-text: #57606a;
-  --color-counter-secondary-bg: rgba(234, 238, 242, 0.5);
-  --color-box-border-info: rgba(84, 174, 255, 0.4);
-  --color-hidden-text-expander-bg: rgba(175, 184, 193, 0.4);
-  --color-label-border: #d0d7de;
-  --color-input-bg: #fff;
-  --color-input-contrast-bg: #f6f8fa;
-  --color-input-border: #d0d7de;
-  --color-diff-blob-num-text: #57606a;
-  --color-diff-blob-num-hover-text: #24292f;
-  --color-btn-text: #24292f;
-  --color-btn-bg: #f6f8fa;
-  --color-btn-border: rgba(27, 31, 36, 0.15);
-  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
-  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  --color-btn-hover-bg: #f3f4f6;
-  --color-btn-hover-border: rgba(27, 31, 36, 0.15);
-  --color-btn-active-bg: #ebecf0;
-  --color-btn-active-border: rgba(27, 31, 36, 0.15);
-  --color-btn-primary-text: #fff;
-  --color-btn-primary-bg: #2da44e;
-  --color-btn-primary-border: rgba(27, 31, 36, 0.15);
-  --color-btn-primary-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
-  --color-btn-primary-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-  --color-btn-primary-hover-bg: #2c974b;
-  --color-btn-primary-hover-border: rgba(27, 31, 36, 0.15);
-  --color-btn-primary-selected-bg: #298e46;
-  --color-btn-primary-selected-shadow: inset 0 1px 0 rgba(0, 45, 17, 0.2);
-  --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
-  --color-btn-primary-disabled-bg: #94d3a2;
-  --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
-  --color-neutral-muted: rgba(175, 184, 193, 0.2);
-  --color-scale-gray-0: #f6f8fa;
-  --color-scale-gray-1: #eaeef2;
-  --color-scale-blue-1: #b6e3ff;
-  --color-scale-blue-8: #0a3069;
-
-  /* Extensions from color-modes.scss */
-  --color-social-reaction-border: var(--color-scale-blue-1);
-  --color-social-reaction-bg: var(--color-scale-gray-0);
-  --color-social-reaction-bg-hover: var(--color-scale-gray-1);
-  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
-
-  /* Extensions from syntax-theme-prettylights.scss */
   --color-prettylights-syntax-comment: #6e7781;
   --color-prettylights-syntax-constant: #0550ae;
   --color-prettylights-syntax-entity: #8250df;
@@ -101,6 +34,54 @@ main {
   --color-prettylights-syntax-brackethighlighter-angle: #57606a;
   --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
   --color-prettylights-syntax-constant-other-reference-link: #0a3069;
+  --color-btn-text: #24292f;
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: rgba(27, 31, 36, 0.15);
+  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-hover-bg: #f3f4f6;
+  --color-btn-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-active-bg: hsla(220, 14%, 93%, 1);
+  --color-btn-active-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-bg: #2da44e;
+  --color-btn-primary-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
+  --color-btn-primary-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --color-btn-primary-hover-bg: #2c974b;
+  --color-btn-primary-hover-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-selected-bg: hsla(137, 55%, 36%, 1);
+  --color-btn-primary-selected-shadow: inset 0 1px 0 rgba(0, 45, 17, 0.2);
+  --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
+  --color-btn-primary-disabled-bg: #94d3a2;
+  --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
+  --color-fg-default: #24292f;
+  --color-fg-muted: #57606a;
+  --color-fg-subtle: #6e7781;
+  --color-canvas-default: #ffffff;
+  --color-canvas-overlay: #ffffff;
+  --color-canvas-inset: #f6f8fa;
+  --color-canvas-subtle: #f6f8fa;
+  --color-border-default: #d0d7de;
+  --color-border-muted: hsla(210, 18%, 87%, 1);
+  --color-neutral-muted: rgba(175, 184, 193, 0.2);
+  --color-neutral-subtle: rgba(234, 238, 242, 0.5);
+  --color-accent-fg: #0969da;
+  --color-accent-emphasis: #0969da;
+  --color-accent-muted: rgba(84, 174, 255, 0.4);
+  --color-accent-subtle: #ddf4ff;
+  --color-success-fg: #1a7f37;
+  --color-danger-fg: #cf222e;
+  --color-primer-shadow-focus: 0 0 0 3px rgba(9, 105, 218, 0.3);
+  --color-scale-gray-0: #f6f8fa;
+  --color-scale-gray-1: #eaeef2;
+  --color-scale-blue-1: #b6e3ff;
+
+  /*! Extensions from @primer/css/alerts/flash.scss */
+  --color-social-reaction-border: var(--color-scale-blue-1);
+  --color-social-reaction-bg: var(--color-scale-gray-0);
+  --color-social-reaction-bg-hover: var(--color-scale-gray-1);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
 }
 
 main .pagination-loader-container {

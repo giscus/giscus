@@ -4,72 +4,6 @@
  */
 
 main {
-  --color-text-primary: #f0f3f6;
-  --color-text-secondary: #f0f3f6;
-  --color-text-tertiary: #f0f3f6;
-  --color-text-link: #71b7ff;
-  --color-text-danger: #ff6a69;
-  --color-text-success: #26cd4d;
-  --color-border-primary: #7a828e;
-  --color-border-secondary: #7a828e;
-  --color-border-tertiary: rgba(158, 167, 179, 0.4);
-  --color-border-info: #409eff;
-  --color-border-muted: #7a828e;
-  --color-bg-canvas: #0a0c10;
-  --color-bg-canvas-inset: #010409;
-  --color-bg-primary: #0a0c10;
-  --color-bg-secondary: #272b33;
-  --color-bg-tertiary: #272b33;
-  --color-bg-overlay: #272b33;
-  --color-bg-info: rgba(64, 158, 255, 0.15);
-  --color-state-focus-border: #409eff;
-  --color-state-focus-shadow: 0 0 0 3px #1e60d5;
-  --color-alert-error-text: #f0f3f6;
-  --color-alert-error-bg: rgba(255, 106, 105, 0.15);
-  --color-alert-error-border: #ff6a69;
-  --color-counter-secondary-text: #f0f3f6;
-  --color-counter-secondary-bg: rgba(158, 167, 179, 0.1);
-  --color-box-border-info: #409eff;
-  --color-hidden-text-expander-bg: rgba(158, 167, 179, 0.4);
-  --color-label-border: #7a828e;
-  --color-input-bg: #0a0c10;
-  --color-input-contrast-bg: #010409;
-  --color-input-border: #7a828e;
-  --color-diff-blob-num-text: #f0f3f6;
-  --color-diff-blob-num-hover-text: #f0f3f6;
-  --color-btn-text: #f0f3f6;
-  --color-btn-bg: #272b33;
-  --color-btn-border: #7a828e;
-  --color-btn-shadow: 0 0 transparent;
-  --color-btn-inset-shadow: 0 0 transparent;
-  --color-btn-hover-bg: #525964;
-  --color-btn-hover-border: #bdc4cc;
-  --color-btn-active-bg: #4c525d;
-  --color-btn-active-border: #9ea7b3;
-  --color-btn-primary-text: #0a0c10;
-  --color-btn-primary-bg: #09b43a;
-  --color-btn-primary-border: #4ae168;
-  --color-btn-primary-shadow: 0 0 transparent;
-  --color-btn-primary-inset-shadow: 0 0 transparent;
-  --color-btn-primary-hover-bg: #26cd4d;
-  --color-btn-primary-hover-border: #4ae168;
-  --color-btn-primary-selected-bg: #09b43a;
-  --color-btn-primary-selected-shadow: 0 0 transparent;
-  --color-btn-primary-disabled-text: rgba(10, 12, 16, 0.5);
-  --color-btn-primary-disabled-bg: rgba(9, 180, 58, 0.6);
-  --color-btn-primary-disabled-border: rgba(74, 225, 104, 0.4);
-  --color-neutral-muted: rgba(158, 167, 179, 0.4);
-  --color-scale-gray-7: #272b33;
-  --color-scale-gray-8: #272b33;
-  --color-scale-blue-8: #1e60d5;
-
-  /* Extensions from color-modes.scss */
-  --color-social-reaction-border: var(--color-scale-blue-8);
-  --color-social-reaction-bg: var(--color-scale-gray-8);
-  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
-  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
-
-  /* Extensions from syntax-theme-prettylights.scss */
   --color-prettylights-syntax-comment: #bdc4cc;
   --color-prettylights-syntax-constant: #91cbff;
   --color-prettylights-syntax-entity: #dbb7ff;
@@ -100,6 +34,54 @@ main {
   --color-prettylights-syntax-brackethighlighter-angle: #bdc4cc;
   --color-prettylights-syntax-sublimelinter-gutter-mark: #7a828e;
   --color-prettylights-syntax-constant-other-reference-link: #addcff;
+  --color-btn-text: #f0f3f6;
+  --color-btn-bg: #272b33;
+  --color-btn-border: #7a828e;
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-hover-bg: #525964;
+  --color-btn-hover-border: #bdc4cc;
+  --color-btn-active-bg: hsla(217, 10%, 33%, 1);
+  --color-btn-active-border: #9ea7b3;
+  --color-btn-primary-text: #0a0c10;
+  --color-btn-primary-bg: #09b43a;
+  --color-btn-primary-border: #4ae168;
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-btn-primary-hover-bg: #26cd4d;
+  --color-btn-primary-hover-border: #4ae168;
+  --color-btn-primary-selected-bg: #09b43a;
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+  --color-btn-primary-disabled-text: rgba(10, 12, 16, 0.5);
+  --color-btn-primary-disabled-bg: rgba(9, 180, 58, 0.6);
+  --color-btn-primary-disabled-border: rgba(74, 225, 104, 0.4);
+  --color-fg-default: #f0f3f6;
+  --color-fg-muted: #f0f3f6;
+  --color-fg-subtle: #7a828e;
+  --color-canvas-default: #0a0c10;
+  --color-canvas-overlay: #272b33;
+  --color-canvas-inset: #010409;
+  --color-canvas-subtle: #272b33;
+  --color-border-default: #7a828e;
+  --color-border-muted: #7a828e;
+  --color-neutral-muted: rgba(158, 167, 179, 0.4);
+  --color-neutral-subtle: rgba(158, 167, 179, 0.1);
+  --color-accent-fg: #71b7ff;
+  --color-accent-emphasis: #409eff;
+  --color-accent-muted: #409eff;
+  --color-accent-subtle: rgba(64, 158, 255, 0.15);
+  --color-success-fg: #26cd4d;
+  --color-danger-fg: #ff6a69;
+  --color-primer-shadow-focus: 0 0 0 3px #1e60d5;
+  --color-scale-gray-7: #272b33;
+  --color-scale-gray-8: #272b33;
+  --color-scale-blue-8: #1e60d5;
+
+  /*! Extensions from @primer/css/alerts/flash.scss */
+  --color-social-reaction-border: var(--color-scale-blue-8);
+  --color-social-reaction-bg: var(--color-scale-gray-8);
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
 main .pagination-loader-container {

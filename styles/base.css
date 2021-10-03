@@ -6,11 +6,11 @@
  */
 
 * {
-  border-color: var(--color-border-primary);
+  border-color: var(--color-border-default);
 }
 
 a {
-  color: var(--color-text-link);
+  color: var(--color-accent-fg);
 }
 
 @media screen and (max-width: 320px) {
@@ -22,101 +22,101 @@ a {
 .color-text-link,
 .Link--primary:hover,
 .Link--secondary:hover {
-  color: var(--color-text-link);
+  color: var(--color-accent-fg);
 }
 
 .color-bg-primary {
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-canvas-default);
 }
 
 .color-bg-secondary {
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-canvas-subtle);
 }
 
 .color-bg-tertiary {
-  background-color: var(--color-bg-tertiary);
+  background-color: var(--color-canvas-subtle);
 }
 
 .color-bg-canvas {
-  background-color: var(--color-bg-canvas);
+  background-color: var(--color-canvas-default);
 }
 
 .color-bg-canvas-inset {
-  background-color: var(--color-bg-canvas-inset);
+  background-color: var(--color-canvas-inset);
 }
 
 .color-bg-overlay {
-  background-color: var(--color-bg-overlay);
+  background-color: var(--color-canvas-overlay);
 }
 
 .color-bg-info {
-  background-color: var(--color-bg-info);
+  background-color: var(--color-accent-subtle);
 }
 
 .color-text-primary,
 .Link--primary {
-  color: var(--color-text-primary);
+  color: var(--color-fg-default);
 }
 
 .color-text-secondary,
 .Link--secondary {
-  color: var(--color-text-secondary);
+  color: var(--color-fg-muted);
 }
 
 .color-text-tertiary {
-  color: var(--color-text-tertiary);
+  color: var(--color-fg-muted);
 }
 
 .color-text-success {
-  color: var(--color-text-success);
+  color: var(--color-success-fg);
 }
 
 .color-text-danger {
-  color: var(--color-text-danger);
+  color: var(--color-danger-fg);
 }
 
 .color-border-primary {
-  border-color: var(--color-border-primary);
+  border-color: var(--color-border-default);
 }
 
 .color-border-tertiary {
-  border-color: var(--color-border-tertiary);
+  border-color: var(--color-border-default);
 }
 
 .color-border-info {
-  border-color: var(--color-border-info);
+  border-color: var(--color-accent-emphasis);
 }
 
 .form-control {
-  background-color: var(--color-input-bg);
-  border-color: var(--color-input-border);
+  background-color: var(--color-canvas-default);
+  border-color: var(--color-border-default);
 }
 
 .form-control:focus {
-  border-color: var(--color-state-focus-border);
+  border-color: var(--color-accent-emphasis);
   outline: none;
-  box-shadow: var(--color-state-focus-shadow);
+  box-shadow: var(--color-primer-shadow-focus);
 }
 
 .input-contrast {
-  background-color: var(--color-input-contrast-bg);
+  background-color: var(--color-canvas-inset);
 }
 
 .input-contrast:focus {
-  background-color: var(--color-input-bg);
+  background-color: var(--color-canvas-default);
 }
 
 .color-label-border {
-  border-color: var(--color-label-border);
+  border-color: var(--color-border-default);
 }
 
 .color-box-border-info {
-  border-color: var(--color-box-border-info);
+  border-color: var(--color-accent-muted);
 }
 
 .Counter--secondary {
-  color: var(--color-counter-secondary-text);
-  background-color: var(--color-counter-secondary-bg);
+  color: var(--color-fg-muted);
+  background-color: var(--color-neutral-subtle);
 }
 
 .btn {
@@ -171,12 +171,6 @@ a {
   @apply fill-current;
 }
 
-.flash-error {
-  color: var(--color-alert-error-text);
-  background-image: linear-gradient(var(--color-alert-error-bg), var(--color-alert-error-bg));
-  border-color: var(--color-alert-error-border);
-}
-
 /*! Compatibility shim for @primer/css to style GitHub-generated HTML */
 
 .border-0 {
@@ -186,7 +180,7 @@ a {
 .team-mention,
 .user-mention {
   @apply font-semibold whitespace-nowrap;
-  color: var(--color-text-primary);
+  color: var(--color-fg-default);
 }
 
 .position-relative {
@@ -207,7 +201,7 @@ a {
 
 .btn .octicon {
   @apply align-bottom;
-  color: var(--color-text-tertiary);
+  color: var(--color-fg-muted);
 }
 
 .rounded-1 {
@@ -233,7 +227,7 @@ a {
 .commit-tease-sha {
   @apply font-mono;
   font-size: 90%;
-  color: var(--color-text-primary);
+  color: var(--color-fg-default);
 }
 
 .rounded-2 {
@@ -259,11 +253,11 @@ a {
 
 .blob-num {
   @apply w-[1%] min-w-[50px] px-[10px] font-mono text-xs leading-5 text-right whitespace-nowrap align-top cursor-pointer select-none;
-  color: var(--color-diff-blob-num-text);
+  color: var(--color-fg-subtle);
 }
 
 .blob-num:hover {
-  color: var(--color-diff-blob-num-hover-text);
+  color: var(--color-fg-default);
 }
 
 .blob-num:before {
@@ -281,15 +275,15 @@ a {
 
 .email-hidden-toggle a {
   @apply inline-block h-3 px-2 text-xs font-semibold leading-[6px] no-underline align-middle border;
-  color: var(--color-text-primary);
-  background: var(--color-hidden-text-expander-bg);
+  color: var(--color-fg-default);
+  background: var(--color-neutral-muted);
 }
 
 .email-quoted-reply,
 .email-signature-reply {
   @apply px-4 my-4 border-l-4;
-  color: var(--color-text-secondary);
-  border-left-color: var(--color-border-primary);
+  color: var(--color-fg-muted);
+  border-left-color: var(--color-border-default);
 }
 
 .email-hidden-reply {
@@ -314,7 +308,7 @@ a {
 
 .zeroclipboard-link {
   @apply p-0 m-0 cursor-pointer;
-  color: var(--color-text-link);
+  color: var(--color-accent-fg);
 }
 
 img.emoji {
@@ -339,7 +333,7 @@ img.emoji {
 /*! giscus-specific styles */
 
 .gsc-tl-line {
-  background-color: var(--color-border-secondary);
+  background-color: var(--color-border-muted);
 }
 
 .gsc-reactions-popover.open.popover::before {
@@ -347,7 +341,7 @@ img.emoji {
   top: -16px;
   left: 9px;
   border: 8px solid transparent;
-  border-bottom-color: var(--color-border-primary);
+  border-bottom-color: var(--color-border-default);
   content: '';
 }
 
@@ -356,7 +350,7 @@ img.emoji {
   top: -15px;
   left: 10px;
   border: 7px solid transparent;
-  border-bottom: 8px solid var(--color-bg-overlay);
+  border-bottom: 8px solid var(--color-canvas-overlay);
   content: '';
 }
 
@@ -365,7 +359,7 @@ img.emoji {
   top: -16px;
   right: 9px;
   border: 8px solid transparent;
-  border-bottom-color: var(--color-border-primary);
+  border-bottom-color: var(--color-border-default);
   content: '';
 }
 
@@ -374,7 +368,7 @@ img.emoji {
   top: -15px;
   right: 10px;
   border: 7px solid transparent;
-  border-bottom: 8px solid var(--color-bg-overlay);
+  border-bottom: 8px solid var(--color-canvas-overlay);
   content: '';
 }
 
@@ -390,7 +384,7 @@ img.emoji {
 }
 
 .gsc-homepage-bg {
-  background-color: var(--color-bg-canvas);
+  background-color: var(--color-canvas-default);
 }
 
 .blob-wrapper {
@@ -520,8 +514,8 @@ img.emoji {
 .gsc-social-reaction-summary-item {
   @apply px-[6px] rounded-full leading-[24px] border whitespace-nowrap;
   background-color: var(--color-social-reaction-bg);
-  border-color: var(--color-border-primary);
-  color: var(--color-text-secondary);
+  border-color: var(--color-border-default);
+  color: var(--color-fg-muted);
 }
 
 .gsc-social-reaction-summary-item:hover {
@@ -529,9 +523,9 @@ img.emoji {
 }
 
 .gsc-social-reaction-summary-item.has-reacted {
-  background-color: var(--color-bg-info);
+  background-color: var(--color-accent-subtle);
   border-color: var(--color-social-reaction-border);
-  color: var(--color-text-link);
+  color: var(--color-accent-fg);
 }
 
 .gsc-social-reaction-summary-item.has-reacted:hover {
@@ -567,7 +561,7 @@ img.emoji {
 }
 
 .gsc-reactions-button:hover {
-  color: var(--color-text-tertiary);
+  color: var(--color-fg-muted);
 }
 
 .gsc-reactions-button.popover-only {
@@ -575,7 +569,7 @@ img.emoji {
 }
 
 .gsc-reactions-button.popover-only:hover {
-  color: var(--color-text-link);
+  color: var(--color-accent-fg);
 }
 
 .gsc-reactions-popover {

@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-10-03
+
+### changed
+
+- Use primer/primitives v5 as theme base and update looks to match GitHub
+  updates ([#186](https://github.com/giscus/giscus/pull/186)).
+
 ## 2021-10-02
 
 ### changed

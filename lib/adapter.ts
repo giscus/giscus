@@ -175,6 +175,7 @@ export function processCommentBody(bodyHTML: string) {
     )
     .forEach((div) => {
       div.classList.add('position-relative');
+      div.classList.remove('overflow-auto'); // Old comments have this unnecessary class
       const copyButton = document.createElement('template');
       copyButton.innerHTML = COPY_BUTTON_HTML.trim();
       div.appendChild(copyButton.content.firstChild);

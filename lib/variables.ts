@@ -15,6 +15,8 @@ export const Theme = {
   dark: 'GitHub Dark',
   dark_dimmed: 'GitHub Dark Dimmed',
   dark_high_contrast: 'GitHub Dark High Contrast',
+  dark_protanopia: 'GitHub Dark Colorblind',
+  light_protanopia: 'GitHub Light Colorblind',
   transparent_dark: 'Transparent Dark',
   preferred_color_scheme: 'Preferred color scheme',
   custom: 'Custom (experimental)',

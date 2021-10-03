@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2021-10-03
 
+### added
+
+- Add colorblind beta themes
+  ([#187](https://github.com/giscus/giscus/pull/187)).
+
 ### changed
 
 - Use primer/primitives v5 as theme base and update looks to match GitHub

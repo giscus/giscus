@@ -163,6 +163,7 @@ a:hover {
 
 .markdown .footnotes {
   @apply text-xs border-t;
+  color: var(--color-fg-muted, var(--color-text-tertiary));
 }
 
 .markdown .footnotes ol {

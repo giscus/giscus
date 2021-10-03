@@ -616,6 +616,10 @@ img.emoji {
   @apply mb-1 mr-2 border dmd:mb-4;
 }
 
+.gsc-direct-reaction-button:not(:first-child) {
+  @apply ml-2;
+}
+
 .gsc-reply {
   @apply relative;
 }

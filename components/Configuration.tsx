@@ -1,4 +1,4 @@
-import { CheckIcon, ClippyIcon, SyncIcon, XIcon } from '@primer/octicons-react';
+import { CheckIcon, CopyIcon, SyncIcon, XIcon } from '@primer/octicons-react';
 import { ReactNode, useEffect, useState } from 'react';
 import { handleClipboardCopy } from '../lib/adapter';
 import { useDebounce } from '../lib/hooks';
@@ -117,7 +117,7 @@ function ClipboardCopy() {
         role="button"
         onClick={handleClipboardCopy}
       >
-        <ClippyIcon className="m-2 octicon octicon-clippy js-clipboard-clippy-icon" />
+        <CopyIcon className="m-2 octicon octicon-copy js-clipboard-copy-icon" />
         <CheckIcon className="m-2 octicon octicon-check js-clipboard-check-icon color-text-success d-none" />
       </button>
     </div>

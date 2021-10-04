@@ -43,6 +43,12 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
   }
 
   const { data } = response;
+  if (!data) {
+    console.error({ response });
+    res.status(500).json({ error: 'Unable to fetch discussion.' });
+    return;
+  }
+
   const { viewer } = data;
 
   let discussion: GRepositoryDiscussion;

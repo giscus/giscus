@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-10-04
+
+### changed
+
+- Log error if `response.data` is undefined
+  ([#189](https://github.com/giscus/giscus/pull/189)).
+
 ## 2021-10-03
 
 ### added

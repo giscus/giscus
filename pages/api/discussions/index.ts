@@ -33,6 +33,7 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
   }
 
   const response = await getDiscussion(params, token);
+
   if ('message' in response) {
     if (response.message.includes('Bad credentials')) {
       res.status(403).json({ error: response.message });
@@ -42,10 +43,24 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
     return;
   }
 
+  if ('errors' in response) {
+    const error = response.errors[0];
+    if (error?.message?.includes('API rate limit exceeded')) {
+      res.status(429).json({ error: `API rate limit exceeded for ${params.repo}` });
+      return;
+    }
+
+    console.error(response);
+    res.status(500).json({
+      error: response.errors.map?.(({ message }) => message).join('. '),
+    });
+    return;
+  }
+
   const { data } = response;
   if (!data) {
-    console.error({ response });
-    res.status(500).json({ error: 'Unable to fetch discussion.' });
+    console.error(response);
+    res.status(500).json({ error: 'Unable to fetch discussion' });
     return;
   }
 

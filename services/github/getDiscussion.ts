@@ -1,5 +1,5 @@
 import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
-import { GUser, GRepositoryDiscussion, GError } from '../../lib/types/github';
+import { GUser, GRepositoryDiscussion, GError, GMultipleErrors } from '../../lib/types/github';
 import { parseRepoWithOwner } from '../../lib/utils';
 import { GITHUB_GRAPHQL_API_URL } from '../config';
 
@@ -141,7 +141,7 @@ export type GetDiscussionResponse = SearchResponse | SpecificResponse;
 export async function getDiscussion(
   params: GetDiscussionParams,
   token: string,
-): Promise<GetDiscussionResponse | GError> {
+): Promise<GetDiscussionResponse | GError | GMultipleErrors> {
   const { repo: repoWithOwner, term, number, category, ...pagination } = params;
 
   // Force repo to lowercase to prevent GitHub's bug when using category in query.

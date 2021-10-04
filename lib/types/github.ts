@@ -96,3 +96,10 @@ export interface GError {
   message: string;
   documentation_url: string;
 }
+
+export interface GMultipleErrors {
+  errors: Array<{
+    type?: string;
+    message: string;
+  }>;
+}

@@ -9,9 +9,9 @@ major updates to the project.
 
 ## 2021-10-04
 
-### changed
+### fixed
 
-- Log error if `response.data` is undefined
+- Log error if `response.data` is `undefined`
   ([#189](https://github.com/giscus/giscus/pull/189)).
 
 ## 2021-10-03

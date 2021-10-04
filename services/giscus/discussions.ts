@@ -34,7 +34,7 @@ export function useDiscussion(
     return [`/api/discussions?${params}`, headers];
   };
 
-  const shouldRevalidate = (status: number) => ![403, 404].includes(status);
+  const shouldRevalidate = (status: number) => ![403, 404, 429].includes(status);
 
   const { data, size, setSize, error, mutate, isValidating } = useSWRInfinite<IGiscussion>(
     getKey,
@@ -245,6 +245,7 @@ export function useFrontBackDiscussion(query: DiscussionQuery, token?: string) {
   const isLoading = (needsFrontLoading && isFrontLoading) || isBackLoading;
   const isLoadingMore = isFrontLoading || (size > 0 && !frontData?.[size - 1]);
   const isNotFound = error?.status === 404;
+  const isRateLimited = error?.status === 429;
   const isLocked = backData?.discussion?.locked;
 
   const discussion: IDiscussionData = {
@@ -277,6 +278,7 @@ export function useFrontBackDiscussion(query: DiscussionQuery, token?: string) {
     isLoading,
     isLoadingMore,
     isNotFound,
+    isRateLimited,
     isLocked,
     discussion,
     viewer,

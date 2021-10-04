@@ -22,7 +22,8 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
     params.first = 20;
   }
 
-  let token = req.headers.authorization?.split('Bearer ')[1];
+  const userToken = req.headers.authorization?.split('Bearer ')[1];
+  let token = userToken;
   if (!token) {
     try {
       token = await getAppAccessToken(params.repo);
@@ -46,14 +47,17 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
   if ('errors' in response) {
     const error = response.errors[0];
     if (error?.message?.includes('API rate limit exceeded')) {
-      res.status(429).json({ error: `API rate limit exceeded for ${params.repo}` });
+      let message = `API rate limit exceeded for ${params.repo}`;
+      if (!userToken) {
+        message += '. Sign in to increase the rate limit';
+      }
+      res.status(429).json({ error: message });
       return;
     }
 
     console.error(response);
-    res.status(500).json({
-      error: response.errors.map?.(({ message }) => message).join('. '),
-    });
+    const message = response.errors.map?.(({ message }) => message).join('. ') || 'Unknown error';
+    res.status(500).json({ error: message });
     return;
   }
 

@@ -150,6 +150,8 @@ window.addEventListener('message', (event) => {
     console.warn(
       `[giscus] ${message}. A new discussion will be created if a comment/reaction is submitted.`,
     );
+  } else if (message.includes('API rate limit exceeded')) {
+    console.warn(formatError(message));
   } else {
     console.error(`${formatError(message)} ${suggestion}`);
   }

@@ -51,7 +51,8 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     !data.error && !data.isNotFound && !data.isLoading && data.totalReplyCount > 0;
 
   const shouldShowCommentBox =
-    !data.isLoading && !data.isLocked && (!data.error || (data.isNotFound && !number));
+    (data.isRateLimited && !token) ||
+    (!data.isLoading && !data.isLocked && (!data.error || (data.isNotFound && !number)));
 
   return (
     <div className="color-text-primary gsc-main">

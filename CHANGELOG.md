@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-10-05
+
+### fixed
+
+- Show API rate limit error message and sign in button
+  ([#190](https://github.com/giscus/giscus/pull/190)).
+
 ## 2021-10-04
 
 ### fixed

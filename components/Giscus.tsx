@@ -1,5 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { AuthContext, ConfigContext } from '../lib/context';
+import { useGiscusTranslation } from '../lib/i18n';
 import { emitData } from '../lib/messages';
 import { IMetadataMessage } from '../lib/types/giscus';
 import { useFrontBackDiscussion } from '../services/giscus/discussions';
@@ -14,6 +15,7 @@ interface IGiscusProps {
 
 export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusProps) {
   const { token, origin } = useContext(AuthContext);
+  const { t } = useGiscusTranslation();
   const { repo, term, number, category, reactionsEnabled, emitMetadata } =
     useContext(ConfigContext);
   const query = { repo, term, category, number };
@@ -60,7 +62,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
         <div className="gsc-reactions">
           <h4 className="gsc-reactions-count">
             {shouldCreateDiscussion && !data.reactionCount ? (
-              '0 reactions'
+              t('reactions', { count: 0 })
             ) : (
               <a
                 href={data.discussion.url}
@@ -68,8 +70,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                 rel="noreferrer noopener nofollow"
                 className="color-text-primary"
               >
-                {data.reactionCount || 0} reaction
-                {data.reactionCount !== 1 ? 's' : ''}
+                {t('reactions', { count: data.reactionCount || 0 })}
               </a>
             )}
           </h4>
@@ -88,11 +89,11 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
         <div className="gsc-header">
           <h4 className="gsc-comments-count">
             {shouldCreateDiscussion && !data.totalCommentCount ? (
-              '0 comments'
+              t('comments', { count: 0 })
             ) : data.error && !data.backData ? (
-              `An error occurred${data.error?.message ? `: ${data.error.message}` : ''}.`
+              t('genericError', { message: data.error?.message || '' })
             ) : data.isLoading ? (
-              'Loading comments...'
+              t('loadingComments')
             ) : (
               <a
                 href={data.discussion.url}
@@ -100,22 +101,22 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                 rel="noreferrer noopener nofollow"
                 className="color-text-primary"
               >
-                {data.totalCommentCount} comment{data.totalCommentCount !== 1 ? 's' : ''}
+                {t('comments', { count: data.totalCommentCount })}
               </a>
             )}
           </h4>
           {shouldShowReplyCount ? (
             <>
               <h4 className="gsc-comments-count-separator">·</h4>
-              <h4 className="gsc-replies-count">{`${data.totalReplyCount}${
-                data.numHidden > 0 ? '+' : ''
-              } repl${data.totalReplyCount !== 1 ? 'ies' : 'y'}`}</h4>
+              <h4 className="gsc-replies-count">
+                {t('replies', { count: data.totalReplyCount, plus: data.numHidden > 0 ? '+' : '' })}
+              </h4>
             </>
           ) : null}
           {shouldShowBranding ? (
             <em className="text-sm color-text-secondary">
               {' '}
-              – powered by{' '}
+              {t('poweredBy')}{' '}
               <a
                 href="https://giscus.app"
                 target="_blank"
@@ -159,10 +160,10 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                 disabled={data.isLoadingMore}
               >
                 <span className="color-text-secondary">
-                  {data.numHidden} hidden item{data.numHidden !== 1 ? 's' : ''}
+                  {t('hiddenItems', { count: data.numHidden })}
                 </span>
                 <span className="font-semibold color-text-link">
-                  {data.isLoadingMore ? 'Loading' : 'Load more'}...
+                  {data.isLoadingMore ? t('loading') : t('loadMore')}…
                 </span>
               </button>
             </div>

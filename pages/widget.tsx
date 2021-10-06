@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { ContextType, useContext, useEffect, useState } from 'react';
 import Widget from '../components/Widget';
+import I18nProvider from 'next-translate/I18nProvider';
+import loadNamespaces from 'next-translate/loadNamespaces';
 import { assertOrigin } from '../lib/config';
 import { ConfigContext, ThemeContext } from '../lib/context';
 import { decodeState } from '../lib/oauth/state';
@@ -11,6 +13,7 @@ import { getOriginHost } from '../lib/utils';
 import { env, Theme } from '../lib/variables';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { getRepoConfig } from '../services/github/getConfig';
+import { I18nDictionary } from 'next-translate';
 
 export async function getServerSideProps({ query, res }: GetServerSidePropsContext) {
   const origin = (query.origin as string) || '';
@@ -24,6 +27,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const description = (query.description as string) || '';
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
   const emitMetadata = Boolean(+query.emitMetadata);
+  const lang = (query.lang as string) || null;
   const theme = ((query.theme as string) || 'light') as Theme;
   const originHost = getOriginHost(origin);
 
@@ -47,6 +51,19 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
     res.setHeader('Content-Security-Policy', `frame-ancestors 'self' ${originsStr};`);
   }
 
+  const { __lang, __namespaces } = (await loadNamespaces({
+    locale: lang,
+    locales: ['en', 'pl'],
+    defaultLocale: 'en',
+    pathname: '/widget',
+    pages: {
+      '*': ['common'],
+    },
+    async loadLocaleFrom(language, namespace) {
+      return import(`../locales/${language}/${namespace}.json`).then(m => m.default);
+    },
+  }));
+
   return {
     props: {
       origin,
@@ -62,6 +79,8 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       emitMetadata,
       theme,
       originHost,
+      lang: __lang,
+      namespaces: __namespaces as Record<string, I18nDictionary>,
     },
   };
 }
@@ -80,6 +99,8 @@ export default function WidgetPage({
   emitMetadata,
   theme,
   originHost,
+  lang,
+  namespaces,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const resolvedOrigin = origin || (typeof location === 'undefined' ? '' : location.href);
   const { theme: resolvedTheme, setTheme } = useContext(ThemeContext);
@@ -125,6 +146,7 @@ export default function WidgetPage({
 
       <main className="w-full mx-auto" data-theme={resolvedTheme}>
         <ConfigContext.Provider value={config}>
+          <I18nProvider lang={lang} namespaces={namespaces}>
           <Widget
             origin={resolvedOrigin}
             session={session}
@@ -132,6 +154,7 @@ export default function WidgetPage({
             categoryId={categoryId}
             description={description}
           />
+          </I18nProvider>
         </ConfigContext.Provider>
       </main>
 

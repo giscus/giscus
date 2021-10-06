@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "next": "^11.1.0",
     "next-plugin-preact": "^3.0.4",
+    "next-translate": "^1.1.0",
     "preact": "^10.5.13",
     "preact-render-to-string": "^5.1.18",
     "react": "npm:@preact/compat",

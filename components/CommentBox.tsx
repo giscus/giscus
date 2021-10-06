@@ -2,6 +2,7 @@ import { MarkdownIcon } from '@primer/octicons-react';
 import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
 import { adaptComment, adaptReply, handleCommentClick, processCommentBody } from '../lib/adapter';
 import { AuthContext } from '../lib/context';
+import { useGiscusTranslation } from '../lib/i18n';
 import { IComment, IReply, IUser } from '../lib/types/adapter';
 import { resizeTextArea } from '../lib/utils';
 import { addDiscussionComment } from '../services/github/addDiscussionComment';
@@ -25,6 +26,7 @@ export default function CommentBox({
   onSubmit,
   onDiscussionCreateRequest,
 }: CommentBoxProps) {
+  const { t } = useGiscusTranslation();
   const [isPreview, setIsPreview] = useState(false);
   const [input, setInput] = useState('');
   const [lastInput, setLastInput] = useState('');
@@ -128,7 +130,7 @@ export default function CommentBox({
             }`}
             onClick={() => setIsPreview(false)}
           >
-            Write
+            {t('write')}
           </button>
           <button
             className={`px-4 py-2 border border-b-0 focus:outline-none ml-1 ${
@@ -138,7 +140,7 @@ export default function CommentBox({
             }`}
             onClick={() => setIsPreview(true)}
           >
-            Preview
+            {t('preview')}
           </button>
         </div>
       </div>
@@ -147,16 +149,16 @@ export default function CommentBox({
           <div
             className="markdown color-border-primary gsc-comment-box-preview"
             dangerouslySetInnerHTML={
-              isLoading ? undefined : { __html: preview || 'Nothing to preview' }
+              isLoading ? undefined : { __html: preview || t('nothingToPreview') }
             }
             onClick={handleCommentClick}
           >
-            {isLoading ? 'Loading preview...' : undefined}
+            {isLoading ? t('loadingPreview') : undefined}
           </div>
         ) : (
           <textarea
             className="form-control input-contrast gsc-comment-box-textarea"
-            placeholder={token ? 'Write a comment' : 'Sign in to comment'}
+            placeholder={token ? t('writeAComment') : t('signInToComment')}
             onChange={handleTextAreaChange}
             value={input}
             disabled={!token || isSubmitting}
@@ -173,7 +175,7 @@ export default function CommentBox({
           href="https://guides.github.com/features/mastering-markdown/"
         >
           <MarkdownIcon className="mr-1" />
-          Styling with Markdown is supported
+          {t('stylingWithMarkdownIsSupported')}
         </a>
         <div className="gsc-comment-box-buttons">
           {isReply ? (
@@ -181,7 +183,7 @@ export default function CommentBox({
               className="px-4 py-[5px] ml-1 border rounded-md btn"
               onClick={() => setIsReplyOpen(false)}
             >
-              Cancel
+              {t('cancel')}
             </button>
           ) : null}
           {token ? (
@@ -190,7 +192,7 @@ export default function CommentBox({
               onClick={handleClick}
               disabled={(token && !input.trim()) || isSubmitting}
             >
-              {isReply ? 'Reply' : 'Comment'}
+              {isReply ? t('reply') : t('comment')}
             </button>
           ) : (
             <a
@@ -211,7 +213,7 @@ export default function CommentBox({
                   d="M5.746 0A5.747 5.747 0 003.93 11.2c.287.052.392-.125.392-.278 0-.136-.005-.497-.008-.977-1.598.347-1.935-.77-1.935-.77-.262-.664-.639-.841-.639-.841-.521-.356.04-.35.04-.35.577.041.88.593.88.593.513.878 1.345.625 1.673.477.052-.37.2-.624.364-.768-1.276-.145-2.617-.638-2.617-2.84 0-.627.224-1.14.591-1.542-.059-.145-.256-.73.057-1.52 0 0 .482-.155 1.58.589.458-.128.95-.192 1.438-.194.489.002.98.066 1.44.194 1.096-.744 1.578-.59 1.578-.59.313.791.116 1.376.057 1.521.369.402.59.915.59 1.542 0 2.208-1.343 2.694-2.623 2.836.206.177.39.528.39 1.064 0 .768-.007 1.388-.007 1.576 0 .154.104.333.395.277A5.749 5.749 0 005.746 0"
                 />
               </svg>{' '}
-              Sign in with GitHub
+              {t('signInWithGitHub')}
             </a>
           )}
         </div>
@@ -239,7 +241,7 @@ export default function CommentBox({
         className="w-full px-2 py-1 ml-2 text-left border rounded cursor-text form-control color-text-secondary color-border-primary"
         onClick={handleReplyOpen}
       >
-        Write a reply
+        {t('writeAReply')}
       </button>
     </div>
   );

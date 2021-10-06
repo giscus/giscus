@@ -1,0 +1,80 @@
+{
+  "reactions": {
+    "0": "{{count}} reactions",
+    "one": "{{count}} reaction",
+    "other": "{{count}} reactions"
+  },
+  "comment": "Comment",
+  "comments": {
+    "0": "{{count}} comments",
+    "one": "{{count}} comment",
+    "other": "{{count}} comments"
+  },
+  "reply": "Reply",
+  "replies": {
+    "0": "{{count}} replies",
+    "one": "{{count}} reply",
+    "other": "{{count}}{{plus}} replies"
+  },
+  "upvotes": {
+    "0": "{{count}} upvotes",
+    "one": "{{count}} upvote",
+    "other": "{{count}} upvotes"
+  },
+  "hiddenItems": {
+    "0": "{{count}} hidden items",
+    "one": "{{count}} hidden item",
+    "other": "{{count}} hidden items"
+  },
+  "genericError": "An error occurred{{message}}",
+  "loadMore": "Load more",
+  "loading": "Loading",
+  "loadingComments": "Loading comments…",
+  "loadingPreview": "Loading preview…",
+  "poweredBy": "– powered by",
+  "showPreviousReplies": {
+    "0": "Show {{count}} previous replies",
+    "one": "Show {{count}} previous reply",
+    "other": "Show {{count}} previous replies"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "See {{count}} previous replies on GitHub",
+    "one": "See {{count}} previous reply on GitHub",
+    "other": "See {{count}} previous replies on GitHub"
+  },
+  "edited": "edited",
+  "thisCommentWasDeleted": "This comment was deleted.",
+  "thisCommentWasMinimized": "This comment has been minimized.",
+  "thisCommentWasHidden": "This comment has been hidden.",
+  "write": "Write",
+  "preview": "Preview",
+  "lastEditedAt": "Last edited at {{date}}",
+  "writeAComment": "Write a comment",
+  "signInToComment": "Sign in to comment",
+  "stylingWithMarkdownIsSupported": "Styling with Markdown is supported",
+  "cancel": "Cancel",
+  "signInWithGitHub": "Sign in with GitHub",
+  "writeAReply": "Write a reply",
+
+  "pleaseWait": "Please wait",
+  "pickYourReaction": "Pick your reaction",
+  "signIn": "Sign in",
+  "toAddYourReaction": "to add your reaction",
+  "youMustBeSignedInToAddReactions": "You must be signed in to add reactions.",
+  "peopleReactedWith": {
+    "0": "{{count}} people reacted with {{reaction}} {{emoji}}",
+    "one": "{{count}} person reacted with {{reaction}} {{emoji}}",
+    "other": "{{count}} people reacted with {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Nothing to preview",
+
+  "+1": "+1",
+  "-1": "-1",
+  "Laugh": "Laugh",
+  "Hooray": "Hooray",
+  "Confused": "Confused",
+  "Love": "Love",
+  "Rocket": "Rocket",
+  "Eyes": "Eyes"
+}

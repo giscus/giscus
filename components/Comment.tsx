@@ -3,12 +3,13 @@ import { ReactElement, ReactNode, useCallback, useContext, useState } from 'reac
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { IComment, IReply } from '../lib/types/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
-import { formatDate, formatDateDistance } from '../lib/utils';
+import { formatDateDistance } from '../lib/utils';
 import { toggleUpvote } from '../services/github/toggleUpvote';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
 import Reply from './Reply';
 import { AuthContext } from '../lib/context';
+import { useDateFormatter, useGiscusTranslation } from '../lib/i18n';
 
 interface ICommentProps {
   children?: ReactNode;
@@ -18,14 +19,6 @@ interface ICommentProps {
   onReplyUpdate?: (newReply: IReply, promise: Promise<unknown>) => void;
 }
 
-function pluralizeUpvotes(count: number) {
-  return count === 1 ? 'upvote' : 'upvotes';
-}
-
-function pluralizeReply(count: number) {
-  return count === 1 ? 'reply' : 'replies';
-}
-
 export default function Comment({
   children,
   comment,
@@ -33,6 +26,8 @@ export default function Comment({
   onCommentUpdate,
   onReplyUpdate,
 }: ICommentProps) {
+  const { t } = useGiscusTranslation();
+  const formatDate = useDateFormatter();
   const [backPage, setBackPage] = useState(0);
 
   const replies = comment.replies.slice(-5 - backPage * 50);
@@ -129,9 +124,9 @@ export default function Comment({
               {comment.lastEditedAt ? (
                 <button
                   className="color-text-secondary gsc-comment-edited"
-                  title={`Last edited at ${formatDate(comment.lastEditedAt)}`}
+                  title={t('lastEditedAt', { date: formatDate(comment.lastEditedAt) })}
                 >
-                  edited
+                  {t('edited')}
                 </button>
               ) : null}
             </div>
@@ -147,7 +142,7 @@ export default function Comment({
           }
         >
           <em className="color-text-secondary">
-            This comment {comment.deletedAt ? 'was deleted' : 'has been minimized'}.
+            {comment.deletedAt ? t('thisCommentWasDeleted') : t('thisCommentWasMinimized')}
           </em>
         </div>
         {children}
@@ -167,7 +162,7 @@ export default function Comment({
 
                 <span
                   className="gsc-upvote-count"
-                  title={`${comment.upvoteCount} ${pluralizeUpvotes(comment.upvoteCount)}`}
+                  title={t('upvotes', { count: comment.upvoteCount })}
                 >
                   {comment.upvoteCount}
                 </span>
@@ -182,7 +177,7 @@ export default function Comment({
             </div>
             <div className="gsc-comment-replies-count">
               <span className="text-xs color-text-tertiary">
-                {comment.replyCount}&nbsp;{pluralizeReply(comment.replyCount)}
+                {t('replies', { count: comment.replyCount, plus: '' })}
               </span>
             </div>
           </div>
@@ -201,7 +196,7 @@ export default function Comment({
 
                 {hasNextPage ? (
                   <button className="color-text-link hover:underline" onClick={incrementBackPage}>
-                    Show {remainingReplies} previous {pluralizeReply(remainingReplies)}
+                    {t('showPreviousReplies', { count: remainingReplies })}
                   </button>
                 ) : null}
 
@@ -212,7 +207,7 @@ export default function Comment({
                     rel="nofollow noopener noreferrer"
                     target="_blank"
                   >
-                    See {remainingReplies} previous {pluralizeReply(remainingReplies)} on GitHub
+                    {t('seePreviousRepliesOnGitHub', { count: remainingReplies })}
                   </a>
                 ) : null}
               </div>

@@ -22,10 +22,6 @@ export function getOriginHost(origin: string) {
   }
 }
 
-export function formatDate(dt: string) {
-  return format(new Date(dt), 'LLL d, y, p O');
-}
-
 export function formatDateDistance(dt: string) {
   const inputDate = new Date(dt);
   const now = new Date();

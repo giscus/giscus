@@ -1,9 +1,9 @@
 import { getJWT } from '../../lib/jwt';
-import { parseRepoWithOwner } from '../../lib/utils';
 
 import { GITHUB_REPO_INSTALLATION_URL, GITHUB_ACCESS_TOKEN_URL } from '../config';
+import { getCachedAccessToken, setCachedAccessToken } from '../supabase/cachedAccessToken';
 
-interface GResponse {
+interface GAccessToken {
   token: string;
   expires_at: string;
   permissions: {
@@ -21,7 +21,7 @@ function getHeaders() {
   };
 }
 
-async function getInstallationId(repoWithOwner: string): Promise<string> {
+async function getInstallationId(repoWithOwner: string): Promise<number> {
   const { id } = await fetch(GITHUB_REPO_INSTALLATION_URL(repoWithOwner), {
     headers: getHeaders(),
   }).then((response) => response.json());
@@ -37,11 +37,25 @@ export async function getAppAccessToken(repoWithOwner: string): Promise<string> 
         'https://docs.github.com/en/rest/reference/apps#get-a-repository-installation-for-the-authenticated-app',
     };
 
-  const response: GResponse = await fetch(GITHUB_ACCESS_TOKEN_URL(installationId), {
+  const cachedToken = await getCachedAccessToken(installationId);
+  if (cachedToken) return cachedToken;
+
+  const response = await fetch(GITHUB_ACCESS_TOKEN_URL(installationId), {
     method: 'POST',
     headers: getHeaders(),
-    body: JSON.stringify({ repositories: [parseRepoWithOwner(repoWithOwner).name] }),
-  }).then((value) => value.json());
+  });
+  if (!response.ok)
+    throw {
+      message: 'Failed fetching access token',
+    };
 
-  return response.token;
+  const { token, expires_at }: GAccessToken = await response.json();
+
+  await setCachedAccessToken({
+    installation_id: installationId,
+    token,
+    expires_at,
+  });
+
+  return token;
 }

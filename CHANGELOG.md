@@ -7,6 +7,15 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-10-09
+
+### fixed
+
+- Cache GitHub App installation access tokens using Supabase
+  ([#195](https://github.com/giscus/giscus/pull/190)). \
+  **Note:** if you self-host giscus, check out the new addition to the
+  self-hosting guide to configure token caching on your installation.
+
 ## 2021-10-05
 
 ### fixed

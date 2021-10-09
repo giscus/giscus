@@ -159,6 +159,35 @@ the web app. You can use this guide as a reference.
 
   - Click the button.
 
+## configure Supabase for caching access tokens (optional)
+
+GitHub App installation access tokens have a 60 minute TTL. You can configure
+giscus to cache the tokens in a Supabase table. This reduces the number of
+token requests to GitHub, which helps prevent the app from hitting the rate
+limit.
+
+- Log in to [Supabase][supabase].
+- Create a new project.
+- Create a new table within the project. The table name can be arbitrary, but
+  giscus uses `installation_access_tokens` as the default.
+- Use the following schema for the table: \
+  ![image](https://user-images.githubusercontent.com/6379424/136653256-eca294a4-45cd-4c58-afd1-957493cff76d.png)
+  ```
+  installation_id: int8, no default value, primary key, uncheck Is Identity
+  token: varchar, no default value
+  expires_at: timestamptz, no default value
+  created_at: timestamptz, default value NOW()
+  updated_at: timestamptz, default value NOW()
+
+  None of the columns are nullable (uncheck Is Nullable via the gear icon).
+  Only installation_id is the primary key.
+  ```
+- Take note of your Supabase project's URL (`https://xxxxx.supabase.co`) and
+  your API key.
+- Make sure that you either:
+  - Disable Row Level Security (RLS) on the table, or
+  - Use the secret `service_role` API key.
+
 ## deploy giscus
 
 The [giscus.app][giscus] website is hosted on [Vercel][vercel], but you can
@@ -175,12 +204,16 @@ functions.
   a `.env.local` file and Next.js will automatically pick it up.
 
   ```
+  NEXT_PUBLIC_GISCUS_APP_HOST=https://giscus.app
   GITHUB_APP_ID=123456
   GITHUB_CLIENT_ID=Iv1.abcd1234wxyz5678
   GITHUB_CLIENT_SECRET=abcd1234wxyz5678abcd1234wxyz5678abcd1234
   GITHUB_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nENTER-KEY-HERE-WITHOUT-LINE-BREAKS\n-----END RSA PRIVATE
   KEY-----"
   ENCRYPTION_PASSWORD=s0m3r4nd0mstr1ngw1thh1gh3ntr0py
+  SUPABASE_KEY=eyYlM4o.eyyH3Ll0oW0rLD
+  SUPABASE_URL=https://somerandomprojectname.supabase.co
+  SUPABASE_INSTALLATION_ACCESS_TOKENS_TABLE=installation_access_tokens
   ORIGINS=["https://giscus.app", "https://giscus.vercel.app"]
   ORIGINS_REGEX=["http://localhost:[0-9]+"]
   ```
@@ -237,6 +270,7 @@ encounter any problems, [create a new issue][new-issue].
 [create-app]: https://github.com/settings/apps/new
 [giscus]: https://giscus.app
 [token-validity-period]: https://github.com/giscus/giscus/blob/main/pages/api/oauth/authorized.ts#L6
+[supabase]: https://supabase.io
 [vercel]: https://vercel.com
 [env-example]: .env.example
 [api-routes]: pages/api

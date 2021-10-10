@@ -5,6 +5,7 @@ import { useComponentVisible } from '../lib/hooks';
 import { IReactionGroups } from '../lib/types/adapter';
 import { Reactions } from '../lib/reactions';
 import { toggleReaction } from '../services/github/toggleReaction';
+import { useGiscusTranslation } from '../lib/i18n';
 
 interface IReactButtonsProps {
   reactionGroups?: IReactionGroups;
@@ -25,14 +26,15 @@ function PopupInfo({
   current: string;
   loginUrl: string;
 }) {
-  if (isLoading) return <>Please wait...</>;
-  if (isLoggedIn) return <>{current || 'Pick your reaction'}</>;
+  const { t } = useGiscusTranslation();
+  if (isLoading) return <>{t('pleaseWait')}…</>;
+  if (isLoggedIn) return <>{current || t('pickYourReaction')}</>;
   return (
     <>
       <a href={loginUrl} className="color-text-link" target="_top">
-        Sign in
+        {t('signIn')}
       </a>{' '}
-      to add your reaction.
+      {t('toAddYourReaction')}.
     </>
   );
 }
@@ -44,6 +46,7 @@ export default function ReactButtons({
   variant = 'all',
   onDiscussionCreateRequest,
 }: IReactButtonsProps) {
+  const { t } = useGiscusTranslation();
   const [current, setCurrent] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [ref, isOpen, setIsOpen] = useComponentVisible<HTMLDivElement>(false);
@@ -85,18 +88,20 @@ export default function ReactButtons({
         disabled={!token}
         title={
           token
-            ? `${count} ${count === 1 ? 'person' : 'people'} reacted with ${Reactions[
-                value
-              ].name.toLowerCase()} emoji`
-            : 'You must be signed in to add reactions.'
+            ? t('peopleReactedWith', {
+                count,
+                reaction: t(Reactions[value].name),
+                emoji: t('emoji'),
+              })
+            : t('youMustBeSignedInToAddReactions')
         }
-        onClick={() => react(value as Reactions)}
+        onClick={() => react(value)}
       >
         <span className="inline-block w-4 h-4">{Reactions[value].emoji}</span>
         <span className="text-xs ml-[2px] px-1">{count}</span>
       </button>
     ),
-    [react, token],
+    [react, token, t],
   );
 
   const directReactionButtons =

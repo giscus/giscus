@@ -2,8 +2,9 @@ import ReactButtons from './ReactButtons';
 import { IReply } from '../lib/types/adapter';
 import { useCallback } from 'react';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
-import { formatDate, formatDateDistance } from '../lib/utils';
+import { formatDateDistance } from '../lib/utils';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
+import { useDateFormatter, useGiscusTranslation } from '../lib/i18n';
 
 interface IReplyProps {
   reply: IReply;
@@ -11,6 +12,9 @@ interface IReplyProps {
 }
 
 export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
+  const { t } = useGiscusTranslation();
+  const formatDate = useDateFormatter();
+
   const updateReactions = useCallback(
     (content: Reactions, promise: Promise<unknown>) =>
       onReplyUpdate(updateCommentReaction(reply, content), promise),
@@ -81,9 +85,9 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                 {reply.lastEditedAt ? (
                   <button
                     className="color-text-secondary gsc-reply-edited"
-                    title={`Last edited at ${formatDate(reply.lastEditedAt)}`}
+                    title={t('lastEditedAt', { date: reply.lastEditedAt })}
                   >
-                    edited
+                    {t('edited')}
                   </button>
                 ) : null}
                 <ReactButtons
@@ -103,7 +107,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
             }
           >
             <em className="color-text-secondary">
-              This comment {reply.deletedAt ? 'was deleted' : 'has been hidden'}.
+              {reply.deletedAt ? t('thisCommentWasDeleted') : t('thisCommentWasHidden')}
             </em>
           </div>
           {!hidden ? (

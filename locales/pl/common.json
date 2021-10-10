@@ -1,0 +1,96 @@
+{
+  "reactions": {
+    "0": "brak reakcji",
+    "one": "{{count}} reakcja",
+    "few": "{{count}} reakcje",
+    "many": "{{count}} reakcji",
+    "other": "{{count}} reakcje"
+  },
+  "comment": "Skomentuj",
+  "comments": {
+    "0": "brak komentarzy",
+    "one": "{{count}} komentarz",
+    "few": "{{count}} komentarze",
+    "many": "{{count}} komentarzy",
+    "other": "{{count}} komentarza"
+  },
+  "reply": "Odpowiedz",
+  "replies": {
+    "0": "brak odpowiedzi",
+    "one": "{{count}} odpowiedź",
+    "few": "{{count}}{{plus}} odpowiedzi",
+    "many": "{{count}}{{plus}} odpowiedzi",
+    "other": "{{count}}{{plus}} odpowiedzi"
+  },
+  "upvotes": {
+    "0": "{{count}} głosów",
+    "one": "{{count}} głos",
+    "few": "{{count}} głosy",
+    "many": "{{count}} głosów",
+    "other": "{{count}} głosu"
+  },
+  "hiddenItems": {
+    "0": "{{count}} ukrytych",
+    "one": "{{count}} ukryty",
+    "few": "{{count}} ukryte",
+    "many": "{{count}} ukrytych",
+    "other": "{{count}} ukryte"
+  },
+  "genericError": "Wystąpił błąd{{message}}",
+  "loadMore": "Załaduj więcej",
+  "loading": "Wczytywanie",
+  "loadingComments": "Wczytywanie komentarzy…",
+  "loadingPreview": "Wczytywanie podglądu…",
+  "poweredBy": "– zasilane przez",
+  "showPreviousReplies": {
+    "0": "Pokaż {{count}} poprzednich odpowiedzi",
+    "one": "Pokaż poprzednią odpowiedź",
+    "few": "Pokaż {{count}} poprzednich odpowiedzi",
+    "many": "Pokaż {{count}} poprzednich odpowiedzi",
+    "other": "Pokaż {{count}} poprzednich odpowiedzi"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Zobacz {{count}} poprzednich odpowiedzi na GitHubie",
+    "one": "Zobacz poprzednią odpowiedź na GitHubie",
+    "few": "Zobacz {{count}} poprzednie odpowiedź na GitHubie",
+    "many": "Zobacz {{count}} poprzednich odpowiedź na GitHubie",
+    "other": "Zobacz {{count}} poprzednie odpowiedzi na GitHubie"
+  },
+  "edited": "edytowano",
+  "thisCommentWasDeleted": "Ten komentarz został usunięty.",
+  "thisCommentWasMinimized": "Ten komentarz został zminimalizowany.",
+  "thisCommentWasHidden": "Ten komentarz został ukryty.",
+  "write": "Treść",
+  "preview": "Podgląd",
+  "lastEditedAt": "Ostatnio edytowano {{date}}",
+  "writeAComment": "Napisz komentarz",
+  "signInToComment": "Zaloguj się aby skomentować",
+  "stylingWithMarkdownIsSupported": "Stylowanie z użyciem Markdowna",
+  "cancel": "Anuluj",
+  "signInWithGitHub": "Zaloguj się GitHubem",
+  "writeAReply": "Napisz odpowiedź",
+
+  "pleaseWait": "Proszę czekać",
+  "pickYourReaction": "Wybierz reakcję",
+  "signIn": "Zaloguj się",
+  "toAddYourReaction": "aby dodać reakcję",
+  "youMustBeSignedInToAddReactions": "Musisz być zalogowany/a aby dodawać reakcje.",
+  "peopleReactedWith": {
+    "0": "{{count}} osób zareagowało używając {{emoji}} {{reaction}}",
+    "one": "{{count}} osoba zareagowała używając {{emoji}} {{reaction}}",
+    "few": "{{count}} osoby zareagowały używając {{emoji}} {{reaction}}",
+    "many": "{{count}} osób zareagowało używając {{emoji}} {{reaction}}",
+    "other": "{{count}} osoby zareagowały używając {{emoji}} {{reaction}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Brak podglądu",
+
+  "+1": "kciuk w górę",
+  "-1": "kciuk w dół",
+  "Laugh": "uśmiechnięta twarz z przymrużonymi oczami",
+  "Hooray": "wzniesione ręce",
+  "Confused": "zdezorientowana twarz",
+  "Love": "czerwone serce",
+  "Rocket": "rakieta",
+  "Eyes": "oczy"
+}

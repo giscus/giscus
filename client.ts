@@ -54,6 +54,7 @@ params.repo = attributes.repo;
 params.repoId = attributes.repoId;
 params.category = attributes.category || '';
 params.categoryId = attributes.categoryId;
+params.lang = attributes.lang || '';
 params.description = ogDescriptionMeta ? ogDescriptionMeta.content : '';
 
 switch (attributes.mapping) {

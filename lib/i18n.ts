@@ -45,6 +45,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
 const dateFormatters = {
   en: new Intl.DateTimeFormat('en', dateFormat),
   pl: new Intl.DateTimeFormat('pl', dateFormat),
+  ro: new Intl.DateTimeFormat('ro', dateFormat),
 } as const;
 
 export const useDateFormatter = () => {

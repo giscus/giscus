@@ -1,0 +1,88 @@
+{
+  "reactions": {
+    "0": "{{count}} reacții",
+    "one": "{{count}} reacție",
+    "few": "{{count}} reacții",
+    "other": "{{count}} reacții"
+  },
+  "comment": "Comentariu",
+  "comments": {
+    "0": "{{count}} comentarii",
+    "one": "{{count}} comentariu",
+    "few": "{{count}} comentarii",
+    "other": "{{count}} comentarii"
+  },
+  "reply": "Răspunde",
+  "replies": {
+    "0": "{{count}} răspunsuri",
+    "one": "{{count}} răspuns",
+    "few": "{{count}} răspunsuri",
+    "other": "{{count}}{{plus}} răspunsuri"
+  },
+  "upvotes": {
+    "0": "{{count}} voturi",
+    "one": "{{count}} vot",
+    "few": "{{count}} voturi",
+    "other": "{{count}} voturi"
+  },
+  "hiddenItems": {
+    "0": "{{count}} elemente ascunse",
+    "one": "{{count}} element ascuns",
+    "few": "{{count}} elemente ascunse",
+    "other": "{{count}} elemente ascunse"
+  },
+  "genericError": "A apărut o eroare{{message}}",
+  "loadMore": "Se încarcă mai multe",
+  "loading": "Încărcare",
+  "loadingComments": "Încărcare comentarii…",
+  "loadingPreview": "Încărcare previzualizare…",
+  "poweredBy": "– oferit de",
+  "showPreviousReplies": {
+    "0": "Arată {{count}} răspunsuri anterioare",
+    "one": "Arată {{count}} răspuns anterior",
+    "few": "Arată {{count}} răspunsuri anterioare",
+    "other": "Arată {{count}} răspunsuri anterioare"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Vezi {{count}} răspunsuri anterioare la GitHub",
+    "one": "Vezi {{count}} răspuns anterior la GitHub",
+    "few": "Vezi {{count}} răspunsuri anterioare la GitHub",
+    "other": "Vezi {{count}} răspunsuri anterioare la GitHub"
+  },
+  "edited": "editat",
+  "thisCommentWasDeleted": "Acest comentariu a fost șters.",
+  "thisCommentWasMinimized": "Acest comentariu a fost minimalizat.",
+  "thisCommentWasHidden": "Acest comentariu a fost ascuns.",
+  "write": "Scrie",
+  "preview": "Previzualizează",
+  "lastEditedAt": "Ultima modificare la {{date}}",
+  "writeAComment": "Scrie un comentariu",
+  "signInToComment": "Loghează-te pentru a comenta",
+  "stylingWithMarkdownIsSupported": "Markdown poate fi folosit pentru stilizare",
+  "cancel": "Anulare",
+  "signInWithGitHub": "Logare prin GitHub",
+  "writeAReply": "Scrie un răspuns",
+
+  "pleaseWait": "Te rog așteaptă",
+  "pickYourReaction": "Alege reacția",
+  "signIn": "Logare",
+  "toAddYourReaction": "pentru a adăuga reacția",
+  "youMustBeSignedInToAddReactions": "Trebuie să fii logat pentru a adăuga reacții.",
+  "peopleReactedWith": {
+    "0": "{{count}} persoare au reacționat folosind {{reaction}} {{emoji}}",
+    "one": "{{count}} persoană a reacționat folosind {{reaction}} {{emoji}}",
+    "few": "{{count}} persoane au reacționat folosind {{reaction}} {{emoji}}",
+    "other": "{{count}} persoane au reacționat folosind {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Nimic de previzualizat",
+
+  "+1": "+1",
+  "-1": "-1",
+  "Laugh": "Râset",
+  "Hooray": "Urale",
+  "Confused": "Confuz",
+  "Love": "Iubesc",
+  "Rocket": "Rachetă",
+  "Eyes": "Ochi"
+}

@@ -75,6 +75,7 @@ export default function Home({
     themeUrl: `${GISCUS_APP_HOST}/themes/custom_example.css`,
     reactionsEnabled: true,
     emitMetadata: false,
+    lang: 'en',
   });
   const themeUrl = useDebounce(directConfig.themeUrl);
   const configTheme = getThemeUrl(directConfig.theme, themeUrl);
@@ -92,10 +93,17 @@ export default function Home({
         theme: configTheme,
         reactionsEnabled: directConfig.reactionsEnabled,
         emitMetadata: directConfig.emitMetadata,
+        lang: directConfig.lang,
       },
     };
     sendData(data, location.origin);
-  }, [directConfig.emitMetadata, directConfig.reactionsEnabled, configTheme, themeUrl]);
+  }, [
+    directConfig.emitMetadata,
+    directConfig.reactionsEnabled,
+    directConfig.lang,
+    configTheme,
+    themeUrl,
+  ]);
 
   return (
     <main className="w-full min-h-screen gsc-homepage-bg" data-theme={theme}>

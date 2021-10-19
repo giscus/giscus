@@ -2,6 +2,7 @@ import { CheckIcon, CopyIcon, SyncIcon, XIcon } from '@primer/octicons-react';
 import { ReactNode, useEffect, useState } from 'react';
 import { handleClipboardCopy } from '../lib/adapter';
 import { useDebounce } from '../lib/hooks';
+import { AvailableLanguage, availableLanguages } from '../lib/i18n';
 import { ICategory } from '../lib/types/adapter';
 import { Theme } from '../lib/variables';
 import { GISCUS_APP_HOST } from '../services/config';
@@ -12,6 +13,7 @@ interface IDirectConfig {
   themeUrl: Theme;
   reactionsEnabled: boolean;
   emitMetadata: boolean;
+  lang: AvailableLanguage;
 }
 
 interface IConfigurationProps {
@@ -457,6 +459,35 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         </fieldset>
       ) : null}
 
+      <h3>Language</h3>
+      <p>
+        Choose the language giscus will be displayed in. {`Can't`} find your language?{' '}
+        <a
+          href="https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#adding-localizations"
+          target="_blank"
+          rel="noreferrer noopener nofollow"
+        >
+          Contribute
+        </a>{' '}
+        a localization.
+      </p>
+      <label htmlFor="language" className="sr-only">
+        Language
+      </label>
+      <select
+        name="language"
+        id="language"
+        value={directConfig.lang}
+        onChange={(event) => onDirectConfigChange('lang', event.target.value as AvailableLanguage)}
+        className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
+      >
+        {Object.entries(availableLanguages).map(([value, label]) => (
+          <option key={value} value={value}>
+            {label}
+          </option>
+        ))}
+      </select>
+
       <h3>Enable giscus</h3>
       <p>
         Add the following <code>{'<script>'}</code> tag to your {`website's`} template where you
@@ -513,6 +544,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
               ? directConfig.themeUrl || '[ENTER THEME CSS URL HERE]'
               : directConfig.theme}
           </span>
+          {'"\n        '}
+          <span className="pl-c1">data-lang</span>={'"'}
+          <span className="pl-s">{directConfig.lang}</span>
           {'"\n        '}
           <span className="pl-c1">crossorigin</span>={'"'}
           <span className="pl-s">anonymous</span>

@@ -1,3 +1,4 @@
+import { AvailableLanguage } from '../i18n';
 import { Theme } from '../variables';
 import { IReactionGroups, IUser } from './adapter';
 
@@ -51,5 +52,6 @@ export interface ISetConfigMessage {
     category?: string;
     reactionsEnabled?: boolean;
     emitMetadata?: boolean;
+    lang?: AvailableLanguage;
   };
 }

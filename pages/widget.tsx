@@ -15,6 +15,7 @@ import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { getRepoConfig } from '../services/github/getConfig';
 import { I18nDictionary } from 'next-translate';
 import { AvailableLanguage, availableLanguages, getLoaderConfig } from '../lib/i18n';
+import { useRouter } from 'next/router';
 
 export async function getServerSideProps({ query, res }: GetServerSidePropsContext) {
   const origin = (query.origin as string) || '';
@@ -94,6 +95,7 @@ export default function WidgetPage({
   namespaces,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const resolvedOrigin = origin || (typeof location === 'undefined' ? '' : location.href);
+  const router = useRouter();
   const { theme: resolvedTheme, setTheme } = useContext(ThemeContext);
   const [config, setConfig] = useState<ContextType<typeof ConfigContext>>({
     repo,
@@ -110,22 +112,28 @@ export default function WidgetPage({
       if (typeof event.data !== 'object' || !event.data.giscus) return;
 
       const giscusData = event.data.giscus;
+      if (!('setConfig' in giscusData)) return;
 
-      if ('setConfig' in giscusData) {
-        const { setConfig: newConfig } = giscusData as ISetConfigMessage;
+      const { setConfig: newConfig } = giscusData as ISetConfigMessage;
 
-        if ('theme' in newConfig) {
-          setTheme(newConfig.theme);
-          delete newConfig.theme;
-        }
-
-        setConfig((prevConfig) => ({ ...prevConfig, ...newConfig }));
+      if ('theme' in newConfig) {
+        setTheme(newConfig.theme);
+        delete newConfig.theme;
       }
+
+      if (router.isReady && newConfig.lang in availableLanguages) {
+        const newLang = newConfig.lang;
+        const query = { ...router.query, lang: newLang };
+        router.replace({ pathname: router.pathname, query });
+        delete newConfig.lang;
+      }
+
+      setConfig((prevConfig) => ({ ...prevConfig, ...newConfig }));
     };
 
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, [originHost, setTheme]);
+  }, [originHost, router, setTheme]);
 
   useEffect(() => setTheme(theme), [setTheme, theme]);
 

@@ -51,7 +51,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
     res.setHeader('Content-Security-Policy', `frame-ancestors 'self' ${originsStr};`);
   }
 
-  const { __lang, __namespaces } = (await loadNamespaces({
+  const { __lang, __namespaces } = await loadNamespaces({
     locale: lang,
     locales: ['en', 'pl'],
     defaultLocale: 'en',
@@ -60,9 +60,9 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       '*': ['common'],
     },
     async loadLocaleFrom(language, namespace) {
-      return import(`../locales/${language}/${namespace}.json`).then(m => m.default);
+      return import(`../locales/${language}/${namespace}.json`).then((m) => m.default);
     },
-  }));
+  });
 
   return {
     props: {
@@ -147,13 +147,13 @@ export default function WidgetPage({
       <main className="w-full mx-auto" data-theme={resolvedTheme}>
         <ConfigContext.Provider value={config}>
           <I18nProvider lang={lang} namespaces={namespaces}>
-          <Widget
-            origin={resolvedOrigin}
-            session={session}
-            repoId={repoId}
-            categoryId={categoryId}
-            description={description}
-          />
+            <Widget
+              origin={resolvedOrigin}
+              session={session}
+              repoId={repoId}
+              categoryId={categoryId}
+              description={description}
+            />
           </I18nProvider>
         </ConfigContext.Provider>
       </main>

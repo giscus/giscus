@@ -14,6 +14,7 @@ import { env, Theme } from '../lib/variables';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { getRepoConfig } from '../services/github/getConfig';
 import { I18nDictionary } from 'next-translate';
+import { AvailableLanguage, availableLanguages, getLoaderConfig } from '../lib/i18n';
 
 export async function getServerSideProps({ query, res }: GetServerSidePropsContext) {
   const origin = (query.origin as string) || '';
@@ -51,18 +52,8 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
     res.setHeader('Content-Security-Policy', `frame-ancestors 'self' ${originsStr};`);
   }
 
-  const { __lang, __namespaces } = await loadNamespaces({
-    locale: lang,
-    locales: ['en', 'pl'],
-    defaultLocale: 'en',
-    pathname: '/widget',
-    pages: {
-      '*': ['common'],
-    },
-    async loadLocaleFrom(language, namespace) {
-      return import(`../locales/${language}/${namespace}.json`).then((m) => m.default);
-    },
-  });
+  const i18nLoaderConfig = getLoaderConfig(lang as AvailableLanguage, '/widget');
+  const { __lang, __namespaces } = await loadNamespaces(i18nLoaderConfig);
 
   return {
     props: {
@@ -79,7 +70,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       emitMetadata,
       theme,
       originHost,
-      lang: __lang,
+      lang: __lang as AvailableLanguage,
       namespaces: __namespaces as Record<string, I18nDictionary>,
     },
   };

@@ -1,3 +1,4 @@
+import { LoaderConfig } from 'next-translate';
 import useTranslation from 'next-translate/useTranslation';
 import { useCallback } from 'react';
 
@@ -35,6 +36,32 @@ interface GiscusTranslate {
   (i18nKey: I18nKeysNoCount, query?: TranslationQuery): string;
 }
 
+export const availableLanguages = {
+  en: 'English',
+  pl: 'Polish',
+  ro: 'Romanian',
+} as const;
+
+export type AvailableLanguage = keyof typeof availableLanguages;
+
+const availableLocales = Object.keys(availableLanguages);
+
+export function getLoaderConfig(lang: AvailableLanguage, pathname: string): LoaderConfig {
+  return {
+    locale: lang,
+    locales: availableLocales,
+    loader: false,
+    defaultLocale: 'en',
+    pathname,
+    pages: {
+      '*': ['common'],
+    },
+    async loadLocaleFrom(language, namespace) {
+      return import(`../locales/${language}/${namespace}.json`).then((m) => m.default);
+    },
+  };
+}
+
 export const useGiscusTranslation = () => {
   const { t, lang } = useTranslation('common');
   return { t: t as GiscusTranslate, lang };
@@ -49,11 +76,11 @@ const dateFormat: Intl.DateTimeFormatOptions = {
   timeZoneName: 'short',
 };
 
-const dateFormatters = {
+const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   en: new Intl.DateTimeFormat('en', dateFormat),
   pl: new Intl.DateTimeFormat('pl', dateFormat),
   ro: new Intl.DateTimeFormat('ro', dateFormat),
-} as const;
+};
 
 export const useDateFormatter = () => {
   const { lang } = useTranslation('common');

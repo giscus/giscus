@@ -79,6 +79,12 @@ export interface GRepositoryDiscussion {
   };
 }
 
+export interface GRepositoryDiscussionCount {
+  comments: {
+    totalCount: number;
+  }
+}
+
 export interface GDiscussionCategory {
   id: string;
   name: string;

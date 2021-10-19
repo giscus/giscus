@@ -1,4 +1,3 @@
-import { DiscussionQuery } from '../../lib/types/common';
 import { GError, GMultipleErrors, GRepositoryDiscussionCount } from '../../lib/types/github';
 import { parseRepoWithOwner } from '../../lib/utils';
 import { GITHUB_GRAPHQL_API_URL } from '../config';
@@ -32,8 +31,6 @@ const GET_DISCUSSION_QUERY = (type: 'term' | 'number') => `
     ${type === 'term' ? SEARCH_QUERY : SPECIFIC_QUERY}
   }`;
 
-export interface GetDiscussionCommentsCountParams extends DiscussionQuery {}
-
 interface SearchResponse {
   data: {
     search: {
@@ -53,10 +50,10 @@ interface SpecificResponse {
 type GetDiscussionCommentsCountResponse = SearchResponse | SpecificResponse;
 
 export async function getDiscussionCommentsCount(
-  params: GetDiscussionCommentsCountParams,
+  params: DiscussionQuery,
   token: string,
 ): Promise<GetDiscussionCommentsCountResponse | GError | GMultipleErrors> {
-  const { repo: repoWithOwner, term, number, category, ...pagination } = params;
+  const { repo: repoWithOwner, term, number, category } = params;
 
   // Force repo to lowercase to prevent GitHub's bug when using category in query.
   // https://github.com/giscus/giscus/issues/118

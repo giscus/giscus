@@ -1,3 +1,4 @@
+import { DiscussionQuery } from '../../lib/types/common';
 import { GError, GMultipleErrors, GRepositoryDiscussionCount } from '../../lib/types/github';
 import { parseRepoWithOwner } from '../../lib/utils';
 import { GITHUB_GRAPHQL_API_URL } from '../config';

@@ -66,6 +66,6 @@ export default async function get(req: NextApiRequest, res: NextApiResponse<numb
   }
 
 
-  res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=900, stale-if-error=86400');
+  res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=3600, stale-if-error=86400');
   res.status(200).json(discussion.comments.totalCount);
 }

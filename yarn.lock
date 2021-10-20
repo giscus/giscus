@@ -1251,11 +1251,6 @@ data-uri-to-buffer@3.0.1:
   resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-3.0.1.tgz#594b8973938c5bc2c33046535785341abc4f3636"
   integrity sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==
 
-date-fns@^2.19.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.24.0.tgz#7d86dc0d93c87b76b63d213b4413337cfd1c105d"
-  integrity sha512-6ujwvwgPID6zbI0o7UbURi2vlLDR9uP26+tW6Lg+Ji3w7dd0i3DOcjcClLjLPranT60SSEFBwdSyYwn/ZkPIuw==
-
 debug@2, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -2795,10 +2790,10 @@ next-plugin-preact@^3.0.4:
     "@prefresh/webpack" "^3.3.0"
     module-alias "^2.0.0"
 
-next-translate@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.1.0.tgz#a5a041a1e83ab5bb5b9afe8a305c0bb5ebbe9d7a"
-  integrity sha512-2fTgGJgHvOEKlxuyibchvKAo5uQy7BA2GAcC21LUaUxBDyLqZUKqOJDvdow75jsy3S1preR3zymzx8Is8fenbw==
+next-translate@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.1.1.tgz#73846aae0b0b4729c9171afac9f58ae76caa3085"
+  integrity sha512-uKtuByaNpeHg8k0MqwcTv30txFDd8LZgIPF/3VwhW7MEHPfle0bmiMSYW9TMBUNX2bil4/JYOhR8jLCGplGMtw==
 
 next@^11.1.0:
   version "11.1.2"

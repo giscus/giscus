@@ -3,13 +3,12 @@ import { ReactElement, ReactNode, useCallback, useContext, useState } from 'reac
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { IComment, IReply } from '../lib/types/adapter';
 import { Reactions, updateCommentReaction } from '../lib/reactions';
-import { formatDateDistance } from '../lib/utils';
 import { toggleUpvote } from '../services/github/toggleUpvote';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
 import Reply from './Reply';
 import { AuthContext } from '../lib/context';
-import { useDateFormatter, useGiscusTranslation } from '../lib/i18n';
+import { useDateFormatter, useGiscusTranslation, useRelativeTimeFormatter } from '../lib/i18n';
 
 interface ICommentProps {
   children?: ReactNode;
@@ -28,6 +27,7 @@ export default function Comment({
 }: ICommentProps) {
   const { t } = useGiscusTranslation();
   const formatDate = useDateFormatter();
+  const formatDateDistance = useRelativeTimeFormatter();
   const [backPage, setBackPage] = useState(0);
 
   const replies = comment.replies.slice(-5 - backPage * 50);

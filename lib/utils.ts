@@ -1,7 +1,3 @@
-import differenceInMonths from 'date-fns/differenceInMonths';
-import differenceInYears from 'date-fns/differenceInYears';
-import format from 'date-fns/format';
-import formatDistanceStrict from 'date-fns/formatDistanceStrict';
 import { Theme } from './variables';
 
 export function resolveTheme(theme: Theme): Theme {
@@ -20,21 +16,6 @@ export function getOriginHost(origin: string) {
   } catch (err) {
     return '';
   }
-}
-
-export function formatDateDistance(dt: string) {
-  const inputDate = new Date(dt);
-  const now = new Date();
-
-  if (differenceInMonths(now, inputDate) >= 1) {
-    if (differenceInYears(now, inputDate) >= 1) {
-      return format(inputDate, 'LLL d, y');
-    }
-
-    return format(inputDate, 'LLL d');
-  }
-
-  return formatDistanceStrict(inputDate, now, { addSuffix: true });
 }
 
 export function isEmpty(v: unknown) {

@@ -62,10 +62,10 @@ export function getLoaderConfig(lang: AvailableLanguage, pathname: string): Load
   };
 }
 
-export const useGiscusTranslation = () => {
+export function useGiscusTranslation() {
   const { t, lang } = useTranslation('common');
   return { t: t as GiscusTranslate, lang };
-};
+}
 
 const dateFormat: Intl.DateTimeFormatOptions = {
   day: 'numeric',
@@ -82,7 +82,42 @@ const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ro: new Intl.DateTimeFormat('ro', dateFormat),
 };
 
-export const useDateFormatter = () => {
+const shortDateFormat: Intl.DateTimeFormatOptions = {
+  day: 'numeric',
+  month: 'short',
+};
+
+const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
+  en: new Intl.DateTimeFormat('en', shortDateFormat),
+  pl: new Intl.DateTimeFormat('pl', shortDateFormat),
+  ro: new Intl.DateTimeFormat('ro', shortDateFormat),
+};
+
+const shortDateYearFormat: Intl.DateTimeFormatOptions = {
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+};
+
+const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
+  en: new Intl.DateTimeFormat('en', shortDateYearFormat),
+  pl: new Intl.DateTimeFormat('pl', shortDateYearFormat),
+  ro: new Intl.DateTimeFormat('ro', shortDateYearFormat),
+};
+
+const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
+  localeMatcher: 'best fit',
+  numeric: 'auto',
+  style: 'long',
+};
+
+const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat> = {
+  en: new Intl.RelativeTimeFormat('en', relativeTimeFormat),
+  pl: new Intl.RelativeTimeFormat('pl', relativeTimeFormat),
+  ro: new Intl.RelativeTimeFormat('ro', relativeTimeFormat),
+};
+
+export function useDateFormatter() {
   const { lang } = useTranslation('common');
   const intl: Intl.DateTimeFormat = dateFormatters[lang] ?? dateFormatters.en;
 
@@ -93,4 +128,32 @@ export const useDateFormatter = () => {
     },
     [intl],
   );
-};
+}
+
+export function useRelativeTimeFormatter() {
+  const { lang } = useTranslation('common');
+  const sdyf: Intl.DateTimeFormat = shortDateYearFormatters[lang] ?? shortDateYearFormatters.en;
+  const sdf: Intl.DateTimeFormat = shortDateFormatters[lang] ?? shortDateFormatters.en;
+  const rtf: Intl.RelativeTimeFormat = relativeTimeFormatters[lang] ?? relativeTimeFormatters.en;
+
+  return useCallback(
+    (date: string | Date) => {
+      const dateObj = typeof date === 'string' ? new Date(date) : date;
+      const now = new Date();
+      const diff = now.getTime() - dateObj.getTime();
+      const diffInSeconds = Math.floor(diff / 1000);
+      const diffInMinutes = Math.floor(diffInSeconds / 60);
+      const diffInHours = Math.floor(diffInMinutes / 60);
+      const diffInDays = Math.floor(diffInHours / 24);
+      const diffInYears = now.getUTCFullYear() - dateObj.getUTCFullYear();
+
+      if (diffInYears > 0) return sdyf.format(dateObj);
+      if (diffInDays >= 30) return sdf.format(dateObj);
+      if (diffInDays > 0) return rtf.format(diffInDays, 'day');
+      if (diffInHours > 0) return rtf.format(diffInHours, 'hour');
+      if (diffInMinutes > 0) return rtf.format(diffInMinutes, 'minute');
+      return rtf.format(diffInSeconds, 'second');
+    },
+    [sdyf, sdf, rtf],
+  );
+}

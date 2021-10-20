@@ -4,7 +4,11 @@ import { DiscussionQuery } from "../../../lib/types/common";
 import { getAppAccessToken } from "../../../services/github/getAppAccessToken";
 import { getDiscussionCommentsCount } from "../../../services/github/getDiscussionCommentsCount";
 
-export default async function get(req: NextApiRequest, res: NextApiResponse<number | IError>) {
+export default async function getCommentsCount(req: NextApiRequest, res: NextApiResponse<number | IError>) {
+  if (!process.env.ENABLE_ADDITIONAL_PAGES) {
+    return res.status(404).end();
+  }
+
   const params: DiscussionQuery = {
     repo: req.query.repo as string,
     term: req.query.term as string,

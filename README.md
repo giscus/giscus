@@ -6,6 +6,7 @@ A comments system powered by [GitHub Discussions][discussions]. Let visitors lea
 - No tracking, no ads, always free. 📡 🚫
 - No database needed. All data is stored in GitHub Discussions. :octocat:
 - Supports [custom themes][creating-custom-themes]! 🌗
+- Supports [multiple languages][multiple-languages]. 🌐
 - [Extensively configurable][advanced-usage]. 🔧
 - Automatically fetches new comments and edits from GitHub. 🔃
 - [Can be self-hosted][self-hosting]! 🤳
@@ -25,6 +26,7 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 [repo]: https://github.com/giscus/giscus
 [advanced-usage]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
 [creating-custom-themes]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme
+[multiple-languages]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#adding-localizations
 [self-hosting]: https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md
 [search-api]: https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search
 [giscus-app]: https://github.com/apps/giscus

@@ -1,5 +1,9 @@
 # contributing
 
+- [setup](#setup)
+- [creating new themes](#creating-new-themes)
+- [adding localizations](#adding-localizations)
+
 Thanks for considering to contribute!
 
 GitHub's API for Discussions is currently only available through the GraphQL
@@ -10,13 +14,23 @@ it running.
 
 ## setup
 
-This project is built with [Next.js][next.js]. To get started:
+To contribute to giscus, follow these steps:
 
-1. `yarn`: install dependencies
-2. `yarn dev`: compile and hot-reload for development
-3. `yarn build`: compile and minify for production
-4. `yarn lint`: lint and fix files
-5. `yarn start`: serve the compiled build in production mode
+1. [Fork][fork] the repository to your GitHub account.
+2. Clone the repository to your device (or use something like Codespaces).
+3. Create a new branch in the repository.
+4. Make your modifications.
+5. Commit your modifications and push the branch.
+6. [Create a PR][pr] from the branch in your fork to giscus' `main` branch.
+
+This project is built with [Next.js][next.js] and `yarn` as the package manager.
+Here are some commands that you can use:
+
+- `yarn`: install dependencies
+- `yarn dev`: compile and hot-reload for development
+- `yarn build`: compile and minify for production
+- `yarn lint`: lint and fix files
+- `yarn start`: serve the compiled build in production mode
 
 ## creating new themes
 
@@ -46,13 +60,29 @@ so by using a [custom theme URL][custom-theme-url]. Note that you cannot
 create a nice theme, I'd appreciate it if you create a PR instead so others can
 use it easily.
 
+## adding localizations
+
+If your language is not yet supported by giscus, please contribute a
+localization! Follow these steps to add a new localization:
+
+1. Copy one of the directories in [locales][locales] and rename the new
+   directory into your language's [code][language-codes].
+2. Open `common.json` and `config.json` inside the directory.
+3. Start translating the strings. Make sure to follow your language's
+   [plural rules][plural-rules] for translation keys with an object as the value
+   (e.g. those that require `{{ count }}`).
+4. [Create a PR][pr] with your localization updates.
+
 [self-hosting]: SELF-HOSTING.md
+[fork]: https://github.com/giscus/giscus/fork
+[pr]: https://github.com/giscus/giscus/compare
 [next.js]: https://github.com/vercel/next.js
 [themes-dir]: styles/themes
 [example]: styles/themes/custom_example.css
-[syntax-dark]: https://github.com/primer/github-syntax-dark
-[syntax-light]: https://github.com/primer/github-syntax-light
+[variables]: lib/variables.ts
 [preferred-color-scheme]: styles/themes/preferred_color_scheme.css
 [gsc-classes]: https://github.com/giscus/giscus/search?l=TSX&q=gsc
 [custom-theme-url]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme
-[variables]: lib/variables.ts
+[locales]: locales/
+[language-codes]: https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/languages_and_scripts.html
+[plural-rules]: https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html

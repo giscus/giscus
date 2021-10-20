@@ -62,7 +62,7 @@ Example `giscus.json`:
 ```json
 {
   "origins": ["https://giscus.app"],
-  "originsRegex": ["http:\/\/localhost:[0-9]+"]
+  "originsRegex": ["http://localhost:[0-9]+"]
 }
 ```
 
@@ -207,19 +207,20 @@ you can update a specific subset of the config and leave everything else as-is.
 ```ts
 interface ISetConfigMessage {
   setConfig: {
-    theme?: string;
+    theme?: Theme;
     repo?: string;
     term?: string;
     number?: number;
     category?: string;
     reactionsEnabled?: boolean;
     emitMetadata?: boolean;
+    lang?: AvailableLanguage;
   };
 }
 ```
 
-Following the `sendMessage` example above, that means `message` will be of
-type `IMetadataMessage`:
+Following the `sendMessage` example above, in this case `message` will be of
+type `ISetConfigMessage`:
 
 ```ts
 sendMessage({

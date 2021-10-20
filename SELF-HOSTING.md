@@ -16,6 +16,7 @@ the web app. You can use this guide as a reference.
 - [generate a client secret](#generate-a-client-secret)
 - [copy App ID and Client ID](#copy-app-id-and-client-id)
 - [install the app](#install-the-app)
+- [configure Supabase for caching access tokens (optional)](#configure-supabase-for-caching-access-tokens-optional)
 - [deploy giscus](#deploy-giscus)
   - [As a Next.js application with API routes](#as-a-nextjs-application-with-api-routes)
   - [As a static website and separate serverless functions](#as-a-static-website-and-separate-serverless-functions)

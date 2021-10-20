@@ -20,7 +20,7 @@ When giscus loads, the [GitHub Discussions search API][search-api] is used to fi
 
 To comment, visitors must authorize the [giscus app][giscus-app] to [post on their behalf][authorization] using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
 
-[giscus]: https://giscus.app
+[giscus]: https://giscus.app/ro
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus

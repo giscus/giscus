@@ -14,18 +14,27 @@ import { sendData } from '../lib/messages';
 import { ISetConfigMessage } from '../lib/types/giscus';
 import { getThemeUrl } from '../lib/utils';
 import { GISCUS_APP_HOST } from '../services/config';
-import { InferGetStaticPropsType } from 'next';
+import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import getT from 'next-translate/getT';
+import { AvailableLanguage, getLoaderConfig, GiscusTranslate } from '../lib/i18n';
+import { I18nDictionary } from 'next-translate';
+import loadNamespaces from 'next-translate/loadNamespaces';
+import I18nProvider from 'next-translate/I18nProvider';
 
-export async function getStaticProps() {
-  const path = join(process.cwd(), 'README.md');
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const t: GiscusTranslate = await getT(locale, 'config');
+  const localeSuffix = locale === 'en' ? '' : `.${locale}`;
+
+  const path = join(process.cwd(), `README${localeSuffix}.md`);
   const readme = readFileSync(path, 'utf-8');
   const contents = readme.split('<!-- configuration -->');
   const [afterConfig] = contents[1].split('<!-- end -->');
-  contents[1] = `${afterConfig}\n## try it out 👇👇👇\n`;
+
+  contents[1] = `${afterConfig}\n## ${t('tryItOut')} 👇👇👇\n`;
 
   const token = await getAppAccessToken('giscus/giscus').catch(() => '');
   const [contentBefore, contentAfter] = await Promise.all(
-    contents.map(async (section) => await renderMarkdown(section, token, 'giscus/giscus')),
+    contents.map((section) => renderMarkdown(section, token, 'giscus/giscus')),
   );
 
   const comment: IComment = {
@@ -54,10 +63,15 @@ export async function getStaticProps() {
     viewerCanUpvote: false,
   };
 
+  const i18nLoaderConfig = getLoaderConfig('en', '/');
+  const { __lang, __namespaces } = await loadNamespaces(i18nLoaderConfig);
+
   return {
     props: {
       comment,
       contentAfter,
+      lang: __lang as AvailableLanguage,
+      namespaces: __namespaces as Record<string, I18nDictionary>,
     },
   };
 }
@@ -68,6 +82,8 @@ type DirectConfigHandler = ComponentProps<typeof Configuration>['onDirectConfigC
 export default function Home({
   comment,
   contentAfter,
+  lang,
+  namespaces,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
@@ -108,13 +124,15 @@ export default function Home({
   return (
     <main className="w-full min-h-screen gsc-homepage-bg" data-theme={theme}>
       <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
-        <Comment comment={comment}>
-          <Configuration
-            directConfig={directConfig}
-            onDirectConfigChange={handleDirectConfigChange}
-          />
-          <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
-        </Comment>
+        <I18nProvider lang={lang} namespaces={namespaces}>
+          <Comment comment={comment}>
+            <Configuration
+              directConfig={directConfig}
+              onDirectConfigChange={handleDirectConfigChange}
+            />
+            <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
+          </Comment>
+        </I18nProvider>
 
         <div className="w-full my-8 giscus" />
         <Script

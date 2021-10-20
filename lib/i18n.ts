@@ -9,7 +9,7 @@ interface TranslationQueryCount extends TranslationQuery {
   count: number;
 }
 
-type I18n = typeof import('../locales/en/common.json');
+type I18n = typeof import('../locales/en/common.json') & typeof import('../locales/en/config.json');
 
 type PluralSuffixes = 'zero' | 'one' | 'two' | 'few' | 'many' | 'other' | number;
 
@@ -31,7 +31,7 @@ type I18nKeysNoCount = {
     : K;
 }[keyof I18n];
 
-interface GiscusTranslate {
+export interface GiscusTranslate {
   (i18nKey: I18nKeysRequireCount, query: TranslationQueryCount): string;
   (i18nKey: I18nKeysNoCount, query?: TranslationQuery): string;
 }

@@ -1,7 +1,6 @@
 import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
-import { GUser, GRepositoryDiscussion, GError, GMultipleErrors } from '../../lib/types/github';
-import { parseRepoWithOwner } from '../../lib/utils';
-import { GITHUB_GRAPHQL_API_URL } from '../config';
+import { GUser, GRepositoryDiscussion } from '../../lib/types/github';
+import { githubDiscussionGraphqlRequest } from './graphql';
 
 const DISCUSSION_QUERY = `
   id
@@ -138,32 +137,18 @@ interface SpecificResponse {
 
 export type GetDiscussionResponse = SearchResponse | SpecificResponse;
 
-export async function getDiscussion(
-  params: GetDiscussionParams,
-  token: string,
-): Promise<GetDiscussionResponse | GError | GMultipleErrors> {
+export async function getDiscussion(params: GetDiscussionParams, token: string) {
   const { repo: repoWithOwner, term, number, category, ...pagination } = params;
 
-  // Force repo to lowercase to prevent GitHub's bug when using category in query.
-  // https://github.com/giscus/giscus/issues/118
-  const repo = repoWithOwner.toLowerCase();
-  const categoryQuery = category ? `category:${JSON.stringify(category)}` : '';
-  const query = `repo:${repo} ${categoryQuery} in:title ${term}`;
   const gql = GET_DISCUSSION_QUERY(number ? 'number' : 'term');
 
-  return fetch(GITHUB_GRAPHQL_API_URL, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}` },
-
-    body: JSON.stringify({
-      query: gql,
-      variables: {
-        repo,
-        query,
-        number,
-        ...parseRepoWithOwner(repo),
-        ...pagination,
-      },
-    }),
-  }).then((r) => r.json());
+  return githubDiscussionGraphqlRequest<GetDiscussionResponse, PaginationParams>({
+    gql,
+    repoWithOwner,
+    category,
+    term,
+    token,
+    number,
+    variables: pagination,
+  });
 }

@@ -1,8 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { addCorsHeaders } from '../../../lib/cors';
 import { ICategories, IError } from '../../../lib/types/adapter';
+import { handleGithubDiscussionResponse } from '../../../services/github/errors';
 import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
-import { getDiscussionCategories } from '../../../services/github/getDiscussionCategories';
+import {
+  getDiscussionCategories,
+  GetDiscussionCategoriesResponse,
+} from '../../../services/github/getDiscussionCategories';
 
 export default async function DiscussionCategoriesApi(
   req: NextApiRequest,
@@ -24,17 +28,18 @@ export default async function DiscussionCategoriesApi(
   }
 
   const response = await getDiscussionCategories(params, token);
+  const handledResponse = handleGithubDiscussionResponse<GetDiscussionCategoriesResponse['data']>(
+    response,
+    params.repo,
+  );
 
-  if ('message' in response) {
-    res.status(500).json({ error: response.message });
-    return;
+  if ('error' in handledResponse) {
+    return res.status(handledResponse.status).json({ error: handledResponse.error });
   }
 
   const {
-    data: {
-      search: { nodes: repositories },
-    },
-  } = response;
+    search: { nodes: repositories },
+  } = handledResponse;
 
   const repository = repositories[0];
   if (!repository) {

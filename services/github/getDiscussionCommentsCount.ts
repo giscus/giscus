@@ -48,7 +48,7 @@ interface SpecificResponse {
   };
 }
 
-type GetDiscussionCommentsCountResponse = SearchResponse | SpecificResponse;
+export type GetDiscussionCommentsCountResponse = SearchResponse | SpecificResponse;
 
 export async function getDiscussionCommentsCount(
   params: DiscussionQuery,

@@ -1,11 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { getDiscussion } from '../../../services/github/getDiscussion';
+import { getDiscussion, GetDiscussionResponse } from '../../../services/github/getDiscussion';
 import { adaptDiscussion } from '../../../lib/adapter';
 import { IError, IGiscussion } from '../../../lib/types/adapter';
 import { createDiscussion } from '../../../services/github/createDiscussion';
 import { GRepositoryDiscussion } from '../../../lib/types/github';
 import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
 import { addCorsHeaders } from '../../../lib/cors';
+import { handleGithubDiscussionResponse } from '../../../services/github/errors';
 
 async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IError>) {
   const params = {
@@ -34,49 +35,25 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
   }
 
   const response = await getDiscussion(params, token);
+  const handledResponse = handleGithubDiscussionResponse<GetDiscussionResponse['data']>(
+    response,
+    params.repo,
+    userToken,
+  );
 
-  if ('message' in response) {
-    if (response.message.includes('Bad credentials')) {
-      res.status(403).json({ error: response.message });
-      return;
-    }
-    res.status(500).json({ error: response.message });
-    return;
+  if ('error' in handledResponse) {
+    return res.status(handledResponse.status).json({ error: handledResponse.error });
   }
 
-  if ('errors' in response) {
-    const error = response.errors[0];
-    if (error?.message?.includes('API rate limit exceeded')) {
-      let message = `API rate limit exceeded for ${params.repo}`;
-      if (!userToken) {
-        message += '. Sign in to increase the rate limit';
-      }
-      res.status(429).json({ error: message });
-      return;
-    }
-
-    console.error(response);
-    const message = response.errors.map?.(({ message }) => message).join('. ') || 'Unknown error';
-    res.status(500).json({ error: message });
-    return;
-  }
-
-  const { data } = response;
-  if (!data) {
-    console.error(response);
-    res.status(500).json({ error: 'Unable to fetch discussion' });
-    return;
-  }
-
-  const { viewer } = data;
+  const { viewer } = handledResponse;
 
   let discussion: GRepositoryDiscussion;
-  if ('search' in data) {
-    const { search } = data;
+  if ('search' in handledResponse) {
+    const { search } = handledResponse;
     const { discussionCount, nodes } = search;
     discussion = discussionCount > 0 ? nodes[0] : null;
   } else {
-    discussion = data.repository.discussion;
+    discussion = handledResponse.repository.discussion;
   }
 
   if (!discussion) {

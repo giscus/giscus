@@ -1,4 +1,3 @@
-import { LoaderConfig } from 'next-translate';
 import useTranslation from 'next-translate/useTranslation';
 import { useCallback } from 'react';
 
@@ -8,6 +7,8 @@ interface TranslationQuery {
 interface TranslationQueryCount extends TranslationQuery {
   count: number;
 }
+
+type Namespace = 'common' | 'config';
 
 type I18n = typeof import('../locales/en/common.json') & typeof import('../locales/en/config.json');
 
@@ -44,27 +45,9 @@ export const availableLanguages = {
 
 export type AvailableLanguage = keyof typeof availableLanguages;
 
-const availableLocales = Object.keys(availableLanguages);
-
-export function getLoaderConfig(lang: AvailableLanguage, pathname: string): LoaderConfig {
-  return {
-    locale: lang,
-    locales: availableLocales,
-    loader: false,
-    defaultLocale: 'en',
-    pathname,
-    pages: {
-      '*': ['common'],
-    },
-    async loadLocaleFrom(language, namespace) {
-      return import(`../locales/${language}/${namespace}.json`).then((m) => m.default);
-    },
-  };
-}
-
-export function useGiscusTranslation() {
-  const { t, lang } = useTranslation('common');
-  return { t: t as GiscusTranslate, lang };
+export function useGiscusTranslation(namespace: Namespace = 'common') {
+  const { t, lang } = useTranslation(namespace);
+  return { t: t as GiscusTranslate, lang: lang as AvailableLanguage };
 }
 
 const dateFormat: Intl.DateTimeFormatOptions = {

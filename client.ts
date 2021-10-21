@@ -54,7 +54,6 @@ params.repo = attributes.repo;
 params.repoId = attributes.repoId;
 params.category = attributes.category || '';
 params.categoryId = attributes.categoryId;
-params.lang = attributes.lang || '';
 params.description = ogDescriptionMeta ? ogDescriptionMeta.content : '';
 
 switch (attributes.mapping) {
@@ -85,7 +84,8 @@ switch (attributes.mapping) {
     break;
 }
 
-const src = `${giscusOrigin}/widget?${new URLSearchParams(params)}`;
+const locale = attributes.lang ? `/${attributes.lang}` : '';
+const src = `${giscusOrigin}${locale}/widget?${new URLSearchParams(params)}`;
 
 // Set up iframe element
 const iframeElement = document.createElement('iframe');

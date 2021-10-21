@@ -15,15 +15,13 @@ import { ISetConfigMessage } from '../lib/types/giscus';
 import { getThemeUrl } from '../lib/utils';
 import { GISCUS_APP_HOST } from '../services/config';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
+import Router from 'next/router';
 import getT from 'next-translate/getT';
-import { AvailableLanguage, getLoaderConfig, GiscusTranslate } from '../lib/i18n';
-import { I18nDictionary } from 'next-translate';
-import loadNamespaces from 'next-translate/loadNamespaces';
-import I18nProvider from 'next-translate/I18nProvider';
+import { AvailableLanguage } from '../lib/i18n';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
-  const t: GiscusTranslate = await getT(locale, 'config');
   const localeSuffix = locale === 'en' ? '' : `.${locale}`;
+  const t = await getT(locale, 'config');
 
   const path = join(process.cwd(), `README${localeSuffix}.md`);
   const readme = readFileSync(path, 'utf-8');
@@ -63,15 +61,11 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
     viewerCanUpvote: false,
   };
 
-  const i18nLoaderConfig = getLoaderConfig('en', '/');
-  const { __lang, __namespaces } = await loadNamespaces(i18nLoaderConfig);
-
   return {
     props: {
       comment,
       contentAfter,
-      lang: __lang as AvailableLanguage,
-      namespaces: __namespaces as Record<string, I18nDictionary>,
+      locale: locale as AvailableLanguage,
     },
   };
 }
@@ -82,8 +76,7 @@ type DirectConfigHandler = ComponentProps<typeof Configuration>['onDirectConfigC
 export default function Home({
   comment,
   contentAfter,
-  lang,
-  namespaces,
+  locale,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
@@ -91,7 +84,7 @@ export default function Home({
     themeUrl: `${GISCUS_APP_HOST}/themes/custom_example.css`,
     reactionsEnabled: true,
     emitMetadata: false,
-    lang: 'en',
+    lang: locale,
   });
   const themeUrl = useDebounce(directConfig.themeUrl);
   const configTheme = getThemeUrl(directConfig.theme, themeUrl);
@@ -121,18 +114,23 @@ export default function Home({
     themeUrl,
   ]);
 
+  useEffect(() => {
+    Router.replace(Router.asPath, Router.pathname, {
+      locale: directConfig.lang,
+      scroll: false,
+    });
+  }, [directConfig.lang]);
+
   return (
     <main className="w-full min-h-screen gsc-homepage-bg" data-theme={theme}>
       <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
-        <I18nProvider lang={lang} namespaces={namespaces}>
-          <Comment comment={comment}>
-            <Configuration
-              directConfig={directConfig}
-              onDirectConfigChange={handleDirectConfigChange}
-            />
-            <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
-          </Comment>
-        </I18nProvider>
+        <Comment comment={comment}>
+          <Configuration
+            directConfig={directConfig}
+            onDirectConfigChange={handleDirectConfigChange}
+          />
+          <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
+        </Comment>
 
         <div className="w-full my-8 giscus" />
         <Script
@@ -145,6 +143,7 @@ export default function Home({
           data-theme="light"
           data-reactions-enabled="1"
           data-emit-metadata="0"
+          data-lang={locale}
         />
         <a
           className="block mx-auto mb-6 w-max"

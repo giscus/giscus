@@ -3,8 +3,6 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { ContextType, useContext, useEffect, useState } from 'react';
 import Widget from '../components/Widget';
-import I18nProvider from 'next-translate/I18nProvider';
-import loadNamespaces from 'next-translate/loadNamespaces';
 import { assertOrigin } from '../lib/config';
 import { ConfigContext, ThemeContext } from '../lib/context';
 import { decodeState } from '../lib/oauth/state';
@@ -13,9 +11,8 @@ import { getOriginHost } from '../lib/utils';
 import { env, Theme } from '../lib/variables';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { getRepoConfig } from '../services/github/getConfig';
-import { I18nDictionary } from 'next-translate';
-import { AvailableLanguage, availableLanguages, getLoaderConfig } from '../lib/i18n';
-import { useRouter } from 'next/router';
+import { availableLanguages } from '../lib/i18n';
+import Router from 'next/router';
 
 export async function getServerSideProps({ query, res }: GetServerSidePropsContext) {
   const origin = (query.origin as string) || '';
@@ -29,7 +26,6 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const description = (query.description as string) || '';
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
   const emitMetadata = Boolean(+query.emitMetadata);
-  const lang = (query.lang as string) || null;
   const theme = ((query.theme as string) || 'light') as Theme;
   const originHost = getOriginHost(origin);
 
@@ -53,9 +49,6 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
     res.setHeader('Content-Security-Policy', `frame-ancestors 'self' ${originsStr};`);
   }
 
-  const i18nLoaderConfig = getLoaderConfig(lang as AvailableLanguage, '/widget');
-  const { __lang, __namespaces } = await loadNamespaces(i18nLoaderConfig);
-
   return {
     props: {
       origin,
@@ -71,8 +64,6 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       emitMetadata,
       theme,
       originHost,
-      lang: __lang as AvailableLanguage,
-      namespaces: __namespaces as Record<string, I18nDictionary>,
     },
   };
 }
@@ -91,11 +82,8 @@ export default function WidgetPage({
   emitMetadata,
   theme,
   originHost,
-  lang,
-  namespaces,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const resolvedOrigin = origin || (typeof location === 'undefined' ? '' : location.href);
-  const router = useRouter();
   const { theme: resolvedTheme, setTheme } = useContext(ThemeContext);
   const [config, setConfig] = useState<ContextType<typeof ConfigContext>>({
     repo,
@@ -121,10 +109,11 @@ export default function WidgetPage({
         delete newConfig.theme;
       }
 
-      if (router.isReady && newConfig.lang in availableLanguages) {
-        const newLang = newConfig.lang;
-        const query = { ...router.query, lang: newLang };
-        router.replace({ pathname: router.pathname, query });
+      if (Router.isReady && newConfig.lang in availableLanguages) {
+        Router.replace(Router.asPath, Router.asPath, {
+          locale: newConfig.lang,
+          scroll: false,
+        });
         delete newConfig.lang;
       }
 
@@ -133,7 +122,7 @@ export default function WidgetPage({
 
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
-  }, [originHost, router, setTheme]);
+  }, [originHost, setTheme]);
 
   useEffect(() => setTheme(theme), [setTheme, theme]);
 
@@ -145,15 +134,13 @@ export default function WidgetPage({
 
       <main className="w-full mx-auto" data-theme={resolvedTheme}>
         <ConfigContext.Provider value={config}>
-          <I18nProvider lang={lang} namespaces={namespaces}>
-            <Widget
-              origin={resolvedOrigin}
-              session={session}
-              repoId={repoId}
-              categoryId={categoryId}
-              description={description}
-            />
-          </I18nProvider>
+          <Widget
+            origin={resolvedOrigin}
+            session={session}
+            repoId={repoId}
+            categoryId={categoryId}
+            description={description}
+          />
         </ConfigContext.Provider>
       </main>
 

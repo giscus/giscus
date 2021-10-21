@@ -105,7 +105,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
   const [error, setError] = useState(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
   const dRepository = useDebounce(config.repository);
-  const { t } = useGiscusTranslation();
+  const { t } = useGiscusTranslation('home');
 
   useEffect(() => {
     setError(false);

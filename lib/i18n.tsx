@@ -1,3 +1,5 @@
+import { TransProps as NextTransProps } from 'next-translate';
+import NextTrans from 'next-translate/Trans';
 import useTranslation from 'next-translate/useTranslation';
 import { useCallback } from 'react';
 
@@ -10,40 +12,81 @@ interface TranslationQueryCount extends TranslationQuery {
 
 type Namespace = 'common' | 'config';
 
-type I18n = typeof import('../locales/en/common.json') & typeof import('../locales/en/config.json');
+export type CommonI18n = typeof import('../locales/en/common.json');
+export type ConfigI18n = typeof import('../locales/en/config.json');
+export type I18n = CommonI18n & ConfigI18n;
 
 type PluralSuffixes = 'zero' | 'one' | 'two' | 'few' | 'many' | 'other' | number;
 
-type I18nKeysRequireCount = {
-  [K in keyof I18n]: K extends `${infer R}_${PluralSuffixes}`
+type I18nKeysRequireCount<I18Namespace = I18n> = {
+  [K in keyof I18Namespace]: K extends `${infer R}_${PluralSuffixes}`
     ? R
-    : I18n[K] extends Record<string, unknown>
+    : I18Namespace[K] extends Record<string, unknown>
     ? {
-        [J in keyof I18n[K]]: J extends PluralSuffixes ? K : never;
-      }[keyof I18n[K]]
+        [J in keyof I18Namespace[K]]: J extends PluralSuffixes ? K : never;
+      }[keyof I18Namespace[K]]
     : never;
-}[keyof I18n];
+}[keyof I18Namespace];
 
-type I18nKeysNoCount = {
-  [K in keyof I18n]: K extends `${string}_${PluralSuffixes}`
+type I18nKeysNoCount<I18Namespace = I18n> = {
+  [K in keyof I18Namespace]: K extends `${string}_${PluralSuffixes}`
     ? never
-    : I18n[K] extends Record<string, unknown>
+    : I18Namespace[K] extends Record<string, unknown>
     ? never
     : K;
-}[keyof I18n];
+}[keyof I18Namespace];
 
-export interface GiscusTranslate {
-  (i18nKey: I18nKeysRequireCount, query: TranslationQueryCount): string;
-  (i18nKey: I18nKeysNoCount, query?: TranslationQuery): string;
+export interface GiscusTranslate<I18Namespace = I18n> {
+  (i18nKey: I18nKeysRequireCount<I18Namespace>, query: TranslationQueryCount): string;
+  (i18nKey: I18nKeysNoCount<I18Namespace>, query?: TranslationQuery): string;
 }
 
 export const availableLanguages = ['en', 'pl', 'ro'] as const;
 
 export type AvailableLanguage = typeof availableLanguages[number];
 
+export function useGiscusTranslation(namespace?: 'common'): {
+  t: GiscusTranslate<CommonI18n>;
+  lang: AvailableLanguage;
+};
+export function useGiscusTranslation(namespace: 'config'): {
+  t: GiscusTranslate<ConfigI18n>;
+  lang: AvailableLanguage;
+};
 export function useGiscusTranslation(namespace: Namespace = 'common') {
   const { t, lang } = useTranslation(namespace);
-  return { t: t as GiscusTranslate, lang: lang as AvailableLanguage };
+  return { t, lang };
+}
+
+type BaseTransProps = Omit<Omit<NextTransProps, 'i18nKey'>, 'values'>;
+interface TransRequireCount {
+  i18nKey:
+    | `common:${I18nKeysRequireCount<CommonI18n>}`
+    | `config:${I18nKeysRequireCount<ConfigI18n>}`;
+  values: TranslationQueryCount;
+}
+interface TransNoCount {
+  i18nKey: `common:${I18nKeysNoCount<CommonI18n>}` | `config:${I18nKeysNoCount<ConfigI18n>}`;
+  values?: TranslationQuery;
+}
+type TransProps = BaseTransProps & (TransRequireCount | TransNoCount);
+
+const defaultTransComponents = {
+  code: <code />,
+  em: <em />,
+  strong: <strong />,
+};
+
+export function Trans({ i18nKey, values, components, defaultTrans, fallback }: TransProps) {
+  return (
+    <NextTrans
+      i18nKey={i18nKey}
+      values={values}
+      components={{ ...defaultTransComponents, ...components }}
+      defaultTrans={defaultTrans}
+      fallback={fallback}
+    />
+  );
 }
 
 const dateFormat: Intl.DateTimeFormatOptions = {

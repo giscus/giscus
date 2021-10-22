@@ -1,9 +1,14 @@
 import { CheckIcon, CopyIcon, SyncIcon, XIcon } from '@primer/octicons-react';
-import { ReactNode, useEffect, useState } from 'react';
-import Trans from 'next-translate/Trans';
+import { useEffect, useState } from 'react';
 import { handleClipboardCopy } from '../lib/adapter';
 import { useDebounce } from '../lib/hooks';
-import { AvailableLanguage, availableLanguages, useGiscusTranslation } from '../lib/i18n';
+import {
+  AvailableLanguage,
+  availableLanguages,
+  ConfigI18n,
+  Trans,
+  useGiscusTranslation,
+} from '../lib/i18n';
 import { ICategory } from '../lib/types/adapter';
 import { availableThemes, Theme } from '../lib/variables';
 import { GISCUS_APP_HOST } from '../services/config';
@@ -39,8 +44,8 @@ interface IConfig {
 
 const mappingOptions: Array<{
   value: Mapping;
-  label: ReactNode;
-  description: ReactNode;
+  label: keyof ConfigI18n;
+  description: keyof ConfigI18n;
 }> = [
   {
     value: 'pathname',
@@ -179,7 +184,6 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <Trans
             i18nKey="config:theRepositoryIsPublic"
             components={{
-              strong: <strong />,
               a: (
                 <a
                   href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/setting-repository-visibility#making-a-repository-public"
@@ -194,7 +198,6 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <Trans
             i18nKey="config:theGiscusAppIsInstalled"
             components={{
-              strong: <strong />,
               a: (
                 <a
                   href="https://github.com/apps/giscus"
@@ -209,7 +212,6 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <Trans
             i18nKey="config:theDiscussionsFeatureIsTurnedOn"
             components={{
-              strong: <strong />,
               a: (
                 <a
                   href="https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository"
@@ -252,7 +254,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
               <SyncIcon className="inline-block ml-2 animate-spin" />
             ) : null}
             <p className="text-xs color-text-secondary">
-              <Trans i18nKey="config:aPublicGitHubRepository" components={{ strong: <strong /> }} />
+              <Trans i18nKey="config:aPublicGitHubRepository" />
             </p>
           </>
         )}
@@ -280,15 +282,13 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             />
             <label className="cursor-pointer" htmlFor={value}>
               <strong>
-                <Trans i18nKey={`config:${label}`} components={{ code: <code /> }} />
+                <Trans i18nKey={`config:${label}`} />
               </strong>
             </label>
             <p className="mb-0 text-xs color-text-secondary">
               <Trans
                 i18nKey={`config:${description}`}
                 components={{
-                  code: <code />,
-                  strong: <strong />,
                   aOgTitle: (
                     <a href="https://ogp.me" target="_blank" rel="noreferrer noopener nofollow" />
                   ),
@@ -322,7 +322,6 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
               ? 'config:categoryIsNotSupported'
               : 'config:recommendAnnouncementsCategory'
           }
-          components={{ strong: <strong /> }}
         />
       </p>
       <label htmlFor="category" className="sr-only">
@@ -470,7 +469,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
 
       <h3>{t('enableGiscus')}</h3>
       <p>
-        <Trans i18nKey="config:addTheFollowingScriptTag" components={{ code: <code /> }} />
+        <Trans i18nKey="config:addTheFollowingScriptTag" />
       </p>
       <div className="relative highlight highlight-text-html-basic">
         <pre>
@@ -540,7 +539,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <ClipboardCopy />
       </div>
       <p>
-        <Trans i18nKey="config:youCanCustomizeTheLayout" components={{ code: <code /> }} />
+        <Trans i18nKey="config:youCanCustomizeTheLayout" />
       </p>
     </div>
   );

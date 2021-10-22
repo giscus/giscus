@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2021-10-22
 
+### fixed
+
+- Fix relative time formatting
+  ([#201](https://github.com/giscus/giscus/pull/201)).
+
 ### added
 
 - Add Indonesian localization

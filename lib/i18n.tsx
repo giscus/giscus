@@ -175,10 +175,10 @@ export function useRelativeTimeFormatter() {
 
       if (diffInYears > 0) return sdyf.format(dateObj);
       if (diffInDays >= 30) return sdf.format(dateObj);
-      if (diffInDays > 0) return rtf.format(diffInDays, 'day');
-      if (diffInHours > 0) return rtf.format(diffInHours, 'hour');
-      if (diffInMinutes > 0) return rtf.format(diffInMinutes, 'minute');
-      return rtf.format(diffInSeconds, 'second');
+      if (diffInDays > 0) return rtf.format(-diffInDays, 'day');
+      if (diffInHours > 0) return rtf.format(-diffInHours, 'hour');
+      if (diffInMinutes > 0) return rtf.format(-diffInMinutes, 'minute');
+      return rtf.format(-diffInSeconds, 'second');
     },
     [sdyf, sdf, rtf],
   );

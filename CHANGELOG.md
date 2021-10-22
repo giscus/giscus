@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-10-26
+
+### added
+
+- Add French localization
+  ([#202](https://github.com/giscus/giscus/pull/202)).
+
 ## 2021-10-22
 
 ### fixed

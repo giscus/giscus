@@ -1,8 +1,12 @@
-import { Theme } from './variables';
+import { AvailableTheme, availableThemes, Theme } from './variables';
+
+function isAvailableTheme(theme: Theme): theme is AvailableTheme {
+  return availableThemes.includes(theme as AvailableTheme);
+}
 
 export function resolveTheme(theme: Theme): Theme {
   if (!theme) return 'light';
-  if (theme in Theme) return theme as Theme;
+  if (isAvailableTheme(theme)) return theme;
   return 'custom';
 }
 

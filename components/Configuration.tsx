@@ -5,7 +5,7 @@ import { handleClipboardCopy } from '../lib/adapter';
 import { useDebounce } from '../lib/hooks';
 import { AvailableLanguage, availableLanguages, useGiscusTranslation } from '../lib/i18n';
 import { ICategory } from '../lib/types/adapter';
-import { Theme } from '../lib/variables';
+import { availableThemes, Theme } from '../lib/variables';
 import { GISCUS_APP_HOST } from '../services/config';
 import { getCategories } from '../services/giscus/categories';
 
@@ -105,7 +105,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
   const [error, setError] = useState(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
   const dRepository = useDebounce(config.repository);
-  const { t } = useGiscusTranslation('home');
+  const { t } = useGiscusTranslation('config');
 
   useEffect(() => {
     setError(false);
@@ -165,9 +165,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         onChange={(event) => onDirectConfigChange('lang', event.target.value as AvailableLanguage)}
         className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
       >
-        {Object.entries(availableLanguages).map(([value, label]) => (
+        {availableLanguages.map((value) => (
           <option key={value} value={value}>
-            {t(label)}
+            {t(`lang=${value}`)}
           </option>
         ))}
       </select>
@@ -443,9 +443,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         onChange={(event) => onDirectConfigChange('theme', event.target.value as Theme)}
         className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
       >
-        {Object.entries(Theme).map(([value, label]) => (
+        {availableThemes.map((value) => (
           <option key={value} value={value}>
-            {t(label)}
+            {t(`theme=${value}`)}
           </option>
         ))}
       </select>

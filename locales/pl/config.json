@@ -1,6 +1,13 @@
 {
   "configuration": "configuration",
 
+  "language": "Language",
+  "chooseLanguageGiscusDisplayed": "Choose the language giscus will be displayed in. Can't find your language? <a>Contribute</a> a localization.",
+
+  "lang=en": "English",
+  "lang=pl": "Polish",
+  "lang=ro": "Romanian",
+
   "repository": "Repository",
   "chooseTheRepository": "Choose the repository giscus will connect to. Make sure that:",
   "theRepositoryIsPublic": "The <strong>repository is <a>public</a></strong>, otherwise visitors will not be able to view the discussion.",
@@ -52,22 +59,15 @@
   "URLToThemeCSS": "URL to theme CSS file:",
   "warningExternalCSSUnsafe": "Warning: loading external CSS may be unsafe. Make sure you trust the author and provider of the CSS file.",
 
-  "GitHub Light": "GitHub Light",
-  "GitHub Dark": "GitHub Dark",
-  "GitHub Dark Dimmed": "GitHub Dark Dimmed",
-  "GitHub Dark High Contrast": "GitHub Dark High Contrast",
-  "GitHub Dark Colorblind": "GitHub Dark Colorblind",
-  "GitHub Light Colorblind": "GitHub Light Colorblind",
-  "Transparent Dark": "Transparent Dark",
-  "Preferred color scheme": "Preferred color scheme",
-  "Custom (experimental)": "Custom (experimental)",
-
-  "language": "Language",
-  "chooseLanguageGiscusDisplayed": "Choose the language giscus will be displayed in. Can't find your language? <a>Contribute</a> a localization.",
-
-  "English": "English",
-  "Polish": "Polish",
-  "Romanian": "Romanian",
+  "theme=light": "GitHub Light",
+  "theme=dark": "GitHub Dark",
+  "theme=dark_dimmed": "GitHub Dark Dimmed",
+  "theme=dark_high_contrast": "GitHub Dark High Contrast",
+  "theme=dark_protanopia": "GitHub Dark Colorblind",
+  "theme=light_protanopia": "GitHub Light Colorblind",
+  "theme=transparent_dark": "Transparent Dark",
+  "theme=preferred_color_scheme": "Preferred color scheme",
+  "theme=custom": "Custom (experimental)",
 
   "enableGiscus": "Enable giscus",
   "addTheFollowingScriptTag": "Add the following <code><script></code> tag to your website's template where you want the comments to appear. If an element with the class <code>giscus</code> exists, the comments will be placed there instead.",

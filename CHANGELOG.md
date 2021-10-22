@@ -7,12 +7,33 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-10-22
+
+### added
+
+- Properly introduce i18n and l10n support
+  ([#199](https://github.com/giscus/giscus/pull/199)).
+
+## 2021-10-17
+
+### added
+
+- Add Romanian localization
+  ([#196](https://github.com/giscus/giscus/pull/196)).
+
+## 2021-10-10
+
+### added
+
+- Use next-translate for i18n and add Polish l10n
+  ([#192](https://github.com/giscus/giscus/pull/192)).
+
 ## 2021-10-09
 
 ### fixed
 
 - Cache GitHub App installation access tokens using Supabase
-  ([#195](https://github.com/giscus/giscus/pull/190)). \
+  ([#195](https://github.com/giscus/giscus/pull/195)). \
   **Note:** if you self-host giscus, check out the new addition to the
   self-hosting guide to configure token caching on your installation.
 

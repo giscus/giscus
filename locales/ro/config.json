@@ -14,7 +14,7 @@
   "theGiscusAppIsInstalled": "The <strong><a>giscus</a> app is installed</strong>, otherwise visitors will not be able to comment and react.",
   "theDiscussionsFeatureIsTurnedOn": "The <strong>Discussions feature is turned on</strong> by <a>enabling it for your repository</a>.",
   "repositoryLabel": "repository:",
-  "owner/repo": "owner/repo",
+  "myusername/myrepo": "myusername/myrepo",
   "cannotUseGiscusOnThisRepository": "Cannot use giscus on this repository. Make sure all of the above criteria has been met.",
   "successRepositoryMeetsCriteria": "Success! This repository meets all of the above criteria.",
   "aPublicGitHubRepository": "A <strong>public</strong> GitHub repository. This repo is where the discussions will be linked to.",

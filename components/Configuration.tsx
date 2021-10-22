@@ -236,7 +236,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           }
           type="text"
           className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
-          placeholder={t('owner/repo')}
+          placeholder={t('myusername/myrepo')}
         />
 
         {error || (config.repositoryId && !categories.length) ? (

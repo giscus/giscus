@@ -108,14 +108,14 @@ export default function Comment({
                   {formatDateDistance(comment.createdAt)}
                 </time>
               </a>
-              {comment.authorAssociation ? (
+              {comment.authorAssociation !== 'NONE' ? (
                 <div className="hidden ml-2 text-xs sm:inline-flex">
                   <span
                     className={`px-1 ml-1 capitalize border rounded-md ${
                       comment.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
                     }`}
                   >
-                    {comment.authorAssociation}
+                    {t(comment.authorAssociation)}
                   </span>
                 </div>
               ) : null}

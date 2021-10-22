@@ -76,5 +76,15 @@
   "Confused": "Confused",
   "Love": "Love",
   "Rocket": "Rocket",
-  "Eyes": "Eyes"
+  "Eyes": "Eyes",
+
+  "COLLABORATOR": "Collaborator",
+  "CONTRIBUTOR": "Contributor",
+  "FIRST_TIMER": "First-timer",
+  "FIRST_TIME_CONTRIBUTOR": "First-time contributor",
+  "MANNEQUIN": "Mannequin",
+  "MEMBER": "Member",
+  "NONE": "None",
+  "OWNER": "Owner",
+  "APP": "App"
 }

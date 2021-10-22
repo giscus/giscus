@@ -92,5 +92,15 @@
   "Confused": "zdezorientowana twarz",
   "Love": "czerwone serce",
   "Rocket": "rakieta",
-  "Eyes": "oczy"
+  "Eyes": "oczy",
+
+  "COLLABORATOR": "Collaborator",
+  "CONTRIBUTOR": "Contributor",
+  "FIRST_TIMER": "First-timer",
+  "FIRST_TIME_CONTRIBUTOR": "First-time contributor",
+  "MANNEQUIN": "Mannequin",
+  "MEMBER": "Member",
+  "NONE": "None",
+  "OWNER": "Owner",
+  "APP": "App"
 }

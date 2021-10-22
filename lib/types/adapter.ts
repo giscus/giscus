@@ -13,13 +13,24 @@ export type IReactionGroups = {
   };
 };
 
+type ICommentAuthorAssociation =
+  | 'COLLABORATOR'
+  | 'CONTRIBUTOR'
+  | 'FIRST_TIMER'
+  | 'FIRST_TIME_CONTRIBUTOR'
+  | 'MANNEQUIN'
+  | 'MEMBER'
+  | 'NONE'
+  | 'OWNER'
+  | 'APP';
+
 interface IBaseComment {
   id: string;
   author: IUser;
   viewerDidAuthor: boolean;
   createdAt: string;
   url: string;
-  authorAssociation: string;
+  authorAssociation: ICommentAuthorAssociation;
   lastEditedAt: string | null;
   deletedAt: string | null;
   isMinimized: boolean;

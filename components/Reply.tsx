@@ -69,14 +69,14 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                     {formatDateDistance(reply.createdAt)}
                   </time>
                 </a>
-                {reply.authorAssociation ? (
+                {reply.authorAssociation !== 'NONE' ? (
                   <div className="hidden ml-2 text-xs sm:inline-flex">
                     <span
                       className={`px-1 ml-1 capitalize border rounded-md ${
                         reply.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
                       }`}
                     >
-                      {reply.authorAssociation}
+                      {t(reply.authorAssociation)}
                     </span>
                   </div>
                 ) : null}

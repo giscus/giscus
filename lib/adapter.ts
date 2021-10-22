@@ -1,13 +1,6 @@
 import { MouseEvent as ReactMouseEvent } from 'react';
 import { IComment, IGiscussion, IReactionGroups, IReply } from './types/adapter';
-import {
-  GComment,
-  GCommentAuthorAssociation,
-  GReactionGroup,
-  GReply,
-  GRepositoryDiscussion,
-  GUser,
-} from './types/github';
+import { GComment, GReactionGroup, GReply, GRepositoryDiscussion, GUser } from './types/github';
 import { clipboardCopy } from './utils';
 
 const COPY_BUTTON_HTML = `
@@ -32,33 +25,26 @@ export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReaction
   }, {}) as IReactionGroups;
 }
 
-export function adaptAuthorAssociation(association: GCommentAuthorAssociation) {
-  return association === 'NONE' ? '' : association.toLowerCase().replace('_', ' ');
-}
-
 export function adaptReply(reply: GReply): IReply {
   const {
     reactionGroups,
     replyTo: { id: replyToId },
-    authorAssociation: association,
     ...rest
   } = reply;
 
-  const authorAssociation = adaptAuthorAssociation(association);
   const reactions = adaptReactionGroups(reactionGroups);
 
-  return { ...rest, authorAssociation, reactions, replyToId };
+  return { ...rest, reactions, replyToId };
 }
 
 export function adaptComment(comment: GComment): IComment {
-  const { replies: repliesData, reactionGroups, authorAssociation: association, ...rest } = comment;
+  const { replies: repliesData, reactionGroups, ...rest } = comment;
   const { totalCount: replyCount, nodes: replyNodes } = repliesData;
 
-  const authorAssociation = adaptAuthorAssociation(association);
   const reactions = adaptReactionGroups(reactionGroups);
   const replies = replyNodes.map(adaptReply);
 
-  return { ...rest, authorAssociation, replyCount, reactions, replies };
+  return { ...rest, replyCount, reactions, replies };
 }
 
 export function adaptDiscussion({

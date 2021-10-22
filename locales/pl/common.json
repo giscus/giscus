@@ -41,7 +41,7 @@
   "loading": "Wczytywanie",
   "loadingComments": "Wczytywanie komentarzy…",
   "loadingPreview": "Wczytywanie podglądu…",
-  "poweredBy": "– zasilane przez",
+  "poweredBy": "– zasilane przez <a>giscus</a>",
   "showPreviousReplies": {
     "0": "Pokaż {{count}} poprzednich odpowiedzi",
     "one": "Pokaż poprzednią odpowiedź",

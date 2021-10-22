@@ -36,7 +36,7 @@
   "loading": "Încărcare",
   "loadingComments": "Încărcare comentarii…",
   "loadingPreview": "Încărcare previzualizare…",
-  "poweredBy": "– oferit de",
+  "poweredBy": "– oferit de <a>giscus</a>",
   "showPreviousReplies": {
     "0": "Arată {{count}} răspunsuri anterioare",
     "one": "Arată {{count}} răspuns anterior",

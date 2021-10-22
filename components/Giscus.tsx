@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { AuthContext, ConfigContext } from '../lib/context';
-import { useGiscusTranslation } from '../lib/i18n';
+import { Trans, useGiscusTranslation } from '../lib/i18n';
 import { emitData } from '../lib/messages';
 import { IMetadataMessage } from '../lib/types/giscus';
 import { useFrontBackDiscussion } from '../services/giscus/discussions';
@@ -115,16 +115,19 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
           ) : null}
           {shouldShowBranding ? (
             <em className="text-sm color-text-secondary">
-              {' '}
-              {t('poweredBy')}{' '}
-              <a
-                href="https://giscus.app"
-                target="_blank"
-                rel="noreferrer noopener nofollow"
-                className="Link--secondary"
-              >
-                giscus
-              </a>
+              <Trans
+                i18nKey="common:poweredBy"
+                components={{
+                  a: (
+                    <a
+                      href="https://giscus.app"
+                      target="_blank"
+                      rel="noreferrer noopener nofollow"
+                      className="Link--secondary"
+                    />
+                  ),
+                }}
+              />
             </em>
           ) : null}
         </div>

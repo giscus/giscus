@@ -11,6 +11,8 @@ major updates to the project.
 
 ### added
 
+- Add Indonesian localization
+  ([#200](https://github.com/giscus/giscus/pull/200)).
 - Properly introduce i18n and l10n support
   ([#199](https://github.com/giscus/giscus/pull/199)).
 

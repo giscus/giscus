@@ -1,0 +1,76 @@
+{
+  "reactions": {
+    "other": "{{count}} reaksi"
+  },
+  "comment": "Komentar",
+  "comments": {
+    "other": "{{count}} komentar"
+  },
+  "reply": "Balas",
+  "replies": {
+    "other": "{{count}}{{plus}} balasan"
+  },
+  "upvotes": {
+    "other": "{{count}} suara positif"
+  },
+  "hiddenItems": {
+    "other": "{{count}} komentar belum dimuat"
+  },
+  "genericError": "Suatu galat terjadi{{message}}",
+  "loadMore": "Muat lebih banyak",
+  "loading": "Memuat",
+  "loadingComments": "Memuat komentar…",
+  "loadingPreview": "Memuat pratinjau…",
+  "poweredBy": "– diberdayakan oleh <a>giscus</a>",
+  "showPreviousReplies": {
+    "other": "Tampilkan {{count}} balasan sebelumnya"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "other": "Lihat {{count}} balasan sebelumnya di GitHub"
+  },
+  "edited": "diedit",
+  "thisCommentWasDeleted": "Komentar ini telah dihapus.",
+  "thisCommentWasMinimized": "Komentar ini telah ditutup.",
+  "thisCommentWasHidden": "Komentar ini telah disembunyikan.",
+  "write": "Tulis",
+  "preview": "Pratinjau",
+  "lastEditedAt": "Terakhir diedit pada {{date}}",
+  "writeAComment": "Tulis komentar",
+  "signInToComment": "Masuk untuk berkomentar",
+  "stylingWithMarkdownIsSupported": "Gaya tulisan bisa diubah dengan Markdown",
+  "cancel": "Batal",
+  "signInWithGitHub": "Masuk dengan GitHub",
+  "writeAReply": "Tulis balasan",
+
+  "upvote": "Beri suara positif",
+  "addReactions": "Tambahkan reaksi",
+  "pleaseWait": "Mohon tunggu…",
+  "pickYourReaction": "Pilih reaksi Anda",
+  "addTheReaction": "Tambahkan reaksi {{reaction}}",
+  "signInToAddYourReaction": "<a>Masuk</a> untuk menambahkan reaksi Anda.",
+  "youMustBeSignedInToAddReactions": "Anda harus masuk untuk menambahkan reaksi.",
+  "peopleReactedWith": {
+    "other": "{{count}} orang bereaksi dengan {{emoji}} {{reaction}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Tidak ada pratinjau",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Tertawa",
+  "HOORAY": "Hore",
+  "CONFUSED": "Bingung",
+  "HEART": "Suka",
+  "ROCKET": "Roket",
+  "EYES": "Mata",
+
+  "COLLABORATOR": "Kolaborator",
+  "CONTRIBUTOR": "Kontributor",
+  "FIRST_TIMER": "Pemula",
+  "FIRST_TIME_CONTRIBUTOR": "Kontributor pemula",
+  "MANNEQUIN": "Manekin",
+  "MEMBER": "Anggota",
+  "NONE": "Tidak ada",
+  "OWNER": "Pemilik",
+  "APP": "Aplikasi"
+}

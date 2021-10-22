@@ -41,7 +41,7 @@ export interface GiscusTranslate<I18Namespace = I18n> {
   (i18nKey: I18nKeysNoCount<I18Namespace>, query?: TranslationQuery): string;
 }
 
-export const availableLanguages = ['en', 'pl', 'ro'] as const;
+export const availableLanguages = ['en', 'id', 'pl', 'ro'] as const;
 
 export type AvailableLanguage = typeof availableLanguages[number];
 
@@ -100,6 +100,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
 
 const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   en: new Intl.DateTimeFormat('en', dateFormat),
+  id: new Intl.DateTimeFormat('id', dateFormat),
   pl: new Intl.DateTimeFormat('pl', dateFormat),
   ro: new Intl.DateTimeFormat('ro', dateFormat),
 };
@@ -111,6 +112,7 @@ const shortDateFormat: Intl.DateTimeFormatOptions = {
 
 const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   en: new Intl.DateTimeFormat('en', shortDateFormat),
+  id: new Intl.DateTimeFormat('id', shortDateFormat),
   pl: new Intl.DateTimeFormat('pl', shortDateFormat),
   ro: new Intl.DateTimeFormat('ro', shortDateFormat),
 };
@@ -123,6 +125,7 @@ const shortDateYearFormat: Intl.DateTimeFormatOptions = {
 
 const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   en: new Intl.DateTimeFormat('en', shortDateYearFormat),
+  id: new Intl.DateTimeFormat('id', shortDateYearFormat),
   pl: new Intl.DateTimeFormat('pl', shortDateYearFormat),
   ro: new Intl.DateTimeFormat('ro', shortDateYearFormat),
 };
@@ -135,6 +138,7 @@ const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
 
 const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat> = {
   en: new Intl.RelativeTimeFormat('en', relativeTimeFormat),
+  id: new Intl.RelativeTimeFormat('id', relativeTimeFormat),
   pl: new Intl.RelativeTimeFormat('pl', relativeTimeFormat),
   ro: new Intl.RelativeTimeFormat('ro', relativeTimeFormat),
 };

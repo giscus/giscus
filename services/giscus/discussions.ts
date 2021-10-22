@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { SWRConfig } from 'swr';
 import useSWRInfinite from 'swr/infinite';
 import { cleanParams, fetcher } from '../../lib/fetcher';
-import { Reactions, updateDiscussionReaction } from '../../lib/reactions';
+import { Reaction, updateDiscussionReaction } from '../../lib/reactions';
 import { IComment, IGiscussion, IReply } from '../../lib/types/adapter';
 import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
 import { IDiscussionData } from '../../lib/types/giscus';
@@ -219,7 +219,7 @@ export function useFrontBackDiscussion(query: DiscussionQuery, token?: string) {
   const frontComments = frontData?.flatMap((page) => page?.discussion?.comments || []) || [];
 
   const updateReactions = useCallback(
-    (reaction: Reactions, promise: Promise<unknown>) =>
+    (reaction: Reaction, promise: Promise<unknown>) =>
       backData
         ? backMutators.updateDiscussion([updateDiscussionReaction(backData, reaction)], promise)
         : promise.then(() => backMutators.mutate()),

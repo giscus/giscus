@@ -1,4 +1,4 @@
-import { Reactions } from '../../lib/reactions';
+import { Reaction } from '../../lib/reactions';
 import { GITHUB_GRAPHQL_API_URL } from '../config';
 
 const TOGGLE_REACTION_QUERY = (mode: 'add' | 'remove') => `
@@ -12,7 +12,7 @@ const TOGGLE_REACTION_QUERY = (mode: 'add' | 'remove') => `
   }`;
 
 export interface ToggleReactionBody {
-  content: Reactions;
+  content: Reaction;
   subjectId: string;
 }
 
@@ -20,7 +20,7 @@ export interface ToggleReactionResponse {
   data: {
     toggleReaction: {
       reaction: {
-        content: Reactions;
+        content: Reaction;
         id: string;
       };
     };

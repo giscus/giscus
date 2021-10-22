@@ -1,7 +1,7 @@
 import ReactButtons from './ReactButtons';
 import { IReply } from '../lib/types/adapter';
 import { useCallback } from 'react';
-import { Reactions, updateCommentReaction } from '../lib/reactions';
+import { Reaction, updateCommentReaction } from '../lib/reactions';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { useDateFormatter, useGiscusTranslation, useRelativeTimeFormatter } from '../lib/i18n';
 
@@ -16,7 +16,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
   const formatDateDistance = useRelativeTimeFormatter();
 
   const updateReactions = useCallback(
-    (content: Reactions, promise: Promise<unknown>) =>
+    (content: Reaction, promise: Promise<unknown>) =>
       onReplyUpdate(updateCommentReaction(reply, content), promise),
     [reply, onReplyUpdate],
   );

@@ -1,19 +1,19 @@
 import { IComment, IGiscussion, IReactionGroups, IReply } from './types/adapter';
 
 export const Reactions = {
-  THUMBS_UP: { name: '+1', emoji: '👍' },
-  THUMBS_DOWN: { name: '-1', emoji: '👎' },
-  LAUGH: { name: 'Laugh', emoji: '😆' },
-  HOORAY: { name: 'Hooray', emoji: '🎉' },
-  CONFUSED: { name: 'Confused', emoji: '😕' },
-  HEART: { name: 'Love', emoji: '❤️' },
-  ROCKET: { name: 'Rocket', emoji: '🚀' },
-  EYES: { name: 'Eyes', emoji: '👀' },
+  THUMBS_UP: '👍',
+  THUMBS_DOWN: '👎',
+  LAUGH: '😆',
+  HOORAY: '🎉',
+  CONFUSED: '😕',
+  HEART: '❤️',
+  ROCKET: '🚀',
+  EYES: '👀',
 } as const;
 
-export type Reactions = keyof typeof Reactions;
+export type Reaction = keyof typeof Reactions;
 
-function updateReactionGroups(reactionGroups: IReactionGroups, reaction: Reactions) {
+function updateReactionGroups(reactionGroups: IReactionGroups, reaction: Reaction) {
   const diff = reactionGroups[reaction].viewerHasReacted ? -1 : 1;
   return [
     {
@@ -27,7 +27,7 @@ function updateReactionGroups(reactionGroups: IReactionGroups, reaction: Reactio
   ] as [IReactionGroups, number];
 }
 
-export function updateDiscussionReaction(page: IGiscussion, reaction: Reactions) {
+export function updateDiscussionReaction(page: IGiscussion, reaction: Reaction) {
   const [newReactions, diff] = updateReactionGroups(page.discussion.reactions, reaction);
   return {
     ...page,
@@ -41,7 +41,7 @@ export function updateDiscussionReaction(page: IGiscussion, reaction: Reactions)
 
 export function updateCommentReaction<T extends IComment | IReply = IComment>(
   comment: T,
-  reaction: Reactions,
+  reaction: Reaction,
 ) {
   const [newReactions] = updateReactionGroups(comment.reactions, reaction);
   return {

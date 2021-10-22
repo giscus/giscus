@@ -10,7 +10,7 @@ class CustomDocument extends Document {
     const themeUrl = getThemeUrl(resolvedTheme, theme);
 
     return (
-      <Html lang="en">
+      <Html>
         <Head>
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@laymonage" />

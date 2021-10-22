@@ -2,7 +2,7 @@ import { ArrowUpIcon, KebabHorizontalIcon } from '@primer/octicons-react';
 import { ReactElement, ReactNode, useCallback, useContext, useState } from 'react';
 import { handleCommentClick, processCommentBody } from '../lib/adapter';
 import { IComment, IReply } from '../lib/types/adapter';
-import { Reactions, updateCommentReaction } from '../lib/reactions';
+import { Reaction, updateCommentReaction } from '../lib/reactions';
 import { toggleUpvote } from '../services/github/toggleUpvote';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
@@ -39,7 +39,7 @@ export default function Comment({
   const { token } = useContext(AuthContext);
 
   const updateReactions = useCallback(
-    (reaction: Reactions, promise: Promise<unknown>) =>
+    (reaction: Reaction, promise: Promise<unknown>) =>
       onCommentUpdate(updateCommentReaction(comment, reaction), promise),
     [comment, onCommentUpdate],
   );
@@ -156,7 +156,7 @@ export default function Comment({
                 }`}
                 onClick={upvote}
                 disabled={!token || !comment.viewerCanUpvote}
-                aria-label="Upvote"
+                aria-label={t('upvote')}
               >
                 <ArrowUpIcon />
 

@@ -80,10 +80,11 @@ const mappingOptions: Array<{
 ];
 
 function ClipboardCopy() {
+  const { t } = useGiscusTranslation('config');
   return (
     <div className="top-0 right-0 zeroclipboard-container position-absolute">
       <button
-        aria-label="Copy"
+        aria-label={t('copy')}
         className="p-0 m-2 ClipboardButton btn js-clipboard-copy tooltipped-no-delay"
         data-copy-feedback="Copied!"
         tabIndex={0}

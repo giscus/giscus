@@ -4,7 +4,7 @@
     "one": "{{count}} réaction",
     "other": "{{count}} réactions"
   },
-  "comment": "Commentaire",
+  "comment": "Commenter",
   "comments": {
     "0": "{{count}} commentaire",
     "one": "{{count}} commentaire",
@@ -51,7 +51,7 @@
   "lastEditedAt": "Dernier changement le {{date}}",
   "writeAComment": "Écrire un commentaire",
   "signInToComment": "S'identifier pour pouvoir commenter",
-  "stylingWithMarkdownIsSupported": "Mise en forme avec Markdown possible",
+  "stylingWithMarkdownIsSupported": "Mise en forme Markdown disponible",
   "cancel": "Annuler",
   "signInWithGitHub": "S'identifier avec GitHub",
   "writeAReply": "Écrire une réponse",
@@ -59,14 +59,14 @@
   "upvote": "Voter pour",
   "addReactions": "Ajouter des réactions",
   "pleaseWait": "Veuillez patienter…",
-  "pickYourReaction": "Choisissez votre réaction",
+  "pickYourReaction": "Choisir une réaction",
   "addTheReaction": "Ajouter la réaction {{reaction}}",
-  "signInToAddYourReaction": "<a>S'identifier</a> pour réagir.",
+  "signInToAddYourReaction": "<a>S'Identifier</a> pour réagir.",
   "youMustBeSignedInToAddReactions": "Vous devez être identifié·e pour réagir.",
   "peopleReactedWith": {
-    "0": "{{count}} personne a réagi avec {{reaction}} {{emoji}}",
-    "one": "{{count}} personne a réagi avec {{reaction}} {{emoji}}",
-    "other": "{{count}} personnes ont réagi avec {{reaction}} {{emoji}}"
+    "0": "Personne n'a réagi avec l'{{emoji}} {{reaction}}",
+    "one": "{{count}} personne a réagi avec l'{{emoji}} {{reaction}}",
+    "other": "{{count}} personnes ont réagi avec l'{{emoji}} {{reaction}}"
   },
   "emoji": "emoji",
   "nothingToPreview": "Rien à prévisualiser",

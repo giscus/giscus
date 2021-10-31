@@ -78,7 +78,7 @@ Lihat [CONTRIBUTING.md][contributing]
 
 README ini tersedia dalam bahasa:
 
-[Inggris](README.md) • [Perancis](README.fr.md) • [Indonesia](README.id.md) • [Polandia](README.pl.md) • [Rumania](README.ro.md)
+[Inggris](README.md) • [Perancis](README.fr.md) • [Indonesia](README.id.md) • [Polandia](README.pl.md) • [Rumania](README.ro.md) • [简体中文](README.zh-CN.md)
 
 [![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
 

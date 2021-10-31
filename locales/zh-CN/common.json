@@ -1,0 +1,92 @@
+{
+  "reactions": {
+    "0": "{{count}} 感受",
+    "one": "{{count}} 感受",
+    "other": "{{count}} 感受"
+  },
+  "comment": "评论",
+  "comments": {
+    "0": "{{count}} 评论",
+    "one": "{{count}} 评论",
+    "other": "{{count}} 评论"
+  },
+  "reply": "回复",
+  "replies": {
+    "0": "{{count}} 回复",
+    "one": "{{count}} 回复",
+    "other": "{{count}}{{plus}} 回复"
+  },
+  "upvotes": {
+    "0": "{{count}} 赞同",
+    "one": "{{count}} 赞同",
+    "other": "{{count}} 赞同"
+  },
+  "hiddenItems": {
+    "0": "{{count}} 隐藏项",
+    "one": "{{count}} 隐藏项",
+    "other": "{{count}} 隐藏项"
+  },
+  "genericError": "发生了一个错误{{message}}",
+  "loadMore": "加载更多",
+  "loading": "加载中",
+  "loadingComments": "加载评论…",
+  "loadingPreview": "加载预览…",
+  "poweredBy": "– powered by <a>giscus</a>",
+  "showPreviousReplies": {
+    "0": "查看 {{count}} 条以前的回复",
+    "one": "查看 {{count}} 条以前的回复",
+    "other": "查看 {{count}} 条以前的回复"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "在GitHub上查看 {{count}} 条以前的回复",
+    "one": "在GitHub上查看 {{count}} 条以前的回复",
+    "other": "在GitHub上查看 {{count}} 条以前的回复"
+  },
+  "edited": "编辑",
+  "thisCommentWasDeleted": "该评论已被删除。",
+  "thisCommentWasMinimized": "该评论已被折叠。",
+  "thisCommentWasHidden": "该评论已被隐藏。",
+  "write": "写",
+  "preview": "预览",
+  "lastEditedAt": "最后编辑于 {{date}}",
+  "writeAComment": "说点什么",
+  "signInToComment": "登录 GitHub 留下评论",
+  "stylingWithMarkdownIsSupported": "支持 Markdown 语法",
+  "cancel": "取消",
+  "signInWithGitHub": "使用 GitHub 登陆",
+  "writeAReply": "写回复",
+
+  "upvote": "赞同",
+  "addReactions": "添加感受",
+  "pleaseWait": "请等待…",
+  "pickYourReaction": "选择你的感受",
+  "addTheReaction": "添加 {{reaction}} 感受",
+  "signInToAddYourReaction": "<a>登陆后</a> 添加你的感受。",
+  "youMustBeSignedInToAddReactions": "必须登陆才能添加感受。",
+  "peopleReactedWith": {
+    "0": "{{count}} 人添加了 {{reaction}} {{emoji}}",
+    "one": "{{count}} 人添加了 {{reaction}} {{emoji}}",
+    "other": "{{count}} 人添加了 {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "没什么可以预览的",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "笑",
+  "HOORAY": "庆祝",
+  "CONFUSED": "困惑",
+  "HEART": "爱心",
+  "ROCKET": "火箭",
+  "EYES": "眼睛",
+
+  "COLLABORATOR": "合作人",
+  "CONTRIBUTOR": "贡献人",
+  "FIRST_TIMER": "初学者",
+  "FIRST_TIME_CONTRIBUTOR": "第一个贡献人",
+  "MANNEQUIN": "Mannequin",
+  "MEMBER": "成员",
+  "NONE": "None",
+  "OWNER": "博主",
+  "APP": "App"
+}

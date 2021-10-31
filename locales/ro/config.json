@@ -9,6 +9,7 @@
   "lang=id": "Indonesian",
   "lang=pl": "Polish",
   "lang=ro": "Romanian",
+  "lang=zh-CN": "Simplified Chinese",
 
   "repository": "Repository",
   "chooseTheRepository": "Choose the repository giscus will connect to. Make sure that:",

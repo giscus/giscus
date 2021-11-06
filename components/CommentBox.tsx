@@ -60,7 +60,7 @@ export default function CommentBox({
     setIsReplyOpen(false);
   }, []);
 
-  const handleClick = useCallback(async () => {
+  const handleSubmit = useCallback(async () => {
     if (isSubmitting || (!discussionId && !onDiscussionCreateRequest)) return;
     setIsSubmitting(true);
 
@@ -115,10 +115,14 @@ export default function CommentBox({
   );
 
   return !isReply || isReplyOpen ? (
-    <div
+    <form
       className={`color-bg-primary color-border-primary gsc-comment-box${
         replyToId ? '' : ' border rounded'
       }`}
+      onSubmit={(event) => {
+        event.preventDefault();
+        handleSubmit();
+      }}
     >
       <div className="color-bg-tertiary color-border-primary gsc-comment-box-tabs">
         <div className="mx-2 mb-[-1px] mt-2">
@@ -163,7 +167,9 @@ export default function CommentBox({
             value={input}
             disabled={!token || isSubmitting}
             ref={handleTextAreaRef}
-            onKeyDown={(event) => event.ctrlKey && event.key === 'Enter' && handleClick()}
+            onKeyDown={(event) =>
+              (event.ctrlKey || event.metaKey) && event.key === 'Enter' && handleSubmit()
+            }
           ></textarea>
         )}
       </div>
@@ -189,7 +195,7 @@ export default function CommentBox({
           {token ? (
             <button
               className="px-4 py-[5px] ml-1 border rounded-md items-center btn btn-primary"
-              onClick={handleClick}
+              type="submit"
               disabled={(token && !input.trim()) || isSubmitting}
             >
               {isReply ? t('reply') : t('comment')}
@@ -218,7 +224,7 @@ export default function CommentBox({
           )}
         </div>
       </div>
-    </div>
+    </form>
   ) : (
     <div className="color-bg-tertiary gsc-reply-box">
       {viewer ? (

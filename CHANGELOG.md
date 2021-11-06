@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2021-11-06
 
+### added
+
+- Allow submitting comment with Command+Enter
+  ([#211](https://github.com/giscus/giscus/pull/211)).
+
 ### changed
 
 - Show language names in their original language

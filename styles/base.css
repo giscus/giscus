@@ -212,7 +212,7 @@ a {
   @apply align-bottom;
 }
 
-.btn .octicon:not(.color-text-success) {
+.btn:not(.btn-primary) .octicon:not(.color-text-success) {
   color: var(--color-fg-muted, var(--color-text-tertiary));
 }
 

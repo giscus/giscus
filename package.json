@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@peculiar/webcrypto": "^1.1.6",
-    "@primer/octicons-react": "^16.0.0",
+    "@primer/octicons-react": "^16.1.1",
     "jsonwebtoken": "^8.5.1",
     "next": "^11.1.0",
     "next-plugin-preact": "^3.0.4",

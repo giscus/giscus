@@ -133,6 +133,7 @@ export default function CommentBox({
                 : 'color-text-secondary border-transparent'
             }`}
             onClick={() => setIsPreview(false)}
+            type="button"
           >
             {t('write')}
           </button>
@@ -143,6 +144,7 @@ export default function CommentBox({
                 : 'color-text-secondary border-transparent'
             }`}
             onClick={() => setIsPreview(true)}
+            type="button"
           >
             {t('preview')}
           </button>
@@ -188,6 +190,7 @@ export default function CommentBox({
             <button
               className="px-4 py-[5px] ml-1 border rounded-md btn"
               onClick={() => setIsReplyOpen(false)}
+              type="button"
             >
               {t('cancel')}
             </button>
@@ -246,6 +249,7 @@ export default function CommentBox({
       <button
         className="w-full px-2 py-1 ml-2 text-left border rounded cursor-text form-control color-text-secondary color-border-primary"
         onClick={handleReplyOpen}
+        type="button"
       >
         {t('writeAReply')}
       </button>

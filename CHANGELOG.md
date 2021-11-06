@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2021-11-06
 
+### fixed
+
+- Add `type="button"` to non-submit buttons in `CommentBox`
+  ([#212](https://github.com/giscus/giscus/pull/212)).
+
 ### added
 
 - Allow submitting comment with Command+Enter

@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['eslint:recommended', 'next/core-web-vitals'],
+  extends: ['eslint:recommended', 'next/core-web-vitals', 'plugin:prettier/recommended'],
   plugins: ['@typescript-eslint'],
   rules: {
     '@next/next/no-img-element': 'off',

@@ -62,6 +62,8 @@
   "thisCommentWasHidden": "Ten komentarz został ukryty.",
   "write": "Treść",
   "preview": "Podgląd",
+  "enableFixedWidth": "Włącz czcionki o stałej szerokości (monospace) w edytorze",
+  "disableFixedWidth": "Wyłącz czcionkę o stałej szerokości (monospace) w edytorze",
   "lastEditedAt": "Ostatnio edytowano {{date}}",
   "writeAComment": "Napisz komentarz",
   "signInToComment": "Zaloguj się aby skomentować",

@@ -34,6 +34,8 @@
   "thisCommentWasHidden": "Komentar ini telah disembunyikan.",
   "write": "Tulis",
   "preview": "Pratinjau",
+  "enableFixedWidth": "Aktifkan fon lebar tetap (spasi tunggal) dalam editor",
+  "disableFixedWidth": "Nonaktifkan fon lebar tetap (spasi tunggal) dalam editor",
   "lastEditedAt": "Terakhir diedit pada {{date}}",
   "writeAComment": "Tulis komentar",
   "signInToComment": "Masuk untuk berkomentar",

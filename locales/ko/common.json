@@ -48,6 +48,8 @@
   "thisCommentWasHidden": "이 댓글은 감춰졌습니다.",
   "write": "작성하기",
   "preview": "미리 보기",
+  "enableFixedWidth": "편집기에서 고정 너비(고정 폭) 글꼴 활성화",
+  "disableFixedWidth": "편집기에서 고정 너비(고정 폭) 글꼴 비활성화",
   "lastEditedAt": "{{date}}에 마지막으로 수정됨",
   "writeAComment": "댓글 달기",
   "signInToComment": "댓글을 남기려면 로그인하세요.",

@@ -34,6 +34,8 @@
   "thisCommentWasHidden": "此评论已被隐藏。",
   "write": "输入",
   "preview": "预览",
+  "enableFixedWidth": "在编辑器中启用固定宽度（等宽）字体",
+  "disableFixedWidth": "在编辑器中禁用固定宽度（等宽）字体",
   "lastEditedAt": "最后编辑于 {{date}}",
   "writeAComment": "写评论",
   "signInToComment": "登录以评论",

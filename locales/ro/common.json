@@ -55,6 +55,8 @@
   "thisCommentWasHidden": "Acest comentariu a fost ascuns.",
   "write": "Scrie",
   "preview": "Previzualizează",
+  "enableFixedWidth": "Activați fontul cu lățime fixă (monospațiu) în editor",
+  "disableFixedWidth": "Dezactivați fontul cu lățime fixă (monospațiu) în editor",
   "lastEditedAt": "Ultima modificare la {{date}}",
   "writeAComment": "Scrie un comentariu",
   "signInToComment": "Loghează-te pentru a comenta",

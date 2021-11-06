@@ -48,6 +48,8 @@
   "thisCommentWasHidden": "This comment has been hidden.",
   "write": "Write",
   "preview": "Preview",
+  "enableFixedWidth": "Enable fixed-width (monospace) font in the editor",
+  "disableFixedWidth": "Disable fixed-width (monospace) font in the editor",
   "lastEditedAt": "Last edited at {{date}}",
   "writeAComment": "Write a comment",
   "signInToComment": "Sign in to comment",

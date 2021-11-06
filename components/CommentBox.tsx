@@ -1,4 +1,4 @@
-import { MarkdownIcon, MarkGithubIcon } from '@primer/octicons-react';
+import { MarkdownIcon, MarkGithubIcon, TypographyIcon } from '@primer/octicons-react';
 import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
 import { adaptComment, adaptReply, handleCommentClick, processCommentBody } from '../lib/adapter';
 import { AuthContext } from '../lib/context';
@@ -34,6 +34,7 @@ export default function CommentBox({
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isReplyOpen, setIsReplyOpen] = useState(false);
+  const [isFixedWidth, setIsFixedWidth] = useState(false);
   const { token, origin, getLoginUrl } = useContext(AuthContext);
   const loginUrl = getLoginUrl(origin);
   const isReply = !!replyToId;
@@ -145,8 +146,21 @@ export default function CommentBox({
             }`}
             onClick={() => setIsPreview(true)}
             type="button"
+            tabIndex={-1}
           >
             {t('preview')}
+          </button>
+        </div>
+
+        <div className="gsc-comment-box-md-toolbar">
+          <button
+            className="gsc-toolbar-item"
+            type="button"
+            title={isFixedWidth ? t('disableFixedWidth') : t('enableFixedWidth')}
+            onClick={() => setIsFixedWidth(!isFixedWidth)}
+            tabIndex={-1}
+          >
+            <TypographyIcon />
           </button>
         </div>
       </div>
@@ -163,7 +177,9 @@ export default function CommentBox({
           </div>
         ) : (
           <textarea
-            className="form-control input-contrast gsc-comment-box-textarea"
+            className={`form-control input-contrast gsc-comment-box-textarea ${
+              isFixedWidth ? 'gsc-is-fixed-width' : ''
+            }`}
             placeholder={token ? t('writeAComment') : t('signInToComment')}
             onChange={handleTextAreaChange}
             value={input}

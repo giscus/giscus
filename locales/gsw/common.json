@@ -43,6 +43,8 @@
     "other": "Siehe {{count}} vorherige Antworten auf GitHub"
   },
   "edited": "bearbeitet",
+  "enableFixedWidth": "Aktivieren Sie die Schriftart mit fester Breite (Monospace) im Editor",
+  "disableFixedWidth": "Deaktivieren Sie die Schriftart mit fester Breite (Monospace) im Editor",
   "thisCommentWasDeleted": "Dieser Kommentar wurde gelöscht.",
   "thisCommentWasMinimized": "Dieser Kommentar wurde minimiert.",
   "thisCommentWasHidden": "Dieser Kommentar wurde versteckt.",

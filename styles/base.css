@@ -503,6 +503,19 @@ img.emoji {
   @apply border-t rounded-none;
 }
 
+.gsc-comment-box-md-toolbar {
+  @apply inline-flex items-center mx-2 mt-2;
+}
+
+.gsc-toolbar-item {
+  color: var(--color-fg-muted, var(--color-text-secondary));
+}
+
+.gsc-toolbar-item:hover,
+.gsc-toolbar-item:focus {
+  color: var(--color-accent-fg, var(--color-text-link));
+}
+
 .gsc-comment-box-main {
   @apply m-2;
 }
@@ -654,6 +667,10 @@ img.emoji {
 
 .gsc-reply-reactions {
   @apply flex content-center mr-4;
+}
+
+.gsc-is-fixed-width {
+  @apply font-mono;
 }
 
 /* Re-apply overridden tailwind */

@@ -48,6 +48,8 @@
   "thisCommentWasHidden": "Questo commento è stato nascosto.",
   "write": "Scrivi",
   "preview": "Anteprima",
+  "enableFixedWidth": "Abilita il carattere a larghezza fissa (monospazio) nell'editor",
+  "disableFixedWidth": "Disabilita il carattere a larghezza fissa (monospazio) nell'editor",
   "lastEditedAt": "Modificato il {{date}}",
   "writeAComment": "Scrivi un commento",
   "signInToComment": "Accedi per commentare",

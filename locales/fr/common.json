@@ -48,6 +48,8 @@
   "thisCommentWasHidden": "Ce commentaire a été masqué.",
   "write": "Écrire",
   "preview": "Aperçu",
+  "enableFixedWidth": "Activer la police à largeur fixe (monospace) dans l'éditeur",
+  "disableFixedWidth": "Désactiver la police à largeur fixe (monospace) dans l'éditeur",
   "lastEditedAt": "Dernier changement le {{date}}",
   "writeAComment": "Écrire un commentaire",
   "signInToComment": "S'identifier pour pouvoir commenter",

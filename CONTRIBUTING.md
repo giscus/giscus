@@ -71,7 +71,18 @@ localization! Follow these steps to add a new localization:
 3. Start translating the strings. Make sure to follow your language's
    [plural rules][plural-rules] for translation keys with an object as the value
    (e.g. those that require `{{ count }}`).
-4. [Create a PR][pr] with your localization updates.
+4. Copy one of the README files and name it `README.[code].md`, e.g.
+   `README.id.md` and translate the content. Add your language to the bottom of
+   the new README and all the existing READMEs.
+5. Edit [`i18n.tsx`][i18n-tsx] and update the following variables:
+   - `availableLanguages`: include your language code and name.
+   - `dateFormatters`, `shortDateFormatters`, `shortDateYearFormatters`, and
+     `relativeTimeFormatters`: include new objects with your language code,
+     following the existing languages.
+6. Edit [`i18n.json`][i18n-json] and include your language.
+7. In all of the aforementioned files, make sure that the language list is
+   sorted by the language code.
+8. [Create a PR][pr] with your localization updates.
 
 [self-hosting]: SELF-HOSTING.md
 [fork]: https://github.com/giscus/giscus/fork
@@ -86,3 +97,5 @@ localization! Follow these steps to add a new localization:
 [locales]: locales/
 [language-codes]: https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/languages_and_scripts.html
 [plural-rules]: https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html
+[i18n-tsx]: lib/i18n.tsx
+[i18n-json]: i18n.json

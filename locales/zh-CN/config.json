@@ -42,7 +42,7 @@
   "discussionCategory": "Discussion 分类",
   "chooseTheDiscussionCategory": "选择新 discussions 所在的分类。",
   "categoryIsNotSupported": "“特定 discussion 号”映射关系不支持此特性。",
-  "recommendAnnouncementsCategory": "推荐使用 <strong>公告（announcements）</strong> 类型的分类，以确保新 discussion 只能由仓库维护者和 giscus 创建。",
+  "recommendAnnouncementsCategory": "推荐使用<strong>公告（announcements）</strong>类型的分类，以确保新 discussion 只能由仓库维护者和 giscus 创建。",
   "discussionCategoryLabel": "Discussion 分类",
   "categoryNotSupportedOption": "不支持",
   "pickACategoryOption": "选择分类",

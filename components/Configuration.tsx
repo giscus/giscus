@@ -171,9 +171,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         onChange={(event) => onDirectConfigChange('lang', event.target.value as AvailableLanguage)}
         className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
       >
-        {availableLanguages.map((value) => (
+        {Object.entries(availableLanguages).map(([value, name]) => (
           <option key={value} value={value}>
-            {t(`lang=${value}`)}
+            {name}
           </option>
         ))}
       </select>

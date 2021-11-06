@@ -20,7 +20,7 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 
 要评论，访客必须按 GitHub OAuth 流程授权 [giscus app][giscus-app] [代表他发帖][authorization]。或者访客也可以直接在 GitHub Discussion 里评论。你可以在 GitHub 上管理评论。
 
-[giscus]: https://giscus.app
+[giscus]: https://giscus.app/zh-CN
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
@@ -78,7 +78,7 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 
 本 README 有以下语言版本：
 
-[英语](README.md) • [法语](README.fr.md) • [印度尼西亚语](README.id.md) • [波兰语](README.pl.md) • [罗马尼亚语](README.ro.md) • [简体中文](README.zh-CN.md)
+[English](README.md) • [Français](README.fr.md) • [Indonesia](README.id.md) • [Polski](README.pl.md) • [Română](README.ro.md) • [简体中文](README.zh-CN.md)
 
 [![由 Vercel 驱动](public/powered-by-vercel.svg)][vercel]
 

@@ -109,7 +109,7 @@ export default function WidgetPage({
         delete newConfig.theme;
       }
 
-      if (Router.isReady && availableLanguages.includes(newConfig.lang)) {
+      if (Router.isReady && newConfig.lang in availableLanguages) {
         Router.replace(Router.asPath, Router.asPath, {
           locale: newConfig.lang,
           scroll: false,

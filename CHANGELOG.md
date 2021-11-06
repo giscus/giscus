@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-11-06
+
+### changed
+
+- Show language names in their original language
+  ([#210](https://github.com/giscus/giscus/pull/210)).
+
 ## 2021-11-01
 
 ### added

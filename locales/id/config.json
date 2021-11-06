@@ -4,13 +4,6 @@
   "language": "Bahasa",
   "chooseLanguageGiscusDisplayed": "Pilih bahasa yang akan ditampilkan giscus. Tidak dapat menemukan bahasa Anda? <a>Buat kontribusi</a> terjemahan.",
 
-  "lang=en": "Inggris",
-  "lang=fr": "Perancis",
-  "lang=id": "Indonesia",
-  "lang=pl": "Polandia",
-  "lang=ro": "Rumania",
-  "lang=zh-CN": "Cina Disederhanakan",
-
   "repository": "Repositori",
   "chooseTheRepository": "Pilih repositori yang akan dihubungkan dengan giscus. Pastikan:",
   "theRepositoryIsPublic": "<strong>Repositori tersebut <a>publik</a></strong>, jika tidak maka pengunjung tidak dapat melihat diskusi.",

@@ -4,13 +4,6 @@
   "language": "Langue",
   "chooseLanguageGiscusDisplayed": "Choisir la langue d'affichage de giscus. Vous ne trouvez pas votre langue ? <a>Contribuez</a> à la traduction.",
 
-  "lang=en": "Anglais",
-  "lang=fr": "Français",
-  "lang=id": "Indonésien",
-  "lang=pl": "Polonais",
-  "lang=ro": "Romain",
-  "lang=zh-CN": "Chinois Simplifié",
-
   "repository": "Dépôt",
   "chooseTheRepository": "Choisir le dépôt auquel giscus se connectera. Bien vérifier que :",
   "theRepositoryIsPublic": "Le <strong>dépôt est <a>public</a></strong>, sinon les visiteurs ne pourront pas voir les discussions.",

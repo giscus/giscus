@@ -41,9 +41,16 @@ export interface GiscusTranslate<I18Namespace = I18n> {
   (i18nKey: I18nKeysNoCount<I18Namespace>, query?: TranslationQuery): string;
 }
 
-export const availableLanguages = ['en', 'fr', 'id', 'pl', 'ro', 'zh-CN'] as const;
+export const availableLanguages = {
+  en: 'English',
+  fr: 'Français',
+  id: 'Indonesia',
+  pl: 'Polski',
+  ro: 'Română',
+  'zh-CN': '简体中文',
+} as const;
 
-export type AvailableLanguage = typeof availableLanguages[number];
+export type AvailableLanguage = keyof typeof availableLanguages;
 
 export function useGiscusTranslation(namespace?: 'common'): {
   t: GiscusTranslate<CommonI18n>;

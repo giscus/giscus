@@ -4,13 +4,6 @@
   "language": "Language",
   "chooseLanguageGiscusDisplayed": "Choose the language giscus will be displayed in. Can't find your language? <a>Contribute</a> a localization.",
 
-  "lang=en": "English",
-  "lang=fr": "French",
-  "lang=id": "Indonesian",
-  "lang=pl": "Polish",
-  "lang=ro": "Romanian",
-  "lang=zh-CN": "Simplified Chinese",
-
   "repository": "Repository",
   "chooseTheRepository": "Choose the repository giscus will connect to. Make sure that:",
   "theRepositoryIsPublic": "The <strong>repository is <a>public</a></strong>, otherwise visitors will not be able to view the discussion.",

@@ -78,7 +78,7 @@ See [CONTRIBUTING.md][contributing]
 
 This README is available in:
 
-[English](README.md) • [French](README.fr.md) • [Indonesian](README.id.md) • [Polish](README.pl.md) • [Romanian](README.ro.md) • [Simplified Chinese](README.zh-CN.md)
+[English](README.md) • [Français](README.fr.md) • [Indonesia](README.id.md) • [Polski](README.pl.md) • [Română](README.ro.md) • [简体中文](README.zh-CN.md)
 
 [![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
 

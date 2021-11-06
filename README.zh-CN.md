@@ -16,9 +16,9 @@
 
 ## 它如何运作
 
-giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据选定的映射方式（如 URL、`pathname`、`<title>` 等）来查找与当前页面关联的 Discussion。如果找不到匹配的 discussion，giscus bot 就会在第一次有人留下评论或回应时自动创建一个 discussion。
+giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据选定的映射方式（如 URL、`pathname`、`<title>` 等）来查找与当前页面关联的 discussion。如果找不到匹配的 discussion，giscus bot 就会在第一次有人留下评论或回应时自动创建一个 discussion。
 
-要评论，访客必须按 GitHub OAuth 流程授权 [giscus app][giscus-app] [以他的名义发布][authorization]。或者访客也可以直接在 GitHub Discussion 里评论。你可以在 GitHub 上管理评论。
+要评论，访客必须按 GitHub OAuth 流程授权 [giscus app][giscus-app] [代表他发帖][authorization]。或者访客也可以直接在 GitHub Discussion 里评论。你可以在 GitHub 上管理评论。
 
 [giscus]: https://giscus.app
 [discussions]: https://docs.github.com/en/discussions
@@ -34,13 +34,13 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 
 <!-- configuration -->
 
-如果你使用 giscus，请考虑 [在 GitHub 上 star 🌟 giscus][repo] 并[为你的仓库][topic-howto]添加 [`giscus`][giscus-topic] 话题！🎉
+如果你使用 giscus，请考虑[在 GitHub 上 star 🌟 giscus][repo] 并[为你的仓库][topic-howto]添加 [`giscus`][giscus-topic] 话题！🎉
 
 ## 高级用法
 
 你可以依照[高级用法指南][advanced-usage]添加额外配置（例如允许特定来源）。
 
-要在 React、Vue 和 Svelte 中使用 giscus，请查看 [giscus 组件库][giscus-component].
+要在 React、Vue 和 Svelte 中使用 giscus，请查看 [giscus 组件库][giscus-component]。
 
 ## 迁移
 
@@ -52,7 +52,7 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**and many more!**][giscus-topic]
+- [**还有更多！**][giscus-topic]
 
 ## 贡献
 

@@ -496,7 +496,11 @@ img.emoji {
 }
 
 .gsc-comment-box-tabs {
-  @apply flex border-b rounded-t;
+  @apply flex items-center justify-between border-b rounded-t;
+}
+
+.gsc-comment .gsc-comment-box-tabs {
+  @apply border-t rounded-none;
 }
 
 .gsc-comment-box-main {

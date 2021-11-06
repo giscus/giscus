@@ -220,7 +220,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@peculiar/asn1-schema@^2.0.32", "@peculiar/asn1-schema@^2.0.38":
+"@peculiar/asn1-schema@^2.0.38":
   version "2.0.38"
   resolved "https://registry.yarnpkg.com/@peculiar/asn1-schema/-/asn1-schema-2.0.38.tgz#98b6f12daad275ecd6774dfe31fb62f362900412"
   integrity sha512-zZ64UpCTm9me15nuCpPgJghSdbEm8atcDQPCyK+bKXjZAQ1735NCZXCSCfbckbQ4MH36Rm9403n/qMq77LFDzQ==
@@ -237,16 +237,16 @@
   dependencies:
     tslib "^2.0.0"
 
-"@peculiar/webcrypto@^1.1.6":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@peculiar/webcrypto/-/webcrypto-1.1.7.tgz#ff02008612e67ab7cc2a92fce04a7f0e2a04b71c"
-  integrity sha512-aCNLYdHZkvGH+T8/YBOY33jrVGVuLIa3bpizeHXqwN+P4ZtixhA+kxEEWM1amZwUY2nY/iuj+5jdZn/zB7EPPQ==
+"@peculiar/webcrypto@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@peculiar/webcrypto/-/webcrypto-1.2.0.tgz#e1375ba60e0e5e53e67290f917d77bf813ef5ade"
+  integrity sha512-ln2CvfmTzXSr877zM1+3JTyvbtaDXsoDivvEyeYAzB4RQIM+Pw82gp1nQFp9xM4BylBBrip/R36Gp+WJFCoU3Q==
   dependencies:
-    "@peculiar/asn1-schema" "^2.0.32"
+    "@peculiar/asn1-schema" "^2.0.38"
     "@peculiar/json-schema" "^1.1.12"
-    pvtsutils "^1.1.6"
-    tslib "^2.2.0"
-    webcrypto-core "^1.2.0"
+    pvtsutils "^1.2.1"
+    tslib "^2.3.1"
+    webcrypto-core "^1.3.0"
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.20"
@@ -3635,12 +3635,12 @@ purgecss@^4.0.3:
     postcss "^8.2.1"
     postcss-selector-parser "^6.0.2"
 
-pvtsutils@^1.1.6, pvtsutils@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/pvtsutils/-/pvtsutils-1.2.0.tgz#619e4767093d23cd600482600c16f4c36d3025bb"
-  integrity sha512-IDefMJEQl7HX0FP2hIKJFnAR11klP1js2ixCrOaMhe3kXFK6RQ2ABUCuwWaaD4ib0hSbh2fGTICvWJJhDfNecA==
+pvtsutils@^1.2.0, pvtsutils@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/pvtsutils/-/pvtsutils-1.2.1.tgz#8212e846ca9afb21e40cebb0691755649f9f498a"
+  integrity sha512-Q867jEr30lBR2YSFFLZ0/XsEvpweqH6Kj096wmlRAFXrdRGPCNq2iz9B5Tk085EZ+OBZyYAVA5UhPkjSHGrUzQ==
   dependencies:
-    tslib "^2.2.0"
+    tslib "^2.3.1"
 
 pvutils@latest:
   version "1.0.17"
@@ -4384,7 +4384,7 @@ tslib@^1.8.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.2.0, tslib@^2.3.0, tslib@^2.3.1:
+tslib@^2.0.0, tslib@^2.3.0, tslib@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
@@ -4537,10 +4537,10 @@ watchpack@2.1.1:
     glob-to-regexp "^0.4.1"
     graceful-fs "^4.1.2"
 
-webcrypto-core@^1.2.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/webcrypto-core/-/webcrypto-core-1.2.1.tgz#33f451a4c4faf159e74589436c80ca33998abad6"
-  integrity sha512-5+h1/e/A4eegCRTg+oQ9ehTJRTMwFhZazJ2RH1FP0VC3q1/0xl7x6SzzTwPxd/VTGc7kjuSEJGnfNgoLe5jNRQ==
+webcrypto-core@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/webcrypto-core/-/webcrypto-core-1.3.0.tgz#848c5af59785634de1408e7b8a659c14738f4cab"
+  integrity sha512-/+Hz+uNM6T8FtizWRYMNdGTXxWaljLFzQ5GKU4WqCTZKpaki94YqDA39h/SpWxEZfgkVMZzrqqtPlfy2+BloQw==
   dependencies:
     "@peculiar/asn1-schema" "^2.0.38"
     "@peculiar/json-schema" "^1.1.12"

@@ -138,10 +138,10 @@
   resolved "https://registry.yarnpkg.com/@next/env/-/env-11.1.2.tgz#27996efbbc54c5f949f5e8c0a156e3aa48369b99"
   integrity sha512-+fteyVdQ7C/OoulfcF6vd1Yk0FEli4453gr8kSFbU8sKseNSizYq6df5MKz/AjwLptsxrUeIkgBdAzbziyJ3mA==
 
-"@next/eslint-plugin-next@11.1.2":
-  version "11.1.2"
-  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-11.1.2.tgz#f26cf90bcb6cd2e4645e2ba253bbc9aaaa43a170"
-  integrity sha512-cN+ojHRsufr9Yz0rtvjv8WI5En0RPZRJnt0y16Ha7DD+0n473evz8i1ETEJHmOLeR7iPJR0zxRrxeTN/bJMOjg==
+"@next/eslint-plugin-next@12.0.3":
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/@next/eslint-plugin-next/-/eslint-plugin-next-12.0.3.tgz#3945c251d551bacc3712d4a18d6ca56d2938f175"
+  integrity sha512-P7i+bMypneQcoRN+CX79xssvvIJCaw7Fndzbe7/lB0+LyRbVvGVyMUsFmLLbSxtZq4hvFMJ1p8wML/gsulMZWQ==
   dependencies:
     glob "7.1.7"
 
@@ -1525,12 +1525,12 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-next@^11.1.0:
-  version "11.1.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-11.1.2.tgz#73c918f2fa6120d5f65080bf3fcf6b154905707e"
-  integrity sha512-dFutecxX2Z5/QVlLwdtKt+gIfmNMP8Qx6/qZh3LM/DFVdGJEAnUKrr4VwGmACB2kx/PQ5bx3R+QxnEg4fDPiTg==
+eslint-config-next@^12.0.3:
+  version "12.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-config-next/-/eslint-config-next-12.0.3.tgz#a85ad423997f098b41b61c279472e0642e200a9e"
+  integrity sha512-q+mX6jhk3HrCo39G18MLhiC6f8zJnTA00f30RSuVUWsv45SQUm6r62oXVqrbAgMEybe0yx/GDRvfA6LvSolw6Q==
   dependencies:
-    "@next/eslint-plugin-next" "11.1.2"
+    "@next/eslint-plugin-next" "12.0.3"
     "@rushstack/eslint-patch" "^1.0.6"
     "@typescript-eslint/parser" "^4.20.0"
     eslint-import-resolver-node "^0.3.4"

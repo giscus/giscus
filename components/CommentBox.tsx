@@ -1,5 +1,5 @@
 import { MarkdownIcon, MarkGithubIcon, TypographyIcon } from '@primer/octicons-react';
-import { ChangeEvent, useCallback, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { adaptComment, adaptReply, handleCommentClick, processCommentBody } from '../lib/adapter';
 import { AuthContext } from '../lib/context';
 import { useGiscusTranslation } from '../lib/i18n';
@@ -36,6 +36,7 @@ export default function CommentBox({
   const [isReplyOpen, setIsReplyOpen] = useState(false);
   const [isFixedWidth, setIsFixedWidth] = useState(false);
   const { token, origin, getLoginUrl } = useContext(AuthContext);
+  const textarea = useRef<HTMLTextAreaElement>(null);
   const loginUrl = getLoginUrl(origin);
   const isReply = !!replyToId;
 
@@ -106,19 +107,16 @@ export default function CommentBox({
     resizeTextArea(elem);
   }, []);
 
-  const handleTextAreaRef = useCallback(
-    (textarea: HTMLTextAreaElement) => {
-      if (!textarea) return;
-      resizeTextArea(textarea);
-      if (isReply) setTimeout(() => textarea.focus());
-    },
-    [isReply],
-  );
+  useEffect(() => {
+    if (!textarea.current) return;
+    if (isReplyOpen) textarea.current.focus();
+    resizeTextArea(textarea.current);
+  }, [textarea, isReplyOpen]);
 
   return !isReply || isReplyOpen ? (
     <form
       className={`color-bg-primary color-border-primary gsc-comment-box${
-        replyToId ? '' : ' border rounded'
+        isReply ? '' : ' border rounded'
       }`}
       onSubmit={(event) => {
         event.preventDefault();
@@ -157,7 +155,10 @@ export default function CommentBox({
             className="gsc-toolbar-item"
             type="button"
             title={isFixedWidth ? t('disableFixedWidth') : t('enableFixedWidth')}
-            onClick={() => setIsFixedWidth(!isFixedWidth)}
+            onClick={() => {
+              setIsFixedWidth(!isFixedWidth);
+              textarea.current.focus();
+            }}
             tabIndex={-1}
           >
             <TypographyIcon />
@@ -184,7 +185,7 @@ export default function CommentBox({
             onChange={handleTextAreaChange}
             value={input}
             disabled={!token || isSubmitting}
-            ref={handleTextAreaRef}
+            ref={textarea}
             onKeyDown={(event) =>
               (event.ctrlKey || event.metaKey) && event.key === 'Enter' && handleSubmit()
             }

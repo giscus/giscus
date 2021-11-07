@@ -464,7 +464,7 @@ img.emoji {
 
 .gsc-comment-edited,
 .gsc-reply-edited {
-  @apply hidden mr-2 sm:inline-block;
+  @apply hidden sm:inline-block;
 }
 
 .gsc-comment-content {

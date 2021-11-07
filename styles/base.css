@@ -430,7 +430,7 @@ img.emoji {
 }
 
 .gsc-header {
-  @apply flex items-center flex-auto pb-2;
+  @apply flex flex-wrap items-center flex-auto pb-2 whitespace-nowrap;
 }
 
 .gsc-comments-count,
@@ -480,7 +480,7 @@ img.emoji {
 }
 
 .gsc-comment-replies-count {
-  @apply mb-4 mr-4;
+  @apply mb-4 mr-4 whitespace-nowrap;
 }
 
 .gsc-replies {

@@ -147,7 +147,7 @@ export default function Comment({
         </div>
         {children}
         {!comment.isMinimized && onCommentUpdate ? (
-          <div className="flex content-center justify-between">
+          <div className="gsc-comment-footer">
             <div className="gsc-comment-reactions">
               <button
                 type="button"

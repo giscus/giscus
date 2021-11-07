@@ -475,12 +475,16 @@ img.emoji {
   @apply px-4 py-2 border-b;
 }
 
+.gsc-comment-footer {
+  @apply flex content-center justify-between mb-3;
+}
+
 .gsc-comment-reactions {
   @apply flex items-start justify-end ml-4;
 }
 
 .gsc-comment-replies-count {
-  @apply mb-4 mr-4 whitespace-nowrap;
+  @apply mr-4 whitespace-nowrap;
 }
 
 .gsc-replies {
@@ -613,7 +617,7 @@ img.emoji {
 }
 
 .gsc-direct-reaction-button {
-  @apply mb-1 mr-2 border dmd:mb-4;
+  @apply mb-1 mr-2 border;
 }
 
 .gsc-reply {

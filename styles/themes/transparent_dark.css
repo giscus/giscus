@@ -60,7 +60,7 @@ main {
   --color-fg-muted: #8b949e;
   --color-fg-subtle: #484f58;
   --color-canvas-default: transparent;
-  --color-canvas-overlay: transparent;
+  --color-canvas-overlay: rgba(22, 27, 34, 0.9);
   --color-canvas-inset: transparent;
   --color-canvas-subtle: transparent;
   --color-border-default: #30363d;

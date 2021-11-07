@@ -7,7 +7,29 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-11-07
+
+### changed
+
+- Update dependencies
+  ([#217](https://github.com/giscus/giscus/pull/217)).
+
+### fixed
+
+- Minor style fixes
+  ([#238](https://github.com/giscus/giscus/pull/238)).
+
 ## 2021-11-06
+
+### added
+
+- Add Dependabot for updates
+  ([#215](https://github.com/giscus/giscus/pull/215)).
+
+### changed
+
+- Use new setup-node caching
+  ([#216](https://github.com/giscus/giscus/pull/216)).
 
 ### fixed
 

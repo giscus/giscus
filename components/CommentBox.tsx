@@ -35,6 +35,7 @@ export default function CommentBox({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isReplyOpen, setIsReplyOpen] = useState(false);
   const [isFixedWidth, setIsFixedWidth] = useState(false);
+  const [lastHeight, setLastHeight] = useState('');
   const { token, origin, getLoginUrl } = useContext(AuthContext);
   const textarea = useRef<HTMLTextAreaElement>(null);
   const loginUrl = getLoginUrl(origin);
@@ -101,17 +102,22 @@ export default function CommentBox({
     setIsReplyOpen(true);
   };
 
-  const handleTextAreaChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
-    setInput(event.target.value);
-    const elem = event.target as HTMLTextAreaElement;
-    resizeTextArea(elem);
-  }, []);
+  const handleTextAreaChange = useCallback(
+    (event: ChangeEvent<HTMLTextAreaElement>) => {
+      setInput(event.target.value);
+      // Only resize if it hasn't been resized manually.
+      if (!lastHeight || lastHeight === textarea.current.style.height) {
+        resizeTextArea(textarea.current);
+        setLastHeight(textarea.current.style.height);
+      }
+    },
+    [lastHeight],
+  );
 
   useEffect(() => {
     if (!textarea.current) return;
     if (isReplyOpen) textarea.current.focus();
-    resizeTextArea(textarea.current);
-  }, [textarea, isReplyOpen]);
+  }, [isReplyOpen]);
 
   return !isReply || isReplyOpen ? (
     <form

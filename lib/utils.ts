@@ -48,7 +48,8 @@ export function parseRepoWithOwner(repoWithOwner: string) {
 }
 
 export function resizeTextArea(textarea: HTMLTextAreaElement) {
+  const maxHeight = 270;
   textarea.style.height = `0px`;
-  const height = textarea.scrollHeight <= 772 ? textarea.scrollHeight : 772;
+  const height = textarea.scrollHeight <= maxHeight ? textarea.scrollHeight : maxHeight;
   textarea.style.height = `${height}px`;
 }

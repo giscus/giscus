@@ -1,0 +1,92 @@
+{
+  "reactions": {
+    "0": "{{count}} تفاعل",
+    "one": "{{count}} تفاعل",
+    "other": "{{count}} تفاعلات"
+  },
+  "jugdr": "علّْق",
+  "comments": {
+    "0": "{{count}} تعليق",
+    "one": "{{count}} تعليق",
+    "other": "{{count}} تعليقات"
+  },
+  "reply": "رد",
+  "replies": {
+    "0": "{{count}} رد",
+    "one": "{{count}} رد",
+    "other": "{{count}}{{plus}} ردود"
+  },
+  "upvotes": {
+    "0": "{{count}} صوت",
+    "one": "{{count}} صوت",
+    "other": "{{count}} اصوات"
+  },
+  "hiddenItems": {
+    "0": "{{count}} كائن مخفي",
+    "one": "{{count}} كائن مخفي",
+    "other": "{{count}} كائنات مخفية"
+  },
+  "genericError": "لقد وقع خطأ{{message}}",
+  "loadMore": "تحميل المزيد",
+  "loading": "تحميل",
+  "loadingComments": "تحميل التعليقات…",
+  "loadingPreview": "تحميل…",
+  "poweredBy": "– مطور بواسطة <a>giscus</a>",
+  "showPreviousReplies": {
+    "0": "عرض {{count}} رد سابق",
+    "one": "عرض {{count}} رد سابق",
+    "other": "عرض {{count}} ردود سابقة"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "عرض {{count}} اجابة سابقة على غيتهاب",
+    "one": "عرض {{count}} اجابة سابقة على غيتهاب",
+    "other": "عرض {{count}} اجابات سابقة على غيتهاب"
+  },
+  "edited": "edited",
+  "thisCommentWasDeleted": "هذا التعليق قد حُذف.",
+  "thisCommentWasMinimized": "هذا التعليق تم تصغيره.",
+  "thisCommentWasHidden": "هذا التعليق تم إخفاؤه.",
+  "write": "كتابة",
+  "preview": "عرض أولي",
+  "lastEditedAt": "آخر تعديل {{date}}",
+  "writeAComment": "أترك تعليقاً",
+  "signInToComment": "سجل الدخول لتعلق",
+  "stylingWithMarkdownIsSupported": "التنسيق باستخدام Markdown مدعوم هنا",
+  "cancel": "إلغاء",
+  "signInWithGitHub": "تسجيل الدخول بواسطة غيتهاب",
+  "writeAReply": "اترك ردأً",
+
+  "upvote": "تصويت",
+  "addReactions": "لإضافة ردة فعل",
+  "pleaseWait": "يرجى الانتظار…",
+  "pickYourReaction": "إختر ردة فعلك",
+  "addTheReaction": "اختر {{reaction}} كرد فعل",
+  "signInToAddYourReaction": "<a>سجل دخولك</a> لإضافة ردود أفعالك.",
+  "youMustBeSignedInToAddReactions": "يجب عليك أن تسجل دخولك لتضيف ردة فعلك.",
+  "peopleReactedWith": {
+    "0": "{{count}} شخص تفاعل باستخدام {{reaction}} {{emoji}}",
+    "one": "{{count}} شخص تفاعل باستخدام {{reaction}} {{emoji}}",
+    "other": "{{count}}  شخص تفاعلوا باستخدام {{reaction}} {{emoji}}"
+  },
+  "emoji": "ايموجي",
+  "nothingToPreview": "لا شيء لعرضه",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "ضحكة",
+  "HOORAY": "مرحى",
+  "CONFUSED": "مرتبك",
+  "HEART": "محب",
+  "ROCKET": "صاروخ",
+  "EYES": "عيون",
+
+  "COLLABORATOR": "متعاون",
+  "CONTRIBUTOR": "مساهم",
+  "FIRST_TIMER": "مبتدئ",
+  "FIRST_TIME_CONTRIBUTOR": "مساهم لأول مرة",
+  "MANNEQUIN": "عارض",
+  "MEMBER": "عضو",
+  "NONE": "لا شيء",
+  "OWNER": "مالك",
+  "APP": "تطبيق"
+}

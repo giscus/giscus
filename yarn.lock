@@ -2757,10 +2757,10 @@ next-plugin-preact@^3.0.4:
     "@prefresh/webpack" "^3.3.0"
     module-alias "^2.0.0"
 
-next-translate@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.1.1.tgz#73846aae0b0b4729c9171afac9f58ae76caa3085"
-  integrity sha512-uKtuByaNpeHg8k0MqwcTv30txFDd8LZgIPF/3VwhW7MEHPfle0bmiMSYW9TMBUNX2bil4/JYOhR8jLCGplGMtw==
+next-translate@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-1.2.0.tgz#e178b4c93fce7c8b78b3fa5cbb112f75fa631188"
+  integrity sha512-L15JCfvj6BhQfx7i3nsJReUF7wrHe1RlzK7h25QlBT40prGQLZ5nJ6gx9Vd3Ew0V9QMqaVELUeQQ1u51yyDu0Q==
 
 next@^12.0.3:
   version "12.0.3"

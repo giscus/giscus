@@ -1,0 +1,92 @@
+{
+  "reactions": {
+    "0": "{{count}} reacciones",
+    "one": "{{count}} reaccion",
+    "other": "{{count}} reacciones"
+  },
+  "comment": "Comentario",
+  "comments": {
+    "0": "{{count}} comentarios",
+    "one": "{{count}} comentario",
+    "other": "{{count}} comentarios"
+  },
+  "reply": "Responder",
+  "replies": {
+    "0": "{{count}} respuestas",
+    "one": "{{count}} responder",
+    "other": "{{count}}{{plus}} respuestas"
+  },
+  "upvotes": {
+    "0": "{{count}} votos a favor",
+    "one": "{{count}} voto a favor",
+    "other": "{{count}} votos a favor"
+  },
+  "hiddenItems": {
+    "0": "{{count}} elementos ocultos",
+    "one": "{{count}} elemento oculto",
+    "other": "{{count}} elementos ocultos"
+  },
+  "genericError": "Ocurrió un error{{message}}",
+  "loadMore": "Carga más",
+  "loading": "Cargando",
+  "loadingComments": "Cargando comentarios…",
+  "loadingPreview": "Cargando vista previa…",
+  "poweredBy": "– Desarrollado por <a>giscus</a>",
+  "showPreviousReplies": {
+    "0": "Mostrar {{count}} respuestas anteriores",
+    "one": "Mostrar {{count}} respuesta anteriores",
+    "other": "Mostrar {{count}} respuestas anteriores"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Ver {{count}} respuestas anteriores en GitHub",
+    "one": "Ver {{count}} respuesta anterior en GitHub",
+    "other": "Ver {{count}} respuestas anteriores en GitHub"
+  },
+  "edited": "editado",
+  "thisCommentWasDeleted": "Este comentario fue eliminado.",
+  "thisCommentWasMinimized": "Este comentario se ha minimizado.",
+  "thisCommentWasHidden": "Este comentario ha sido ocultado.",
+  "write": "Escribir",
+  "preview": "Previsualizar",
+  "lastEditedAt": "Última modificaciòn a las {{date}}",
+  "writeAComment": "Escribir un comentario",
+  "signInToComment": "Sign in to comment",
+  "stylingWithMarkdownIsSupported": "Styling with Markdown is supported",
+  "cancel": "Cancel",
+  "signInWithGitHub": "Iniciar sesión para comentar",
+  "writeAReply": "Escribe una respuesta",
+
+  "upvote": "Voto a favor",
+  "addReactions": "Agregar reacciones",
+  "pleaseWait": "Espere por favor…",
+  "pickYourReaction": "Elige tu reacción",
+  "addTheReaction": "Agregar reacción de {{reaction}}",
+  "signInToAddYourReaction": "<a> Inicie sesión</a> para agregar su reacción.",
+  "youMustBeSignedInToAddReactions": "Debes iniciar sesión para agregar reacciones.",
+  "peopleReactedWith": {
+    "0": "{{count}} personas reaccionaron con {{reaction}} {{emoji}}",
+    "one": "{{count}} persona reaccionó con {{reaction}} {{emoji}}",
+    "other": "{{count}} personas reaccionaron con {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Nada para previsualizar",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Risa",
+  "HOORAY": "Hurra",
+  "CONFUSED": "Confundido",
+  "HEART": "Amor",
+  "ROCKET": "Cohete",
+  "EYES": "Ojos",
+
+  "COLLABORATOR": "Colaborador",
+  "CONTRIBUTOR": "Contribuyente",
+  "FIRST_TIMER": "Principiante",
+  "FIRST_TIME_CONTRIBUTOR": "Contribuyente principiante",
+  "MANNEQUIN": "Maniquí",
+  "MEMBER": "Miembro",
+  "NONE": "Ninguno",
+  "OWNER": "Propietario",
+  "APP": "App"
+}

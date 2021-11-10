@@ -1,0 +1,85 @@
+# [giscus][giscus]
+
+Un sistema de comentarios desarrollado con [Discusiones de GitHub][discussions]. ¡Permite a sus visitantes dejar comentarios y reacciones en su sitio web a través de GitHub! Inspirado en [utterances][utterances].
+
+- [Código abierto][repo]. 🌏
+- Sin seguimiento, sin anuncios, siempre gratis. 📡 🚫
+- No se necesita base de datos. Todos los datos se almacenan en Discusiones de GitHub. :octocat:
+- ¡Soporta [temas personalizados][creating-custom-themes]! 🌗
+- Soporta múltiples idiomas][multiple-languages]. 🌐
+- [Ampliamente configurable][advanced-usage]. 🔧
+- Obtiene automáticamente nuevos comentarios y ediciones de GitHub. 🔃
+- [Puede ser autohospedado][self-hosting]! 🤳
+
+> **Note:**\
+> giscus todavía está en desarrollo activo. GitHub también sigue desarrollando activamente Discusiones y su API. Por lo tanto, algunas características de giscus pueden romperse o cambiar con el tiempo.
+
+## cómo funciona
+
+Cuando se carga giscus, la [API de búsqueda de discusiones de GitHub][search-api] se usa para encontrar la discusión asociada con la página en función de la forma de mapeo elegida (URL, `pathname`, `<title>`, etc.). Si no se puede encontrar una discusión que coincida, el bot giscus creará automáticamente una discusión la primera vez que alguien deje un comentario o una reacción.
+
+Para comentar, los visitantes deben autorizar la [aplicación de giscus][giscus-app] para [publicar en su nombre][authorization] utilizando el flujo de GitHub OAuth. Alternativamente, los visitantes pueden comentar sobre la Discusión de GitHub directamente. Puede moderar los comentarios en GitHub.
+
+[giscus]: https://giscus.app/es
+[discussions]: https://docs.github.com/en/discussions
+[utterances]: https://github.com/utterance/utterances
+[repo]: https://github.com/giscus/giscus
+[advanced-usage]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
+[creating-custom-themes]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme
+[multiple-languages]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#adding-localizations
+[self-hosting]: https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md
+[search-api]: https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search
+[giscus-app]: https://github.com/apps/giscus
+[authorization]: https://docs.github.com/en/developers/apps/identifying-and-authorizing-users-for-github-apps
+
+<!-- configuration -->
+
+Si está usando giscus, considere [recomendar 🌟 giscus en GitHub][repo] y agrega [`giscus`][giscus-topic] topic [en tu repositorio][topic-howto]! 🎉
+
+## uso avanzado
+
+Puede agregar configuraciones adicionales (por ejemplo, permitir orígenes específicos) siguiendo la [guía de uso avanzado][advanced-usage].
+
+Para usar giscus con React, Vue o Svelte, consulte la [biblioteca de componentes de giscus][giscus-component].
+
+## migrando
+
+Si ha utilizado anteriormente otros sistemas que usan GitHub Issues (p.ej. [utterances][utterances], [gitalk][gitalk]), puedes [convertir los issues existentes en discusiones][convert]. Después de la conversión, asegúrese de que el mapeo entre los títulos de la discusión y las páginas sea correcto, entonces giscus utilizará automáticamente las discusiones.
+
+## sitios que usan giscus
+
+- [laymonage.com][laymonage-website]
+- [os.phil-opp.com][os-phil-opp]
+- [Stats and R][statsandr]
+- [Tech Debt Burndown Podcast][techdebtburndown]
+- [**Y muchos más!**][giscus-topic]
+
+## contribución
+
+Ver [CONTRIBUTING.md][contributing]
+
+[giscus-component]: https://github.com/giscus/giscus-component
+[repo]: https://github.com/giscus/giscus
+[giscus-topic]: https://github.com/topics/giscus
+[topic-howto]: https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics
+[advanced-usage]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
+[utterances]: https://github.com/utterance/utterances
+[gitalk]: https://github.com/gitalk/gitalk
+[convert]: https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion
+[laymonage-website]: https://laymonage.com/posts/giscus
+[os-phil-opp]: https://os.phil-opp.com
+[statsandr]: https://statsandr.com
+[techdebtburndown]: https://techdebtburndown.com
+[contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md
+
+<!-- end -->
+
+---
+
+Este archivo README está disponible en:
+
+[English](README.md) • [Español](README.es.md) • [Français](README.fr.md) • [Indonesia](README.id.md) • [Polski](README.pl.md) • [Română](README.ro.md) • [简体中文](README.zh-CN.md)
+
+[![Desarrollado por Vercel](public/powered-by-vercel.svg)][vercel]
+
+[vercel]: https://vercel.com/?utm_source=giscus&utm_campaign=oss

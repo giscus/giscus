@@ -16,9 +16,11 @@ export function getThemeUrl(resolvedTheme: Theme, theme: Theme): Theme {
 
 export function getOriginHost(origin: string) {
   try {
-    return new URL(origin).origin;
+    const url = new URL(origin);
+    url.searchParams.delete('session');
+    return { origin: url.toString(), originHost: url.origin };
   } catch (err) {
-    return '';
+    return { origin: '', originHost: '' };
   }
 }
 

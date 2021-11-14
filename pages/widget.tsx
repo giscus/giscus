@@ -15,7 +15,6 @@ import { availableLanguages } from '../lib/i18n';
 import Router from 'next/router';
 
 export async function getServerSideProps({ query, res }: GetServerSidePropsContext) {
-  const origin = (query.origin as string) || '';
   const session = (query.session as string) || '';
   const repo = (query.repo as string) || '';
   const term = (query.term as string) || '';
@@ -27,7 +26,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
   const emitMetadata = Boolean(+query.emitMetadata);
   const theme = ((query.theme as string) || 'light') as Theme;
-  const originHost = getOriginHost(origin);
+  const { origin, originHost } = getOriginHost((query.origin as string) || '');
 
   const { encryption_password } = env;
   const token = await decodeState(session, encryption_password)

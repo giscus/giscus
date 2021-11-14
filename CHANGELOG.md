@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-11-14
+
+### changed
+
+- Ensure `session` param is removed in `origin` URL
+  ([#246](https://github.com/giscus/giscus/pull/246)).
+
 ## 2021-11-07
 
 ### changed

@@ -78,16 +78,16 @@ Ver [CONTRIBUTING.md][contributing]
 
 Este archivo README está disponible en:
 
-[English](README.md) •
-[Español](README.es.md) •
-[Français](README.fr.md) •
-[Deutsch (Schweiz)](README.gsw.md) •
-[Indonesia](README.id.md) •
-[Italiano](README.it.md) •
-[한국어](README.ko.md) •
-[Polski](README.pl.md) •
-[Română](README.ro.md) •
-[简体中文](README.zh-CN.md)
+- [English](README.md)
+- [Español](README.es.md)
+- [Français](README.fr.md)
+- [Deutsch (Schweiz)](README.gsw.md)
+- [Indonesia](README.id.md)
+- [Italiano](README.it.md)
+- [한국어](README.ko.md)
+- [Polski](README.pl.md)
+- [Română](README.ro.md)
+- [简体中文](README.zh-CN.md)
 
 [![Desarrollado por Vercel](public/powered-by-vercel.svg)][vercel]
 

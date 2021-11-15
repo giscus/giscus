@@ -20,7 +20,7 @@ giscus가 로드되면, [GitHub Discussions 검색 API][search-api]를 통해 �
 
 댓글을 남기려면, 방문자는 GitHub OAuth를 이용하여 [giscus app][giscus-app] 을 [등록해야 합니다][authorization]. 그 대신 GitHub Discussion에서 바로 댓글을 수정할 수도 있습니다. GitHub에서 댓글을 관리할 수 있습니다.
 
-[giscus]: https://giscus.app
+[giscus]: https://giscus.app/ko
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
@@ -78,16 +78,16 @@ React, Vue, or Svelte와 함께 giscus를 사용하고 싶으시면, [giscus com
 
 이 README는 다음 언어로도 제공됩니다. :
 
-[English](README.md) •
-[Español](README.es.md) •
-[Français](README.fr.md) •
-[Deutsch (Schweiz)](README.gsw.md) •
-[Indonesia](README.id.md) •
-[Italiano](README.it.md) •
-[한국어](README.ko.md) •
-[Polski](README.pl.md) •
-[Română](README.ro.md) •
-[简体中文](README.zh-CN.md)
+- [English](README.md)
+- [Español](README.es.md)
+- [Français](README.fr.md)
+- [Deutsch (Schweiz)](README.gsw.md)
+- [Indonesia](README.id.md)
+- [Italiano](README.it.md)
+- [한국어](README.ko.md)
+- [Polski](README.pl.md)
+- [Română](README.ro.md)
+- [简体中文](README.zh-CN.md)
 
 [![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
 

@@ -20,7 +20,7 @@ Quando giscus viene caricato, l'[API di ricerca di discussioni di GitHub][search
 
 Per commentare, i visitatori devono autorizzare l'[app giscus][giscus-app] a [pubblicare per loro conto][authorization] utilizzando l'autorizzazione OAuth di GitHub. In alternativa, i visitatori possono commentare direttamente la discussione su GitHub. Puoi moderare i commenti su GitHub.
 
-[giscus]: https://giscus.app
+[giscus]: https://giscus.app/it
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
@@ -78,16 +78,16 @@ Vedi [CONTRIBUTING.md][contributing]
 
 Questo README è disponibile in:
 
-[English](README.md) •
-[Español](README.es.md) •
-[Français](README.fr.md) •
-[Deutsch (Schweiz)](README.gsw.md) •
-[Indonesia](README.id.md) •
-[Italiano](README.it.md) •
-[한국어](README.ko.md) •
-[Polski](README.pl.md) •
-[Română](README.ro.md) •
-[简体中文](README.zh-CN.md)
+- [English](README.md)
+- [Español](README.es.md)
+- [Français](README.fr.md)
+- [Deutsch (Schweiz)](README.gsw.md)
+- [Indonesia](README.id.md)
+- [Italiano](README.it.md)
+- [한국어](README.ko.md)
+- [Polski](README.pl.md)
+- [Română](README.ro.md)
+- [简体中文](README.zh-CN.md)
 
 [![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
 

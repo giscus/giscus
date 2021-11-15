@@ -59,7 +59,7 @@
   "upvote": "좋아요",
   "addReactions": "반응 추가하기",
   "pleaseWait": "잠시 기다리세요…",
-  "pickYourReaction": "반응을 선택하세요.",
+  "pickYourReaction": "반응을 고르세요.",
   "addTheReaction": "{{reaction}} 반응 추가하기",
   "signInToAddYourReaction": "<a>로그인</a>을 해서 반응을 남기세요.",
   "youMustBeSignedInToAddReactions": "반응을 남기기 위해선 로그인이 필요합니다.",
@@ -87,6 +87,6 @@
   "MANNEQUIN": "Mannequin",
   "MEMBER": "멤버",
   "NONE": "없음",
-  "OWNER": "주인",
+  "OWNER": "소유자",
   "APP": "앱"
 }

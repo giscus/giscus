@@ -2,17 +2,17 @@
   "configuration": "설정",
 
   "language": "언어",
-  "chooseLanguageGiscusDisplayed": "giscus에서 사용할 언어를 선택해 주세요.  원하는 언어가 없으신가요? 번역 <a>기여</a>에 참여해주세요.",
+  "chooseLanguageGiscusDisplayed": "giscus에서 사용할 언어를 선택해 주세요. 원하는 언어가 없으신가요? 번역 <a>기여</a>에 참여해주세요.",
 
   "repository": "저장소",
   "chooseTheRepository": "giscus가 연결할 저장소를 선택하세요. 정확히 확인하세요.:",
-  "theRepositoryIsPublic": "<strong>저장소가 <a>공개되어 있지만</a></strong>, 방문자들은 dicussion을 볼 수 없습니다. ",
+  "theRepositoryIsPublic": "<strong>저장소가 <a>공개되어 있지만</a></strong>, 방문자들은 discussion을 볼 수 없습니다.",
   "theGiscusAppIsInstalled": "<strong><a>giscus</a> 앱이 설치되어 있지만</strong>, 방문자들은 댓글과 반응을 남길 수 없습니다.",
   "theDiscussionsFeatureIsTurnedOn": "<strong>Discussions 기능이</strong> <a>당신의 저장소에서 켜져 있어야 합니다.</a>.",
   "repositoryLabel": "저장소:",
   "myusername/myrepo": "myusername/myrepo",
   "cannotUseGiscusOnThisRepository": "giscus를 이용할 수 없습니다. 위 조건을 다시 확인해보세요.",
-  "successRepositoryMeetsCriteria": "성공했습니다! 이 저장소는 모든 조건을 만족합니다.",
+  "successRepositoryMeetsCriteria": "통과했습니다! 이 저장소는 모든 조건을 만족합니다.",
   "aPublicGitHubRepository": "<strong>공개</strong> GitHub 저장소입니다. 이 저장소에 discussions이 연결됩니다.",
 
   "pageDiscussionsMapping": "페이지 ↔️ Discussions 연결",
@@ -28,7 +28,7 @@
   "titleContainsSpecificTerm": "Discussion 제목이 특정 단어를 포함함",
   "titleContainsSpecificTermDesc": "giscus가 특정 단어를 포함한 제목의 discussion을 찾습니다.",
   "enterTermHere": "단어 지정하기",
-  "specificDiscussionNumber": "discussion 번호 지정",
+  "specificDiscussionNumber": "Discussion 번호 지정",
   "specificDiscussionNumberDesc": "giscus가 특정 번호를 가진 discussion을 찾습니다. 이 옵션은 자동 discussion 생성을 지원하지 <strong>않습니다</strong>.",
   "enterDiscussionNumberHere": "discussion 번호 지정하기",
 
@@ -46,14 +46,14 @@
   "features": "기능",
   "chooseSpecificFeatures": "사용할 기능만 선택하세요.",
   "enableReactionsMainPost": "메인 포스트에 반응 남기기",
-  "reactionsMainPostShownBeforeComments": "discussion의 메인 포스트에 대한 반응이 댓글 전에 표시됩니다.",
+  "reactionsMainPostShownBeforeComments": "discussion의 메인 포스트에 대한 반응이 댓글 위에 표시됩니다.",
   "emitDiscussionMetadata": "discussion 메타 데이터 보내기",
-  "discussionMetadataSentPeriodically": "Discussion의 메타데이터가 부모 페이지(설치된 페이지)로 전송됩니다. 시연해보려면, 이 기능을 활성화한 뒤 브라우저 콘솔을 열어보세요. 상세한 내용은 <a>문서</a>에 나와있습니다.",
+  "discussionMetadataSentPeriodically": "Discussion의 메타데이터가 부모 페이지(설치된 페이지)로 전송됩니다. 체험하시려면, 이 기능을 활성화한 뒤 브라우저 콘솔을 열어보세요. 상세한 내용은 <a>문서</a>에 나와 있습니다.",
 
   "theme": "테마",
   "chooseAThemeThatMatches": "당신의 사이트에 적절한 테마를 선택하세요. 마음에 드시는 게 없나요? 테마 <a>기여</a>에 참여해주세요.",
   "URLToThemeCSS": "테마 CSS 파일 URL:",
-  "warningExternalCSSUnsafe": "경고: 외부 CSS를 불러들이는 것은 위험할 수 있습니다. 믿을 수 있는 제작자와 공급자가 제공하는 CSS 파일을 사용하세요..",
+  "warningExternalCSSUnsafe": "경고: 외부 CSS를 불러들이는 것은 위험할 수 있습니다. 믿을 수 있는 제작자와 공급자의 CSS 파일만을 사용하세요.",
 
   "theme=light": "GitHub Light",
   "theme=dark": "GitHub Dark",
@@ -66,7 +66,7 @@
   "theme=custom": "Custom (experimental)",
 
   "enableGiscus": "giscus 켜기",
-  "addTheFollowingScriptTag": "아래 <code><script></code> 태그를 댓글 기능을 사용할 웹사이트의 템플릿에 넣으세요. <code>giscus</code> 클래스를 가진 요소가 존재하면, 거기에 댓글들이 나타납니다.",
+  "addTheFollowingScriptTag": "아래 <code><script></code> 태그를 댓글 기능을 사용할 웹사이트의 템플릿에 넣으세요. <code>giscus</code> 클래스를 가진 요소가 존재하면, 그 대신에 댓글들이 나타납니다.",
   "copy": "복사하기",
 
   "[enterRepoHere]": "[ENTER REPO HERE]",
@@ -78,5 +78,5 @@
   "[enterThemeCSSURLHere]": "[ENTER THEME CSS URL HERE]",
 
   "youCanCustomizeTheLayout": "giscus가 들어있는 페이지에서 <code>.giscus</code> 와 <code>.giscus-frame</code> 선택자를 이용하여 컨테이너 레이아웃을 꾸밀 수 있습니다.",
-  "tryItOut": "한 번 해보기"
+  "tryItOut": "한 번 사용해 보기"
 }

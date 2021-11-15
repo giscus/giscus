@@ -51,6 +51,7 @@ export const availableLanguages = {
   pl: 'Polski',
   ro: 'Română',
   'zh-CN': '简体中文',
+  'ko': '한국어'
 } as const;
 
 export type AvailableLanguage = keyof typeof availableLanguages;
@@ -118,6 +119,7 @@ const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   pl: new Intl.DateTimeFormat('pl', dateFormat),
   ro: new Intl.DateTimeFormat('ro', dateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', dateFormat),
+  ko: new Intl.DateTimeFormat('ko', dateFormat)
 };
 
 const shortDateFormat: Intl.DateTimeFormatOptions = {
@@ -135,6 +137,7 @@ const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   pl: new Intl.DateTimeFormat('pl', shortDateFormat),
   ro: new Intl.DateTimeFormat('ro', shortDateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateFormat),
+  ko: new Intl.DateTimeFormat('ko', shortDateFormat)
 };
 
 const shortDateYearFormat: Intl.DateTimeFormatOptions = {
@@ -153,6 +156,7 @@ const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = 
   pl: new Intl.DateTimeFormat('pl', shortDateYearFormat),
   ro: new Intl.DateTimeFormat('ro', shortDateYearFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateYearFormat),
+  ko: new Intl.DateTimeFormat('ko', shortDateYearFormat)
 };
 
 const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
@@ -171,6 +175,7 @@ const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat>
   pl: new Intl.RelativeTimeFormat('pl', relativeTimeFormat),
   ro: new Intl.RelativeTimeFormat('ro', relativeTimeFormat),
   'zh-CN': new Intl.RelativeTimeFormat('zh-CN', relativeTimeFormat),
+  ko: new Intl.RelativeTimeFormat('ko', relativeTimeFormat),
 };
 
 export function useDateFormatter() {

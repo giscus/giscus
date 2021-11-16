@@ -12,11 +12,11 @@ Un système de commentaires reposant sur le système de [Discussions GitHub][dis
 - [Peut être auto-hébergé][self-hosting]! 🤳
 
 > **Note :**\
-> giscus est toujours en développement actif. De même, GitHub développe toujours activement son système de Discussions et l'API correspondante. Dès lors, certaines fonctionalités de giscus peuvent se casser ou changer à l'avenir.
+> giscus est toujours en développement actif. De même, GitHub développe toujours activement son système de Discussions et l'API correspondante. Dès lors, certaines fonctionalités de giscus peuvent ne plus fonctionner ou changer à l'avenir.
 
 ## comment cela fonctionne ?
 
-Lorsque giscus se charge, l'[API de recherche des discussions de GitHub][search-api] est utilisée pour trouver la discussion associée à la page en fonction d'un mappage choisi (URL, `pathname`, `<title>`, etc.). Si une discussion correspondante ne peut être trouvée, le robot giscus créera automatiquement une nouvelle discussion la première fois que quelqu'un laissera un commentaire ou une réaction.
+Lorsque giscus se charge, l'[API de recherche des discussions de GitHub][search-api] est utilisée pour trouver la discussion associée à la page en fonction d'un mappage choisi (URL, `pathname`, `<title>`, etc.). Si aucune discussion correspondante ne peut être trouvée, le robot giscus créera automatiquement une nouvelle discussion la première fois que quelqu'un laissera un commentaire ou une réaction.
 
 Pour commenter, les visiteurs doivent autoriser l'[application giscus][giscus-app] à [publier en leur nom][authorization] en utilisant le flux OAuth de GitHub. Les visiteurs peuvent également commenter directement la discussion sur GitHub. Vous pouvez modérer les commentaires sur GitHub.
 
@@ -44,7 +44,7 @@ Pour utiliser giscus avec React, Vue ou Svelte, consultez la [bibliothèque de c
 
 ## migration
 
-Si vous avez déjà utilisé d'autres systèmes qui utilisent les *issues* de GitHub (par exemple [utterances][utterances], [gitalk][gitalk]), vous pouvez [convertir les *issues* existantes en discussions][convert]. Après la conversion, assurez-vous simplement que le mappage entre les titres des discussions et les pages est correct, puis giscus utilisera automatiquement les discussions.
+Si vous avez déjà utilisé d'autres systèmes qui utilisent les *issues* de GitHub (par exemple [utterances][utterances], [gitalk][gitalk]), vous pouvez [convertir les *issues* existantes en discussions][convert]. Après la conversion, assurez-vous simplement que le mappage entre les titres des discussions et les pages est correct, ensuite giscus utilisera automatiquement les discussions.
 
 ## sites utilisant giscus
 
@@ -52,7 +52,7 @@ Si vous avez déjà utilisé d'autres systèmes qui utilisent les *issues* de Gi
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**and many more!**][giscus-topic]
+- [**et bien plus encore!**][giscus-topic]
 
 ## contribuer
 

@@ -40,7 +40,7 @@
   "seePreviousRepliesOnGitHub": {
     "0": "Voir {{count}} réponse précédente sur GitHub",
     "one": "Voir {{count}} réponse précédente sur GitHub",
-    "other": "Voir {{count}} réponses précédentes sur on GitHub"
+    "other": "Voir {{count}} réponses précédentes sur GitHub"
   },
   "edited": "édité",
   "thisCommentWasDeleted": "Ce commentaire a été supprimé.",
@@ -61,7 +61,7 @@
   "pleaseWait": "Veuillez patienter…",
   "pickYourReaction": "Choisir une réaction",
   "addTheReaction": "Ajouter la réaction {{reaction}}",
-  "signInToAddYourReaction": "<a>S'Identifier</a> pour réagir.",
+  "signInToAddYourReaction": "<a>S'identifier</a> pour réagir.",
   "youMustBeSignedInToAddReactions": "Vous devez être identifié·e pour réagir.",
   "peopleReactedWith": {
     "0": "Personne n'a réagi avec l'{{emoji}} {{reaction}}",

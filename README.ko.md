@@ -84,10 +84,10 @@ React, Vue, or Svelte와 함께 giscus를 사용하고 싶으시면, [giscus com
 [Deutsch (Schweiz)](README.gsw.md) •
 [Indonesia](README.id.md) •
 [Italiano](README.it.md) •
+[한국어](README.ko.md) •
 [Polski](README.pl.md) •
 [Română](README.ro.md) •
-[简体中文](README.zh-CN.md) •
-[한국어](README.ko.md)
+[简体中文](README.zh-CN.md)
 
 [![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
 

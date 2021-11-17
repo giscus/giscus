@@ -16,22 +16,22 @@
     "one": "답글 {{count}} 개",
     "other": "답글 {{count}}{{plus}} 개"
   },
-  "upvote": {
+  "upvotes": {
     "0": "좋아요 {{count}} 개",
     "one": "좋아요 {{count}} 개",
     "other": "좋아요 {{count}} 개"
   },
-  "hiddenites": {
+  "hiddenItems": {
     "0": "숨겨진 항목 {{count}} 개",
     "one": "숨겨진 항목 {{count}} 개",
     "other": "숨겨진 항목 {{count}} 개"
   },
-  "generic Error": "{{message}} 에러가 발생했습니다",
-  "load More": "더 불러오기",
+  "genericError": "{{message}} 에러가 발생했습니다",
+  "loadMore": "더 불러오기",
   "loading": "로딩 중",
-  "loading Comments": "댓글 불러오는 중…",
-  "loading Preview": "미리 보기 로딩 중…",
-  "powered By": "– powered by <a> discus </a>",
+  "loadingComments": "댓글 불러오는 중…",
+  "loadingPreview": "미리 보기 로딩 중…",
+  "poweredBy": "– <a>giscus</a>에 의해 구동",
   "showPreviousReplies": {
     "0": "이전 답글 {{count}} 개 더 보기",
     "one": "이전 답글 {{count}} 개 더 보기",

@@ -84,10 +84,10 @@ Este archivo README está disponible en:
 [Deutsch (Schweiz)](README.gsw.md) •
 [Indonesia](README.id.md) •
 [Italiano](README.it.md) •
+[한국어](README.ko.md) •
 [Polski](README.pl.md) •
 [Română](README.ro.md) •
-[简体中文](README.zh-CN.md) •
-[한국어](README.ko.md)
+[简体中文](README.zh-CN.md)
 
 [![Desarrollado por Vercel](public/powered-by-vercel.svg)][vercel]
 

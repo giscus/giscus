@@ -1,0 +1,92 @@
+{
+  "reactions": {
+    "0": "{{count}} 개 반응",
+    "one": "{{count}} 개 반응",
+    "other": "{{count}} 개 반응"
+  },
+  "comment": "댓글",
+  "comments": {
+    "0": "댓글 {{count}} 개",
+    "one": "댓글 {{count}} 개",
+    "other": "댓글 {{count}} 개"
+  },
+  "reply": "답글",
+  "replies": {
+    "0": "답글 {{count}} 개",
+    "one": "답글 {{count}} 개",
+    "other": "답글 {{count}}{{plus}} 개"
+  },
+  "upvotes": {
+    "0": "좋아요 {{count}} 개",
+    "one": "좋아요 {{count}} 개",
+    "other": "좋아요 {{count}} 개"
+  },
+  "hiddenItems": {
+    "0": "숨겨진 항목 {{count}} 개",
+    "one": "숨겨진 항목 {{count}} 개",
+    "other": "숨겨진 항목 {{count}} 개"
+  },
+  "genericError": "{{message}} 에러가 발생했습니다",
+  "loadMore": "더 불러오기",
+  "loading": "로딩 중",
+  "loadingComments": "댓글 불러오는 중…",
+  "loadingPreview": "미리 보기 로딩 중…",
+  "poweredBy": "– <a>giscus</a>에 의해 구동",
+  "showPreviousReplies": {
+    "0": "이전 답글 {{count}} 개 더 보기",
+    "one": "이전 답글 {{count}} 개 더 보기",
+    "other": "이전 답글 {{count}} 개 더 보기"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "GitHub에서 이전 답글 {{count}} 개 더 보기",
+    "one": "GitHub에서 이전 답글 {{count}} 개 더 보기",
+    "other": "GitHub에서 이전 답글 {{count}} 개 더 보기"
+  },
+  "edited": "수정됨",
+  "thisCommentWasDeleted": "이 댓글은 지워졌습니다.",
+  "thisCommentWasMinimized": "이 댓글은 축소되었습니다.",
+  "thisCommentWasHidden": "이 댓글은 감춰졌습니다.",
+  "write": "작성하기",
+  "preview": "미리 보기",
+  "lastEditedAt": "{{date}}에 마지막으로 수정됨",
+  "writeAComment": "댓글 달기",
+  "signInToComment": "댓글을 남기려면 로그인하세요.",
+  "stylingWithMarkdownIsSupported": "마크다운을 이용한 꾸미기가 지원됩니다.",
+  "cancel": "취소하기",
+  "signInWithGitHub": "GitHub으로 로그인하기",
+  "writeAReply": "답글 달기",
+
+  "upvote": "좋아요",
+  "addReactions": "반응 추가하기",
+  "pleaseWait": "잠시 기다리세요…",
+  "pickYourReaction": "반응을 고르세요.",
+  "addTheReaction": "{{reaction}} 반응 추가하기",
+  "signInToAddYourReaction": "<a>로그인</a>을 해서 반응을 남기세요.",
+  "youMustBeSignedInToAddReactions": "반응을 남기기 위해선 로그인이 필요합니다.",
+  "peopleReactedWith": {
+    "0": "{{count}} 명이 {{reaction}} {{emoji}}으로 반응함",
+    "one": "{{count}} 명이 {{reaction}} {{emoji}}으로 반응함",
+    "other": "{{count}} 명이 {{reaction}} {{emoji}}으로 반응함"
+  },
+  "emoji": "이모지",
+  "nothingToPreview": "미리보기가 없습니다.",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "웃음",
+  "HOORAY": "만세",
+  "CONFUSED": "혼란",
+  "HEART": "하트",
+  "ROCKET": "로켓",
+  "EYES": "눈",
+
+  "COLLABORATOR": "공저자",
+  "CONTRIBUTOR": "기여자",
+  "FIRST_TIMER": "첫 참여자",
+  "FIRST_TIME_CONTRIBUTOR": "첫 기여자",
+  "MANNEQUIN": "마네킹",
+  "MEMBER": "멤버",
+  "NONE": "없음",
+  "OWNER": "소유자",
+  "APP": "앱"
+}

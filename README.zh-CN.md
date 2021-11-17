@@ -84,6 +84,7 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 [Deutsch (Schweiz)](README.gsw.md) •
 [Indonesia](README.id.md) •
 [Italiano](README.it.md) •
+[한국어](README.ko.md) •
 [Polski](README.pl.md) •
 [Română](README.ro.md) •
 [简体中文](README.zh-CN.md)

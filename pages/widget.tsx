@@ -7,7 +7,7 @@ import { assertOrigin } from '../lib/config';
 import { ConfigContext, ThemeContext } from '../lib/context';
 import { decodeState } from '../lib/oauth/state';
 import { ISetConfigMessage } from '../lib/types/giscus';
-import { getOriginHost } from '../lib/utils';
+import { cleanSessionParam, getOriginHost } from '../lib/utils';
 import { env, Theme } from '../lib/variables';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
 import { getRepoConfig } from '../services/github/getConfig';
@@ -17,7 +17,7 @@ import Router from 'next/router';
 export async function getServerSideProps({ query, res }: GetServerSidePropsContext) {
   const session = (query.session as string) || '';
   const repo = (query.repo as string) || '';
-  const term = (query.term as string) || '';
+  const term = cleanSessionParam((query.term as string) || '');
   const category = (query.category as string) || '';
   const number = +query.number || 0;
   const repoId = (query.repoId as string) || '';

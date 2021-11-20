@@ -24,6 +24,16 @@ export function getOriginHost(origin: string) {
   }
 }
 
+export function cleanSessionParam(url: string) {
+  try {
+    const newUrl = new URL(url);
+    newUrl.searchParams.delete('giscus');
+    return newUrl.toString();
+  } catch (err) {
+    return url;
+  }
+}
+
 export function isEmpty(v: unknown) {
   return v === null || v === undefined || v === '' || Number.isNaN(v);
 }

@@ -24,11 +24,12 @@ loadScript(`${giscusOrigin}/js/iframeResizer.min.js`, () =>
 const url = new URL(location.href);
 let session = url.searchParams.get('giscus');
 const savedSession = localStorage.getItem(GISCUS_SESSION_KEY);
+url.searchParams.delete('giscus');
+const cleanedLocation = url.toString();
 
 if (session) {
   localStorage.setItem(GISCUS_SESSION_KEY, JSON.stringify(session));
-  url.searchParams.delete('giscus');
-  history.replaceState(undefined, document.title, url.toString());
+  history.replaceState(undefined, document.title, cleanedLocation);
 } else {
   try {
     session = JSON.parse(savedSession) || '';
@@ -45,7 +46,7 @@ const ogDescriptionMeta = document.querySelector(
   `meta[property='og:description'],meta[name='description']`,
 ) as HTMLMetaElement;
 
-params.origin = location.href;
+params.origin = cleanedLocation;
 params.session = session;
 params.theme = attributes.theme;
 params.reactionsEnabled = attributes.reactionsEnabled || '1';
@@ -58,7 +59,7 @@ params.description = ogDescriptionMeta ? ogDescriptionMeta.content : '';
 
 switch (attributes.mapping) {
   case 'url':
-    params.term = location.href;
+    params.term = cleanedLocation;
     break;
   case 'title':
     params.term = document.title;

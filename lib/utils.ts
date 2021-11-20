@@ -17,7 +17,7 @@ export function getThemeUrl(resolvedTheme: Theme, theme: Theme): Theme {
 export function getOriginHost(origin: string) {
   try {
     const url = new URL(origin);
-    url.searchParams.delete('session');
+    url.searchParams.delete('giscus');
     return { origin: url.toString(), originHost: url.origin };
   } catch (err) {
     return { origin: '', originHost: '' };

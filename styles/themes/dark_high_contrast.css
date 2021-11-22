@@ -13,9 +13,9 @@ main {
   --color-prettylights-syntax-string: #addcff;
   --color-prettylights-syntax-variable: #ffb757;
   --color-prettylights-syntax-brackethighlighter-unmatched: #ff6a69;
-  --color-prettylights-syntax-invalid-illegal-text: #ffffff;
+  --color-prettylights-syntax-invalid-illegal-text: #fff;
   --color-prettylights-syntax-invalid-illegal-bg: #e82a2f;
-  --color-prettylights-syntax-carriage-return-text: #ffffff;
+  --color-prettylights-syntax-carriage-return-text: #fff;
   --color-prettylights-syntax-carriage-return-bg: #ff4445;
   --color-prettylights-syntax-string-regexp: #72f088;
   --color-prettylights-syntax-markup-list: #fbd669;
@@ -41,7 +41,7 @@ main {
   --color-btn-inset-shadow: 0 0 transparent;
   --color-btn-hover-bg: #525964;
   --color-btn-hover-border: #bdc4cc;
-  --color-btn-active-bg: hsla(217, 10%, 33%, 1);
+  --color-btn-active-bg: hsl(217deg 10% 33% / 100%);
   --color-btn-active-border: #9ea7b3;
   --color-btn-primary-text: #0a0c10;
   --color-btn-primary-bg: #09b43a;
@@ -52,9 +52,9 @@ main {
   --color-btn-primary-hover-border: #4ae168;
   --color-btn-primary-selected-bg: #09b43a;
   --color-btn-primary-selected-shadow: 0 0 transparent;
-  --color-btn-primary-disabled-text: rgba(10, 12, 16, 0.5);
-  --color-btn-primary-disabled-bg: rgba(9, 180, 58, 0.6);
-  --color-btn-primary-disabled-border: rgba(74, 225, 104, 0.4);
+  --color-btn-primary-disabled-text: rgb(10 12 16 / 50%);
+  --color-btn-primary-disabled-bg: rgb(9 180 58 / 60%);
+  --color-btn-primary-disabled-border: rgb(74 225 104 / 40%);
   --color-fg-default: #f0f3f6;
   --color-fg-muted: #f0f3f6;
   --color-fg-subtle: #7a828e;
@@ -64,12 +64,12 @@ main {
   --color-canvas-subtle: #272b33;
   --color-border-default: #7a828e;
   --color-border-muted: #7a828e;
-  --color-neutral-muted: rgba(158, 167, 179, 0.4);
-  --color-neutral-subtle: rgba(158, 167, 179, 0.1);
+  --color-neutral-muted: rgb(158 167 179 / 40%);
+  --color-neutral-subtle: rgb(158 167 179 / 10%);
   --color-accent-fg: #71b7ff;
   --color-accent-emphasis: #409eff;
   --color-accent-muted: #409eff;
-  --color-accent-subtle: rgba(64, 158, 255, 0.15);
+  --color-accent-subtle: rgb(64 158 255 / 15%);
   --color-success-fg: #26cd4d;
   --color-danger-fg: #ff6a69;
   --color-primer-shadow-focus: 0 0 0 3px #1e60d5;
@@ -82,13 +82,10 @@ main {
   --color-social-reaction-bg: var(--color-scale-gray-8);
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+
+  color-scheme: dark;
 }
 
 main .pagination-loader-container {
-  background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
-}
-
-/*! Custom CSS */
-main {
-  color-scheme: dark;
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
 }

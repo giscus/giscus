@@ -92,13 +92,13 @@ export default function Comment({
                   height="30"
                   alt={`@${comment.author.login}`}
                 />
-                <span className="font-semibold Link--primary">{comment.author.login}</span>
+                <span className="font-semibold link-primary">{comment.author.login}</span>
               </a>
               <a
                 rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={comment.url}
-                className="ml-2 Link--secondary"
+                className="ml-2 link-secondary"
               >
                 <time
                   className="whitespace-nowrap"

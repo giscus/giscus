@@ -14,7 +14,7 @@
     "dev": "yarn cscript --watch --preserveWatchOutput & yarn cthemes --watch & next dev",
     "build": "yarn cscript && yarn cthemes && next build",
     "start": "next start",
-    "lint": "eslint . --cache"
+    "lint": "eslint . --cache && stylelint **/*.css"
   },
   "dependencies": {
     "@peculiar/webcrypto": "^1.2.3",
@@ -47,6 +47,8 @@
     "postcss-cli": "^9.0.2",
     "postcss-import": "^14.0.1",
     "prettier": "^2.5.0",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.5.2"
   }

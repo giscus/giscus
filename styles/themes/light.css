@@ -36,43 +36,43 @@ main {
   --color-prettylights-syntax-constant-other-reference-link: #0a3069;
   --color-btn-text: #24292f;
   --color-btn-bg: #f6f8fa;
-  --color-btn-border: rgba(27, 31, 36, 0.15);
-  --color-btn-shadow: 0 1px 0 rgba(27, 31, 36, 0.04);
-  --color-btn-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --color-btn-border: rgb(27 31 36 / 15%);
+  --color-btn-shadow: 0 1px 0 rgb(27 31 36 / 4%);
+  --color-btn-inset-shadow: inset 0 1px 0 rgb(255 255 255 / 25%);
   --color-btn-hover-bg: #f3f4f6;
-  --color-btn-hover-border: rgba(27, 31, 36, 0.15);
-  --color-btn-active-bg: hsla(220, 14%, 93%, 1);
-  --color-btn-active-border: rgba(27, 31, 36, 0.15);
-  --color-btn-primary-text: #ffffff;
+  --color-btn-hover-border: rgb(27 31 36 / 15%);
+  --color-btn-active-bg: hsl(220deg 14% 93% / 100%);
+  --color-btn-active-border: rgb(27 31 36 / 15%);
+  --color-btn-primary-text: #fff;
   --color-btn-primary-bg: #2da44e;
-  --color-btn-primary-border: rgba(27, 31, 36, 0.15);
-  --color-btn-primary-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
-  --color-btn-primary-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  --color-btn-primary-border: rgb(27 31 36 / 15%);
+  --color-btn-primary-shadow: 0 1px 0 rgb(27 31 36 / 10%);
+  --color-btn-primary-inset-shadow: inset 0 1px 0 rgb(255 255 255 / 3%);
   --color-btn-primary-hover-bg: #2c974b;
-  --color-btn-primary-hover-border: rgba(27, 31, 36, 0.15);
-  --color-btn-primary-selected-bg: hsla(137, 55%, 36%, 1);
-  --color-btn-primary-selected-shadow: inset 0 1px 0 rgba(0, 45, 17, 0.2);
-  --color-btn-primary-disabled-text: rgba(255, 255, 255, 0.8);
+  --color-btn-primary-hover-border: rgb(27 31 36 / 15%);
+  --color-btn-primary-selected-bg: hsl(137deg 55% 36% / 100%);
+  --color-btn-primary-selected-shadow: inset 0 1px 0 rgb(0 45 17 / 20%);
+  --color-btn-primary-disabled-text: rgb(255 255 255 / 80%);
   --color-btn-primary-disabled-bg: #94d3a2;
-  --color-btn-primary-disabled-border: rgba(27, 31, 36, 0.15);
+  --color-btn-primary-disabled-border: rgb(27 31 36 / 15%);
   --color-fg-default: #24292f;
   --color-fg-muted: #57606a;
   --color-fg-subtle: #6e7781;
-  --color-canvas-default: #ffffff;
-  --color-canvas-overlay: #ffffff;
+  --color-canvas-default: #fff;
+  --color-canvas-overlay: #fff;
   --color-canvas-inset: #f6f8fa;
   --color-canvas-subtle: #f6f8fa;
   --color-border-default: #d0d7de;
-  --color-border-muted: hsla(210, 18%, 87%, 1);
-  --color-neutral-muted: rgba(175, 184, 193, 0.2);
-  --color-neutral-subtle: rgba(234, 238, 242, 0.5);
+  --color-border-muted: hsl(210deg 18% 87% / 100%);
+  --color-neutral-muted: rgb(175 184 193 / 20%);
+  --color-neutral-subtle: rgb(234 238 242 / 50%);
   --color-accent-fg: #0969da;
   --color-accent-emphasis: #0969da;
-  --color-accent-muted: rgba(84, 174, 255, 0.4);
+  --color-accent-muted: rgb(84 174 255 / 40%);
   --color-accent-subtle: #ddf4ff;
   --color-success-fg: #1a7f37;
   --color-danger-fg: #cf222e;
-  --color-primer-shadow-focus: 0 0 0 3px rgba(9, 105, 218, 0.3);
+  --color-primer-shadow-focus: 0 0 0 3px rgb(9 105 218 / 30%);
   --color-scale-gray-0: #f6f8fa;
   --color-scale-gray-1: #eaeef2;
   --color-scale-blue-1: #b6e3ff;
@@ -82,13 +82,10 @@ main {
   --color-social-reaction-bg: var(--color-scale-gray-0);
   --color-social-reaction-bg-hover: var(--color-scale-gray-1);
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
+
+  color-scheme: light;
 }
 
 main .pagination-loader-container {
-  background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line.svg);
-}
-
-/*! Custom CSS */
-main {
-  color-scheme: light;
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line.svg");
 }

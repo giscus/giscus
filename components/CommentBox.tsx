@@ -202,7 +202,7 @@ export default function CommentBox({
       </div>
       <div className="gsc-comment-box-bottom">
         <a
-          className="Link--secondary gsc-comment-box-markdown-hint"
+          className="link-secondary gsc-comment-box-markdown-hint"
           rel="nofollow noopener noreferrer"
           target="_blank"
           href="https://guides.github.com/features/mastering-markdown/"

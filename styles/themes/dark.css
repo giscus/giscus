@@ -36,25 +36,25 @@ main {
   --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
   --color-btn-text: #c9d1d9;
   --color-btn-bg: #21262d;
-  --color-btn-border: rgba(240, 246, 252, 0.1);
+  --color-btn-border: rgb(240 246 252 / 10%);
   --color-btn-shadow: 0 0 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
   --color-btn-hover-bg: #30363d;
   --color-btn-hover-border: #8b949e;
-  --color-btn-active-bg: hsla(212, 12%, 18%, 1);
+  --color-btn-active-bg: hsl(212deg 12% 18% / 100%);
   --color-btn-active-border: #6e7681;
-  --color-btn-primary-text: #ffffff;
+  --color-btn-primary-text: #fff;
   --color-btn-primary-bg: #238636;
-  --color-btn-primary-border: rgba(240, 246, 252, 0.1);
+  --color-btn-primary-border: rgb(240 246 252 / 10%);
   --color-btn-primary-shadow: 0 0 transparent;
   --color-btn-primary-inset-shadow: 0 0 transparent;
   --color-btn-primary-hover-bg: #2ea043;
-  --color-btn-primary-hover-border: rgba(240, 246, 252, 0.1);
+  --color-btn-primary-hover-border: rgb(240 246 252 / 10%);
   --color-btn-primary-selected-bg: #238636;
   --color-btn-primary-selected-shadow: 0 0 transparent;
-  --color-btn-primary-disabled-text: rgba(240, 246, 252, 0.5);
-  --color-btn-primary-disabled-bg: rgba(35, 134, 54, 0.6);
-  --color-btn-primary-disabled-border: rgba(240, 246, 252, 0.1);
+  --color-btn-primary-disabled-text: rgb(240 246 252 / 50%);
+  --color-btn-primary-disabled-bg: rgb(35 134 54 / 60%);
+  --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
   --color-fg-default: #c9d1d9;
   --color-fg-muted: #8b949e;
   --color-fg-subtle: #484f58;
@@ -64,12 +64,12 @@ main {
   --color-canvas-subtle: #161b22;
   --color-border-default: #30363d;
   --color-border-muted: #21262d;
-  --color-neutral-muted: rgba(110, 118, 129, 0.4);
-  --color-neutral-subtle: rgba(110, 118, 129, 0.1);
+  --color-neutral-muted: rgb(110 118 129 / 40%);
+  --color-neutral-subtle: rgb(110 118 129 / 10%);
   --color-accent-fg: #58a6ff;
   --color-accent-emphasis: #1f6feb;
-  --color-accent-muted: rgba(56, 139, 253, 0.4);
-  --color-accent-subtle: rgba(56, 139, 253, 0.15);
+  --color-accent-muted: rgb(56 139 253 / 40%);
+  --color-accent-subtle: rgb(56 139 253 / 15%);
   --color-success-fg: #3fb950;
   --color-danger-fg: #f85149;
   --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
@@ -82,13 +82,10 @@ main {
   --color-social-reaction-bg: var(--color-scale-gray-8);
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+
+  color-scheme: dark;
 }
 
 main .pagination-loader-container {
-  background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
-}
-
-/*! Custom CSS */
-main {
-  color-scheme: dark;
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
 }

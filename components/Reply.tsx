@@ -53,13 +53,13 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   href={reply.author.url}
                   className="flex items-center"
                 >
-                  <span className="font-semibold Link--primary">{reply.author.login}</span>
+                  <span className="font-semibold link-primary">{reply.author.login}</span>
                 </a>
                 <a
                   rel="nofollow noopener noreferrer"
                   target="_blank"
                   href={reply.url}
-                  className="ml-2 Link--secondary"
+                  className="ml-2 link-secondary"
                 >
                   <time
                     className="whitespace-nowrap"

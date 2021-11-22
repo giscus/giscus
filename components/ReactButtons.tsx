@@ -119,7 +119,7 @@ export default function ReactButtons({
         <div ref={ref} className="gsc-reactions-menu">
           <button
             aria-label={t('addReactions')}
-            className={`Link--secondary gsc-reactions-button gsc-social-reaction-summary-item ${
+            className={`link-secondary gsc-reactions-button gsc-social-reaction-summary-item ${
               variant === 'popoverOnly' ? 'popover-only' : 'popover'
             }`}
             onClick={togglePopover}

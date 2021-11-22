@@ -54,12 +54,14 @@ a:hover {
 
 .markdown h6 {
   @apply text-xs;
+
   color: var(--color-fg-muted, var(--color-text-secondary));
 }
 
 .markdown code,
 .markdown tt {
   @apply text-xs px-1 py-[2px] rounded-md;
+
   background-color: var(--color-neutral-muted);
 }
 
@@ -67,9 +69,21 @@ a:hover {
   @apply mb-4;
 }
 
-.markdown .highlight pre,
-.markdown pre {
+.markdown blockquote,
+.markdown details,
+.markdown dl,
+.markdown ol,
+.markdown p,
+.markdown pre,
+.markdown table,
+.markdown ul {
+  @apply mb-4;
+}
+
+.markdown pre,
+.markdown .highlight pre, {
   @apply p-4 overflow-auto text-xs rounded-md;
+
   line-height: 1.45;
   background-color: var(--color-canvas-subtle, var(--color-bg-tertiary));
 }
@@ -97,18 +111,21 @@ a:hover {
 
 .markdown blockquote {
   @apply px-4 border-l-[3px];
+
   color: var(--color-fg-muted, var(--color-text-tertiary));
 }
 
-.markdown blockquote,
-.markdown details,
-.markdown dl,
-.markdown ol,
-.markdown p,
-.markdown pre,
-.markdown table,
+.markdown ul,
+.markdown ol {
+  @apply pl-[2em];
+}
+
 .markdown ul {
-  @apply mb-4;
+  @apply list-disc;
+}
+
+.markdown ol {
+  @apply list-decimal;
 }
 
 .markdown li + li {
@@ -126,15 +143,6 @@ a:hover {
   @apply my-0;
 }
 
-.markdown ul,
-.markdown ol {
-  @apply pl-[2em];
-}
-
-.markdown ul {
-  @apply list-disc;
-}
-
 .markdown ul ul {
   list-style-type: circle;
 }
@@ -143,26 +151,24 @@ a:hover {
   list-style-type: square;
 }
 
-.markdown ol {
-  @apply list-decimal;
-}
-
 .markdown kbd {
   @apply px-[5px] py-[3px] text-[11px] align-middle border rounded-md;
+
   color: var(--color-None, var(--color-auto-gray-7));
   background-color: var(--color-canvas-subtle, var(--color-bg-secondary));
-  border-bottom-color: var(--color-border-default, var(--color-border-tertiary));
   border: 1px solid var(--color-border-default, var(--color-border-tertiary));
   box-shadow: inset 0 -1px 0 var(--color-border-default, var(--color-border-tertiary));
 }
 
 .markdown hr {
-  @apply h-[.25em] my-6;
+  @apply h-[0.25em] my-6;
+
   background-color: var(--color-border-default, var(--color-border-primary));
 }
 
 .markdown .footnotes {
   @apply text-xs border-t;
+
   color: var(--color-fg-muted, var(--color-text-tertiary));
 }
 
@@ -171,11 +177,11 @@ a:hover {
 }
 
 .markdown sup > a::before {
-  content: '[';
+  content: "[";
 }
 
 .markdown sup > a::after {
-  content: ']';
+  content: "]";
 }
 
 .markdown > :last-child {

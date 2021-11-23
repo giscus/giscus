@@ -7,12 +7,57 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-11-23
+
+### fixed
+
+- Minor fixes
+  ([#273](https://github.com/giscus/giscus/pull/273)).
+
+## 2021-11-21
+
+### added
+
+- Add fixed-width font toggle to `CommentBox`
+  ([#213](https://github.com/giscus/giscus/pull/213)).
+
+## 2021-11-17
+
+### added
+
+- Add Korean localization
+  ([#253](https://github.com/giscus/giscus/pull/253)).
+
+### changed
+
+- Improve French localization
+  ([#256](https://github.com/giscus/giscus/pull/256),
+  [#257](https://github.com/giscus/giscus/pull/257)).
+
+
 ## 2021-11-14
+
+### added
+
+- Add Italian localization
+  ([#245](https://github.com/giscus/giscus/pull/245)).
+
+- Add Swiss German localization
+  ([#242](https://github.com/giscus/giscus/pull/242)).
 
 ### changed
 
 - Ensure `session` param is removed in `origin` URL
-  ([#246](https://github.com/giscus/giscus/pull/246)).
+  ([#246](https://github.com/giscus/giscus/pull/246)). \
+  **Note:** for security measures, user tokens have been reset. Users will
+  need to authorize giscus again the next time they log in.
+
+## 2021-11-13
+
+### added
+
+- Add Spanish localization
+  ([#241](https://github.com/giscus/giscus/pull/241)).
 
 ## 2021-11-07
 

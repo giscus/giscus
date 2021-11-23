@@ -26,7 +26,7 @@
     "one": "{{count}} hidden item",
     "other": "{{count}} hidden items"
   },
-  "genericError": "An error occurred{{message}}",
+  "genericError": "An error occurred: {{message}}",
   "loadMore": "Load more",
   "loading": "Loading",
   "loadingComments": "Loading comments…",

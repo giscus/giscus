@@ -26,7 +26,7 @@
     "one": "{{count}} elemento oculto",
     "other": "{{count}} elementos ocultos"
   },
-  "genericError": "Ocurrió un error{{message}}",
+  "genericError": "Ocurrió un error: {{message}}",
   "loadMore": "Carga más",
   "loading": "Cargando",
   "loadingComments": "Cargando comentarios…",

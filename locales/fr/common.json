@@ -26,7 +26,7 @@
     "one": "{{count}} objet masqué",
     "other": "{{count}} objets masqués"
   },
-  "genericError": "Une erreur s'est produite {{message}}",
+  "genericError": "Une erreur s'est produite : {{message}}",
   "loadMore": "Charger plus",
   "loading": "Chargement en cours",
   "loadingComments": "Chargement des commentaires…",

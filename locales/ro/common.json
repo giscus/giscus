@@ -31,7 +31,7 @@
     "few": "{{count}} elemente ascunse",
     "other": "{{count}} elemente ascunse"
   },
-  "genericError": "A apărut o eroare{{message}}",
+  "genericError": "A apărut o eroare: {{message}}",
   "loadMore": "Se încarcă mai multe",
   "loading": "Încărcare",
   "loadingComments": "Încărcare comentarii…",

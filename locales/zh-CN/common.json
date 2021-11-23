@@ -16,7 +16,7 @@
   "hiddenItems": {
     "other": "{{count}} 个隐藏项"
   },
-  "genericError": "发生错误：{{message}}",
+  "genericError": "发生错误： {{message}}",
   "loadMore": "加载更多",
   "loading": "加载中",
   "loadingComments": "正在加载评论……",

@@ -26,7 +26,7 @@
     "one": "{{count}} elemento nascosto",
     "other": "{{count}} elementi nascosti"
   },
-  "genericError": "Si è verificato un errore{{message}}",
+  "genericError": "Si è verificato un errore: {{message}}",
   "loadMore": "Carica altri",
   "loading": "Carico",
   "loadingComments": "Carico commenti…",

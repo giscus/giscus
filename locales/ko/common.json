@@ -26,7 +26,7 @@
     "one": "숨겨진 항목 {{count}} 개",
     "other": "숨겨진 항목 {{count}} 개"
   },
-  "genericError": "{{message}} 에러가 발생했습니다",
+  "genericError": "에러가 발생했습니다: {{message}}",
   "loadMore": "더 불러오기",
   "loading": "로딩 중",
   "loadingComments": "댓글 불러오는 중…",

@@ -36,7 +36,7 @@
     "many": "{{count}} ukrytych",
     "other": "{{count}} ukryte"
   },
-  "genericError": "Wystąpił błąd{{message}}",
+  "genericError": "Wystąpił błąd: {{message}}",
   "loadMore": "Załaduj więcej",
   "loading": "Wczytywanie",
   "loadingComments": "Wczytywanie komentarzy…",

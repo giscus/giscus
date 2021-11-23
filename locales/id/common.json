@@ -16,7 +16,7 @@
   "hiddenItems": {
     "other": "{{count}} komentar belum dimuat"
   },
-  "genericError": "Suatu galat terjadi{{message}}",
+  "genericError": "Suatu galat terjadi: {{message}}",
   "loadMore": "Muat lebih banyak",
   "loading": "Memuat",
   "loadingComments": "Memuat komentar…",

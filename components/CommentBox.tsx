@@ -156,20 +156,22 @@ export default function CommentBox({
           </button>
         </div>
 
-        <div className="gsc-comment-box-md-toolbar">
-          <button
-            className="gsc-toolbar-item"
-            type="button"
-            title={isFixedWidth ? t('disableFixedWidth') : t('enableFixedWidth')}
-            onClick={() => {
-              setIsFixedWidth(!isFixedWidth);
-              textarea.current.focus();
-            }}
-            tabIndex={-1}
-          >
-            <TypographyIcon />
-          </button>
-        </div>
+        {!isPreview ? (
+          <div className="gsc-comment-box-md-toolbar">
+            <button
+              className="gsc-toolbar-item"
+              type="button"
+              title={isFixedWidth ? t('disableFixedWidth') : t('enableFixedWidth')}
+              onClick={() => {
+                setIsFixedWidth(!isFixedWidth);
+                textarea.current.focus();
+              }}
+              tabIndex={-1}
+            >
+              <TypographyIcon />
+            </button>
+          </div>
+        ) : null}
       </div>
       <div className="gsc-comment-box-main">
         {isPreview ? (

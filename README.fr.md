@@ -14,7 +14,7 @@ Un système de commentaires reposant sur le système de [Discussions GitHub][dis
 > **Note :**\
 > giscus est toujours en développement actif. De même, GitHub développe toujours activement son système de Discussions et l'API correspondante. Dès lors, certaines fonctionalités de giscus peuvent ne plus fonctionner ou changer à l'avenir.
 
-## comment cela fonctionne ?
+## Comment cela fonctionne ?
 
 Lorsque giscus se charge, l'[API de recherche des discussions de GitHub][search-api] est utilisée pour trouver la discussion associée à la page en fonction d'un mappage choisi (URL, `pathname`, `<title>`, etc.). Si aucune discussion correspondante ne peut être trouvée, le robot giscus créera automatiquement une nouvelle discussion la première fois que quelqu'un laissera un commentaire ou une réaction.
 
@@ -36,17 +36,17 @@ Pour commenter, les visiteurs doivent autoriser l'[application giscus][giscus-ap
 
 Si vous utilisez giscus, pensez à [starifier 🌟 giscus sur GitHub][repo] et à ajouter le sujet [`giscus`][giscus-topic] à [votre dépôt][topic-howto] ! 🎉
 
-## utilisation avancée
+## Utilisation avancée
 
 Vous pouvez ajouter des configurations supplémentaires (par exemple, autoriser des origines spécifiques) en suivant le [guide d'utilisation avancée][advanced-usage].
 
 Pour utiliser giscus avec React, Vue ou Svelte, consultez la [bibliothèque de composants giscus][giscus-component].
 
-## migration
+## Migration
 
 Si vous avez déjà utilisé d'autres systèmes qui utilisent les *issues* de GitHub (par exemple [utterances][utterances], [gitalk][gitalk]), vous pouvez [convertir les *issues* existantes en discussions][convert]. Après la conversion, assurez-vous simplement que le mappage entre les titres des discussions et les pages est correct, ensuite giscus utilisera automatiquement les discussions.
 
-## sites utilisant giscus
+## Sites utilisant giscus
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
@@ -54,7 +54,7 @@ Si vous avez déjà utilisé d'autres systèmes qui utilisent les *issues* de Gi
 - [Tech Debt Burndown Podcast][techdebtburndown]
 - [**et bien plus encore!**][giscus-topic]
 
-## contribuer
+## Contribuer
 
 Voir le fichier [CONTRIBUTING.md][contributing]
 

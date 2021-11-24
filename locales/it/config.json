@@ -1,5 +1,5 @@
 {
-  "configuration": "configurazione",
+  "configuration": "Configurazione",
 
   "language": "Lingua",
   "chooseLanguageGiscusDisplayed": "Scegli la lingua in cui verrà mostrato giscus. Non trovi la tua lingua? <a>Contribuisci</a> con una traduzione",
@@ -78,5 +78,5 @@
   "[enterThemeCSSURLHere]": "[INSERISCI L'URL CSS DEL TEMA]",
 
   "youCanCustomizeTheLayout": "Puoi personalizzare il layout del container utilizzando i selettori <code>.giscus</code> e <code>.giscus-frame</code> dalla pagina.",
-  "tryItOut": "prova"
+  "tryItOut": "Prova"
 }

@@ -14,7 +14,7 @@ Sebuah sistem komentar yang diberdayakan oleh [GitHub Discussions][discussions].
 > **Catatan:**\
 > giscus masih sedang dalam pengembangan aktif. GitHub juga masih aktif mengembangkan Discussions dan API-nya. Oleh karena itu, beberapa fitur giscus mungkin rusak atau berubah seiring waktu.
 
-## cara kerja
+## Cara kerja
 
 Ketika giscus dimuat, [API pencarian GitHub Discussions][search-api] digunakan untuk mencari diskusi yang terkait dengan halaman penyemat berdasarkan pemetaan yang dipilih (URL, `pathname`, `<title>`, dll.). Jika diskusi yang terkait tidak ditemukan, bot giscus akan otomatis membuat diskusinya ketika ada orang yang meninggalkan komentar atau reaksi untuk pertama kalinya.
 
@@ -36,17 +36,17 @@ Untuk berkomentar, pengunjung harus mengizinkan [aplikasi giscus][giscus-app] un
 
 Jika Anda menggunakan giscus, pertimbangkan untuk [menambahkan bintang 🌟 giscus di GitHub][repo] dan menambahkan topic [`giscus`][giscus-topic] pada [repositori Anda][topic-howto]! 🎉
 
-## penggunaan lanjutan
+## Penggunaan lanjutan
 
 Anda dapat menambahkan konfigurasi tambahan (contoh: hanya mengizinkan situs tertentu) dengan mengikuti [panduan penggunaan lanjutan][advanced-usage].
 
 Untuk menggunakan giscus dengan React, Vue, atau Svelte, cek [pustaka komponen giscus][giscus-component].
 
-## migrasi
+## Migrasi
 
 Apabila Anda sebelumnya menggunakan sistem lain yang menggunakan GitHub Issues (misal: [utterances][utterances], [gitalk][gitalk]), Anda dapat [mengkonversi isu yang sudah ada menjadi diskusi][convert]. Setelah proses konversi, pastikan bahwa pemetaan antara judul diskusi dengan halaman-halamannya sudah benar, dan giscus akan otomatis menggunakan diskusinya.
 
-## situs yang menggunakan giscus
+## Situs yang menggunakan giscus
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
@@ -54,7 +54,7 @@ Apabila Anda sebelumnya menggunakan sistem lain yang menggunakan GitHub Issues (
 - [Tech Debt Burndown Podcast][techdebtburndown]
 - [**dan masih banyak yang lainnya!**][giscus-topic]
 
-## berkontribusi
+## Berkontribusi
 
 Lihat [CONTRIBUTING.md][contributing]
 

@@ -1,9 +1,9 @@
-# self-hosting
+# Self-hosting
 
 To self-host giscus, you need to create a new [GitHub App][app-doc] and deploy
 the web app. You can use this guide as a reference.
 
-- [create a new GitHub App](#create-a-new-github-app)
+- [Create a new GitHub App](#create-a-new-github-app)
   - [Register new GitHub App](#register-new-github-app)
   - [Identifying and authorizing users](#identifying-and-authorizing-users)
   - [Post installation](#post-installation)
@@ -12,17 +12,17 @@ the web app. You can use this guide as a reference.
   - [Organization permissions](#organization-permissions)
   - [User permissions](#user-permissions)
   - [Create GitHub App](#create-github-app)
-- [generate a private key](#generate-a-private-key)
-- [generate a client secret](#generate-a-client-secret)
-- [copy App ID and Client ID](#copy-app-id-and-client-id)
-- [install the app](#install-the-app)
-- [configure Supabase for caching access tokens (optional)](#configure-supabase-for-caching-access-tokens-optional)
-- [deploy giscus](#deploy-giscus)
+- [Generate a private key](#generate-a-private-key)
+- [Generate a client secret](#generate-a-client-secret)
+- [Copy App ID and Client ID](#copy-app-id-and-client-id)
+- [Install the app](#install-the-app)
+- [Configure Supabase for caching access tokens (optional)](#configure-supabase-for-caching-access-tokens-optional)
+- [Deploy giscus](#deploy-giscus)
   - [As a Next.js application with API routes](#as-a-nextjs-application-with-api-routes)
   - [As a static website and separate serverless functions](#as-a-static-website-and-separate-serverless-functions)
-- [use the deployed self-hosted giscus](#use-the-deployed-self-hosted-giscus)
+- [Use the deployed self-hosted giscus](#use-the-deployed-self-hosted-giscus)
 
-## create a new GitHub App
+## Create a new GitHub App
 
 - Go to the [GitHub App creation page][create-app].
 
@@ -98,7 +98,7 @@ the web app. You can use this guide as a reference.
 
   - Click the button.
 
-## generate a private key
+## Generate a private key
 
 - \
   ![image](https://user-images.githubusercontent.com/6379424/120403315-29339f80-c36e-11eb-93c1-c63bd588bdb9.png)
@@ -116,7 +116,7 @@ the web app. You can use this guide as a reference.
 
   - The private key will be downloaded to your device.
 
-## generate a client secret
+## Generate a client secret
 
 - \
   ![image](https://user-images.githubusercontent.com/6379424/120403617-bd056b80-c36e-11eb-8f6f-c2063156c0e6.png)
@@ -128,14 +128,14 @@ the web app. You can use this guide as a reference.
 
   - Copy your client secret and store it somewhere safe.
 
-## copy App ID and Client ID
+## Copy App ID and Client ID
 
 - \
   ![image](https://user-images.githubusercontent.com/6379424/120403799-27b6a700-c36f-11eb-9e49-68270f3b4b6a.png)
 
   - Copy the "**App ID**" and "**Client ID**" values and store them somewhere.
 
-## install the app
+## Install the app
 
 - \
   ![image](https://user-images.githubusercontent.com/6379424/120403963-84b25d00-c36f-11eb-9a71-534fac375a08.png)
@@ -160,7 +160,7 @@ the web app. You can use this guide as a reference.
 
   - Click the button.
 
-## configure Supabase for caching access tokens (optional)
+## Configure Supabase for caching access tokens (optional)
 
 GitHub App installation access tokens have a 60 minute TTL. You can configure
 giscus to cache the tokens in a Supabase table. This reduces the number of
@@ -189,7 +189,7 @@ limit.
   - Disable Row Level Security (RLS) on the table, or
   - Use the secret `service_role` API key.
 
-## deploy giscus
+## Deploy giscus
 
 The [giscus.app][giscus] website is hosted on [Vercel][vercel], but you can
 deploy it anywhere that can run a Next.js application and its serverless
@@ -254,7 +254,7 @@ separately, you'll need to:
     with [`yarn next export`][next-export].
   - Serve the `out` directory, which contains the static website.
 
-## use the deployed self-hosted giscus
+## Use the deployed self-hosted giscus
 
 - You can use the main page of the website to generate the client script
   configurations (e.g. `data-repo-id`, `data-category-id`) just like on

@@ -1,5 +1,5 @@
 {
-  "configuration": "konfigurasi",
+  "configuration": "Konfigurasi",
 
   "language": "Bahasa",
   "chooseLanguageGiscusDisplayed": "Pilih bahasa yang akan ditampilkan giscus. Tidak dapat menemukan bahasa Anda? <a>Buat kontribusi</a> terjemahan.",
@@ -78,5 +78,5 @@
   "[enterThemeCSSURLHere]": "[MASUKKAN URL CSS TEMA DI SINI]",
 
   "youCanCustomizeTheLayout": "Anda dapat mengubah tata letak wadahnya menggunakan pemilih kelas <code>.giscus</code> dan <code>.giscus-frame</code> dari halaman penyemat.",
-  "tryItOut": "silakan dicoba"
+  "tryItOut": "Silakan dicoba"
 }

@@ -14,7 +14,7 @@ A comments system powered by [GitHub Discussions][discussions]. Let visitors lea
 > **Note:**\
 > giscus is still under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscus may break or change over time.
 
-## how it works
+## How it works
 
 When giscus loads, the [GitHub Discussions search API][search-api] is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.). If a matching discussion cannot be found, the giscus bot will automatically create a discussion the first time someone leaves a comment or reaction.
 
@@ -36,17 +36,17 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 
 If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
 
-## advanced usage
+## Advanced usage
 
 You can add additional configurations (e.g. allowing specific origins) by following the [advanced usage guide][advanced-usage].
 
 To use giscus with React, Vue, or Svelte, check out the [giscus component library][giscus-component].
 
-## migrating
+## Migrating
 
 If you've previously used other systems that utilize GitHub Issues (e.g. [utterances][utterances], [gitalk][gitalk]), you can [convert the existing issues into discussions][convert]. After the conversion, just make sure that the mapping between the discussion titles and the pages are correct, then giscus will automatically use the discussions.
 
-## sites using giscus
+## Sites using giscus
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
@@ -54,7 +54,7 @@ If you've previously used other systems that utilize GitHub Issues (e.g. [uttera
 - [Tech Debt Burndown Podcast][techdebtburndown]
 - [**and many more!**][giscus-topic]
 
-## contributing
+## Contributing
 
 See [CONTRIBUTING.md][contributing]
 

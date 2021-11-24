@@ -1,4 +1,4 @@
-# advanced usage
+# Advanced usage
 
 This guide highlights advanced usage of giscus through additional
 configurations.
@@ -178,7 +178,7 @@ if ('discussion' in giscusData) {
 }
 ```
 
-## parent-to-giscus `message` events
+## Parent-to-giscus `message` events
 
 The `contentWindow` of giscus' `<iframe>` element also listens to `message`
 events. You can send these events to update giscus based on your page's state.

@@ -88,6 +88,7 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 - [Polski](README.pl.md)
 - [Română](README.ro.md)
 - [简体中文](README.zh-CN.md)
+- [繁體中文](README.zh-TW.md)
 
 [![由 Vercel 驱动](public/powered-by-vercel.svg)][vercel]
 

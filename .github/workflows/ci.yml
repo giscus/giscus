@@ -9,7 +9,8 @@ on:
       - main
 
 jobs:
-  Lint:
+  lint_build:
+    name: Lint and Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,8 +29,8 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Run TypeScript compiler
-        run: yarn tscheck
-
       - name: Run ESLint
         run: yarn lint
+
+      - name: Build project
+        run: yarn build

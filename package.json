@@ -14,8 +14,7 @@
     "dev": "yarn cscript --watch --preserveWatchOutput & yarn cthemes --watch & next dev",
     "build": "yarn cscript && yarn cthemes && next build",
     "start": "next start",
-    "lint": "eslint . --cache",
-    "tscheck": "tsc --noEmit"
+    "lint": "eslint . --cache"
   },
   "dependencies": {
     "@peculiar/webcrypto": "^1.2.3",

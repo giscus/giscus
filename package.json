@@ -18,7 +18,7 @@
     "tscheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@peculiar/webcrypto": "^1.2.2",
+    "@peculiar/webcrypto": "^1.2.3",
     "@primer/octicons-react": "^16.1.1",
     "jsonwebtoken": "^8.5.1",
     "next": "^12.0.3",

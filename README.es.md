@@ -88,6 +88,7 @@ Este archivo README está disponible en:
 - [Polski](README.pl.md)
 - [Română](README.ro.md)
 - [简体中文](README.zh-CN.md)
+- [繁體中文](README.zh-TW.md)
 
 [![Desarrollado por Vercel](public/powered-by-vercel.svg)][vercel]
 

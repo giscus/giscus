@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-12-04
+
+### added
+
+- Add Japanese localization
+  ([#290](https://github.com/giscus/giscus/pull/290)).
+
 ## 2021-11-23
 
 ### fixed

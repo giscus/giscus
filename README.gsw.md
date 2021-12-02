@@ -84,6 +84,7 @@ Diese README ist verfügbar in:
 - [Deutsch (Schweiz)](README.gsw.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
+- [日本語](README.ja.md)
 - [한국어](README.ko.md)
 - [Polski](README.pl.md)
 - [Română](README.ro.md)

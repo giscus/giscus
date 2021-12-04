@@ -1599,7 +1599,7 @@ eslint-plugin-prettier@^4.0.0:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-eslint-plugin-react-hooks@^4.2.0, eslint-plugin-react-hooks@^4.3.0:
+eslint-plugin-react-hooks@^4.2.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz#318dbf312e06fab1c835a4abef00121751ac1172"
   integrity sha512-XslZy0LnMn+84NEG9jSGR6eGqaZB3133L8xewQo3fQagbQuGt7a63gf+P1NGKZavEYEC3UXaWEAA/AqDkuN6xA==
@@ -1608,26 +1608,6 @@ eslint-plugin-react@^7.23.1:
   version "7.27.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.27.0.tgz#f952c76517a3915b81c7788b220b2b4c96703124"
   integrity sha512-0Ut+CkzpppgFtoIhdzi2LpdpxxBvgFf99eFqWxJnUrO7mMe0eOiNpou6rvNYeVVV6lWZvTah0BFne7k5xHjARg==
-  dependencies:
-    array-includes "^3.1.4"
-    array.prototype.flatmap "^1.2.5"
-    doctrine "^2.1.0"
-    estraverse "^5.3.0"
-    jsx-ast-utils "^2.4.1 || ^3.0.0"
-    minimatch "^3.0.4"
-    object.entries "^1.1.5"
-    object.fromentries "^2.0.5"
-    object.hasown "^1.1.0"
-    object.values "^1.1.5"
-    prop-types "^15.7.2"
-    resolve "^2.0.0-next.3"
-    semver "^6.3.0"
-    string.prototype.matchall "^4.0.6"
-
-eslint-plugin-react@^7.27.1:
-  version "7.27.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.27.1.tgz#469202442506616f77a854d91babaae1ec174b45"
-  integrity sha512-meyunDjMMYeWr/4EBLTV1op3iSG3mjT/pz5gti38UzfM4OPpNc2m0t2xvKCOMU5D6FSdd34BIMFOvQbW+i8GAA==
   dependencies:
     array-includes "^3.1.4"
     array.prototype.flatmap "^1.2.5"

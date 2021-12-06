@@ -28,7 +28,7 @@
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
     "react-ssr-prepass": "npm:preact-ssr-prepass",
-    "swr": "^1.0.1"
+    "swr": "^1.1.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.0.3",

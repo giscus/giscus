@@ -148,7 +148,7 @@ export async function getDiscussion(
   // https://github.com/giscus/giscus/issues/118
   const repo = repoWithOwner.toLowerCase();
   const categoryQuery = category ? `category:${JSON.stringify(category)}` : '';
-  const query = `repo:${repo} ${categoryQuery} in:title ${term}`;
+  const query = `repo:${repo} ${categoryQuery} in:title ${JSON.stringify(term)}`;
   const gql = GET_DISCUSSION_QUERY(number ? 'number' : 'term');
 
   return fetch(GITHUB_GRAPHQL_API_URL, {

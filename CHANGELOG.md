@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2021-12-23
+
+### Changed
+
+- Minify client script
+  ([#322](https://github.com/giscus/giscus/pull/322)).
+
 ## 2021-12-15
 
 ### Fixed

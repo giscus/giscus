@@ -58,6 +58,11 @@ a:hover {
   color: var(--color-fg-muted, var(--color-text-secondary));
 }
 
+.markdown .g-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-weight: 400;
+}
+
 .markdown code,
 .markdown tt {
   @apply text-xs px-1 py-[2px] rounded-md;
@@ -174,6 +179,10 @@ a:hover {
 
 .markdown .footnotes ol {
   @apply pl-4;
+}
+
+.markdown .footnotes .data-footnote-backref .g-emoji {
+  font-family: monospace;
 }
 
 .markdown sup > a::before {

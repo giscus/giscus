@@ -14,6 +14,11 @@ major updates to the project.
 - Add German localization
   ([#325](https://github.com/giscus/giscus/pull/325)).
 
+### Fixed
+
+- Fix emoji `font-weight` and `font-family`
+  ([#324](https://github.com/giscus/giscus/pull/324)).
+
 ## 2021-12-23
 
 ### Changed
@@ -61,7 +66,6 @@ major updates to the project.
 - Improve French localization
   ([#256](https://github.com/giscus/giscus/pull/256),
   [#257](https://github.com/giscus/giscus/pull/257)).
-
 
 ## 2021-11-14
 
@@ -512,7 +516,6 @@ major updates to the project.
 
 - Opt-out of FLoC and fix some minor issues
   ([#88](https://github.com/giscus/giscus/pull/88)).
-
 
 ## 2021-05-27
 

@@ -78,10 +78,11 @@ React, Vue, or Svelte와 함께 giscus를 사용하고 싶으시면, [giscus com
 
 이 README는 다음 언어로도 제공됩니다. :
 
+- [Deutsch](README.de.md)
+- [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)
 - [Español](README.es.md)
 - [Français](README.fr.md)
-- [Deutsch (Schweiz)](README.gsw.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
 - [日本語](README.ja.md)

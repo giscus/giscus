@@ -1,6 +1,6 @@
 # [giscus][giscus]
 
-Ein Kommentar-System gepowered durch [GitHub Diskussionen][discussions]. Lasse Besucher Kommentare und Reaktionen auf deiner Webseite hinterlassen durch GitHub! Stark inspiriert durch [utterances][utterances].
+Ein Kommentar-System möglich gemacht durch [GitHub Diskussionen][discussions]. Lass Besucher Kommentare und Reaktionen auf deiner Webseite hinterlassen durch GitHub! Stark inspiriert durch [utterances][utterances].
 
 - [Quelloffen][repo]. 🌏
 - Kein Tracking, keine Werbung. Immer Gratis. 📡 🚫
@@ -12,15 +12,15 @@ Ein Kommentar-System gepowered durch [GitHub Diskussionen][discussions]. Lasse B
 - [Kann selbst gehostet werden][self-hosting]! 🤳
 
 > **Hinweis:**\
-> giscus ist noch immer unter starker entwicklung. GitHub ist auch aktiv an der weiterentwicklung Ihrer Diskussionen und deren API beschäftigt. Darum können einige Funktionen von giscus in zukunft ändern oder kaputt gehen.
+> giscus ist noch immer unter Entwicklung. GitHub ist auch aktiv an der Weiterentwicklung Ihrer Diskussionen und deren API beschäftigt. Darum können einige Funktionen von giscus in Zukunft ändern oder Fehler auftreten.
 
 ## Wie es funktioniert
 
-Wenn giscus lädt, wird die [GitHub Diskussionen Such-API][search-api] verwendet um die Diskussion, welche mit der Seite durch ein bestimmtes Mapping (URL, `<pathname>`, `<title>`, etc.) assoziert wird, zu finden. Wenn eine treffende Diskussion nicht gefunden werden kann, erstellt der giscus Bot automatisch eine neue Diskussion wenn jemand zum ersten mal einen Kommentar oder eine Reaktion hinterlässt.
+Wenn giscus lädt, wird die [GitHub Diskussionen Such-API][search-api] verwendet um die Diskussion, welche mit der Seite durch ein bestimmtes Mapping (URL, `<pathname>`, `<title>`, etc.) assoziert wird, zu finden. Wenn eine treffende Diskussion nicht gefunden werden kann, erstellt der giscus Bot automatisch eine neue Diskussion, wenn jemand zum ersten Mal einen Kommentar oder eine Reaktion hinterlässt.
 
-Um zu kommentieren, müssen Besucher die [giscus App][giscus-app] autorisieren [in ihrem namen][authorization] zu posten, mit hilfe des GitHub OAuth flows. Alternativ können Besucher direkt auf der Diskussion kommentieren. Du kannst die Kommentare auf GitHub moderieren.
+Um zu kommentieren, müssen Besucher die [giscus App][giscus-app] autorisieren [in ihrem Namen][authorization] zu posten, mithilfe des GitHub OAuth flows. Alternativ können Besucher direkt auf der Diskussion kommentieren. Du kannst die Kommentare auf GitHub moderieren.
 
-[giscus]: https://giscus.app/gsw
+[giscus]: https://giscus.app/de
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
@@ -38,9 +38,9 @@ Wenn du giscus verwendest, überlege dir, der Repository auf Github [einen Stern
 
 ## Fortgeschrittene Anwendung
 
-Du kannst zusätzliche Konfigurationen (z.B. das erlauben verschiedener Quellen) einrichten, in dem du den [fortgeschrittenen Benutzerguide][advanced-usage] liest.
+Du kannst zusätzliche Konfigurationen (z.B. das Erlauben verschiedener Quellen) einrichten, in dem du den [fortgeschrittenen Benutzerguide][advanced-usage] liest.
 
-Um giscus mit React, Vue oder Svelte zu verwenden, schau dir dir [giscus Komponenten-Bücherei][giscus-component] an.
+Um giscus mit React, Vue oder Svelte zu verwenden, schau dir die [giscus Komponenten-Bücherei][giscus-component] an.
 
 ## Migration
 
@@ -52,7 +52,7 @@ Wenn du vorher andere Systeme verwendet hast, welche GitHub Issues verwendeten (
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**and many more!**][giscus-topic]
+- [**und mehr!**][giscus-topic]
 
 ## Mitmachen
 

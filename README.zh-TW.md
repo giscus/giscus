@@ -78,10 +78,11 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 
 此 README 有以下語言版本：
 
+- [Deutsch](README.de.md)
+- [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)
 - [Español](README.es.md)
 - [Français](README.fr.md)
-- [Deutsch (Schweiz)](README.gsw.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
 - [日本語](README.ja.md)

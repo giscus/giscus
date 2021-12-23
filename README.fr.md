@@ -78,10 +78,11 @@ Voir le fichier [CONTRIBUTING.md][contributing]
 
 Ce README est disponible en :
 
+- [Deutsch](README.de.md)
+- [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)
 - [Español](README.es.md)
 - [Français](README.fr.md)
-- [Deutsch (Schweiz)](README.gsw.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
 - [日本語](README.ja.md)

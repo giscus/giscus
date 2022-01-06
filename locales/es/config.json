@@ -12,7 +12,7 @@
   "repositoryLabel": "repositorio:",
   "myusername/myrepo": "usuario/repositorio",
   "cannotUseGiscusOnThisRepository": "No se puede usar giscus en este repositorio. Asegúrese de que se cumplen todos los criterios anteriores.",
-  "successRepositoryMeetsCriteria": "!Perfecto! Este repositorio está preparado para usar giscus.",
+  "successRepositoryMeetsCriteria": "¡Perfecto! Este repositorio está preparado para usar giscus.",
   "aPublicGitHubRepository": "Un repositorio <strong>público</strong> de GitHub. Es el repositorio donde se vincularán las discusiones.",
 
   "pageDiscussionsMapping": "Página ↔️ Mapeo de discusiones",

@@ -1,7 +1,7 @@
 {
   "reactions": {
     "0": "{{count}} reacciones",
-    "one": "{{count}} reaccion",
+    "one": "{{count}} reacción",
     "other": "{{count}} reacciones"
   },
   "comment": "Comentario",
@@ -50,7 +50,7 @@
   "preview": "Previsualizar",
   "enableFixedWidth": "Habilite la fuente de ancho fijo (espacio único) en el editor",
   "disableFixedWidth": "Deshabilitar la fuente de ancho fijo (espacio único) en el editor",
-  "lastEditedAt": "Última modificaciòn a las {{date}}",
+  "lastEditedAt": "Última modificación a las {{date}}",
   "writeAComment": "Escribir un comentario",
   "signInToComment": "Iniciar sesión para comentar",
   "stylingWithMarkdownIsSupported": "Se admite el estilo con Markdown",

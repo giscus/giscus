@@ -1,6 +1,6 @@
 {
   "reactions": {
-    "0": "brak reakcji",
+    "0": "Brak reakcji",
     "one": "{{count}} reakcja",
     "few": "{{count}} reakcje",
     "many": "{{count}} reakcji",
@@ -8,7 +8,7 @@
   },
   "comment": "Skomentuj",
   "comments": {
-    "0": "brak komentarzy",
+    "0": "Brak komentarzy",
     "one": "{{count}} komentarz",
     "few": "{{count}} komentarze",
     "many": "{{count}} komentarzy",

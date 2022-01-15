@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-01-09
+
+### Added
+
+- Add Vietnamese localization
+  ([#346](https://github.com/giscus/giscus/pull/346)).
+
 ## 2022-01-12
 
 ### Fixed

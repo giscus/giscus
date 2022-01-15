@@ -1,5 +1,5 @@
 {
-  "locales": ["de", "gsw", "en", "es", "fr", "id", "it", "ja", "ko", "pl", "ro", "zh-CN", "zh-TW"],
+  "locales": ["de", "gsw", "en", "es", "fr", "id", "it", "ja", "ko", "pl", "ro", "vi", "zh-CN", "zh-TW"],
   "defaultLocale": "en",
   "pages": {
     "*": ["common"],

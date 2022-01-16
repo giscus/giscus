@@ -52,6 +52,7 @@ a {
   color: var(--color-fg-default, var(--color-text-primary));
 }
 
+.color-fg-muted,
 .color-text-secondary,
 .link-secondary {
   color: var(--color-fg-muted, var(--color-text-secondary));
@@ -241,6 +242,28 @@ a {
   margin: 0 0.2em 0.25em -1.6em;
 }
 
+.Box {
+  @apply border rounded-md;
+
+  background-color: var(--color-canvas-default, var(--color-bg-canvas));
+  border-color: var(--color-border-default, var(--color-border-primary));
+}
+
+.Box--condensed {
+  @apply leading-tight;
+}
+
+.Box-header {
+  @apply p-4 m-[-1px] mb-0 border rounded-t-md;
+
+  background-color: var(--color-canvas-subtle, var(--color-bg-secondary));
+  border-color: var(--color-border-default, var(--color-border-primary));
+}
+
+.Box--condensed .Box-header {
+  @apply px-4 py-2;
+}
+
 .blob-wrapper {
   @apply overflow-x-auto overflow-y-hidden rounded-b-md;
 }
@@ -270,8 +293,8 @@ a {
   word-wrap: normal;
 }
 
-.blob-wrapper table tr:nth-child(2n) {
-  background-color: initial;
+.blob-wrapper.blob-wrapper-embedded table tr:nth-child(2n) {
+  background-color: transparent;
 }
 
 .email-hidden-toggle a {
@@ -395,11 +418,6 @@ img.emoji {
 
 .gsc-homepage-bg {
   background-color: var(--color-canvas-default, var(--color-bg-canvas));
-}
-
-.f6.px-3.py-2.lh-condensed.border-bottom.color-bg-secondary {
-  /* blob-wrapper header */
-  @apply px-3 py-2 rounded-t-md;
 }
 
 .gsc-comments,

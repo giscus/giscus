@@ -7,7 +7,14 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
-## 2022-01-09
+## 2022-01-16
+
+### Fixed
+
+- Fix blob-wrapper styles
+  ([#347](https://github.com/giscus/giscus/pull/347)).
+
+## 2022-01-15
 
 ### Added
 

@@ -170,7 +170,7 @@ const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = 
   ko: new Intl.DateTimeFormat('ko', shortDateYearFormat),
   pl: new Intl.DateTimeFormat('pl', shortDateYearFormat),
   ro: new Intl.DateTimeFormat('ro', shortDateYearFormat),
-  vi: new Intl.DateTimeFormat('ro', shortDateYearFormat),
+  vi: new Intl.DateTimeFormat('vi', shortDateYearFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateYearFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateYearFormat),
 };
@@ -193,7 +193,7 @@ const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat>
   ko: new Intl.RelativeTimeFormat('ko', relativeTimeFormat),
   pl: new Intl.RelativeTimeFormat('pl', relativeTimeFormat),
   ro: new Intl.RelativeTimeFormat('ro', relativeTimeFormat),
-  vi: new Intl.RelativeTimeFormat('ro', relativeTimeFormat),
+  vi: new Intl.RelativeTimeFormat('vi', relativeTimeFormat),
   'zh-CN': new Intl.RelativeTimeFormat('zh-CN', relativeTimeFormat),
   'zh-TW': new Intl.RelativeTimeFormat('zh-TW', relativeTimeFormat),
 };

@@ -1,0 +1,110 @@
+{
+  "reactions": {
+    "0": "{{count}} откликов",
+    "one": "{{count}} отклик",
+    "few": "{{count}} отклика",
+    "many": "{{count}} откликов",
+    "other": "{{count}} откликов"
+  },
+  "comment": "Комментарий",
+  "comments": {
+    "0": "{{count}} комментариев",
+    "one": "{{count}} комментарий",
+    "few": "{{count}} комментария",
+    "many": "{{count}} комментариев",
+    "other": "{{count}} комментариев"
+  },
+  "reply": "Ответ",
+  "replies": {
+    "0": "{{count}} ответов",
+    "one": "{{count}} ответ",
+    "few": "{{count}} ответа",
+    "many": "{{count}} ответов",
+    "other": "{{count}}{{plus}} ответов"
+  },
+  "upvotes": {
+    "0": "{{count}} голосов",
+    "one": "{{count}} голос",
+    "few": "{{count}} голоса",
+    "many": "{{count}} голосов",
+    "other": "{{count}} голосов"
+  },
+  "hiddenItems": {
+    "0": "{{count}} скрытых элементов",
+    "one": "{{count}} скрытый элемент",
+    "few": "{{count}} скрытых элемента",
+    "many": "{{count}} скрытых элементов",
+    "other": "{{count}} скрытых элементов"
+  },
+  "genericError": "Возникла ошибка: {{message}}",
+  "loadMore": "Загрузить еще",
+  "loading": "Загрузка",
+  "loadingComments": "Загрузка комментариев…",
+  "loadingPreview": "Загрузка предварительного просмотра…",
+  "poweredBy": "– управляется <a>giscus</a>",
+  "showPreviousReplies": {
+    "0": "Показать {{count}} предыдущих ответов",
+    "one": "Показать {{count}} предыдущий ответ",
+    "few": "Показать {{count}} предыдущих ответа",
+    "many": "Показать {{count}} предыдущих ответов",
+    "other": "Показать {{count}} предыдущих ответов"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Посмотреть {{count}} предыдущих ответов на GitHub",
+    "one": "Посмотреть {{count}} предыдущий ответ на GitHub",
+    "few": "Посмотреть {{count}} предыдущих ответа на GitHub",
+    "many": "Посмотреть {{count}} предыдущих ответов на GitHub",
+    "other": "Посмотреть {{count}} предыдущих ответов на GitHub"
+  },
+  "edited": "отредактировано",
+  "thisCommentWasDeleted": "Этот комментарий был удален.",
+  "thisCommentWasMinimized": "Этот комментарий был свернут.",
+  "thisCommentWasHidden": "Этот комментарий был скрыт.",
+  "write": "Редактирование",
+  "preview": "Предварительный просмотр",
+  "enableFixedWidth": "Включить моноширинный шрифт (monospace) в редакторе",
+  "disableFixedWidth": "Выключить моноширинный шрифт (monospace) в редакторе",
+  "lastEditedAt": "Отредактировано {{date}}",
+  "writeAComment": "Написать комментарий",
+  "signInToComment": "Войдите, чтобы оставить комментарий",
+  "stylingWithMarkdownIsSupported": "Поддерживается язык разметки Markdown",
+  "cancel": "Отмена",
+  "signInWithGitHub": "Войти через GitHub",
+  "writeAReply": "Оставить комментарий",
+
+  "upvote": "Проголосовать",
+  "addReactions": "Добавить свой отклик",
+  "pleaseWait": "Пожалуйста, подождите…",
+  "pickYourReaction": "Выберите свой отклик",
+  "addTheReaction": "Оставить {{reaction}} отклик",
+  "signInToAddYourReaction": "<a>Войдите</a>, чтобы оставить свой отклик.",
+  "youMustBeSignedInToAddReactions": "Вы должны авторизоваться, чтобы оставить отклик.",
+  "peopleReactedWith": {
+    "0": "{{count}} человек откликнулось с {{reaction}} {{emoji}}",
+    "one": "{{count}} человек откликнулся с {{reaction}} {{emoji}}",
+    "few": "{{count}} человека откликнулось с {{reaction}} {{emoji}}",
+    "many": "{{count}} человек откликнулось с {{reaction}} {{emoji}}",
+    "other": "{{count}} человек откликнулось с {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Предварительный просмотр ничего не содержит",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Смех",
+  "HOORAY": "Ура!",
+  "CONFUSED": "В замешательстве",
+  "HEART": "Любовь",
+  "ROCKET": "Ракета",
+  "EYES": "Глаза",
+
+  "COLLABORATOR": "Участник",
+  "CONTRIBUTOR": "Автор",
+  "FIRST_TIMER": "Первый",
+  "FIRST_TIME_CONTRIBUTOR": "Первый участник",
+  "MANNEQUIN": "Бот",
+  "MEMBER": "Участник",
+  "NONE": "Неизвестно",
+  "OWNER": "Владелец",
+  "APP": "Приложение"
+}

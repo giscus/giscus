@@ -89,6 +89,7 @@ README ini tersedia dalam bahasa:
 - [한국어](README.ko.md)
 - [Polski](README.pl.md)
 - [Română](README.ro.md)
+- [Русский](README.ru.md)
 - [Tiếng Việt](README.vi.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)

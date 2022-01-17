@@ -47,7 +47,7 @@ module.exports = withBundleAnalyzer(
             headers: securityHeaders,
           },
           {
-            source: '/themes/(.*)',
+            source: '/(themes/(?:.*)|client\\.js)',
             headers: [
               {
                 key: 'Cache-Control',

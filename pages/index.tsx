@@ -85,6 +85,7 @@ export default function Home({
     reactionsEnabled: true,
     emitMetadata: false,
     lang: locale,
+    inputPosition: 'bottom',
   });
   const themeUrl = useDebounce(directConfig.themeUrl);
   const configTheme = getThemeUrl(directConfig.theme, themeUrl);
@@ -102,6 +103,7 @@ export default function Home({
         theme: configTheme,
         reactionsEnabled: directConfig.reactionsEnabled,
         emitMetadata: directConfig.emitMetadata,
+        inputPosition: directConfig.inputPosition,
         lang: directConfig.lang,
       },
     };
@@ -109,6 +111,7 @@ export default function Home({
   }, [
     directConfig.emitMetadata,
     directConfig.reactionsEnabled,
+    directConfig.inputPosition,
     directConfig.lang,
     configTheme,
     themeUrl,

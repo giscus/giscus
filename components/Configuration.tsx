@@ -10,6 +10,7 @@ import {
   useGiscusTranslation,
 } from '../lib/i18n';
 import { ICategory } from '../lib/types/adapter';
+import { InputPosition } from '../lib/types/giscus';
 import { availableThemes, Theme } from '../lib/variables';
 import { GISCUS_APP_HOST } from '../services/config';
 import { getCategories } from '../services/giscus/categories';
@@ -19,6 +20,7 @@ interface IDirectConfig {
   themeUrl: Theme;
   reactionsEnabled: boolean;
   emitMetadata: boolean;
+  inputPosition: InputPosition;
   lang: AvailableLanguage;
 }
 
@@ -417,6 +419,24 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           />
         </p>
       </div>
+      <div className="form-checkbox">
+        <input
+          type="checkbox"
+          id="inputPosition"
+          checked={directConfig.inputPosition === 'top'}
+          value={directConfig.inputPosition}
+          onChange={(event) =>
+            onDirectConfigChange('inputPosition', event.target.checked ? 'top' : 'bottom')
+          }
+        ></input>
+        <label htmlFor="inputPosition">
+          <strong>Place the comment box above the comments</strong>
+        </label>
+        <p className="mb-0 text-xs color-text-secondary">
+          The comment input box will be placed above the comments, so that users can leave a comment
+          without scrolling to the bottom of the discussion.
+        </p>
+      </div>
 
       <h3>{t('theme')}</h3>
       <p>
@@ -516,6 +536,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           {'"\n        '}
           <span className="pl-c1">data-emit-metadata</span>={'"'}
           <span className="pl-s">{Number(directConfig.emitMetadata)}</span>
+          {'"\n        '}
+          <span className="pl-c1">data-input-position</span>={'"'}
+          <span className="pl-s">{directConfig.inputPosition}</span>
           {'"\n        '}
           <span className="pl-c1">data-theme</span>={'"'}
           <span className="pl-s">

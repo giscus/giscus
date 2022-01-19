@@ -2,6 +2,8 @@ import { AvailableLanguage } from '../i18n';
 import { Theme } from '../variables';
 import { IReactionGroups, IUser } from './adapter';
 
+export type InputPosition = 'top' | 'bottom';
+
 export interface ITokenRequest {
   session: string;
 }
@@ -52,6 +54,7 @@ export interface ISetConfigMessage {
     category?: string;
     reactionsEnabled?: boolean;
     emitMetadata?: boolean;
+    inputPosition?: InputPosition;
     lang?: AvailableLanguage;
   };
 }

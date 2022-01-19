@@ -6,7 +6,7 @@ import Widget from '../components/Widget';
 import { assertOrigin } from '../lib/config';
 import { ConfigContext, ThemeContext } from '../lib/context';
 import { decodeState } from '../lib/oauth/state';
-import { ISetConfigMessage } from '../lib/types/giscus';
+import { InputPosition, ISetConfigMessage } from '../lib/types/giscus';
 import { cleanSessionParam, getOriginHost } from '../lib/utils';
 import { env, Theme } from '../lib/variables';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
@@ -25,6 +25,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const description = (query.description as string) || '';
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
   const emitMetadata = Boolean(+query.emitMetadata);
+  const inputPosition = (query.inputPosition === 'top' ? 'top' : 'bottom') as InputPosition;
   const theme = ((query.theme as string) || 'light') as Theme;
   const { origin, originHost } = getOriginHost((query.origin as string) || '');
 
@@ -61,6 +62,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       description,
       reactionsEnabled,
       emitMetadata,
+      inputPosition,
       theme,
       originHost,
     },
@@ -79,6 +81,7 @@ export default function WidgetPage({
   description,
   reactionsEnabled,
   emitMetadata,
+  inputPosition,
   theme,
   originHost,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -91,6 +94,7 @@ export default function WidgetPage({
     category,
     reactionsEnabled,
     emitMetadata,
+    inputPosition,
   });
 
   useEffect(() => {

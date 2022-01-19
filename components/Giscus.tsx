@@ -16,7 +16,7 @@ interface IGiscusProps {
 export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusProps) {
   const { token, origin } = useContext(AuthContext);
   const { t } = useGiscusTranslation();
-  const { repo, term, number, category, reactionsEnabled, emitMetadata } =
+  const { repo, term, number, category, reactionsEnabled, emitMetadata, inputPosition } =
     useContext(ConfigContext);
   const query = { repo, term, category, number };
 
@@ -45,6 +45,19 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     backMutators.mutate();
     return id;
   };
+
+  const mainCommentBox = (
+    <>
+      <hr className="gsc-comment-box-separator color-border-primary" />
+      <CommentBox
+        viewer={data.viewer}
+        discussionId={data.discussion.id}
+        context={repo}
+        onSubmit={backMutators.addNewComment}
+        onDiscussionCreateRequest={handleDiscussionCreateRequest}
+      />
+    </>
+  );
 
   const shouldCreateDiscussion = data.isNotFound && !number;
   const shouldShowBranding = !!data.discussion.url;
@@ -132,6 +145,8 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
           ) : null}
         </div>
 
+        {shouldShowCommentBox && inputPosition === 'top' ? mainCommentBox : null}
+
         <div className="gsc-timeline">
           {!data.isLoading
             ? data.frontComments.map((comment) => (
@@ -195,18 +210,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
             : null}
         </div>
 
-        {shouldShowCommentBox ? (
-          <>
-            <hr className="gsc-comment-box-separator color-border-primary" />
-            <CommentBox
-              viewer={data.viewer}
-              discussionId={data.discussion.id}
-              context={repo}
-              onSubmit={backMutators.addNewComment}
-              onDiscussionCreateRequest={handleDiscussionCreateRequest}
-            />
-          </>
-        ) : null}
+        {shouldShowCommentBox && inputPosition !== 'top' ? mainCommentBox : null}
       </div>
     </div>
   );

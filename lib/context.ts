@@ -1,4 +1,5 @@
 import { createContext } from 'react';
+import { InputPosition } from './types/giscus';
 import { Theme } from './variables';
 
 interface IAuthContext {
@@ -33,6 +34,7 @@ interface IConfigContext {
   category: string;
   reactionsEnabled: boolean;
   emitMetadata: boolean;
+  inputPosition: InputPosition;
 }
 
 export const ConfigContext = createContext<IConfigContext>({
@@ -42,4 +44,5 @@ export const ConfigContext = createContext<IConfigContext>({
   category: '',
   reactionsEnabled: true,
   emitMetadata: false,
+  inputPosition: 'bottom',
 });

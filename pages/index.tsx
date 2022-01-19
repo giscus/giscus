@@ -143,6 +143,7 @@ export default function Home({
           data-theme="light"
           data-reactions-enabled="1"
           data-emit-metadata="0"
+          data-input-position="bottom"
           data-lang={locale}
         />
         <a

@@ -52,6 +52,7 @@ declare let iFrameResize: (options: Record<string, unknown>, selector: string) =
   params.theme = attributes.theme;
   params.reactionsEnabled = attributes.reactionsEnabled || '1';
   params.emitMetadata = attributes.emitMetadata || '0';
+  params.inputPosition = attributes.inputPosition || 'bottom';
   params.repo = attributes.repo;
   params.repoId = attributes.repoId;
   params.category = attributes.category || '';

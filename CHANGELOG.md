@@ -14,6 +14,9 @@ major updates to the project.
 - Add Russian localization
   ([#355](https://github.com/giscus/giscus/pull/355)).
 
+- Add `inputPosition` option to place the comment box above the comments
+  ([#358](https://github.com/giscus/giscus/pull/358)).
+
 ## 2022-01-16
 
 ### Fixed

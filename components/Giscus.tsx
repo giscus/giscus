@@ -1,9 +1,9 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AuthContext, ConfigContext } from '../lib/context';
 import { Trans, useGiscusTranslation } from '../lib/i18n';
 import { emitData } from '../lib/messages';
 import { IMetadataMessage } from '../lib/types/giscus';
-import { useFrontBackDiscussion } from '../services/giscus/discussions';
+import { CommentOrder, useFrontBackDiscussion } from '../services/giscus/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
@@ -14,6 +14,7 @@ interface IGiscusProps {
 }
 
 export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusProps) {
+  const [orderBy, setOrderBy] = useState<CommentOrder>('oldest');
   const { token, origin } = useContext(AuthContext);
   const { t } = useGiscusTranslation();
   const { repo, term, number, category, reactionsEnabled, emitMetadata, inputPosition } =
@@ -21,7 +22,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
   const query = { repo, term, category, number };
 
   const { updateReactions, increaseSize, backMutators, frontMutators, ...data } =
-    useFrontBackDiscussion(query, token);
+    useFrontBackDiscussion(query, token, orderBy);
 
   useEffect(() => {
     if (data.error && onError) {
@@ -97,48 +98,73 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
 
       <div className="gsc-comments">
         <div className="gsc-header">
-          <h4 className="gsc-comments-count">
-            {shouldCreateDiscussion && !data.totalCommentCount ? (
-              t('comments', { count: 0 })
-            ) : data.error && !data.backData ? (
-              t('genericError', { message: data.error?.message || '' })
-            ) : data.isLoading ? (
-              t('loadingComments')
-            ) : (
-              <a
-                href={data.discussion.url}
-                target="_blank"
-                rel="noreferrer noopener nofollow"
-                className="color-text-primary"
+          <div className="gsc-left-header">
+            <h4 className="gsc-comments-count">
+              {shouldCreateDiscussion && !data.totalCommentCount ? (
+                t('comments', { count: 0 })
+              ) : data.error && !data.backData ? (
+                t('genericError', { message: data.error?.message || '' })
+              ) : data.isLoading ? (
+                t('loadingComments')
+              ) : (
+                <a
+                  href={data.discussion.url}
+                  target="_blank"
+                  rel="noreferrer noopener nofollow"
+                  className="color-text-primary"
+                >
+                  {t('comments', { count: data.totalCommentCount })}
+                </a>
+              )}
+            </h4>
+            {shouldShowReplyCount ? (
+              <>
+                <h4 className="gsc-comments-count-separator">·</h4>
+                <h4 className="gsc-replies-count">
+                  {t('replies', {
+                    count: data.totalReplyCount,
+                    plus: data.numHidden > 0 ? '+' : '',
+                  })}
+                </h4>
+              </>
+            ) : null}
+            {shouldShowBranding ? (
+              <em className="text-sm color-text-secondary">
+                <Trans
+                  i18nKey="common:poweredBy"
+                  components={{
+                    a: (
+                      <a
+                        href="https://giscus.app"
+                        target="_blank"
+                        rel="noreferrer noopener nofollow"
+                        className="link-secondary"
+                      />
+                    ),
+                  }}
+                />
+              </em>
+            ) : null}
+          </div>
+          {data.totalCommentCount > 0 ? (
+            <div className="gsc-right-header BtnGroup" role="listbox">
+              <button
+                className="btn BtnGroup-item"
+                aria-selected={orderBy === 'oldest'}
+                role="option"
+                onClick={() => setOrderBy('oldest')}
               >
-                {t('comments', { count: data.totalCommentCount })}
-              </a>
-            )}
-          </h4>
-          {shouldShowReplyCount ? (
-            <>
-              <h4 className="gsc-comments-count-separator">·</h4>
-              <h4 className="gsc-replies-count">
-                {t('replies', { count: data.totalReplyCount, plus: data.numHidden > 0 ? '+' : '' })}
-              </h4>
-            </>
-          ) : null}
-          {shouldShowBranding ? (
-            <em className="text-sm color-text-secondary">
-              <Trans
-                i18nKey="common:poweredBy"
-                components={{
-                  a: (
-                    <a
-                      href="https://giscus.app"
-                      target="_blank"
-                      rel="noreferrer noopener nofollow"
-                      className="link-secondary"
-                    />
-                  ),
-                }}
-              />
-            </em>
+                Oldest
+              </button>
+              <button
+                className="btn BtnGroup-item"
+                aria-selected={orderBy === 'newest'}
+                role="option"
+                onClick={() => setOrderBy('newest')}
+              >
+                Newest
+              </button>
+            </div>
           ) : null}
         </div>
 
@@ -185,7 +211,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
           ) : null}
 
           {!data.isLoading
-            ? data.backComments?.map((comment) => (
+            ? data.backComments.map((comment) => (
                 <Comment
                   key={comment.id}
                   comment={comment}

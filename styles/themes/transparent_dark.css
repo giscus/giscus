@@ -36,14 +36,15 @@ main {
   --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
   --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
   --color-btn-text: #c9d1d9;
-  --color-btn-bg: #21262d;
+  --color-btn-bg: rgb(45 51 59 / 80%);
   --color-btn-border: rgb(240 246 252 / 10%);
   --color-btn-shadow: 0 0 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
-  --color-btn-hover-bg: #30363d;
+  --color-btn-hover-bg: rgb(45 51 59 / 50%);
   --color-btn-hover-border: #8b949e;
-  --color-btn-active-bg: hsl(212deg 12% 18% / 100%);
+  --color-btn-active-bg: hsl(212deg 12% 18% / 50%);
   --color-btn-active-border: #6e7681;
+  --color-btn-selected-bg: rgb(45 51 59 / 50%);
   --color-btn-primary-text: #fff;
   --color-btn-primary-bg: #238636;
   --color-btn-primary-border: rgb(240 246 252 / 10%);
@@ -74,6 +75,7 @@ main {
   --color-success-fg: #3fb950;
   --color-danger-fg: #f85149;
   --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
+  --color-primer-shadow-inset: 0 0 transparent;
   --color-scale-gray-7: #21262d;
   --color-scale-blue-8: #0c2d6b;
 

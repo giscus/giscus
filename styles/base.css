@@ -116,7 +116,7 @@ a {
 }
 
 .btn {
-  @apply relative inline-block align-middle border rounded-md cursor-pointer whitespace-nowrap;
+  @apply px-4 py-[5px] text-sm relative inline-block align-middle border rounded-md cursor-pointer whitespace-nowrap;
 
   color: var(--color-btn-text);
   background-color: var(--color-btn-bg);
@@ -125,6 +125,27 @@ a {
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   transition-property: color, background-color, border-color;
   transition-delay: 0s;
+}
+
+.BtnGroup {
+  @apply inline-block align-middle;
+}
+
+.BtnGroup-item {
+  @apply rounded-none;
+}
+
+.BtnGroup-item:first-child:not(:only-child) {
+  @apply rounded-r-none rounded-l;
+}
+
+.BtnGroup-item:last-child:not(:only-child) {
+  @apply rounded-l-none rounded-r;
+}
+
+.BtnGroup-item:not(:first-child):not(:last-child),
+.BtnGroup-item:first-child + .BtnGroup-item:last-child {
+  @apply border-l-0;
 }
 
 .btn:hover {
@@ -139,6 +160,11 @@ a {
 
   background-color: var(--color-btn-active-bg);
   border-color: var(--color-btn-active-border);
+}
+
+.btn[aria-selected="true"] {
+  background-color: var(--color-btn-selected-bg);
+  box-shadow: var(--color-primer-shadow-inset);
 }
 
 .btn-primary {
@@ -340,6 +366,10 @@ a {
   color: var(--color-accent-fg, var(--color-text-link));
 }
 
+.ClipboardButton {
+  @apply p-0 m-2;
+}
+
 img.emoji {
   @apply inline align-top max-w-none;
 
@@ -442,6 +472,10 @@ img.emoji {
 }
 
 .gsc-header {
+  @apply flex flex-auto items-center;
+}
+
+.gsc-left-header {
   @apply flex flex-wrap items-center flex-auto whitespace-nowrap;
 }
 

@@ -43,6 +43,7 @@ main {
   --color-btn-hover-border: rgb(27 31 36 / 15%);
   --color-btn-active-bg: hsl(220deg 14% 93% / 100%);
   --color-btn-active-border: rgb(27 31 36 / 15%);
+  --color-btn-selected-bg: hsl(220deg 14% 94% / 100%);
   --color-btn-primary-text: #fff;
   --color-btn-primary-bg: #2da44e;
   --color-btn-primary-border: rgb(27 31 36 / 15%);
@@ -73,6 +74,7 @@ main {
   --color-success-fg: #1a7f37;
   --color-danger-fg: #cf222e;
   --color-primer-shadow-focus: 0 0 0 3px rgb(9 105 218 / 30%);
+  --color-primer-shadow-inset: inset 0 1px 0 rgb(208 215 222 / 20%);
   --color-scale-gray-0: #f6f8fa;
   --color-scale-gray-1: #eaeef2;
   --color-scale-blue-1: #b6e3ff;

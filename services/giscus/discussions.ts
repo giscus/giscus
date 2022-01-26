@@ -164,7 +164,13 @@ export function useDiscussion(
   };
 }
 
-export function useFrontBackDiscussion(query: DiscussionQuery, token?: string) {
+export type CommentOrder = 'oldest' | 'newest';
+
+export function useFrontBackDiscussion(
+  query: DiscussionQuery,
+  token?: string,
+  orderBy: CommentOrder = 'oldest',
+) {
   const backDiscussion = useDiscussion(query, token, { last: 15 });
   const {
     data: _backData,
@@ -215,8 +221,11 @@ export function useFrontBackDiscussion(query: DiscussionQuery, token?: string) {
     return newData;
   });
 
-  const backComments = backData?.discussion?.comments || [];
-  const frontComments = frontData?.flatMap((page) => page?.discussion?.comments || []) || [];
+  const _backComments = backData?.discussion?.comments || [];
+  const _frontComments = frontData?.flatMap((page) => page?.discussion?.comments || []) || [];
+
+  const frontComments = orderBy === 'oldest' ? _frontComments : _backComments.slice().reverse();
+  const backComments = orderBy === 'oldest' ? _backComments : _frontComments.slice().reverse();
 
   const updateReactions = useCallback(
     (reaction: Reaction, promise: Promise<unknown>) =>

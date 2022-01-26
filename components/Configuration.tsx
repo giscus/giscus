@@ -86,17 +86,17 @@ const mappingOptions: Array<{
 function ClipboardCopy() {
   const { t } = useGiscusTranslation('config');
   return (
-    <div className="top-0 right-0 zeroclipboard-container position-absolute">
+    <div className="zeroclipboard-container position-absolute top-0 right-0">
       <button
         aria-label={t('copy')}
-        className="p-0 m-2 ClipboardButton btn js-clipboard-copy tooltipped-no-delay"
+        className="ClipboardButton btn js-clipboard-copy tooltipped-no-delay m-2 p-0"
         data-copy-feedback="Copied!"
         tabIndex={0}
         role="button"
         onClick={handleClipboardCopy}
       >
-        <CopyIcon className="m-2 octicon octicon-copy js-clipboard-copy-icon" />
-        <CheckIcon className="m-2 octicon octicon-check js-clipboard-check-icon color-text-success d-none" />
+        <CopyIcon className="octicon octicon-copy js-clipboard-copy-icon m-2" />
+        <CheckIcon className="octicon octicon-check js-clipboard-check-icon color-text-success d-none m-2" />
       </button>
     </div>
   );
@@ -149,7 +149,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
   }, [directConfig.emitMetadata]);
 
   return (
-    <div className="p-4 pt-0 markdown">
+    <div className="markdown p-4 pt-0">
       <h2>{t('configuration')}</h2>
 
       <h3>{t('language')}</h3>
@@ -175,7 +175,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         id="language"
         value={directConfig.lang}
         onChange={(event) => onDirectConfigChange('lang', event.target.value as AvailableLanguage)}
-        className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
+        className="form-control form-select color-border-primary color-bg-primary appearance-none rounded-md border bg-no-repeat px-[12px] py-[5px] pr-6"
       >
         {Object.entries(availableLanguages).map(([value, name]) => (
           <option key={value} value={value}>
@@ -241,26 +241,26 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             setConfig((current) => ({ ...current, repository: event.target.value }))
           }
           type="text"
-          className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
+          className="form-control my-2 min-w-[75%] rounded-md border px-[12px] py-[5px] placeholder-gray-500 sm:min-w-[50%]"
           placeholder={t('myusername/myrepo')}
         />
 
         {error || (config.repositoryId && !categories.length) ? (
           <>
-            <XIcon className="inline-block ml-2 color-text-danger" />
-            <p className="text-xs color-text-danger">{t('cannotUseGiscusOnThisRepository')}</p>
+            <XIcon className="color-text-danger ml-2 inline-block" />
+            <p className="color-text-danger text-xs">{t('cannotUseGiscusOnThisRepository')}</p>
           </>
         ) : config.repositoryId && categories.length ? (
           <>
-            <CheckIcon className="inline-block ml-2 color-text-success" />
-            <p className="text-xs color-text-success">{t('successRepositoryMeetsCriteria')}</p>
+            <CheckIcon className="color-text-success ml-2 inline-block" />
+            <p className="color-text-success text-xs">{t('successRepositoryMeetsCriteria')}</p>
           </>
         ) : (
           <>
             {!error && !config.repositoryId && dRepository ? (
-              <SyncIcon className="inline-block ml-2 animate-spin" />
+              <SyncIcon className="ml-2 inline-block animate-spin" />
             ) : null}
-            <p className="text-xs color-text-secondary">
+            <p className="color-text-secondary text-xs">
               <Trans i18nKey="config:aPublicGitHubRepository" />
             </p>
           </>
@@ -271,7 +271,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
       <p>{t('chooseTheMapping')}</p>
       <fieldset>
         {mappingOptions.map(({ value, label, description }) => (
-          <div key={value} className="mt-4 first:mt-0 form-checkbox">
+          <div key={value} className="form-checkbox mt-4 first:mt-0">
             <input
               id={value}
               className="mt-[3.5px]"
@@ -292,7 +292,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
                 <Trans i18nKey={`config:${label}`} />
               </strong>
             </label>
-            <p className="mb-0 text-xs color-text-secondary">
+            <p className="color-text-secondary mb-0 text-xs">
               <Trans
                 i18nKey={`config:${description}`}
                 components={{
@@ -310,7 +310,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
                   setConfig((current) => ({ ...current, term: event.target.value }))
                 }
                 type={config.mapping === 'number' ? 'number' : 'text'}
-                className="px-[12px] py-[5px] mt-4 form-control border rounded-md placeholder-gray-500 min-w-[75%] sm:min-w-[50%]"
+                className="form-control mt-4 min-w-[75%] rounded-md border px-[12px] py-[5px] placeholder-gray-500 sm:min-w-[50%]"
                 placeholder={
                   config.mapping === 'number' ? t('enterDiscussionNumberHere') : t('enterTermHere')
                 }
@@ -332,7 +332,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <label htmlFor="strict">
           <strong>{t('useStrictTitleMatching')}</strong>
         </label>
-        <p className="mb-0 text-xs color-text-secondary">
+        <p className="color-text-secondary mb-0 text-xs">
           <Trans
             i18nKey="config:avoidMismatches"
             components={{
@@ -374,7 +374,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             categoryId: event.target.value,
           }))
         }
-        className={`px-[12px] py-[5px] pr-6 min-w-[200px] border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary${
+        className={`form-control form-select color-border-primary min-w-[200px] appearance-none rounded-md border bg-no-repeat px-[12px] py-[5px] pr-6 color-bg-primary${
           !config.categoryId ? ' color-text-secondary' : ''
         }`}
       >
@@ -405,7 +405,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <label htmlFor="useCategory">
           <strong>{t('onlySearchInThisCategory')}</strong>
         </label>
-        <p className="mb-0 text-xs color-text-secondary">{t('whenSearchingOnlyThisCategory')}</p>
+        <p className="color-text-secondary mb-0 text-xs">{t('whenSearchingOnlyThisCategory')}</p>
       </div>
 
       <h3>{t('features')}</h3>
@@ -421,7 +421,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <label htmlFor="reactionsEnabled">
           <strong>{t('enableReactionsMainPost')}</strong>
         </label>
-        <p className="mb-0 text-xs color-text-secondary">
+        <p className="color-text-secondary mb-0 text-xs">
           {t('reactionsMainPostShownBeforeComments')}
         </p>
       </div>
@@ -436,7 +436,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <label htmlFor="emitMetadata">
           <strong>{t('emitDiscussionMetadata')}</strong>
         </label>
-        <p className="mb-0 text-xs color-text-secondary">
+        <p className="color-text-secondary mb-0 text-xs">
           <Trans
             i18nKey="config:discussionMetadataSentPeriodically"
             components={{
@@ -464,7 +464,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <label htmlFor="inputPosition">
           <strong>{t('placeCommentBoxAboveComments')}</strong>
         </label>
-        <p className="mb-0 text-xs color-text-secondary">
+        <p className="color-text-secondary mb-0 text-xs">
           {t('commentInputBoxWillBePlacedAboveComments')}
         </p>
       </div>
@@ -480,7 +480,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <label htmlFor="lazyLoad">
           <strong>{t('loadCommentsLazily')}</strong>
         </label>
-        <p className="mb-0 text-xs color-text-secondary">
+        <p className="color-text-secondary mb-0 text-xs">
           <Trans
             i18nKey="config:loadingCommentsWillBeDeferred"
             components={{
@@ -519,7 +519,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         id="theme"
         value={directConfig.theme}
         onChange={(event) => onDirectConfigChange('theme', event.target.value as Theme)}
-        className="px-[12px] py-[5px] pr-6 border rounded-md appearance-none bg-no-repeat form-control form-select color-border-primary color-bg-primary"
+        className="form-control form-select color-border-primary color-bg-primary appearance-none rounded-md border bg-no-repeat px-[12px] py-[5px] pr-6"
       >
         {availableThemes.map((value) => (
           <option key={value} value={value}>
@@ -538,11 +538,11 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             value={directConfig.themeUrl}
             onChange={(event) => onDirectConfigChange('themeUrl', event.target.value as Theme)}
             type="text"
-            className="my-2 px-[12px] py-[5px] min-w-[75%] sm:min-w-[50%] form-control border rounded-md placeholder-gray-500"
+            className="form-control my-2 min-w-[75%] rounded-md border px-[12px] py-[5px] placeholder-gray-500 sm:min-w-[50%]"
             placeholder={`${GISCUS_APP_HOST}/themes/custom_example.css`}
           />
 
-          <p className="text-xs color-text-danger">{t('warningExternalCSSUnsafe')}</p>
+          <p className="color-text-danger text-xs">{t('warningExternalCSSUnsafe')}</p>
         </fieldset>
       ) : null}
 
@@ -550,7 +550,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
       <p>
         <Trans i18nKey="config:addTheFollowingScriptTag" />
       </p>
-      <div className="relative highlight highlight-text-html-basic">
+      <div className="highlight highlight-text-html-basic relative">
         <pre>
           <span className="pl-kos">{'<'}</span>
           <span className="pl-ent">script</span> <span className="pl-c1">src</span>={'"'}

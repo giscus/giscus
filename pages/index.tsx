@@ -126,20 +126,20 @@ export default function Home({
   }, [directConfig.lang]);
 
   return (
-    <main className="w-full min-h-screen gsc-homepage-bg" data-theme={theme}>
+    <main className="gsc-homepage-bg min-h-screen w-full" data-theme={theme}>
       <Head>
         <title>giscus</title>
       </Head>
-      <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
+      <div className="color-text-primary mx-auto w-full max-w-3xl p-2">
         <Comment comment={comment}>
           <Configuration
             directConfig={directConfig}
             onDirectConfigChange={handleDirectConfigChange}
           />
-          <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
+          <div className="markdown p-4 pt-0" dangerouslySetInnerHTML={{ __html: contentAfter }} />
         </Comment>
 
-        <div id="comments" className="w-full my-8 giscus" />
+        <div id="comments" className="giscus my-8 w-full" />
         <Script
           src="/client.js"
           data-repo="giscus/giscus"
@@ -155,7 +155,7 @@ export default function Home({
           data-strict="1"
         />
         <a
-          className="block mx-auto mb-6 w-max"
+          className="mx-auto mb-6 block w-max"
           href="https://vercel.com/?utm_source=giscus&utm_campaign=oss"
         >
           <img src="/powered-by-vercel.svg" alt="Powered by Vercel" />

@@ -148,7 +148,7 @@ export default function WidgetPage({
         <title>giscus</title>
       </Head>
 
-      <main className="w-full mx-auto" data-theme={resolvedTheme}>
+      <main className="mx-auto w-full" data-theme={resolvedTheme}>
         <ConfigContext.Provider value={config}>
           <Widget origin={resolvedOrigin} session={session} />
         </ConfigContext.Provider>

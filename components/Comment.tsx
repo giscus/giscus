@@ -72,7 +72,7 @@ export default function Comment({
   return (
     <div className="gsc-comment">
       <div
-        className={`w-full min-w-0 border rounded-md color-bg-primary ${
+        className={`color-bg-primary w-full min-w-0 rounded-md border ${
           comment.viewerDidAuthor ? 'color-box-border-info' : 'color-border-primary'
         }`}
       >
@@ -92,13 +92,13 @@ export default function Comment({
                   height="30"
                   alt={`@${comment.author.login}`}
                 />
-                <span className="font-semibold link-primary">{comment.author.login}</span>
+                <span className="link-primary font-semibold">{comment.author.login}</span>
               </a>
               <a
                 rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={comment.url}
-                className="ml-2 link-secondary"
+                className="link-secondary ml-2"
               >
                 <time
                   className="whitespace-nowrap"
@@ -109,9 +109,9 @@ export default function Comment({
                 </time>
               </a>
               {comment.authorAssociation !== 'NONE' ? (
-                <div className="hidden ml-2 text-xs sm:inline-flex">
+                <div className="ml-2 hidden text-xs sm:inline-flex">
                   <span
-                    className={`px-1 ml-1 capitalize border rounded-md ${
+                    className={`ml-1 rounded-md border px-1 capitalize ${
                       comment.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
                     }`}
                   >
@@ -184,7 +184,7 @@ export default function Comment({
               ) : null}
             </div>
             <div className="gsc-comment-replies-count">
-              <span className="text-xs color-text-tertiary">
+              <span className="color-text-tertiary text-xs">
                 {t('replies', { count: comment.replyCount, plus: '' })}
               </span>
             </div>
@@ -197,8 +197,8 @@ export default function Comment({
             }`}
           >
             {hasNextPage || hasUnfetchedReplies ? (
-              <div className="flex items-center h-8 pl-4 mb-2">
-                <div className="flex content-center shrink-0 mr-[9px] w-[29px]">
+              <div className="mb-2 flex h-8 items-center pl-4">
+                <div className="mr-[9px] flex w-[29px] shrink-0 content-center">
                   <KebabHorizontalIcon className="w-full rotate-90 fill-[var(--color-border-muted)]" />
                 </div>
 

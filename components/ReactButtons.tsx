@@ -39,7 +39,7 @@ function PopupInfo({
       </p>
     );
   return (
-    <p className="m-2 overflow-hidden whitespace-nowrap text-ellipsis">
+    <p className="m-2 overflow-hidden text-ellipsis whitespace-nowrap">
       {current ? t(current) : t('pickYourReaction')}
     </p>
   );
@@ -146,7 +146,7 @@ export default function ReactButtons({
               loginUrl={loginUrl}
               current={current}
             />
-            <div className="my-2 border-t color-border-primary" />
+            <div className="color-border-primary my-2 border-t" />
             <div className="m-2">
               {Object.entries(Reactions).map(([key, emoji]) => {
                 const hasReacted = reactionGroups?.[key]?.viewerHasReacted;

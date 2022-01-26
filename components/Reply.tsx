@@ -43,7 +43,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
             />
           </a>
         </div>
-        <div className="w-full min-w-0 ml-2">
+        <div className="ml-2 w-full min-w-0">
           {!hidden ? (
             <div className="gsc-reply-header">
               <div className="gsc-reply-author">
@@ -53,13 +53,13 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   href={reply.author.url}
                   className="flex items-center"
                 >
-                  <span className="font-semibold link-primary">{reply.author.login}</span>
+                  <span className="link-primary font-semibold">{reply.author.login}</span>
                 </a>
                 <a
                   rel="nofollow noopener noreferrer"
                   target="_blank"
                   href={reply.url}
-                  className="ml-2 link-secondary"
+                  className="link-secondary ml-2"
                 >
                   <time
                     className="whitespace-nowrap"
@@ -70,9 +70,9 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   </time>
                 </a>
                 {reply.authorAssociation !== 'NONE' ? (
-                  <div className="hidden ml-2 text-xs sm:inline-flex">
+                  <div className="ml-2 hidden text-xs sm:inline-flex">
                     <span
-                      className={`px-1 ml-1 capitalize border rounded-md ${
+                      className={`ml-1 rounded-md border px-1 capitalize ${
                         reply.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
                       }`}
                     >

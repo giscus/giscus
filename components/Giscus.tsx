@@ -47,16 +47,13 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
   };
 
   const mainCommentBox = (
-    <>
-      <hr className="gsc-comment-box-separator color-border-primary" />
-      <CommentBox
-        viewer={data.viewer}
-        discussionId={data.discussion.id}
-        context={repo}
-        onSubmit={backMutators.addNewComment}
-        onDiscussionCreateRequest={handleDiscussionCreateRequest}
-      />
-    </>
+    <CommentBox
+      viewer={data.viewer}
+      discussionId={data.discussion.id}
+      context={repo}
+      onSubmit={backMutators.addNewComment}
+      onDiscussionCreateRequest={handleDiscussionCreateRequest}
+    />
   );
 
   const shouldCreateDiscussion = data.isNotFound && !number;

@@ -422,7 +422,7 @@ img.emoji {
 
 .gsc-comments,
 .gsc-timeline {
-  @apply flex flex-col;
+  @apply flex flex-col mt-2;
 }
 
 .gsc-comment {
@@ -442,7 +442,7 @@ img.emoji {
 }
 
 .gsc-header {
-  @apply flex flex-wrap items-center flex-auto pb-2 whitespace-nowrap;
+  @apply flex flex-wrap items-center flex-auto whitespace-nowrap;
 }
 
 .gsc-comments-count,
@@ -456,10 +456,6 @@ img.emoji {
 
 .gsc-pagination {
   @apply flex justify-center py-2 my-4 bg-center bg-repeat-x;
-}
-
-.gsc-comment-box-separator {
-  @apply my-4 text-sm border-t-2;
 }
 
 .gsc-comment-header {
@@ -504,7 +500,11 @@ img.emoji {
 }
 
 .gsc-comment-box {
-  @apply w-full text-sm;
+  @apply w-full text-sm mt-4;
+}
+
+.gsc-comment-box:not(.gsc-comment-box-is-reply) {
+  @apply border rounded;
 }
 
 .gsc-comment-box-tabs {

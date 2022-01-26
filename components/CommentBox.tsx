@@ -122,7 +122,7 @@ export default function CommentBox({
   return !isReply || isReplyOpen ? (
     <form
       className={`color-bg-primary color-border-primary gsc-comment-box${
-        isReply ? '' : ' border rounded'
+        isReply ? ' gsc-comment-box-is-reply' : ''
       }`}
       onSubmit={(event) => {
         event.preventDefault();

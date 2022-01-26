@@ -128,7 +128,7 @@ a {
 }
 
 .BtnGroup {
-  @apply inline-block align-middle;
+  @apply inline-flex align-middle;
 }
 
 .BtnGroup-item {

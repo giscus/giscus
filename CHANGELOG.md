@@ -15,7 +15,13 @@ major updates to the project.
   ([#355](https://github.com/giscus/giscus/pull/355)).
 
 - Add `inputPosition` option to place the comment box above the comments
-  ([#358](https://github.com/giscus/giscus/pull/358)).
+  ([#358](https://github.com/giscus/giscus/pull/358)). \
+  **Note:** the `gsc-comment-box-separator` class has been removed.
+
+- Add buttons to order comments by oldest and newest
+  ([#372](https://github.com/giscus/giscus/pull/372)). \
+  **Note:** you'll need to add `--color-btn-selected-bg` and
+  `--color-primer-shadow-inset` variables if you use a custom CSS.
 
 ## 2022-01-16
 

@@ -200,11 +200,3 @@ a:hover {
 .markdown > :first-child {
   @apply mt-0;
 }
-
-.markdown .mb-0 {
-  @apply mb-0;
-}
-
-.markdown .py-0 {
-  @apply py-0;
-}

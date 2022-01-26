@@ -1,6 +1,7 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './styles/*.css'],
+  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  important: '#__next',
+  safelist: ['mb-0', 'py-0'],
   darkMode: 'class',
   theme: {
     extend: {

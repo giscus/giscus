@@ -42,6 +42,8 @@
   "loadingComments": "Wczytywanie komentarzy…",
   "loadingPreview": "Wczytywanie podglądu…",
   "poweredBy": "– zasilane przez <a>giscus</a>",
+  "oldest": "Najstarszego",
+  "newest": "Najnowszego",
   "showPreviousReplies": {
     "0": "Pokaż {{count}} poprzednich odpowiedzi",
     "one": "Pokaż poprzednią odpowiedź",

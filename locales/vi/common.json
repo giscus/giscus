@@ -32,6 +32,8 @@
   "loadingComments": "Đang tải thêm bình luận…",
   "loadingPreview": "Đang tải bản xem trước…",
   "poweredBy": "– powered by <a>giscus</a>",
+  "oldest": "Cũ",
+  "newest": "Mới",
   "showPreviousReplies": {
     "0": "Hiển thị {{count}} câu trả lời trước đó",
     "one": "Hiển thị {{count}} câu trả lời trước đó",

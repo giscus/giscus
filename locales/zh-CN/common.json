@@ -22,6 +22,8 @@
   "loadingComments": "正在加载评论……",
   "loadingPreview": "正在加载预览……",
   "poweredBy": "– 由 <a>giscus</a> 驱动",
+  "oldest": "最旧",
+  "newest": "最新",
   "showPreviousReplies": {
     "other": "显示 {{count}} 条更早的回复"
   },

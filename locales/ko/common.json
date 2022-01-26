@@ -32,6 +32,8 @@
   "loadingComments": "댓글 불러오는 중…",
   "loadingPreview": "미리 보기 로딩 중…",
   "poweredBy": "– <a>giscus</a>에 의해 구동",
+  "oldest": "가장 오래된",
+  "newest": "최신",
   "showPreviousReplies": {
     "0": "이전 답글 {{count}} 개 더 보기",
     "one": "이전 답글 {{count}} 개 더 보기",

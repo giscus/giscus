@@ -32,6 +32,8 @@
   "loadingComments": "Lade Kommentare…",
   "loadingPreview": "Lade Vorschau…",
   "poweredBy": "– Unterstützt von <a>giscus</a>",
+  "oldest": "Älteste",
+  "newest": "Neueste",
   "showPreviousReplies": {
     "0": "Zeige {{count}} vorherige Antworten",
     "one": "Zeige {{count}} vorherige Antwort",

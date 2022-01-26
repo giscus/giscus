@@ -154,7 +154,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                 role="option"
                 onClick={() => setOrderBy('oldest')}
               >
-                Oldest
+                {t('oldest')}
               </button>
               <button
                 className="btn BtnGroup-item"
@@ -162,7 +162,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                 role="option"
                 onClick={() => setOrderBy('newest')}
               >
-                Newest
+                {t('newest')}
               </button>
             </div>
           ) : null}

@@ -32,6 +32,8 @@
   "loadingComments": "Cargando comentarios…",
   "loadingPreview": "Cargando vista previa…",
   "poweredBy": "– Desarrollado por <a>giscus</a>",
+  "oldest": "Antiguo",
+  "newest": "Nuevo",
   "showPreviousReplies": {
     "0": "Mostrar {{count}} respuestas anteriores",
     "one": "Mostrar {{count}} respuesta anteriores",

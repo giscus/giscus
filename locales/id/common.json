@@ -22,6 +22,8 @@
   "loadingComments": "Memuat komentar…",
   "loadingPreview": "Memuat pratinjau…",
   "poweredBy": "– diberdayakan oleh <a>giscus</a>",
+  "oldest": "Terlama",
+  "newest": "Terbaru",
   "showPreviousReplies": {
     "other": "Tampilkan {{count}} balasan sebelumnya"
   },

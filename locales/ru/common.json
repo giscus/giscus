@@ -42,6 +42,8 @@
   "loadingComments": "Загрузка комментариев…",
   "loadingPreview": "Загрузка предварительного просмотра…",
   "poweredBy": "– управляется <a>giscus</a>",
+  "oldest": "Старых",
+  "newest": "Новым",
   "showPreviousReplies": {
     "0": "Показать {{count}} предыдущих ответов",
     "one": "Показать {{count}} предыдущий ответ",

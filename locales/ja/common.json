@@ -32,6 +32,8 @@
   "loadingComments": "コメントを取得中…",
   "loadingPreview": "プレビューを読み込み中…",
   "poweredBy": "– <a>giscus</a>を搭載",
+  "oldest": "最古",
+  "newest": "最新",
   "showPreviousReplies": {
     "0": "{{count}}件前の返信を表示",
     "one": "{{count}}件前の返信を表示",

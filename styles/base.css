@@ -417,7 +417,7 @@ img.emoji {
 }
 
 .gsc-tl-line {
-  @apply w-[2px] flex-shrink-0 absolute left-[30px] h-full top-0;
+  @apply w-[2px] shrink-0 absolute left-[30px] h-full top-0;
 
   background-color: var(--color-border-muted, var(--color-border-secondary));
 }
@@ -576,7 +576,7 @@ img.emoji {
 }
 
 .gsc-comment-box-buttons {
-  @apply inline-flex flex-shrink-0;
+  @apply inline-flex shrink-0;
 }
 
 .gsc-reply-box {
@@ -610,7 +610,7 @@ img.emoji {
 }
 
 .gsc-social-reaction-summary-item-count {
-  @apply px-1 ml-[2px] max-w-[100px] overflow-hidden overflow-ellipsis whitespace-nowrap;
+  @apply px-1 ml-[2px] max-w-[100px] overflow-hidden text-ellipsis whitespace-nowrap;
 }
 
 .gsc-direct-reaction-button-emoji {
@@ -618,7 +618,7 @@ img.emoji {
 }
 
 .gsc-upvotes {
-  @apply flex-shrink-0 mr-2 text-center w-14;
+  @apply shrink-0 mr-2 text-center w-14;
 }
 
 .gsc-upvote-button {
@@ -746,7 +746,7 @@ img.emoji {
 }
 
 .gsc-reply-author-avatar {
-  @apply z-10 flex-shrink-0;
+  @apply z-10 shrink-0;
 }
 
 .gsc-reply-header {

@@ -198,7 +198,7 @@ export default function Comment({
           >
             {hasNextPage || hasUnfetchedReplies ? (
               <div className="flex items-center h-8 pl-4 mb-2">
-                <div className="flex content-center flex-shrink-0 mr-[9px] w-[29px]">
+                <div className="flex content-center shrink-0 mr-[9px] w-[29px]">
                   <KebabHorizontalIcon className="w-full rotate-90 fill-[var(--color-border-muted)]" />
                 </div>
 

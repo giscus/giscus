@@ -39,7 +39,7 @@ function PopupInfo({
       </p>
     );
   return (
-    <p className="m-2 overflow-hidden whitespace-nowrap overflow-ellipsis">
+    <p className="m-2 overflow-hidden whitespace-nowrap text-ellipsis">
       {current ? t(current) : t('pickYourReaction')}
     </p>
   );

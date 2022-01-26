@@ -249,7 +249,7 @@ export default function CommentBox({
           rel="nofollow noopener noreferrer"
           target="_blank"
           href={viewer.url}
-          className="flex items-center flex-shrink-0"
+          className="flex items-center shrink-0"
         >
           <img
             className="inline-block rounded-full"

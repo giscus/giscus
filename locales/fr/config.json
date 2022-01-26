@@ -49,6 +49,8 @@
   "reactionsMainPostShownBeforeComments": "Les réactions au message principal de la discussion seront affichées avant les commentaires.",
   "emitDiscussionMetadata": "Diffuser les métadonnées de la discussion",
   "discussionMetadataSentPeriodically": "Les métadonnées de la discussion seront envoyées périodiquement à la fenêtre parente (la page d'incorporation). Pour la démonstration, activez cette option et ouvrez la console de votre navigateur sur cette page. Consultez la <a>documentation</a> pour plus de détails.",
+  "placeCommentBoxAboveComments": "Placez la zone de commentaire au-dessus des commentaires",
+  "commentInputBoxWillBePlacedAboveComments": "La zone de saisie des commentaires sera placée au-dessus des commentaires, afin que les utilisateurs puissent laisser un commentaire sans faire défiler la discussion jusqu'en bas.",
 
   "theme": "Thème",
   "chooseAThemeThatMatches": "Choisir un thème qui correspond au site. Vous ne trouvez pas de thème adpaté ? <a>Proposer</a> un nouveau thème.",

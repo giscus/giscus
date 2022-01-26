@@ -430,11 +430,10 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           }
         ></input>
         <label htmlFor="inputPosition">
-          <strong>Place the comment box above the comments</strong>
+          <strong>{t('placeCommentBoxAboveComments')}</strong>
         </label>
         <p className="mb-0 text-xs color-text-secondary">
-          The comment input box will be placed above the comments, so that users can leave a comment
-          without scrolling to the bottom of the discussion.
+          {t('commentInputBoxWillBePlacedAboveComments')}
         </p>
       </div>
 

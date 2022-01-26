@@ -49,6 +49,8 @@
   "reactionsMainPostShownBeforeComments": "Las reacciones de la publicación principal, se mostrarán antes de los comentarios.",
   "emitDiscussionMetadata": "Emitir metadatos de discusión",
   "discussionMetadataSentPeriodically": "Los metadatos de discusión se enviarán periódicamente a la ventana principal (la página de incrustación). Para una demostración, habilite esta opción y abra la consola de su navegador en esta página. Consulte <a> la documentación </a> para obtener más detalles.",
+  "placeCommentBoxAboveComments": "Coloque el cuadro de comentarios encima de los comentarios",
+  "commentInputBoxWillBePlacedAboveComments": "El cuadro de entrada de comentarios se colocará encima de los comentarios, para que los usuarios puedan dejar un comentario sin desplazarse hasta el final de la discusión.",
 
   "theme": "Tema",
   "chooseAThemeThatMatches": "Selecciona un tema que coincida con su sitio web. ¿No puede encontrar uno que lo haga? <a>Contribuya</a> con un tema nuevo.",

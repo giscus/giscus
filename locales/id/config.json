@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "Nomor diskusi spesifik",
   "specificDiscussionNumberDesc": "giscus akan memuat suatu diskusi spesifik berdasarkan nomornya. Opsi ini <strong>tidak</strong> mendukung pembuatan diskusi otomatis.",
   "enterDiscussionNumberHere": "Masukkan nomor diskusi di sini",
+  "placeCommentBoxAboveComments": "Letakkan kotak komentar di atas komentar",
+  "commentInputBoxWillBePlacedAboveComments": "Kotak masukan komentar akan ditempatkan di atas komentar, sehingga pengguna dapat meninggalkan komentar tanpa menggulir ke bagian bawah diskusi.",
 
   "discussionCategory": "Kategori Diskusi",
   "chooseTheDiscussionCategory": "Pilih kategori diskusi di mana diskusi baru akan dibuat.",

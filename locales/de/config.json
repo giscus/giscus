@@ -48,6 +48,8 @@
   "reactionsMainPostShownBeforeComments": "Die Reaktionen für den eigentlichen Post der Diskussion werden vor den Kommentaren angezeigt.",
   "emitDiscussionMetadata": "Sende Diskussionen Metadaten",
   "discussionMetadataSentPeriodically": "Metadaten der Diskussion werden regelmässig zur eigentlichen Seite (Einbettende Seite) gesendet. Zu Demonstrationszwecken, aktiviere diese Option und öffne die Konsole deines Browsers auf dieser Seite. Siehe <a>die Dokumentation</a> für weitere Details.",
+  "placeCommentBoxAboveComments": "Platzieren Sie das Kommentarfeld über den Kommentaren",
+  "commentInputBoxWillBePlacedAboveComments": "Das Kommentareingabefeld wird über den Kommentaren platziert, sodass Benutzer einen Kommentar hinterlassen können, ohne zum Ende der Diskussion zu scrollen.",
 
   "theme": "Theme",
   "chooseAThemeThatMatches": "Wähle ein Theme, welches zu deiner Webseite passt. Kannst keines finden dass dies tut? <a>Steuere ein neues Theme bei</a>.",

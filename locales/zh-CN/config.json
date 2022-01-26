@@ -56,6 +56,8 @@
   "reactionsMainPostShownBeforeComments": "Discussion 的主帖子上的反应将会显示在评论前。",
   "emitDiscussionMetadata": "输出 discussion 的元数据",
   "discussionMetadataSentPeriodically": "Discussion 的元数据将定期被发送到父页面（被嵌入的页面）。作为演示，尝试启用此选项并在此页面打开浏览器控制台。查看<a>文档</a>获取更多细节。",
+  "placeCommentBoxAboveComments": "将评论框放在评论上方",
+  "commentInputBoxWillBePlacedAboveComments": "评论输入框会放在评论上方，这样用户可以在不滚动到讨论底部的情况下发表评论。",
 
   "theme": "主题",
   "chooseAThemeThatMatches": "选择适合你网站的主题。找不到合适的？<a>贡献</a>一个新主题吧。",

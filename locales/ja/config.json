@@ -49,6 +49,8 @@
   "reactionsMainPostShownBeforeComments": "コメントの前にリアクションを表示する",
   "emitDiscussionMetadata": "discussionのメタデータを出力する",
   "discussionMetadataSentPeriodically": "Discussionのメタデータは定期的に親画面に送信されます。試しにこのオプションを有効にしてブラウザのコンソールウィンドウを開いてみてください。詳細は<a>ドキュメント</a>をご参照ください。",
+  "placeCommentBoxAboveComments": "コメントの上にコメントボックスを配置します",
+  "commentInputBoxWillBePlacedAboveComments": "コメント入力ボックスはコメントの上に配置されるため、ユーザーはディスカッションの一番下までスクロールせずにコメントを残すことができます。",
 
   "theme": "テーマ",
   "chooseAThemeThatMatches": "Webサイトに適したテーマを選択してください。良いものが見つからない場合は、<a>自作して我々に送信</a>することもできます。",

@@ -213,7 +213,7 @@ export default function CommentBox({
         <div className="gsc-comment-box-buttons">
           {isReply ? (
             <button
-              className="px-4 py-[5px] ml-1 border rounded-md btn"
+              className="ml-1 border rounded-md btn"
               onClick={() => setIsReplyOpen(false)}
               type="button"
             >
@@ -222,7 +222,7 @@ export default function CommentBox({
           ) : null}
           {token ? (
             <button
-              className="px-4 py-[5px] ml-1 border rounded-md items-center btn btn-primary"
+              className="ml-1 border rounded-md items-center btn btn-primary"
               type="submit"
               disabled={(token && !input.trim()) || isSubmitting}
             >
@@ -230,7 +230,7 @@ export default function CommentBox({
             </button>
           ) : (
             <a
-              className="px-4 py-[5px] ml-1 border hover:no-underline rounded-md inline-flex items-center btn btn-primary"
+              className="ml-1 border hover:no-underline rounded-md inline-flex items-center btn btn-primary"
               target="_top"
               href={loginUrl}
             >

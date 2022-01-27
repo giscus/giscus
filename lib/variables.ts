@@ -12,11 +12,12 @@ export const env = {
 
 export const availableThemes = [
   'light',
+  'light_high_contrast',
+  'light_protanopia',
   'dark',
-  'dark_dimmed',
   'dark_high_contrast',
   'dark_protanopia',
-  'light_protanopia',
+  'dark_dimmed',
   'transparent_dark',
   'preferred_color_scheme',
   'custom',

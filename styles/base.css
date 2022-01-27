@@ -593,7 +593,7 @@ img.emoji {
 .gsc-social-reaction-summary-item {
   @apply px-[6px] rounded-full leading-[24px] border whitespace-nowrap;
 
-  background-color: var(--color-social-reaction-bg);
+  background-color: transparent;
   border-color: var(--color-border-default, var(--color-border-primary));
   color: var(--color-fg-muted, var(--color-text-secondary));
 }
@@ -604,7 +604,7 @@ img.emoji {
 
 .gsc-social-reaction-summary-item.has-reacted {
   background-color: var(--color-accent-subtle, var(--color-bg-info));
-  border-color: var(--color-social-reaction-border);
+  border-color: var(--color-accent-emphasis, --color-social-reaction-border);
   color: var(--color-accent-fg, var(--color-text-link));
 }
 

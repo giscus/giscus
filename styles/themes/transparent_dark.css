@@ -80,8 +80,6 @@ main {
   --color-scale-blue-8: #0c2d6b;
 
   /*! Extensions from @primer/css/alerts/flash.scss */
-  --color-social-reaction-border: var(--color-scale-blue-8);
-  --color-social-reaction-bg: transparent;
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 

@@ -66,22 +66,18 @@ main {
   --color-border-default: #30363d;
   --color-border-muted: #21262d;
   --color-neutral-muted: rgb(110 118 129 / 40%);
-  --color-neutral-subtle: rgb(110 118 129 / 10%);
   --color-accent-fg: #58a6ff;
   --color-accent-emphasis: #1f6feb;
   --color-accent-muted: rgb(56 139 253 / 40%);
   --color-accent-subtle: rgb(56 139 253 / 15%);
   --color-success-fg: #42a0ff;
   --color-danger-fg: #c38000;
-  --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
   --color-primer-shadow-inset: 0 0 transparent;
+  --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
   --color-scale-gray-7: #424a53;
-  --color-scale-gray-8: #32383f;
   --color-scale-blue-8: #0a3069;
 
   /*! Extensions from @primer/css/alerts/flash.scss */
-  --color-social-reaction-border: var(--color-scale-blue-8);
-  --color-social-reaction-bg: var(--color-scale-gray-8);
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 

@@ -38,7 +38,9 @@ If you want to submit your custom theme to giscus, create a new file in
 [`styles/themes`][themes-dir]. The file name (without `.css`) will be the
 theme's key. You can use the other theme files as reference (see
 [`custom_example.css`][example]). Once you've added the theme file, add the key
-and name to `Theme` in [`lib/variables.ts`][variables] to register it.
+and name to `Theme` in [`lib/variables.ts`][variables] to register it. Please
+also update the `config.json` in each localization in the [`locales`][locales]
+directory to include a `theme=your_theme_key` key.
 
 If you want to customize the syntax themes, you can change the CSS variables
 that start with the `--color-prettylights-syntax-` prefix. See the

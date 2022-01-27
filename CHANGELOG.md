@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-01-27
+
+### Added
+
+- Add GitHub Light High Contrast theme
+  ([#373](https://github.com/giscus/giscus/pull/373)).
+
 ## 2022-01-26
 
 ### Added

@@ -214,6 +214,7 @@ interface ISetConfigMessage {
     category?: string;
     reactionsEnabled?: boolean;
     emitMetadata?: boolean;
+    inputPosition?: InputPosition;
     lang?: AvailableLanguage;
   };
 }

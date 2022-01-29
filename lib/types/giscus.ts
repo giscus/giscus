@@ -4,6 +4,8 @@ import { IReactionGroups, IUser } from './adapter';
 
 export type InputPosition = 'top' | 'bottom';
 
+export type CommentOrder = 'oldest' | 'newest';
+
 export interface ITokenRequest {
   session: string;
 }
@@ -15,6 +17,7 @@ export interface ITokenResponse {
 export interface IRepoConfig {
   origins?: string[];
   originsRegex?: string[];
+  defaultCommentOrder?: CommentOrder;
 }
 
 export interface IDiscussionData {

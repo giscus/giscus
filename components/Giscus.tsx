@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext, ConfigContext } from '../lib/context';
 import { Trans, useGiscusTranslation } from '../lib/i18n';
 import { emitData } from '../lib/messages';
-import { IMetadataMessage } from '../lib/types/giscus';
-import { CommentOrder, useFrontBackDiscussion } from '../services/giscus/discussions';
+import { CommentOrder, IMetadataMessage } from '../lib/types/giscus';
+import { useFrontBackDiscussion } from '../services/giscus/discussions';
 import Comment from './Comment';
 import CommentBox from './CommentBox';
 import ReactButtons from './ReactButtons';
@@ -14,11 +14,19 @@ interface IGiscusProps {
 }
 
 export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusProps) {
-  const [orderBy, setOrderBy] = useState<CommentOrder>('oldest');
   const { token, origin } = useContext(AuthContext);
   const { t } = useGiscusTranslation();
-  const { repo, term, number, category, reactionsEnabled, emitMetadata, inputPosition } =
-    useContext(ConfigContext);
+  const {
+    repo,
+    term,
+    number,
+    category,
+    reactionsEnabled,
+    emitMetadata,
+    inputPosition,
+    defaultCommentOrder,
+  } = useContext(ConfigContext);
+  const [orderBy, setOrderBy] = useState<CommentOrder>(defaultCommentOrder);
   const query = { repo, term, category, number };
 
   const { updateReactions, increaseSize, backMutators, frontMutators, ...data } =

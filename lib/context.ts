@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { InputPosition } from './types/giscus';
+import { CommentOrder, InputPosition } from './types/giscus';
 import { Theme } from './variables';
 
 interface IAuthContext {
@@ -35,6 +35,7 @@ interface IConfigContext {
   reactionsEnabled: boolean;
   emitMetadata: boolean;
   inputPosition: InputPosition;
+  defaultCommentOrder: CommentOrder;
 }
 
 export const ConfigContext = createContext<IConfigContext>({
@@ -45,4 +46,5 @@ export const ConfigContext = createContext<IConfigContext>({
   reactionsEnabled: true,
   emitMetadata: false,
   inputPosition: 'bottom',
+  defaultCommentOrder: 'oldest',
 });

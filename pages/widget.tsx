@@ -49,6 +49,8 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
     res.setHeader('Content-Security-Policy', `frame-ancestors 'self' ${originsStr};`);
   }
 
+  const defaultCommentOrder = repoConfig.defaultCommentOrder || 'oldest';
+
   return {
     props: {
       origin,
@@ -63,6 +65,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       reactionsEnabled,
       emitMetadata,
       inputPosition,
+      defaultCommentOrder,
       theme,
       originHost,
     },
@@ -82,6 +85,7 @@ export default function WidgetPage({
   reactionsEnabled,
   emitMetadata,
   inputPosition,
+  defaultCommentOrder,
   theme,
   originHost,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -95,6 +99,7 @@ export default function WidgetPage({
     reactionsEnabled,
     emitMetadata,
     inputPosition,
+    defaultCommentOrder,
   });
 
   useEffect(() => {

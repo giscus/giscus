@@ -66,6 +66,19 @@ Example `giscus.json`:
 }
 ```
 
+### `defaultCommentOrder`
+
+You can set the default comment order, i.e. `"oldest"` (oldest to newest) or
+`"newest"` (newest to oldest). This option defaults to `"oldest"`.
+
+Example `giscus.json`:
+
+```json
+{
+  "defaultCommentOrder": "newest"
+}
+```
+
 ## `data-` attributes
 
 Some of the `data-` attributes of the `<script>` tag may be used to further

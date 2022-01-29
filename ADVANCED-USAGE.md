@@ -6,6 +6,7 @@ configurations.
 - [`giscus.json`](#giscusjson)
   - [`origins`](#origins)
   - [`originsRegex`](#originsregex)
+  - [`defaultCommentOrder`](#defaultcommentorder)
 - [`data-` attributes](#data--attributes)
   - [`data-theme`](#data-theme)
 - [giscus-to-parent `message` events](#giscus-to-parent-message-events)
@@ -63,6 +64,19 @@ Example `giscus.json`:
 {
   "origins": ["https://giscus.app"],
   "originsRegex": ["http://localhost:[0-9]+"]
+}
+```
+
+### `defaultCommentOrder`
+
+You can set the default comment order, i.e. `"oldest"` (oldest to newest) or
+`"newest"` (newest to oldest). This option defaults to `"oldest"`.
+
+Example `giscus.json`:
+
+```json
+{
+  "defaultCommentOrder": "newest"
 }
 ```
 

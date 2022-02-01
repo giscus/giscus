@@ -5,10 +5,10 @@
   "chooseLanguageGiscusDisplayed": "giscus에서 사용할 언어를 선택해 주세요. 원하는 언어가 없으신가요? 번역 <a>기여</a>에 참여해주세요.",
 
   "repository": "저장소",
-  "chooseTheRepository": "giscus가 연결할 저장소를 선택하세요. 정확히 확인하세요.:",
-  "theRepositoryIsPublic": "<strong>저장소가 <a>공개되어 있지만</a></strong>, 방문자들은 discussion을 볼 수 없습니다.",
-  "theGiscusAppIsInstalled": "<strong><a>giscus</a> 앱이 설치되어 있지만</strong>, 방문자들은 댓글과 반응을 남길 수 없습니다.",
-  "theDiscussionsFeatureIsTurnedOn": "<strong>Discussions 기능이</strong> <a>당신의 저장소에서 켜져 있어야 합니다.</a>.",
+  "chooseTheRepository": "giscus에 연결할 저장소를 선택하세요. 정확히 확인하세요.:",
+  "theRepositoryIsPublic": "<strong><a>공개</a>저장소여야 합니다.</strong> 그렇지 않으면, 방문자들은 discussion을 볼 수 없습니다.",
+  "theGiscusAppIsInstalled": "<strong><a>giscus</a> 앱이 설치되어 있어야 합니다.</strong> 그렇지 않으면, 방문자들은 댓글과 반응을 남길 수 없습니다.",
+  "theDiscussionsFeatureIsTurnedOn": "<strong>Discussions 기능이</strong> <a>해당 저장소에서 활성화되어 있어야 합니다.</a>.",
   "repositoryLabel": "저장소:",
   "myusername/myrepo": "myusername/myrepo",
   "cannotUseGiscusOnThisRepository": "giscus를 이용할 수 없습니다. 위 조건을 다시 확인해보세요.",
@@ -44,7 +44,7 @@
   "whenSearchingOnlyThisCategory": "giscus에서 조건을 만족하는 discussion을 찾을 때, 이 카테고리에서만 찾습니다.",
 
   "features": "기능",
-  "chooseSpecificFeatures": "사용할 기능만 선택하세요.",
+  "chooseSpecificFeatures": "특정 기능을 활성화할지 선택하세요.",
   "enableReactionsMainPost": "메인 포스트에 반응 남기기",
   "reactionsMainPostShownBeforeComments": "discussion의 메인 포스트에 대한 반응이 댓글 위에 표시됩니다.",
   "emitDiscussionMetadata": "discussion 메타 데이터 보내기",

@@ -141,9 +141,15 @@ export function processCommentBody(bodyHTML: string) {
     const currentLink = window.location.href;
 
     if (a.href.startsWith(`${currentLink}#`)) {
-      const parentLocation = window.parent.location;
-      const parentLink = parentLocation.href.replace(parentLocation.hash, '');
-      a.href = `${parentLink}${a.href.substr(currentLink.length)}`;
+      let parentLink: URL;
+      try {
+        parentLink = new URL(document.referrer);
+      } catch {
+        return;
+      }
+
+      parentLink.hash = '';
+      a.href = `${parentLink.href}${a.href.substring(currentLink.length)}`;
       return;
     }
 

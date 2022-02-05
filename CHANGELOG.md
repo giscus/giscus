@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-02-06
+
+### Fixed
+
+- Fix crash when rendering footnotes
+  ([#382](https://github.com/giscus/giscus/pull/382)).
+
 ## 2022-01-29
 
 ### Added

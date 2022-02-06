@@ -29,9 +29,12 @@ export const ThemeContext = createContext<IThemeContext>({
 
 interface IConfigContext {
   repo: string;
-  term: string;
-  number: number;
+  repoId: string;
   category: string;
+  categoryId: string;
+  term: string;
+  description: string;
+  number: number;
   reactionsEnabled: boolean;
   emitMetadata: boolean;
   inputPosition: InputPosition;
@@ -40,9 +43,12 @@ interface IConfigContext {
 
 export const ConfigContext = createContext<IConfigContext>({
   repo: '',
-  term: '',
-  number: 0,
+  repoId: '',
   category: '',
+  categoryId: '',
+  term: '',
+  description: '',
+  number: 0,
   reactionsEnabled: true,
   emitMetadata: false,
   inputPosition: 'bottom',

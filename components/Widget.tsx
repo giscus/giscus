@@ -9,14 +9,11 @@ import { getToken } from '../services/giscus/token';
 interface IWidgetProps {
   origin: string;
   session: string;
-  repoId: string;
-  categoryId: string;
-  description: string;
 }
 
-export default function Widget({ origin, session, repoId, categoryId, description }: IWidgetProps) {
+export default function Widget({ origin, session }: IWidgetProps) {
   const [token, setToken] = useState('');
-  const { repo, term, number } = useContext(ConfigContext);
+  const { repo, repoId, categoryId, description, term, number } = useContext(ConfigContext);
 
   const handleDiscussionCreateRequest = async () =>
     createDiscussion(repo, {

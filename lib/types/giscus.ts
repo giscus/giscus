@@ -52,9 +52,12 @@ export interface ISetConfigMessage {
   setConfig: {
     theme?: Theme;
     repo?: string;
-    term?: string;
-    number?: number;
+    repoId?: string;
     category?: string;
+    categoryId?: string;
+    term?: string;
+    description?: string;
+    number?: number;
     reactionsEnabled?: boolean;
     emitMetadata?: boolean;
     inputPosition?: InputPosition;

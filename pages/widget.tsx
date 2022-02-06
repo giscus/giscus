@@ -93,9 +93,12 @@ export default function WidgetPage({
   const { theme: resolvedTheme, setTheme } = useContext(ThemeContext);
   const [config, setConfig] = useState<ContextType<typeof ConfigContext>>({
     repo,
+    repoId,
+    category,
+    categoryId,
+    description,
     term,
     number,
-    category,
     reactionsEnabled,
     emitMetadata,
     inputPosition,
@@ -142,13 +145,7 @@ export default function WidgetPage({
 
       <main className="w-full mx-auto" data-theme={resolvedTheme}>
         <ConfigContext.Provider value={config}>
-          <Widget
-            origin={resolvedOrigin}
-            session={session}
-            repoId={repoId}
-            categoryId={categoryId}
-            description={description}
-          />
+          <Widget origin={resolvedOrigin} session={session} />
         </ConfigContext.Provider>
       </main>
 

@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2022-02-06
 
+### Changed
+
+- Expose ids and description in config context
+  ([#383](https://github.com/giscus/giscus/pull/383)).
+
 ### Fixed
 
 - Fix crash when rendering footnotes

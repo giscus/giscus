@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-02-07
+
+### Fixed
+
+- Fix crash if a comment author user account has been deleted
+  ([#391](https://github.com/giscus/giscus/pull/391)).
+
 ## 2022-02-06
 
 ### Changed

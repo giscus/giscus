@@ -15,6 +15,14 @@ const COPY_BUTTON_HTML = `
   </button>
 </div>`;
 
+// GitHub uses the @ghost user to replace deleted users on the website,
+// but returns `null` in the API.
+const GhostUser: GUser = {
+  avatarUrl: 'https://avatars.githubusercontent.com/u/10137?s=64&v=4',
+  login: 'ghost',
+  url: 'https://github.com/ghost',
+};
+
 export function adaptReactionGroups(reactionGroups: GReactionGroup[]): IReactionGroups {
   return reactionGroups.reduce((acc, group) => {
     acc[group.content] = {
@@ -29,22 +37,25 @@ export function adaptReply(reply: GReply): IReply {
   const {
     reactionGroups,
     replyTo: { id: replyToId },
+    author: _author,
     ...rest
   } = reply;
 
   const reactions = adaptReactionGroups(reactionGroups);
+  const author = _author || GhostUser;
 
-  return { ...rest, reactions, replyToId };
+  return { ...rest, author, reactions, replyToId };
 }
 
 export function adaptComment(comment: GComment): IComment {
-  const { replies: repliesData, reactionGroups, ...rest } = comment;
+  const { replies: repliesData, reactionGroups, author: _author, ...rest } = comment;
   const { totalCount: replyCount, nodes: replyNodes } = repliesData;
 
   const reactions = adaptReactionGroups(reactionGroups);
   const replies = replyNodes.map(adaptReply);
+  const author = _author || GhostUser;
 
-  return { ...rest, replyCount, reactions, replies };
+  return { ...rest, author, replyCount, reactions, replies };
 }
 
 export function adaptDiscussion({

@@ -47,6 +47,10 @@ export interface IMetadataMessage {
   viewer: IUser;
 }
 
+export interface IResizeHeightMessage {
+  resizeHeight: number;
+}
+
 // parent-to-giscus messages
 export interface ISetConfigMessage {
   setConfig: {

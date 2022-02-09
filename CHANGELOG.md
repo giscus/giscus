@@ -7,6 +7,17 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-02-09
+
+### Changed
+
+- Resize iframe with `ResizeObserver`
+  ([#392](https://github.com/giscus/giscus/pull/392)). \
+  **Note:** if you're using
+  [giscus-component](https://github.com/giscus/giscus-component), please update
+  to the latest version. The previous iframe resizing technique is now
+  deprecated and will be removed in the future.
+
 ## 2022-02-07
 
 ### Fixed

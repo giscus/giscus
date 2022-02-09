@@ -153,6 +153,7 @@ export default function WidgetPage({
         src="/js/iframeResizer.contentWindow.min.js"
         integrity="sha256-rbC2imHDJIBYUIXvf+XiYY+2cXmiSlctlHgI+rrezQo="
         crossOrigin="anonymous"
+        strategy="lazyOnload"
       />
     </>
   );

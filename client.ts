@@ -1,5 +1,3 @@
-declare let iFrameResize: (options: Record<string, unknown>, selector: string) => void;
-
 (function () {
   const GISCUS_SESSION_KEY = 'giscus-session';
   const script = document.currentScript as HTMLScriptElement;
@@ -8,18 +6,6 @@ declare let iFrameResize: (options: Record<string, unknown>, selector: string) =
   function formatError(message: string) {
     return `[giscus] An error occurred. Error message: "${message}".`;
   }
-
-  // Set up iframeResizer
-  function loadScript(url: string, callback: VoidFunction) {
-    const target = document.createElement('script');
-    target.setAttribute('src', url);
-    target.onload = callback;
-    script.insertAdjacentElement('beforeend', target);
-  }
-
-  loadScript(`${giscusOrigin}/js/iframeResizer.min.js`, () =>
-    iFrameResize({ checkOrigin: [giscusOrigin], resizeFrom: 'child' }, '.giscus-frame'),
-  );
 
   // Set up iframe src URL and params
   const url = new URL(location.href);
@@ -131,12 +117,18 @@ declare let iFrameResize: (options: Record<string, unknown>, selector: string) =
   }
   const suggestion = `Please consider reporting this error at https://github.com/giscus/giscus/issues/new.`;
 
-  // Listen to error messages
+  // Listen to messages
   window.addEventListener('message', (event) => {
     if (event.origin !== giscusOrigin) return;
 
     const { data } = event;
-    if (!(typeof data === 'object' && data?.giscus?.error)) return;
+    if (!(typeof data === 'object' && data.giscus)) return;
+
+    if (data.giscus.resizeHeight) {
+      iframeElement.style.height = `${data.giscus.resizeHeight}px`;
+    }
+
+    if (!data.giscus.error) return;
 
     const message: string = data.giscus.error;
 

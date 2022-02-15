@@ -106,9 +106,11 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
               hidden ? undefined : { __html: processCommentBody(reply.bodyHTML) }
             }
           >
-            <em className="color-text-secondary">
-              {reply.deletedAt ? t('thisCommentWasDeleted') : t('thisCommentWasHidden')}
-            </em>
+            {hidden ? (
+              <em className="color-text-secondary">
+                {reply.deletedAt ? t('thisCommentWasDeleted') : t('thisCommentWasHidden')}
+              </em>
+            ) : null}
           </div>
           {!hidden ? (
             <div className="gsc-reply-reactions">

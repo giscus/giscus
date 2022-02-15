@@ -141,9 +141,11 @@ export default function Comment({
             hidden ? undefined : { __html: processCommentBody(comment.bodyHTML) }
           }
         >
-          <em className="color-text-secondary">
-            {comment.deletedAt ? t('thisCommentWasDeleted') : t('thisCommentWasMinimized')}
-          </em>
+          {hidden ? (
+            <em className="color-text-secondary">
+              {comment.deletedAt ? t('thisCommentWasDeleted') : t('thisCommentWasMinimized')}
+            </em>
+          ) : null}
         </div>
         {children}
         {!comment.isMinimized && onCommentUpdate ? (

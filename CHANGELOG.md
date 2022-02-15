@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-02-16
+
+### Fixed
+
+- Only apply `X-Frame-Options` header on homepage or widget with invalid origin
+  ([#403](https://github.com/giscus/giscus/pull/403)).
+
 ## 2022-02-09
 
 ### Changed

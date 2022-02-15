@@ -346,7 +346,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           !config.categoryId ? ' color-text-secondary' : ''
         }`}
       >
-        <option value="" disabled selected={!config.categoryId} data-category="">
+        <option value="" disabled data-category="">
           {config.mapping === 'number'
             ? t('categoryNotSupportedOption')
             : categories.length

@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-02-18
+
+### Fixed
+
+- Fix height with top input position or reactions disabled
+  ([#409](https://github.com/giscus/giscus/pull/409)).
+
 ## 2022-02-16
 
 ### Fixed

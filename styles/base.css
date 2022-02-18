@@ -450,7 +450,10 @@ img.emoji {
   background-color: var(--color-canvas-default, var(--color-bg-canvas));
 }
 
-.gsc-comments,
+.gsc-timeline.input-top {
+  @apply pb-12;
+}
+
 .gsc-timeline {
   @apply flex flex-col mt-2;
 }

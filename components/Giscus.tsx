@@ -178,7 +178,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
 
         {shouldShowCommentBox && inputPosition === 'top' ? mainCommentBox : null}
 
-        <div className="gsc-timeline">
+        <div className={`gsc-timeline ${inputPosition === 'top' ? 'input-top' : ''}`}>
           {!data.isLoading
             ? data.frontComments.map((comment) => (
                 <Comment

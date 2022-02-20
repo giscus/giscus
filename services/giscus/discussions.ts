@@ -173,7 +173,7 @@ export function useFrontBackDiscussion(
   const {
     data: _backData,
     isLoading: isBackLoading,
-    mutators: backMutators,
+    mutators: _defaultMutators,
     error: backError,
   } = backDiscussion;
 
@@ -184,7 +184,6 @@ export function useFrontBackDiscussion(
   const {
     data: _frontData,
     isLoading: isFrontLoading,
-    mutators: frontMutators,
     size,
     setSize,
     error: frontError,
@@ -219,18 +218,25 @@ export function useFrontBackDiscussion(
     return newData;
   });
 
-  const _backComments = backData?.discussion?.comments || [];
-  const _frontComments = frontData?.flatMap((page) => page?.discussion?.comments || []) || [];
+  let backComments = backData?.discussion?.comments || [];
+  let frontComments = frontData?.flatMap((page) => page?.discussion?.comments || []) || [];
+  let backMutators = backDiscussion.mutators;
+  let frontMutators = frontDiscussion.mutators;
 
-  const frontComments = orderBy === 'oldest' ? _frontComments : _backComments.slice().reverse();
-  const backComments = orderBy === 'oldest' ? _backComments : _frontComments.slice().reverse();
+  if (orderBy === 'newest') {
+    const _frontComments = frontComments;
+    frontComments = backComments.slice().reverse();
+    backComments = _frontComments.slice().reverse();
+    frontMutators = backDiscussion.mutators;
+    backMutators = frontDiscussion.mutators;
+  }
 
   const updateReactions = useCallback(
     (reaction: Reaction, promise: Promise<unknown>) =>
       backData
-        ? backMutators.updateDiscussion([updateDiscussionReaction(backData, reaction)], promise)
-        : promise.then(() => backMutators.mutate()),
-    [backData, backMutators],
+        ? _defaultMutators.updateDiscussion([updateDiscussionReaction(backData, reaction)], promise)
+        : promise.then(() => _defaultMutators.mutate()),
+    [backData, _defaultMutators],
   );
 
   const increaseSize = useCallback(() => setSize(size + 1), [setSize, size]);

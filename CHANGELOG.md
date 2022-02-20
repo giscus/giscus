@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-02-20
+
+### Fixed
+
+- Fix mismatched mutators when comments are ordered by newest-first
+  ([#412](https://github.com/giscus/giscus/pull/412)).
+
 ## 2022-02-18
 
 ### Fixed

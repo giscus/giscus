@@ -231,6 +231,8 @@ export function useFrontBackDiscussion(
     backMutators = frontDiscussion.mutators;
   }
 
+  const addNewComment = _defaultMutators.addNewComment;
+
   const updateReactions = useCallback(
     (reaction: Reaction, promise: Promise<unknown>) =>
       backData
@@ -275,6 +277,7 @@ export function useFrontBackDiscussion(
   const viewer = backData?.viewer;
 
   return {
+    addNewComment,
     updateReactions,
     increaseSize,
     frontData,

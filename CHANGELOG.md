@@ -11,6 +11,9 @@ major updates to the project.
 
 ### Fixed
 
+- Fix new comment creation when comments are ordered by newest-first
+  ([#413](https://github.com/giscus/giscus/pull/413)).
+
 - Fix mismatched mutators when comments are ordered by newest-first
   ([#412](https://github.com/giscus/giscus/pull/412)).
 

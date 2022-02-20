@@ -29,7 +29,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
   const [orderBy, setOrderBy] = useState<CommentOrder>(defaultCommentOrder);
   const query = { repo, term, category, number };
 
-  const { updateReactions, increaseSize, backMutators, frontMutators, ...data } =
+  const { addNewComment, updateReactions, increaseSize, backMutators, frontMutators, ...data } =
     useFrontBackDiscussion(query, token, orderBy);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
       viewer={data.viewer}
       discussionId={data.discussion.id}
       context={repo}
-      onSubmit={backMutators.addNewComment}
+      onSubmit={addNewComment}
       onDiscussionCreateRequest={handleDiscussionCreateRequest}
     />
   );

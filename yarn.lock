@@ -202,38 +202,38 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@prefresh/babel-plugin@0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@prefresh/babel-plugin/-/babel-plugin-0.4.1.tgz#c4e843f7c5e56c15f1185979a8559c893ffb4a35"
-  integrity sha512-gj3ekiYtHlZNz0zFI1z6a9mcYX80Qacw84+2++7V1skvO7kQoV2ux56r8bJkTBbKMVxwAgaYrxxIdUCYlclE7Q==
+"@prefresh/babel-plugin@0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@prefresh/babel-plugin/-/babel-plugin-0.4.3.tgz#175ecf6f7a038d06a83d1806503283c98c7d9865"
+  integrity sha512-fYAWbU1WDSLn108kKY4eDaaeUcnszFqXjgaGKYXNZ5NLulpRTpsrY+Sbfo9q8LDpWrBpqIgzjrwNnvglWI1xNQ==
 
-"@prefresh/core@^1.3.1":
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/@prefresh/core/-/core-1.3.2.tgz#97f966759b16e5f4c52361972e3c61ccac9ce396"
-  integrity sha512-Iv+uI698KDgWsrKpLvOgN3hmAMyvhVgn09mcnhZ98BUNdg/qrxE7tcUf5yFCImkgqED5/Dcn8G5hFy4IikEDvg==
+"@prefresh/core@^1.3.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@prefresh/core/-/core-1.3.3.tgz#309d38ac5a4b4d424ef892310f145e378c775053"
+  integrity sha512-jsF8WQHehaE9dD5JQhjI+Qzp0xib6ZRNUw3kZH6tzFs1cRSAFCHt9p0ybsXmkaJdRcztEIpxkqj/EE91fcKs9w==
 
-"@prefresh/next@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@prefresh/next/-/next-1.5.0.tgz#51d75d370205cc31bb6f0262a7eee19424f82acc"
-  integrity sha512-gDhQ/2YfoDA4oTM2EWQC39Ayu1BasVArPmT3Jhtuf6Ez90CcV5cy+YgVLwyYFuHB3t5eBSZnA29OWzVR3pLCTQ==
+"@prefresh/next@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@prefresh/next/-/next-1.5.2.tgz#a0ae2ac846b954dd6d2d1339958dd2b6d669bcc0"
+  integrity sha512-D5zFTPvAot6GxvMUAaSdCVOO6gJaJ3DhPSnCOlKCVnGQgmq4e+1AbqV+3ylNOfonFLkxxprbiYQslzAM8XHonQ==
   dependencies:
-    "@prefresh/babel-plugin" "0.4.1"
-    "@prefresh/core" "^1.3.1"
-    "@prefresh/utils" "^1.0.0"
-    "@prefresh/webpack" "^3.2.0"
+    "@prefresh/babel-plugin" "0.4.3"
+    "@prefresh/core" "^1.3.3"
+    "@prefresh/utils" "^1.1.2"
+    "@prefresh/webpack" "^3.3.3"
 
-"@prefresh/utils@^1.0.0", "@prefresh/utils@^1.1.0":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@prefresh/utils/-/utils-1.1.1.tgz#ffe7f2e6bd48a0633631a3d92c0ee4bdeb0ac330"
-  integrity sha512-MUhT5m2XNN5NsZl4GnpuvlzLo6VSTa/+wBfBd3fiWUvHGhv0GF9hnA1pd//v0uJaKwUnVRQ1hYElxCV7DtYsCQ==
+"@prefresh/utils@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@prefresh/utils/-/utils-1.1.2.tgz#88e2863bcb3e613e19bf3c3cb2b18135e283bb9b"
+  integrity sha512-NO0MmLNP15VTajILSJ7fZMs4Qt8LpyC0GXyQjIb2CE1WGYe6GjqptZkJHfgTcmTQJ03QHuBs556RrL1D99diPw==
 
-"@prefresh/webpack@^3.2.0":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@prefresh/webpack/-/webpack-3.3.2.tgz#058c4d61d733a4a8c111486f8aa1ae9b89820d9c"
-  integrity sha512-1cX0t5G7IXWO2164sl2O32G02BzDl6C4UUZWfDb0x1CQM1g3It9PSLWd+rIlHfSg4MEU9YHM8e6/OK8uavRJhA==
+"@prefresh/webpack@^3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@prefresh/webpack/-/webpack-3.3.3.tgz#6090d5b7081ad39e926efaae4c344441949b7d0b"
+  integrity sha512-uT+A7ZuA7fuuUPNEde6Gmzr4oFnzreW9xw6iqw01nPpDiv46o6YWq1j0oGCbdffzHl3fBpcgkPuY07vIfmZ9Lg==
   dependencies:
-    "@prefresh/core" "^1.3.1"
-    "@prefresh/utils" "^1.1.0"
+    "@prefresh/core" "^1.3.3"
+    "@prefresh/utils" "^1.1.2"
 
 "@primer/octicons-react@^16.3.1":
   version "16.3.1"

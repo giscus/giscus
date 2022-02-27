@@ -90,6 +90,7 @@ GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utteranc
 - [Polski](README.pl.md)
 - [Română](README.ro.md)
 - [Русский](README.ru.md)
+- [Türkçe](README.tr.md)
 - [Tiếng Việt](README.vi.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)

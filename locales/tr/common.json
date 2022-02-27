@@ -1,0 +1,96 @@
+{
+  "reactions": {
+    "0": "{{count}} tepki",
+    "one": "{{count}} tepki",
+    "other": "{{count}} tepki"
+  },
+  "comment": "Yorum",
+  "comments": {
+    "0": "{{count}} yorum",
+    "one": "{{count}} yorum",
+    "other": "{{count}} yorum"
+  },
+  "reply": "Cevap",
+  "replies": {
+    "0": "{{count}} cevap",
+    "one": "{{count}} cevap",
+    "other": "{{count}}{{plus}} cevap"
+  },
+  "upvotes": {
+    "0": "{{count}} beğeni",
+    "one": "{{count}} beğeni",
+    "other": "{{count}} beğeni"
+  },
+  "hiddenItems": {
+    "0": "{{count}} gizli öğe",
+    "one": "{{count}} gizli öğe",
+    "other": "{{count}} gizli öğe"
+  },
+  "genericError": "Bir hata oluştu: {{message}}",
+  "loadMore": "Daha fazla yükle",
+  "loading": "Yükleniyor",
+  "loadingComments": "Yorumlar yükleniyor…",
+  "loadingPreview": "Önizleme yükleniyor…",
+  "poweredBy": "– <a>giscus</a> tarafından sağlanıyor",
+  "oldest": "En eski",
+  "newest": "En yeni",
+  "showPreviousReplies": {
+    "0": "Önceki {{count}} yanıtı göster",
+    "one": "Önceki {{count}} yanıtı göster",
+    "other": "Önceki {{count}} yanıtı göster"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Önceki {{count}} yanıtı GitHub'da gör",
+    "one": "Önceki {{count}} yanıtı GitHub'da gör",
+    "other": "Önceki {{count}} yanıtı GitHub'da gör"
+  },
+  "edited": "düzenlenmiş",
+  "thisCommentWasDeleted": "Bu yorum silinmiş.",
+  "thisCommentWasMinimized": "Bu yorum küçültülmüş.",
+  "thisCommentWasHidden": "Bu yorum gizlenmiş.",
+  "write": "Yaz",
+  "preview": "Önizleme",
+  "enableFixedWidth": "Editörde sabit genişlik (monospace) yazı tipini etkinleştir",
+  "disableFixedWidth": "Editörde sabit genişlik (monospace) yazı tipini devre dışı bırak",
+  "lastEditedAt": "En son {{date}} tarihinde düzenlenmiş",
+  "writeAComment": "Yorum yaz",
+  "signInToComment": "Yorum yazmak için giriş yap",
+  "stylingWithMarkdownIsSupported": "Markdown ile biçimlendirme destekleniyor",
+  "cancel": "İptal",
+  "signInWithGitHub": "GitHub ile giriş yap",
+  "writeAReply": "Cevap yaz",
+
+  "upvote": "Beğen",
+  "addReactions": "Tepki ekle",
+  "pleaseWait": "Lütfen bekleyin…",
+  "pickYourReaction": "Tepki seçin",
+  "addTheReaction": "{{reaction}} tepkisini ekle",
+  "signInToAddYourReaction": "Tepki vermek için <a>giriş yap</a>.",
+  "youMustBeSignedInToAddReactions": "Tepki eklemek için giriş yapmış olmalısın.",
+  "peopleReactedWith": {
+    "0": "{{count}} kişi {{reaction}} {{emoji}}siyle tepki verdi",
+    "one": "{{count}} kişi {{reaction}} {{emoji}}siyle tepki verdi",
+    "other": "{{count}} kişi {{reaction}} {{emoji}}siyle tepki verdi"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Görüntüleyecek bir şey yok",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Kahkaha",
+  "HOORAY": "Yaşasın",
+  "CONFUSED": "Şaşkın",
+  "HEART": "Kalp",
+  "ROCKET": "Roket",
+  "EYES": "Gözler",
+
+  "COLLABORATOR": "İşbirlikçi",
+  "CONTRIBUTOR": "Katkıcı",
+  "FIRST_TIMER": "İlk-sefer",
+  "FIRST_TIME_CONTRIBUTOR": "İlk-sefer katkıcı",
+  "MANNEQUIN": "Manken",
+  "MEMBER": "Üye",
+  "NONE": "Hiç",
+  "OWNER": "Sahip",
+  "APP": "Uygulama"
+}

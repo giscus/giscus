@@ -26,11 +26,11 @@
     "preact": "^10.6.6",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "swr": "^1.2.1"
+    "swr": "^1.2.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.1.0",
-    "@prefresh/next": "^1.5.0",
+    "@prefresh/next": "^1.5.2",
     "@types/jsonwebtoken": "^8.5.7",
     "@types/node": "^14.18.12",
     "@types/react": "^17.0.39",
@@ -40,14 +40,14 @@
     "cssnano": "^5.0.17",
     "eslint": "^7.22.0",
     "eslint-config-next": "^12.1.0",
-    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.7",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.1",
     "prettier": "^2.5.1",
     "scheduler": "^0.20.2",
-    "stylelint": "^14.5.0",
+    "stylelint": "^14.5.1",
     "stylelint-config-standard": "^25.0.0",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.5.5"

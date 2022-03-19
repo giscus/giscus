@@ -7,7 +7,7 @@
     return `[giscus] An error occurred. Error message: "${message}".`;
   }
 
-  // Set up iframe src URL and params
+  // Set up session and clear the session param on load
   const url = new URL(location.href);
   let session = url.searchParams.get('giscus');
   const savedSession = localStorage.getItem(GISCUS_SESSION_KEY);
@@ -73,6 +73,14 @@
       break;
   }
 
+  // Check anchor of the existing container and append it to origin URL
+  const existingContainer = document.querySelector('.giscus');
+  const id = existingContainer && existingContainer.id;
+  if (id) {
+    params.origin = `${cleanedLocation}#${id}`;
+  }
+
+  // Set up iframe src and loading attribute
   const locale = attributes.lang ? `/${attributes.lang}` : '';
   const src = `${giscusOrigin}${locale}/widget?${new URLSearchParams(params)}`;
   const loading = attributes.loading === 'lazy' ? 'lazy' : undefined;
@@ -106,7 +114,6 @@
   document.head.prepend(style);
 
   // Insert iframe element
-  const existingContainer = document.querySelector('.giscus');
   if (!existingContainer) {
     const iframeContainer = document.createElement('div');
     iframeContainer.setAttribute('class', 'giscus');

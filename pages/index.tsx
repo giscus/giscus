@@ -135,7 +135,7 @@ export default function Home({
           <div className="p-4 pt-0 markdown" dangerouslySetInnerHTML={{ __html: contentAfter }} />
         </Comment>
 
-        <div className="w-full my-8 giscus" />
+        <div id="comments" className="w-full my-8 giscus" />
         <Script
           src="/client.js"
           data-repo="giscus/giscus"

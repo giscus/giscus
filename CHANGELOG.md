@@ -14,6 +14,9 @@ major updates to the project.
 - Add the option to use `loading="lazy"` on the `<iframe>`
   ([#438](https://github.com/giscus/giscus/pull/438)).
 
+- Append container element id as anchor to the origin URL
+  ([#439](https://github.com/giscus/giscus/pull/439)).
+
 ## 2022-03-07
 
 ### Added

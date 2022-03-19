@@ -24,6 +24,17 @@ export function getOriginHost(origin: string) {
   }
 }
 
+export function cleanAnchor(origin: string) {
+  // Make sure the anchor is not followed by / as it means the website probably
+  // is an SPA that uses anchor-based routing.
+  let length = origin.length;
+  const split = origin.split(/#(?!\/)/);
+  if (split.length > 1) {
+    length -= split.pop().length + 1;
+  }
+  return origin.substring(0, length);
+}
+
 export function cleanSessionParam(url: string) {
   try {
     const newUrl = new URL(url);

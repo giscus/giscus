@@ -186,16 +186,16 @@
   dependencies:
     tslib "^2.0.0"
 
-"@peculiar/webcrypto@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@peculiar/webcrypto/-/webcrypto-1.3.1.tgz#cd152b5d41841b4296983425fbeb9defb085bb0a"
-  integrity sha512-BdzqCnzquMaoPYsFqWP/Q8SNslweb6A+oVaVbt9JBuXuvb528CEDUGVA0NSEZrgXj8jt++2kx3anChiKhOV3Nw==
+"@peculiar/webcrypto@^1.3.2":
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@peculiar/webcrypto/-/webcrypto-1.3.2.tgz#8ea98f1410068cf7da0c7e74758a21caa26caf8d"
+  integrity sha512-oUgNj+8oT7uROEMEpZZ3U+kZjyxj1KXuvA8P5kiMUveTya9eyS8KTqu/dzdEtYC3u7dvjknVz+0sUfkWOBHfQg==
   dependencies:
     "@peculiar/asn1-schema" "^2.0.44"
     "@peculiar/json-schema" "^1.1.12"
     pvtsutils "^1.2.2"
     tslib "^2.3.1"
-    webcrypto-core "^1.6.0"
+    webcrypto-core "^1.7.1"
 
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
@@ -316,6 +316,11 @@
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
+"@types/web@^0.0.55":
+  version "0.0.55"
+  resolved "https://registry.yarnpkg.com/@types/web/-/web-0.0.55.tgz#0677cd86c6a4dd8c3592bd5f36435aa7e1b99028"
+  integrity sha512-YMH9aZrSJIMRMioCUwrgauI3iS/w2wRFN45Xxm0FE9Tt3hqaqkvOzjDFGsNjyKZzz7GJC0ilb+0tv59ytSUbrQ==
+
 "@typescript-eslint/eslint-plugin@^4.33.0":
   version "4.33.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.33.0.tgz#c24dc7c8069c7706bc40d99f6fa87edcb2005276"
@@ -429,11 +434,6 @@
   dependencies:
     "@typescript-eslint/types" "5.10.0"
     eslint-visitor-keys "^3.0.0"
-
-"@typescript/lib-dom@npm:@types/web":
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/@types/web/-/web-0.0.54.tgz#1e92b09b80212e7c2024c49fa9d455fab9057593"
-  integrity sha512-LYaiVWt3ZzwTb4Hj9eqDXjN+GI+YphBYJdo3/cQC+qICk1SdbXW1t3YImUaQYKf9//JEM9089ll+owgl/WKuHg==
 
 acorn-jsx@^5.3.1:
   version "5.3.2"
@@ -2975,14 +2975,7 @@ purgecss@^4.0.3:
     postcss "^8.3.5"
     postcss-selector-parser "^6.0.6"
 
-pvtsutils@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/pvtsutils/-/pvtsutils-1.2.1.tgz#8212e846ca9afb21e40cebb0691755649f9f498a"
-  integrity sha512-Q867jEr30lBR2YSFFLZ0/XsEvpweqH6Kj096wmlRAFXrdRGPCNq2iz9B5Tk085EZ+OBZyYAVA5UhPkjSHGrUzQ==
-  dependencies:
-    tslib "^2.3.1"
-
-pvtsutils@^1.2.2:
+pvtsutils@^1.2.1, pvtsutils@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/pvtsutils/-/pvtsutils-1.2.2.tgz#62ef6bc0513cbc255ee02574dedeaa41272d6101"
   integrity sha512-OALo5ZEdqiI127i64+CXwkCOyFHUA+tCQgaUO/MvRDFXWPr53f2sx28ECNztUEzuyu5xvuuD1EB/szg9mwJoGA==
@@ -3690,14 +3683,14 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-webcrypto-core@^1.6.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/webcrypto-core/-/webcrypto-core-1.7.0.tgz#7c1a7e65253d874e081c6d5fbcc48f59bd840137"
-  integrity sha512-7d2yeX62KSjpy8wM6/aJsuKDQjYRlTobxFxh/UM9VPS5usePpsjy5j2Y9Mv0k7dSuUxMo0BaIVmnRRcindi2sA==
+webcrypto-core@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/webcrypto-core/-/webcrypto-core-1.7.1.tgz#eb30112c28d0f75442cfb52cae59676c7fe155ef"
+  integrity sha512-Gw2zLzYSJ7Imp5lLDu3CcWB5oTTACMDEE2PjoLfttGgIhd7BfackBdVgEzd9ZM/i65gpNq0+IelL0JZ48QwzNg==
   dependencies:
     "@peculiar/asn1-schema" "^2.0.44"
     "@peculiar/json-schema" "^1.1.12"
-    "@typescript/lib-dom" "npm:@types/web"
+    "@types/web" "^0.0.55"
     asn1js "^2.2.0"
     pvtsutils "^1.2.2"
     tslib "^2.3.1"

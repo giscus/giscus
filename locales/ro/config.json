@@ -51,6 +51,8 @@
   "discussionMetadataSentPeriodically": "Discussion metadata will be sent periodically to the parent window (the embedding page). For demonstration, enable this option and open your browser's console on this page. See <a>the documentation</a> for more details.",
   "placeCommentBoxAboveComments": "Place the comment box above the comments",
   "commentInputBoxWillBePlacedAboveComments": "The comment input box will be placed above the comments, so that users can leave a comment without scrolling to the bottom of the discussion.",
+  "loadCommentsLazily": "Load the comments lazily",
+  "loadingCommentsWillBeDeferred": "Loading of the comments will be deferred until the user scrolls near the comments container. This is done by adding <a><code>loading=\"lazy\"</code></a> to the <code><iframe></code> element.",
 
   "theme": "Theme",
   "chooseAThemeThatMatches": "Choose a theme that matches your website. Can't find one that does? <a>Contribute</a> a new theme.",

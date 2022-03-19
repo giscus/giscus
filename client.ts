@@ -75,6 +75,7 @@
 
   const locale = attributes.lang ? `/${attributes.lang}` : '';
   const src = `${giscusOrigin}${locale}/widget?${new URLSearchParams(params)}`;
+  const loading = attributes.loading === 'lazy' ? 'lazy' : undefined;
 
   // Set up iframe element
   const iframeElement = document.createElement('iframe');
@@ -83,9 +84,10 @@
     title: 'Comments',
     scrolling: 'no',
     src,
+    loading,
   };
-  Object.entries(iframeAttributes).forEach(([key, value]) =>
-    iframeElement.setAttribute(key, value),
+  Object.entries(iframeAttributes).forEach(
+    ([key, value]) => value && iframeElement.setAttribute(key, value),
   );
 
   // Create default style and prepend as <head>'s first child to make override possible.

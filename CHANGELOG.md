@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-03-19
+
+### Added
+
+- Add the option to use `loading="lazy"` on the `<iframe>`
+  ([#438](https://github.com/giscus/giscus/pull/438)).
+
 ## 2022-03-07
 
 ### Added

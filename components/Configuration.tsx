@@ -42,6 +42,7 @@ interface IConfig {
   category: string;
   categoryId: string;
   useCategory: boolean;
+  lazyLoad: boolean;
 }
 
 const mappingOptions: Array<{
@@ -109,6 +110,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
     category: '',
     categoryId: '',
     useCategory: true,
+    lazyLoad: false,
   });
   const [error, setError] = useState(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
@@ -436,6 +438,33 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           {t('commentInputBoxWillBePlacedAboveComments')}
         </p>
       </div>
+      <div className="form-checkbox">
+        <input
+          type="checkbox"
+          id="lazyLoad"
+          checked={config.lazyLoad}
+          onChange={(event) =>
+            setConfig((current) => ({ ...current, lazyLoad: event.target.checked }))
+          }
+        ></input>
+        <label htmlFor="lazyLoad">
+          <strong>{t('loadCommentsLazily')}</strong>
+        </label>
+        <p className="mb-0 text-xs color-text-secondary">
+          <Trans
+            i18nKey="config:loadingCommentsWillBeDeferred"
+            components={{
+              a: (
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-loading"
+                  target="_blank"
+                  rel="noreferrer noopener nofollow"
+                />
+              ),
+            }}
+          />
+        </p>
+      </div>
 
       <h3>{t('theme')}</h3>
       <p>
@@ -549,6 +578,13 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <span className="pl-c1">data-lang</span>={'"'}
           <span className="pl-s">{directConfig.lang}</span>
           {'"\n        '}
+          {config.lazyLoad ? (
+            <>
+              <span className="pl-c1">data-loading</span>={'"'}
+              <span className="pl-s">lazy</span>
+              {'"\n        '}
+            </>
+          ) : null}
           <span className="pl-c1">crossorigin</span>={'"'}
           <span className="pl-s">anonymous</span>
           {'"\n        '}

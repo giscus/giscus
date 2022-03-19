@@ -58,6 +58,8 @@
   "discussionMetadataSentPeriodically": "Discussion 的後設資料將定期被發送到父頁面（被嵌入 giscus 的頁面）。您可以嘗試啟用此功能，並在此頁打開瀏覽器console。看<a>說明文件</a>了解更多。",
   "placeCommentBoxAboveComments": "將評論框放在評論上方",
   "commentInputBoxWillBePlacedAboveComments": "評論輸入框會放在評論的上方，這樣用戶可以在不滾動到討論底部的情況下發表評論。",
+  "loadCommentsLazily": "懶加載評論",
+  "loadingCommentsWillBeDeferred": "評論的加載將延遲到用戶滾動到評論容器附近。 這是通過將 <a><code>loading=\"lazy\"</code></a> 添加到 <code><iframe></code> 元素來完成的。",
 
   "theme": "主題",
   "chooseAThemeThatMatches": "選擇適合你網站的主題。找不到適合的？來<a>貢獻</a>一個！",

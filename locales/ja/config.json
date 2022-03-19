@@ -51,6 +51,8 @@
   "discussionMetadataSentPeriodically": "Discussionのメタデータは定期的に親画面に送信されます。試しにこのオプションを有効にしてブラウザのコンソールウィンドウを開いてみてください。詳細は<a>ドキュメント</a>をご参照ください。",
   "placeCommentBoxAboveComments": "コメントの上にコメントボックスを配置します",
   "commentInputBoxWillBePlacedAboveComments": "コメント入力ボックスはコメントの上に配置されるため、ユーザーはディスカッションの一番下までスクロールせずにコメントを残すことができます。",
+  "loadCommentsLazily": "コメントを怠惰にロードする",
+  "loadingCommentsWillBeDeferred": "コメントの読み込みは、ユーザーがコメントコンテナの近くをスクロールするまで延期されます。 これは、<a> <code>loading=\"lazy\"</code></a>を<code><iframe></code>要素に追加することで実行されます。",
 
   "theme": "テーマ",
   "chooseAThemeThatMatches": "Webサイトに適したテーマを選択してください。良いものが見つからない場合は、<a>自作して我々に送信</a>することもできます。",

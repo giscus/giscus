@@ -51,6 +51,8 @@
   "reactionsMainPostShownBeforeComments": "Reaksi untuk kiriman utama diskusinya akan ditampilkan di atas komentar.",
   "emitDiscussionMetadata": "Pancarkan metadata diskusi",
   "discussionMetadataSentPeriodically": "Metadata diskusi akan dikirimkan secara berkala ke jendela induk (halaman yang menyematkan diskusi). Untuk demonstrasi, aktifkan opsi ini dan buka konsol peramban Anda pada halaman ini. Baca <a>dokumentasinya</a> untuk detail lebih lanjut.",
+  "loadCommentsLazily": "Muat komentar dengan malas",
+  "loadingCommentsWillBeDeferred": "Pemuatan komentar akan ditunda sampai pengguna menggulir ke dekat wadah komentar. Ini dilakukan dengan menambahkan <a><code>loading=\"lazy\"</code></a> ke elemen <code><iframe></code>.",
 
   "theme": "Tema",
   "chooseAThemeThatMatches": "Pilih tema yang cocok dengan situs web Anda. Tidak ada yang cocok? <a>Buat kontribusi</a> tema baru.",

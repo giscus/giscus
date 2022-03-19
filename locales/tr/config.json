@@ -51,6 +51,8 @@
   "discussionMetadataSentPeriodically": "Tartışma meta verisi belirli periyotlarla ana pencereye (gömülen sayfa) gönderilir. Daha fazla bilgi için <a>dokümantasyonu</a> inceleyin.",
   "placeCommentBoxAboveComments": "Yorum kutusu yorumların üstünde",
   "commentInputBoxWillBePlacedAboveComments": "Yorum kutusu yorumların üstüne konulur, böylece ziyaretçiler tartışmanın sonuna inmeden yorum bırakabilir",
+  "loadCommentsLazily": "Yorumları tembelce yükle",
+  "loadingCommentsWillBeDeferred": "Kullanıcı yorum konteynerinin yanına gelene kadar yorumların yüklenmesi ertelenir. Bu, <code><iframe></code> öğesine <a><code>loading=\"lazy\"</code></a> eklenerek yapılır.",
 
   "theme": "Tema",
   "chooseAThemeThatMatches": "Sitenize uygun bir tema seçin. Uygun bir tema bulamıyor musun? Temalara <a>katkı sağla</a>.",

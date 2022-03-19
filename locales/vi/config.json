@@ -51,6 +51,8 @@
   "discussionMetadataSentPeriodically": "Discussion metadata sẽ được gửi định kỳ đến cửa sổ chính (trang nhúng). Để kiểm tra, hãy bật tùy chọn này và mở bảng điều khiển trình duyệt của bạn trên trang này. Xem <a>tài liệu</a> để biết thêm chi tiết.",
   "placeCommentBoxAboveComments": "Đặt ô bình luận phía trên các bình luận",
   "commentInputBoxWillBePlacedAboveComments": "Trường nhập bình luận sẽ được đặt phía trên bình luận để người dùng có thể để lại bình luận mà không cần phải cuộn đến cuối cuộc thảo luận.",
+  "loadCommentsLazily": "Tải các bình luận một cách lười biếng",
+  "loadingCommentsWillBeDeferred": "Việc tải nhận xét sẽ bị hoãn lại cho đến khi người dùng cuộn đến gần vùng chứa nhận xét. Điều này được thực hiện bằng cách thêm <a><code>loading=\"lazy\"</code></a> vào phần tử <code><iframe></code>.",
 
   "theme": "Chủ đề",
   "chooseAThemeThatMatches": "Chọn một chủ đề phù hợp với trang website của bạn. Không thể tìm thấy một trong đó không? <a>Đóng góp</a> một chủ đề mới.",

@@ -24,6 +24,7 @@ following keys:
 
 - [`origins`](#origins)
 - [`originsRegex`](#originsregex)
+- [`defaultCommentOrder`](#defaultcommentorder)
 
 ### `origins`
 

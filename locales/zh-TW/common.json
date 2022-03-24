@@ -21,7 +21,7 @@
   "loading": "載入中",
   "loadingComments": "正在載入留言……",
   "loadingPreview": "正在載入預覽……",
-  "poweredBy": "– powered by <a>giscus</a>",
+  "poweredBy": "– 威力本源 <a>giscus</a>",
   "oldest": "最舊",
   "newest": "最新",
   "showPreviousReplies": {
@@ -51,8 +51,8 @@
   "pleaseWait": "請稍後……",
   "pickYourReaction": "挑選您的反應",
   "addTheReaction": "表示 {{reaction}}",
-  "signInToAddYourReaction": "<a>登入</a>來添加反應。",
-  "youMustBeSignedInToAddReactions": "你必須登入才能添加反應。",
+  "signInToAddYourReaction": "<a>登入</a>以送出反應。",
+  "youMustBeSignedInToAddReactions": "您必須登入才能送出反應。",
   "peopleReactedWith": {
     "other": "{{count}} 人表示 {{reaction}}"
   },
@@ -61,11 +61,11 @@
 
   "THUMBS_UP": "+1",
   "THUMBS_DOWN": "-1",
-  "LAUGH": "大笑",
+  "LAUGH": "笑死",
   "HOORAY": "好耶",
-  "CONFUSED": "疑惑",
-  "HEART": "愛了",
-  "ROCKET": "上天",
+  "CONFUSED": "蛤",
+  "HEART": "大心",
+  "ROCKET": "一飛衝天",
   "EYES": "看看",
 
   "COLLABORATOR": "協作者",

@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-03-26
+
+### Changed
+
+- Improve reaction button popover menu
+  ([#449](https://github.com/giscus/giscus/pull/449)).
+
 ## 2022-03-19
 
 ### Added

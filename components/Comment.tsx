@@ -174,6 +174,7 @@ export default function Comment({
                   reactionGroups={comment.reactions}
                   subjectId={comment.id}
                   onReact={updateReactions}
+                  popoverPosition="top"
                 />
               ) : null}
             </div>

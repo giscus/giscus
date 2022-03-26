@@ -398,42 +398,6 @@ img.emoji {
   background-color: var(--color-border-muted, var(--color-border-secondary));
 }
 
-.gsc-reactions-popover.open.popover::before {
-  position: absolute;
-  top: -16px;
-  left: 9px;
-  border: 8px solid transparent;
-  border-bottom-color: var(--color-border-default, var(--color-border-primary));
-  content: "";
-}
-
-.gsc-reactions-popover.open.popover::after {
-  position: absolute;
-  top: -15px;
-  left: 10px;
-  border: 7px solid transparent;
-  border-bottom: 8px solid var(--color-canvas-overlay, var(--color-bg-overlay));
-  content: "";
-}
-
-.gsc-reactions-popover.open.popover-only::before {
-  position: absolute;
-  top: -16px;
-  right: 9px;
-  border: 8px solid transparent;
-  border-bottom-color: var(--color-border-default, var(--color-border-primary));
-  content: "";
-}
-
-.gsc-reactions-popover.open.popover-only::after {
-  position: absolute;
-  top: -15px;
-  right: 10px;
-  border: 7px solid transparent;
-  border-bottom: 8px solid var(--color-canvas-overlay, var(--color-bg-overlay));
-  content: "";
-}
-
 .gsc-emoji-button:focus .gsc-emoji,
 .gsc-emoji-button:hover .gsc-emoji {
   @apply inline-block transition-transform;
@@ -448,10 +412,6 @@ img.emoji {
 
 .gsc-homepage-bg {
   background-color: var(--color-canvas-default, var(--color-bg-canvas));
-}
-
-.gsc-timeline.input-top {
-  @apply pb-12;
 }
 
 .gsc-timeline {
@@ -659,6 +619,54 @@ img.emoji {
   color: var(--color-accent-fg, var(--color-text-link));
 }
 
+.gsc-reactions-popover.open::before {
+  @apply absolute border-8 border-transparent border-solid;
+
+  content: "";
+}
+
+.gsc-reactions-popover.open::after {
+  @apply absolute border-[7px] border-transparent border-solid;
+
+  content: "";
+}
+
+.gsc-reactions-popover.open.bottom::before {
+  top: -16px;
+  border-bottom-color: var(--color-border-default, var(--color-border-primary));
+}
+
+.gsc-reactions-popover.open.bottom::after {
+  top: -15px;
+  border-bottom: 8px solid var(--color-canvas-overlay, var(--color-bg-overlay));
+}
+
+.gsc-reactions-popover.open.top::before {
+  bottom: -16px;
+  border-top-color: var(--color-border-default, var(--color-border-primary));
+}
+
+.gsc-reactions-popover.open.top::after {
+  bottom: -15px;
+  border-top: 8px solid var(--color-canvas-overlay, var(--color-bg-overlay));
+}
+
+.gsc-reactions-popover.open.left::before {
+  left: 9px;
+}
+
+.gsc-reactions-popover.open.left::after {
+  left: 10px;
+}
+
+.gsc-reactions-popover.open.right::before {
+  right: 9px;
+}
+
+.gsc-reactions-popover.open.right::after {
+  right: 10px;
+}
+
 .gsc-reactions-popover {
   /* stylelint-disable-next-line max-line-length */
   @apply ease-in-out duration-100 origin-center transform transition z-20 border rounded mt-[2px] absolute invisible scale-50 w-[146px];
@@ -668,8 +676,12 @@ img.emoji {
   @apply visible scale-100;
 }
 
-.gsc-reactions-popover.popover-only {
+.gsc-reactions-popover.right {
   @apply right-0;
+}
+
+.gsc-reactions-popover.top {
+  @apply bottom-8;
 }
 
 .gsc-emoji-button {

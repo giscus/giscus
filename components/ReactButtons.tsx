@@ -10,8 +10,9 @@ import { Trans, useGiscusTranslation } from '../lib/i18n';
 interface IReactButtonsProps {
   reactionGroups?: IReactionGroups;
   subjectId?: string;
-  onReact: (content: Reaction, promise: Promise<unknown>) => void;
   variant?: 'groupsOnly' | 'popoverOnly' | 'all';
+  popoverPosition?: 'top' | 'bottom';
+  onReact: (content: Reaction, promise: Promise<unknown>) => void;
   onDiscussionCreateRequest?: () => Promise<string>;
 }
 
@@ -49,6 +50,7 @@ export default function ReactButtons({
   subjectId,
   onReact,
   variant = 'all',
+  popoverPosition = 'bottom',
   onDiscussionCreateRequest,
 }: IReactButtonsProps) {
   const { t } = useGiscusTranslation();
@@ -126,15 +128,15 @@ export default function ReactButtons({
           <summary
             aria-label={t('addReactions')}
             className={`link-secondary gsc-reactions-button gsc-social-reaction-summary-item ${
-              variant === 'popoverOnly' ? 'popover-only' : 'popover'
+              variant === 'popoverOnly' ? 'popover-only' : ''
             }`}
           >
             <SmileyIcon size={16} />
           </summary>
           <div
-            className={`color-border-primary color-text-secondary color-bg-overlay gsc-reactions-popover ${
+            className={`color-border-primary color-text-secondary color-bg-overlay gsc-reactions-popover ${popoverPosition} ${
               isOpen ? ' open' : ''
-            } ${variant === 'popoverOnly' ? 'popover-only' : 'popover'}`}
+            } ${variant === 'popoverOnly' ? 'right' : 'left'}`}
           >
             <PopupInfo
               isLoading={isSubmitting}

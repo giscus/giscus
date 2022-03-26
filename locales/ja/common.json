@@ -65,6 +65,7 @@
   "pleaseWait": "お待ちください…",
   "pickYourReaction": "リアクションを選択",
   "addTheReaction": "{{reaction}} をリアクションする",
+  "removeTheReaction": "{{reaction}} をリアクション元に戻す",
   "signInToAddYourReaction": "<a>ログイン</a>してリアクションする。",
   "youMustBeSignedInToAddReactions": "リアクションを追加するにはログインする必要があります。",
   "peopleReactedWith": {

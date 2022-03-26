@@ -51,6 +51,7 @@
   "pleaseWait": "請稍後……",
   "pickYourReaction": "挑選您的反應",
   "addTheReaction": "表示 {{reaction}}",
+  "removeTheReaction": "取消表示 {{reaction}}",
   "signInToAddYourReaction": "<a>登入</a>以送出反應。",
   "youMustBeSignedInToAddReactions": "您必須登入才能送出反應。",
   "peopleReactedWith": {

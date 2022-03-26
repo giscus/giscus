@@ -51,6 +51,7 @@
   "pleaseWait": "Mohon tunggu…",
   "pickYourReaction": "Pilih reaksi Anda",
   "addTheReaction": "Tambahkan reaksi {{reaction}}",
+  "removeTheReaction": "Batalkan reaksi {{reaction}}",
   "signInToAddYourReaction": "<a>Masuk</a> untuk menambahkan reaksi Anda.",
   "youMustBeSignedInToAddReactions": "Anda harus masuk untuk menambahkan reaksi.",
   "peopleReactedWith": {

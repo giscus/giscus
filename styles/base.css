@@ -136,7 +136,7 @@ a {
 }
 
 .BtnGroup-item:first-child:not(:only-child) {
-  @apply rounded-r-none rounded-l;
+  @apply rounded-l rounded-r-none;
 }
 
 .BtnGroup-item:last-child:not(:only-child) {
@@ -475,7 +475,7 @@ img.emoji {
 }
 
 .gsc-header {
-  @apply flex flex-auto items-center;
+  @apply flex items-center flex-auto;
 }
 
 .gsc-left-header {
@@ -537,7 +537,7 @@ img.emoji {
 }
 
 .gsc-comment-box {
-  @apply w-full text-sm mt-4;
+  @apply w-full mt-4 text-sm;
 }
 
 .gsc-comment-box:not(.gsc-comment-box-is-reply) {
@@ -640,7 +640,11 @@ img.emoji {
 }
 
 .gsc-reactions-button {
-  @apply px-[5px] py-[3px] mr-2 leading-[inherit] text-xs;
+  @apply px-[5px] py-[3px] mr-2 leading-[inherit] text-xs cursor-pointer;
+}
+
+.gsc-reactions-button::marker {
+  content: "";
 }
 
 .gsc-reactions-button:hover {

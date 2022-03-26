@@ -65,6 +65,7 @@
   "pleaseWait": "Espere por favor…",
   "pickYourReaction": "Elige tu reacción",
   "addTheReaction": "Agregar reacción de {{reaction}}",
+  "removeTheReaction": "Eliminar reacción de {{reaction}}",
   "signInToAddYourReaction": "<a> Inicie sesión</a> para agregar su reacción.",
   "youMustBeSignedInToAddReactions": "Debes iniciar sesión para agregar reacciones.",
   "peopleReactedWith": {

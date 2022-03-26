@@ -72,6 +72,7 @@
   "pleaseWait": "Te rog așteaptă…",
   "pickYourReaction": "Alege reacția",
   "addTheReaction": "Add {{reaction}} reaction",
+  "removeTheReaction": "Remove {{reaction}} reaction",
   "signInToAddYourReaction": "<a>Logare</a> pentru a adăuga reacția",
   "youMustBeSignedInToAddReactions": "Trebuie să fii logat pentru a adăuga reacții.",
   "peopleReactedWith": {

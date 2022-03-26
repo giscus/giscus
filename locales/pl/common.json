@@ -79,6 +79,7 @@
   "pleaseWait": "Proszę czekać…",
   "pickYourReaction": "Wybierz reakcję",
   "addTheReaction": "Add {{reaction}} reaction",
+  "removeTheReaction": "Remove {{reaction}} reaction",
   "signInToAddYourReaction": "<a>Zaloguj się</a> aby dodać reakcję.",
   "youMustBeSignedInToAddReactions": "Musisz być zalogowany/a aby dodawać reakcje.",
   "peopleReactedWith": {

@@ -79,6 +79,7 @@
   "pleaseWait": "Пожалуйста, подождите…",
   "pickYourReaction": "Выберите свой отклик",
   "addTheReaction": "Оставить {{reaction}} отклик",
+  "removeTheReaction": "Отменить {{reaction}} отклик",
   "signInToAddYourReaction": "<a>Войдите</a>, чтобы оставить свой отклик.",
   "youMustBeSignedInToAddReactions": "Вы должны авторизоваться, чтобы оставить отклик.",
   "peopleReactedWith": {

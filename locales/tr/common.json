@@ -65,6 +65,7 @@
   "pleaseWait": "Lütfen bekleyin…",
   "pickYourReaction": "Tepki seçin",
   "addTheReaction": "{{reaction}} tepkisini ekle",
+  "removeTheReaction": "{{reaction}} tepkisini kaldır",
   "signInToAddYourReaction": "Tepki vermek için <a>giriş yap</a>.",
   "youMustBeSignedInToAddReactions": "Tepki eklemek için giriş yapmış olmalısın.",
   "peopleReactedWith": {

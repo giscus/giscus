@@ -65,6 +65,7 @@
   "pleaseWait": "Vui lòng đợi…",
   "pickYourReaction": "Chọn reaction của bạn",
   "addTheReaction": "Thêm {{reaction}} reaction",
+  "removeTheReaction": "Xóa {{reaction}} reaction",
   "signInToAddYourReaction": "<a>Đăng nhập</a> để thêm reaction của bạn.",
   "youMustBeSignedInToAddReactions": "Bạn phải đăng nhập để thêm reaction.",
   "peopleReactedWith": {

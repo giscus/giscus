@@ -51,6 +51,7 @@
   "pleaseWait": "请稍候……",
   "pickYourReaction": "选择你的反应",
   "addTheReaction": "表示 {{reaction}}",
+  "removeTheReaction": "取消表示 {{reaction}}",
   "signInToAddYourReaction": "<a>登录</a>以添加反应。",
   "youMustBeSignedInToAddReactions": "你必须登录才能添加反应。",
   "peopleReactedWith": {

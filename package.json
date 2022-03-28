@@ -18,7 +18,7 @@
     "lint": "eslint . --cache && stylelint **/*.css"
   },
   "dependencies": {
-    "@peculiar/webcrypto": "^1.3.1",
+    "@peculiar/webcrypto": "^1.3.3",
     "@primer/octicons-react": "^17.0.0",
     "jsonwebtoken": "^8.5.1",
     "next": "^12.1.0",

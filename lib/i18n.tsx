@@ -221,6 +221,34 @@ export function useDateFormatter() {
   );
 }
 
+interface FormatParamsDate {
+  format: Intl.DateTimeFormat;
+  value: Date;
+}
+
+interface FormatParamsRelative {
+  format: Intl.RelativeTimeFormat;
+  value: number;
+  unit: Intl.RelativeTimeFormatUnit;
+}
+
+function format(params: FormatParamsDate): string;
+function format(params: FormatParamsRelative): string;
+function format(p: FormatParamsDate | FormatParamsRelative): string {
+  const isDate = !('unit' in p);
+  const { locale } = p.format.resolvedOptions();
+
+  if (locale === 'zh-CN' || locale === 'zh-TW') {
+    const dateParts = isDate
+      ? p.format.formatToParts(p.value)
+      : p.format.formatToParts(p.value, p.unit);
+    // Add spaces between date parts
+    return dateParts.map(({ value }) => value).join(' ');
+  }
+
+  return isDate ? p.format.format(p.value) : p.format.format(p.value, p.unit);
+}
+
 export function useRelativeTimeFormatter() {
   const { lang } = useTranslation('common');
   const sdyf: Intl.DateTimeFormat = shortDateYearFormatters[lang] ?? shortDateYearFormatters.en;
@@ -238,12 +266,12 @@ export function useRelativeTimeFormatter() {
       const diffInDays = Math.floor(diffInHours / 24);
       const diffInYears = now.getUTCFullYear() - dateObj.getUTCFullYear();
 
-      if (diffInYears > 0) return sdyf.format(dateObj);
-      if (diffInDays >= 30) return sdf.format(dateObj);
-      if (diffInDays > 0) return rtf.format(-diffInDays, 'day');
-      if (diffInHours > 0) return rtf.format(-diffInHours, 'hour');
-      if (diffInMinutes > 0) return rtf.format(-diffInMinutes, 'minute');
-      return rtf.format(-diffInSeconds, 'second');
+      if (diffInYears > 0) return format({ format: sdyf, value: dateObj });
+      if (diffInDays >= 30) return format({ format: sdf, value: dateObj });
+      if (diffInDays > 0) return format({ format: rtf, value: -diffInDays, unit: 'day' });
+      if (diffInHours > 0) return format({ format: rtf, value: -diffInHours, unit: 'hour' });
+      if (diffInMinutes > 0) return format({ format: rtf, value: -diffInMinutes, unit: 'minute' });
+      return format({ format: rtf, value: -diffInSeconds, unit: 'second' });
     },
     [sdyf, sdf, rtf],
   );

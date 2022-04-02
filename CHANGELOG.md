@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-04-02
+
+### Changed
+
+- Add spaces between date parts for Chinese locale
+  ([#464](https://github.com/giscus/giscus/pull/464)).
+
 ## 2022-03-26
 
 ### Changed

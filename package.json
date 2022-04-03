@@ -15,7 +15,10 @@
     "dev": "yarn cscript --watch --preserveWatchOutput & yarn cthemes --watch & next dev",
     "build": "yarn cscript && yarn cthemes && yarn mscript && next build",
     "start": "next start",
-    "lint": "eslint . --cache && stylelint **/*.css"
+    "lint": "eslint . --cache && stylelint **/*.css",
+    "lint:fix": "eslint --fix . --cache && stylelint **/*.css",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "dependencies": {
     "@peculiar/webcrypto": "^1.3.3",

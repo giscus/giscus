@@ -1,8 +1,5 @@
 {
-  "origins": [
-    "https://giscus.app",
-    "https://giscus.vercel.app"
-  ],
+  "origins": ["https://giscus.app", "https://giscus.vercel.app"],
   "originsRegex": [
     "https://giscus-git-([A-z0-9]|-)*giscus\\.vercel\\.app",
     "http://localhost:[0-9]+"

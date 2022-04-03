@@ -38,8 +38,11 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Run ESLint
+      - name: Run ESLint and Stylelint
         run: yarn lint
+
+      - name: Run Prettier
+        run: yarn format
 
       - name: Build project
         run: yarn build

@@ -1,6 +1,6 @@
 {
-  "name": "giscus",
-  "version": "0.1.0",
+  "name": "giscus.app",
+  "version": "0.0.0",
   "private": false,
   "browserslist": [
     ">0.3%",

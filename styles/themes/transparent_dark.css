@@ -66,7 +66,7 @@ main {
   --color-canvas-subtle: transparent;
   --color-border-default: #30363d;
   --color-border-muted: #21262d;
-  --color-neutral-muted: rgb(110 118 129 / 40%);
+  --color-neutral-muted: rgb(110 118 129 / 5%);
   --color-neutral-subtle: rgb(110 118 129 / 10%);
   --color-accent-fg: #58a6ff;
   --color-accent-emphasis: #1f6feb;

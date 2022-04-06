@@ -187,7 +187,7 @@ export default function Comment({
         ) : null}
         {comment.replies.length > 0 ? (
           <div
-            className={`color-bg-canvas-inset color-border-primary gsc-replies ${
+            className={`color-bg-inset color-border-primary gsc-replies ${
               !replyBox || hidden ? 'rounded-b-md' : ''
             }`}
           >

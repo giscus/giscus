@@ -19,11 +19,13 @@ a {
   }
 }
 
-.color-bg-primary {
+.color-bg-primary,
+.color-bg-default {
   background-color: var(--color-canvas-default, var(--color-bg-primary));
 }
 
-.color-bg-secondary {
+.color-bg-secondary,
+.color-bg-subtle {
   background-color: var(--color-canvas-subtle, var(--color-bg-secondary));
 }
 
@@ -35,7 +37,7 @@ a {
   background-color: var(--color-canvas-default, var(--color-bg-canvas));
 }
 
-.color-bg-canvas-inset {
+.color-bg-inset {
   background-color: var(--color-canvas-inset, var(--color-bg-canvas-inset));
 }
 
@@ -47,6 +49,7 @@ a {
   background-color: var(--color-accent-subtle, var(--color-bg-info));
 }
 
+.color-fg-default,
 .color-text-primary,
 .link-primary {
   color: var(--color-fg-default, var(--color-text-primary));
@@ -56,6 +59,10 @@ a {
 .color-text-secondary,
 .link-secondary {
   color: var(--color-fg-muted, var(--color-text-secondary));
+}
+
+.color-fg-subtle {
+  color: var(--color-fg-subtle, var(--color-diff-blob-num-text));
 }
 
 .color-text-tertiary {
@@ -327,7 +334,7 @@ a {
   @apply inline-block h-3 px-2 text-xs font-semibold leading-[6px] no-underline align-middle border;
 
   color: var(--color-fg-default, var(--color-text-primary));
-  background: var(--color-neutral-muted, var(--color-hidden-text-expander-bg));
+  background-color: var(--color-neutral-muted, var(--color-hidden-text-expander-bg));
 }
 
 .email-quoted-reply,
@@ -722,6 +729,11 @@ img.emoji {
 
 .gsc-reply-content {
   @apply w-full pr-4 pb-2;
+}
+
+.gsc-reply-content .markdown pre,
+.gsc-reply-content.markdown .highlight pre {
+  background-color: var(--color-neutral-muted, var(--color-hidden-text-expander-bg));
 }
 
 .gsc-reply-content.not-shown {

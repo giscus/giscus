@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-04-06
+
+### Fixed
+
+- Minor style fixes
+  ([#475](https://github.com/giscus/giscus/pull/475)).
+
 ## 2022-04-02
 
 ### Changed

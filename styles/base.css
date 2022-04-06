@@ -721,11 +721,11 @@ img.emoji {
 }
 
 .gsc-reply-content {
-  @apply w-full pr-4;
+  @apply w-full pr-4 pb-2;
 }
 
 .gsc-reply-content.not-shown {
-  @apply pb-2;
+  @apply pb-0;
 }
 
 .gsc-reply-reactions {

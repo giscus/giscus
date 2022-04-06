@@ -497,11 +497,11 @@ img.emoji {
 }
 
 .gsc-comment-box {
-  @apply w-full mt-4 text-sm;
+  @apply w-full text-sm;
 }
 
 .gsc-comment-box:not(.gsc-comment-box-is-reply) {
-  @apply border rounded;
+  @apply border rounded mt-4;
 }
 
 .gsc-comment-box-tabs {

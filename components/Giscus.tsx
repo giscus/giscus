@@ -75,6 +75,15 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     (data.isRateLimited && !token) ||
     (!data.isLoading && !data.isLocked && (!data.error || (data.isNotFound && !number)));
 
+  if (data.isLoading) {
+    return (
+      <div className="gsc-loading">
+        <div className="gsc-loading-image" />
+        <span className="gsc-loading-text color-fg-muted">{t('loadingComments')}</span>
+      </div>
+    );
+  }
+
   return (
     <div className="color-text-primary gsc-main">
       {reactionsEnabled && !data.isLoading && (shouldCreateDiscussion || !data.error) ? (
@@ -112,8 +121,6 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                 t('comments', { count: 0 })
               ) : data.error && !data.backData ? (
                 t('genericError', { message: data.error?.message || '' })
-              ) : data.isLoading ? (
-                t('loadingComments')
               ) : (
                 <a
                   href={data.discussion.url}

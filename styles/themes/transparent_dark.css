@@ -109,3 +109,7 @@ main .pagination-loader-container {
     background-position: 2% 0%;
   }
 }
+
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-dark.gif");
+}

@@ -399,6 +399,20 @@ img.emoji {
 
 /*! giscus-specific styles */
 
+.gsc-loading {
+  @apply flex flex-col items-center gap-4;
+}
+
+.gsc-loading-image {
+  @apply w-12 h-12 bg-contain bg-no-repeat;
+
+  background-image: url("https://github.githubassets.com/images/mona-loading-default.gif");
+}
+
+.gsc-loading-text {
+  @apply text-sm;
+}
+
 .gsc-tl-line {
   @apply w-[2px] flex-shrink-0 absolute left-[30px] h-full top-0;
 

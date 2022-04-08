@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-04-09
+
+### Changed
+
+- Use GitHub's Mona loading animation
+  ([#477](https://github.com/giscus/giscus/pull/477)).
+
 ## 2022-04-06
 
 ### Fixed

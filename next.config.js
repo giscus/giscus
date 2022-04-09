@@ -62,9 +62,7 @@ module.exports = withBundleAnalyzer(
           },
         ];
       },
-      webpack: (config, { dev, isServer }) => {
-        if (dev || isServer) return config;
-
+      webpack: (config) => {
         config.resolve.alias = {
           ...config.resolve.alias,
           react: 'preact/compat',

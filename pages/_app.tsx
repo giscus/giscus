@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV === 'development') {
+  import('preact/debug');
+}
+
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 import '../styles/base.css';

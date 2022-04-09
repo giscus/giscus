@@ -61,6 +61,7 @@
   "writeAReply": "Cevap yaz",
 
   "upvote": "Beğen",
+  "youMustBeSignedInToUpvote": "Oy vermek için giriş yapmış olmalısın.",
   "addReactions": "Tepki ekle",
   "pleaseWait": "Lütfen bekleyin…",
   "pickYourReaction": "Tepki seçin",

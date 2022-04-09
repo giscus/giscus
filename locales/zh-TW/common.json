@@ -47,6 +47,7 @@
   "writeAReply": "寫回覆",
 
   "upvote": "贊同",
+  "youMustBeSignedInToUpvote": "你必須登錄才能投票。",
   "addReactions": "加反應",
   "pleaseWait": "請稍後……",
   "pickYourReaction": "挑選您的反應",

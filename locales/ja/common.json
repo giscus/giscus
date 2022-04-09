@@ -62,6 +62,7 @@
 
   "upvote": "いいね",
   "addReactions": "リアクションを追加",
+  "youMustBeSignedInToUpvote": "賛成するにはログインする必要があります。",
   "pleaseWait": "お待ちください…",
   "pickYourReaction": "リアクションを選択",
   "addTheReaction": "{{reaction}} をリアクションする",

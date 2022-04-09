@@ -47,6 +47,7 @@
   "writeAReply": "Tulis balasan",
 
   "upvote": "Beri suara positif",
+  "youMustBeSignedInToUpvote": "Anda harus masuk untuk memberi suara.",
   "addReactions": "Tambahkan reaksi",
   "pleaseWait": "Mohon tunggu…",
   "pickYourReaction": "Pilih reaksi Anda",

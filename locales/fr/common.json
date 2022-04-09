@@ -61,6 +61,7 @@
   "writeAReply": "Écrire une réponse",
 
   "upvote": "Voter pour",
+  "youMustBeSignedInToUpvote": "Vous devez être identifié·e pour voter.",
   "addReactions": "Ajouter des réactions",
   "pleaseWait": "Veuillez patienter…",
   "pickYourReaction": "Choisir une réaction",

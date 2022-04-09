@@ -61,6 +61,7 @@
   "writeAReply": "Schreibe eine Antwort",
 
   "upvote": "Upvoten",
+  "youMustBeSignedInToUpvote": "Du musst angemeldet sein um upvoten.",
   "addReactions": "Reaktion hinzufügen",
   "pleaseWait": "Bitte warten…",
   "pickYourReaction": "Wähle deine Reaktion",

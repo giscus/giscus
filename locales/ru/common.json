@@ -75,6 +75,7 @@
   "writeAReply": "Оставить комментарий",
 
   "upvote": "Проголосовать",
+  "youMustBeSignedInToUpvote": "Вы должны авторизоваться, чтобы проголосовать.",
   "addReactions": "Добавить свой отклик",
   "pleaseWait": "Пожалуйста, подождите…",
   "pickYourReaction": "Выберите свой отклик",

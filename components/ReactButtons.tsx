@@ -79,39 +79,41 @@ export default function ReactButtons({
     [isSubmitting, onDiscussionCreateRequest, onReact, reactionGroups, subjectId, token],
   );
 
-  const createReactionButton = useCallback(
-    ([key, { count, viewerHasReacted }]: [Reaction, typeof reactionGroups[Reaction]]) => (
-      <button
-        aria-label={t('addTheReaction', { reaction: t(key) })}
-        key={key}
-        className={`gsc-direct-reaction-button gsc-social-reaction-summary-item ${
-          viewerHasReacted ? 'has-reacted' : ''
-        }${!token ? ' cursor-not-allowed' : ''}`}
-        disabled={!token}
-        title={
-          token
-            ? t('peopleReactedWith', {
-                count,
-                reaction: t(key),
-                emoji: t('emoji'),
-              })
-            : t('youMustBeSignedInToAddReactions')
-        }
-        onClick={() => react(key)}
-      >
-        <span className="gsc-direct-reaction-button-emoji">{Reactions[key]}</span>
-        <span className="gsc-social-reaction-summary-item-count">{count}</span>
-      </button>
-    ),
-    [react, token, t],
-  );
-
   const directReactionButtons =
-    variant !== 'popoverOnly'
-      ? Object.entries(reactionGroups || {})
+    variant === 'popoverOnly'
+      ? []
+      : Object.entries(reactionGroups || {})
           .filter(([, { count }]) => count > 0)
-          .map(createReactionButton)
-      : [];
+          .map(
+            ([key, { count, viewerHasReacted }]: [Reaction, typeof reactionGroups[Reaction]]) => (
+              <button
+                key={key}
+                className={`gsc-direct-reaction-button gsc-social-reaction-summary-item ${
+                  viewerHasReacted ? 'has-reacted' : ''
+                }${!token ? ' cursor-not-allowed' : ''}`}
+                disabled={!token}
+                onClick={() => react(key)}
+                aria-label={
+                  token
+                    ? t('addTheReaction', { reaction: t(key) })
+                    : t('youMustBeSignedInToAddReactions')
+                }
+                title={
+                  token
+                    ? t('peopleReactedWith', { count, reaction: t(key), emoji: t('emoji') })
+                    : t('youMustBeSignedInToAddReactions')
+                }
+              >
+                <span className="gsc-direct-reaction-button-emoji">{Reactions[key]}</span>
+                <span
+                  className="gsc-social-reaction-summary-item-count"
+                  title={t('peopleReactedWith', { count, reaction: t(key), emoji: t('emoji') })}
+                >
+                  {count}
+                </span>
+              </button>
+            ),
+          );
 
   return (
     <>

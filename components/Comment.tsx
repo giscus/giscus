@@ -158,7 +158,12 @@ export default function Comment({
                 }`}
                 onClick={upvote}
                 disabled={!token || !comment.viewerCanUpvote}
-                aria-label={t('upvote')}
+                aria-label={token ? t('upvote') : t('youMustBeSignedInToUpvote')}
+                title={
+                  token
+                    ? t('upvotes', { count: comment.upvoteCount })
+                    : t('youMustBeSignedInToUpvote')
+                }
               >
                 <ArrowUpIcon className="gsc-direct-reaction-button-emoji" />
 

@@ -62,6 +62,7 @@
 
   "upvote": "Upvoten",
   "addReactions": "Reaktion hinzufügen",
+  "youMustBeSignedInToUpvote": "Du musst angemeldet sein um upvoten.",
   "pleaseWait": "Bitte warten…",
   "pickYourReaction": "Wähle deine Reaktion",
   "addTheReaction": "Reaktion {{reaction}} hinzufügen",

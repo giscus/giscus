@@ -141,7 +141,10 @@ export function handleCommentClick(event: ReactMouseEvent<HTMLElement, MouseEven
 
 export function processCommentBody(bodyHTML: string) {
   if (typeof document === 'undefined') {
-    return bodyHTML.replace(/<a href/g, '<a target="_top" rel="noopener noreferrer nofollow" href');
+    return bodyHTML.replace(
+      /<a (href="[^"]*")/g,
+      '<a $1 rel="noopener noreferrer nofollow" target="_top"',
+    );
   }
 
   const template = document.createElement('template');
@@ -164,8 +167,8 @@ export function processCommentBody(bodyHTML: string) {
       return;
     }
 
-    a.target = '_top';
     a.rel = 'noopener noreferrer nofollow';
+    a.target = '_top';
   });
 
   content

@@ -502,15 +502,15 @@ img.emoji {
 }
 
 .gsc-comment-footer {
-  @apply flex content-center justify-between mb-3;
+  @apply flex content-center justify-between mb-3 gap-2;
 }
 
 .gsc-comment-reactions {
-  @apply flex items-start justify-end ml-4;
+  @apply flex items-start justify-end ml-4 gap-2;
 }
 
 .gsc-comment-replies-count {
-  @apply mr-4 whitespace-nowrap;
+  @apply mr-4 whitespace-nowrap flex items-center;
 }
 
 .gsc-replies {
@@ -575,7 +575,7 @@ img.emoji {
 }
 
 .gsc-social-reaction-summary-item {
-  @apply px-[6px] rounded-full leading-[24px] border whitespace-nowrap;
+  @apply px-[4px] h-[26px] flex items-center justify-center rounded-full text-xs leading-[24px] border whitespace-nowrap;
 
   background-color: transparent;
   border-color: var(--color-border-default, var(--color-border-primary));
@@ -600,20 +600,20 @@ img.emoji {
   @apply cursor-not-allowed;
 }
 
+.gsc-social-reaction-summary-item-count {
+  @apply px-1 ml-[2px] max-w-[100px] overflow-hidden overflow-ellipsis whitespace-nowrap;
+}
+
+.gsc-direct-reaction-button-emoji {
+  @apply inline-block w-4 h-4 leading-tight;
+}
+
 .gsc-upvotes {
   @apply flex-shrink-0 mr-2 text-center w-14;
 }
 
-.gsc-upvote-count {
-  @apply px-1 ml-[2px] overflow-x-hidden overflow-ellipsis text-xs leading-5 min-w-[26px] w-min mx-auto rounded-full;
-}
-
 .gsc-upvote-button {
-  @apply mr-2;
-}
-
-.gsc-upvote-button:hover svg {
-  @apply transform translate-y-[-10%] transition-transform ease-in-out duration-150;
+  @apply font-medium;
 }
 
 .gsc-reactions-menu {
@@ -621,7 +621,7 @@ img.emoji {
 }
 
 .gsc-reactions-button {
-  @apply w-[26px] h-[26px] px-0 flex items-center justify-center mr-2 leading-tight text-xs cursor-pointer;
+  @apply w-[26px] h-[26px] px-0 flex items-center justify-center leading-tight text-xs cursor-pointer;
 }
 
 .gsc-reactions-button::marker {
@@ -718,11 +718,11 @@ img.emoji {
 }
 
 .gsc-direct-reaction-buttons {
-  @apply flex flex-wrap;
+  @apply flex flex-wrap gap-2;
 }
 
 .gsc-direct-reaction-button {
-  @apply mb-1 mr-2 border;
+  @apply border items-baseline;
 }
 
 .gsc-reply {

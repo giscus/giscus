@@ -160,10 +160,10 @@ export default function Comment({
                 disabled={!token || !comment.viewerCanUpvote}
                 aria-label={t('upvote')}
               >
-                <ArrowUpIcon />
+                <ArrowUpIcon className="gsc-direct-reaction-button-emoji" />
 
                 <span
-                  className="gsc-upvote-count"
+                  className="gsc-social-reaction-summary-item-count"
                   title={t('upvotes', { count: comment.upvoteCount })}
                 >
                   {comment.upvoteCount}

@@ -99,8 +99,8 @@ export default function ReactButtons({
         }
         onClick={() => react(key)}
       >
-        <span className="inline-block w-4 h-4">{Reactions[key]}</span>
-        <span className="text-xs ml-[2px] px-1">{count}</span>
+        <span className="gsc-direct-reaction-button-emoji">{Reactions[key]}</span>
+        <span className="gsc-social-reaction-summary-item-count">{count}</span>
       </button>
     ),
     [react, token, t],

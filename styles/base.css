@@ -353,28 +353,23 @@ a {
   @apply block;
 }
 
-.snippet-clipboard-content .zeroclipboard-container,
-.highlight .zeroclipboard-container {
+.ClipboardButton {
+  @apply p-0 m-2;
+}
+
+.snippet-clipboard-content .ClipboardButton,
+.highlight .ClipboardButton {
   @apply opacity-0;
 
   animation: fade-out 0.2s both;
 }
 
-.snippet-clipboard-content:hover .zeroclipboard-container,
-.highlight:hover .zeroclipboard-container {
+.ClipboardButton:focus,
+.snippet-clipboard-content:hover .ClipboardButton,
+.highlight:hover .ClipboardButton, {
   @apply opacity-100;
 
   animation: fade-in 0.2s both;
-}
-
-.zeroclipboard-link {
-  @apply p-0 m-0 cursor-pointer;
-
-  color: var(--color-accent-fg, var(--color-text-link));
-}
-
-.ClipboardButton {
-  @apply p-0 m-2;
 }
 
 img.emoji {

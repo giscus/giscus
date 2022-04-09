@@ -14,6 +14,11 @@ major updates to the project.
 - Use GitHub's Mona loading animation
   ([#477](https://github.com/giscus/giscus/pull/477)).
 
+### Fixed
+
+- Minor style fixes
+  ([#484](https://github.com/giscus/giscus/pull/484)).
+
 ## 2022-04-06
 
 ### Fixed

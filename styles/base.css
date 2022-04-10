@@ -616,7 +616,12 @@ img.emoji {
 }
 
 .gsc-reactions-button {
-  @apply w-[26px] h-[26px] px-0 flex items-center justify-center leading-tight text-xs cursor-pointer;
+  @apply w-[26px] h-[26px] px-0 flex items-center justify-center leading-tight text-xs cursor-pointer list-none;
+}
+
+.gsc-reactions-button::before,
+.gsc-reactions-button::-webkit-details-marker {
+  display: none;
 }
 
 .gsc-reactions-button::marker {

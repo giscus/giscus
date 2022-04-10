@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-04-10
+
+### Fixed
+
+- Remove `<summary>` marker for reactions button on Safari
+  ([#486](https://github.com/giscus/giscus/pull/486)).
+
 ## 2022-04-09
 
 ### Changed

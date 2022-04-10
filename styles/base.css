@@ -405,7 +405,7 @@ img.emoji {
 }
 
 .gsc-loading-text {
-  @apply text-sm;
+  @apply text-sm whitespace-nowrap text-center w-full;
 }
 
 .gsc-tl-line {

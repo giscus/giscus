@@ -104,6 +104,7 @@
   style.textContent = `
   .giscus, .giscus-frame {
     width: 100%;
+    min-height: 150px;
   }
 
   .giscus-frame {

@@ -32,7 +32,7 @@
     "swr": "^1.2.2"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^12.1.4",
+    "@next/bundle-analyzer": "^12.1.5",
     "@prefresh/next": "^1.5.2",
     "@types/jsonwebtoken": "^8.5.7",
     "@types/node": "^14.18.12",

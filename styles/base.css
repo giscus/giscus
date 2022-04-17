@@ -617,6 +617,8 @@ img.emoji {
 
 .gsc-reactions-button {
   @apply w-[26px] h-[26px] px-0 flex items-center justify-center leading-tight text-xs cursor-pointer list-none;
+
+  background-color: var(--color-canvas-subtle, var(--color-bg-secondary));
 }
 
 .gsc-reactions-button::before,

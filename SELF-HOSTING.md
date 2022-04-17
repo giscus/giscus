@@ -18,8 +18,6 @@ the web app. You can use this guide as a reference.
 - [Install the app](#install-the-app)
 - [Configure Supabase for caching access tokens (optional)](#configure-supabase-for-caching-access-tokens-optional)
 - [Deploy giscus](#deploy-giscus)
-  - [As a Next.js application with API routes](#as-a-nextjs-application-with-api-routes)
-  - [As a static website and separate serverless functions](#as-a-static-website-and-separate-serverless-functions)
 - [Use the deployed self-hosted giscus](#use-the-deployed-self-hosted-giscus)
 
 ## Create a new GitHub App
@@ -195,29 +193,12 @@ The [giscus.app][giscus] website is hosted on [Vercel][vercel], but you can
 deploy it anywhere that can run a Next.js application and its serverless
 functions.
 
-### As a Next.js application with API routes
-
 - Clone the repository.
 - Generate a random string with a reasonable length (e.g. 64 characters) that
   will be used to encrypt the user token.
-- Set the following [example environment variables][env-example] in your
-  deployment and change the values accordingly. On a server, you can put it in
+- Set the [example environment variables][env-example] in your
+  deployment and change the values accordingly. On a server, you can put them in
   a `.env.local` file and Next.js will automatically pick it up.
-
-  ```
-  NEXT_PUBLIC_GISCUS_APP_HOST=https://giscus.app
-  GITHUB_APP_ID=123456
-  GITHUB_CLIENT_ID=Iv1.abcd1234wxyz5678
-  GITHUB_CLIENT_SECRET=abcd1234wxyz5678abcd1234wxyz5678abcd1234
-  GITHUB_PRIVATE_KEY="-----BEGIN RSA PRIVATE KEY-----\nENTER-KEY-HERE-WITHOUT-LINE-BREAKS\n-----END RSA PRIVATE
-  KEY-----"
-  ENCRYPTION_PASSWORD=s0m3r4nd0mstr1ngw1thh1gh3ntr0py
-  SUPABASE_KEY=eyYlM4o.eyyH3Ll0oW0rLD
-  SUPABASE_URL=https://somerandomprojectname.supabase.co
-  SUPABASE_INSTALLATION_ACCESS_TOKENS_TABLE=installation_access_tokens
-  ORIGINS=["https://giscus.app", "https://giscus.vercel.app"]
-  ORIGINS_REGEX=["http://localhost:[0-9]+"]
-  ```
 
 - Install the dependencies.
 
@@ -237,32 +218,13 @@ functions.
   yarn start
   ```
 
-### As a static website and separate serverless functions
-
-If you wish to deploy the web app and the APIs (serverless functions)
-separately, you'll need to:
-  - Take out and adapt the functions in the [`pages/api`][api-routes] directory
-    to your serverless platform.
-  - If the web app and serverless functions are deployed on different domains,
-    you'll need to change the [service functions][services] that calls the
-    `/api/*` route to point to your serverless functions domain instead.
-
-    > Make sure that the [CORS][cors] policy of the serverless functions allow
-    > requests from the web app.
-
-  - Build the web app with `yarn build`, then export the static HTML version
-    with [`yarn next export`][next-export].
-  - Serve the `out` directory, which contains the static website.
-
 ## Use the deployed self-hosted giscus
 
 - You can use the main page of the website to generate the client script
   configurations (e.g. `data-repo-id`, `data-category-id`) just like on
   [giscus.app][giscus].
-- Include the script tag to your webpage, but replace
-  `https://giscus.app/client.js` with `https://[YOUR-DOMAIN-HERE]/client.js`.
-  You can also edit the [`Configuration`][configuration] component to do this
-  automatically.
+- Include the script tag to your webpage. Make sure you use the client script
+  that is hosted from your deployment.
 
 If you have any questions, ask them on the Q&A [discussion][discussion]. If you
 encounter any problems, [create a new issue][new-issue].

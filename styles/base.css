@@ -431,7 +431,7 @@ img.emoji {
 }
 
 .gsc-timeline {
-  @apply flex flex-col mt-2;
+  @apply flex flex-col;
 }
 
 .gsc-comment {

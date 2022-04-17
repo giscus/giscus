@@ -14,6 +14,7 @@ interface CommentBoxProps {
   discussionId?: string;
   context?: string;
   replyToId?: string;
+  className?: string;
   onSubmit: (comment: IComment | IReply) => void;
   onDiscussionCreateRequest?: () => Promise<string>;
 }
@@ -23,6 +24,7 @@ export default function CommentBox({
   discussionId,
   context,
   replyToId,
+  className = '',
   onSubmit,
   onDiscussionCreateRequest,
 }: CommentBoxProps) {
@@ -121,9 +123,9 @@ export default function CommentBox({
 
   return !isReply || isReplyOpen ? (
     <form
-      className={`color-bg-primary color-border-primary gsc-comment-box${
-        isReply ? ' gsc-comment-box-is-reply' : ''
-      }`}
+      className={`color-bg-primary color-border-primary gsc-comment-box ${
+        isReply ? 'gsc-comment-box-is-reply' : ''
+      } ${className}`}
       onSubmit={(event) => {
         event.preventDefault();
         handleSubmit();

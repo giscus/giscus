@@ -60,6 +60,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
       viewer={data.viewer}
       discussionId={data.discussion.id}
       context={repo}
+      className={inputPosition === 'top' && data.totalCommentCount > 0 ? 'mb-4' : ''}
       onSubmit={addNewComment}
       onDiscussionCreateRequest={handleDiscussionCreateRequest}
     />

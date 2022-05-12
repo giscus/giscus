@@ -22,7 +22,7 @@
   "titleContainsURLDesc": "giscus wird nach Discussionen suchen, welche die URL der Seite im Titel enthalten.",
   "titleContainsTitle": "Titel der Diskussion enthält <code><title></code> der Seite",
   "titleContainsTitleDesc": "giscus wird nach Discussionen suchen, welche die <code><title></code> Komponente der Seite im Titel enthalten.",
-  "titleContainsOgTitle": "Titel der Diskussion enthält <code><og:title>",
+  "titleContainsOgTitle": "Titel der Diskussion enthält <code><og:title></code>",
   "titleContainsOgTitleDesc": "giscus wird nach Discussionen suchen, welche den <aOgTitle><code><meta property=\"og:title\"></code></aOgTitle> HTML tag im Titel enthalten.",
   "titleContainsSpecificTerm": "Titel der Diskussion enthält einen bestimmten Begriff",
   "titleContainsSpecificTermDesc": "giscus wird nach Discussionen suchen, welche einen bestimmten Begriff im Titel enthalten.",

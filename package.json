@@ -21,7 +21,6 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
-    "@peculiar/webcrypto": "^1.4.0",
     "@primer/octicons-react": "^17.2.0",
     "jsonwebtoken": "^8.5.1",
     "next": "^12.1.6",

@@ -1,6 +1,7 @@
-import { Crypto } from '@peculiar/webcrypto';
+import { webcrypto } from 'crypto';
 
-const crypto = new Crypto();
+// @types/node only provides stub types for webcrypto, so use the types from DOM.
+const crypto = webcrypto as unknown as Crypto;
 
 /**
  * Encrypts plaintext using AES-GCM with supplied password, for decryption with aesGcmDecrypt().

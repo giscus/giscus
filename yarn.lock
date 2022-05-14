@@ -174,33 +174,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@peculiar/asn1-schema@^2.1.6":
-  version "2.1.6"
-  resolved "https://registry.yarnpkg.com/@peculiar/asn1-schema/-/asn1-schema-2.1.6.tgz#f587f1d8907c7a2180e5e1ce6b4831bf78d7560a"
-  integrity sha512-6ewdxD32vsjxbI/MvTef7PQxZIfLyV4w/5XzjOkosIGNt726zj8evLitCbjTeMHSZ/VeU4ZFSnrPXdCBHI6NWQ==
-  dependencies:
-    asn1js "^3.0.0"
-    pvtsutils "^1.3.2"
-    tslib "^2.4.0"
-
-"@peculiar/json-schema@^1.1.12":
-  version "1.1.12"
-  resolved "https://registry.npmjs.org/@peculiar/json-schema/-/json-schema-1.1.12.tgz"
-  integrity sha512-coUfuoMeIB7B8/NMekxaDzLhaYmp0HZNPEjYRm9goRou8UZIC3z21s0sL9AWoCw4EG876QyO3kYrc61WNF9B/w==
-  dependencies:
-    tslib "^2.0.0"
-
-"@peculiar/webcrypto@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@peculiar/webcrypto/-/webcrypto-1.4.0.tgz#f941bd95285a0f8a3d2af39ccda5197b80cd32bf"
-  integrity sha512-U58N44b2m3OuTgpmKgf0LPDOmP3bhwNz01vAnj1mBwxBASRhptWYK+M3zG+HBkDqGQM+bFsoIihTW8MdmPXEqg==
-  dependencies:
-    "@peculiar/asn1-schema" "^2.1.6"
-    "@peculiar/json-schema" "^1.1.12"
-    pvtsutils "^1.3.2"
-    tslib "^2.4.0"
-    webcrypto-core "^1.7.4"
-
 "@polka/url@^1.0.0-next.20":
   version "1.0.0-next.21"
   resolved "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.21.tgz"
@@ -580,15 +553,6 @@ arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/arrify/-/arrify-1.0.1.tgz"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
-
-asn1js@^3.0.0, asn1js@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/asn1js/-/asn1js-3.0.2.tgz#c143bef7104bb2f2ff1ef7107b0688f74ab5c4c9"
-  integrity sha512-//N3TnnL56cdjM5OGXBRWQ7D7/L9taP8DDkIjbs/2RhyKaDyotuVg1jolTyKfw89beUKB5FLW7Y9CB8EVmeY9g==
-  dependencies:
-    pvtsutils "^1.3.2"
-    pvutils "^1.1.3"
-    tslib "^2.4.0"
 
 ast-types-flow@^0.0.7:
   version "0.0.7"
@@ -2992,18 +2956,6 @@ purgecss@^4.0.3:
     postcss "^8.3.5"
     postcss-selector-parser "^6.0.6"
 
-pvtsutils@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/pvtsutils/-/pvtsutils-1.3.2.tgz#9f8570d132cdd3c27ab7d51a2799239bf8d8d5de"
-  integrity sha512-+Ipe2iNUyrZz+8K/2IOo+kKikdtfhRKzNpQbruF2URmqPtoqAs8g3xS7TJvFF2GcPXjh7DkqMnpVveRFq4PgEQ==
-  dependencies:
-    tslib "^2.4.0"
-
-pvutils@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.npmjs.org/pvutils/-/pvutils-1.1.3.tgz"
-  integrity sha512-pMpnA0qRdFp32b1sJl1wOJNxZLQ2cbQx+k6tjNtZ8CpvVhNqEPRgivZ2WOUev2YMajecdH7ctUPDvEe87nariQ==
-
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
@@ -3607,11 +3559,6 @@ tslib@^1.8.1:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
-  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
-
 tsutils@^3.21.0:
   version "3.21.0"
   resolved "https://registry.npmjs.org/tsutils/-/tsutils-3.21.0.tgz"
@@ -3690,17 +3637,6 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
-
-webcrypto-core@^1.7.4:
-  version "1.7.5"
-  resolved "https://registry.yarnpkg.com/webcrypto-core/-/webcrypto-core-1.7.5.tgz#c02104c953ca7107557f9c165d194c6316587ca4"
-  integrity sha512-gaExY2/3EHQlRNNNVSrbG2Cg94Rutl7fAaKILS1w8ZDhGxdFOaw6EbCfHIxPy9vt/xwp5o0VQAx9aySPF6hU1A==
-  dependencies:
-    "@peculiar/asn1-schema" "^2.1.6"
-    "@peculiar/json-schema" "^1.1.12"
-    asn1js "^3.0.1"
-    pvtsutils "^1.3.2"
-    tslib "^2.4.0"
 
 webpack-bundle-analyzer@4.3.0:
   version "4.3.0"

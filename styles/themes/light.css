@@ -71,6 +71,7 @@ main {
   --color-accent-muted: rgb(84 174 255 / 40%);
   --color-accent-subtle: #ddf4ff;
   --color-success-fg: #1a7f37;
+  --color-attention-fg: #9a6700;
   --color-danger-fg: #cf222e;
   --color-primer-shadow-inset: inset 0 1px 0 rgb(208 215 222 / 20%);
   --color-primer-shadow-focus: 0 0 0 3px rgb(9 105 218 / 30%);

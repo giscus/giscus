@@ -11,7 +11,7 @@ A comments system powered by [GitHub Discussions][discussions]. Let visitors lea
 - Automatically fetches new comments and edits from GitHub. 🔃
 - [Can be self-hosted][self-hosting]! 🤳
 
-> **Note:**\
+> **Note**
 > giscus is still under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscus may break or change over time.
 
 ## How it works

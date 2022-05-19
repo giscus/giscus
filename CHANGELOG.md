@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-05-20
+
+### Added
+
+- Add support for Note and Warning with blockquotes
+  ([#544](https://github.com/giscus/giscus/pull/544)).
+
 ## 2022-04-17
 
 ### Fixed

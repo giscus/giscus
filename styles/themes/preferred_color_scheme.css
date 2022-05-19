@@ -72,6 +72,7 @@ main {
   --color-accent-muted: rgb(84 174 255 / 40%);
   --color-accent-subtle: #ddf4ff;
   --color-success-fg: #1a7f37;
+  --color-attention-fg: #9a6700;
   --color-danger-fg: #cf222e;
   --color-primer-shadow-focus: 0 0 0 3px rgb(9 105 218 / 30%);
   --color-primer-shadow-inset: inset 0 1px 0 rgb(208 215 222 / 20%);
@@ -169,6 +170,7 @@ main .gsc-loading-image {
     --color-accent-muted: rgb(56 139 253 / 40%);
     --color-accent-subtle: rgb(56 139 253 / 15%);
     --color-success-fg: #3fb950;
+    --color-attention-fg: #d29922;
     --color-danger-fg: #f85149;
     --color-primer-shadow-focus: 0 0 0 3px #0c2d6b;
     --color-primer-shadow-inset: 0 0 transparent;

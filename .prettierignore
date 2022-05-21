@@ -1,4 +1,4 @@
 .next/
 public/
-styles/
+styles/**/*.css
 *.md

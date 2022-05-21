@@ -43,4 +43,4 @@ public/client.js
 public/themes/
 
 # CSS variables purging script (for development)
-styles/themes/purge.py
+styles/themes/reference.css

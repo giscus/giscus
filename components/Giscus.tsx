@@ -216,7 +216,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
           {data.numHidden > 0 ? (
             <div className="pagination-loader-container gsc-pagination">
               <button
-                className="flex flex-col items-center px-6 py-2 text-sm border rounded color-bg-primary color-border-primary"
+                className="gsc-pagination-button color-border-primary"
                 onClick={increaseSize}
                 disabled={data.isLoadingMore}
               >

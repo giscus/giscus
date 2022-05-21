@@ -91,6 +91,10 @@ main .pagination-loader-container {
   background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
 }
 
+.gsc-pagination-button {
+  background-color: var(--color-btn-bg);
+}
+
 .gsc-homepage-bg {
   background: linear-gradient(135deg, #05485c, #032e58, #2f0154);
   background-size: 600% 600%;

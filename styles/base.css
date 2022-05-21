@@ -476,6 +476,12 @@ img.emoji {
   @apply flex justify-center py-2 my-4 bg-center bg-repeat-x;
 }
 
+.gsc-pagination-button {
+  @apply flex flex-col items-center px-6 py-2 text-sm border rounded;
+
+  background-color: var(--color-canvas-default, var(--color-bg-primary));
+}
+
 .gsc-comment-header {
   @apply flex items-center px-4;
 }

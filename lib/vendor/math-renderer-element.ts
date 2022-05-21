@@ -29,13 +29,38 @@ const purifyConfigs = {
 let MathJax: null | MathJaxConfig = null;
 let DOMPurify: null | { default: typeof import('dompurify') } = null;
 
+/**
+ * Get Speech-Rule-Engine files externally.
+ */
+function configureSRE() {
+  const script = document.getElementById('sre-config') || document.createElement('script');
+  script.id = 'sre-config';
+  script.setAttribute('type', 'text/x-sre-config');
+  script.textContent = JSON.stringify({
+    json: 'https://cdn.jsdelivr.net/npm/speech-rule-engine@3.3.3/lib/mathmaps/',
+    xpath: 'https://cdn.jsdelivr.net/gh/google/wicked-good-xpath@master/dist/wgxpath.install.js',
+  });
+  document.head.appendChild(script);
+}
+
 async function configureMathJax({ staticURL }: { staticURL: string }) {
   if (MathJax) {
     return;
   }
 
+  // Things like a11y and SVG rendering are still brittle and may break rendering.
+  // We don't have much control over them, so always clear the settings on load.
+  localStorage.removeItem('MathJax-Menu-Settings');
+
+  configureSRE();
+
   window.MathJax = {
     ...(window.MathJax || {}),
+    loader: {
+      paths: {
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5',
+      },
+    },
     tex: {
       inlineMath: [[INLINE_DELIMITER, INLINE_DELIMITER]],
       displayMath: [[DISPLAY_DELIMITER, DISPLAY_DELIMITER]],

@@ -15,6 +15,8 @@ major updates to the project.
   ([#548](https://github.com/giscus/giscus/pull/548)).
 - Add Tritanopia themes
   ([#549](https://github.com/giscus/giscus/pull/549)).
+- Use MathJax 3.2.0 and fix a11y failing to load
+  ([#550](https://github.com/giscus/giscus/pull/550)).
 
 ## 2022-05-20
 

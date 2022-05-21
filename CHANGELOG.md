@@ -13,6 +13,8 @@ major updates to the project.
 
 - Add support for mathematical expressions using MathJax
   ([#548](https://github.com/giscus/giscus/pull/548)).
+- Add Tritanopia themes
+  ([#549](https://github.com/giscus/giscus/pull/549)).
 
 ## 2022-05-20
 

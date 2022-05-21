@@ -53,12 +53,12 @@ main {
   --color-btn-primary-hover-border: rgb(240 246 252 / 10%);
   --color-btn-primary-selected-bg: #238636;
   --color-btn-primary-selected-shadow: 0 0 transparent;
-  --color-btn-primary-disabled-text: rgb(240 246 252 / 50%);
+  --color-btn-primary-disabled-text: rgb(255 255 255 / 50%);
   --color-btn-primary-disabled-bg: rgb(35 134 54 / 60%);
   --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
   --color-fg-default: #c9d1d9;
   --color-fg-muted: #8b949e;
-  --color-fg-subtle: #484f58;
+  --color-fg-subtle: #6e7681;
   --color-canvas-default: #0d1117;
   --color-canvas-overlay: #161b22;
   --color-canvas-inset: #010409;

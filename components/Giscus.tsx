@@ -47,6 +47,10 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     emitData(message, origin);
   }, [data.discussion, data.viewer, emitMetadata, origin]);
 
+  useEffect(() => {
+    import('../lib/vendor/math-renderer-element');
+  }, []);
+
   const handleDiscussionCreateRequest = async () => {
     const id = await onDiscussionCreateRequest();
     // Force revalidate

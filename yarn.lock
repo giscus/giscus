@@ -2909,7 +2909,7 @@ postcss@8.4.5:
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
 
-postcss@^8.1.6, postcss@^8.3.5, postcss@^8.4.13, postcss@^8.4.14:
+postcss@^8.1.6, postcss@^8.3.5, postcss@^8.4.14:
   version "8.4.14"
   resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.14.tgz#ee9274d5622b4858c1007a74d76e42e56fd21caf"
   integrity sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==
@@ -3382,10 +3382,10 @@ stylelint-config-standard@^25.0.0:
   dependencies:
     stylelint-config-recommended "^7.0.0"
 
-stylelint@^14.8.3:
-  version "14.8.3"
-  resolved "https://registry.yarnpkg.com/stylelint/-/stylelint-14.8.3.tgz#25d2df1e010cda52ff56327059d1ce25319109be"
-  integrity sha512-aLpskXwSgFEBYbFRKA/BfuyYMGuXNtn2t5GqoffNPSezvw97x/vVNWcZNF0+cwt+LBjfvyq9/MRE3OjInGRgNA==
+stylelint@^14.8.5:
+  version "14.8.5"
+  resolved "https://registry.npmjs.org/stylelint/-/stylelint-14.8.5.tgz#0fcbf5b6821283b5a249dde36d70f1158da0a2a3"
+  integrity sha512-e3t4H/hlWlspkcNUrkhf44RU3OpPTA7uBOoREGBzSwdEF+2g/+gbZq7WEpMP7BpopcSe/uLaTvDuL+URL7cdnQ==
   dependencies:
     balanced-match "^2.0.0"
     colord "^2.9.2"
@@ -3411,7 +3411,7 @@ stylelint@^14.8.3:
     micromatch "^4.0.5"
     normalize-path "^3.0.0"
     picocolors "^1.0.0"
-    postcss "^8.4.13"
+    postcss "^8.4.14"
     postcss-media-query-parser "^0.2.3"
     postcss-resolve-nested-selector "^0.1.1"
     postcss-safe-parser "^6.0.0"
@@ -3610,10 +3610,10 @@ type-fest@^0.8.1:
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-0.8.1.tgz"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-typescript@^4.6.4:
-  version "4.6.4"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.6.4.tgz"
-  integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
+typescript@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.7.2.tgz#1f9aa2ceb9af87cca227813b4310fff0b51593c4"
+  integrity sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"

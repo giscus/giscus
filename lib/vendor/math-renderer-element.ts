@@ -14,20 +14,21 @@ declare global {
 const INLINE_DELIMITER = '$';
 const DISPLAY_DELIMITER = '$$';
 const STATIC_RESOURCE_ATTR = 'data-static-url';
+const MATHJAX_PREFIX_REGEX = new RegExp('^(TEX|mjx|MJX)-');
 
 const purifyConfigs = {
-  ADD_ATTR: ['jax', 'unselectable', 'display'],
-  FORBID_TAGS: ['style', 'script', 'a'],
+  USE_PROFILES: { mathMl: true },
+  ADD_ATTR: ['jax', 'unselectable', 'class', 'style', 'size', 'justify', 'space'],
   KEEP_CONTENT: true,
   CUSTOM_ELEMENT_HANDLING: {
-    tagNameCheck: /^(TEX|mjx|MJX)/,
-    attributeNameCheck: /^(TEX|mjx|MJX)/,
+    tagNameCheck: MATHJAX_PREFIX_REGEX,
+    attributeNameCheck: MATHJAX_PREFIX_REGEX,
     allowCustomizedBuiltInElements: true,
   },
 };
 
-let MathJax: null | MathJaxConfig = null;
 let DOMPurify: null | { default: typeof import('dompurify') } = null;
+let configurationPromise: Promise<void> | null = null;
 
 /**
  * Get Speech-Rule-Engine files externally.
@@ -44,44 +45,76 @@ function configureSRE() {
 }
 
 async function configureMathJax({ staticURL }: { staticURL: string }) {
-  if (MathJax) {
+  configurationPromise ||= (async () => {
+    window.MathJax = {
+      ...(window.MathJax || {}),
+      loader: {
+        paths: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5',
+        },
+        load: ['ui/safe'],
+      },
+      tex: {
+        inlineMath: [[INLINE_DELIMITER, INLINE_DELIMITER]],
+        displayMath: [[DISPLAY_DELIMITER, DISPLAY_DELIMITER]],
+        packages: { '[-]': ['html', 'require', 'newcommand'] },
+      },
+      chtml: {
+        fontURL: `${staticURL}/fonts/mathjax`,
+      },
+      startup: {
+        typeset: false,
+      },
+      options: {
+        enableMenu: true,
+        renderActions: {
+          addMenu: [100000],
+        },
+        safeOptions: {
+          allow: {
+            //
+            //  Values can be "all", "safe", or "none"
+            //
+            URLs: 'none', // safe are in safeProtocols below
+            classes: 'none', // safe start with mjx- (can be set by pattern below)
+            cssIDs: 'none', // safe start with mjx- (can be set by pattern below)
+            styles: 'none', // safe are in safeStyles below
+          },
+        },
+      },
+    };
+
+    // Things like a11y and SVG rendering are still brittle and may break rendering.
+    // We don't have much control over them, so always clear the settings on load.
+    localStorage.removeItem('MathJax-Menu-Settings');
+
+    configureSRE();
+
+    await import('mathjax/es5/tex-chtml-full');
+    await window.MathJax.startup.promise;
+    DOMPurify = await import('dompurify');
+    DOMPurify?.default.addHook('uponSanitizeAttribute', sanitizeClass);
+  })();
+
+  await configurationPromise;
+}
+
+function sanitizeClass(_: Element, data: DOMPurify.SanitizeAttributeHookEvent): void {
+  // only look at class attributes
+  if (data.attrName !== 'class') {
     return;
   }
 
-  // Things like a11y and SVG rendering are still brittle and may break rendering.
-  // We don't have much control over them, so always clear the settings on load.
-  localStorage.removeItem('MathJax-Menu-Settings');
+  // remove css classes that don't match the MathJax prefix pattern or `MathJax`
+  data.attrValue = data.attrValue
+    .split(' ')
+    .filter((c) => MATHJAX_PREFIX_REGEX.test(c) || c === 'MathJax')
+    .join(' ');
 
-  configureSRE();
-
-  window.MathJax = {
-    ...(window.MathJax || {}),
-    loader: {
-      paths: {
-        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5',
-      },
-    },
-    tex: {
-      inlineMath: [[INLINE_DELIMITER, INLINE_DELIMITER]],
-      displayMath: [[DISPLAY_DELIMITER, DISPLAY_DELIMITER]],
-      packages: { '[-]': ['html', 'require', 'newcommand'] },
-    },
-    chtml: {
-      fontURL: `${staticURL}/fonts/mathjax`,
-    },
-    startup: {
-      typeset: false,
-    },
-    options: {
-      enableMenu: true,
-      renderActions: {
-        addMenu: [100000],
-      },
-    },
-  };
-
-  MathJax = await import('mathjax/es5/tex-chtml-full');
-  DOMPurify = await import('dompurify');
+  // if all class values are filtered, remove the attribute entirely
+  if (data.attrValue === '') {
+    data.keepAttr = false;
+  }
 }
 
 class MathRendererElement extends HTMLElement {

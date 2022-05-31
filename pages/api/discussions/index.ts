@@ -80,7 +80,8 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
   }
 
   if (!discussion) {
-    res.status(404).json({ error: 'Discussion not found' });
+    // discussion is not found but the request is successful
+    res.status(204);
     return;
   }
 

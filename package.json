@@ -21,7 +21,7 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
-    "@primer/octicons-react": "^17.2.0",
+    "@primer/octicons-react": "^17.3.0",
     "dompurify": "^2.3.8",
     "jsonwebtoken": "^8.5.1",
     "mathjax": "3.2.0",
@@ -51,7 +51,7 @@
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.1.0",
     "prettier": "^2.6.2",
-    "stylelint": "^14.8.5",
+    "stylelint": "^14.9.0",
     "stylelint-config-standard": "^25.0.0",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.7.3"

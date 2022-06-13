@@ -64,6 +64,12 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
       },
       startup: {
         typeset: false,
+        ready() {
+          window.MathJax.startup.defaultReady();
+          const menu = window.MathJax.startup.document.menu.menu;
+          const renderer = menu.find('Renderer');
+          renderer?.disable();
+        },
       },
       options: {
         enableMenu: true,
@@ -145,21 +151,33 @@ class MathRendererElement extends HTMLElement {
     `);
     doc.close();
 
+    /**
+     * Users can potentially introduce insecure code that hijacks our behavior observer code
+     * by providing the math render element with HTML nodes with classes that match our
+     * js behaviors e.g. js-sso-modal-complete
+     */
+    const withStrippedAttrs = DOMPurify?.default.sanitize(doc.body.textContent ?? '', {
+      ALLOWED_ATTR: [],
+      ALLOW_DATA_ATTR: false,
+      RETURN_DOM: true,
+    }) as Element;
+
     // in-place typeset the content in the parallel document
-    await window.MathJax.typesetPromise([doc.body]);
+    await window.MathJax.typesetPromise([withStrippedAttrs]);
 
     const sanitized = DOMPurify?.default.sanitize(
-      doc.body.firstElementChild as Node,
+      withStrippedAttrs.firstElementChild as Node,
       purifyConfigs,
     ) as string;
     this.innerHTML = sanitized;
 
-    // If there isn't any content left after sanitizing, don't attempt to reset any nodes
+    // Only reset nodes if content remains post-sanitization
     if (sanitized) {
       // reset the typesetRoot to the real document
       const displayedMath = window.MathJax.startup.output.math;
 
-      if (displayedMath && displayedMath.typesetRoot) {
+      // ensure the mathjax element exists and is an element node
+      if (displayedMath && this.firstChild && this.firstChild.nodeType === Node.ELEMENT_NODE) {
         displayedMath.typesetRoot = this.firstChild;
         window.MathJax.startup.output.document.menu.addMenu(displayedMath);
       }

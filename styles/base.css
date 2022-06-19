@@ -147,6 +147,10 @@ a {
   @apply rounded-none;
 }
 
+.BtnGroup-item:not(:first-child, :last-child) {
+  @apply border-l-0;
+}
+
 .BtnGroup-item:first-child:not(:only-child) {
   @apply rounded-l rounded-r-none;
 }
@@ -155,7 +159,6 @@ a {
   @apply rounded-l-none rounded-r;
 }
 
-.BtnGroup-item:not(:first-child):not(:last-child),
 .BtnGroup-item:first-child + .BtnGroup-item:last-child {
   @apply border-l-0;
 }

@@ -16,7 +16,7 @@
     "build": "yarn cscript && yarn cthemes && yarn mscript && next build",
     "start": "next start",
     "lint": "eslint . --cache && stylelint **/*.css",
-    "lint:fix": "eslint --fix . --cache && stylelint **/*.css",
+    "lint:fix": "eslint --fix . --cache && stylelint --fix **/*.css",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },

@@ -58,6 +58,7 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
         inlineMath: [[INLINE_DELIMITER, INLINE_DELIMITER]],
         displayMath: [[DISPLAY_DELIMITER, DISPLAY_DELIMITER]],
         packages: { '[-]': ['html', 'require', 'newcommand'] },
+        maxMacros: 1000,
       },
       chtml: {
         fontURL: `${staticURL}/fonts/mathjax`,

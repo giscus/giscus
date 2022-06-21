@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-06-26
+
+### Added
+
+- Add Portuguese localization
+  ([#581](https://github.com/giscus/giscus/pull/581)).
+
 ## 2022-05-21
 
 ### Added

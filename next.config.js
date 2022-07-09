@@ -62,6 +62,10 @@ module.exports = withBundleAnalyzer(
           },
         ];
       },
+      experimental: {
+        browsersListForSwc: true,
+        legacyBrowsers: false,
+      },
     }),
   ),
 );

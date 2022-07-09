@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import Head from 'next/head';
 import Script from 'next/script';
 import { ComponentProps, useContext, useEffect, useState } from 'react';
 import Comment from '../components/Comment';
@@ -126,6 +127,9 @@ export default function Home({
 
   return (
     <main className="w-full min-h-screen gsc-homepage-bg" data-theme={theme}>
+      <Head>
+        <title>giscus</title>
+      </Head>
       <div className="w-full max-w-3xl p-2 mx-auto color-text-primary">
         <Comment comment={comment}>
           <Configuration

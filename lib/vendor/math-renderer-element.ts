@@ -4,17 +4,25 @@
  */
 
 import type MathJaxConfig from 'mathjax/es5/tex-chtml-full';
+import { html, render } from 'lit-html';
 
 declare global {
   interface Window {
     MathJax: MathJaxConfig;
   }
 }
-
+const MAX_ALLOWED_MACROS = 100;
+const BAD_EXPRESSION_ERROR = 'Unable to render expression.';
 const INLINE_DELIMITER = '$';
 const DISPLAY_DELIMITER = '$$';
 const STATIC_RESOURCE_ATTR = 'data-static-url';
 const MATHJAX_PREFIX_REGEX = new RegExp('^(TEX|mjx|MJX)-');
+
+const stripAttrsConfigs = {
+  ALLOWED_ATTR: [],
+  ALLOW_DATA_ATTR: false,
+  RETURN_DOM: true,
+};
 
 const purifyConfigs = {
   USE_PROFILES: { mathMl: true },
@@ -79,13 +87,10 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
         },
         safeOptions: {
           allow: {
-            //
-            //  Values can be "all", "safe", or "none"
-            //
-            URLs: 'none', // safe are in safeProtocols below
-            classes: 'none', // safe start with mjx- (can be set by pattern below)
-            cssIDs: 'none', // safe start with mjx- (can be set by pattern below)
-            styles: 'none', // safe are in safeStyles below
+            URLs: 'none',
+            classes: 'none',
+            cssIDs: 'none',
+            styles: 'none',
           },
         },
       },
@@ -127,18 +132,16 @@ function sanitizeClass(_: Element, data: DOMPurify.SanitizeAttributeHookEvent): 
 class MathRendererElement extends HTMLElement {
   public staticURL = 'https://github.githubassets.com/static';
 
-  async connectedCallback() {
-    this.staticURL = this.getAttribute(STATIC_RESOURCE_ATTR) || this.staticURL;
-    await configureMathJax({ staticURL: this.staticURL });
-    requestAnimationFrame(() => this.typeset());
-  }
-
-  async typeset() {
-    if (!window.MathJax || !DOMPurify) {
-      return;
-    }
-
-    // insert latex into a shadow document to avoid potentially
+  /**
+   * Create a parallel document node that LaTeX content is injected into.
+   * This content will be sanitized and typeset before being re-injected back
+   * into the primary document node.
+   *
+   * We do this to mitigate potentiall XSS and UI redressing attacks that can potentially
+   * occur with MathJax's in-place typesetting of LaTeX content.
+   **/
+  private tempDocumentContentForSanitization() {
+    // insert LaTeX into a parallel document to avoid potentially
     // introducing xss vectors
     const doc = document.implementation.createHTMLDocument('');
 
@@ -146,43 +149,147 @@ class MathRendererElement extends HTMLElement {
     doc.write(`
       <html>
         <body>
-          ${this.firstChild?.textContent}
+          ${this.textContent}
         </body>
       </html>
     `);
     doc.close();
+
+    return doc.body.textContent ?? '';
+  }
+
+  private childIsNode(node: Node | null) {
+    return Boolean(node && node.nodeType === Node.ELEMENT_NODE);
+  }
+
+  private isGitHubError(node: Element | null) {
+    return node && node.classList.contains('flash-error');
+  }
+
+  private isMathJaxContainer(node: Element | null) {
+    return node && node.nodeName === 'MJX-CONTAINER';
+  }
+
+  private wasPreviouslyRendered() {
+    const node = this.firstElementChild;
+    return this.isGitHubError(node) || this.isMathJaxContainer(node);
+  }
+
+  private getMathJaxError(node: HTMLElement) {
+    if (!node) {
+      return null;
+    }
+
+    const errorNode = node.querySelector('mjx-merror');
+    const mathjaxError = errorNode?.getAttribute('data-mjx-error');
+
+    return mathjaxError ?? null;
+  }
+
+  private renderError({ msg, raw }: { msg?: string | null; raw?: string } = {}) {
+    const errorMsg = msg ?? BAD_EXPRESSION_ERROR;
+    const rawContent = raw ?? this.textContent;
+
+    if (!rawContent) {
+      return render(html`<div class="flash flash-error">${errorMsg}</div>`, this);
+    }
+
+    return render(
+      html`<div class="flash flash-error">${errorMsg}</div>
+        <br />
+        <pre>${rawContent}</pre>`,
+      this,
+    );
+  }
+
+  private renderContent(node: Node) {
+    // Determine if typesetting in the parallel document produced an error.
+    // Do this first so we can skip a potentially unecessary sanitization pass.
+    const errorText = this.getMathJaxError(node as HTMLElement);
+
+    if (typeof errorText === 'string') {
+      this.renderError({
+        msg: errorText,
+      });
+
+      return;
+    }
+
+    /**
+     * If the supplied node doesn't have a mathjax error, that doesn't mean
+     * it is a valid node we can display.
+     * Nodes that have a text node as the value of their `firstChild` property
+     * also indicates a math expression that has failed to parse correctly
+     */
+    if (!this.childIsNode(node)) {
+      this.renderError();
+      return;
+    }
+
+    const sanitized = DOMPurify?.default.sanitize(node, purifyConfigs) as string;
+
+    // Only reset nodes if content remains post-sanitization
+    if (!sanitized) {
+      this.renderError();
+      return;
+    }
+
+    this.innerHTML = sanitized;
+
+    // reset the typesetRoot to the real document
+    // The properties in output will be present if mathjax is loaded, so the ! are reasonably safe
+    const displayedMath = window.MathJax.startup.output.math;
+
+    // ensure the mathjax element exists and is an element node
+    if (displayedMath && this.childIsNode(this.firstChild)) {
+      displayedMath.typesetRoot = this.firstChild;
+      window.MathJax.startup.output.document.menu.addMenu(displayedMath);
+    }
+  }
+
+  get textContent() {
+    return this.firstChild?.textContent ?? '';
+  }
+
+  async connectedCallback() {
+    this.staticURL = this.getAttribute(STATIC_RESOURCE_ATTR);
+    await configureMathJax({ staticURL: this.staticURL });
+    requestAnimationFrame(() => this.typeset());
+  }
+
+  async typeset() {
+    if (!window.MathJax) {
+      return;
+    }
+
+    // If the document has already been processed, this function is a no-op.
+    // This can happen when e.g. a user navigates between files with mathjax in them using
+    // the browser's back button.
+    if (this.wasPreviouslyRendered()) {
+      return;
+    }
+
+    if (this.textContent.split('{').length > MAX_ALLOWED_MACROS) {
+      this.renderError();
+      return;
+    }
+
+    const parallelDocContent = this.tempDocumentContentForSanitization();
 
     /**
      * Users can potentially introduce insecure code that hijacks our behavior observer code
      * by providing the math render element with HTML nodes with classes that match our
      * js behaviors e.g. js-sso-modal-complete
      */
-    const withStrippedAttrs = DOMPurify?.default.sanitize(doc.body.textContent ?? '', {
-      ALLOWED_ATTR: [],
-      ALLOW_DATA_ATTR: false,
-      RETURN_DOM: true,
-    }) as Element;
+    const sanitizedDocBody = DOMPurify?.default.sanitize(
+      parallelDocContent,
+      stripAttrsConfigs,
+    ) as Element;
 
     // in-place typeset the content in the parallel document
-    await window.MathJax.typesetPromise([withStrippedAttrs]);
+    await window.MathJax.typesetPromise([sanitizedDocBody]);
 
-    const sanitized = DOMPurify?.default.sanitize(
-      withStrippedAttrs.firstElementChild as Node,
-      purifyConfigs,
-    ) as string;
-    this.innerHTML = sanitized;
-
-    // Only reset nodes if content remains post-sanitization
-    if (sanitized) {
-      // reset the typesetRoot to the real document
-      const displayedMath = window.MathJax.startup.output.math;
-
-      // ensure the mathjax element exists and is an element node
-      if (displayedMath && this.firstChild && this.firstChild.nodeType === Node.ELEMENT_NODE) {
-        displayedMath.typesetRoot = this.firstChild;
-        window.MathJax.startup.output.document.menu.addMenu(displayedMath);
-      }
-    }
+    this.renderContent(sanitizedDocBody.firstElementChild as Node);
   }
 }
 

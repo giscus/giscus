@@ -1,7 +1,7 @@
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
-const withPrefresh = require('@prefresh/next');
+const withPreact = require('next-plugin-preact');
 const nextTranslate = require('next-translate');
 
 const securityHeaders = [
@@ -34,7 +34,7 @@ const securityHeaders = [
 const swr = 60 * 60 * 24 * 7; // 7 days
 
 module.exports = withBundleAnalyzer(
-  withPrefresh(
+  withPreact(
     nextTranslate({
       async headers() {
         return [
@@ -61,16 +61,6 @@ module.exports = withBundleAnalyzer(
             ],
           },
         ];
-      },
-      webpack: (config) => {
-        config.resolve.alias = {
-          ...config.resolve.alias,
-          react: 'preact/compat',
-          'react-dom/test-utils': 'preact/test-utils',
-          'react-dom': 'preact/compat',
-        };
-
-        return config;
       },
     }),
   ),

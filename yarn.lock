@@ -79,10 +79,10 @@
   resolved "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@next/bundle-analyzer@^12.2.1":
-  version "12.2.1"
-  resolved "https://registry.npmjs.org/@next/bundle-analyzer/-/bundle-analyzer-12.2.1.tgz#9b15f487496aa1e137f640c5906e84a5daca6ebc"
-  integrity sha512-P5rj+mty9sB/58H32TFiLihy/W2Pd6vw9EorcpoyatI8tfpnyrBQOTW77QUFSeI3G4W9ovvv6ozUS/GkQvPwyQ==
+"@next/bundle-analyzer@^12.2.2":
+  version "12.2.2"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-12.2.2.tgz#c2da8bf44286cdf9cea91f8a4590a8172c6c5d43"
+  integrity sha512-ou8EIVzUTu9FACWbiCjwnpApix2kA5Qms7nuUELn2/FM4Ltx7ts+w5DDSQslrorJri1kFTp6nRD0Hy7FTERYcw==
   dependencies:
     webpack-bundle-analyzer "4.3.0"
 

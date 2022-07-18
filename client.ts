@@ -1,3 +1,5 @@
+const md5 = require('md5');
+
 (function () {
   const GISCUS_SESSION_KEY = 'giscus-session';
   const script = document.currentScript as HTMLScriptElement;
@@ -68,8 +70,9 @@
       break;
     case 'pathname':
     default:
+      let hashedPathname = md5(location.pathname);
       params.term =
-        location.pathname.length < 2 ? 'index' : location.pathname.substr(1).replace(/\.\w+$/, '');
+        hashedPathname.length < 2 ? 'index' : hashedPathname.substr(1).replace(/\.\w+$/, '');
       break;
   }
 

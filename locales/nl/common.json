@@ -1,0 +1,98 @@
+{
+  "reactions": {
+    "0": "{{count}} reacties",
+    "one": "{{count}} reactie",
+    "other": "{{count}} reacties"
+  },
+  "comment": "Opmerking",
+  "comments": {
+    "0": "{{count}} opmerkingen",
+    "one": "{{count}} opmerking",
+    "other": "{{count}} opmerkingen"
+  },
+  "reply": "Antwoord",
+  "replies": {
+    "0": "{{count}} antwoorden",
+    "one": "{{count}} antwoord",
+    "other": "{{count}}{{plus}} antwoorden"
+  },
+  "upvotes": {
+    "0": "{{count}} upvotes",
+    "one": "{{count}} upvote",
+    "other": "{{count}} upvotes"
+  },
+  "hiddenItems": {
+    "0": "{{count}} verborgen items",
+    "one": "{{count}} verborgen item",
+    "other": "{{count}} verborgen items"
+  },
+  "genericError": "Er is iets foutgegaan: {{message}}",
+  "loadMore": "Meer laden",
+  "loading": "Laden",
+  "loadingComments": "Laden van opmerkingen...",
+  "loadingPreview": "Laden van voorbeeld...",
+  "poweredBy": "– mogelijk gemaakt door <a>giscus</a>",
+  "oldest": "Oudste",
+  "newest": "Nieuwste",
+  "showPreviousReplies": {
+    "0": "Toon {{count}} voorgaande antwoorden",
+    "one": "Toon {{count}} voorgaande antwoord",
+    "other": "Toon {{count}} voorgaande antwoorden"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Bekijk {{count}} voorgaande antwoorden op GitHub",
+    "one": "Bekijk {{count}} voorgaand antwoord op GitHub",
+    "other": "Bekijk {{count}} voorgaande antwoorden op GitHub"
+  },
+  "edited": "bewerkt",
+  "thisCommentWasDeleted": "Deze opmerking is verwijderd.",
+  "thisCommentWasMinimized": "Deze opmerking is geminimaliseerd.",
+  "thisCommentWasHidden": "Deze opmerking is verborgen.",
+  "write": "Schrijf",
+  "preview": "Voorbeeld",
+  "enableFixedWidth": "Lettertype met vaste breedte (monospace) inschakelen in de editor",
+  "disableFixedWidth": "Lettertype met vaste breedte (monospace) uitschakelen in de editor",
+  "lastEditedAt": "Latst bewerkt op {{date}}",
+  "writeAComment": "Schrijf een opmerking",
+  "signInToComment": "Meld je aan om een opmerking te kunnen schrijven",
+  "stylingWithMarkdownIsSupported": "Styling met Markdown is ondersteund",
+  "cancel": "Annuleer",
+  "signInWithGitHub": "Log in met GitHub",
+  "writeAReply": "Schrijf een antwoord",
+
+  "upvote": "Upvote",
+  "youMustBeSignedInToUpvote": "Je moet ingelogd zijn om te kunnen upvoten.",
+  "addReactions": "Reacties toevoegen",
+  "pleaseWait": "Wacht aub…",
+  "pickYourReaction": "Kies je reactie",
+  "addTheReaction": "Voeg {{reaction}} reactie toe",
+  "removeTheReaction": "Verwijder {{reaction}} reactie",
+  "signInToAddYourReaction": "<a>Meld aan</a> om je reactie toe te voegen.",
+  "youMustBeSignedInToAddReactions": "Je moet ingelogd zijn om reacties toe te voegen.",
+  "peopleReactedWith": {
+    "0": "{{count}} personen hebben gereageerd met {{reaction}} {{emoji}}",
+    "one": "{{count}} persoon heeft gereageerd met {{reaction}} {{emoji}}",
+    "other": "{{count}} personen hebben gereageerd met {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Niets om voor te tonen",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Lachen",
+  "HOORAY": "Hoera!",
+  "CONFUSED": "Verward",
+  "HEART": "Liefde",
+  "ROCKET": "Raket",
+  "EYES": "Ogen",
+
+  "COLLABORATOR": "Medewerker",
+  "CONTRIBUTOR": "Bijdrager",
+  "FIRST_TIMER": "Nieuweling",
+  "FIRST_TIME_CONTRIBUTOR": "Nieuwe bijdrager",
+  "MANNEQUIN": "Mannequin",
+  "MEMBER": "Lid",
+  "NONE": "Geen",
+  "OWNER": "Eigenaar",
+  "APP": "App"
+}

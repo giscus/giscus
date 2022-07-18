@@ -50,6 +50,7 @@
     "eslint-config-next": "^12.2.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "md5": "^2.3.0",
     "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0",
     "postcss-import": "^14.1.0",

@@ -78,6 +78,7 @@ Bekijk [CONTRIBUTING.md][contributing]
 
 Deze readme is ook beschikbaar in het:
 
+- [Arabic (العربية)](README.ar.md)
 - [Deutsch](README.de.md)
 - [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)

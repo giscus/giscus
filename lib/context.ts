@@ -35,6 +35,7 @@ interface IConfigContext {
   term: string;
   description: string;
   number: number;
+  strict: boolean;
   reactionsEnabled: boolean;
   emitMetadata: boolean;
   inputPosition: InputPosition;
@@ -49,6 +50,7 @@ export const ConfigContext = createContext<IConfigContext>({
   term: '',
   description: '',
   number: 0,
+  strict: false,
   reactionsEnabled: true,
   emitMetadata: false,
   inputPosition: 'bottom',

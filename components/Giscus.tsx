@@ -21,13 +21,14 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     term,
     number,
     category,
+    strict,
     reactionsEnabled,
     emitMetadata,
     inputPosition,
     defaultCommentOrder,
   } = useContext(ConfigContext);
   const [orderBy, setOrderBy] = useState<CommentOrder>(defaultCommentOrder);
-  const query = { repo, term, category, number };
+  const query = { repo, term, category, number, strict };
 
   const { addNewComment, updateReactions, increaseSize, backMutators, frontMutators, ...data } =
     useFrontBackDiscussion(query, token, orderBy);

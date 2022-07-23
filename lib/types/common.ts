@@ -10,4 +10,5 @@ export interface DiscussionQuery {
   term: string;
   number: number;
   category: string;
+  strict: boolean;
 }

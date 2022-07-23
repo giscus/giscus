@@ -152,6 +152,7 @@ export default function Home({
           data-emit-metadata="0"
           data-input-position="bottom"
           data-lang={locale}
+          data-strict="1"
         />
         <a
           className="block mx-auto mb-6 w-max"

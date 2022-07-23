@@ -20,6 +20,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const term = cleanSessionParam((query.term as string) || '');
   const category = (query.category as string) || '';
   const number = +query.number || 0;
+  const strict = Boolean(+query.strict);
   const repoId = (query.repoId as string) || '';
   const categoryId = (query.categoryId as string) || '';
   const description = (query.description as string) || '';
@@ -59,6 +60,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       term,
       category,
       number,
+      strict,
       repoId,
       categoryId,
       description,
@@ -79,6 +81,7 @@ export default function WidgetPage({
   term,
   number,
   category,
+  strict,
   repoId,
   categoryId,
   description,
@@ -99,6 +102,7 @@ export default function WidgetPage({
     description,
     term,
     number,
+    strict,
     reactionsEnabled,
     emitMetadata,
     inputPosition,

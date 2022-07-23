@@ -43,6 +43,7 @@
   params.repoId = attributes.repoId as string;
   params.category = attributes.category || '';
   params.categoryId = attributes.categoryId as string;
+  params.strict = attributes.strict || '0';
   params.description = ogDescriptionMeta ? ogDescriptionMeta.content : '';
 
   switch (attributes.mapping) {

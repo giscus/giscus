@@ -2,10 +2,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { getDiscussion } from '../../../services/github/getDiscussion';
 import { adaptDiscussion } from '../../../lib/adapter';
 import { IError, IGiscussion } from '../../../lib/types/adapter';
-import { createDiscussion } from '../../../services/github/createDiscussion';
+import { createDiscussion, CreateDiscussionBody } from '../../../services/github/createDiscussion';
 import { GRepositoryDiscussion } from '../../../lib/types/github';
 import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
 import { addCorsHeaders } from '../../../lib/cors';
+import { digestMessage } from '../../../lib/utils';
 
 async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IError>) {
   const params = {
@@ -13,6 +14,7 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
     term: req.query.term as string,
     number: +req.query.number,
     category: req.query.category as string,
+    strict: req.query.strict === 'true',
     first: +req.query.first,
     last: +req.query.last,
     after: req.query.after as string,
@@ -90,6 +92,10 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
 
 async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | IError>) {
   const { repo, input } = req.body;
+  const params: CreateDiscussionBody = { input };
+  const hashTag = `<!-- sha1: ${await digestMessage(params.input.title)} -->`;
+
+  params.input.body = `${params.input.body}\n\n${hashTag}`;
 
   let token: string;
   try {
@@ -99,7 +105,7 @@ async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | I
     return;
   }
 
-  const response = await createDiscussion(token, { input });
+  const response = await createDiscussion(token, params);
   const id = response?.data?.createDiscussion?.discussion?.id;
 
   if (!id) {

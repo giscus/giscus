@@ -41,6 +41,7 @@ interface IConfig {
   term: string;
   category: string;
   categoryId: string;
+  strict: boolean;
   useCategory: boolean;
   lazyLoad: boolean;
 }
@@ -109,6 +110,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
     term: '',
     category: '',
     categoryId: '',
+    strict: false,
     useCategory: true,
     lazyLoad: false,
   });
@@ -317,6 +319,34 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           </div>
         ))}
       </fieldset>
+      <div className="form-checkbox">
+        <input
+          disabled={config.mapping === 'number'}
+          type="checkbox"
+          id="strict"
+          checked={config.strict}
+          onChange={(event) =>
+            setConfig((current) => ({ ...current, strict: event.target.checked }))
+          }
+        ></input>
+        <label htmlFor="strict">
+          <strong>{t('useStrictTitleMatching')}</strong>
+        </label>
+        <p className="mb-0 text-xs color-text-secondary">
+          <Trans
+            i18nKey="config:avoidMismatches"
+            components={{
+              a: (
+                <a
+                  href="https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-strict"
+                  target="_blank"
+                  rel="noreferrer noopener nofollow"
+                />
+              ),
+            }}
+          />
+        </p>
+      </div>
 
       <h3>{t('discussionCategory')}</h3>
       <p>
@@ -556,6 +586,13 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
                 {config.term ||
                   (config.mapping === 'number' ? t('[enterNumberHere]') : t('[enterTermHere]'))}
               </span>
+              {'"\n        '}
+            </>
+          ) : null}
+          {config.mapping !== 'number' ? (
+            <>
+              <span className="pl-c1">data-strict</span>={'"'}
+              <span className="pl-s">{Number(config.strict)}</span>
               {'"\n        '}
             </>
           ) : null}

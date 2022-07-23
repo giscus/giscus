@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "Specifiek discussienummer",
   "specificDiscussionNumberDesc": "giscus laadt een specifieke discussie op nummer. Deze optie <strong>biedt geen</strong> ondersteuning voor het automatisch aanmaken van discussies.",
   "enterDiscussionNumberHere": "Voer hier het discussienummer in",
+  "useStrictTitleMatching": "Gebruik strikte titelovereenkomst",
+  "avoidMismatches": "Vermijd mismatches vanwege de vage zoekmethode van GitHub wanneer er meerdere discussies zijn met vergelijkbare titels. Zie <a>de documentatie</a> voor meer details.",
 
   "discussionCategory": "Discussiecategorie",
   "chooseTheDiscussionCategory": "Kies de discussiecategorie waar nieuwe discussies worden gemaakt.",

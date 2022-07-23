@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "Specific discussion number",
   "specificDiscussionNumberDesc": "giscus will load a specific discussion by number. This option <strong>does not</strong> support automatic discussion creation.",
   "enterDiscussionNumberHere": "Enter discussion number here",
+  "useStrictTitleMatching": "Use strict title matching",
+  "avoidMismatches": "Avoid mismatches due to GitHub's fuzzy searching method when there are multiple discussions with similar titles. See <a>the documentation</a> for more details.",
 
   "discussionCategory": "Discussion Category",
   "chooseTheDiscussionCategory": "Choose the discussion category where new discussions will be created.",

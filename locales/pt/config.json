@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "Número de discussão específico",
   "specificDiscussionNumberDesc": "giscus carregará uma discussão específica por número. Está opção <strong>não</strong> suporta a criação automática de discussão.",
   "enterDiscussionNumberHere": "Insira o número da discussão aqui",
+  "useStrictTitleMatching": "Use correspondência de título estrita",
+  "avoidMismatches": "Evite incompatibilidades devido ao método de pesquisa difusa do GitHub quando houver várias discussões com títulos semelhantes. Consulte <a>a documentação</a> para mais detalhes.",
 
   "discussionCategory": "Categoria de Discussão",
   "chooseTheDiscussionCategory": "Escolha categoria de discussão onde as novas discussões serão criadas.",

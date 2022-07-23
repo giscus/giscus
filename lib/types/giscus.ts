@@ -62,6 +62,7 @@ export interface ISetConfigMessage {
     term?: string;
     description?: string;
     number?: number;
+    strict?: boolean;
     reactionsEnabled?: boolean;
     emitMetadata?: boolean;
     inputPosition?: InputPosition;

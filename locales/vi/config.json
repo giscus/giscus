@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "Số discussion cụ thể",
   "specificDiscussionNumberDesc": "giscus sẽ tải một discussion cụ thể theo số. Tùy chọn này <strong>không</strong> hỗ trợ tạo discussion tự động.",
   "enterDiscussionNumberHere": "Nhập số discussion tại đây",
+  "useStrictTitleMatching": "Sử dụng đối sánh tiêu đề nghiêm ngặt",
+  "avoidMismatches": "Tránh không khớp do phương pháp tìm kiếm mờ nhạt của GitHub khi có nhiều thảo luận với các tiêu đề tương tự. Xem <a>tài liệu</a> để biết thêm chi tiết.",
 
   "discussionCategory": "Thể loại discussion",
   "chooseTheDiscussionCategory": "Chọn thể loại discussion nơi các cuộc thảo luận mới sẽ được tạo.",

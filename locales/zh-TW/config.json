@@ -38,6 +38,8 @@
   "specificDiscussionNumber": "特定 discussion 編號",
   "specificDiscussionNumberDesc": "giscus 將按編號載入特定的 discussion。此選項<strong>不支援</strong>自動建立 discussion。",
   "enterDiscussionNumberHere": "在此輸入 discussion 編號",
+  "useStrictTitleMatching": "使用嚴格的標題匹配",
+  "avoidMismatches": "當有多個具有相似標題的討論時，避免由於 GitHub 的模糊搜索方法而導致的不匹配。請閱讀<a>說明文件</a>以了解更多。",
 
   "discussionCategory": "Discussion 分類",
   "chooseTheDiscussionCategory": "選擇新 discussions 所在的分類。",

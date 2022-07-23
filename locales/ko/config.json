@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "Discussion 번호 지정하여 연결하기",
   "specificDiscussionNumberDesc": "giscus가 특정 번호를 가진 discussion을 찾습니다. 이 옵션은 자동 discussion 생성을 지원하지 <strong>않습니다</strong>.",
   "enterDiscussionNumberHere": "discussion 번호 지정하기",
+  "useStrictTitleMatching": "엄격한 제목 일치 사용",
+  "avoidMismatches": "유사한 제목으로 여러 토론이 있을 때 GitHub의 퍼지 검색 방식으로 인한 불일치를 방지합니다. 상세한 내용은 <a>문서</a>에 나와 있습니다.",
 
   "discussionCategory": "Discussion 카테고리",
   "chooseTheDiscussionCategory": "새 discussion이 만들어질 카테고리를 선택하세요.",

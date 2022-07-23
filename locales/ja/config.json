@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "指定のDiscussions番号",
   "specificDiscussionNumberDesc": "giscusはdiscussionを指定された番号から読み込みます。この方法では自動でdiscussionが生成<strong>されません</strong>。",
   "enterDiscussionNumberHere": "Discussions番号を入力",
+  "useStrictTitleMatching": "厳密なタイトルマッチングを使用する",
+  "avoidMismatches": "類似したタイトルのディスカッションが複数ある場合は、GitHubのあいまい検索方法による不一致を回避してください。詳細は<a>ドキュメント</a>をご参照ください。",
 
   "discussionCategory": "Discussionカテゴリ",
   "chooseTheDiscussionCategory": "新しいDiscussionsの作成時に使用するカテゴリを指定してください。",

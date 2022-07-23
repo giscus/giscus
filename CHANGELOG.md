@@ -7,6 +7,15 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-07-23
+
+### Added
+
+- Add Dutch localization
+  ([#612](https://github.com/giscus/giscus/pull/612)).
+- Add option to use strict title matching
+  ([#621](https://github.com/giscus/giscus/pull/621)).
+
 ## 2022-06-26
 
 ### Added

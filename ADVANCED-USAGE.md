@@ -8,6 +8,7 @@ configurations.
   - [`originsRegex`](#originsregex)
   - [`defaultCommentOrder`](#defaultcommentorder)
 - [`data-` attributes](#data--attributes)
+  - [`data-strict`](#data-strict)
   - [`data-theme`](#data-theme)
 - [giscus-to-parent `message` events](#giscus-to-parent-message-events)
   - [`IErrorMessage`](#ierrormessage)
@@ -85,6 +86,42 @@ Example `giscus.json`:
 
 Some of the `data-` attributes of the `<script>` tag may be used to further
 customize giscus.
+
+### `data-strict`
+
+When searching for discussions, GitHub uses a fuzzy search method. This may
+cause giscus to return a mismatched discussion when there are multiple
+discussions with similar titles. To avoid this issue, you can turn on strict
+title matching by setting `data-strict="1"` on the `<script>` tag.
+
+If this option is enabled, instead of using the discussion title as the search
+term, giscus will compute the hash of the discussion title and search for the
+hash in the discussion body. The hash is calculated using the SHA-1 algorithm.
+
+If you want to enable this option, make sure all discussions you want to use
+with giscus contains the SHA-1 hash of the dicussion title in the discussion
+body. If you already have existing discussions before this option was
+introduced, you can migrate them by editing the discussion and adding the hash
+anywhere in the discussion body. You can use any SHA-1 calculator to find the
+hash, such as [this one][sha1-calculator].
+
+All new discussions created by giscus **after** this option was introduced
+include the hash by default. For example, with the following discussion title:
+
+```
+Welcome to giscus!
+```
+
+giscus automatically appends the hash to the discussion body with the following
+format when initially creating the discussion:
+
+```html
+<!-- sha1: cad60a29d1b50cbeb42ec2ff630fc508afb1d2e3 -->
+```
+
+Since it's written as an HTML comment, the SHA-1 is not shown when you're
+viewing the discussion on GitHub. It is not necessary to use the same format. As
+long as the SHA-1 hash is somewhere in the discussion body, giscus can find it.
 
 ### `data-theme`
 
@@ -230,6 +267,7 @@ interface ISetConfigMessage {
     term?: string;
     description?: string;
     number?: number;
+    strict?: boolean;
     reactionsEnabled?: boolean;
     emitMetadata?: boolean;
     inputPosition?: InputPosition;
@@ -253,3 +291,4 @@ sendMessage({
 [giscus.json]: giscus.json
 [creating-new-themes]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#creating-new-themes
 [giscus.ts]: lib/types/giscus.ts
+[sha1-calculator]: https://xorbin.com/tools/sha1-hash-calculator

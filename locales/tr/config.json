@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "Belirli tartışma sayısı",
   "specificDiscussionNumberDesc": "giscus, belirli bir numaraya sahip tartışma arayacak. Bu seçenek otomatik tartışma oluşumunu <strong>desteklemez</strong>.",
   "enterDiscussionNumberHere": "Buraya tartışma sayısını girin",
+  "useStrictTitleMatching": "Sıkı başlık eşleştirmesi kullanın",
+  "avoidMismatches": "Benzer başlıklara sahip birden fazla tartışma olduğunda GitHub'ın bulanık arama yöntemi nedeniyle yanlış eşleşmelerden kaçının. Daha fazla bilgi için <a>dokümantasyonu</a> inceleyin.",
 
   "discussionCategory": "Tartışma Kategorisi",
   "chooseTheDiscussionCategory": "Yeni konuşmaların oluşturulacağı tartışma kategorisini seçin.",

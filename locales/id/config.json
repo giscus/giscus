@@ -33,6 +33,8 @@
   "enterDiscussionNumberHere": "Masukkan nomor diskusi di sini",
   "placeCommentBoxAboveComments": "Letakkan kotak komentar di atas komentar",
   "commentInputBoxWillBePlacedAboveComments": "Kotak masukan komentar akan ditempatkan di atas komentar, sehingga pengguna dapat meninggalkan komentar tanpa menggulir ke bagian bawah diskusi.",
+  "useStrictTitleMatching": "Gunakan pencocokan judul yang ketat",
+  "avoidMismatches": "Menghindari ketidakcocokan akibat metode pencarian GitHub yang samar ketika ada beberapa diskusi dengan judul yang mirip. Baca <a>dokumentasinya</a> untuk detail lebih lanjut.",
 
   "discussionCategory": "Kategori Diskusi",
   "chooseTheDiscussionCategory": "Pilih kategori diskusi di mana diskusi baru akan dibuat.",

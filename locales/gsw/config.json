@@ -31,6 +31,8 @@
   "specificDiscussionNumber": "Bestimmte Diskussionsnummer",
   "specificDiscussionNumberDesc": "giscus wird eine bestimmte Diskussion, basierend auf einer Nummer laden. Diese Option <strong>unterstützt nicht</strong> automatische erstellung von Diskussionen.",
   "enterDiscussionNumberHere": "Gib Diskussionsnummer hier ein",
+  "useStrictTitleMatching": "Verwenden Sie eine strikte Titelübereinstimmung",
+  "avoidMismatches": "Vermeiden Sie Diskrepanzen aufgrund der unscharfen Suchmethode von GitHub, wenn es mehrere Diskussionen mit ähnlichen Titeln gibt. Siehe <a>die Dokumentation</a> für weitere Details.",
 
   "discussionCategory": "Kategorie der Diskussion",
   "chooseTheDiscussionCategory": "Wähle die Kategorie aus, in welcher neue Diskussionen erstellt werden sollen.",

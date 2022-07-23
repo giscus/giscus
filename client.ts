@@ -19,7 +19,7 @@
     history.replaceState(undefined, document.title, cleanedLocation);
   } else {
     try {
-      session = JSON.parse(savedSession) || '';
+      session = JSON.parse(savedSession || '') || '';
     } catch (e) {
       session = '';
       localStorage.removeItem(GISCUS_SESSION_KEY);
@@ -34,15 +34,15 @@
   ) as HTMLMetaElement;
 
   params.origin = cleanedLocation;
-  params.session = session;
-  params.theme = attributes.theme;
+  params.session = session as string;
+  params.theme = attributes.theme as string;
   params.reactionsEnabled = attributes.reactionsEnabled || '1';
   params.emitMetadata = attributes.emitMetadata || '0';
   params.inputPosition = attributes.inputPosition || 'bottom';
-  params.repo = attributes.repo;
-  params.repoId = attributes.repoId;
+  params.repo = attributes.repo as string;
+  params.repoId = attributes.repoId as string;
   params.category = attributes.category || '';
-  params.categoryId = attributes.categoryId;
+  params.categoryId = attributes.categoryId as string;
   params.description = ogDescriptionMeta ? ogDescriptionMeta.content : '';
 
   switch (attributes.mapping) {
@@ -61,15 +61,17 @@
       }
       break;
     case 'specific':
-      params.term = attributes.term;
+      params.term = attributes.term as string;
       break;
     case 'number':
-      params.number = attributes.term;
+      params.number = attributes.term as string;
       break;
     case 'pathname':
     default:
       params.term =
-        location.pathname.length < 2 ? 'index' : location.pathname.substr(1).replace(/\.\w+$/, '');
+        location.pathname.length < 2
+          ? 'index'
+          : location.pathname.substring(1).replace(/\.\w+$/, '');
       break;
   }
 

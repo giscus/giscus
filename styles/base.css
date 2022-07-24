@@ -395,6 +395,8 @@ img.emoji {
 }
 
 .form-select {
+  @apply max-w-full whitespace-normal;
+
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IiM1ODYwNjkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTQuNDI3IDkuNDI3bDMuMzk2IDMuMzk2YS4yNTEuMjUxIDAgMDAuMzU0IDBsMy4zOTYtMy4zOTZBLjI1LjI1IDAgMDAxMS4zOTYgOUg0LjYwNGEuMjUuMjUgMCAwMC0uMTc3LjQyN3pNNC40MjMgNi40N0w3LjgyIDMuMDcyYS4yNS4yNSAwIDAxLjM1NCAwTDExLjU3IDYuNDdhLjI1LjI1IDAgMDEtLjE3Ny40MjdINC42YS4yNS4yNSAwIDAxLS4xNzctLjQyN3oiLz48L3N2Zz4=");
   background-position: right 4px center;
 }
@@ -405,7 +407,7 @@ img.emoji {
 
 .form-checkbox input[type="checkbox"],
 .form-checkbox input[type="radio"] {
-  @apply float-left mt-1 -ml-5 align-middle;
+  @apply mt-1 -ml-5 mr-2 align-top;
 }
 
 /*! giscus-specific styles */
@@ -766,7 +768,7 @@ img.emoji {
 }
 
 .gsc-reply-content {
-  @apply w-full pr-4 pb-2;
+  @apply w-full pb-2;
 }
 
 .gsc-reply-content .markdown pre,

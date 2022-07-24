@@ -26,7 +26,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
   return (
     <div className="gsc-reply">
       <div className="gsc-tl-line" />
-      <div className={`flex py-2 pl-4 ${hidden ? 'items-center' : ''}`}>
+      <div className={`flex py-2 px-4 ${hidden ? 'items-center' : ''}`}>
         <div className="gsc-reply-author-avatar">
           <a
             rel="nofollow noopener noreferrer"
@@ -81,7 +81,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   </div>
                 ) : null}
               </div>
-              <div className="flex pr-4">
+              <div className="flex">
                 {reply.lastEditedAt ? (
                   <button
                     className="color-text-secondary gsc-reply-edited"

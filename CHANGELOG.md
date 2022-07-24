@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2022-07-24
 
+### Changed
+
+- Improve RTL languages support
+  ([#626](https://github.com/giscus/giscus/pull/626)).
+
 ### Fixed
 
 - Prevent duplicated discussion creation

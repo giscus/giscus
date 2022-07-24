@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { AvailableLanguage, getDir } from '../lib/i18n';
 import { getThemeUrl, resolveTheme } from '../lib/utils';
 
 const meta = {
@@ -17,7 +18,7 @@ class CustomDocument extends Document {
     const themeUrl = getThemeUrl(resolvedTheme, theme);
 
     return (
-      <Html>
+      <Html dir={getDir(this.props.locale as AvailableLanguage)}>
         <Head>
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@laymonage" />

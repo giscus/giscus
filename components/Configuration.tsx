@@ -117,7 +117,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
   const [error, setError] = useState(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
   const dRepository = useDebounce(config.repository);
-  const { t } = useGiscusTranslation('config');
+  const { t, dir } = useGiscusTranslation('config');
 
   useEffect(() => {
     setError(false);
@@ -149,7 +149,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
   }, [directConfig.emitMetadata]);
 
   return (
-    <div className="markdown p-4 pt-0">
+    <div dir={dir} className="markdown p-4 pt-0">
       <h2>{t('configuration')}</h2>
 
       <h3>{t('language')}</h3>
@@ -550,7 +550,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
       <p>
         <Trans i18nKey="config:addTheFollowingScriptTag" />
       </p>
-      <div className="highlight highlight-text-html-basic relative">
+      <div dir="ltr" className="highlight highlight-text-html-basic relative">
         <pre>
           <span className="pl-kos">{'<'}</span>
           <span className="pl-ent">script</span> <span className="pl-c1">src</span>={'"'}

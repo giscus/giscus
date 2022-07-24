@@ -100,6 +100,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
             </div>
           ) : null}
           <div
+            dir="auto"
             className={`markdown gsc-reply-content ${hidden ? ' not-shown' : ''}`}
             onClick={handleCommentClick}
             dangerouslySetInnerHTML={

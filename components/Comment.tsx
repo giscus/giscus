@@ -25,7 +25,7 @@ export default function Comment({
   onCommentUpdate,
   onReplyUpdate,
 }: ICommentProps) {
-  const { t } = useGiscusTranslation();
+  const { t, dir } = useGiscusTranslation();
   const formatDate = useDateFormatter();
   const formatDateDistance = useRelativeTimeFormatter();
   const [backPage, setBackPage] = useState(0);
@@ -133,6 +133,7 @@ export default function Comment({
           </div>
         ) : null}
         <div
+          dir={children ? dir : 'auto'}
           className={`markdown gsc-comment-content${
             comment.isMinimized ? ' minimized color-bg-tertiary border-color-primary' : ''
           }`}

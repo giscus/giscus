@@ -401,6 +401,10 @@ img.emoji {
   background-position: right 4px center;
 }
 
+[dir="rtl"] .form-select {
+  background-position: left 4px center;
+}
+
 .form-checkbox {
   @apply pl-5 my-[15px] align-middle;
 }

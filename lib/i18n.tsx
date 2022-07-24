@@ -102,7 +102,7 @@ interface TransNoCount {
 type TransProps = BaseTransProps & (TransRequireCount | TransNoCount);
 
 const defaultTransComponents = {
-  code: <code />,
+  code: <code dir="ltr" />,
   em: <em />,
   strong: <strong />,
 };

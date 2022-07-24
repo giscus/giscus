@@ -9,9 +9,17 @@ import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeContext } from '../lib/context';
 import { useTheme } from '../lib/hooks';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { AvailableLanguage, getDir } from '../lib/i18n';
 
 export default function App({ Component, pageProps }: AppProps) {
   const { resolvedTheme, setTheme } = useTheme(pageProps.theme);
+  const { locale } = useRouter();
+
+  useEffect(() => {
+    document.documentElement.setAttribute('dir', getDir(locale as AvailableLanguage));
+  }, [locale]);
 
   return (
     <ThemeContext.Provider value={{ theme: resolvedTheme, setTheme }}>

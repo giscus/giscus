@@ -3411,6 +3411,11 @@ table@^6.0.9, table@^6.8.0:
     string-width "^4.2.3"
     strip-ansi "^6.0.1"
 
+tailwindcss-vanilla-rtl@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/tailwindcss-vanilla-rtl/-/tailwindcss-vanilla-rtl-0.2.1.tgz#16470a495aa1c9e2bf768d914368e3f44f469287"
+  integrity sha512-V0oYm0IufjjIQenTDT/2XyhKXAbTw8jIIWlr1AnJ3Zk8TVc8yjMOe49T5EIKBVVdX1uDYGllD1xTuM5GryrAsw==
+
 tailwindcss@^3.1.6:
   version "3.1.6"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.1.6.tgz#bcb719357776c39e6376a8d84e9834b2b19a49f1"

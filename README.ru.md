@@ -82,7 +82,7 @@
 
 Этот README доступен на следующих языках:
 
-- [العربية](README.ar.md)
+- [Arabic (العربية)](README.ar.md)
 - [Deutsch](README.de.md)
 - [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)

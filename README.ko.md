@@ -78,7 +78,7 @@ GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utteranc
 
 이 README는 다음 언어로도 제공됩니다. :
 
-- [العربية](README.ar.md)
+- [Arabic (العربية)](README.ar.md)
 - [Deutsch](README.de.md)
 - [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)

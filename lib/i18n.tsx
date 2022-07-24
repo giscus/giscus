@@ -1,7 +1,7 @@
 import { TransProps as NextTransProps } from 'next-translate';
 import NextTrans from 'next-translate/Trans';
 import useTranslation from 'next-translate/useTranslation';
-import { useCallback } from 'react';
+import { HTMLAttributes, useCallback } from 'react';
 
 interface TranslationQuery {
   [name: string]: string | number;
@@ -63,19 +63,29 @@ export const availableLanguages = {
   'zh-TW': '繁體中文',
 } as const;
 
+export const rtlLanguages = new Set(['ar']);
+
 export type AvailableLanguage = keyof typeof availableLanguages;
+
+export function getDir(lang?: AvailableLanguage): HTMLAttributes<HTMLElement>['dir'] {
+  if (!lang) return 'auto';
+  return rtlLanguages.has(lang) ? 'rtl' : 'ltr';
+}
 
 export function useGiscusTranslation(namespace?: 'common'): {
   t: GiscusTranslate<CommonI18n>;
   lang: AvailableLanguage;
+  dir: HTMLAttributes<HTMLElement>['dir'];
 };
 export function useGiscusTranslation(namespace: 'config'): {
   t: GiscusTranslate<ConfigI18n>;
   lang: AvailableLanguage;
+  dir: HTMLAttributes<HTMLElement>['dir'];
 };
 export function useGiscusTranslation(namespace: Namespace = 'common') {
   const { t, lang } = useTranslation(namespace);
-  return { t, lang };
+  const dir = getDir(lang as AvailableLanguage);
+  return { t, lang, dir };
 }
 
 type BaseTransProps = Omit<Omit<NextTransProps, 'i18nKey'>, 'values'>;

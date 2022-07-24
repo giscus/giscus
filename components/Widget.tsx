@@ -14,15 +14,22 @@ interface IWidgetProps {
 
 export default function Widget({ origin, session }: IWidgetProps) {
   const [token, setToken] = useState('');
+  const [createDiscussionPromise, setCreateDiscussionPromise] = useState<Promise<string>>();
   const { repo, repoId, categoryId, description, term, number } = useContext(ConfigContext);
 
-  const handleDiscussionCreateRequest = async () =>
-    createDiscussion(repo, {
+  const handleDiscussionCreateRequest = async () => {
+    if (createDiscussionPromise) return createDiscussionPromise;
+
+    const promise = createDiscussion(repo, {
       repositoryId: repoId,
       categoryId,
       title: term,
       body: `# ${term}\n\n${description || ''}\n\n${cleanAnchor(origin)}`,
     });
+    setCreateDiscussionPromise(promise);
+
+    return promise;
+  };
 
   const handleError = useCallback(
     (message: string) => {

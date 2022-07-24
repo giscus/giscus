@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-07-24
+
+### Fixed
+
+- Prevent duplicated discussion creation
+  ([#623](https://github.com/giscus/giscus/pull/623)).
+
 ## 2022-07-23
 
 ### Added

@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2022-07-24
 
+### Added
+
+- Add Arabic localization
+  ([#622](https://github.com/giscus/giscus/pull/622)).
+
 ### Changed
 
 - Improve RTL languages support

@@ -78,7 +78,7 @@ Xem [CONTRIBUTING.md][contributing]
 
 README này có sẵn trong:
 
-- [Arabic (العربية)](README.ar.md)
+- [العربية](README.ar.md)
 - [Deutsch](README.de.md)
 - [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)

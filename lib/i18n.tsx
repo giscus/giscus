@@ -42,7 +42,7 @@ export interface GiscusTranslate<I18Namespace = I18n> {
 }
 
 export const availableLanguages = {
-  ar: 'Arabic',
+  ar: 'العربية',
   de: 'Deutsch',
   gsw: 'Deutsch (Schweiz)',
   en: 'English',

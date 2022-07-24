@@ -130,7 +130,7 @@ export default function Home({
       <Head>
         <title>giscus</title>
       </Head>
-      <div className="color-text-primary mx-auto w-full max-w-3xl p-2">
+      <div className="color-text-primary w-full max-w-3xl mx-auto p-2">
         <Comment comment={comment}>
           <Configuration
             directConfig={directConfig}
@@ -139,7 +139,7 @@ export default function Home({
           <div className="markdown p-4 pt-0" dangerouslySetInnerHTML={{ __html: contentAfter }} />
         </Comment>
 
-        <div id="comments" className="giscus my-8 w-full" />
+        <div id="comments" className="giscus w-full my-8" />
         <Script
           src="/client.js"
           data-repo="giscus/giscus"
@@ -155,7 +155,7 @@ export default function Home({
           data-strict="1"
         />
         <a
-          className="mx-auto mb-6 block w-max"
+          className="block w-max mx-auto mb-6"
           href="https://vercel.com/?utm_source=giscus&utm_campaign=oss"
         >
           <img src="/powered-by-vercel.svg" alt="Powered by Vercel" />

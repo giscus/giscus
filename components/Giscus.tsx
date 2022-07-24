@@ -108,7 +108,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
               </a>
             )}
           </h4>
-          <div className="mt-2 flex flex-auto items-center justify-center gap-2 text-sm">
+          <div className="flex flex-auto items-center justify-center gap-2 text-sm mt-2">
             <ReactButtons
               subjectId={data.discussion.id}
               reactionGroups={data.discussion.reactions}

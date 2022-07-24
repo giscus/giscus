@@ -224,7 +224,7 @@ export default function CommentBox({
           ) : null}
           {token ? (
             <button
-              className="btn btn-primary ml-1 items-center rounded-md border"
+              className="btn btn-primary items-center ml-1 rounded-md border"
               type="submit"
               disabled={(token && !input.trim()) || isSubmitting}
             >
@@ -232,7 +232,7 @@ export default function CommentBox({
             </button>
           ) : (
             <a
-              className="btn btn-primary ml-1 inline-flex items-center rounded-md border hover:no-underline"
+              className="btn btn-primary inline-flex items-center ml-1 rounded-md border hover:no-underline"
               target="_top"
               href={loginUrl}
             >
@@ -261,7 +261,7 @@ export default function CommentBox({
         </a>
       ) : null}
       <button
-        className="form-control color-text-secondary color-border-primary ml-2 w-full cursor-text rounded border px-2 py-1 text-left"
+        className="form-control color-text-secondary color-border-primary w-full cursor-text ml-2 rounded border px-2 py-1 text-left"
         onClick={handleReplyOpen}
         type="button"
       >

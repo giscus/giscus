@@ -43,7 +43,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
             />
           </a>
         </div>
-        <div className="ml-2 w-full min-w-0">
+        <div className="w-full min-w-0 ml-2">
           {!hidden ? (
             <div className="gsc-reply-header">
               <div className="gsc-reply-author">
@@ -70,9 +70,9 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                   </time>
                 </a>
                 {reply.authorAssociation !== 'NONE' ? (
-                  <div className="ml-2 hidden text-xs sm:inline-flex">
+                  <div className="hidden text-xs ml-2 sm:inline-flex">
                     <span
-                      className={`ml-1 rounded-md border px-1 capitalize ${
+                      className={`capitalize ml-1 rounded-md border px-1 ${
                         reply.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
                       }`}
                     >

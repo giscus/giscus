@@ -109,9 +109,9 @@ export default function Comment({
                 </time>
               </a>
               {comment.authorAssociation !== 'NONE' ? (
-                <div className="ml-2 hidden text-xs sm:inline-flex">
+                <div className="hidden text-xs ml-2 sm:inline-flex">
                   <span
-                    className={`ml-1 rounded-md border px-1 capitalize ${
+                    className={`capitalize ml-1 rounded-md border px-1 ${
                       comment.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
                     }`}
                   >
@@ -198,8 +198,8 @@ export default function Comment({
             }`}
           >
             {hasNextPage || hasUnfetchedReplies ? (
-              <div className="mb-2 flex h-8 items-center pl-4">
-                <div className="mr-[9px] flex w-[29px] shrink-0 content-center">
+              <div className="flex h-8 items-center mb-2 pl-4">
+                <div className="flex w-[29px] shrink-0 content-center mr-[9px]">
                   <KebabHorizontalIcon className="w-full rotate-90 fill-[var(--color-border-muted)]" />
                 </div>
 

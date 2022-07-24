@@ -111,6 +111,14 @@ a {
   box-shadow: var(--color-primer-shadow-focus, var(--color-state-focus-shadow));
 }
 
+@supports (-webkit-touch-callout: none) {
+  .form-control,
+  .form-select {
+    /* Ensures inputs don't zoom on mobile iPhone but are normal on iPad */
+    @apply text-base md:text-sm;
+  }
+}
+
 .input-contrast {
   background-color: var(--color-canvas-inset, var(--color-input-contrast-bg));
 }

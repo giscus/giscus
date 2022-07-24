@@ -13,6 +13,8 @@ major updates to the project.
 
 - Prevent duplicated discussion creation
   ([#623](https://github.com/giscus/giscus/pull/623)).
+- Prevent input zoom on iPhone Safari
+  ([#625](https://github.com/giscus/giscus/pull/625)).
 
 ## 2022-07-23
 

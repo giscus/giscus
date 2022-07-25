@@ -4,8 +4,8 @@
     "one": "تفاعل واحد",
     "two": "تفاعلان",
     "few": "{{count}} تفاعلات",
-    "many": "{{count}} تفاعلات",
-    "other": "{{count}} تفاعلات"
+    "many": "{{count}} تفاعل",
+    "other": "{{count}} تفاعل"
   },
   "comment": "تعليق",
   "comments": {
@@ -13,8 +13,8 @@
     "one": "تعليق واحد",
     "two": "تعليقان",
     "few": "{{count}} تعليقات",
-    "many": "{{count}} تعليقات",
-    "other": "{{count}} تعليقات"
+    "many": "{{count}} تعليق",
+    "other": "{{count}} تعليق"
   },
   "reply": "رد",
   "replies": {
@@ -22,24 +22,24 @@
     "one": "رد واحد",
     "two": "ردان",
     "few": "{{count}} ردود",
-    "many": "{{count}} ردود",
-    "other": "{{count}}{{plus}} ردود"
+    "many": "{{count}} رد",
+    "other": "{{count}}{{plus}} رد"
   },
   "upvotes": {
     "0": "{{count}} تأييد",
     "one": "تأييد واحد",
     "two": "تأييدان",
     "few": "{{count}} تأييدات",
-    "many": "{{count}} تأييدات",
-    "other": "{{count}} تأييدات"
+    "many": "{{count}} تأييد",
+    "other": "{{count}} تأييد"
   },
   "hiddenItems": {
     "0": "{{count}} عنصر مخفي",
     "one": "عنصر مخفي",
     "two": "عنصران مخفيان",
     "few": "{{count}} عناصر مخفية",
-    "many": "{{count}} عناصر مخفية",
-    "other": "{{count}} عناصر مخفية"
+    "many": "{{count}} عنصر مخفية",
+    "other": "{{count}} عنصر مخفية"
   },
   "genericError": "حدث خطأ: {{message}}",
   "loadMore": "تحميل المزيد",
@@ -54,16 +54,16 @@
     "one": "عرض رد واحد سابق",
     "two": "عرض ردان سابقان",
     "few": "عرض {{count}} ردود سابقة",
-    "many": "عرض {{count}} ردود سابقة",
-    "other": "عرض {{count}} ردود سابقة"
+    "many": "عرض {{count}} رد سابقة",
+    "other": "عرض {{count}} رد سابقة"
   },
   "seePreviousRepliesOnGitHub": {
     "0": "اطلع على {{count}} رد سابق على جيت هب",
     "one": "اطلع على رد واحد سابق على جيت هب",
     "two": "اطلع على ردان سابقان على جيت هب",
     "few": "اطلع على {{count}} ردود سابقة على جيت هب",
-    "many": "اطلع على {{count}} ردود سابقة على جيت هب",
-    "other": "اطلع على {{count}} ردود سابقة على جيت هب"
+    "many": "اطلع على {{count}} رد سابقة على جيت هب",
+    "other": "اطلع على {{count}} رد سابقة على جيت هب"
   },
   "edited": "معدل",
   "thisCommentWasDeleted": "هذا التعليق محذوف.",
@@ -84,7 +84,7 @@
   "upvote": "تأييد",
   "youMustBeSignedInToUpvote": "يجب تسجيل الدخول لتتمكن من التأييد.",
   "addReactions": "أضف تفاعل",
-  "pleaseWait": "اتنظر من فضلك…",
+  "pleaseWait": "انتظر من فضلك…",
   "pickYourReaction": "اختر تفاعل",
   "addTheReaction": "أضف تفاعل {{reaction}}",
   "removeTheReaction": "احذف تفاعل {{reaction}}",
@@ -95,8 +95,8 @@
     "one": "شخص واحد تفاعل مع {{reaction}} {{emoji}}",
     "two": "شخصان تفاعلا مع {{reaction}} {{emoji}}",
     "few": "{{count}} أشخاص تفاعلوا مع {{reaction}} {{emoji}}",
-    "many": "{{count}} أشخاص تفاعلوا مع {{reaction}} {{emoji}}",
-    "other": "{{count}} أشخاص تفاعلوا مع {{reaction}} {{emoji}}"
+    "many": "{{count}} شخصًا تفاعلوا مع {{reaction}} {{emoji}}",
+    "other": "{{count}} شخص تفاعلوا مع {{reaction}} {{emoji}}"
   },
   "emoji": "ايموجي",
   "nothingToPreview": "لا شيء لعرضه",

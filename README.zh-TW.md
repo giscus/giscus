@@ -98,6 +98,6 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 
-[![威力本源 Vercel](public/powered-by-vercel.svg)][vercel]
+[![由 Vercel 技術支援](public/powered-by-vercel.svg)][vercel]
 
 [vercel]: https://vercel.com/?utm_source=giscus&utm_campaign=oss

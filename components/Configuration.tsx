@@ -92,7 +92,6 @@ function ClipboardCopy() {
         className="ClipboardButton btn js-clipboard-copy tooltipped-no-delay m-2 p-0"
         data-copy-feedback="Copied!"
         tabIndex={0}
-        role="button"
         onClick={handleClipboardCopy}
       >
         <CopyIcon className="octicon octicon-copy js-clipboard-copy-icon m-2" />

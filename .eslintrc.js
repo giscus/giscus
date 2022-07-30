@@ -34,5 +34,5 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['public/client.js'],
+  ignorePatterns: ['public/**'],
 };

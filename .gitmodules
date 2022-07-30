@@ -1,3 +1,6 @@
 [submodule "public/js/vendor/mathjax@3.2.0"]
 	path = public/js/vendor/mathjax@3.2.0
 	url = https://github.com/mathjax/MathJax.git
+[submodule "public/js/vendor/speech-rule-engine@3.3.3"]
+	path = public/js/vendor/speech-rule-engine@3.3.3
+	url = https://github.com/giscus/speech-rule-engine.git

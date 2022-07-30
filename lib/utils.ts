@@ -83,3 +83,12 @@ export async function digestMessage(message: string, algorithm: AlgorithmIdentif
   const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
   return hashHex;
 }
+
+export async function hasStorageAccess() {
+  // If strict tracking protection is enabled in the browser,
+  // accessing localStorage may be forbidden.
+  if (typeof document.hasStorageAccess === 'undefined') return true;
+  if (await document.hasStorageAccess()) return true;
+  await document.requestStorageAccess();
+  return await document.hasStorageAccess();
+}

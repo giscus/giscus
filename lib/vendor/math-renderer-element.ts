@@ -5,6 +5,7 @@
 
 import type MathJaxConfig from 'mathjax/es5/tex-chtml-full';
 import { html, render } from 'lit-html';
+import { hasStorageAccess } from '../utils';
 
 declare global {
   interface Window {
@@ -96,13 +97,10 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
       },
     };
 
-    try {
-      // Things like a11y and SVG rendering are still brittle and may break rendering.
-      // We don't have much control over them, so always clear the settings on load.
+    // Things like a11y and SVG rendering are still brittle and may break rendering.
+    // We don't have much control over them, so always clear the settings on load.
+    if (await hasStorageAccess()) {
       localStorage.removeItem('MathJax-Menu-Settings');
-    } finally {
-      // If strict tracking protection is enabled in the browser,
-      // accessing localStorage may be forbidden.
     }
 
     configureSRE();

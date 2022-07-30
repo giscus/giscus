@@ -414,6 +414,19 @@ img.emoji {
   @apply mt-1 -ml-5 mr-2 align-top;
 }
 
+.flash {
+  @apply relative px-4 py-5 border rounded-md;
+
+  color: var(--color-fg-default, var(--color-text-primary));
+  background-color: var(--color-accent-subtle, var(--color-bg-info));
+  border-color: var(--color-accent-muted, var(--color-box-border-info));
+}
+
+.flash-error {
+  background-image: linear-gradient(var(--color-danger-subtle), var(--color-danger-subtle));
+  border-color: var(--color-danger-muted);
+}
+
 /*! giscus-specific styles */
 
 .gsc-loading {

@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2022-07-30
 
+### Added
+
+- Add styles for `flash` and `flash-error` classes
+  ([#639](https://github.com/giscus/giscus/pull/639)).
+
 ### Changed
 
 - Self-host MathJax libraries

@@ -73,6 +73,8 @@ main {
   --color-success-fg: #0969da;
   --color-attention-fg: #9a6700;
   --color-danger-fg: #b35900;
+  --color-danger-muted: rgb(247 153 57 / 40%);
+  --color-danger-subtle: #fff5e8;
   --color-primer-shadow-inset: inset 0 1px 0 rgb(208 215 222 / 20%);
   --color-primer-shadow-focus: 0 0 0 3px rgb(9 105 218 / 30%);
   --color-scale-gray-1: #eaeef2;

@@ -89,6 +89,10 @@ export async function hasStorageAccess() {
   // accessing localStorage may be forbidden.
   if (typeof document.hasStorageAccess === 'undefined') return true;
   if (await document.hasStorageAccess()) return true;
-  await document.requestStorageAccess();
+  try {
+    await document.requestStorageAccess();
+  } catch (err) {
+    // The request can only be made under very specific conditions.
+  }
   return await document.hasStorageAccess();
 }

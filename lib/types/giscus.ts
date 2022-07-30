@@ -61,6 +61,7 @@ export interface ISetConfigMessage {
     categoryId?: string;
     term?: string;
     description?: string;
+    backLink?: string;
     number?: number;
     strict?: boolean;
     reactionsEnabled?: boolean;

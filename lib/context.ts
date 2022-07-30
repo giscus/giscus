@@ -34,6 +34,7 @@ interface IConfigContext {
   categoryId: string;
   term: string;
   description: string;
+  backLink: string;
   number: number;
   strict: boolean;
   reactionsEnabled: boolean;
@@ -49,6 +50,7 @@ export const ConfigContext = createContext<IConfigContext>({
   categoryId: '',
   term: '',
   description: '',
+  backLink: '',
   number: 0,
   strict: false,
   reactionsEnabled: true,

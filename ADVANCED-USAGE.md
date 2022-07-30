@@ -10,6 +10,8 @@ configurations.
 - [`data-` attributes](#data--attributes)
   - [`data-strict`](#data-strict)
   - [`data-theme`](#data-theme)
+- [`<meta>` tags](#meta-tags)
+  - [`giscus:backlink`](#giscusbacklink)
 - [giscus-to-parent `message` events](#giscus-to-parent-message-events)
   - [`IErrorMessage`](#ierrormessage)
   - [`IMetadataMessage`](#imetadatamessage)
@@ -154,6 +156,32 @@ your website. Make sure that your users are aware of this.
 
 For more details, see [creating new themes][creating-new-themes].
 
+## `<meta>` tags
+
+Your website can define additional `<meta>` tags to help giscus gather the
+context of the page that embeds the comments.
+
+### `giscus:backlink`
+
+If the page that embeds giscus has a `<meta>` tag with a
+`name="giscus:backlink"` attribute, giscus will use that element's `content`
+attribute to link back to the page when creating a new discussion. Otherwise,
+giscus will use the value of `window.location.href`. For example, with the
+following element in your web page:
+
+```html
+<head>
+  <!-- ... -->
+  <meta name="giscus:backlink" content="https://bit.ly/RickRolled">
+  <!-- ... -->
+</head>
+```
+
+When giscus creates a new discussion, the discussion body will contain a link to
+https://bit.ly/RickRolled instead of your web page's URL. This can be useful if
+you want to use short links for your web pages (e.g. to avoid expired links if
+you change your website's URL structure or domain).
+
 ## giscus-to-parent `message` events
 
 There are `message` events emitted by giscus to the parent `window` using
@@ -266,6 +294,7 @@ interface ISetConfigMessage {
     categoryId?: string;
     term?: string;
     description?: string;
+    backLink?: string;
     number?: number;
     strict?: boolean;
     reactionsEnabled?: boolean;

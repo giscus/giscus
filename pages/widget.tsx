@@ -28,6 +28,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const inputPosition = (query.inputPosition === 'top' ? 'top' : 'bottom') as InputPosition;
   const theme = ((query.theme as string) || 'light') as Theme;
   const { origin, originHost } = getOriginHost((query.origin as string) || '');
+  const backLink = (query.backLink as string) || origin;
 
   const { encryption_password } = env;
   const token = await decodeState(session, encryption_password)
@@ -69,6 +70,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       defaultCommentOrder,
       theme,
       originHost,
+      backLink,
     },
   };
 }
@@ -90,6 +92,7 @@ export default function WidgetPage({
   defaultCommentOrder,
   theme,
   originHost,
+  backLink,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const resolvedOrigin = origin || (typeof location === 'undefined' ? '' : location.href);
   const { theme: resolvedTheme, setTheme } = useContext(ThemeContext);
@@ -99,6 +102,7 @@ export default function WidgetPage({
     category,
     categoryId,
     description,
+    backLink,
     term,
     number,
     strict,

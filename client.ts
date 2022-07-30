@@ -7,6 +7,15 @@
     return `[giscus] An error occurred. Error message: "${message}".`;
   }
 
+  function getMetaContent(property: string, og = false) {
+    const ogSelector = og ? `meta[property='og:${property}'],` : '';
+    const element = document.querySelector<HTMLMetaElement>(
+      ogSelector + `meta[name='${property}']`,
+    );
+
+    return element ? element.content : '';
+  }
+
   // Set up session and clear the session param on load
   const url = new URL(location.href);
   let session = url.searchParams.get('giscus');
@@ -29,9 +38,6 @@
 
   const attributes = script.dataset;
   const params: Record<string, string> = {};
-  const ogDescriptionMeta = document.querySelector(
-    `meta[property='og:description'],meta[name='description']`,
-  ) as HTMLMetaElement;
 
   params.origin = cleanedLocation;
   params.session = session as string;
@@ -44,7 +50,8 @@
   params.category = attributes.category || '';
   params.categoryId = attributes.categoryId as string;
   params.strict = attributes.strict || '0';
-  params.description = ogDescriptionMeta ? ogDescriptionMeta.content : '';
+  params.description = getMetaContent('description', true);
+  params.backLink = getMetaContent('giscus:backlink') || cleanedLocation;
 
   switch (attributes.mapping) {
     case 'url':
@@ -54,12 +61,7 @@
       params.term = document.title;
       break;
     case 'og:title':
-      {
-        const ogtitleMeta = document.querySelector(
-          `meta[property='og:title'],meta[name='og:title']`,
-        ) as HTMLMetaElement;
-        params.term = ogtitleMeta ? ogtitleMeta.content : '';
-      }
+      params.term = getMetaContent('title', true);
       break;
     case 'specific':
       params.term = attributes.term as string;

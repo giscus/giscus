@@ -11,6 +11,8 @@ major updates to the project.
 
 ### Added
 
+- Use `giscus:backlink` `<meta>` tag if exists to link to the origin page
+  ([#642](https://github.com/giscus/giscus/pull/642)).
 - Add styles for `flash` and `flash-error` classes
   ([#639](https://github.com/giscus/giscus/pull/639)).
 

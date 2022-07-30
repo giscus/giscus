@@ -4,3 +4,6 @@
 [submodule "public/js/vendor/speech-rule-engine@3.3.3"]
 	path = public/js/vendor/speech-rule-engine@3.3.3
 	url = https://github.com/giscus/speech-rule-engine.git
+[submodule "public/js/vendor/wicked-good-xpath@master"]
+	path = public/js/vendor/wicked-good-xpath@master
+	url = https://github.com/google/wicked-good-xpath.git

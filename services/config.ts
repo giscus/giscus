@@ -16,10 +16,6 @@ export const GITHUB_REPO_INSTALLATION_URL = (repoWithOwner: string) =>
 export const GITHUB_ACCESS_TOKEN_URL = (id: number) =>
   `${GITHUB_INSTALLATIONS_URL}/${id}/access_tokens`;
 
-// giscus
-
-export const GISCUS_APP_HOST = process.env.NEXT_PUBLIC_GISCUS_APP_HOST as `https://${string}`;
-
 // Supabase
 
 export const SUPABASE_KEY = process.env.SUPABASE_KEY;

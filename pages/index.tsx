@@ -14,11 +14,11 @@ import { ThemeContext } from '../lib/context';
 import { sendData } from '../lib/messages';
 import { ISetConfigMessage } from '../lib/types/giscus';
 import { getThemeUrl } from '../lib/utils';
-import { GISCUS_APP_HOST } from '../services/config';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import Router from 'next/router';
 import getT from 'next-translate/getT';
 import { AvailableLanguage } from '../lib/i18n';
+import { env } from '../lib/variables';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const localeSuffix = locale === 'en' ? '' : `.${locale}`;
@@ -82,7 +82,7 @@ export default function Home({
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
     theme: 'light',
-    themeUrl: `${GISCUS_APP_HOST}/themes/custom_example.css`,
+    themeUrl: `${env.app_host}/themes/custom_example.css`,
     reactionsEnabled: true,
     emitMetadata: false,
     lang: locale,

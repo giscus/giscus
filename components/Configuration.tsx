@@ -11,8 +11,7 @@ import {
 } from '../lib/i18n';
 import { ICategory } from '../lib/types/adapter';
 import { InputPosition } from '../lib/types/giscus';
-import { availableThemes, Theme } from '../lib/variables';
-import { GISCUS_APP_HOST } from '../services/config';
+import { availableThemes, env, Theme } from '../lib/variables';
 import { getCategories } from '../services/giscus/categories';
 
 interface IDirectConfig {
@@ -538,7 +537,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             onChange={(event) => onDirectConfigChange('themeUrl', event.target.value as Theme)}
             type="text"
             className="form-control min-w-[75%] placeholder-gray-500 my-2 rounded-md border px-[12px] py-[5px] sm:min-w-[50%]"
-            placeholder={`${GISCUS_APP_HOST}/themes/custom_example.css`}
+            placeholder={`${env.app_host}/themes/custom_example.css`}
           />
 
           <p className="color-text-danger text-xs">{t('warningExternalCSSUnsafe')}</p>
@@ -553,7 +552,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
         <pre>
           <span className="pl-kos">{'<'}</span>
           <span className="pl-ent">script</span> <span className="pl-c1">src</span>={'"'}
-          <span className="pl-s">{GISCUS_APP_HOST}/client.js</span>
+          <span className="pl-s">{env.app_host}/client.js</span>
           {'"\n        '}
           <span className="pl-c1">data-repo</span>={'"'}
           <span className="pl-s">{config.repository || t('[enterRepoHere]')}</span>

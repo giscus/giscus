@@ -13,6 +13,11 @@ major updates to the project.
 
 - Self-host MathJax libraries
   ([#637](https://github.com/giscus/giscus/pull/637)).
+- Remove iframe-resizer host script
+  ([#638](https://github.com/giscus/giscus/pull/638)). \
+  **Note:** if you're using
+  [giscus-component](https://github.com/giscus/giscus-component), make sure to
+  update to v2 and up.
 
 ## 2022-07-24
 

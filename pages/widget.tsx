@@ -1,6 +1,5 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
-import Script from 'next/script';
 import { ContextType, useContext, useEffect, useState } from 'react';
 import Widget from '../components/Widget';
 import { assertOrigin } from '../lib/config';
@@ -153,13 +152,6 @@ export default function WidgetPage({
           <Widget origin={resolvedOrigin} session={session} />
         </ConfigContext.Provider>
       </main>
-
-      <Script
-        src="/js/iframeResizer.contentWindow.min.js"
-        integrity="sha256-rbC2imHDJIBYUIXvf+XiYY+2cXmiSlctlHgI+rrezQo="
-        crossOrigin="anonymous"
-        strategy="lazyOnload"
-      />
     </>
   );
 }

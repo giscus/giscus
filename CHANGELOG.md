@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-07-30
+
+### Changed
+
+- Self-host MathJax libraries
+  ([#637](https://github.com/giscus/giscus/pull/637)).
+
 ## 2022-07-24
 
 ### Added

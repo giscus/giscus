@@ -46,8 +46,8 @@ function configureSRE() {
   script.id = 'sre-config';
   script.setAttribute('type', 'text/x-sre-config');
   script.textContent = JSON.stringify({
-    json: 'https://cdn.jsdelivr.net/npm/speech-rule-engine@3.3.3/lib/mathmaps/',
-    xpath: 'https://cdn.jsdelivr.net/gh/google/wicked-good-xpath@master/dist/wgxpath.install.js',
+    json: '/js/vendor/speech-rule-engine@3.3.3/lib/mathmaps/',
+    xpath: '/js/vendor/wicked-good-xpath@master/dist/wgxpath.install.js',
   });
   document.head.appendChild(script);
 }
@@ -58,7 +58,7 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
       ...(window.MathJax || {}),
       loader: {
         paths: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5',
+          mathjax: '/js/vendor/mathjax@3.2.0/es5',
         },
         load: ['ui/safe'],
       },

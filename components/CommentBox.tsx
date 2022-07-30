@@ -177,6 +177,9 @@ export default function CommentBox({
       </div>
       <div className="gsc-comment-box-main">
         {isPreview ? (
+          // The <div> element *might* have a child <button> element from
+          // GitHub's markdown renderer result that allows keyboard interaction.
+          // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
           <div
             className="markdown color-border-primary gsc-comment-box-preview"
             dangerouslySetInnerHTML={

@@ -99,6 +99,11 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
               </div>
             </div>
           ) : null}
+          {/*
+            The <div> element *might* have a child <button> element from
+            GitHub's markdown renderer result that allows keyboard interaction.
+          */}
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
           <div
             dir="auto"
             className={`markdown gsc-reply-content ${hidden ? ' not-shown' : ''}`}

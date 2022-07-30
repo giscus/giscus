@@ -24,7 +24,7 @@ major updates to the project.
   [giscus-component](https://github.com/giscus/giscus-component), make sure to
   update to v2 and up.
 - Safely remove MathJax settings
-  ([#640](https://github.com/giscus/giscus/pull/640)).
+  ([#641](https://github.com/giscus/giscus/pull/641)).
 
 ## 2022-07-24
 

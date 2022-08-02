@@ -48,6 +48,7 @@ export const availableLanguages = {
   en: 'English',
   es: 'Español',
   fr: 'Français',
+  fa: 'Persian',
   id: 'Indonesia',
   it: 'Italiano',
   ja: '日本語',

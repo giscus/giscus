@@ -101,7 +101,7 @@ term, giscus will compute the hash of the discussion title and search for the
 hash in the discussion body. The hash is calculated using the SHA-1 algorithm.
 
 If you want to enable this option, make sure all discussions you want to use
-with giscus contains the SHA-1 hash of the dicussion title in the discussion
+with giscus contains the SHA-1 hash of the discussion title in the discussion
 body. If you already have existing discussions before this option was
 introduced, you can migrate them by editing the discussion and adding the hash
 anywhere in the discussion body. You can use any SHA-1 calculator to find the

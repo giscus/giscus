@@ -24,7 +24,7 @@ interface IThemeContext {
 }
 
 export const ThemeContext = createContext<IThemeContext>({
-  theme: 'light',
+  theme: 'preferred_color_scheme',
 });
 
 interface IConfigContext {

@@ -15,7 +15,7 @@ function isAvailableTheme(theme: Theme): theme is AvailableTheme {
 }
 
 export function resolveTheme(theme: Theme): Theme {
-  if (!theme) return 'light';
+  if (!theme) return 'preferred_color_scheme';
   if (isAvailableTheme(theme)) return theme;
   return 'custom';
 }

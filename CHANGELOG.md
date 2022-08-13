@@ -14,6 +14,9 @@ major updates to the project.
 - Minify client script locally
   ([#665](https://github.com/giscus/giscus/pull/665)).
 
+- Default to `preferred_color_scheme` theme
+  ([#664](https://github.com/giscus/giscus/pull/664)).
+
 ## 2022-07-30
 
 ### Added

@@ -81,7 +81,7 @@ export default function Home({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { theme, setTheme } = useContext(ThemeContext);
   const [directConfig, setDirectConfig] = useState<DirectConfig>({
-    theme: 'light',
+    theme: 'preferred_color_scheme',
     themeUrl: `${env.app_host}/themes/custom_example.css`,
     reactionsEnabled: true,
     emitMetadata: false,
@@ -148,7 +148,7 @@ export default function Home({
           data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
           data-mapping="specific"
           data-term="Welcome to giscus!"
-          data-theme="light"
+          data-theme="preferred_color_scheme"
           data-reactions-enabled="1"
           data-emit-metadata="0"
           data-input-position="bottom"

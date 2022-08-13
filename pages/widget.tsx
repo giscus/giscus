@@ -26,7 +26,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
   const emitMetadata = Boolean(+query.emitMetadata);
   const inputPosition = (query.inputPosition === 'top' ? 'top' : 'bottom') as InputPosition;
-  const theme = ((query.theme as string) || 'light') as Theme;
+  const theme = ((query.theme as string) || 'preferred_color_scheme') as Theme;
   const { origin, originHost } = getOriginHost((query.origin as string) || '');
   const backLink = (query.backLink as string) || origin;
 

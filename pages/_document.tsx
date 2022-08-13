@@ -14,7 +14,7 @@ class CustomDocument extends Document {
     // Use the `theme` prop of the page if available
     // to immediately set the correct theme.
     const theme = this.props.__NEXT_DATA__.props.pageProps.theme;
-    const resolvedTheme = resolveTheme(theme || 'light');
+    const resolvedTheme = resolveTheme(theme || 'preferred_color_scheme');
     const themeUrl = getThemeUrl(resolvedTheme, theme);
 
     return (

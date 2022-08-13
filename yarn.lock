@@ -2896,10 +2896,10 @@ preact-render-to-string@^5.2.1:
   dependencies:
     pretty-format "^3.8.0"
 
-preact@^10.10.1:
-  version "10.10.1"
-  resolved "https://registry.npmjs.org/preact/-/preact-10.10.1.tgz#df67e4348f50fc6ad2e11e813553f15c6543176b"
-  integrity sha512-cXljG59ylGtSLismoLojXPAGvnh2ipQr3BYz9KZQr+1sdASCT+sR/v8dSMDS96xGCdtln2wHfAHCnLJK+XcBNg==
+preact@^10.10.2:
+  version "10.10.2"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.10.2.tgz#3460d456d84c4701af33ac37e9bd3054271d5b1e"
+  integrity sha512-GUXSsfwq4NKhlLYY5ctfNE0IjFk7Xo4952yPI8yMkXdhzeQmQ+FahZITe7CeHXMPyKBVQ8SoCmGNIy9TSOdhgQ==
 
 prelude-ls@^1.2.1:
   version "1.2.1"

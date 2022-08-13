@@ -11,7 +11,7 @@
   "scripts": {
     "cscript": "tsc client.ts --outDir public",
     "cthemes": "postcss styles/themes/*.css --dir public/themes --config styles/themes",
-    "mscript": "curl -d output_info=compiled_code --data-urlencode js_code@public/client.js https://closure-compiler.appspot.com/compile -o public/client.js",
+    "mscript": "google-closure-compiler < public/client.js --js_output_file public/client.js",
     "dev": "yarn cscript --watch --preserveWatchOutput & yarn cthemes --watch & next dev",
     "build": "yarn cscript && yarn cthemes && yarn mscript && next build",
     "start": "next start",
@@ -50,6 +50,7 @@
     "eslint-config-next": "^12.2.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "google-closure-compiler": "^20220803.0.0",
     "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0",
     "postcss-import": "^14.1.0",

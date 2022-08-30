@@ -1,81 +1,81 @@
 {
   "reactions": {
-    "0": "{{count}} 개 반응",
-    "one": "{{count}} 개 반응",
-    "other": "{{count}} 개 반응"
+    "0": "반응 {{count}}개",
+    "one": "반응 {{count}}개",
+    "other": "반응 {{count}}개"
   },
-  "comment": "댓글",
+  "comment": "댓글 등록",
   "comments": {
-    "0": "댓글 {{count}} 개",
-    "one": "댓글 {{count}} 개",
-    "other": "댓글 {{count}} 개"
+    "0": "댓글 {{count}}개",
+    "one": "댓글 {{count}}개",
+    "other": "댓글 {{count}}개"
   },
-  "reply": "답글",
+  "reply": "답글 등록",
   "replies": {
-    "0": "답글 {{count}} 개",
-    "one": "답글 {{count}} 개",
-    "other": "답글 {{count}}{{plus}} 개"
+    "0": "답글 {{count}}개",
+    "one": "답글 {{count}}개",
+    "other": "답글 {{count}}{{plus}}개"
   },
   "upvotes": {
-    "0": "좋아요 {{count}} 개",
-    "one": "좋아요 {{count}} 개",
-    "other": "좋아요 {{count}} 개"
+    "0": "추천 {{count}}개",
+    "one": "추천 {{count}}개",
+    "other": "추천 {{count}}개"
   },
   "hiddenItems": {
-    "0": "숨겨진 항목 {{count}} 개",
-    "one": "숨겨진 항목 {{count}} 개",
-    "other": "숨겨진 항목 {{count}} 개"
+    "0": "숨겨진 항목 {{count}}개",
+    "one": "숨겨진 항목 {{count}}개",
+    "other": "숨겨진 항목 {{count}}개"
   },
-  "genericError": "에러가 발생했습니다: {{message}}",
+  "genericError": "오류 발생: {{message}}",
   "loadMore": "더 불러오기",
-  "loading": "로딩 중",
+  "loading": "불러오는 중",
   "loadingComments": "댓글 불러오는 중…",
-  "loadingPreview": "미리 보기 로딩 중…",
-  "poweredBy": "– <a>giscus</a>에 의해 구동",
-  "oldest": "가장 오래된",
-  "newest": "최신",
+  "loadingPreview": "미리보기 불러오는 중…",
+  "poweredBy": "– Powered by <a>giscus</a>",
+  "oldest": "오래된 순",
+  "newest": "새로운 순",
   "showPreviousReplies": {
-    "0": "이전 답글 {{count}} 개 더 보기",
-    "one": "이전 답글 {{count}} 개 더 보기",
-    "other": "이전 답글 {{count}} 개 더 보기"
+    "0": "이전 답글 {{count}}개 더 보기",
+    "one": "이전 답글 {{count}}개 더 보기",
+    "other": "이전 답글 {{count}}개 더 보기"
   },
   "seePreviousRepliesOnGitHub": {
-    "0": "GitHub에서 이전 답글 {{count}} 개 더 보기",
-    "one": "GitHub에서 이전 답글 {{count}} 개 더 보기",
-    "other": "GitHub에서 이전 답글 {{count}} 개 더 보기"
+    "0": "GitHub에서 이전 답글 {{count}}개 더 보기",
+    "one": "GitHub에서 이전 답글 {{count}}개 더 보기",
+    "other": "GitHub에서 이전 답글 {{count}}개 더 보기"
   },
   "edited": "수정됨",
-  "thisCommentWasDeleted": "이 댓글은 지워졌습니다.",
-  "thisCommentWasMinimized": "이 댓글은 축소되었습니다.",
-  "thisCommentWasHidden": "이 댓글은 감춰졌습니다.",
+  "thisCommentWasDeleted": "이 댓글은 삭제됐습니다.",
+  "thisCommentWasMinimized": "이 댓글은 축소됐습니다.",
+  "thisCommentWasHidden": "이 댓글은 숨겨졌습니다.",
   "write": "작성하기",
-  "preview": "미리 보기",
-  "enableFixedWidth": "편집기에서 고정 너비(고정 폭) 글꼴 활성화",
-  "disableFixedWidth": "편집기에서 고정 너비(고정 폭) 글꼴 비활성화",
+  "preview": "미리보기",
+  "enableFixedWidth": "편집기에서 고정폭 글꼴 사용",
+  "disableFixedWidth": "편집기에서 고정폭 글꼴 사용 안 함",
   "lastEditedAt": "{{date}}에 마지막으로 수정됨",
-  "writeAComment": "댓글 달기",
-  "signInToComment": "댓글을 남기려면 로그인하세요.",
-  "stylingWithMarkdownIsSupported": "마크다운을 이용한 꾸미기가 지원됩니다.",
-  "cancel": "취소하기",
-  "signInWithGitHub": "GitHub으로 로그인하기",
-  "writeAReply": "답글 달기",
+  "writeAComment": "댓글 작성하기",
+  "signInToComment": "로그인하고 댓글 작성하기",
+  "stylingWithMarkdownIsSupported": "마크다운 형식 지원",
+  "cancel": "취소",
+  "signInWithGitHub": "GitHub으로 로그인",
+  "writeAReply": "답글 작성하기",
 
-  "upvote": "좋아요",
-  "youMustBeSignedInToUpvote": "투표하려면 위해선 로그인이 필요합니다.",
-  "addReactions": "반응 추가하기",
-  "pleaseWait": "잠시 기다리세요…",
-  "pickYourReaction": "반응을 고르세요.",
-  "addTheReaction": "{{reaction}} 반응 추가하기",
-  "removeTheReaction": "{{reaction}} 반응 제거하기",
-  "signInToAddYourReaction": "<a>로그인</a>을 해서 반응을 남기세요.",
-  "youMustBeSignedInToAddReactions": "반응을 남기기 위해선 로그인이 필요합니다.",
+  "upvote": "추천",
+  "youMustBeSignedInToUpvote": "추천하려면 로그인해야 합니다.",
+  "addReactions": "반응 추가",
+  "pleaseWait": "잠시만 기다려주세요…",
+  "pickYourReaction": "반응을 고르세요",
+  "addTheReaction": "{{reaction}} 반응 추가",
+  "removeTheReaction": "{{reaction}} 반응 제거",
+  "signInToAddYourReaction": "<a>로그인</a>하고 반응을 남기세요.",
+  "youMustBeSignedInToAddReactions": "반응을 남기려면 로그인해야 합니다.",
   "peopleReactedWith": {
-    "0": "{{count}} 명이 {{reaction}} {{emoji}}으로 반응함",
-    "one": "{{count}} 명이 {{reaction}} {{emoji}}으로 반응함",
-    "other": "{{count}} 명이 {{reaction}} {{emoji}}으로 반응함"
+    "0": "{{count}}명이 {{reaction}} {{emoji}}로 반응함",
+    "one": "{{count}}명이 {{reaction}} {{emoji}}로 반응함",
+    "other": "{{count}}명이 {{reaction}} {{emoji}}로 반응함"
   },
   "emoji": "이모지",
-  "nothingToPreview": "미리보기가 없습니다.",
+  "nothingToPreview": "미리볼 내용이 없습니다.",
 
   "THUMBS_UP": "+1",
   "THUMBS_DOWN": "-1",

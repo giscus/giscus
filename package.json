@@ -53,7 +53,7 @@
     "google-closure-compiler": "^20220803.0.0",
     "postcss": "^8.4.16",
     "postcss-cli": "^10.0.0",
-    "postcss-import": "^14.1.0",
+    "postcss-import": "^15.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "stylelint": "^14.10.0",

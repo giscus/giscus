@@ -4,7 +4,7 @@
     "one": "{{count}} Reaktion",
     "other": "{{count}} Reaktionen"
   },
-  "comment": "Kommentar",
+  "comment": "Kommentieren",
   "comments": {
     "0": "{{count}} Kommentare",
     "one": "{{count}} Kommentar",
@@ -22,9 +22,9 @@
     "other": "{{count}} Upvotes"
   },
   "hiddenItems": {
-    "0": "{{count}} versteckte Items",
-    "one": "{{count}} verstecktes Item",
-    "other": "{{count}} versteckte Items"
+    "0": "{{count}} versteckte Elemente",
+    "one": "{{count}} verstecktes Element",
+    "other": "{{count}} versteckte Elemente"
   },
   "genericError": "Ein Fehler ist aufgetreten: {{message}}",
   "loadMore": "Lade mehr",

@@ -3421,10 +3421,10 @@ stylelint-config-recommended@^9.0.0:
   resolved "https://registry.npmjs.org/stylelint-config-recommended/-/stylelint-config-recommended-9.0.0.tgz#1c9e07536a8cd875405f8ecef7314916d94e7e40"
   integrity sha512-9YQSrJq4NvvRuTbzDsWX3rrFOzOlYBmZP+o513BJN/yfEmGSr0AxdvrWs0P/ilSpVV/wisamAHu5XSk8Rcf4CQ==
 
-stylelint-config-standard@^27.0.0:
-  version "27.0.0"
-  resolved "https://registry.npmjs.org/stylelint-config-standard/-/stylelint-config-standard-27.0.0.tgz#d1c69082fc973dab7da1a6c89979e54a0758f389"
-  integrity sha512-J+wxyODWQCW2kgdhVzj51a4cFcJkglkMQrjPU/1Jo8w2oKSKK5ZRqHvDDWxEmjYWIYbMhhIMS5dOgVpGUMIACw==
+stylelint-config-standard@^28.0.0:
+  version "28.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-standard/-/stylelint-config-standard-28.0.0.tgz#7e1926c232631a8445eafee7b186d276d42d7b15"
+  integrity sha512-q/StuowDdDmFCravzGHAwgS9pjX0bdOQUEBBDIkIWsQuYGgYz/xsO8CM6eepmIQ1fc5bKdDVimlJZ6MoOUcJ5Q==
   dependencies:
     stylelint-config-recommended "^9.0.0"
 

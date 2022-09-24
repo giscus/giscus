@@ -28,7 +28,7 @@
     "mathjax": "3.2.0",
     "next": "^12.3.0",
     "next-plugin-preact": "^3.0.7",
-    "next-translate": "^1.5.0",
+    "next-translate": "^1.6.0",
     "preact": "^10.11.0",
     "preact-render-to-string": "^5.2.3",
     "react": "npm:@preact/compat",

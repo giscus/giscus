@@ -2982,10 +2982,10 @@ postcss@^8.4.17:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-preact-render-to-string@^5.2.3:
-  version "5.2.3"
-  resolved "https://registry.npmjs.org/preact-render-to-string/-/preact-render-to-string-5.2.3.tgz#23d17376182af720b1060d5a4099843c7fe92fe4"
-  integrity sha512-aPDxUn5o3GhWdtJtW0svRC2SS/l8D9MAgo2+AWml+BhDImb27ALf04Q2d+AHqUUOc6RdSXFIBVa2gxzgMKgtZA==
+preact-render-to-string@^5.2.4:
+  version "5.2.4"
+  resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-5.2.4.tgz#7d6a3f76e13fa9df8e81ccdef2f2b02489e5a3fd"
+  integrity sha512-iIPHb3BXUQ3Za6KNhkjN/waq11Oh+QWWtAgN3id3LrL+cszH3DYh8TxJPNQ6Aogsbu4JsqdJLBZltwPFpG6N6w==
   dependencies:
     pretty-format "^3.8.0"
 

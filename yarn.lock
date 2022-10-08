@@ -230,10 +230,10 @@
     "@prefresh/core" "^1.3.3"
     "@prefresh/utils" "^1.1.2"
 
-"@primer/octicons-react@^17.6.0":
-  version "17.6.0"
-  resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-17.6.0.tgz#641c7ac1d78e4e97fa1afff72d02501b26b353b5"
-  integrity sha512-jn1fWag3eU6BvOltMS2MqLPNh39D45cpegsTO2Qhb8SlJoUsj/ZO1qbJgYd9ibvZo8evDyXx3syh4kDbxJQFsg==
+"@primer/octicons-react@^17.7.0":
+  version "17.7.0"
+  resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-17.7.0.tgz#50f3ceb2f636154a3e7fa6e355350b75f03bba88"
+  integrity sha512-rxJiArra+q7lorhzQH223btMcRR8di9TUei9DhQG18jmVEI+wQTY+MypI5FZqU8UyehBOtcnD4TWx+i4Zwpz5Q==
 
 "@rushstack/eslint-patch@^1.1.3":
   version "1.1.3"
@@ -286,10 +286,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.31.tgz"
   integrity sha512-AR0x5HbXGqkEx9CadRH3EBYx/VkiUgZIhP4wvPn/+5KIsgpNoyFaRlVe0Zlx9gRtg8fA06a9tskE2MSN7TcG4Q==
 
-"@types/node@^16.11.62":
-  version "16.11.62"
-  resolved "https://registry.npmjs.org/@types/node/-/node-16.11.62.tgz#bab2e6208531321d147eda20c38e389548cd5ffc"
-  integrity sha512-K/ggecSdwAAy2NUW4WKmF4Rc03GKbsfP+k326UWgckoS+Rzd2PaWbjk76dSmqdLQvLTJAO9axiTUJ6488mFsYQ==
+"@types/node@^16.11.64":
+  version "16.11.64"
+  resolved "https://registry.npmjs.org/@types/node/-/node-16.11.64.tgz#9171f327298b619e2c52238b120c19056415d820"
+  integrity sha512-z5hPTlVFzNwtJ2LNozTpJcD1Cu44c4LNuzaq1mwxmiHWQh2ULdR6Vjwo1UGldzRpzL0yUEdZddnfqGW2G70z6Q==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -1726,40 +1726,40 @@ globjoin@^0.1.4:
   resolved "https://registry.npmjs.org/globjoin/-/globjoin-0.1.4.tgz"
   integrity sha1-L0SUrIkZ43Z8XLtpHp9GMyQoXUM=
 
-google-closure-compiler-java@^20220905.0.0:
-  version "20220905.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler-java/-/google-closure-compiler-java-20220905.0.0.tgz#53d4b081c63fac09b6589729f5f359c8ec3ce27e"
-  integrity sha512-wxGxNla/0UDS1Lm0cRxEy85KhVRd0vNlsTclnIJ9f1gRWzvvTsJ4lwz+PdT60R6y2hKAOBvydIJHh+B8XJastA==
+google-closure-compiler-java@^20221004.0.0:
+  version "20221004.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler-java/-/google-closure-compiler-java-20221004.0.0.tgz#ba1049987bd91ebdcc2aebe184bf839bcaa0017e"
+  integrity sha512-CygLEB40HxtK0VtP6klv2Xm08w4HQNYX/DTgLV7CP74r8LiQMUByRFleaG/Hv5xQG1JzPNiW0GOAiAubDSdr5A==
 
-google-closure-compiler-linux@^20220905.0.0:
-  version "20220905.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler-linux/-/google-closure-compiler-linux-20220905.0.0.tgz#4cefd19938b522c1ac9b8254a44ecfffcb3354d8"
-  integrity sha512-kH09S66sz9+6wZmYM22VX8vG8KhCKJwFwXCfHx/ZOU6DBEzni6KfWrP+87CzTmZFEivclBhWAndm5HgNhSOEXQ==
+google-closure-compiler-linux@^20221004.0.0:
+  version "20221004.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler-linux/-/google-closure-compiler-linux-20221004.0.0.tgz#6fe30f5e970d5a8de9efe9ac3a5d65b60c2c1dc8"
+  integrity sha512-B6sca3Lmw3cYXdFzdU0iQpk8L9VEo1ecC1aM7Gl9lgWhIicqqEZebsgnUe5TQ3uHBfQoKjV9fdFG8mt8X/oqSQ==
 
-google-closure-compiler-osx@^20220905.0.0:
-  version "20220905.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler-osx/-/google-closure-compiler-osx-20220905.0.0.tgz#0e685fb886db298af88b96ba683a04601f8c168b"
-  integrity sha512-4uo2GAz77gI8nDt4OA8VUYh/FNdjmTLOIRDazl7si+BOjgp9bC6C3E/88o+YHETsVtrPmZk57/W7vH0lftyTAw==
+google-closure-compiler-osx@^20221004.0.0:
+  version "20221004.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler-osx/-/google-closure-compiler-osx-20221004.0.0.tgz#3efdcd226f5dbb2dedab40a3436f2a1b59709dc5"
+  integrity sha512-z5V7BvaMauPga8DMTt9u6RGcjBdLAuv4gL2Ebw5NIQRTAHVkEVzCd3kiMX7CVCGhmWdS/1r3jZcCg4BswGia6w==
 
-google-closure-compiler-windows@^20220905.0.0:
-  version "20220905.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler-windows/-/google-closure-compiler-windows-20220905.0.0.tgz#89b8767c4b6d95b4e8d13cc01bc6e4acdc5700dd"
-  integrity sha512-TZKHu6RHnrmgV90Gyen8+TGc0vgjgds80ErR+al5CqmfP9p+AskBbOe5CWZJht0bANrUhaeBMCrbs+7loFv06Q==
+google-closure-compiler-windows@^20221004.0.0:
+  version "20221004.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler-windows/-/google-closure-compiler-windows-20221004.0.0.tgz#ee61f329b906993a7e2fa419690d93de437bd21a"
+  integrity sha512-JSAWilVa7d65QJYKUr+DmklwKmjkAce6BMD6smqJfdL2dv5OSJ2ydGy73euoBJ4Tka8iQPoaOP+BjLrhIuvqKg==
 
-google-closure-compiler@^20220905.0.0:
-  version "20220905.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler/-/google-closure-compiler-20220905.0.0.tgz#3e31cc164cea63789c04fca67f89661efec749de"
-  integrity sha512-idZavy2vn91HCmqEepjmLFjfOdYoRsh9PggUbazUpjAOrBQz0HOm3WjOICMiywre+EnY1QGss0srEBtFtukM6w==
+google-closure-compiler@^20221004.0.0:
+  version "20221004.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler/-/google-closure-compiler-20221004.0.0.tgz#18d255ada6562ddd0332e1e25921bcffc12eaf28"
+  integrity sha512-OKENLrZFF2o3FZ/E4zdTc9NeuAUh1fdwbQxT0sibI19aR62sgNUBo2mLU6sc4Gcm0cQ2gwfB7qX1xnapOIkbaA==
   dependencies:
     chalk "4.x"
-    google-closure-compiler-java "^20220905.0.0"
+    google-closure-compiler-java "^20221004.0.0"
     minimist "1.x"
     vinyl "2.x"
     vinyl-sourcemaps-apply "^0.2.0"
   optionalDependencies:
-    google-closure-compiler-linux "^20220905.0.0"
-    google-closure-compiler-osx "^20220905.0.0"
-    google-closure-compiler-windows "^20220905.0.0"
+    google-closure-compiler-linux "^20221004.0.0"
+    google-closure-compiler-osx "^20221004.0.0"
+    google-closure-compiler-windows "^20221004.0.0"
 
 graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.10"
@@ -2162,10 +2162,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
-lit-html@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.npmjs.org/lit-html/-/lit-html-2.3.1.tgz#56f15104ea75c0a702904893e3409d0e89e2a2b9"
-  integrity sha512-FyKH6LTW6aBdkfNhNSHyZTnLgJSTe5hMk7HFtc/+DcN1w74C215q8B+Cfxc2OuIEpBNcEKxgF64qL8as30FDHA==
+lit-html@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.npmjs.org/lit-html/-/lit-html-2.4.0.tgz#b510430f39a56ec959167ed1187241a4e3ab1574"
+  integrity sha512-G6qXu4JNUpY6aaF2VMfaszhO9hlWw0hOTRFDmuMheg/nDYGB+2RztUSOyrzALAbr8Nh0Y7qjhYkReh3rPnplVg==
   dependencies:
     "@types/trusted-types" "^2.0.2"
 
@@ -2989,10 +2989,10 @@ preact-render-to-string@^5.2.3:
   dependencies:
     pretty-format "^3.8.0"
 
-preact@^10.11.0:
-  version "10.11.0"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.11.0.tgz#26af45a0613f4e17a197cc39d7a1ea23e09b2532"
-  integrity sha512-Fk6+vB2kb6mSJfDgODq0YDhMfl0HNtK5+Uc9QqECO4nlyPAQwCI+BKyWO//idA7ikV7o+0Fm6LQmNuQi1wXI1w==
+preact@^10.11.1:
+  version "10.11.1"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.11.1.tgz#35fdad092de8b2ad29df3a0bef9af1f4fdd2256b"
+  integrity sha512-1Wz5PCRm6Fg+6BTXWJHhX4wRK9MZbZBHuwBqfZlOdVm2NqPe8/rjYpufvYCwJSGb9layyzB2jTTXfpCTynLqFQ==
 
 prelude-ls@^1.2.1:
   version "1.2.1"

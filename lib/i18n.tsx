@@ -59,8 +59,9 @@ export const availableLanguages = {
   ru: 'Русский',
   tr: 'Türkçe',
   vi: 'Việt Nam',
-  'zh-CN': '简体中文',
+  'zh-CN': '中文（中国）',
   'zh-TW': '繁體中文',
+  'zh-Hans': '简体中文',
 } as const;
 
 export const rtlLanguages = new Set(['ar']);
@@ -148,6 +149,7 @@ const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   vi: new Intl.DateTimeFormat('vi', dateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', dateFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', dateFormat),
+  'zh-Hans': new Intl.DateTimeFormat('zh-Hans', dateFormat),
 };
 
 const shortDateFormat: Intl.DateTimeFormatOptions = {
@@ -175,6 +177,7 @@ const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   vi: new Intl.DateTimeFormat('vi', shortDateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateFormat),
+  'zh-Hans': new Intl.DateTimeFormat('zh-Hans', shortDateFormat),
 };
 
 const shortDateYearFormat: Intl.DateTimeFormatOptions = {
@@ -203,6 +206,7 @@ const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = 
   vi: new Intl.DateTimeFormat('vi', shortDateYearFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateYearFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateYearFormat),
+  'zh-Hans': new Intl.DateTimeFormat('zh-Hans', shortDateYearFormat),
 };
 
 const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
@@ -231,6 +235,7 @@ const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat>
   vi: new Intl.RelativeTimeFormat('vi', relativeTimeFormat),
   'zh-CN': new Intl.RelativeTimeFormat('zh-CN', relativeTimeFormat),
   'zh-TW': new Intl.RelativeTimeFormat('zh-TW', relativeTimeFormat),
+  'zh-Hans': new Intl.RelativeTimeFormat('zh-Hans', relativeTimeFormat),
 };
 
 export function useDateFormatter() {
@@ -263,7 +268,7 @@ function format(p: FormatParamsDate | FormatParamsRelative): string {
   const isDate = !('unit' in p);
   const { locale } = p.format.resolvedOptions();
 
-  if (locale === 'zh-CN' || locale === 'zh-TW') {
+  if ((locale === 'zh-CN' || locale === 'zh-Hans') || locale === 'zh-TW') {
     const dateParts = isDate
       ? p.format.formatToParts(p.value)
       : p.format.formatToParts(p.value, p.unit);

@@ -95,8 +95,9 @@ GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utteranc
 - [Русский](README.ru.md)
 - [Türkçe](README.tr.md)
 - [Tiếng Việt](README.vi.md)
-- [简体中文](README.zh-CN.md)
+- [中文（中国）](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
+- [简体中文](README.Hans.md)
 
 [![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
 

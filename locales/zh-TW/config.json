@@ -9,7 +9,8 @@
   "lang=id": "印度尼西亞語",
   "lang=pl": "波蘭語",
   "lang=ro": "羅馬尼亞語",
-  "lang=zh-CN": "簡體中文",
+  "lang=zh-CN": "中文（中國）",
+  "lang=zh-Hans": "簡體中文",
 
   "repository": "儲存庫",
   "chooseTheRepository": "選擇 giscus 要連結的儲存庫。請確保：",

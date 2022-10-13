@@ -18,7 +18,8 @@
     "tr",
     "vi",
     "zh-CN",
-    "zh-TW"
+    "zh-TW",
+    "zh-Hans"
   ],
   "defaultLocale": "en",
   "pages": {

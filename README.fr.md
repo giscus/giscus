@@ -95,8 +95,9 @@ Ce README est disponible en :
 - [Русский](README.ru.md)
 - [Türkçe](README.tr.md)
 - [Tiếng Việt](README.vi.md)
-- [简体中文](README.zh-CN.md)
+- [中文（中国）](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
+- [简体中文](README.Hans.md)
 
 [![Propulsé par Vercel](public/powered-by-vercel.svg)][vercel]
 

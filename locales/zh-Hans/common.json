@@ -1,0 +1,82 @@
+{
+  "reactions": {
+    "other": "{{count}} 个反应"
+  },
+  "comment": "评论",
+  "comments": {
+    "other": "{{count}} 条评论"
+  },
+  "reply": "回复",
+  "replies": {
+    "other": "{{count}}{{plus}} 条回复"
+  },
+  "upvotes": {
+    "other": "{{count}} 个赞同"
+  },
+  "hiddenItems": {
+    "other": "{{count}} 个隐藏项"
+  },
+  "genericError": "发生错误： {{message}}",
+  "loadMore": "加载更多",
+  "loading": "加载中",
+  "loadingComments": "正在加载评论……",
+  "loadingPreview": "正在加载预览……",
+  "poweredBy": "– 由 <a>giscus</a> 驱动",
+  "oldest": "最旧",
+  "newest": "最新",
+  "showPreviousReplies": {
+    "other": "显示 {{count}} 条更早的回复"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "other": "在 GitHub 上查看 {{count}} 条更早的回复"
+  },
+  "edited": "已编辑",
+  "thisCommentWasDeleted": "此评论已删除。",
+  "thisCommentWasMinimized": "此评论已被折叠。",
+  "thisCommentWasHidden": "此评论已被隐藏。",
+  "write": "输入",
+  "preview": "预览",
+  "enableFixedWidth": "在编辑器中启用固定宽度（等宽）字体",
+  "disableFixedWidth": "在编辑器中禁用固定宽度（等宽）字体",
+  "lastEditedAt": "最后编辑于 {{date}}",
+  "writeAComment": "写评论",
+  "signInToComment": "登录以评论",
+  "stylingWithMarkdownIsSupported": "支持 Markdown",
+  "cancel": "取消",
+  "signInWithGitHub": "GitHub 登录",
+  "writeAReply": "写回复",
+
+  "upvote": "赞同",
+  "youMustBeSignedInToUpvote": "你必须登录才能投票。",
+  "addReactions": "添加反应",
+  "pleaseWait": "请稍候……",
+  "pickYourReaction": "选择你的反应",
+  "addTheReaction": "表示 {{reaction}}",
+  "removeTheReaction": "取消表示 {{reaction}}",
+  "signInToAddYourReaction": "<a>登录</a>以添加反应。",
+  "youMustBeSignedInToAddReactions": "你必须登录才能添加反应。",
+  "peopleReactedWith": {
+    "other": "{{count}} 人表示 {{reaction}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "没有可以预览的",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "大笑",
+  "HOORAY": "好耶",
+  "CONFUSED": "疑惑",
+  "HEART": "爱了",
+  "ROCKET": "上天",
+  "EYES": "看看",
+
+  "COLLABORATOR": "合作者",
+  "CONTRIBUTOR": "贡献者",
+  "FIRST_TIMER": "初次贡献者",
+  "FIRST_TIME_CONTRIBUTOR": "初次贡献者",
+  "MANNEQUIN": "假人",
+  "MEMBER": "成员",
+  "NONE": "无",
+  "OWNER": "所有者",
+  "APP": "App"
+}

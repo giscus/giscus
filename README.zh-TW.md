@@ -95,8 +95,9 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 - [Русский](README.ru.md)
 - [Türkçe](README.tr.md)
 - [Tiếng Việt](README.vi.md)
-- [简体中文](README.zh-CN.md)
+- [中文（中国）](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
+- [简体中文](README.Hans.md)
 
 [![由 Vercel 技術支援](public/powered-by-vercel.svg)][vercel]
 

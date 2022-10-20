@@ -43,6 +43,7 @@ interface IConfig {
   strict: boolean;
   useCategory: boolean;
   lazyLoad: boolean;
+  basePath: string;
 }
 
 const mappingOptions: Array<{
@@ -111,6 +112,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
     strict: false,
     useCategory: true,
     lazyLoad: false,
+    basePath: '',
   });
   const [error, setError] = useState(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
@@ -316,6 +318,22 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             ) : null}
           </div>
         ))}
+      </fieldset>
+      <p>{t('defineBasePath')}</p>
+      <fieldset>
+        <label htmlFor="basePath" className="block font-semibold">
+          {t('basePathLabel')}
+        </label>
+        <input
+          id="basePath"
+          value={config.basePath}
+          onChange={(event) =>
+            setConfig((current) => ({ ...current, basePath: event.target.value }))
+          }
+          type="text"
+          className="form-control min-w-[75%] placeholder-gray-500 my-2 rounded-md border px-[12px] py-[5px] sm:min-w-[50%]"
+          placeholder={t('/my/custom/basepath')}
+        />
       </fieldset>
       <div className="form-checkbox">
         <input
@@ -577,6 +595,13 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           <span className="pl-c1">data-mapping</span>={'"'}
           <span className="pl-s">{config.mapping}</span>
           {'"\n        '}
+          {config.basePath !== '' ? (
+            <>
+              <span className="pl-c1">data-base-path</span>={'"'}
+              <span className="pl-s">{config.basePath || ''}</span>
+              {'"\n        '}
+            </>
+          ) : null}
           {['specific', 'number'].includes(config.mapping) ? (
             <>
               <span className="pl-c1">data-term</span>={'"'}

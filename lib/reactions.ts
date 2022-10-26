@@ -3,7 +3,7 @@ import { IComment, IGiscussion, IReactionGroups, IReply } from './types/adapter'
 export const Reactions = {
   THUMBS_UP: '👍',
   THUMBS_DOWN: '👎',
-  LAUGH: '😆',
+  LAUGH: '😄',
   HOORAY: '🎉',
   CONFUSED: '😕',
   HEART: '❤️',

@@ -596,13 +596,13 @@ astral-regex@^2.0.0:
   resolved "https://registry.npmjs.org/astral-regex/-/astral-regex-2.0.0.tgz"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-autoprefixer@^10.4.12:
-  version "10.4.12"
-  resolved "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.12.tgz#183f30bf0b0722af54ee5ef257f7d4320bb33129"
-  integrity sha512-WrCGV9/b97Pa+jtwf5UGaRjgQIg7OK3D06GnoYoZNcG1Xb8Gt3EfuKjlhh9i/VtT16g6PYjZ69jdJ2g8FxSC4Q==
+autoprefixer@^10.4.13:
+  version "10.4.13"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-10.4.13.tgz#b5136b59930209a321e9fa3dca2e7c4d223e83a8"
+  integrity sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg==
   dependencies:
     browserslist "^4.21.4"
-    caniuse-lite "^1.0.30001407"
+    caniuse-lite "^1.0.30001426"
     fraction.js "^4.2.0"
     normalize-range "^0.1.2"
     picocolors "^1.0.0"
@@ -653,18 +653,7 @@ braces@^3.0.2, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
-browserslist@^4.0.0, browserslist@^4.16.6, browserslist@^4.20.3:
-  version "4.20.3"
-  resolved "https://registry.npmjs.org/browserslist/-/browserslist-4.20.3.tgz"
-  integrity sha512-NBhymBQl1zM0Y5dQT/O+xiLP9/rzOIQdKM/eMJBAq7yBgaB6krIYLGejrwVYnSHZdqjscB1SPuAjHwxjvN6Wdg==
-  dependencies:
-    caniuse-lite "^1.0.30001332"
-    electron-to-chromium "^1.4.118"
-    escalade "^3.1.1"
-    node-releases "^2.0.3"
-    picocolors "^1.0.0"
-
-browserslist@^4.21.4:
+browserslist@^4.0.0, browserslist@^4.16.6, browserslist@^4.20.3, browserslist@^4.21.4:
   version "4.21.4"
   resolved "https://registry.npmjs.org/browserslist/-/browserslist-4.21.4.tgz#e7496bbc67b9e39dd0f98565feccdcb0d4ff6987"
   integrity sha512-CBHJJdDmgjl3daYjN5Cp5kbTf1mUhZoS+beLklHIvkOWscs83YAhLlF3Wsh/lciQYAcbBJgTOD44VtG31ZM4Hw==
@@ -721,15 +710,10 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001332, caniuse-lite@^1.0.30001406:
-  version "1.0.30001410"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001410.tgz#b5a86366fbbf439d75dd3db1d21137a73e829f44"
-  integrity sha512-QoblBnuE+rG0lc3Ur9ltP5q47lbguipa/ncNMyyGuqPk44FxbScWAeEO+k5fSQ8WekdAK4mWqNs1rADDAiN5xQ==
-
-caniuse-lite@^1.0.30001400, caniuse-lite@^1.0.30001407:
-  version "1.0.30001414"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001414.tgz#5f1715e506e71860b4b07c50060ea6462217611e"
-  integrity sha512-t55jfSaWjCdocnFdKQoO+d2ct9C59UZg4dY3OnUlSZ447r8pUtIKdp0hpAzrGFultmTC+Us+KpKi4GZl/LXlFg==
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001400, caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.30001426:
+  version "1.0.30001426"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001426.tgz#58da20446ccd0cb1dfebd11d2350c907ee7c2eaa"
+  integrity sha512-n7cosrHLl8AWt0wwZw/PJZgUg3lV0gk9LMI7ikGJwhyhgsd2Nb65vKvmSexCqq/J7rbH3mFG6yZZiPR5dLPW5A==
 
 chalk@4.x, chalk@^4.0.0, chalk@^4.1.0:
   version "4.1.2"
@@ -1123,11 +1107,6 @@ ecdsa-sig-formatter@1.0.11:
   integrity sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==
   dependencies:
     safe-buffer "^5.0.1"
-
-electron-to-chromium@^1.4.118:
-  version "1.4.136"
-  resolved "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.136.tgz"
-  integrity sha512-GnITX8rHnUrIVnTxU9UlsTnSemHUA2iF+6QrRqxFbp/mf0vfuSc/goEyyQhUX3TUUCE3mv/4BNuXOtaJ4ur0eA==
 
 electron-to-chromium@^1.4.251:
   version "1.4.270"
@@ -2414,11 +2393,6 @@ next@^12.3.1:
     "@next/swc-win32-arm64-msvc" "12.3.1"
     "@next/swc-win32-ia32-msvc" "12.3.1"
     "@next/swc-win32-x64-msvc" "12.3.1"
-
-node-releases@^2.0.3:
-  version "2.0.4"
-  resolved "https://registry.npmjs.org/node-releases/-/node-releases-2.0.4.tgz"
-  integrity sha512-gbMzqQtTtDz/00jQzZ21PQzdI9PyLYqUSvD0p3naOhX4odFji0ZxYdnVwPTxmSwkmxhcFImpozceidSG+AgoPQ==
 
 node-releases@^2.0.6:
   version "2.0.6"

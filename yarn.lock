@@ -230,10 +230,10 @@
     "@prefresh/core" "^1.3.3"
     "@prefresh/utils" "^1.1.2"
 
-"@primer/octicons-react@^17.8.0":
-  version "17.8.0"
-  resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-17.8.0.tgz#a1bb95c54d1fa142b1cee4a3a7ec1d1edbdaa3bf"
-  integrity sha512-arLdPgMz5Se1svrm5Y7WIeSUHp02Kn4hZcJ/ELgthQJrAa6r+LpidVyzAF/aOzR5DQEwN7zvA5EjnzocTir4Yw==
+"@primer/octicons-react@^17.9.0":
+  version "17.9.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-17.9.0.tgz#034ad1f377c2834900a2dd6b3c54079628dd73b1"
+  integrity sha512-fx2abdGfzzHqB8DOSq6FqNgusjkeDHfPFTa8DjSaugCFccEO2vIfM2ZY1sg4c5SpOQEQAbOEC4/gqWDulIRHzA==
 
 "@rushstack/eslint-patch@^1.1.3":
   version "1.1.3"

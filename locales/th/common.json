@@ -1,0 +1,82 @@
+{
+  "reactions": {
+    "other": "{{count}} รีแอคชัน"
+  },
+  "comment": "ความคิดเห็น",
+  "comments": {
+    "other": "{{count}} ความคิดเห็น"
+  },
+  "reply": "การตอบกลับ",
+  "replies": {
+    "other": "{{count}}{{plus}} การตอบกลับ"
+  },
+  "upvotes": {
+    "other": "{{count}} โหวต"
+  },
+  "hiddenItems": {
+    "other": "{{count}} รายการที่ซ่อนอยู่"
+  },
+  "genericError": "เกิดข้อผิดพลาด: {{message}}",
+  "loadMore": "โหลดเพิ่ม",
+  "loading": "กำลังโหลด",
+  "loadingComments": "กำลังโหลดความคิดเห็น…",
+  "loadingPreview": "กำลังโหลดตัวอย่าง…",
+  "poweredBy": "– ขับเคลื่อนด้วย <a>giscus</a>",
+  "oldest": "เก่าที่สุด",
+  "newest": "ใหม่ที่สุด",
+  "showPreviousReplies": {
+    "other": "แสดง {{count}} การตอบกลับก่อนหน้า"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "other": "ดู {{count}} การตอบกลับก่อนหน้าบน GitHub"
+  },
+  "edited": "มีการแก้ไข",
+  "thisCommentWasDeleted": "ความคิดเห็นนี้ถูกลบแล้ว",
+  "thisCommentWasMinimized": "ความคิดเห็นนี้ถูกย่อ",
+  "thisCommentWasHidden": "ความคิดเห็นนี้ถูกซ่อน",
+  "write": "เขียน",
+  "preview": "ตัวอย่าง",
+  "enableFixedWidth": "เปิดใช้ฟอนต์แบบโมโนสเปซในตัวแก้ไข",
+  "disableFixedWidth": "ปิดใช้ฟอนต์แบบโมโนสเปซในตัวแก้ไข",
+  "lastEditedAt": "แก้ไขล่าสุดเมื่อ {{date}}",
+  "writeAComment": "เขียนความคิดเห็น",
+  "signInToComment": "เข้าสู่ระบบเพื่อแสดงความคิดเห็น",
+  "stylingWithMarkdownIsSupported": "รองรับการจัดรูปแบบด้วย Markdown",
+  "cancel": "ยกเลิก",
+  "signInWithGitHub": "เข้าสู่ระบบด้วย GitHub",
+  "writeAReply": "เขียนการตอบกลับ",
+
+  "upvote": "โหวต",
+  "youMustBeSignedInToUpvote": "คุณต้องเข้าสู่ระบบเพื่อโหวต",
+  "addReactions": "เพิ่มรีแอคชัน",
+  "pleaseWait": "กรุณารอสักครู่…",
+  "pickYourReaction": "เลือกรีแอคชันของคุณ",
+  "addTheReaction": "เพิ่มรีแอคชัน {{reaction}}",
+  "removeTheReaction": "ลบรีแอคชัน {{reaction}}",
+  "signInToAddYourReaction": "<a>เข้าสู่ระบบ</a>เพื่อเพิ่มรีแอคชันของคุณ",
+  "youMustBeSignedInToAddReactions": "คุณต้องเข้าสู่ระบบเพื่อเพิ่มรีแอคชันของคุณ",
+  "peopleReactedWith": {
+    "other": "{{count}} คนรีแอคด้วย{{emoji}} {{reaction}}"
+  },
+  "emoji": "อิโมจิ",
+  "nothingToPreview": "ไม่มีอะไรให้แสดงตัวอย่าง",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "หัวเราะ",
+  "HOORAY": "ยินดี",
+  "CONFUSED": "งุนงง",
+  "HEART": "รัก",
+  "ROCKET": "จรวด",
+  "EYES": "ตา",
+
+  "COLLABORATOR": "ผู้ร่วมงาน",
+  "CONTRIBUTOR": "ผู้มีส่วนร่วม",
+  "FIRST_TIMER": "ครั้งแรก",
+  "FIRST_TIME_CONTRIBUTOR": "ผู้มีส่วนร่วมครั้งแรก",
+  "MANNEQUIN": "ตัวแทน",
+  "MEMBER": "สมาชิก",
+  "NONE": "ไม่มี",
+  "OWNER": "เจ้าของ",
+  "APP": "แอป"
+}

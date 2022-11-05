@@ -7,7 +7,22 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
-## 2021-08-13
+## 2022-11-06
+
+### Added
+
+- Add Thai localization
+  ([#771](https://github.com/giscus/giscus/pull/771)).
+
+
+## 2022-10-26
+
+### Fixed
+
+- Fix `LAUGH` reaction emoji
+  ([#746](https://github.com/giscus/giscus/pull/746)).
+
+## 2022-08-13
 
 ### Changed
 

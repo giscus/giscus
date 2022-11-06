@@ -11,6 +11,9 @@ major updates to the project.
 
 ### Fixed
 
+- Fix iframe transparency
+  ([#775](https://github.com/giscus/giscus/pull/775)).
+
 - Fix copy button permission
   ([#774](https://github.com/giscus/giscus/pull/774)).
 

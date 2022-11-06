@@ -1,6 +1,7 @@
 const fallbacks = {
   gsw: 'de',
   'zh-Hans': 'zh-CN',
+  'zh-Hant': 'zh-TW',
 };
 
 module.exports = {
@@ -25,6 +26,7 @@ module.exports = {
     'vi',
     'zh-CN',
     'zh-Hans',
+    'zh-Hant',
     'zh-TW',
   ],
   fallbacks,

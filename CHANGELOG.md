@@ -11,6 +11,9 @@ major updates to the project.
 
 ### Added
 
+- Add locale fallback for `zh-Hant`
+  ([#773](https://github.com/giscus/giscus/pull/773)).
+
 - Add locale fallbacks for `zh-Hans` and `gsw`
   ([#772](https://github.com/giscus/giscus/pull/772)).
 

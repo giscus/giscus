@@ -15,8 +15,8 @@
     "dev": "yarn cscript --watch --preserveWatchOutput & yarn cthemes --watch & next dev",
     "build": "yarn cscript && yarn cthemes && yarn mscript && next build",
     "start": "next start",
-    "lint": "stylelint **/*.css && eslint . --cache",
-    "lint:fix": "stylelint --fix **/*.css && eslint --fix . --cache",
+    "lint": "stylelint **/*.css && eslint . --cache --max-warnings 0",
+    "lint:fix": "stylelint --fix **/*.css && eslint --fix . --cache --max-warnings 0",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },

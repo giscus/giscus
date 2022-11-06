@@ -2,7 +2,7 @@ import { TransProps as NextTransProps } from 'next-translate';
 import NextTrans from 'next-translate/Trans';
 import useTranslation from 'next-translate/useTranslation';
 import { HTMLAttributes, useCallback } from 'react';
-import { fallbacks, locales } from '../i18n';
+import { fallbacks } from '../i18n';
 
 interface TranslationQuery {
   [name: string]: string | number;

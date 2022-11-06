@@ -115,7 +115,6 @@
 
   .giscus-frame {
     border: none;
-    color-scheme: normal;
   }
 `;
   document.head.prepend(style);

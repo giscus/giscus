@@ -3,6 +3,10 @@
  * https://github.com/primer/primitives/blob/main/LICENSE
  */
 
+html {
+  color-scheme: light;
+}
+
 main {
   --color-prettylights-syntax-comment: #6e7781;
   --color-prettylights-syntax-constant: #0550ae;
@@ -84,8 +88,6 @@ main {
   /*! Extensions from @primer/css/alerts/flash.scss */
   --color-social-reaction-bg-hover: var(--color-scale-gray-1);
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
-
-  color-scheme: light;
 }
 
 main .pagination-loader-container {
@@ -102,6 +104,10 @@ main .gsc-loading-image {
    * Copyright (c) 2018 GitHub Inc.
    * https://github.com/primer/primitives/blob/main/LICENSE
    */
+
+  html {
+    color-scheme: dark;
+  }
 
   main {
     --color-prettylights-syntax-comment: #8b949e;
@@ -184,8 +190,6 @@ main .gsc-loading-image {
     /*! Extensions from @primer/css/alerts/flash.scss */
     --color-social-reaction-bg-hover: var(--color-scale-gray-7);
     --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
-
-    color-scheme: dark;
   }
 
   main .pagination-loader-container {

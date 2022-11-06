@@ -96,6 +96,7 @@
     class: 'giscus-frame',
     title: 'Comments',
     scrolling: 'no',
+    allow: 'clipboard-write',
     src,
     loading,
   };

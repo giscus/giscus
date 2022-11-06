@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2022-11-06
 
+### Fixed
+
+- Fix copy button permission
+  ([#774](https://github.com/giscus/giscus/pull/774)).
+
 ### Added
 
 - Add locale fallback for `zh-Hant`

@@ -33,7 +33,7 @@ const securityHeaders = [
 
 const swr = 60 * 60 * 24 * 7; // 7 days
 
-module.exports = withBundleAnalyzer(
+const config = withBundleAnalyzer(
   withPreact(
     nextTranslate({
       async headers() {
@@ -70,3 +70,7 @@ module.exports = withBundleAnalyzer(
     }),
   ),
 );
+// Suppress warnings about custom property
+delete config.i18n.fallbacks;
+
+module.exports = config;

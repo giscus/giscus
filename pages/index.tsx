@@ -19,9 +19,10 @@ import Router from 'next/router';
 import getT from 'next-translate/getT';
 import { AvailableLanguage } from '../lib/i18n';
 import { env } from '../lib/variables';
+import { fallbacks } from '../i18n';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
-  const localeSuffix = locale === 'en' ? '' : `.${locale}`;
+  const localeSuffix = locale === 'en' ? '' : `.${fallbacks[locale] ?? locale}`;
   const t = await getT(locale, 'config');
 
   const path = join(process.cwd(), `README${localeSuffix}.md`);

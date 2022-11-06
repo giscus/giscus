@@ -2,6 +2,7 @@ import { TransProps as NextTransProps } from 'next-translate';
 import NextTrans from 'next-translate/Trans';
 import useTranslation from 'next-translate/useTranslation';
 import { HTMLAttributes, useCallback } from 'react';
+import { fallbacks } from '../i18n';
 
 interface TranslationQuery {
   [name: string]: string | number;
@@ -268,7 +269,7 @@ function format(p: FormatParamsDate | FormatParamsRelative): string {
   const isDate = !('unit' in p);
   const { locale } = p.format.resolvedOptions();
 
-  if (locale === 'zh-CN' || locale === 'zh-TW') {
+  if (locale.startsWith('zh')) {
     const dateParts = isDate
       ? p.format.formatToParts(p.value)
       : p.format.formatToParts(p.value, p.unit);
@@ -280,7 +281,8 @@ function format(p: FormatParamsDate | FormatParamsRelative): string {
 }
 
 export function useRelativeTimeFormatter() {
-  const { lang } = useTranslation('common');
+  const { lang: locale } = useTranslation('common');
+  const lang = fallbacks[locale] ?? locale;
   const sdyf: Intl.DateTimeFormat = shortDateYearFormatters[lang] ?? shortDateYearFormatters.en;
   const sdf: Intl.DateTimeFormat = shortDateFormatters[lang] ?? shortDateFormatters.en;
   const rtf: Intl.RelativeTimeFormat = relativeTimeFormatters[lang] ?? relativeTimeFormatters.en;

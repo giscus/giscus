@@ -1,4 +1,5 @@
 const fallbacks = {
+  gsw: 'de',
   'zh-Hans': 'zh-CN',
 };
 
@@ -6,10 +7,10 @@ module.exports = {
   locales: [
     'ar',
     'de',
-    'gsw',
     'en',
     'es',
     'fr',
+    'gsw',
     'id',
     'it',
     'ja',

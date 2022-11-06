@@ -80,7 +80,6 @@ GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utteranc
 
 - [Arabic (العربية)](README.ar.md)
 - [Deutsch](README.de.md)
-- [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)
 - [Español](README.es.md)
 - [Français](README.fr.md)

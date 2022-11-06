@@ -80,7 +80,6 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 
 - [Arabic (العربية)](README.ar.md)
 - [Deutsch](README.de.md)
-- [Deutsch (Schweiz)](README.gsw.md)
 - [English](README.md)
 - [Español](README.es.md)
 - [Français](README.fr.md)

@@ -11,6 +11,9 @@ major updates to the project.
 
 ### Added
 
+- Add locale fallbacks for `zh-Hans` and `gsw`
+  ([#772](https://github.com/giscus/giscus/pull/772)).
+
 - Add Thai localization
   ([#771](https://github.com/giscus/giscus/pull/771)).
 

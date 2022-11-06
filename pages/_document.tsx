@@ -20,7 +20,6 @@ class CustomDocument extends Document {
     return (
       <Html dir={getDir(this.props.locale as AvailableLanguage)}>
         <Head>
-          <meta name="color-scheme" content="light dark" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@laymonage" />
           <link rel="icon" href="/favicon.ico" />

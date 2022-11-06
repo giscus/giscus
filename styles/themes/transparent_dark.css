@@ -4,10 +4,6 @@
  * https://github.com/primer/primitives/blob/main/LICENSE
  */
 
-html {
-  color-scheme: dark;
-}
-
 main {
   --color-prettylights-syntax-comment: #8b949e;
   --color-prettylights-syntax-constant: #79c0ff;

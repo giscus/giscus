@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@primer/octicons-react": "^17.9.0",
-    "dompurify": "^2.4.0",
+    "dompurify": "^2.4.1",
     "jsonwebtoken": "^8.5.1",
     "lit-html": "^2.4.0",
     "mathjax": "3.2.0",
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.3.2",
-    "@types/dompurify": "^2.3.4",
+    "@types/dompurify": "^2.4.0",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.9",

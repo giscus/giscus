@@ -12,7 +12,8 @@ major updates to the project.
 ### Fixed
 
 - Fix iframe transparency
-  ([#785](https://github.com/giscus/giscus/pull/785)).
+  ([#785](https://github.com/giscus/giscus/pull/785),
+  [#787](https://github.com/giscus/giscus/pull/787)).
 
 ## 2022-11-06
 

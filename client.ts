@@ -118,6 +118,7 @@
 
   .giscus-frame {
     border: none;
+    color-scheme: light dark;
   }
   .giscus-frame--loading {
     opacity: 0;

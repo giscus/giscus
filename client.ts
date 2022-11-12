@@ -93,7 +93,7 @@
   // Set up iframe element
   const iframeElement = document.createElement('iframe');
   const iframeAttributes = {
-    class: 'giscus-frame',
+    class: 'giscus-frame giscus-frame--loading',
     title: 'Comments',
     scrolling: 'no',
     allow: 'clipboard-write',
@@ -103,6 +103,9 @@
   Object.entries(iframeAttributes).forEach(
     ([key, value]) => value && iframeElement.setAttribute(key, value),
   );
+  iframeElement.addEventListener('load', () => {
+    iframeElement.classList.remove('giscus-frame--loading');
+  });
 
   // Create default style and prepend as <head>'s first child to make override possible.
   const style = document.getElementById('giscus-css') || document.createElement('style');
@@ -115,7 +118,9 @@
 
   .giscus-frame {
     border: none;
-    color-scheme: light;
+  }
+  .giscus-frame--loading {
+    opacity: 0;
   }
 `;
   document.head.prepend(style);

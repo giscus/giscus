@@ -35,6 +35,7 @@ class CustomDocument extends Document {
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} />
+          <meta name="color-scheme" content="light dark" />
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="stylesheet" href={themeUrl} crossOrigin="anonymous" id="giscus-theme" />
         </Head>

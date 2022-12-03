@@ -7,6 +7,7 @@ export const env = {
   private_key: process.env.GITHUB_PRIVATE_KEY,
   encryption_password: process.env.ENCRYPTION_PASSWORD,
   app_host: process.env.NEXT_PUBLIC_GISCUS_APP_HOST as `https://${string}`,
+  revalidate_first_page: process.env.NEXT_PUBLIC_REVALIDATE_FIRST_PAGE !== 'false',
   origins: JSON.parse(process.env.ORIGINS || '[]') as string[],
   origins_regex: JSON.parse(process.env.ORIGINS_REGEX || '[]') as string[],
 } as const;

@@ -6,11 +6,13 @@ import { Reaction, updateDiscussionReaction } from '../../lib/reactions';
 import { IComment, IGiscussion, IReply } from '../../lib/types/adapter';
 import { DiscussionQuery, PaginationParams } from '../../lib/types/common';
 import { CommentOrder, IDiscussionData } from '../../lib/types/giscus';
+import { env } from '../../lib/variables';
 
 export function useDiscussion(
   query: DiscussionQuery,
   token?: string,
   pagination: PaginationParams = {},
+  revalidateFirstPage = false,
 ) {
   const [errorStatus, setErrorStatus] = useState(0);
   const urlParams = new URLSearchParams(cleanParams({ ...query, ...pagination }));
@@ -44,6 +46,7 @@ export function useDiscussion(
         if (!shouldRevalidate(err?.status)) return;
         SWRConfig.default.onErrorRetry(err, key, config, revalidate, opts);
       },
+      revalidateFirstPage: revalidateFirstPage || env.revalidate_first_page,
       revalidateOnMount: shouldRevalidate(errorStatus),
       revalidateOnFocus: shouldRevalidate(errorStatus),
       revalidateOnReconnect: shouldRevalidate(errorStatus),
@@ -169,7 +172,7 @@ export function useFrontBackDiscussion(
   token?: string,
   orderBy: CommentOrder = 'oldest',
 ) {
-  const backDiscussion = useDiscussion(query, token, { last: 15 });
+  const backDiscussion = useDiscussion(query, token, { last: 15 }, true);
   const {
     data: _backData,
     isLoading: isBackLoading,

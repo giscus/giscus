@@ -427,6 +427,11 @@ img.emoji {
   border-color: var(--color-danger-muted);
 }
 
+.flash-warn {
+  background-image: linear-gradient(var(--color-attention-subtle), var(--color-attention-subtle));
+  border-color: var(--color-attention-muted);
+}
+
 /*! giscus-specific styles */
 
 .gsc-loading {

@@ -72,6 +72,8 @@ main {
   --color-accent-subtle: #ddf4ff;
   --color-success-fg: #0969da;
   --color-attention-fg: #9a6700;
+  --color-attention-muted: rgb(212 167 44 / 40%);
+  --color-attention-subtle: #fff8c5;
   --color-danger-fg: #b35900;
   --color-danger-muted: rgb(247 153 57 / 40%);
   --color-danger-subtle: #fff5e8;

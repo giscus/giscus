@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2022-12-04
+
+### Changed
+
+- Improve onboarding config UX
+  ([#807](https://github.com/giscus/giscus/pull/807)).
+
 ## 2022-12-03
 
 ### Changed

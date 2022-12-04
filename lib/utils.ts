@@ -68,6 +68,20 @@ export function parseRepoWithOwner(repoWithOwner: string) {
   return { owner, name };
 }
 
+export function normalizeRepoName(repoOrLink: string) {
+  if (!repoOrLink) return '';
+
+  // Extract repo name from link if it looks like a GitHub link
+  const pattern = /github\.com\/(\S*?\/\S*)/;
+  repoOrLink = repoOrLink.match(pattern)?.[1] || repoOrLink;
+
+  // Remove any trailing information as we only need the owner and name
+  const { owner, name } = parseRepoWithOwner(repoOrLink);
+
+  if (!name) return `${owner}/${owner}`; // 'giscus' -> 'giscus/giscus'
+  return `${owner}/${name}`;
+}
+
 export function resizeTextArea(textarea: HTMLTextAreaElement) {
   const maxHeight = 270;
   textarea.style.height = `0px`;

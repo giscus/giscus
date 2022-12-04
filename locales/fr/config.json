@@ -76,6 +76,7 @@
 
   "enableGiscus": "Activer giscus",
   "addTheFollowingScriptTag": "Ajouter le code suivant (tag HTML <code><script></code>) dans le gabarit de vos pages web à l'endroit où vous souhaitez afficher les commentaires. Si un élément HTML possède la classe CSS <code>giscus</code> existe, les commentaires seront à cet endroit.",
+  "youHaveNotConfiguredRepositoryCategory": "Vous n'avez pas configuré votre <arepo>référentiel</arepo> et/ou <acategory>catégorie</acategory>. Les valeurs de ces champs ne seront pas affichées tant que vous ne les aurez pas remplis.",
   "copy": "Copier",
 
   "[enterRepoHere]": "[ENTER REPO HERE]",

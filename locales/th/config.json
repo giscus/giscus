@@ -76,6 +76,7 @@
 
   "enableGiscus": "เปิดใช้งาน giscus",
   "addTheFollowingScriptTag": "ใส่โค้ด <code><script></code> ด้านล่างนี้ลงในเทมเพลตเว็บไซต์ของคุณในส่วนที่คุณต้องการให้ความคิดเห็นปรากฏอยู่ หากมี element ที่มี class <code>giscus</code> อยู่, ความคิดเห็นจะปรากฏตรง element นั้นแทน",
+  "youHaveNotConfiguredRepositoryCategory": "คุณยังไม่ได้กำหนดค่าพื้นที่<arepo>เก็บ</arepo>ข้อมูลและ/หรือ<acategory>หมวดหมู่</acategory>ของคุณ ค่าสำหรับฟิลด์เหล่านั้นจะไม่แสดงจนกว่าคุณจะกรอกข้อมูล",
   "copy": "คัดลอก",
 
   "[enterRepoHere]": "[ใส่คลังเก็บที่น่ี]",

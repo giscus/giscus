@@ -76,6 +76,7 @@
 
   "enableGiscus": "giscusを有効にする",
   "addTheFollowingScriptTag": "下記の <code><script></code> コードタグをお使いのWebサイトのコメントを表示したい場所に追加してください。もし、<code>giscus</code>クラスを持つ要素が存在する場合、giscusは当該要素にコメントを表示します。",
+  "youHaveNotConfiguredRepositoryCategory": "<arepo>リポジトリ</arepo>や<acategory>カテゴリ</acategory>を構成していません。 これらのフィールドの値は、入力するまで表示されません。",
   "copy": "コピー",
 
   "[enterRepoHere]": "[リポジトリを記述]",

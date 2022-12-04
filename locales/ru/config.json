@@ -76,6 +76,7 @@
 
   "enableGiscus": "Включить giscus",
   "addTheFollowingScriptTag": "Добавьте тэг <code><script></code> в шаблон вашего сайта, где бы вы хотели видеть комментарии. Если существует элемент с классом <code>giscus</code>, то комментарии будут размещены вместо него.",
+  "youHaveNotConfiguredRepositoryCategory": "Вы не настроили свой <arepo>репозиторий</arepo> и/или <acategory>категорию</acategory>. Значения этих полей не будут отображаться, пока вы их не заполните.",
   "copy": "Скопировать",
 
   "[enterRepoHere]": "[ВВЕДИТЕ REPO]",

@@ -76,6 +76,7 @@
 
   "enableGiscus": "Aktifkan giscus",
   "addTheFollowingScriptTag": "Tambahkan tag <code><script></code> berikut ke template halaman web Anda di mana Anda ingin komentarnya muncul. Apabila sudah terdapat elemen dengan kelas <code>giscus</code>, maka komentarnya akan diletakkan di sana.",
+  "youHaveNotConfiguredRepositoryCategory": "Anda belum mengonfigurasi <arepo>repositori</arepo> dan/atau <acategory>kategori</acategory> Anda. Nilai untuk kolom tersebut tidak akan ditampilkan sampai Anda mengisinya.",
   "copy": "Salin",
 
   "[enterRepoHere]": "[MASUKKAN REPOSITORI DI SINI]",

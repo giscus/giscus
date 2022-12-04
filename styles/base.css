@@ -6,6 +6,8 @@
  */
 
 * {
+  @apply scroll-mt-24;
+
   border-color: var(--color-border-default, var(--color-border-primary));
 }
 

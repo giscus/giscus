@@ -76,6 +76,7 @@
 
   "enableGiscus": "Giscus'ı etkinleştir",
   "addTheFollowingScriptTag": "Yorumların sitenizde görünmesini istediğiniz yerine <code><script></code> scriptini ekleyin. Eğer <code>giscus</code> classına sahip bir element bulunursa, yorumlar burada gözükür.",
+  "youHaveNotConfiguredRepositoryCategory": "<arepo>Deponuzu</arepo> ve/veya <acategory>kategorinizi</acategory> yapılandırmadınız. Bu alanların değerleri, siz onları doldurana kadar gösterilmeyecektir.",
   "copy": "Kopyala",
 
   "[enterRepoHere]": "[DEPO İSMİ GİRİN]",

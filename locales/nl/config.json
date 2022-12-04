@@ -76,6 +76,7 @@
 
   "enableGiscus": "Giscus inschakelen",
   "addTheFollowingScriptTag": "Add the following <code><script></code> tag to your website's template where you want the comments to appear. If an element with the class <code>giscus</code> exists, the comments will be placed there instead.",
+  "youHaveNotConfiguredRepositoryCategory": "U heeft uw <arepo>repository</arepo> en/of <acategory>categorie</acategory> niet geconfigureerd. De waarden voor die velden worden pas weergegeven als u ze invult.",
   "copy": "Kopieer",
 
   "[enterRepoHere]": "[VUL REPO HIER IN]",

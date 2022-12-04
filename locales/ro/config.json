@@ -76,6 +76,7 @@
 
   "enableGiscus": "Enable giscus",
   "addTheFollowingScriptTag": "Add the following <code><script></code> tag to your website's template where you want the comments to appear. If an element with the class <code>giscus</code> exists, the comments will be placed there instead.",
+  "youHaveNotConfiguredRepositoryCategory": "Nu v-ați configurat <arepo>depozitul</arepo> și/sau <acategory>categoria</acategory>. Valorile pentru acele câmpuri nu vor fi afișate până când nu le completați.",
   "copy": "Copy",
 
   "[enterRepoHere]": "[ENTER REPO HERE]",

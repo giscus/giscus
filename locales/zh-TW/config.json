@@ -83,6 +83,7 @@
 
   "enableGiscus": "啟用 giscus",
   "addTheFollowingScriptTag": "在你想放置留言區的位置加上下列的 <code><script></code> 標籤。但如果已經存在使用 <code>giscus</code> class 的元素，留言區會出現在那邊。",
+  "youHaveNotConfiguredRepositoryCategory": "您尚未配置<arepo>儲存庫</arepo>和/或<acategory>分類</acategory>。 在您填寫這些字段之前，不會顯示這些字段的值。",
   "copy": "複製",
 
   "[enterRepoHere]": "[在此輸入儲存庫名稱]",

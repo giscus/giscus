@@ -76,6 +76,7 @@
 
   "enableGiscus": "Bật giscus",
   "addTheFollowingScriptTag": "Thêm thẻ <code><script></code> sau vào website của bạn nơi bạn muốn comment xuất hiện. Nếu một phần tử có class <code>giscus</code> tồn tại, các comment sẽ được đặt ở đó.",
+  "youHaveNotConfiguredRepositoryCategory": "Bạn chưa định cấu hình <arepo>Repository</arepo> và/hoặc <acategory>thể loại</acategory> của mình. Các giá trị cho các trường đó sẽ không được hiển thị cho đến khi bạn điền vào.",
   "copy": "Copy",
 
   "[enterRepoHere]": "[NHẬP REPO TẠI ĐÂY]",

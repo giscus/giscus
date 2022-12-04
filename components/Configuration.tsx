@@ -548,6 +548,14 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
       <p>
         <Trans i18nKey="config:addTheFollowingScriptTag" />
       </p>
+      {!config.repositoryId || (!config.category && config.mapping !== 'number') ? (
+        <div className="flash flash-warn mb-4">
+          <Trans
+            i18nKey="config:youHaveNotConfiguredRepositoryCategory"
+            components={{ arepo: <a href="#repository" />, acategory: <a href="#category" /> }}
+          />
+        </div>
+      ) : null}
       <div dir="ltr" className="highlight highlight-text-html-basic relative">
         <pre>
           <span className="pl-kos">{'<'}</span>

@@ -76,6 +76,7 @@
 
   "enableGiscus": "تفعيل غيسكوس",
   "addTheFollowingScriptTag": "أضف <code><script></code> الوسم التالي إلى قالب موقعك في المكان الذي تريد أن تظهر فيه التعليقات. إذا كان هناك عنصر ذو صنف <code>giscus</code> ستظهر التعليقات بداخله.",
+  "youHaveNotConfiguredRepositoryCategory": "لم تقم بتكوين <arepo>المستودع</arepo> و / أو <acategory>الفئة</acategory> الخاصة بك. لن يتم عرض قيم هذه الحقول حتى تقوم بملئها.",
   "copy": "نسخ",
 
   "[enterRepoHere]": "[ضع رابط المستودع هنا]",

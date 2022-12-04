@@ -76,6 +76,7 @@
 
   "enableGiscus": "giscus 사용",
   "addTheFollowingScriptTag": "댓글을 표시할 웹 사이트 템플릿에 다음 <code><script></code> 태그를 추가합니다. <code>giscus</code> 클래스가 있는 요소가 있으면 댓글이 대신 나타납니다.",
+  "youHaveNotConfiguredRepositoryCategory": "<arepo>저장소</arepo> 및/또는 <acategory>카테고리</acategory> 구성하지 않았습니다. 해당 필드의 값은 채울 때까지 표시되지 않습니다.",
   "copy": "복사하기",
 
   "[enterRepoHere]": "[ENTER REPO HERE]",

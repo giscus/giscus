@@ -76,6 +76,7 @@
 
   "enableGiscus": "Habilitar giscus",
   "addTheFollowingScriptTag": "Adicione a seguinte tag <code><script></code> ao modelo do seu site onde você deseja que os comentários apareçam. Se existir um elemento com a classe <code>giscus</code>, os comentários serão colocados lá.",
+  "youHaveNotConfiguredRepositoryCategory": "Você não configurou seu <arepo>repositório</arepo> e/ou <acategory>categoria</acategory>. Os valores desses campos não serão mostrados até que você os preencha.",
   "copy": "Copy",
 
   "[enterRepoHere]": "[INSIRA O REPOSITÓRIO AQUI]",

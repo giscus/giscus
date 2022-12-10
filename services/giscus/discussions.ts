@@ -44,7 +44,7 @@ export function useDiscussion(
     {
       onErrorRetry: (err, key, config, revalidate, opts) => {
         if (!shouldRevalidate(err?.status)) return;
-        SWRConfig.default.onErrorRetry(err, key, config, revalidate, opts);
+        SWRConfig.defaultValue.onErrorRetry(err, key, config, revalidate, opts);
       },
       revalidateFirstPage: revalidateFirstPage || env.revalidate_first_page,
       revalidateOnMount: shouldRevalidate(errorStatus),

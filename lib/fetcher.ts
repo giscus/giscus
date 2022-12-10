@@ -11,7 +11,7 @@ export class CustomError extends Error {
   }
 }
 
-export async function fetcher(input: RequestInfo, init?: RequestInit) {
+export async function fetcher([input, init]: Parameters<typeof fetch>) {
   const res = await fetch(input, init);
   const data = await res.json();
   if (!res.ok) {

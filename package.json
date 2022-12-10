@@ -54,7 +54,7 @@
     "postcss": "^8.4.19",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.0.1",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.0",
     "stylelint": "^14.15.0",
     "stylelint-config-standard": "^29.0.0",

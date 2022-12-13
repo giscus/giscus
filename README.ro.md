@@ -52,6 +52,7 @@ Dacă ai folosit anterior un alt sistem ce folosește GitHub Issues (e.g. [utter
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
+- [lx78wyy0j5.github.io][lx78wyy0j5]
 - [**and many more!**][giscus-topic]
 
 ## Cum să ajuți
@@ -70,6 +71,7 @@ Vezi [CONTRIBUTING.md][contributing]
 [os-phil-opp]: https://os.phil-opp.com
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
+[lx78wyy0j5]: https://lx78wyy0j5.github.io/
 [contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md
 
 <!-- end -->

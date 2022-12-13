@@ -52,6 +52,7 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
+- [lx78wyy0j5.github.io][lx78wyy0j5]
 - [**還有更多！**][giscus-topic]
 
 ## 貢獻
@@ -70,6 +71,7 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 [os-phil-opp]: https://os.phil-opp.com
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
+[lx78wyy0j5]: https://lx78wyy0j5.github.io/
 [contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md
 
 <!-- end -->

@@ -52,6 +52,7 @@ Si vous avez déjà utilisé d'autres systèmes qui utilisent les *issues* de Gi
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
+- [lx78wyy0j5.github.io][lx78wyy0j5]
 - [**et bien plus encore!**][giscus-topic]
 
 ## Contribuer
@@ -70,6 +71,7 @@ Voir le fichier [CONTRIBUTING.md][contributing]
 [os-phil-opp]: https://os.phil-opp.com
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
+[lx78wyy0j5]: https://lx78wyy0j5.github.io/
 [contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md
 
 <!-- end -->

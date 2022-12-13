@@ -52,6 +52,7 @@ Si ha utilizado anteriormente otros sistemas que usan GitHub Issues (p.ej. [utte
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
+- [lx78wyy0j5.github.io][lx78wyy0j5]
 - [**Y muchos más!**][giscus-topic]
 
 ## Contribución
@@ -70,6 +71,7 @@ Ver [CONTRIBUTING.md][contributing]
 [os-phil-opp]: https://os.phil-opp.com
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
+[lx78wyy0j5]: https://lx78wyy0j5.github.io/
 [contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md
 
 <!-- end -->

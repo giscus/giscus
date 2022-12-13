@@ -52,6 +52,7 @@ Giscus'ı React, Vue veya Svelte ile kullanmak için [giscus bileşen kütüphan
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
+- [lx78wyy0j5.github.io][lx78wyy0j5]
 - [**ve çok daha fazlası!**][giscus-topic]
 
 ## Katkı sağlama
@@ -70,6 +71,7 @@ Giscus'ı React, Vue veya Svelte ile kullanmak için [giscus bileşen kütüphan
 [os-phil-opp]: https://os.phil-opp.com
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
+[lx78wyy0j5]: https://lx78wyy0j5.github.io/
 [contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md
 
 <!-- end -->

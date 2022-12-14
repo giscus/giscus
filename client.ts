@@ -154,7 +154,11 @@
 
     const message: string = data.giscus.error;
 
-    if (message.includes('Bad credentials') || message.includes('Invalid state value')) {
+    if (
+      message.includes('Bad credentials') ||
+      message.includes('Invalid state value') ||
+      message.includes('State has expired')
+    ) {
       // Might be because token is expired or other causes
       if (localStorage.getItem(GISCUS_SESSION_KEY) !== null) {
         localStorage.removeItem(GISCUS_SESSION_KEY);

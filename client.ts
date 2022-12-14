@@ -18,7 +18,7 @@
 
   // Set up session and clear the session param on load
   const url = new URL(location.href);
-  let session = url.searchParams.get('giscus');
+  let session = url.searchParams.get('giscus') || '';
   const savedSession = localStorage.getItem(GISCUS_SESSION_KEY);
   url.searchParams.delete('giscus');
   const cleanedLocation = url.toString();
@@ -26,11 +26,10 @@
   if (session) {
     localStorage.setItem(GISCUS_SESSION_KEY, JSON.stringify(session));
     history.replaceState(undefined, document.title, cleanedLocation);
-  } else {
+  } else if (savedSession) {
     try {
-      session = JSON.parse(savedSession || '') || '';
+      session = JSON.parse(savedSession);
     } catch (e) {
-      session = '';
       localStorage.removeItem(GISCUS_SESSION_KEY);
       console.warn(`${formatError(e?.message)} Session has been cleared.`);
     }

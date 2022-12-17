@@ -51,7 +51,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "google-closure-compiler": "^20221102.0.1",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.20",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.1",

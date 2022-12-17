@@ -230,10 +230,10 @@
     "@prefresh/core" "^1.3.3"
     "@prefresh/utils" "^1.1.2"
 
-"@primer/octicons-react@^17.9.0":
-  version "17.9.0"
-  resolved "https://registry.npmjs.org/@primer/octicons-react/-/octicons-react-17.9.0.tgz#034ad1f377c2834900a2dd6b3c54079628dd73b1"
-  integrity sha512-fx2abdGfzzHqB8DOSq6FqNgusjkeDHfPFTa8DjSaugCFccEO2vIfM2ZY1sg4c5SpOQEQAbOEC4/gqWDulIRHzA==
+"@primer/octicons-react@^17.10.0":
+  version "17.10.0"
+  resolved "https://registry.yarnpkg.com/@primer/octicons-react/-/octicons-react-17.10.0.tgz#69753f8b6977cccb733e791c2ffc31c8f09cbfcb"
+  integrity sha512-6uJeWWPrReHNlGLlsp4bL2rmUr1mmlaKfFNTAkVnzi2Nnp8MmLhGhtdWAktXfFUOll1JF4AacrEK3j91Xq99UQ==
 
 "@rushstack/eslint-patch@^1.1.3":
   version "1.1.3"
@@ -286,10 +286,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.31.tgz"
   integrity sha512-AR0x5HbXGqkEx9CadRH3EBYx/VkiUgZIhP4wvPn/+5KIsgpNoyFaRlVe0Zlx9gRtg8fA06a9tskE2MSN7TcG4Q==
 
-"@types/node@^16.18.7":
-  version "16.18.7"
-  resolved "https://registry.npmjs.org/@types/node/-/node-16.18.7.tgz#9e34404dba546a6f0851439ebba142680ae56fe0"
-  integrity sha512-SghuoXv8ghvkrKjTyvhRTeNzivPzGQ8pe09PPGdyqsExiKvBYV/6E3imvjsaJuW8ca61qQN2+SoSzyEHS9r2LA==
+"@types/node@^16.18.10":
+  version "16.18.10"
+  resolved "https://registry.npmjs.org/@types/node/-/node-16.18.10.tgz#d7415ef18c94f8d4e4a82ebcc8b8999f965d8920"
+  integrity sha512-XU1+v7h81p7145ddPfjv7jtWvkSilpcnON3mQ+bDi9Yuf7OI56efOglXRyXWgQ57xH3fEQgh7WOJMncRHVew5w==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -2995,6 +2995,15 @@ postcss@^8.4.19:
   version "8.4.19"
   resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.19.tgz#61178e2add236b17351897c8bcc0b4c8ecab56fc"
   integrity sha512-h+pbPsyhlYj6N2ozBmHhHrs9DzGmbaarbLvWipMRO7RLS+v4onj26MPFXA5OBYFxyqYhUJK456SwDcY9H2/zsA==
+  dependencies:
+    nanoid "^3.3.4"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
+
+postcss@^8.4.20:
+  version "8.4.20"
+  resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.20.tgz#64c52f509644cecad8567e949f4081d98349dc56"
+  integrity sha512-6Q04AXR1212bXr5fh03u8aAwbLxAQNGQ/Q1LNa0VfOI06ZAlhPHtQvE4OIdpj4kLThXilalPnmDSOD65DcHt+g==
   dependencies:
     nanoid "^3.3.4"
     picocolors "^1.0.0"

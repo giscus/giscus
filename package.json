@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@primer/octicons-react": "^17.10.0",
-    "dompurify": "^2.4.1",
+    "dompurify": "^2.4.3",
     "jsonwebtoken": "^8.5.1",
     "lit-html": "^2.5.0",
     "mathjax": "3.2.0",

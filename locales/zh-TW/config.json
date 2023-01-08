@@ -14,7 +14,7 @@
   "repository": "儲存庫",
   "chooseTheRepository": "選擇 giscus 要連結的儲存庫。請確保：",
   "theRepositoryIsPublic": "<strong>此儲存庫是<a>公開的</a></strong>，否則訪客將無法查看 discussion。",
-  "theGiscusAppIsInstalled": "已安装 <strong><a>giscus</a> 應用程式</strong>，否則訪客將無法留言或回應。",
+  "theGiscusAppIsInstalled": "已安裝 <strong><a>giscus</a> 應用程式</strong>，否則訪客將無法留言或回應。",
   "theDiscussionsFeatureIsTurnedOn": "你要連結的儲存庫已<a>啟用 <strong>Discussions</strong> 功能</a>。",
   "repositoryLabel": "儲存庫：",
   "myusername/myrepo": "myusername/myrepo",
@@ -83,7 +83,7 @@
 
   "enableGiscus": "啟用 giscus",
   "addTheFollowingScriptTag": "在你想放置留言區的位置加上下列的 <code><script></code> 標籤。但如果已經存在使用 <code>giscus</code> class 的元素，留言區會出現在那邊。",
-  "youHaveNotConfiguredRepositoryCategory": "您尚未配置<arepo>儲存庫</arepo>和/或<acategory>分類</acategory>。 在您填寫這些字段之前，不會顯示這些字段的值。",
+  "youHaveNotConfiguredRepositoryCategory": "您尚未配置<arepo>儲存庫</arepo>和/或<acategory>分類</acategory>。 在您填寫這些欄位之前，不會顯示這些欄位的值。",
   "copy": "複製",
 
   "[enterRepoHere]": "[在此輸入儲存庫名稱]",

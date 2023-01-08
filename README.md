@@ -2,14 +2,14 @@
 
 A comments system powered by [GitHub Discussions][discussions]. Let visitors leave comments and reactions on your website via GitHub! Heavily inspired by [utterances][utterances].
 
-- [Open source][repo]. 🌏
-- No tracking, no ads, always free. 📡 🚫
+- [Open source][repo].
+- No tracking, no ads, always free.
 - No database needed. All data is stored in GitHub Discussions. :octocat:
-- Supports [custom themes][creating-custom-themes]! 🌗
-- Supports [multiple languages][multiple-languages]. 🌐
-- [Extensively configurable][advanced-usage]. 🔧
-- Automatically fetches new comments and edits from GitHub. 🔃
-- [Can be self-hosted][self-hosting]! 🤳
+- Supports [custom themes][creating-custom-themes]!
+- Supports [multiple languages][multiple-languages].
+- [Extensively configurable][advanced-usage].
+- Automatically fetches new comments and edits from GitHub.
+- [Can be self-hosted][self-hosting]!
 
 > **Note**
 > giscus is still under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscus may break or change over time.
@@ -34,7 +34,7 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 
 <!-- configuration -->
 
-If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
+If you're using giscus, consider [starring giscus on GitHub][repo] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
 
 ## Advanced usage
 

@@ -1,6 +1,6 @@
 # [giscus][giscus]
 
-[GitHub Discussions][discussions]を利用したコメントシステム。サイト訪問者GitHubを利用したコメントとリアクションを提供しましょう！このプロジェクトは[utterances][utterances]を強くインスパイヤしています。
+[GitHub Discussions][discussions]を利用したコメントシステムです。サイトの訪問者にGitHubを利用したコメントとリアクションを提供しましょう！このプロジェクトは[utterances][utterances]を元に開発されています。
 
 - [オープンソース][repo]。 🌏
 - 追跡や広告は無く、無料です。 📡 🚫
@@ -11,14 +11,14 @@
 - 自動的に新しいコメントと編集をGitHubから取得します。 🔃
 - [自己ホスティングが可能][self-hosting]! 🤳
 
-> **情報:**\
+> **補足**\
 > giscusは現在も活発に開発されています。GitHubも同様にDiscussionsとそのAPIを活発に開発しています。そのため、giscusの機能の一部が正常に動作しなくなったり、機能の変更がされる場合があります。
 
 ## 仕組み
 
 giscus読み込み時に[GitHub Discussions search API][search-api]を利用してページ連携設定(URL、パス、`<title>`など)に基づき紐づけられたDiscussionを読み込みます。もし紐づけられたDiscussionがない場合、giscusは最初にコメントやリアクションが為された際に自動的にDiscussionを作成します。
 
-コメントするには、サイト訪問者はGitHub OAuth flowを利用して[giscus app][giscus-app]を[自分の代わりに投稿][authorization]させるために連携させる必要があります。もしくは、サイト訪問者はGitHub Discussionに直接コメントを記述することもできます。あなたは、GitHub上でコメントを削除することができます。
+コメントするには、サイト訪問者はGitHub OAuth flowを利用して[giscus app][giscus-app]を[自分の代わりに投稿][authorization]させるために連携させる必要があります。もしくは、サイト訪問者はGitHub Discussionに直接コメントを記述することもできます。投稿者と所有者は、GitHub上でコメントを削除することができます。
 
 [giscus]: https://giscus.app/ja
 [discussions]: https://docs.github.com/en/discussions
@@ -44,7 +44,7 @@ giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネン�
 
 ## 移行
 
-もし以前GitHub Issuesを利用したツール([utterances][utterances]や[gitalk][gitalk]など)を利用していたばあい、[既存のIssueをDiscussionに変換する][convert]事が出来ます。返還後はdiscussionタイトルが連携設定に基づき正しく設定されていることを確認してください。その後は、giscusが自動的にdiscussionを利用します。
+もし以前GitHub Issuesを利用したツール([utterances][utterances]や[gitalk][gitalk]など)を利用していた場合、[既存のIssueをDiscussionに変換する][convert]事が出来ます。返還後はdiscussionタイトルが連携設定に基づき正しく設定されていることを確認してください。その後は、giscusが自動的にdiscussionを利用します。
 
 ## giscusを利用しているサイト
 
@@ -52,9 +52,9 @@ giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネン�
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**上記以外にも！**][giscus-topic]
+- [**他多数**][giscus-topic]
 
-## コントリビュート
+## 頒布
 
 [CONTRIBUTING.md][contributing]をご参照ください。
 

@@ -4,7 +4,7 @@
     "one": "{{count}}件のリアクション",
     "other": "{{count}}件のリアクション"
   },
-  "comment": "コメント",
+  "comment": "投稿",
   "comments": {
     "0": "{{count}}件のコメント",
     "one": "{{count}}件のコメント",

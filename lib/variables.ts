@@ -27,6 +27,6 @@ export const availableThemes = [
   'custom',
 ] as const;
 
-export type AvailableTheme = typeof availableThemes[number];
+export type AvailableTheme = (typeof availableThemes)[number];
 
 export type Theme = AvailableTheme | `/${string}` | `https://${string}`;

@@ -85,7 +85,7 @@ export default function ReactButtons({
       : Object.entries(reactionGroups || {})
           .filter(([, { count }]) => count > 0)
           .map(
-            ([key, { count, viewerHasReacted }]: [Reaction, typeof reactionGroups[Reaction]]) => (
+            ([key, { count, viewerHasReacted }]: [Reaction, (typeof reactionGroups)[Reaction]]) => (
               <button
                 key={key}
                 className={`gsc-direct-reaction-button gsc-social-reaction-summary-item ${

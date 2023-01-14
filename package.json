@@ -39,7 +39,7 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^12.3.4",
     "@types/dompurify": "^2.4.0",
-    "@types/jsonwebtoken": "^9.0.0",
+    "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "^16.18.11",
     "@types/react": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^4.33.0",

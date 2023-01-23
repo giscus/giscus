@@ -82,6 +82,7 @@ README นี้ในภาษาอื่น:
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Español](README.es.md)
+- [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)

@@ -47,6 +47,7 @@ export const availableLanguages = {
   de: 'Deutsch',
   en: 'English',
   es: 'Español',
+  fa: 'فارسی',
   fr: 'Français',
   id: 'Indonesia',
   it: 'Italiano',
@@ -64,7 +65,7 @@ export const availableLanguages = {
   'zh-TW': '繁體中文',
 } as const;
 
-export const rtlLanguages = new Set(['ar']);
+export const rtlLanguages = new Set(['ar', 'fa']);
 
 export type AvailableLanguage = keyof typeof availableLanguages;
 
@@ -134,6 +135,7 @@ const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   de: new Intl.DateTimeFormat('de', dateFormat),
   en: new Intl.DateTimeFormat('en', dateFormat),
   es: new Intl.DateTimeFormat('es', dateFormat),
+  fa: new Intl.DateTimeFormat('fa', dateFormat),
   fr: new Intl.DateTimeFormat('fr', dateFormat),
   id: new Intl.DateTimeFormat('id', dateFormat),
   it: new Intl.DateTimeFormat('it', dateFormat),
@@ -161,6 +163,7 @@ const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   de: new Intl.DateTimeFormat('de', shortDateFormat),
   en: new Intl.DateTimeFormat('en', shortDateFormat),
   es: new Intl.DateTimeFormat('es', shortDateFormat),
+  fa: new Intl.DateTimeFormat('fa', shortDateFormat),
   fr: new Intl.DateTimeFormat('fr', shortDateFormat),
   id: new Intl.DateTimeFormat('id', shortDateFormat),
   it: new Intl.DateTimeFormat('it', shortDateFormat),
@@ -189,6 +192,7 @@ const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = 
   de: new Intl.DateTimeFormat('de', shortDateYearFormat),
   en: new Intl.DateTimeFormat('en', shortDateYearFormat),
   es: new Intl.DateTimeFormat('es', shortDateYearFormat),
+  fa: new Intl.DateTimeFormat('fa', shortDateYearFormat),
   fr: new Intl.DateTimeFormat('fr', shortDateYearFormat),
   id: new Intl.DateTimeFormat('id', shortDateYearFormat),
   it: new Intl.DateTimeFormat('it', shortDateYearFormat),
@@ -217,6 +221,7 @@ const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat>
   de: new Intl.RelativeTimeFormat('de', relativeTimeFormat),
   en: new Intl.RelativeTimeFormat('en', relativeTimeFormat),
   es: new Intl.RelativeTimeFormat('es', relativeTimeFormat),
+  fa: new Intl.RelativeTimeFormat('fa', relativeTimeFormat),
   fr: new Intl.RelativeTimeFormat('fr', relativeTimeFormat),
   id: new Intl.RelativeTimeFormat('id', relativeTimeFormat),
   it: new Intl.RelativeTimeFormat('it', relativeTimeFormat),

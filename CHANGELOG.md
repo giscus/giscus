@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2023-02-11
+
+### Added
+
+- Add Persian localization
+  ([#867](https://github.com/giscus/giscus/pull/867)).
+
 ## 2022-12-14
 
 ### Fixed

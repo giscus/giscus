@@ -20,6 +20,7 @@ module.exports = {
     'de',
     'en',
     'es',
+    'fa',
     'fr',
     'gsw',
     'id',

@@ -1,0 +1,98 @@
+{
+  "reactions": {
+    "0": "{{count}} بازخورد",
+    "one": "{{count}} بازخورد",
+    "other": "{{count}} بازخورد"
+  },
+  "comment": "دیدگاه",
+  "comments": {
+    "0": "{{count}} دیدگاه",
+    "one": "{{count}} دیدگاه",
+    "other": "{{count}} دیدگاه"
+  },
+  "reply": "پاسخ",
+  "replies": {
+    "0": "{{count}} پاسخ",
+    "one": "{{count}} پاسخ",
+    "other": "{{count}}{{plus}} پاسخ"
+  },
+  "upvotes": {
+    "0": "{{count}} رای موافق",
+    "one": "{{count}} رای موافق",
+    "other": "{{count}} رای موافق"
+  },
+  "hiddenItems": {
+    "0": "{{count}} مورد پنهان",
+    "one": "{{count}} مورد پنهان",
+    "other": "{{count}} مورد پنهان"
+  },
+  "genericError": "خطایی رخ داده است: {{message}}",
+  "loadMore": "بارگزاری موارد بیشتر",
+  "loading": "بارگزاری",
+  "loadingComments": "بارگزاری دیدگاه‌ها …",
+  "loadingPreview": "بارگزاری پیش‌نمایش …",
+  "poweredBy": "– قدرت گرفته از <a>giscus</a>",
+  "oldest": "قدیمی‌تر",
+  "newest": "جدیدتر",
+  "showPreviousReplies": {
+    "0": "نمایش {{count}} پاسخ قبلی",
+    "one": "نمایش {{count}} پاسخ قبلی",
+    "other": "نمایش {{count}} پاسخ قبلی"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "دیدن {{count}} پاسخ قبلی در GitHub",
+    "one": "دیدن {{count}} پاسخ قبلی در GitHub",
+    "other": "دیدن {{count}} پاسخ قبلی در GitHub"
+  },
+  "edited": "ویرایش‌شده",
+  "thisCommentWasDeleted": "این دیدگاه پاک شده است.",
+  "thisCommentWasMinimized": "این دیدگاه کوتاه شده است.",
+  "thisCommentWasHidden": "این دیدگاه مخفی شده است.",
+  "write": "نوشتن",
+  "preview": "پیش‌نمایش",
+  "enableFixedWidth": "فعال‌کردن قلم با عرض ثابت (تک فضا) در ویرایشگر",
+  "disableFixedWidth": "غیرفعال‌کردن قلم با عرض ثابت (تک فضا) در ویرایشگر",
+  "lastEditedAt": "ویرایش شده در {{date}}",
+  "writeAComment": "دیدگاه خود را بنویسید",
+  "signInToComment": "برای درج دیدگاه وارد شوید",
+  "stylingWithMarkdownIsSupported": "تغییر ظاهر توسط مارک‌داون پشتبانی می‌شود.",
+  "cancel": "انصراف",
+  "signInWithGitHub": "وارد شدن با حساب کاربری GitHub",
+  "writeAReply": "نوشتن پاسخ",
+
+  "upvote": "رای موافق",
+  "youMustBeSignedInToUpvote": "برای درج رای موافق باید وارد حساب کاربری شده باشید.",
+  "addReactions": "اضافه کردن بازخورد",
+  "pleaseWait": "لطفاً شکیبا باشید …",
+  "pickYourReaction": "یکی از بازخوردها را انتخاب کنید",
+  "addTheReaction": "اضافه کردن {{reaction}}",
+  "removeTheReaction": "حذف {{reaction}}",
+  "signInToAddYourReaction": "<a>وارد شدن</a> برای درج بازخورد.",
+  "youMustBeSignedInToAddReactions": "برای درج بازخورد، باید به حساب کاربری وارد شده باشید.",
+  "peopleReactedWith": {
+    "0": "{{count}} نفر بازخورد خود را با {{reaction}} {{emoji}} .ثبت کرده‌اند",
+    "one": "{{count}} نفر بازخورد خود را با {{reaction}} {{emoji}} .ثبت کرده‌اند",
+    "other": "{{count}} نفر بازخورد خود را با {{reaction}} {{emoji}} .ثبت کرده‌اند"
+  },
+  "emoji": "شکلک",
+  "nothingToPreview": "چیزی برای پیش‌نمایش وجود ندارد.",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "خنده",
+  "HOORAY": "هورا",
+  "CONFUSED": "گیچ‌شده",
+  "HEART": "عشق",
+  "ROCKET": "راکت",
+  "EYES": "چشم‌ها",
+
+  "COLLABORATOR": "مشارکت کننده",
+  "CONTRIBUTOR": "همکار",
+  "FIRST_TIMER": "اولین بار",
+  "FIRST_TIME_CONTRIBUTOR": "مشارکت کننده اولین بار",
+  "MANNEQUIN": "مانکن",
+  "MEMBER": "عضو",
+  "NONE": "هیچ",
+  "OWNER": "صاحب",
+  "APP": "برنامه"
+}

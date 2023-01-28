@@ -77,8 +77,9 @@
   "theme=dark_protanopia": "GitHub 深色主題 (Protanopia & Deuteranopia)",
   "theme=dark_tritanopia": "GitHub 深色主題 (Tritanopia)",
   "theme=dark_dimmed": "GitHub 深色主題 (暗淡)",
-  "theme=transparent_dark": "深色主題 (半透明)",
   "theme=preferred_color_scheme": "使用者偏好的色彩配置",
+  "theme=transparent_dark": "深色主題 (半透明)",
+  "theme=cobalt": "RStudio Cobalt",
   "theme=custom": "自訂（實驗功能）",
 
   "enableGiscus": "啟用 giscus",

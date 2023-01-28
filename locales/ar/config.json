@@ -70,8 +70,9 @@
   "theme=dark_protanopia": "أسود جيت هب عَمَى الأحمر والأخضر",
   "theme=dark_tritanopia": "أسود جيت هب عَمَى الأَزْرَق",
   "theme=dark_dimmed": "أسود جيت هب الغامق",
-  "theme=transparent_dark": "اﻷسود الشفاف",
   "theme=preferred_color_scheme": "نظام اﻷلوان المفضل",
+  "theme=transparent_dark": "اﻷسود الشفاف",
+  "theme=cobalt": "RStudio Cobalt",
   "theme=custom": "مخصص (تجريبي)",
 
   "enableGiscus": "تفعيل غيسكوس",

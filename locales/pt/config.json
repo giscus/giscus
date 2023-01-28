@@ -70,8 +70,9 @@
   "theme=dark_protanopia": "GitHub Escuro Protanopia & Deuteranopia",
   "theme=dark_tritanopia": "GitHub Escuro Tritanopia",
   "theme=dark_dimmed": "GitHub Escurecido",
-  "theme=transparent_dark": "Escuro transparente",
   "theme=preferred_color_scheme": "Esquema de cores preferido",
+  "theme=transparent_dark": "Escuro transparente",
+  "theme=cobalt": "RStudio Cobalt",
   "theme=custom": "Personalizado (experimental)",
 
   "enableGiscus": "Habilitar giscus",

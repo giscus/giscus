@@ -70,8 +70,9 @@
   "theme=dark_protanopia": "GitHub มืด Protanopia & Deuteranopia",
   "theme=dark_tritanopia": "GitHub มืด Tritanopia",
   "theme=dark_dimmed": "GitHub มืด ลดแสง",
-  "theme=transparent_dark": "มืด โปร่งแสง",
   "theme=preferred_color_scheme": "Preferred color scheme",
+  "theme=transparent_dark": "มืด โปร่งแสง",
+  "theme=cobalt": "RStudio Cobalt",
   "theme=custom": "กำหนดเอง (การทดลอง)",
 
   "enableGiscus": "เปิดใช้งาน giscus",

@@ -70,8 +70,9 @@
   "theme=dark_protanopia": "GitHub Koyu Protanopia & Deuteranopia",
   "theme=dark_tritanopia": "GitHub Koyu Tritanopia",
   "theme=dark_dimmed": "GitHub Koyu Sönük",
-  "theme=transparent_dark": "Saydam Koyu",
   "theme=preferred_color_scheme": "Tercih edilen renk şeması",
+  "theme=transparent_dark": "Saydam Koyu",
+  "theme=cobalt": "RStudio Cobalt",
   "theme=custom": "Özel (deneysel)",
 
   "enableGiscus": "Giscus'ı etkinleştir",

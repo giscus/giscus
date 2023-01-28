@@ -22,8 +22,9 @@ export const availableThemes = [
   'dark_protanopia',
   'dark_tritanopia',
   'dark_dimmed',
-  'transparent_dark',
   'preferred_color_scheme',
+  'transparent_dark',
+  'cobalt',
   'custom',
 ] as const;
 

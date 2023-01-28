@@ -70,8 +70,9 @@
   "theme=dark_protanopia": "گیت‌هاب تیره پروتانوپیا و دوترانوپیا",
   "theme=dark_tritanopia": "گیت‌هاب تیره تریتانوپیا",
   "theme=dark_dimmed": "گیت‌هاب تیره محو",
-  "theme=transparent_dark": "شفاف تیره",
   "theme=preferred_color_scheme": "تم رنگ دلخواه",
+  "theme=transparent_dark": "شفاف تیره",
+  "theme=cobalt": "RStudio Cobalt",
   "theme=custom": "سفارشی (به صورت تجربی)",
 
   "enableGiscus": "فعال سازی giscus",

@@ -70,8 +70,9 @@
   "theme=dark_protanopia": "GitHub Gelap Protanopia & Deuteranopia",
   "theme=dark_tritanopia": "GitHub Gelap Tritanopia",
   "theme=dark_dimmed": "GitHub Gelap Redup",
-  "theme=transparent_dark": "Gelap Transparan",
   "theme=preferred_color_scheme": "Skema warna pilihan",
+  "theme=transparent_dark": "Gelap Transparan",
+  "theme=cobalt": "RStudio Cobalt",
   "theme=custom": "Buat sendiri (eksperimental)",
 
   "enableGiscus": "Aktifkan giscus",

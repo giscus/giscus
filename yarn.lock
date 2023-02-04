@@ -3565,10 +3565,10 @@ svgo@^2.7.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-swr@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-2.0.2.tgz#fd34f3aac354f6b70f9134eb4218c747cc899a8d"
-  integrity sha512-iHbQW17hsduonMEliZnr6/yaxb+yvLe2r0+AH+ZfeqKzwc2bb+QRYpZm5/b/H0Lxgy7VWow4o71JeSazSun+9A==
+swr@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-2.0.3.tgz#9fe59a17f55b0fdddccd76b7b2f723f9f8e2263e"
+  integrity sha512-sGvQDok/AHEWTPfhUWXEHBVEXmgGnuahyhmRQbjl9XBYxT/MSlAzvXEKQpyM++bMPaI52vcWS2HiKNaW7+9OFw==
   dependencies:
     use-sync-external-store "^1.2.0"
 

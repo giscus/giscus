@@ -20,7 +20,7 @@
 
 برای ثبت  دیدگاه به , بازدیدکنندگان باید [برنامه giscus][giscus-app] [دسترسی لازم][authorization] را بر اساس GitHub OAuth بدهند. یا اینکه, می توانند به طور مستقیم در گیت هاب نظر خود را درج کنند. شما می توانید نظرات را در گیت هاب مدیریت کنید.
 
-[giscus]: https://giscus.app
+[giscus]: https://giscus.app/fa
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus

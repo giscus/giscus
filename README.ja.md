@@ -96,6 +96,7 @@ giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネン�
 - [ภาษาไทย](README.th.md)
 - [Türkçe](README.tr.md)
 - [Tiếng Việt](README.vi.md)
+- [Українська](README.uk.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 

@@ -7,6 +7,15 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2023-04-01
+
+### Added
+
+- Add Ukrainian localization
+  ([#677](https://github.com/giscus/giscus/pull/677),
+  [#855](https://github.com/giscus/giscus/pull/855),
+  [#911](https://github.com/giscus/giscus/pull/911)).
+
 ## 2023-02-26
 
 ### Added

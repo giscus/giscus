@@ -23,7 +23,7 @@
 Щоб додати новий коментар користувачі мусять пройти авторизацію [giscus app][giscus-app] для [здійснення публікацій коментарів від свого імені][authorization] за допомогою GitHub OAuth.
 Крім того, користувачі можуть залишати коментарі напряму в GitHub Discussion. Ви можете проводити модерацію цих коментарів через GitHub.
 
-[giscus]: https://giscus.app
+[giscus]: https://giscus.app/uk
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
@@ -48,7 +48,7 @@
 ## Міграція
 
 Якщо ви раніше користувалися іншими системами, котрі використовували GitHub Issues (наприклад, [utterances][utterances], [gitalk][gitalk]), ви можете [сконверктувати існуючі запити в дискусії][convert].
-Після конвертації переконайтеся у відповідності між дискусіями та сторінками сайту, тоді giscus автоматично знайде та відобразить ці дискусії. 
+Після конвертації переконайтеся у відповідності між дискусіями та сторінками сайту, тоді giscus автоматично знайде та відобразить ці дискусії.
 
 ## Сайти, котрі використовують giscus
 
@@ -86,6 +86,7 @@
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Español](README.es.md)
+- [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
@@ -99,7 +100,7 @@
 - [ภาษาไทย](README.th.md)
 - [Türkçe](README.tr.md)
 - [Tiếng Việt](README.vi.md)
-- [Українська](README.ua.md)
+- [Українська](README.uk.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 

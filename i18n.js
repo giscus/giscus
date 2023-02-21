@@ -19,6 +19,7 @@ module.exports = {
     'th',
     'tr',
     'vi',
+    'uk',
     'zh-CN',
     'zh-Hans',
     'zh-Hant',

@@ -187,31 +187,35 @@ export default function CommentBox({
             {isLoading ? t('loadingPreview') : undefined}
           </div>
         ) : (
-          <textarea
-            className={`form-control input-contrast gsc-comment-box-textarea ${
-              isFixedWidth ? 'gsc-is-fixed-width' : ''
-            }`}
-            placeholder={token ? t('writeAComment') : t('signInToComment')}
-            onChange={handleTextAreaChange}
-            value={input}
-            disabled={!token || isSubmitting}
-            ref={textarea}
-            onKeyDown={(event) =>
-              (event.ctrlKey || event.metaKey) && event.key === 'Enter' && handleSubmit()
-            }
-          ></textarea>
+          <div className="gsc-comment-box-write">
+            <textarea
+              className={`form-control input-contrast gsc-comment-box-textarea ${
+                isFixedWidth ? 'gsc-is-fixed-width' : ''
+              }`}
+              placeholder={token ? t('writeAComment') : t('signInToComment')}
+              onChange={handleTextAreaChange}
+              value={input}
+              disabled={!token || isSubmitting}
+              ref={textarea}
+              onKeyDown={(event) =>
+                (event.ctrlKey || event.metaKey) && event.key === 'Enter' && handleSubmit()
+              }
+            ></textarea>
+            <div className="form-control input-contrast gsc-comment-box-textarea-extras">
+              <a
+                className="link-secondary gsc-comment-box-markdown-hint flex gap-2"
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+                href="https://guides.github.com/features/mastering-markdown/"
+              >
+                {t('stylingWithMarkdownIsSupported')}
+                <MarkdownIcon className="mr-1" />
+              </a>
+            </div>
+          </div>
         )}
       </div>
       <div className="gsc-comment-box-bottom">
-        <a
-          className="link-secondary gsc-comment-box-markdown-hint"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          href="https://guides.github.com/features/mastering-markdown/"
-        >
-          <MarkdownIcon className="mr-1" />
-          {t('stylingWithMarkdownIsSupported')}
-        </a>
         <div className="gsc-comment-box-buttons">
           {isReply ? (
             <button
@@ -245,7 +249,7 @@ export default function CommentBox({
   ) : (
     <div className="color-bg-tertiary gsc-reply-box">
       <button
-        className="form-control color-text-secondary color-border-primary w-full cursor-text rounded border px-2 py-1 text-left"
+        className="form-control color-text-secondary color-border-primary w-full cursor-text rounded border px-2 py-1 text-left focus:border-transparent"
         onClick={handleReplyOpen}
         type="button"
       >

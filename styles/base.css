@@ -113,14 +113,16 @@ input[type="checkbox"]:focus-visible {
 }
 
 .form-control {
+  @apply align-middle;
+
   background-color: var(--color-canvas-default, var(--color-input-bg));
   border-color: var(--color-border-default, var(--color-input-border));
 }
 
 .form-control:focus {
-  border-color: var(--color-accent-emphasis, var(--color-state-focus-border));
+  border-color: var(--color-accent-fg, var(--color-text-link));
   outline: none;
-  box-shadow: var(--color-primer-shadow-focus, var(--color-state-focus-shadow));
+  box-shadow: 0 0 0 2px var(--color-accent-fg, var(--color-text-link));
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -604,15 +606,39 @@ img.emoji {
 }
 
 .gsc-comment-box-preview {
-  @apply px-2 pt-2 pb-4 min-h-[105px] border-b-2;
+  @apply px-2 pt-2 pb-4 min-h-[131px] border-b-2;
+}
+
+.gsc-comment-box-write {
+  @apply rounded;
+}
+
+.gsc-comment-box-write:focus-within {
+  border-color: var(--color-accent-fg, var(--color-text-link));
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent-fg, var(--color-text-link));
 }
 
 .gsc-comment-box-textarea {
   @apply w-full p-2 border rounded min-h-[100px] max-h-[500px] disabled:cursor-not-allowed;
+
+  border-bottom-style: dashed;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.gsc-comment-box-textarea:focus {
+  @apply shadow-none;
+
+  border-color: var(--color-border-default, var(--color-input-border));
+}
+
+.gsc-comment-box-textarea-extras {
+  @apply flex justify-end px-2.5 py-[7px] border border-t-0 rounded-b;
 }
 
 .gsc-comment-box-bottom {
-  @apply flex items-center justify-between m-2;
+  @apply flex items-center m-2;
 }
 
 .gsc-comment-box-markdown-hint {
@@ -620,7 +646,7 @@ img.emoji {
 }
 
 .gsc-comment-box-buttons {
-  @apply inline-flex shrink-0;
+  @apply inline-flex shrink-0 ml-auto;
 }
 
 .gsc-reply-box {

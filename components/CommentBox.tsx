@@ -132,9 +132,9 @@ export default function CommentBox({
       <div className="color-bg-tertiary color-border-primary gsc-comment-box-tabs">
         <div className="mx-2 mb-[-1px] mt-2">
           <button
-            className={`border border-b-0 px-4 py-2 focus:outline-none ${
+            className={`rounded-t border border-b-0 px-4 py-2 ${
               !isPreview
-                ? 'color-text-primary color-bg-canvas color-border-primary rounded-t'
+                ? 'color-text-primary color-bg-canvas color-border-primary'
                 : 'color-text-secondary border-transparent'
             }`}
             onClick={() => setIsPreview(false)}
@@ -143,14 +143,13 @@ export default function CommentBox({
             {t('write')}
           </button>
           <button
-            className={`ml-1 border border-b-0 px-4 py-2 focus:outline-none ${
+            className={`ml-1 rounded-t border border-b-0 px-4 py-2 ${
               isPreview
-                ? 'color-text-primary color-bg-canvas color-border-primary rounded-t'
+                ? 'color-text-primary color-bg-canvas color-border-primary'
                 : 'color-text-secondary border-transparent'
             }`}
             onClick={() => setIsPreview(true)}
             type="button"
-            tabIndex={-1}
           >
             {t('preview')}
           </button>

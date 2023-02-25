@@ -29,12 +29,12 @@
     "next": "^12.3.4",
     "next-plugin-preact": "^3.0.7",
     "next-translate": "^2.0.2",
-    "preact": "^10.12.1",
+    "preact": "^10.13.0",
     "preact-render-to-string": "^5.2.6",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
     "react-ssr-prepass": "npm:preact-ssr-prepass",
-    "swr": "^2.0.3"
+    "swr": "^2.0.4"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.3.4",
@@ -42,8 +42,8 @@
     "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "^16.18.12",
     "@types/react": "^18.0.9",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.15",
     "eslint": "^8.34.0",

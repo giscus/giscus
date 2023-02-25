@@ -21,6 +21,7 @@
   let session = url.searchParams.get('giscus') || '';
   const savedSession = localStorage.getItem(GISCUS_SESSION_KEY);
   url.searchParams.delete('giscus');
+  url.hash = '';
   const cleanedLocation = url.toString();
 
   if (session) {

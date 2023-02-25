@@ -2375,6 +2375,13 @@ next-plugin-preact@^3.0.7:
     "@prefresh/webpack" "^3.3.0"
     module-alias "^2.0.0"
 
+next-translate-plugin@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/next-translate-plugin/-/next-translate-plugin-2.0.2.tgz#0cc16a0549081f89f0a9b2a209b302b74d2422f9"
+  integrity sha512-0JzyvnzBmxeM62kIbxRbQboUQvGH1FM3q8wIPwAZQyf14I3+rVqjUfEIZzT8ioXx34RddNtYeR6K+zq/kfBiUg==
+  dependencies:
+    typescript "4.5.2"
+
 next-translate@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/next-translate/-/next-translate-2.0.2.tgz#5f0f8a7ede342b3d85ce6fd0f17eb758f2d64ddd"
@@ -3689,6 +3696,11 @@ type-fest@^0.8.1:
   version "0.8.1"
   resolved "https://registry.npmjs.org/type-fest/-/type-fest-0.8.1.tgz"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
+
+typescript@4.5.2:
+  version "4.5.2"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-4.5.2.tgz#8ac1fba9f52256fdb06fb89e4122fa6a346c2998"
+  integrity sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==
 
 typescript@^4.9.5:
   version "4.9.5"

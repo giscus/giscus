@@ -3,14 +3,13 @@ import { ChangeEvent, useCallback, useContext, useEffect, useRef, useState } fro
 import { adaptComment, adaptReply, handleCommentClick, processCommentBody } from '../lib/adapter';
 import { AuthContext } from '../lib/context';
 import { useGiscusTranslation } from '../lib/i18n';
-import { IComment, IReply, IUser } from '../lib/types/adapter';
+import { IComment, IReply } from '../lib/types/adapter';
 import { resizeTextArea } from '../lib/utils';
 import { addDiscussionComment } from '../services/github/addDiscussionComment';
 import { addDiscussionReply } from '../services/github/addDiscussionReply';
 import { renderMarkdown } from '../services/github/markdown';
 
 interface CommentBoxProps {
-  viewer?: IUser;
   discussionId?: string;
   context?: string;
   replyToId?: string;
@@ -20,7 +19,6 @@ interface CommentBoxProps {
 }
 
 export default function CommentBox({
-  viewer,
   discussionId,
   context,
   replyToId,
@@ -247,24 +245,8 @@ export default function CommentBox({
     </form>
   ) : (
     <div className="color-bg-tertiary gsc-reply-box">
-      {viewer ? (
-        <a
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-          href={viewer.url}
-          className="flex shrink-0 items-center"
-        >
-          <img
-            className="inline-block rounded-full"
-            src={viewer.avatarUrl}
-            width="30"
-            height="30"
-            alt={`@${viewer.login}`}
-          />
-        </a>
-      ) : null}
       <button
-        className="form-control color-text-secondary color-border-primary w-full cursor-text ml-2 rounded border px-2 py-1 text-left"
+        className="form-control color-text-secondary color-border-primary w-full cursor-text rounded border px-2 py-1 text-left"
         onClick={handleReplyOpen}
         type="button"
       >

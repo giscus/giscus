@@ -62,7 +62,6 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
 
   const mainCommentBox = (
     <CommentBox
-      viewer={data.viewer}
       discussionId={data.discussion.id}
       context={repo}
       className={inputPosition === 'top' && data.totalCommentCount > 0 ? 'mb-4' : ''}
@@ -204,7 +203,6 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                         context={repo}
                         onSubmit={frontMutators.addNewReply}
                         replyToId={comment.id}
-                        viewer={data.viewer}
                       />
                     ) : undefined
                   }
@@ -243,7 +241,6 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                         context={repo}
                         onSubmit={backMutators.addNewReply}
                         replyToId={comment.id}
-                        viewer={data.viewer}
                       />
                     ) : undefined
                   }

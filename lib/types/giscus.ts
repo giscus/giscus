@@ -51,6 +51,10 @@ export interface IResizeHeightMessage {
   resizeHeight: number;
 }
 
+export interface ISignOutMessage {
+  signOut: boolean;
+}
+
 // parent-to-giscus messages
 export interface ISetConfigMessage {
   setConfig: {

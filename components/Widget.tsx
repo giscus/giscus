@@ -1,8 +1,9 @@
+import Router from 'next/router';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import Giscus from '../components/Giscus';
 import { AuthContext, ConfigContext, getLoginUrl } from '../lib/context';
 import { emitData } from '../lib/messages';
-import { IErrorMessage, IResizeHeightMessage } from '../lib/types/giscus';
+import { IErrorMessage, IResizeHeightMessage, ISignOutMessage } from '../lib/types/giscus';
 import { cleanAnchor } from '../lib/utils';
 import { createDiscussion } from '../services/giscus/createDiscussion';
 import { getToken } from '../services/giscus/token';
@@ -39,11 +40,18 @@ export default function Widget({ origin, session }: IWidgetProps) {
     [origin],
   );
 
+  const handleSignOut = useCallback(() => {
+    emitData<ISignOutMessage>({ signOut: true }, origin);
+    Router.replace({ query: { ...Router.query, session: '' } });
+  }, [origin]);
+
   useEffect(() => {
     if (session && !token) {
       getToken(session)
         .then(setToken)
         .catch((err) => handleError(err?.message));
+    } else if (!session && token) {
+      setToken('');
     }
   }, [handleError, session, token]);
 
@@ -61,7 +69,7 @@ export default function Widget({ origin, session }: IWidgetProps) {
   const ready = (!session || token) && repo && (term || number);
 
   return ready ? (
-    <AuthContext.Provider value={{ token, origin, getLoginUrl }}>
+    <AuthContext.Provider value={{ token, origin, getLoginUrl, onSignOut: handleSignOut }}>
       <Giscus onDiscussionCreateRequest={handleDiscussionCreateRequest} onError={handleError} />
     </AuthContext.Provider>
   ) : null;

@@ -6,6 +6,7 @@ interface IAuthContext {
   token: string;
   origin: string;
   getLoginUrl: (origin: string) => string;
+  onSignOut: () => void;
 }
 
 export function getLoginUrl(origin: string) {
@@ -16,6 +17,9 @@ export const AuthContext = createContext<IAuthContext>({
   token: '',
   origin: '',
   getLoginUrl,
+  onSignOut() {
+    return;
+  },
 });
 
 interface IThemeContext {

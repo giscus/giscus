@@ -1,4 +1,4 @@
-import { MarkdownIcon, MarkGithubIcon, TypographyIcon } from '@primer/octicons-react';
+import { MarkdownIcon, MarkGithubIcon, SignOutIcon, TypographyIcon } from '@primer/octicons-react';
 import { ChangeEvent, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { adaptComment, adaptReply, handleCommentClick, processCommentBody } from '../lib/adapter';
 import { AuthContext } from '../lib/context';
@@ -36,7 +36,7 @@ export default function CommentBox({
   const [isReplyOpen, setIsReplyOpen] = useState(false);
   const [isFixedWidth, setIsFixedWidth] = useState(false);
   const [lastHeight, setLastHeight] = useState('');
-  const { token, origin, getLoginUrl } = useContext(AuthContext);
+  const { token, origin, getLoginUrl, onSignOut } = useContext(AuthContext);
   const textarea = useRef<HTMLTextAreaElement>(null);
   const loginUrl = getLoginUrl(origin);
   const isReply = !!replyToId;
@@ -216,6 +216,12 @@ export default function CommentBox({
         )}
       </div>
       <div className="gsc-comment-box-bottom">
+        {token && !isReply ? (
+          <button type="button" className="link-secondary text-sm" onClick={onSignOut}>
+            <SignOutIcon className="mr-2" />
+            Sign out
+          </button>
+        ) : null}
         <div className="gsc-comment-box-buttons">
           {isReply ? (
             <button

@@ -150,6 +150,11 @@
       iframeElement.style.height = `${data.giscus.resizeHeight}px`;
     }
 
+    if (data.giscus.signOut) {
+      localStorage.removeItem(GISCUS_SESSION_KEY);
+      console.warn(`[giscus] Session has been cleared.`);
+    }
+
     if (!data.giscus.error) return;
 
     const message: string = data.giscus.error;

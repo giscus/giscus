@@ -40,6 +40,7 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
               width="30"
               height="30"
               alt={`@${reply.author.login}`}
+              loading="lazy"
             />
           </a>
         </div>

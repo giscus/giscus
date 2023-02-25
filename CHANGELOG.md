@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2023-02-25
+
+### Changed
+
+- Use lazy loading for avatar images
+  ([#918](https://github.com/giscus/giscus/pull/918)).
+
 ## 2023-02-11
 
 ### Added

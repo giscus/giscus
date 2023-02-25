@@ -91,6 +91,7 @@ export default function Comment({
                   width="30"
                   height="30"
                   alt={`@${comment.author.login}`}
+                  loading="lazy"
                 />
                 <span className="link-primary font-semibold">{comment.author.login}</span>
               </a>

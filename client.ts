@@ -103,27 +103,19 @@
   Object.entries(iframeAttributes).forEach(
     ([key, value]) => value && iframeElement.setAttribute(key, value),
   );
+  // Prevent white flash on load
+  iframeElement.style.opacity = '0';
   iframeElement.addEventListener('load', () => {
+    iframeElement.style.removeProperty('opacity');
     iframeElement.classList.remove('giscus-frame--loading');
   });
 
-  // Create default style and prepend as <head>'s first child to make override possible.
-  const style = document.getElementById('giscus-css') || document.createElement('style');
+  // Link default style and prepend as <head>'s first child to make override possible.
+  const style =
+    (document.getElementById('giscus-css') as HTMLLinkElement) || document.createElement('link');
   style.id = 'giscus-css';
-  style.textContent = `
-  .giscus, .giscus-frame {
-    width: 100%;
-    min-height: 150px;
-  }
-
-  .giscus-frame {
-    border: none;
-    color-scheme: light dark;
-  }
-  .giscus-frame--loading {
-    opacity: 0;
-  }
-`;
+  style.rel = 'stylesheet';
+  style.href = `${giscusOrigin}/default.css`;
   document.head.prepend(style);
 
   // Insert iframe element

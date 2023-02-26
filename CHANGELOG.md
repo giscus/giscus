@@ -14,6 +14,11 @@ major updates to the project.
 - Add sign out button
   ([#919](https://github.com/giscus/giscus/pull/919)).
 
+### Changed
+
+- Use `<link>` element to load default CSS
+  ([#920](https://github.com/giscus/giscus/pull/920)).
+
 ## 2023-02-25
 
 ### Changed

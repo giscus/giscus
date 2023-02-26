@@ -56,6 +56,7 @@
   "writeAComment": "Yorum yaz",
   "signInToComment": "Yorum yazmak için giriş yap",
   "stylingWithMarkdownIsSupported": "Markdown ile biçimlendirme destekleniyor",
+  "signOut": "Oturumu Kapat",
   "cancel": "İptal",
   "signInWithGitHub": "GitHub ile giriş yap",
   "writeAReply": "Cevap yaz",

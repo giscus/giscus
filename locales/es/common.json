@@ -56,6 +56,7 @@
   "writeAComment": "Escribir un comentario",
   "signInToComment": "Iniciar sesión para comentar",
   "stylingWithMarkdownIsSupported": "Se admite el estilo con Markdown",
+  "signOut": "Desconectar",
   "cancel": "Cancelar",
   "signInWithGitHub": "Iniciar sesión con GitHub",
   "writeAReply": "Escribe una respuesta",

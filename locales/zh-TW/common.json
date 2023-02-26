@@ -42,6 +42,7 @@
   "writeAComment": "留言",
   "signInToComment": "登入留言",
   "stylingWithMarkdownIsSupported": "支援 Markdown",
+  "signOut": "登出",
   "cancel": "取消",
   "signInWithGitHub": "用 GitHub 登入",
   "writeAReply": "寫回覆",

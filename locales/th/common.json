@@ -42,6 +42,7 @@
   "writeAComment": "เขียนความคิดเห็น",
   "signInToComment": "เข้าสู่ระบบเพื่อแสดงความคิดเห็น",
   "stylingWithMarkdownIsSupported": "รองรับการจัดรูปแบบด้วย Markdown",
+  "signOut": "ออกจากระบบ",
   "cancel": "ยกเลิก",
   "signInWithGitHub": "เข้าสู่ระบบด้วย GitHub",
   "writeAReply": "เขียนการตอบกลับ",

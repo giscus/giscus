@@ -70,6 +70,7 @@
   "writeAComment": "Написать комментарий",
   "signInToComment": "Войдите, чтобы оставить комментарий",
   "stylingWithMarkdownIsSupported": "Поддерживается язык разметки Markdown",
+  "signOut": "выход",
   "cancel": "Отмена",
   "signInWithGitHub": "Войти через GitHub",
   "writeAReply": "Оставить комментарий",

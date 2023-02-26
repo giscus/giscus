@@ -219,7 +219,7 @@ export default function CommentBox({
         {token && !isReply ? (
           <button type="button" className="link-secondary text-sm" onClick={onSignOut}>
             <SignOutIcon className="mr-2" />
-            Sign out
+            {t('signOut')}
           </button>
         ) : null}
         <div className="gsc-comment-box-buttons">

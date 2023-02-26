@@ -139,6 +139,12 @@
   }
   const suggestion = `Please consider reporting this error at https://github.com/giscus/giscus/issues/new.`;
 
+  function signOut() {
+    delete params.session;
+    const src = `${giscusOrigin}/widget?${new URLSearchParams(params)}`;
+    iframeElement.src = src; // Force reload
+  }
+
   // Listen to messages
   window.addEventListener('message', (event) => {
     if (event.origin !== giscusOrigin) return;
@@ -152,7 +158,9 @@
 
     if (data.giscus.signOut) {
       localStorage.removeItem(GISCUS_SESSION_KEY);
-      console.warn(`[giscus] Session has been cleared.`);
+      console.log(`[giscus] User has logged out. Session has been cleared.`);
+      signOut();
+      return;
     }
 
     if (!data.giscus.error) return;
@@ -168,10 +176,7 @@
       if (localStorage.getItem(GISCUS_SESSION_KEY) !== null) {
         localStorage.removeItem(GISCUS_SESSION_KEY);
         console.warn(`${formatError(message)} Session has been cleared.`);
-
-        delete params.session;
-        const src = `${giscusOrigin}/widget?${new URLSearchParams(params)}`;
-        iframeElement.src = src; // Force reload
+        signOut();
       } else if (!savedSession) {
         console.error(`${formatError(message)} No session is stored initially. ${suggestion}`);
       }

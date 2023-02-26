@@ -1,4 +1,3 @@
-import Router from 'next/router';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import Giscus from '../components/Giscus';
 import { AuthContext, ConfigContext, getLoginUrl } from '../lib/context';
@@ -41,8 +40,16 @@ export default function Widget({ origin, session }: IWidgetProps) {
   );
 
   const handleSignOut = useCallback(() => {
-    emitData<ISignOutMessage>({ signOut: true }, origin);
-    Router.replace({ query: { ...Router.query, session: '' } });
+    emitData<ISignOutMessage & IErrorMessage>(
+      {
+        signOut: true,
+        // HACK: For client scripts that haven't been updated to support sign out,
+        // use the error message handler to sign out. Remove this after a reasonable
+        // period of time.
+        error: 'State has expired (user signed out).',
+      },
+      origin,
+    );
   }, [origin]);
 
   useEffect(() => {
@@ -50,8 +57,6 @@ export default function Widget({ origin, session }: IWidgetProps) {
       getToken(session)
         .then(setToken)
         .catch((err) => handleError(err?.message));
-    } else if (!session && token) {
-      setToken('');
     }
   }, [handleError, session, token]);
 

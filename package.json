@@ -44,7 +44,7 @@
     "@types/react": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "cssnano": "^5.1.15",
     "eslint": "^8.34.0",
     "eslint-config-next": "^12.3.4",

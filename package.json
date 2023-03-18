@@ -40,7 +40,7 @@
     "@next/bundle-analyzer": "^12.3.4",
     "@types/dompurify": "^2.4.0",
     "@types/jsonwebtoken": "^9.0.1",
-    "@types/node": "^16.18.14",
+    "@types/node": "^16.18.16",
     "@types/react": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",

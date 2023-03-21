@@ -52,6 +52,7 @@ If you've previously used other systems that utilize GitHub Issues (e.g. [uttera
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
+- [TLG Catalog][tlg-catalog]
 - [**and many more!**][giscus-topic]
 
 ## Contributing
@@ -71,6 +72,7 @@ See [CONTRIBUTING.md][contributing]
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
 [contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md
+[tlg-catalog]: https://insightsengineering.github.io/tlg-catalog
 
 <!-- end -->
 

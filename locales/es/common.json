@@ -4,7 +4,7 @@
     "one": "{{count}} reacción",
     "other": "{{count}} reacciones"
   },
-  "comment": "Comentario",
+  "comment": "Comentar",
   "comments": {
     "0": "{{count}} comentarios",
     "one": "{{count}} comentario",

@@ -4,7 +4,7 @@ export let webcrypto: Crypto;
 
 if (typeof window === 'undefined') {
   import('crypto').then((module) => {
-    webcrypto = module.webcrypto as Crypto;
+    webcrypto = module.webcrypto;
   });
 } else {
   webcrypto = window.crypto;

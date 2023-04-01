@@ -70,12 +70,14 @@
   "theme=dark_protanopia": "GitHub Dark Protanopia & Deuteranopia",
   "theme=dark_tritanopia": "GitHub Dark Tritanopia",
   "theme=dark_dimmed": "GitHub Dark Dimmed",
-  "theme=transparent_dark": "Transparent Dark",
   "theme=preferred_color_scheme": "Вподобана колірна схема",
+  "theme=transparent_dark": "Transparent Dark",
+  "theme=cobalt": "RStudio Cobalt",
   "theme=custom": "Спеціальна (експериментальна опція)",
 
   "enableGiscus": "Увімкнути giscus",
   "addTheFollowingScriptTag": "Додайте наступний тег <code><script></code> до шаблону вашого сайту, на якому ви хочете побачити коментарі. Якщо елемент з класом <code>giscus</code> вже існує, коментарі будуть вмонтовані всередині нього.",
+  "youHaveNotConfiguredRepositoryCategory": "Ви не налаштували своє <arepo>репозиторій</arepo> та/або <acategory>категорію</acategory>. Значення цих полів не відображатимуться, доки ви їх не заповните.",
   "copy": "Скопіювати",
 
   "[enterRepoHere]": "[ВВЕДІТЬ REPO]",

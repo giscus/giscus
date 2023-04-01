@@ -1,29 +1,34 @@
 {
   "reactions": {
-    "0": "{{count}} реакцій",
     "one": "{{count}} реакція",
+    "few": "{{count}} реакції",
+    "many": "{{count}} реакцій",
     "other": "{{count}} реакцій"
   },
   "comment": "Коментар",
   "comments": {
-    "0": "{{count}} коментарів",
     "one": "{{count}} коментар",
+    "few": "{{count}} коментарі",
+    "many": "{{count}} коментарів",
     "other": "{{count}} коментарів"
   },
   "reply": "Відповідь",
   "replies": {
-    "0": "{{count}} відповідей",
     "one": "{{count}} відповідь",
+    "few": "{{count}} відповіді",
+    "many": "{{count}}{{plus}} відповідей",
     "other": "{{count}}{{plus}} відповідей"
   },
   "upvotes": {
-    "0": "{{count}} голосів",
     "one": "{{count}} голос",
+    "few": "{{count}} голоси",
+    "many": "{{count}} голосів",
     "other": "{{count}} голосів"
   },
   "hiddenItems": {
-    "0": "{{count}} елементів сховано",
     "one": "{{count}} елемент сховано",
+    "few": "{{count}} елементи сховано",
+    "many": "{{count}} елементів сховано",
     "other": "{{count}} елементів сховано"
   },
   "genericError": "Виникла помилка: {{message}}",
@@ -35,13 +40,15 @@
   "oldest": "Старіші",
   "newest": "Новіші",
   "showPreviousReplies": {
-    "0": "Показати {{count}} попередніх відповідей",
     "one": "Показати {{count}} попередню відповідь",
+    "few": "Показати {{count}} попередні відповіді",
+    "many": "Показати {{count}} попередніх відповідей",
     "other": "Показати {{count}} попередніх відповідей"
   },
   "seePreviousRepliesOnGitHub": {
-    "0": "Переглянути {{count}} попередніх відповідей на GitHub",
     "one": "Переглянути {{count}} попередню відповідь на GitHub",
+    "few": "Переглянути {{count}} попередні відповіді на GitHub",
+    "many": "Переглянути {{count}} попередніх відповідей на GitHub",
     "other": "Переглянути {{count}} попередніх відповідей на GitHub"
   },
   "edited": "змінено",
@@ -56,6 +63,7 @@
   "writeAComment": "Написати коментар",
   "signInToComment": "Увійти, щоб коментувати",
   "stylingWithMarkdownIsSupported": "Ви можете використовувати стилізацію Markdown",
+  "signOut": "Вийти",
   "cancel": "Скасувати",
   "signInWithGitHub": "Увійти за допомогою GitHub",
   "writeAReply": "Написати відповідь",
@@ -70,8 +78,9 @@
   "signInToAddYourReaction": "<a>Увійти</a> щоб додати реакцію.",
   "youMustBeSignedInToAddReactions": "Ви маєйте увійти, щоб додати реакцію.",
   "peopleReactedWith": {
-    "0": "{{count}} людей відреагувало {{reaction}} {{emoji}}",
     "one": "{{count}} людина відреагувала {{reaction}} {{emoji}}",
+    "few": "{{count}} людей відреагувало {{reaction}} {{emoji}}",
+    "many": "{{count}} людей відреагувало {{reaction}} {{emoji}}",
     "other": "{{count}} людей відреагувало {{reaction}} {{emoji}}"
   },
   "emoji": "емодзі",

@@ -2386,10 +2386,10 @@ next-plugin-preact@^3.0.7:
     "@prefresh/webpack" "^3.3.0"
     module-alias "^2.0.0"
 
-next-translate-plugin@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.npmjs.org/next-translate-plugin/-/next-translate-plugin-2.0.3.tgz#155d79387b06a2b2ff39c90fb9c2ef8b6b348edf"
-  integrity sha512-lAi9XSe00CIA/TfZkMRbs1bspGXVHf0F2fuXRCNz5mRr7146qtKt8JG5Z520HOwvJgRdUUZ2hpr0AyEl5n9STQ==
+next-translate-plugin@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/next-translate-plugin/-/next-translate-plugin-2.0.4.tgz#95796721ebf682bed743032af14e4a17fb47da9d"
+  integrity sha512-4uay8TOL88IApF9nns4CGDZYJ5zlR1vdNp4K7S13zp3L+Ecqyf0MNl1nSZu5zWqH5zGW4lGqZRD1SP7Ct3mOYA==
   dependencies:
     typescript "4.5.2"
 

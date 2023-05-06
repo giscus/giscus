@@ -43,7 +43,7 @@
     "@types/node": "^16.18.25",
     "@types/react": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
-    "@typescript-eslint/parser": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.2",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.0",
     "eslint": "^8.39.0",

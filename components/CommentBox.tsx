@@ -40,6 +40,7 @@ export default function CommentBox({
   const textarea = useRef<HTMLTextAreaElement>(null);
   const loginUrl = getLoginUrl(origin);
   const isReply = !!replyToId;
+  const placeHolderText = isReply ? t('writeAReply') : t('writeAComment');
 
   useEffect(() => {
     if (isPreview && input !== lastInput) {
@@ -192,7 +193,7 @@ export default function CommentBox({
               className={`form-control input-contrast gsc-comment-box-textarea ${
                 isFixedWidth ? 'gsc-is-fixed-width' : ''
               }`}
-              placeholder={token ? t('writeAComment') : t('signInToComment')}
+              placeholder={token ? placeHolderText : t('signInToComment')}
               onChange={handleTextAreaChange}
               value={input}
               disabled={!token || isSubmitting}

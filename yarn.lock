@@ -338,15 +338,10 @@
   resolved "https://registry.npmjs.org/@types/minimist/-/minimist-1.2.2.tgz"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*":
-  version "17.0.31"
-  resolved "https://registry.npmjs.org/@types/node/-/node-17.0.31.tgz"
-  integrity sha512-AR0x5HbXGqkEx9CadRH3EBYx/VkiUgZIhP4wvPn/+5KIsgpNoyFaRlVe0Zlx9gRtg8fA06a9tskE2MSN7TcG4Q==
-
-"@types/node@^16.18.26":
-  version "16.18.26"
-  resolved "https://registry.npmjs.org/@types/node/-/node-16.18.26.tgz#a18b88726a67bc6a8a5bdac9a40c093ecb03ccd0"
-  integrity sha512-pCNBzNQqCXE4A6FWDmrn/o1Qu+qBf8tnorBlNoPNSBQJF+jXzvTKNI/aMiE+hGJbK5sDAD65g7OS/YwSHIEJdw==
+"@types/node@*", "@types/node@^20.1.0":
+  version "20.1.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.0.tgz#258805edc37c327cf706e64c6957f241ca4c4c20"
+  integrity sha512-O+z53uwx64xY7D6roOi4+jApDGFg0qn6WHcxe5QeqjMaTezBO/mxdfFXIVAVVyNWKx84OmPB3L8kbVYOTeN34A==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"

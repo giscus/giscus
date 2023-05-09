@@ -25,10 +25,17 @@ input[type="checkbox"]:focus-visible {
   box-shadow: none;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (width <= 320px) {
   html {
     font-size: 5vw;
   }
+}
+
+.capitalize {
+  font-weight: 500;
+  line-height: 18px;
+  padding: 0 7px;
+  border-radius: 2em !important;
 }
 
 .color-bg-primary,
@@ -515,6 +522,9 @@ img.emoji {
 .gsc-comments-count,
 .gsc-comments-count-separator {
   @apply mr-2 font-semibold;
+
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .gsc-replies-count {
@@ -545,7 +555,11 @@ img.emoji {
 
 .gsc-comment-edited,
 .gsc-reply-edited {
-  @apply hidden sm:inline-block;
+  @apply sm:inline-block;
+}
+
+.gsc-comment-edited {
+  @apply pt-2;
 }
 
 .gsc-comment-content {
@@ -590,6 +604,10 @@ img.emoji {
 
 .gsc-comment-box-md-toolbar {
   @apply inline-flex items-center mx-2 mt-2;
+}
+
+.gsc-comment-box-md-toolbar > button {
+  padding: 4px;
 }
 
 .gsc-toolbar-item {
@@ -788,7 +806,13 @@ img.emoji {
 }
 
 .gsc-reactions-popover.top {
-  @apply bottom-8;
+  bottom: 2.2rem;
+  left: -0.325rem;
+}
+
+.gsc-reactions-popover.bottom {
+  top: 2.2rem;
+  left: -0.325rem;
 }
 
 .gsc-emoji-button {
@@ -821,17 +845,22 @@ img.emoji {
 
 .gsc-reply-header {
   @apply flex;
+
+  height: 30px;
+  margin-bottom: 2px;
 }
 
 .gsc-reply-author {
   @apply flex items-start flex-auto;
+
+  margin: auto;
 }
 
 .gsc-reply-content {
   @apply w-full pb-2;
 }
 
-.gsc-reply-content .markdown pre,
+.gsc-reply-content.markdown pre,
 .gsc-reply-content.markdown .highlight pre {
   background-color: var(--color-neutral-muted, var(--color-hidden-text-expander-bg));
 }
@@ -840,8 +869,14 @@ img.emoji {
   @apply pb-0;
 }
 
+.gsc-reply-footer {
+  @apply flex content-center justify-between mb-2 gap-2;
+}
+
 .gsc-reply-reactions {
-  @apply flex content-center mr-4;
+  @apply flex content-center mr-4 gap-2;
+
+  margin-left: -4px;
 }
 
 .gsc-is-fixed-width {

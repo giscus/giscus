@@ -91,12 +91,6 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
                     {t('edited')}
                   </button>
                 ) : null}
-                <ReactButtons
-                  reactionGroups={reply.reactions}
-                  subjectId={reply.id}
-                  variant="popoverOnly"
-                  onReact={updateReactions}
-                />
               </div>
             </div>
           ) : null}
@@ -119,16 +113,16 @@ export default function Reply({ reply, onReplyUpdate }: IReplyProps) {
               </em>
             ) : null}
           </div>
-          {!hidden ? (
+          <div className="gsc-reply-footer">
             <div className="gsc-reply-reactions">
               <ReactButtons
                 reactionGroups={reply.reactions}
                 subjectId={reply.id}
-                variant="groupsOnly"
                 onReact={updateReactions}
+                popoverPosition="top"
               />
             </div>
-          ) : null}
+          </div>
         </div>
       </div>
     </div>

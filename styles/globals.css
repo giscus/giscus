@@ -63,13 +63,6 @@ a:hover {
   font-weight: 400;
 }
 
-.markdown code,
-.markdown tt {
-  @apply text-xs px-1 py-[2px] rounded-md;
-
-  background-color: var(--color-neutral-muted);
-}
-
 .markdown .highlight {
   @apply mb-4;
 }
@@ -99,6 +92,17 @@ a:hover {
 
 .markdown pre > code {
   background: transparent;
+}
+
+.markdown code:not(pre>code),
+.markdown tt {
+  @apply text-xs px-1 py-[2px] rounded-md;
+
+  background-color: var(--color-neutral-muted);
+}
+
+.markdown table {
+  background-color: var(--color-canvas-default, var(--color-bg-primary));
 }
 
 .markdown table th,

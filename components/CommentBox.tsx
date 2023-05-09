@@ -208,8 +208,8 @@ export default function CommentBox({
                 rel="nofollow noopener noreferrer"
                 target="_blank"
                 href="https://guides.github.com/features/mastering-markdown/"
+                title={t('stylingWithMarkdownIsSupported')}
               >
-                {t('stylingWithMarkdownIsSupported')}
                 <MarkdownIcon className="mr-1" />
               </a>
             </div>

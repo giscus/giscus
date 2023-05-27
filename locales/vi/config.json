@@ -73,6 +73,8 @@
   "theme=preferred_color_scheme": "Phối màu ưa thích",
   "theme=transparent_dark": "Transparent Dark",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "Tùy chỉnh (thử nghiệm)",
 
   "enableGiscus": "Bật giscus",

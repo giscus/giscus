@@ -72,6 +72,8 @@
   "theme=preferred_color_scheme": "Bevorzugtes Farbprofil",
   "theme=transparent_dark": "Durchsichtig Dunkel",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "Benutzerdefiniert (Experimentel)",
 
   "enableGiscus": "giscus aktivieren",

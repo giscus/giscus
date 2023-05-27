@@ -17,6 +17,9 @@ major updates to the project.
 - Add Catalan localization
   ([#1071](https://github.com/giscus/giscus/pull/1071)).
 
+- Add NoBorder themes
+  ([#1052](https://github.com/giscus/giscus/pull/1052)).
+
 ## 2023-04-01
 
 ### Added

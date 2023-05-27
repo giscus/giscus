@@ -73,6 +73,8 @@
   "theme=preferred_color_scheme": "Предпочитаемая цветовая схема",
   "theme=transparent_dark": "Transparent Dark",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "Custom (экспериментальная опция)",
 
   "enableGiscus": "Включить giscus",

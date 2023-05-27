@@ -73,6 +73,8 @@
   "theme=preferred_color_scheme": "Preferred color scheme",
   "theme=transparent_dark": "มืด โปร่งแสง",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "กำหนดเอง (การทดลอง)",
 
   "enableGiscus": "เปิดใช้งาน giscus",

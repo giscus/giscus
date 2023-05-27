@@ -70,6 +70,8 @@
   "theme=preferred_color_scheme": "ערכת נושא מועדפת",
   "theme=transparent_dark": "Transparent Dark",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "המתאמה אישית (ניסיוני)",
   "enableGiscus": "הפעל giscus",
   "addTheFollowingScriptTag": "הוסף את התגית <code><script></code> לתבנית האתר שלכם במקום שבו תרצו שהתגובות יופיעו. אם קיים אלמנט עם המזהה (class) <code>giscus</code>, התגובות יופיעו במקום זה.",

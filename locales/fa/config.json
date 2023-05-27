@@ -73,6 +73,8 @@
   "theme=preferred_color_scheme": "تم رنگ دلخواه",
   "theme=transparent_dark": "شفاف تیره",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "سفارشی (به صورت تجربی)",
 
   "enableGiscus": "فعال سازی giscus",

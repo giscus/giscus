@@ -73,6 +73,8 @@
   "theme=preferred_color_scheme": "نظام اﻷلوان المفضل",
   "theme=transparent_dark": "اﻷسود الشفاف",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "مخصص (تجريبي)",
 
   "enableGiscus": "تفعيل غيسكوس",

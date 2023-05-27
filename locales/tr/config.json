@@ -73,6 +73,8 @@
   "theme=preferred_color_scheme": "Tercih edilen renk şeması",
   "theme=transparent_dark": "Saydam Koyu",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "Özel (deneysel)",
 
   "enableGiscus": "Giscus'ı etkinleştir",

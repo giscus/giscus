@@ -73,6 +73,8 @@
   "theme=preferred_color_scheme": "カラースキームに従う",
   "theme=transparent_dark": "Transparent Dark",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "カスタム (試験的)",
 
   "enableGiscus": "giscusを有効にする",

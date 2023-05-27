@@ -80,6 +80,8 @@
   "theme=preferred_color_scheme": "用户偏好的色彩方案",
   "theme=transparent_dark": "Transparent Dark",
   "theme=cobalt": "RStudio Cobalt",
+  "theme=noborder_light": "NoBorder Light",
+  "theme=noborder_dark": "NoBorder Dark",
   "theme=custom": "自定义（实验性）",
 
   "enableGiscus": "启用 giscus",

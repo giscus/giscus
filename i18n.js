@@ -7,6 +7,7 @@ module.exports = {
     'fa',
     'fr',
     'gsw',
+    'he',
     'id',
     'it',
     'ja',

@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} סמלונים",
+    "one": "{{count}} סמלונים",
+    "other": "{{count}} סמלונים"
+  },
+  "comment": "הגב",
+  "comments": {
+    "0": "{{count}} תגובות",
+    "one": "{{count}} תגובה",
+    "other": "{{count}} תגובות"
+  },
+  "reply": "השב",
+  "replies": {
+    "0": "{{count}} תגובות",
+    "one": "{{count}} השב",
+    "other": "{{count}}{{plus}} תגובות"
+  },
+  "upvotes": {
+    "0": "{{count}} הצבעות בעד",
+    "one": "{{count}} הצבעה בעד",
+    "other": "{{count}} הצבעות בעד"
+  },
+  "hiddenItems": {
+    "0": "{{count}} פריטים מוסתרים",
+    "one": "{{count}} פריט מוסתר",
+    "other": "{{count}} פריטים מוסתרים"
+  },
+  "genericError": "התרחשה שגיאה: {{message}}",
+  "loadMore": "ראה עוד",
+  "loading": "בטעינה",
+  "loadingComments": "טוען תגובות…",
+  "loadingPreview": "טוען תצוגה מקדימה…",
+  "poweredBy": "– מופעל על-ידי <a>giscus</a>",
+  "oldest": "ישן ביותר",
+  "newest": "חדש ביותר",
+  "showPreviousReplies": {
+    "0": "ראה {{count}} תגובות קודמות",
+    "one": "ראה {{count}} תגובה קודמת",
+    "other": "ראה {{count}} תגובות קודמות"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "ראה {{count}} תגובות קודמות ב-GitHub",
+    "one": "ראה {{count}} תגובה קודמת ב-GitHub",
+    "other": "ראה {{count}} תגובות קודמות ב-GitHub"
+  },
+  "edited": "נערך",
+  "thisCommentWasDeleted": "תגובה זו נמחקה.",
+  "thisCommentWasMinimized": "תגובה זו מוזערה.",
+  "thisCommentWasHidden": "תגובה זו הוסתרה.",
+  "write": "כתוב",
+  "preview": "תצוגה מקדימה",
+  "enableFixedWidth": "אפשר גופן ברוחב קבוע (monospace) בעורך",
+  "disableFixedWidth": "השבת גופן ברוחב קבוע (monospace) בעורך",
+  "lastEditedAt": "נערך לאחרונה ב {{date}}",
+  "writeAComment": "כתוב תגובה",
+  "signInToComment": "התחבר על מנת להגיב",
+  "stylingWithMarkdownIsSupported": "עיצוב עם Markdown נתמך",
+  "signOut": "צא",
+  "cancel": "בטל",
+  "signInWithGitHub": "התחבר באמצעות GitHub",
+  "writeAReply": "השב",
+
+  "upvote": "הצבע בעד",
+  "youMustBeSignedInToUpvote": "יש להתחבר בכדי להצביע בעד.",
+  "addReactions": "הוסף סמלונים",
+  "pleaseWait": "אנא המתן…",
+  "pickYourReaction": "בחר סמלון",
+  "addTheReaction": "הוסף את הסמלון {{reaction}}",
+  "removeTheReaction": "הסר את הסמלון {{reaction}}",
+  "signInToAddYourReaction": "<a>התחבר</a> בכדי להוסיף סמלון.",
+  "youMustBeSignedInToAddReactions": "יש להתחבר בכדי להוסיף סמלונים.",
+  "peopleReactedWith": {
+    "0": "{{count}} אנשים הביעו רגש {{reaction}} {{emoji}}",
+    "one": "{{count}} הביע רגש {{reaction}} {{emoji}}",
+    "other": "{{count}} הביעו רגש {{reaction}} {{emoji}}"
+  },
+  "emoji": "סמלון",
+  "nothingToPreview": "אין תצוגה מקדימה",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "צחוק",
+  "HOORAY": "הידד",
+  "CONFUSED": "מבולבל",
+  "HEART": "אהבה",
+  "ROCKET": "טיל",
+  "EYES": "עיניים",
+
+  "COLLABORATOR": "משתף פעולה",
+  "CONTRIBUTOR": "תורם",
+  "FIRST_TIMER": "פעם-ראשונה",
+  "FIRST_TIME_CONTRIBUTOR": "תורם פעם-ראשונה",
+  "MANNEQUIN": "בובת ראווה",
+  "MEMBER": "חבר",
+  "NONE": "ללא",
+  "OWNER": "בעלים",
+  "APP": "אפליקציה"
+}

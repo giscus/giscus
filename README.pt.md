@@ -84,6 +84,7 @@ Esse README também está disponível em:
 - [Español](README.es.md)
 - [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
+- [עברית](README.he.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
 - [日本語](README.ja.md)

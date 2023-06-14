@@ -79,6 +79,7 @@
 README นี้ในภาษาอื่น:
 
 - [Arabic (العربية)](README.ar.md)
+- [Català](README.ca.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Español](README.es.md)

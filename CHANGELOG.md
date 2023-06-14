@@ -14,6 +14,9 @@ major updates to the project.
 - Add Hebrew localization
   ([#1056](https://github.com/giscus/giscus/pull/1056)).
 
+- Add Catalan localization
+  ([#1071](https://github.com/giscus/giscus/pull/1071)).
+
 ## 2023-04-01
 
 ### Added

@@ -79,6 +79,7 @@
 این صفحه در زبان های دیگه هم ترجمه شده است:
 
 - [Arabic (العربية)](README.ar.md)
+- [Català](README.ca.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Español](README.es.md)

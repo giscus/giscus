@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} reaccions",
+    "one": "{{count}} reacció",
+    "other": "{{count}} reaccions"
+  },
+  "comment": "Comentar",
+  "comments": {
+    "0": "{{count}} comentaris",
+    "one": "{{count}} comentari",
+    "other": "{{count}} comentaris"
+  },
+  "reply": "Respondre",
+  "replies": {
+    "0": "{{count}} respostes",
+    "one": "{{count}} resposta",
+    "other": "{{count}}{{plus}} respostes"
+  },
+  "upvotes": {
+    "0": "{{count}} vots a favor",
+    "one": "{{count}} vot a favor",
+    "other": "{{count}} vots a favor"
+  },
+  "hiddenItems": {
+    "0": "{{count}} elements amagats",
+    "one": "{{count}} element amagat",
+    "other": "{{count}} elements amagats"
+  },
+  "genericError": "Ha ocorregut un error: {{message}}",
+  "loadMore": "Carrega més",
+  "loading": "Carregant",
+  "loadingComments": "Carregant comentaris…",
+  "loadingPreview": "Carregant vista prèvia…",
+  "poweredBy": "– Desenvolupat per <a>giscus</a>",
+  "oldest": "Antic",
+  "newest": "Nou",
+  "showPreviousReplies": {
+    "0": "Mostrar {{count}} respostes anteriors",
+    "one": "Mostrar {{count}} respostes anteriors",
+    "other": "Mostrar {{count}} respostes anteriors"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Veure {{count}} respostes anteriors a GitHub",
+    "one": "Veure {{count}} resposta anterior a GitHub",
+    "other": "Veure {{count}} respostes anteriors a GitHub"
+  },
+  "edited": "editat",
+  "thisCommentWasDeleted": "Aquest comentari s'ha esborrat.",
+  "thisCommentWasMinimized": "Aquest comentari s'ha minimitzat.",
+  "thisCommentWasHidden": "Aquest comentari s'ha amagat.",
+  "write": "Escriure",
+  "preview": "Previsualitzar",
+  "enableFixedWidth": "Habilitar la font d'amplada fixe (espai únic) a l'editor",
+  "disableFixedWidth": "Deshabilitar la font d'amplada fixe (espai únic) a l'editor",
+  "lastEditedAt": "Última modificació a les {{date}}",
+  "writeAComment": "Escriure un comentari",
+  "signInToComment": "Iniciar sessió per comentar",
+  "stylingWithMarkdownIsSupported": "S'admet l'estil amb Markdown",
+  "signOut": "Desconnectar",
+  "cancel": "Cancel·lar",
+  "signInWithGitHub": "Iniciar sessió amb GitHub",
+  "writeAReply": "Escriure una resposta",
+
+  "upvote": "Vots a favor",
+  "youMustBeSignedInToUpvote": "Has d'iniciar sessió per votar.",
+  "addReactions": "Afegir reaccions",
+  "pleaseWait": "Esperi si us plau…",
+  "pickYourReaction": "Escull la teva reacció",
+  "addTheReaction": "Afegir reacció de {{reaction}}",
+  "removeTheReaction": "Esborrar reacció de {{reaction}}",
+  "signInToAddYourReaction": "<a>Inicia sessió</a> per afegir la seva reacció.",
+  "youMustBeSignedInToAddReactions": "Has d'iniciar sessió per afegir reaccions.",
+  "peopleReactedWith": {
+    "0": "{{count}} persones han reaccionat amb {{reaction}} {{emoji}}",
+    "one": "{{count}} persona ha reaccionat amb {{reaction}} {{emoji}}",
+    "other": "{{count}} persones han reaccionat amb {{reaction}} {{emoji}}"
+  },
+  "emoji": "Emoji",
+  "nothingToPreview": "Res a previsualitzar",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Riure",
+  "HOORAY": "Visca",
+  "CONFUSED": "Confós",
+  "HEART": "Amor",
+  "ROCKET": "Coet",
+  "EYES": "Ulls",
+
+  "COLLABORATOR": "Col·laborador",
+  "CONTRIBUTOR": "Contribuent",
+  "FIRST_TIMER": "Principiant",
+  "FIRST_TIME_CONTRIBUTOR": "Contribuent principiant",
+  "MANNEQUIN": "Maniquí",
+  "MEMBER": "Membre",
+  "NONE": "Cap",
+  "OWNER": "Propietari",
+  "APP": "App"
+}

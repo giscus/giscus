@@ -80,6 +80,7 @@
 ملف README متوفر أيضا باللغات:
 
 - [Arabic (العربية)](README.ar.md)
+- [Català](README.ca.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Español](README.es.md)

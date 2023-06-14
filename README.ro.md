@@ -79,6 +79,7 @@ Vezi [CONTRIBUTING.md][contributing]
 Acest README este disponibil în:
 
 - [Arabic (العربية)](README.ar.md)
+- [Català](README.ca.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Español](README.es.md)

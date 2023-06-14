@@ -79,6 +79,7 @@ Voir le fichier [CONTRIBUTING.md][contributing]
 Ce README est disponible en :
 
 - [Arabic (العربية)](README.ar.md)
+- [Català](README.ca.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Español](README.es.md)

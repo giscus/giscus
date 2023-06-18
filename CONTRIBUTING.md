@@ -81,7 +81,7 @@ localization! Follow these steps to add a new localization:
    - `dateFormatters`, `shortDateFormatters`, `shortDateYearFormatters`, and
      `relativeTimeFormatters`: include new objects with your language code,
      following the existing languages.
-6. Edit [`i18n.json`][i18n-json] and include your language.
+6. Edit [`i18n.js`][i18n-js] and include your language.
 7. In all of the aforementioned files, make sure that the language list is
    sorted by the language code.
 8. [Create a PR][pr] with your localization updates.
@@ -100,4 +100,4 @@ localization! Follow these steps to add a new localization:
 [language-codes]: https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/languages_and_scripts.html
 [plural-rules]: https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html
 [i18n-tsx]: lib/i18n.tsx
-[i18n-json]: i18n.json
+[i18n-js]: i18n.js

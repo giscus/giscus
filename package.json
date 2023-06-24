@@ -15,8 +15,8 @@
     "dev": "yarn cscript --watch --preserveWatchOutput & yarn cthemes --watch & next dev",
     "build": "yarn cscript && yarn cthemes && yarn mscript && next build",
     "start": "next start",
-    "lint": "stylelint **/*.css && eslint . --cache --max-warnings 0",
-    "lint:fix": "stylelint --fix **/*.css && eslint --fix . --cache --max-warnings 0",
+    "lint": "stylelint styles/**/*.css && eslint . --cache --max-warnings 0",
+    "lint:fix": "stylelint --fix styles/**/*.css && eslint --fix . --cache --max-warnings 0",
     "format": "prettier --check .",
     "format:fix": "prettier --write ."
   },
@@ -57,8 +57,8 @@
     "postcss-import": "^15.1.0",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
-    "stylelint": "^14.16.0",
-    "stylelint-config-standard": "^29.0.0",
+    "stylelint": "^15.9.0",
+    "stylelint-config-standard": "^33.0.0",
     "tailwindcss": "^3.3.2",
     "tailwindcss-vanilla-rtl": "^0.4.0",
     "typescript": "^5.1.3"

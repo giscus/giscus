@@ -74,10 +74,12 @@ localization! Follow these steps to add a new localization:
    [plural rules][plural-rules] for translation keys with an object as the value
    (e.g. those that require `{{ count }}`).
 4. Copy one of the README files and name it `README.[code].md`, e.g.
-   `README.id.md` and translate the content. Add your language to the bottom of
-   the new README and all the existing READMEs.
+   `README.id.md` and translate the content. Add your language to the new README
+   and all the existing READMEs, ordered by the language code.
 5. Edit [`i18n.tsx`][i18n-tsx] and update the following variables:
    - `availableLanguages`: include your language code and name.
+   - `rtlLanguages`: include your language code if it is a right-to-left
+     language.
    - `dateFormatters`, `shortDateFormatters`, `shortDateYearFormatters`, and
      `relativeTimeFormatters`: include new objects with your language code,
      following the existing languages.

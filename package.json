@@ -21,7 +21,7 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
-    "@primer/octicons-react": "^19.3.0",
+    "@primer/octicons-react": "^19.4.0",
     "dompurify": "^3.0.3",
     "jsonwebtoken": "^9.0.0",
     "lit-html": "^2.7.4",
@@ -34,7 +34,7 @@
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
     "react-ssr-prepass": "npm:preact-ssr-prepass",
-    "swr": "^2.1.5"
+    "swr": "^2.2.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.3.4",
@@ -42,8 +42,8 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^16.18.36",
     "@types/react": "^18.0.9",
-    "@typescript-eslint/eslint-plugin": "^5.59.11",
-    "@typescript-eslint/parser": "^5.59.11",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
     "eslint": "^8.43.0",

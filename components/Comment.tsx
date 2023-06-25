@@ -93,13 +93,15 @@ export default function Comment({
                   alt={`@${comment.author.login}`}
                   loading="lazy"
                 />
-                <span className="link-primary font-semibold">{comment.author.login}</span>
+                <span className="link-primary overflow-hidden text-ellipsis font-semibold">
+                  {comment.author.login}
+                </span>
               </a>
               <a
                 rel="nofollow noopener noreferrer"
                 target="_blank"
                 href={comment.url}
-                className="link-secondary ml-2"
+                className="link-secondary overflow-hidden text-ellipsis"
               >
                 <time
                   className="whitespace-nowrap"
@@ -110,27 +112,21 @@ export default function Comment({
                 </time>
               </a>
               {comment.authorAssociation !== 'NONE' ? (
-                <div className="hidden text-xs ml-2 sm:inline-flex">
-                  <span
-                    className={`capitalize ml-1 rounded-md border px-1 ${
-                      comment.viewerDidAuthor ? 'color-box-border-info' : 'color-label-border'
-                    }`}
-                  >
+                <div className="hidden text-xs leading-[18px] sm:inline-flex">
+                  <span className="color-box-border-info font-medium capitalize ml-1 rounded-xl border px-[7px]">
                     {t(comment.authorAssociation)}
                   </span>
                 </div>
               ) : null}
             </div>
-            <div className="flex">
-              {comment.lastEditedAt ? (
-                <button
-                  className="color-text-secondary gsc-comment-edited"
-                  title={t('lastEditedAt', { date: formatDate(comment.lastEditedAt) })}
-                >
-                  {t('edited')}
-                </button>
-              ) : null}
-            </div>
+            {comment.lastEditedAt ? (
+              <button
+                className="color-text-secondary gsc-comment-edited"
+                title={t('lastEditedAt', { date: formatDate(comment.lastEditedAt) })}
+              >
+                {t('edited')}
+              </button>
+            ) : null}
           </div>
         ) : null}
         {/*

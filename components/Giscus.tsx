@@ -64,7 +64,6 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     <CommentBox
       discussionId={data.discussion.id}
       context={repo}
-      className={inputPosition === 'top' && data.totalCommentCount > 0 ? 'mb-4' : ''}
       onSubmit={addNewComment}
       onDiscussionCreateRequest={handleDiscussionCreateRequest}
     />
@@ -190,7 +189,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
 
         {shouldShowCommentBox && inputPosition === 'top' ? mainCommentBox : null}
 
-        <div className="gsc-timeline">
+        <div className={`gsc-timeline ${!data.frontComments.length ? 'hidden' : ''}`}>
           {!data.isLoading
             ? data.frontComments.map((comment) => (
                 <Comment

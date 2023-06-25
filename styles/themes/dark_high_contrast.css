@@ -69,16 +69,15 @@ main {
   --color-accent-fg: #71b7ff;
   --color-accent-emphasis: #409eff;
   --color-accent-muted: #409eff;
-  --color-accent-subtle: rgb(64 158 255 / 15%);
+  --color-accent-subtle: rgb(64 158 255 / 10%);
   --color-success-fg: #26cd4d;
   --color-attention-fg: #f0b72f;
   --color-attention-muted: #e09b13;
   --color-attention-subtle: rgb(224 155 19 / 15%);
   --color-danger-fg: #ff6a69;
   --color-danger-muted: #ff6a69;
-  --color-danger-subtle: rgb(255 106 105 / 15%);
+  --color-danger-subtle: rgb(255 106 105 / 10%);
   --color-primer-shadow-inset: 0 0 transparent;
-  --color-primer-shadow-focus: 0 0 0 3px #1e60d5;
   --color-scale-gray-7: #272b33;
   --color-scale-blue-8: #1e60d5;
 

@@ -73,7 +73,6 @@ main {
   --color-danger-muted: rgb(229 83 75 / 40%);
   --color-danger-subtle: rgb(229 83 75 / 15%);
   --color-primer-shadow-inset: 0 0 transparent;
-  --color-primer-shadow-focus: 0 0 0 3px #143d79;
   --color-scale-gray-7: #002241;
   --color-scale-blue-8: #00182d;
   --color-social-reaction-bg-hover: var(--color-scale-gray-7);

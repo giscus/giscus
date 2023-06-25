@@ -1,8 +1,8 @@
 {
   "reactions": {
-    "0": "{{count}} reactions",
-    "one": "{{count}} reaction",
-    "other": "{{count}} reactions"
+    "0": "{{count}} lượt bày tỏ cảm xúc",
+    "one": "{{count}} lượt bày tỏ cảm xúc",
+    "other": "{{count}} lượt bày tỏ cảm xúc"
   },
   "comment": "Bình Luận",
   "comments": {

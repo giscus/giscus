@@ -513,7 +513,7 @@ img.emoji {
 }
 
 .gsc-header {
-  @apply flex items-center flex-auto;
+  @apply flex items-center flex-auto gap-2;
 }
 
 .gsc-left-header {

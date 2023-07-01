@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2023-07-01
+
+### Changed
+
+- Update comment sorting button styles to match GitHub
+  ([#1096](https://github.com/giscus/giscus/pull/1096)).
+
 ## 2023-06-25
 
 ### Changed

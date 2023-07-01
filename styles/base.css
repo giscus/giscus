@@ -166,27 +166,33 @@ details summary {
 }
 
 .BtnGroup {
-  @apply inline-flex align-middle;
+  background-color: var(
+    --color-segmented-control-bg,
+    var(--color-canvas-subtle, var(--color-bg-secondary))
+  );
+
+  @apply inline-flex items-center align-middle rounded-md;
 }
 
 .BtnGroup-item {
-  @apply rounded-none;
+  @apply inline-flex rounded-md border border-transparent px-1 py-0.5;
 }
 
-.BtnGroup-item:not(:first-child, :last-child) {
-  @apply border-l-0;
+.BtnGroup-item.BtnGroup-item--selected {
+  @apply font-semibold;
+
+  background-color: var(
+    --color-segmented-control-button-bg,
+    var(--color-btn-bg)
+  );
+  border-color: var(
+    --color-segmented-control-button-selected-border,
+    var(--color-border-default, var(--color-border-primary))
+  );
 }
 
-.BtnGroup-item:first-child:not(:only-child) {
-  @apply rounded-l rounded-r-none;
-}
-
-.BtnGroup-item:last-child:not(:only-child) {
-  @apply rounded-l-none rounded-r;
-}
-
-.BtnGroup-item:first-child + .BtnGroup-item:last-child {
-  @apply border-l-0;
+.BtnGroup-item .btn {
+  @apply px-2 py-0.5 bg-inherit border-0 shadow-none;
 }
 
 .btn:hover {
@@ -203,9 +209,17 @@ details summary {
   border-color: var(--color-btn-active-border);
 }
 
-.btn[aria-selected="true"] {
-  background-color: var(--color-btn-selected-bg);
-  box-shadow: var(--color-primer-shadow-inset);
+.BtnGroup-item .btn:hover {
+  @apply border-transparent;
+
+  background-color: var(
+    --color-action-list-item-default-hover-bg,
+    var(--color-btn-hover-bg)
+  );
+}
+
+.BtnGroup-item.BtnGroup-item--selected .btn:hover {
+  @apply bg-inherit;
 }
 
 .btn-primary {

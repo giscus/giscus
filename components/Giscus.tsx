@@ -166,24 +166,24 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
             ) : null}
           </div>
           {data.totalCommentCount > 0 ? (
-            <div className="gsc-right-header BtnGroup" role="listbox">
-              <button
-                className="btn BtnGroup-item"
-                aria-selected={orderBy === 'oldest'}
-                role="option"
-                onClick={() => setOrderBy('oldest')}
+            <ul className="gsc-right-header BtnGroup">
+              <li
+                className={`BtnGroup-item ${orderBy === 'oldest' ? 'BtnGroup-item--selected' : ''}`}
+                aria-current={orderBy === 'oldest'}
               >
-                {t('oldest')}
-              </button>
-              <button
-                className="btn BtnGroup-item"
-                aria-selected={orderBy === 'newest'}
-                role="option"
-                onClick={() => setOrderBy('newest')}
+                <button className="btn" onClick={() => setOrderBy('oldest')}>
+                  {t('oldest')}
+                </button>
+              </li>
+              <li
+                className={`BtnGroup-item ${orderBy === 'newest' ? 'BtnGroup-item--selected' : ''}`}
+                aria-current={orderBy === 'newest'}
               >
-                {t('newest')}
-              </button>
-            </div>
+                <button className="btn" onClick={() => setOrderBy('newest')}>
+                  {t('newest')}
+                </button>
+              </li>
+            </ul>
           ) : null}
         </div>
 

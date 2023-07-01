@@ -56,6 +56,10 @@ main {
   --color-btn-primary-disabled-text: rgb(255 255 255 / 80%);
   --color-btn-primary-disabled-bg: #94d3a2;
   --color-btn-primary-disabled-border: rgb(31 35 40 / 15%);
+  --color-action-list-item-default-hover-bg: rgb(208 215 222 / 32%);
+  --color-segmented-control-bg: #eaeef2;
+  --color-segmented-control-button-bg: #fff;
+  --color-segmented-control-button-selected-border: #8c959f;
   --color-fg-default: #1F2328;
   --color-fg-muted: #656d76;
   --color-fg-subtle: #6e7781;
@@ -154,6 +158,10 @@ main .gsc-loading-image {
     --color-btn-primary-disabled-text: rgb(255 255 255 / 50%);
     --color-btn-primary-disabled-bg: rgb(35 134 54 / 60%);
     --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
+    --color-action-list-item-default-hover-bg: rgb(177 186 196 / 12%);
+    --color-segmented-control-bg: rgb(110 118 129 / 10%);
+    --color-segmented-control-button-bg: #0d1117;
+    --color-segmented-control-button-selected-border: #6e7681;
     --color-fg-default: #e6edf3;
     --color-fg-muted: #7d8590;
     --color-fg-subtle: #6e7681;

@@ -57,6 +57,10 @@ main {
   --color-btn-primary-disabled-text: rgb(240 246 252 / 50%);
   --color-btn-primary-disabled-bg: rgb(35 134 54 / 60%);
   --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
+  --color-action-list-item-default-hover-bg: rgb(144 157 171 / 12%);
+  --color-segmented-control-bg: rgb(99 110 123 / 10%);
+  --color-segmented-control-button-bg: transparent;
+  --color-segmented-control-button-selected-border: #636e7b;
   --color-fg-default: #c9d1d9;
   --color-fg-muted: #8b949e;
   --color-fg-subtle: #484f58;

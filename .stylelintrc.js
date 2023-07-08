@@ -3,11 +3,5 @@ module.exports = {
   rules: {
     'selector-class-pattern': '[A-z]+(-[a-z]+)*',
     'color-function-notation': ['modern', { ignore: ['with-var-inside'] }],
-    'max-line-length': [
-      120,
-      {
-        ignorePattern: '/@apply\\s+/',
-      },
-    ],
   },
 };

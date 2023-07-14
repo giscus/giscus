@@ -13,7 +13,7 @@
   "reply": "Responder",
   "replies": {
     "0": "{{count}} respuestas",
-    "one": "{{count}} responder",
+    "one": "{{count}} respuesta",
     "other": "{{count}}{{plus}} respuestas"
   },
   "upvotes": {
@@ -50,9 +50,9 @@
   "thisCommentWasHidden": "Este comentario ha sido ocultado.",
   "write": "Escribir",
   "preview": "Previsualizar",
-  "enableFixedWidth": "Habilite la fuente de ancho fijo (espacio único) en el editor",
+  "enableFixedWidth": "Habilitar la fuente de ancho fijo (espacio único) en el editor",
   "disableFixedWidth": "Deshabilitar la fuente de ancho fijo (espacio único) en el editor",
-  "lastEditedAt": "Última modificación a las {{date}}",
+  "lastEditedAt": "Última modificación el {{date}}",
   "writeAComment": "Escribir un comentario",
   "signInToComment": "Iniciar sesión para comentar",
   "stylingWithMarkdownIsSupported": "Se admite el estilo con Markdown",
@@ -64,11 +64,11 @@
   "upvote": "Voto a favor",
   "youMustBeSignedInToUpvote": "Debes iniciar sesión para votar.",
   "addReactions": "Agregar reacciones",
-  "pleaseWait": "Espere por favor…",
+  "pleaseWait": "Espera, por favor…",
   "pickYourReaction": "Elige tu reacción",
   "addTheReaction": "Agregar reacción de {{reaction}}",
   "removeTheReaction": "Eliminar reacción de {{reaction}}",
-  "signInToAddYourReaction": "<a> Inicie sesión</a> para agregar su reacción.",
+  "signInToAddYourReaction": "<a>Inicia sesión</a> para agregar tu reacción.",
   "youMustBeSignedInToAddReactions": "Debes iniciar sesión para agregar reacciones.",
   "peopleReactedWith": {
     "0": "{{count}} personas reaccionaron con {{reaction}} {{emoji}}",
@@ -90,7 +90,7 @@
   "COLLABORATOR": "Colaborador",
   "CONTRIBUTOR": "Contribuyente",
   "FIRST_TIMER": "Principiante",
-  "FIRST_TIME_CONTRIBUTOR": "Contribuyente principiante",
+  "FIRST_TIME_CONTRIBUTOR": "Contribuyente primerizo",
   "MANNEQUIN": "Maniquí",
   "MEMBER": "Miembro",
   "NONE": "Ninguno",

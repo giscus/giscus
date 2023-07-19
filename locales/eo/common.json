@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} reagoj",
+    "one": "{{count}} reago",
+    "other": "{{count}} reagoj"
+  },
+  "comment": "Komentu",
+  "comments": {
+    "0": "{{count}} komentoj",
+    "one": "{{count}} komento",
+    "other": "{{count}} komentoj"
+  },
+  "reply": "Respondu",
+  "replies": {
+    "0": "{{count}} respondoj",
+    "one": "{{count}} respondo",
+    "other": "{{count}}{{plus}} respondoj"
+  },
+  "upvotes": {
+    "0": "{{count}} ŝatoj",
+    "one": "{{count}} ŝato",
+    "other": "{{count}} ŝatoj"
+  },
+  "hiddenItems": {
+    "0": "{{count}} kaŝitaj aĵoj",
+    "one": "{{count}} kaŝita aĵo",
+    "other": "{{count}} kaŝitaj aĵoj"
+  },
+  "genericError": "Eraro okazis: {{message}}",
+  "loadMore": "Ŝargu pli",
+  "loading": "Ŝargante",
+  "loadingComments": "Ŝargante komentojn...",
+  "loadingPreview": "Ŝargante antaŭrigardon...",
+  "poweredBy": "– funkciigita per <a>giscus</a>",
+  "oldest": "Plej malnova",
+  "newest": "Plej nova",
+  "showPreviousReplies": {
+    "0": "Montru {{count}} antaŭajn respondojn",
+    "one": "Montru {{count}} antaŭan respondo",
+    "other": "Montru {{count}} antaŭajn respondojn"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Vidu {{count}} antaŭajn respondojn en GitHub",
+    "one": "Vidu {{count}} antaŭan respondojn en GitHub",
+    "other": "Vidu {{count}} antaŭajn respondojn en GitHub"
+  },
+  "edited": "redaktita",
+  "thisCommentWasDeleted": "Ĉi tiu komento estas forigita.",
+  "thisCommentWasMinimized": "Ĉi tiu komento estas malgrandigita.",
+  "thisCommentWasHidden": "Ĉi tiu komento estas kaŝita.",
+  "write": "Skribi",
+  "preview": "Antaŭrigardo",
+  "enableFixedWidth": "Ebligu fikslarĝan (monospace) tiparon en la redaktoro",
+  "disableFixedWidth": "Malebligu fikslarĝan (monospace) tiparon en la redaktoro",
+  "lastEditedAt": "Lasta redakto je {{date}}",
+  "writeAComment": "Skribi komenton",
+  "signInToComment": "Ensalutu por komenti",
+  "stylingWithMarkdownIsSupported": "Stilado kun Markdown estas subtenata",
+  "signOut": "Elsalutu",
+  "cancel": "Malfaru",
+  "signInWithGitHub": "Ensalutu per GitHub",
+  "writeAReply": "Skribu respondon",
+
+  "upvote": "Ŝatu",
+  "youMustBeSignedInToUpvote": "Vi devas esti ensalutinta por ŝati.",
+  "addReactions": "Aldonu reagojn",
+  "pleaseWait": "Bonvolu atendi...",
+  "pickYourReaction": "Elektu vian reagon",
+  "addTheReaction": "Aldonu reagon {{reaction}}",
+  "removeTheReaction": "Forigu reagon {{reaction}}",
+  "signInToAddYourReaction": "<a>Ensalutu</a> por aldoni vian reagon.",
+  "youMustBeSignedInToAddReactions": "Vi devas esti ensalutinta por aldoni reagojn.",
+  "peopleReactedWith": {
+    "0": "{{count}} personoj reagis per {{reaction}} {{emoji}}",
+    "one": "{{count}} persono reagis per {{reaction}} {{emoji}}",
+    "other": "{{count}} personoj reagis per {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoĝio",
+  "nothingToPreview": "Nenio por antaŭrigardi",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Ridi",
+  "HOORAY": "Hurao",
+  "CONFUSED": "Konfuzita",
+  "HEART": "Amo",
+  "ROCKET": "Raketo",
+  "EYES": "Okuloj",
+
+  "COLLABORATOR": "Kunlaboranto",
+  "CONTRIBUTOR": "Kontribuanto",
+  "FIRST_TIMER": "Unuafoje vizitanto",
+  "FIRST_TIME_CONTRIBUTOR": "Unuafoje kontribuanto",
+  "MANNEQUIN": "Manekeno",
+  "MEMBER": "Ano",
+  "NONE": "Nenio",
+  "OWNER": "Posedanto",
+  "APP": "Aplikaĵo"
+}

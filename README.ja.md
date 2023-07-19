@@ -82,6 +82,7 @@ giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネン�
 - [Català](README.ca.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
+- [Esperanto](README.eo.md)
 - [Español](README.es.md)
 - [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)

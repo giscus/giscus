@@ -3,8 +3,8 @@
 A comments system powered by [GitHub Discussions][discussions]. Let visitors leave comments and reactions on your website via GitHub! Heavily inspired by [utterances][utterances].
 
 - [Open source][repo]. 🌏
-- No tracking, no ads, always free. 📡 🚫
-- No database needed. All data is stored in GitHub Discussions. :octocat:
+- Comments tracked by Microsoft™ GitHub™, free while Microsoft™ GitHub™ allows it. 📡
+- Comments are locked behind Microsoft™ GitHub™ accounts; commenters will be required to create an account, agreeing to Microsoft™’s <abbr title="terms of service">ToS</abbr>, and cannot use an account from another <abbr title="distributed version control system">DVCS</abbr> forge or WebFinger-identified account or Fediverse option or <abbr title="Extensible Messaging and Presence Protocol">XMPP</abbr> pubsub-derived option as alternatives. 🔒
 - Supports [custom themes][creating-custom-themes]! 🌗
 - Supports [multiple languages][multiple-languages]. 🌐
 - [Extensively configurable][advanced-usage]. 🔧

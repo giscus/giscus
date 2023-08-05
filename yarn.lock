@@ -1378,10 +1378,10 @@ eslint-config-next@^12.3.4:
     eslint-plugin-react "^7.31.7"
     eslint-plugin-react-hooks "^4.5.0"
 
-eslint-config-prettier@^8.9.0:
-  version "8.9.0"
-  resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.9.0.tgz#094b6254b2804b0544f7cee535f802b6d29ee10b"
-  integrity sha512-+sbni7NfVXnOpnRadUA8S28AUlsZt9GjgFvABIRL9Hkn8KqNzOp+7Lw4QWtrwn20KzU3wqu1QoOj2m+7rKRqkA==
+eslint-config-prettier@^8.10.0:
+  version "8.10.0"
+  resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-8.10.0.tgz#3a06a662130807e2502fc3ff8b4143d8a0658e11"
+  integrity sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==
 
 eslint-import-resolver-node@^0.3.6:
   version "0.3.6"
@@ -1899,40 +1899,40 @@ globjoin@^0.1.4:
   resolved "https://registry.npmjs.org/globjoin/-/globjoin-0.1.4.tgz"
   integrity sha1-L0SUrIkZ43Z8XLtpHp9GMyQoXUM=
 
-google-closure-compiler-java@^20230502.0.0:
-  version "20230502.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler-java/-/google-closure-compiler-java-20230502.0.0.tgz#111240655adf9d64a0ac7eb16f73e896f3f9cefd"
-  integrity sha512-2nMQPQz2ppU9jvHhz2zpUP5jBDAqZp4gFVOEvirEyfUuLLkHwAvU2Tl1c7xaKX+Z4uMxpxttxcwdIjQhV2g8eQ==
+google-closure-compiler-java@^20230802.0.0:
+  version "20230802.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler-java/-/google-closure-compiler-java-20230802.0.0.tgz#5de4679f3d014b6b66471a48fb82c2772db4c872"
+  integrity sha512-PWKLMLwj7pR/U0yYbiy649LLqAscu+F1gyY4Y/jK6CmSLb8cIJbL8BTJd00828TzTNfWnYwxbkcQw0y9C2YsGw==
 
-google-closure-compiler-linux@^20230502.0.0:
-  version "20230502.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler-linux/-/google-closure-compiler-linux-20230502.0.0.tgz#c71114611b7ca47febd6feb1289ae152ca020b92"
-  integrity sha512-4NDgPKJXQHUxEyJoVFPVMQPJs5at7ThOXa9u3+9UeYk2K+vtW5wVZlmW07VOy8Mk/O/n2dp+Vl+wuE35BIiHAA==
+google-closure-compiler-linux@^20230802.0.0:
+  version "20230802.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler-linux/-/google-closure-compiler-linux-20230802.0.0.tgz#1acaf12ef386e5c1dcb5ff5796d4ae9f48ebce46"
+  integrity sha512-F13U4iSXiWeGtHOFS25LVem1s6zI+pJvXVPVR7zSib5ppoUJ0JXnABJQezUR3FnpxmnkALG4oIGW0syH9zPLZA==
 
-google-closure-compiler-osx@^20230502.0.0:
-  version "20230502.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler-osx/-/google-closure-compiler-osx-20230502.0.0.tgz#9ea082f0c6ad40b829802f0993f2e5b4b0e079e8"
-  integrity sha512-jB13dcbu8O02cG3JcCCVZku1oI0ZirJc/Sr9xcGHY5MMyw3qEMlXb3IU97W6UXLcg2wCRawMWadOwL9K4L9lfQ==
+google-closure-compiler-osx@^20230802.0.0:
+  version "20230802.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler-osx/-/google-closure-compiler-osx-20230802.0.0.tgz#10746ecfa81ad6eecc4d42d4ce9d0ed3ca8071e7"
+  integrity sha512-ANAi/ux92Tt+Na7vFDLeK2hRzotjC5j+nxoPtE0OcuNcbjji5dREKoJxkq7r0YwRTCzAFZszK5ip/NPdTOdCEg==
 
-google-closure-compiler-windows@^20230502.0.0:
-  version "20230502.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler-windows/-/google-closure-compiler-windows-20230502.0.0.tgz#81eef5de8b86364716b77a2d8068afba8b0e8244"
-  integrity sha512-wW5/liBxejvUViiBNo8/C9Vnhw+Lm+n3RdfE4spNkmdH9bcpKM+KQBLrPPakW17P3HbAPOPZ0L1RsrmyLYA5Cg==
+google-closure-compiler-windows@^20230802.0.0:
+  version "20230802.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler-windows/-/google-closure-compiler-windows-20230802.0.0.tgz#d57968dc24d5e0d538840b4313e1bec7c71b18d6"
+  integrity sha512-ZQPujoNiiUyTGl8zEGR/0yAygWnbMtX/NQ/S/EHVgq5nmYkvDEVuiVbgpPAmO9lzBTq0hvUTRRATZbTU2ISxgA==
 
-google-closure-compiler@^20230502.0.0:
-  version "20230502.0.0"
-  resolved "https://registry.npmjs.org/google-closure-compiler/-/google-closure-compiler-20230502.0.0.tgz#65b19e673255b4b4dad4271724932e0970b11a97"
-  integrity sha512-C2WZkuRnXpNjU2nc0W/Cgxm6t2VlwEyUJOTaGHaLr6qZCXK0L1uhOneKWN2X7AORKdzyLW6Tq8ONxRc7eODGJg==
+google-closure-compiler@^20230802.0.0:
+  version "20230802.0.0"
+  resolved "https://registry.npmjs.org/google-closure-compiler/-/google-closure-compiler-20230802.0.0.tgz#849181359823f8c9130faec9a1597377680823d6"
+  integrity sha512-o2fYoc8lqOBdhm95Ick0vWrtwH2Icd5yLZhbTcQ0T7NfGiBepYvx1BB63hR8ebgzEZemz9Fh+O6Kg/3Mjm28ww==
   dependencies:
     chalk "4.x"
-    google-closure-compiler-java "^20230502.0.0"
+    google-closure-compiler-java "^20230802.0.0"
     minimist "1.x"
     vinyl "2.x"
     vinyl-sourcemaps-apply "^0.2.0"
   optionalDependencies:
-    google-closure-compiler-linux "^20230502.0.0"
-    google-closure-compiler-osx "^20230502.0.0"
-    google-closure-compiler-windows "^20230502.0.0"
+    google-closure-compiler-linux "^20230802.0.0"
+    google-closure-compiler-osx "^20230802.0.0"
+    google-closure-compiler-windows "^20230802.0.0"
 
 graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.10"
@@ -2394,10 +2394,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
-lit-html@^2.7.5:
-  version "2.7.5"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-2.7.5.tgz#0c1b9d381abe20c01475ae53ea4b07bf4c923eb8"
-  integrity sha512-YqUzpisJodwKIlbMFCtyrp58oLloKGnnPLMJ1t23cbfIJjg/H9pvLWK4XS69YeubK5HUs1UE4ys9w5dP1zg6IA==
+lit-html@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-2.8.0.tgz#96456a4bb4ee717b9a7d2f94562a16509d39bffa"
+  integrity sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==
   dependencies:
     "@types/trusted-types" "^2.0.2"
 
@@ -3258,10 +3258,10 @@ prettier-plugin-tailwindcss@^0.4.1:
   resolved "https://registry.npmjs.org/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.4.1.tgz#f7ed664199540978b2cbd037bac3a337d6689e86"
   integrity sha512-hwn2EiJmv8M+AW4YDkbjJ6HlZCTzLyz1QlySn9sMuKV/Px0fjwldlB7tol8GzdgqtkdPtzT3iJ4UzdnYXP25Ag==
 
-prettier@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-3.0.0.tgz#e7b19f691245a21d618c68bc54dc06122f6105ae"
-  integrity sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==
+prettier@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-3.0.1.tgz#65271fc9320ce4913c57747a70ce635b30beaa40"
+  integrity sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==
 
 pretty-format@^3.8.0:
   version "3.8.0"

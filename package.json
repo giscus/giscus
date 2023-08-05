@@ -50,7 +50,7 @@
     "eslint-config-next": "^12.3.4",
     "eslint-config-prettier": "^8.9.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "google-closure-compiler": "^20230502.0.0",
+    "google-closure-compiler": "^20230802.0.0",
     "next-translate-plugin": "^2.0.5",
     "postcss": "^8.4.27",
     "postcss-cli": "^10.1.0",

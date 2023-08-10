@@ -27,6 +27,7 @@ export const availableThemes = [
   'noborder_light',
   'noborder_dark',
   'cobalt',
+  'purple_dark',
   'custom',
 ] as const;
 

@@ -160,7 +160,9 @@ export default function Comment({
                   comment.viewerHasUpvoted ? 'has-reacted' : ''
                 }`}
                 onClick={upvote}
-                disabled={!token || !comment.viewerCanUpvote}
+                // TODO: Remove `true ||` when GitHub allows upvote with app-issued user tokens
+                // https://github.com/orgs/community/discussions/3968
+                disabled={true || !token || !comment.viewerCanUpvote}
                 aria-label={token ? t('upvote') : t('youMustBeSignedInToUpvote')}
                 title={
                   token

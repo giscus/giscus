@@ -676,7 +676,11 @@ img.emoji {
   color: var(--color-fg-muted, var(--color-text-secondary));
 }
 
-.gsc-social-reaction-summary-item:hover {
+.gsc-social-reaction-summary-item:disabled {
+  @apply cursor-not-allowed;
+}
+
+.gsc-social-reaction-summary-item:hover:enabled {
   background-color: var(--color-social-reaction-bg-hover);
 }
 
@@ -686,12 +690,8 @@ img.emoji {
   color: var(--color-accent-fg, var(--color-text-link));
 }
 
-.gsc-social-reaction-summary-item.has-reacted:hover {
+.gsc-social-reaction-summary-item.has-reacted:hover:enabled {
   background-color: var(--color-social-reaction-bg-reacted-hover);
-}
-
-.gsc-social-reaction-summary-item:disabled {
-  @apply cursor-not-allowed;
 }
 
 .gsc-social-reaction-summary-item-count {
@@ -708,6 +708,14 @@ img.emoji {
 
 .gsc-upvote-button {
   @apply font-medium;
+}
+
+/*
+  TODO: Remove when GitHub allows upvote with app-issued user tokens
+  https://github.com/orgs/community/discussions/3968
+  */
+.gsc-upvote-button:disabled {
+  @apply border-none bg-transparent cursor-auto p-0;
 }
 
 .gsc-reactions-menu {

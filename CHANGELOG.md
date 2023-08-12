@@ -9,6 +9,11 @@ major updates to the project.
 
 ## 2023-08-12
 
+### Changed
+
+- Disable upvote button
+  ([#1152](https://github.com/giscus/giscus/pull/1152)).
+
 ### Fixed
 
 - Fix timeline element not being hidden when the discussion hasn't been created

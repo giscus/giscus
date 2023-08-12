@@ -6,9 +6,11 @@ updates:
       interval: daily
     open-pull-requests-limit: 99
     groups:
-      all:
+      actions:
         patterns:
           - '*'
+        exclude-patterns:
+          - 'next*'
 
   - package-ecosystem: npm
     directory: '/'
@@ -17,6 +19,8 @@ updates:
       day: saturday
     open-pull-requests-limit: 99
     groups:
-      all:
+      dependencies:
         patterns:
           - '*'
+        exclude-patterns:
+          - 'next*'

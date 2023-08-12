@@ -5,6 +5,10 @@ updates:
     schedule:
       interval: daily
     open-pull-requests-limit: 99
+    groups:
+      all:
+        patterns:
+          - '*'
 
   - package-ecosystem: npm
     directory: '/'
@@ -12,3 +16,7 @@ updates:
       interval: weekly
       day: saturday
     open-pull-requests-limit: 99
+    groups:
+      all:
+        patterns:
+          - '*'

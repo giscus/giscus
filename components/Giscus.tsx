@@ -189,7 +189,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
 
         {shouldShowCommentBox && inputPosition === 'top' ? mainCommentBox : null}
 
-        <div className={`gsc-timeline ${data.totalCommentCount === 0 ? 'hidden' : ''}`}>
+        <div className={`gsc-timeline ${!data.totalCommentCount ? 'hidden' : ''}`}>
           {!data.isLoading
             ? data.frontComments.map((comment) => (
                 <Comment

@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2023-08-12
+
+### Fixed
+
+- Fix timeline element not being hidden when the discussion hasn't been created
+  ([#1151](https://github.com/giscus/giscus/pull/1151)).
+
 ## 2023-07-29
 
 ### Added

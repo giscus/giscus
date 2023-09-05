@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} ប្រតិកម្ម",
+    "one": "{{count}} ប្រតិកម្ម",
+    "other": "{{count}} ប្រតិកម្ម"
+  },
+  "comment": "មតិ",
+  "comments": {
+    "0": "{{count}} មតិ",
+    "one": "{{count}} មតិ",
+    "other": "{{count}} មតិ"
+  },
+  "reply": "ការឆ្លើយតប",
+  "replies": {
+    "0": "{{count}} ការឆ្លើយតប",
+    "one": "{{count}} ការឆ្លើយតប",
+    "other": "{{count}}{{plus}} ការឆ្លើយតប"
+  },
+  "upvotes": {
+    "0": "{{count}} យល់ស្រប",
+    "one": "{{count}} យល់ស្រប",
+    "other": "{{count}} យល់ស្រប"
+  },
+  "hiddenItems": {
+    "0": "{{count}} វត្ថុដែលបានលាក់ទុក",
+    "one": "{{count}} វត្ថុដែលបានលាក់ទុក",
+    "other": "{{count}} វត្ថុដែលបានលាក់ទុក"
+  },
+  "genericError": "មានកំហុសមួយបានកើតឡើង: {{message}}",
+  "loadMore": "បង្ហាញបន្ថែម",
+  "loading": "កំពុងផ្ទុក",
+  "loadingComments": "កំពុងផ្ទុកមតិ…",
+  "loadingPreview": "កំពុងផ្ទុកការមើលលទ្ធផលទុកមុន…",
+  "poweredBy": "– ដំណើរការដោយ <a>giscus</a>",
+  "oldest": "ចាស់បំផុត",
+  "newest": "ថ្មីបំផុត",
+  "showPreviousReplies": {
+    "0": "បង្ហាញការឆ្លើយតបកាលពីមុនចំនួន {{count}}",
+    "one": "បង្ហាញការឆ្លើយតបកាលពីមុនចំនួន {{count}}",
+    "other": "បង្ហាញការឆ្លើយតបកាលពីមុនចំនួន {{count}}"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "បង្ហាញការឆ្លើយតបកាលពីមុនចំនួន {{count}} នៅលើ GitHub",
+    "one": "បង្ហាញការឆ្លើយតបកាលពីមុនចំនួន {{count}} នៅលើ GitHub",
+    "other": "បង្ហាញការឆ្លើយតបកាលពីមុនចំនួន {{count}} នៅលើ GitHub"
+  },
+  "edited": "បានកែប្រែ",
+  "thisCommentWasDeleted": "មតិនេះត្រូវបានលុបហើយ",
+  "thisCommentWasMinimized": "មតិនេះត្រូវបានបង្រួមអប្បបរមា",
+  "thisCommentWasHidden": "មតិនេះត្រូវបានលាក់បាំងហើយ",
+  "write": "សំណេរ",
+  "preview": "មើលលទ្ធផលទុកមុន",
+  "enableFixedWidth": "បើកមុខងារ​ fixed-width នៃពុម្ពអក្សរ (monospace) នៅក្នុង editor",
+  "disableFixedWidth": "បិទមុខងារ​ fixed-width នៃពុម្ពអក្សរ (monospace) នៅក្នុង editor",
+  "lastEditedAt": "បានកែប្រែចុងក្រោយនៅ {{date}}",
+  "writeAComment": "បញ្ចេញមតិ",
+  "signInToComment": "សូមចូលគណនីដើម្បីអាចសរសេរមតិបាន",
+  "stylingWithMarkdownIsSupported": "អ្នកអាចធ្វើការលេងទម្រង់ម៉ូតប្រភេទ Markdown លើអក្សរបាន",
+  "signOut": "ចាកចេញពីគណនី",
+  "cancel": "បោះបង់",
+  "signInWithGitHub": "ចូលគណនី GitHub",
+  "writeAReply": "សរសេរការឆ្លើយតប",
+
+  "upvote": "យល់ស្រប",
+  "youMustBeSignedInToUpvote": "អ្នកត្រូវតែចូលគណនីដើម្បីអាចដាក់ការយល់ស្របបាន",
+  "addReactions": "បន្ថែមប្រតិកម្ម",
+  "pleaseWait": "សូមរង់ចាំ…",
+  "pickYourReaction": "សូមជ្រើសរើសរូបប្រតិកម្ម",
+  "addTheReaction": "បន្ថែមប្រតិកម្ម {{reaction}}",
+  "removeTheReaction": "ដកប្រតិកម្ម {{reaction}} ចេញ",
+  "signInToAddYourReaction": "<a>ចូលគណនី</a> ដើម្បីអាចដាក់រូបប្រតិកម្មបាន",
+  "youMustBeSignedInToAddReactions": "អ្នកត្រូវតែធ្វើការចូលគណនីទើបអាចដាក់រូបប្រតិកម្មបាន",
+  "peopleReactedWith": {
+    "0": "មនុស្សចំនួន {{count}} នាក់បានប្រតិកម្មចំនួន {{reaction}} {{emoji}}",
+    "one": "មនុស្សចំនួន {{count}} នាក់បានប្រតិកម្មចំនួន {{reaction}} {{emoji}}",
+    "other": "មនុស្សចំនួន {{count}} នាក់បានប្រតិកម្មចំនួន {{reaction}} {{emoji}}"
+  },
+  "emoji": "រូបអុីម៉ូជី",
+  "nothingToPreview": "មិនមានអ្វីត្រូវបង្ហាញទេ",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "សើច",
+  "HOORAY": "យល់ស្រប",
+  "CONFUSED": "ឆ្ងល់",
+  "HEART": "ស្រឡាញ់",
+  "ROCKET": "រ៉ុកែត",
+  "EYES": "ភ្នែក",
+
+  "COLLABORATOR": "អ្នករួមសហការ",
+  "CONTRIBUTOR": "អ្នករួមចំណែក",
+  "FIRST_TIMER": "អ្នកចូលរួមលើកដំបូង",
+  "FIRST_TIME_CONTRIBUTOR": "អ្នករួមចំណែកលើកដំបូង",
+  "MANNEQUIN": "ម៉ារ៉ាកាំង",
+  "MEMBER": "សមាជិក",
+  "NONE": "មិនមាន",
+  "OWNER": "ម្ចាស់",
+  "APP": "កម្មវិធី"
+}

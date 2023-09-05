@@ -14,6 +14,9 @@ major updates to the project.
 - Add Khmer localization
   ([#1193](https://github.com/giscus/giscus/pull/1193)).
 
+- Add Greek localization
+  ([#1169](https://github.com/giscus/giscus/pull/1169)).
+
 ## 2023-08-19
 
 ### Added

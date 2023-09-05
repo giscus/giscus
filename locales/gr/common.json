@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} αντιδράσεις",
+    "one": "{{count}} αντίδραση",
+    "other": "{{count}} αντιδράσεις"
+  },
+  "comment": "Σχόλιο",
+  "comments": {
+    "0": "{{count}} σχόλια",
+    "one": "{{count}} σχόλιο",
+    "other": "{{count}} σχόλια"
+  },
+  "reply": "Απάντηση",
+  "replies": {
+    "0": "{{count}} απαντήσεις",
+    "one": "{{count}} απάντηση",
+    "other": "{{count}}{{plus}} απαντήσεις"
+  },
+  "upvotes": {
+    "0": "{{count}} υπερψηφίσεις",
+    "one": "{{count}} υπερψήφιση",
+    "other": "{{count}} υπερψηφίσεις"
+  },
+  "hiddenItems": {
+    "0": "{{count}} κρυφά στοιχεία",
+    "one": "{{count}} κρυφο στοιχείο",
+    "other": "{{count}} κρυφά στοιχεία"
+  },
+  "genericError": "Παρουσιάστηκε ένα σφάλμα: {{message}}",
+  "loadMore": "Περισσότερα",
+  "loading": "Φόρτωση",
+  "loadingComments": "Φόρτωση σχολίων…",
+  "loadingPreview": "Φόρτωση προεπισκόπησης",
+  "poweredBy": "– λειτουργεί με <a>giscus</a>",
+  "oldest": "Παλαιότερα",
+  "newest": "Νεότερα",
+  "showPreviousReplies": {
+    "0": "Εμφάνισε {{count}} προηγούμενες απαντήσεις",
+    "one": "Εμφάνισε {{count}} προηγούμενη απάντηση",
+    "other": "Εμφάνισε {{count}} προηγούμενες απαντήσεις"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Δείτε {{count}} προηγούμενες απαντήσεις στο GitHub",
+    "one": "Δείτε {{count}} προηγούμενη απάντηση στο GitHub",
+    "other": "Δείτε {{count}} προηγούμενες απαντήσεις στο GitHub"
+  },
+  "edited": "επεξεργασμένο",
+  "thisCommentWasDeleted": "Το σχόλιο έχει διαγραφεί.",
+  "thisCommentWasMinimized": "Το σχόλιο έχει ελαχιστοποιηθεί.",
+  "thisCommentWasHidden": "Το σχόλιο έχει κρυφτεί.",
+  "write": "Συγγραφή",
+  "preview": "Προεπισκόπηση",
+  "enableFixedWidth": "Ενεργοποίηση φόντου γραμματοσειράς σταθερού-πλάτους (monospace) στον κειμενογράφο",
+  "disableFixedWidth": "Απενεργοποίηση φόντου γραμματοσειράς σταθερού-πλάτους (monospace) στον κειμενογράφο",
+  "lastEditedAt": "Πιο πρόσφατη επεξεργασία {{date}}",
+  "writeAComment": "Γράψτε ένα σχόλιο",
+  "signInToComment": "Συνδεθείτε για να γράψετε ένα σχόλιο",
+  "stylingWithMarkdownIsSupported": "Υποστηρίζεται μορφοποίηση με Markdown",
+  "signOut": "Έξοδος",
+  "cancel": "Άκυρο",
+  "signInWithGitHub": "Σύνδεση με GitHub",
+  "writeAReply": "Γράψτε μια απάντηση",
+
+  "upvote": "Υπερψήφιση",
+  "youMustBeSignedInToUpvote": "Πρέπει να είστε συνδεδεμένος για να υπερψηφίσετε.",
+  "addReactions": "Προσθέστε αντιδράσεις",
+  "pleaseWait": "Παρακαλώ περιμένετε…",
+  "pickYourReaction": "Επιλέξτε την αντίδρασή σας",
+  "addTheReaction": "Προσθήκη {{reaction}} αντίδρασης",
+  "removeTheReaction": "Αφαίρεση {{reaction}} αντίδρασης",
+  "signInToAddYourReaction": "<a>Συνδεθείτε</a> για να προσθέσετε την αντίδρασή σας.",
+  "youMustBeSignedInToAddReactions": "Πρέπει να είστε συνδεμένος για να προσθέσετε αντιδράσεις.",
+  "peopleReactedWith": {
+    "0": "{{count}} άτομα αντέδρασαν με {{reaction}} {{emoji}}",
+    "one": "{{count}} άτομο αντέδρασε με {{reaction}} {{emoji}}",
+    "other": "{{count}} άτομα αντέδρασαν με {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Κενή προεπισκόπηση",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Γέλιο",
+  "HOORAY": "Ζήτω",
+  "CONFUSED": "Μπερδεμένος",
+  "HEART": "Αγάπη",
+  "ROCKET": "Πύραυλος",
+  "EYES": "Μάτια",
+
+  "COLLABORATOR": "Συνεργάτης",
+  "CONTRIBUTOR": "Συνεισφέρει",
+  "FIRST_TIMER": "Πρωτάρης",
+  "FIRST_TIME_CONTRIBUTOR": "Συνεισφέρει πρώτη φορά",
+  "MANNEQUIN": "Μοντέλο",
+  "MEMBER": "Μέλος",
+  "NONE": "Κανείς",
+  "OWNER": "Ιδιοκτήτης",
+  "APP": "Εφαρμογή"
+}

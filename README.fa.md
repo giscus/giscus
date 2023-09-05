@@ -86,6 +86,7 @@
 - [Español](README.es.md)
 - [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
+- [Ελληνικά](README.gr.md)
 - [עברית](README.he.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)

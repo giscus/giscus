@@ -53,7 +53,6 @@
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [mariazona.com][mariazona]
 - [**and many more!**][giscus-topic]
 
 ## ការចូលរួមចំណែក
@@ -70,7 +69,6 @@
 [convert]: https://docs.github.com/en/discussions/managing-discussions-for-your-community/moderating-discussions#converting-an-issue-to-a-discussion
 [laymonage-website]: https://laymonage.com/posts/giscus
 [os-phil-opp]: https://os.phil-opp.com
-[mariazona] : https://mariazona.com/article
 [statsandr]: https://statsandr.com
 [techdebtburndown]: https://techdebtburndown.com
 [contributing]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md

@@ -90,6 +90,7 @@ This README is available in:
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
 - [日本語](README.ja.md)
+- [ភាសាខ្មែរ](README.kh.md)
 - [한국어](README.ko.md)
 - [Nederlands](README.nl.md)
 - [Polski](README.pl.md)

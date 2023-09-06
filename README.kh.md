@@ -53,6 +53,7 @@
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
+- [mariazona.com/article][mariazona.com]
 - [**and many more!**][giscus-topic]
 
 ## ការចូលរួមចំណែក

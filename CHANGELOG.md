@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2023-10-29
+
+### Added
+
+- Add Khmer localization
+  ([#1193](https://github.com/giscus/giscus/pull/1193)).
+
 ## 2023-08-19
 
 ### Added

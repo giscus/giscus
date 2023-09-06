@@ -13,6 +13,7 @@ module.exports = {
     'id',
     'it',
     'ja',
+    'kh',
     'ko',
     'nl',
     'pl',

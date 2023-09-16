@@ -39,11 +39,10 @@
   "devDependencies": {
     "@next/bundle-analyzer": "^12.3.4",
     "@types/dompurify": "^3.0.2",
-    "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^18.16.9",
     "@types/react": "^18.0.9",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
-    "@typescript-eslint/parser": "^6.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
     "autoprefixer": "^10.4.15",
     "cssnano": "^6.0.1",
     "eslint": "^8.49.0",

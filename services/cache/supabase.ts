@@ -1,8 +1,13 @@
-import { InstallationAccessToken } from '../../lib/types/supabase';
-import { SUPABASE_INSTALLATION_ACCESS_TOKENS_URL, SUPABASE_KEY } from '../config';
+import { InstallationAccessToken } from '../../lib/types/cache';
+import { env } from '../../lib/variables';
+
+const SUPABASE_INSTALLATION_ACCESS_TOKENS_TABLE =
+  env.supabase_table || 'installation_access_tokens';
+
+export const SUPABASE_INSTALLATION_ACCESS_TOKENS_URL = `${env.supabase_url}/rest/v1/${SUPABASE_INSTALLATION_ACCESS_TOKENS_TABLE}`;
 
 export async function getCachedAccessToken(installationId: number) {
-  if (!SUPABASE_KEY) return '';
+  if (!env.supabase_key) return '';
 
   const params = new URLSearchParams({
     select: '*',
@@ -12,8 +17,8 @@ export async function getCachedAccessToken(installationId: number) {
 
   const response = await fetch(url, {
     headers: {
-      apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`,
+      apikey: env.supabase_key,
+      Authorization: `Bearer ${env.supabase_key}`,
       Accept: 'application/vnd.pgrst.object+json',
       Range: '0',
     },
@@ -37,7 +42,7 @@ export async function setCachedAccessToken({
   token,
   expires_at,
 }: InstallationAccessToken) {
-  if (!SUPABASE_KEY) return false;
+  if (!env.supabase_key) return false;
 
   const params = new URLSearchParams({
     installation_id: `eq.${installation_id}`,
@@ -54,8 +59,8 @@ export async function setCachedAccessToken({
   const response = await fetch(url, {
     method: 'PUT',
     headers: {
-      apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`,
+      apikey: env.supabase_key,
+      Authorization: `Bearer ${env.supabase_key}`,
       Accept: 'application/vnd.pgrst.object+json',
       'Content-Type': 'application/json',
     },

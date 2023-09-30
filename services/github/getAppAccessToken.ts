@@ -1,7 +1,7 @@
 import { getJWT } from '../../lib/jwt';
 
 import { GITHUB_REPO_INSTALLATION_URL, GITHUB_ACCESS_TOKEN_URL } from '../config';
-import { getCachedAccessToken, setCachedAccessToken } from '../supabase/cachedAccessToken';
+import { getCachedAccessToken, setCachedAccessToken } from '../cache/supabase';
 
 interface GAccessToken {
   token: string;

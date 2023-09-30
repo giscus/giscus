@@ -1,6 +1,6 @@
 # [giscus][giscus]
 
-[GitHub Discussions][discussions]を利用したコメントシステムです。サイトの訪問者にGitHubを利用したコメントとリアクションを提供しましょう！このプロジェクトは[utterances][utterances]を元に開発されています。
+[GitHub Discussions][discussions]を利用したコメントシステムです。サイトの訪問者にGitHubを利用したコメントとリアクションを提供しましょう！このプロジェクトは[utterances][utterances]から着想を得ています。
 
 - [オープンソース][repo]。 🌏
 - 追跡や広告は無く、無料です。 📡 🚫
@@ -9,7 +9,7 @@
 - [複数の言語][multiple-languages]に対応。 🌐
 - [詳細な設定項目][advanced-usage]。 🔧
 - 自動的に新しいコメントと編集をGitHubから取得します。 🔃
-- [自己ホスティングが可能][self-hosting]! 🤳
+- [セルフホスティングが可能][self-hosting]! 🤳
 
 > **補足**\
 > giscusは現在も活発に開発されています。GitHubも同様にDiscussionsとそのAPIを活発に開発しています。そのため、giscusの機能の一部が正常に動作しなくなったり、機能の変更がされる場合があります。
@@ -44,7 +44,7 @@ giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネン�
 
 ## 移行
 
-もし以前GitHub Issuesを利用したツール([utterances][utterances]や[gitalk][gitalk]など)を利用していた場合、[既存のIssueをDiscussionに変換する][convert]事が出来ます。返還後はdiscussionタイトルが連携設定に基づき正しく設定されていることを確認してください。その後は、giscusが自動的にdiscussionを利用します。
+もし以前GitHub Issuesを利用したツール([utterances][utterances]や[gitalk][gitalk]など)を利用していた場合、[既存のIssueをDiscussionに移管する][convert]事が出来ます。移管後はdiscussionタイトルが連携設定に基づき正しく設定されていることを確認してください。その後は、giscusが自動的にdiscussionを利用します。
 
 ## giscusを利用しているサイト
 

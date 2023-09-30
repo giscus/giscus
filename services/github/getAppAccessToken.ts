@@ -1,7 +1,7 @@
 import { getJWT } from '../../lib/jwt';
 
 import { GITHUB_REPO_INSTALLATION_URL, GITHUB_ACCESS_TOKEN_URL } from '../config';
-import { getCachedAccessToken, setCachedAccessToken } from '../cache/supabase';
+import { TokenCache } from '../cache';
 
 interface GAccessToken {
   token: string;
@@ -37,7 +37,7 @@ export async function getAppAccessToken(repoWithOwner: string): Promise<string> 
         'https://docs.github.com/en/rest/reference/apps#get-a-repository-installation-for-the-authenticated-app',
     };
 
-  const cachedToken = await getCachedAccessToken(installationId);
+  const cachedToken = await TokenCache.get(installationId);
   if (cachedToken) return cachedToken;
 
   const response = await fetch(GITHUB_ACCESS_TOKEN_URL(installationId), {
@@ -51,7 +51,7 @@ export async function getAppAccessToken(repoWithOwner: string): Promise<string> 
 
   const { token, expires_at }: GAccessToken = await response.json();
 
-  await setCachedAccessToken({
+  await TokenCache.set({
     installation_id: installationId,
     token,
     expires_at,

@@ -32,6 +32,7 @@ export const availableThemes = [
   'transparent_dark',
   'noborder_light',
   'noborder_dark',
+  'noborder_gray',
   'cobalt',
   'purple_dark',
   'custom',

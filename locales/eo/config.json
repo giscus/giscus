@@ -75,6 +75,7 @@
   "theme=cobalt": "RStudio Kobalto",
   "theme=noborder_light": "SenLimo Hela",
   "theme=noborder_dark": "SenLimo Malhela",
+  "theme=noborder_gray": "SenLimo Griza",
   "theme=purple_dark": "Purple Dark",
   "theme=custom": "Propra (eksperimenta)",
 

@@ -75,6 +75,7 @@
   "theme=cobalt": "RStudio Cobalt",
   "theme=noborder_light": "NoBorder Light",
   "theme=noborder_dark": "NoBorder Dark",
+  "theme=noborder_gray": "NoBorder Gray",
   "theme=purple_dark": "Purple Dark",
   "theme=custom": "カスタム (試験的)",
 

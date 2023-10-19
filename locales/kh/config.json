@@ -75,6 +75,7 @@
   "theme=cobalt": "RStudio Cobalt",
   "theme=noborder_light": "ពណ៌សមិនមានគែម",
   "theme=noborder_dark": "ពណ៌ខ្មៅមិនមានគែម",
+  "theme=noborder_gray": "ពណ៌ប្រផេះមិនមានគែម",
   "theme=purple_dark": "ពណ៌ស្វាយបែបងងឹត",
   "theme=custom": "កែច្នៃ (កំពុងស្ថិតក្នុងការតេស្តសាកល្បង)",
 

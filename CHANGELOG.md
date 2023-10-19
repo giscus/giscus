@@ -17,6 +17,9 @@ major updates to the project.
 - Add Greek localization
   ([#1169](https://github.com/giscus/giscus/pull/1169)).
 
+- Add NoBorder Gray theme
+  ([#1203](https://github.com/giscus/giscus/pull/1203)).
+
 ## 2023-08-19
 
 ### Added

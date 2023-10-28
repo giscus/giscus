@@ -37,7 +37,7 @@
     "swr": "^2.2.4"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^12.3.4",
+    "@next/bundle-analyzer": "^14.0.0",
     "@types/dompurify": "^3.0.3",
     "@types/node": "^18.16.9",
     "@types/react": "^18.0.9",

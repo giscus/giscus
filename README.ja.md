@@ -1,24 +1,24 @@
 # [giscus][giscus]
 
-[GitHub Discussions][discussions]を利用したコメントシステムです。サイトの訪問者にGitHubを利用したコメントとリアクションを提供しましょう！このプロジェクトは[utterances][utterances]を元に開発されています。
+[GitHub Discussions][discussions]を利用したコメントシステムです。サイト訪問者にGitHubを利用したコメント・リアクション機能を提供しましょう！このプロジェクトは[utterances][utterances]から着想を得ています。
 
 - [オープンソース][repo]。 🌏
 - 追跡や広告は無く、無料です。 📡 🚫
 - データベースは不要です。全データはGitHub Discussionsに保管されます。 :octocat:
 - [カスタムテーマ][creating-custom-themes]に対応! 🌗
-- [複数の言語][multiple-languages]に対応。 🌐
+- [多言語][multiple-languages]に対応。 🌐
 - [詳細な設定項目][advanced-usage]。 🔧
-- 自動的に新しいコメントと編集をGitHubから取得します。 🔃
-- [自己ホスティングが可能][self-hosting]! 🤳
+- 自動的に新しいコメントと編集内容をGitHubから取得します。 🔃
+- [セルフホスティングが可能][self-hosting]! 🤳
 
-> **補足**\
-> giscusは現在も活発に開発されています。GitHubも同様にDiscussionsとそのAPIを活発に開発しています。そのため、giscusの機能の一部が正常に動作しなくなったり、機能の変更がされる場合があります。
+> **注記**\
+> giscusは現在も活発に開発が行われています。GitHubも同様にDiscussionsとそのAPIの開発を活発に行っています。そのため、giscusの機能の一部が正常に動作しなくなったり、変更されたりする場合があります。
 
 ## 仕組み
 
 giscus読み込み時に[GitHub Discussions search API][search-api]を利用してページ連携設定(URL、パス、`<title>`など)に基づき紐づけられたDiscussionを読み込みます。もし紐づけられたDiscussionがない場合、giscusは最初にコメントやリアクションが為された際に自動的にDiscussionを作成します。
 
-コメントするには、サイト訪問者はGitHub OAuth flowを利用して[giscus app][giscus-app]を[自分の代わりに投稿][authorization]させるために連携させる必要があります。もしくは、サイト訪問者はGitHub Discussionに直接コメントを記述することもできます。投稿者と所有者は、GitHub上でコメントを削除することができます。
+サイト訪問者のコメントは[giscus app][giscus-app]によって[訪問者に代わって投稿][authorization]されるために、GitHub OAuth flowを利用した連携設定が行われる必要があります。あるいは、サイト訪問者はGitHub Discussionに直接コメントすることも可能です。コメントはGitHub上で管理することができます。
 
 [giscus]: https://giscus.app/ja
 [discussions]: https://docs.github.com/en/discussions
@@ -34,17 +34,17 @@ giscus読み込み時に[GitHub Discussions search API][search-api]を利用し�
 
 <!-- configuration -->
 
-giscusを利用する場合は、[GitHub上のgiscusにスター🌟を付けたり][repo]、[`giscus`][giscus-topic]トピックを[リポジトリに設定][topic-howto]していただけますと幸いです! 🎉
+giscusを利用する場合は、[giscusにGitHubスター🌟を付けたり][repo]、[`giscus`][giscus-topic]を[リポジトリのトピックに追加][topic-howto]したりしていただけると幸いです! 🎉
 
 ## 上級者向け機能
 
-追加の設定(特定オリジンのみの許可など)。[上級者向け機能ガイド][advanced-usage]をご参照ください。
+追加の設定(特定オリジンのみの許可など)については[上級者向け機能ガイド][advanced-usage]をご参照ください。
 
 giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネントライブラリ][giscus-component]をご参照ください。
 
 ## 移行
 
-もし以前GitHub Issuesを利用したツール([utterances][utterances]や[gitalk][gitalk]など)を利用していた場合、[既存のIssueをDiscussionに変換する][convert]事が出来ます。返還後はdiscussionタイトルが連携設定に基づき正しく設定されていることを確認してください。その後は、giscusが自動的にdiscussionを利用します。
+もし以前GitHub Issuesを利用したツール([utterances][utterances]や[gitalk][gitalk]など)を使用していた場合、[既存のIssueをDiscussionに移管する][convert]事が出来ます。移管後はDiscussionタイトルが連携設定に基づき正しく設定されていることを確認してください。その後は、giscusが自動的にDiscussionを利用します。
 
 ## giscusを利用しているサイト
 
@@ -54,7 +54,7 @@ giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネン�
 - [Tech Debt Burndown Podcast][techdebtburndown]
 - [**他多数**][giscus-topic]
 
-## 頒布
+## 貢献するには
 
 [CONTRIBUTING.md][contributing]をご参照ください。
 
@@ -76,7 +76,7 @@ giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネン�
 
 ---
 
-このREADMEは下記の言語も存在します:
+READMEは下記の言語で参照できます:
 
 - [Arabic (العربية)](README.ar.md)
 - [Català](README.ca.md)

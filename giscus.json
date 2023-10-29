@@ -7,7 +7,7 @@
   "originsRegex": [
     "https://giscus-git-([A-z0-9]|-)*giscus\\.vercel\\.app",
     "https://giscus-component-git-([A-z0-9]|-)*giscus\\.vercel\\.app",
-    "http://localhost:[0-9]+"
+    "http://selfhost:[0-9]+"
   ],
   "defaultCommentOrder": "oldest"
 }

@@ -77,6 +77,9 @@
   "theme=noborder_dark": "NoBorder Qorong'u",
   "theme=noborder_gray": "NoBorder Kulrang",
   "theme=purple_dark": "Binafsha Qorong'u",
+  "theme=gruvbox": "Gruvbox",
+  "theme=gruvbox_dark": "Gruvbox Dark",
+  "theme=gruvbox_light": "Gruvbox Light",
   "theme=custom": "Boshqa (eksperimental)",
 
   "enableGiscus": "Giscusni yoqing",

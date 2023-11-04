@@ -77,6 +77,9 @@
   "theme=noborder_dark": "NoBorder Sötét",
   "theme=noborder_gray": "NoBorder Szürke",
   "theme=purple_dark": "Lila Sötét",
+  "theme=gruvbox": "Gruvbox",
+  "theme=gruvbox_dark": "Gruvbox Dark",
+  "theme=gruvbox_light": "Gruvbox Light",
   "theme=custom": "Egyéni (kísérleti)",
 
   "enableGiscus": "Giscus engedélyezése",

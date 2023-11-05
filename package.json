@@ -26,7 +26,7 @@
     "jsonwebtoken": "^9.0.2",
     "lit-html": "^3.0.2",
     "mathjax": "3.2.0",
-    "next": "^12.3.4",
+    "next": "^14.0.1",
     "next-plugin-preact": "^3.0.7",
     "next-translate": "^2.6.2",
     "preact": "^10.18.2",

@@ -9,8 +9,6 @@ updates:
       actions:
         patterns:
           - '*'
-        exclude-patterns:
-          - 'next*'
 
   - package-ecosystem: npm
     directory: '/'
@@ -23,4 +21,11 @@ updates:
         patterns:
           - '*'
         exclude-patterns:
-          - 'next*'
+          - 'next'
+          - '@next/bundle-analyzer'
+          - 'eslint-config-next'
+      next:
+        patterns:
+          - 'next'
+          - '@next/bundle-analyzer'
+          - 'eslint-config-next'

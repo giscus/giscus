@@ -288,6 +288,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             />
             <label className="cursor-pointer" htmlFor={value}>
               <strong>
+                {}
                 <Trans i18nKey={`config:${label}`} />
               </strong>
             </label>

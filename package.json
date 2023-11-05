@@ -37,7 +37,7 @@
     "swr": "^2.2.4"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^14.0.1",
+    "@next/bundle-analyzer": "^12.3.4",
     "@types/dompurify": "^3.0.4",
     "@types/node": "^18.16.9",
     "@types/react": "^18.0.9",
@@ -46,7 +46,7 @@
     "autoprefixer": "^10.4.16",
     "cssnano": "^6.0.1",
     "eslint": "^8.53.0",
-    "eslint-config-next": "^14.0.1",
+    "eslint-config-next": "^12.3.4",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "google-closure-compiler": "^20230802.0.0",

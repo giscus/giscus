@@ -88,6 +88,7 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 - [Français](README.fr.md)
 - [Ελληνικά](README.gr.md)
 - [עברית](README.he.md)
+- [Magyar](README.hu.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
 - [日本語](README.ja.md)

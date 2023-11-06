@@ -1,24 +1,24 @@
 # [giscus][giscus]
 
-A comments system powered by [GitHub Discussions][discussions]. Let visitors leave comments and reactions on your website via GitHub! Heavily inspired by [utterances][utterances].
+Egy hozzászólási rendszer, ami a [GitHub Discussions][discussions] adta lehetőségeket használja. Segítségével látogatóid hozzászólásokat és reakciókat hagyhatnak weboldaladon a GitHub által! Erősen inspirálta az [utterances][utterances].
 
-- [Open source][repo]. 🌏
-- No tracking, no ads, always free. 📡 🚫
-- No database needed. All data is stored in GitHub Discussions. :octocat:
-- Supports [custom themes][creating-custom-themes]! 🌗
-- Supports [multiple languages][multiple-languages]. 🌐
-- [Extensively configurable][advanced-usage]. 🔧
-- Automatically fetches new comments and edits from GitHub. 🔃
-- [Can be self-hosted][self-hosting]! 🤳
+- [Nyílt forráskódú][repo]. 🌏
+- Nincs követés, nincs hirdetés, mindig ingyenes. 📡 🚫
+- Nincs szükség adatbázisra. Minden adat a GitHub Discussions-ben tárolódik. :octocat:
+- Támogatja az [egyéni témákat][creating-custom-themes]! 🌗
+- Támogat [több nyelvet][multiple-languages]. 🌐
+- [Széleskörűen konfigurálható][advanced-usage]. 🔧
+- Automatikusan lekéri az új hozzászólásokat és szerkesztéseket a GitHubról. 🔃
+- [Önmagad is üzemeltetheted][self-hosting]! 🤳
 
-> **Note**
-> giscus is still under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscus may break or change over time.
+> **Megjegyzés**
+> A giscus még aktív fejlesztés alatt áll. A GitHub is folyamatosan fejleszti a Discussions-t és annak API-ját. Így előfordulhat, hogy a giscus néhány funkciója idővel elromlik vagy megváltozik.
 
-## How it works
+## Hogyan működik
 
-When giscus loads, the [GitHub Discussions search API][search-api] is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.). If a matching discussion cannot be found, the giscus bot will automatically create a discussion the first time someone leaves a comment or reaction.
+Amikor a giscus betöltődik, a [GitHub Discussions keresési API][search-api] használatával megkeresi az oldalhoz tartozó beszélgetést egy választott leképezés alapján (URL, `pathname`, `<title>`, stb.). Ha nem található egyező beszélgetés, a giscus bot automatikusan létrehoz egyet, amikor valaki először hagy egy hozzászólást vagy reakciót.
 
-To comment, visitors must authorize the [giscus app][giscus-app] to [post on their behalf][authorization] using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
+A hozzászóláshoz a látogatóknak engedélyezniük kell a [giscus alkalmazást][giscus-app] számára a GitHub OAuth folyamat segítségével, hogy [a nevükben hozzászólhassanak][authorization]. Alternatív megoldásként a látogatók közvetlenül a GitHubon is hozzászólhatnak. A hozzászólásokat a GitHubon moderálhatod.
 
 [giscus]: https://giscus.app
 [discussions]: https://docs.github.com/en/discussions
@@ -34,29 +34,29 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 
 <!-- configuration -->
 
-If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
+Ha giscust használsz, fontold meg a [giscus megcsillagozását 🌟 a GitHubon][repo] és a [`giscus`][giscus-topic] téma hozzáadását [a repódhoz][topic-howto]! 🎉
 
-## Advanced usage
+## Haladó beállítások
 
-You can add additional configurations (e.g. allowing specific origins) by following the [advanced usage guide][advanced-usage].
+További konfigurációt (pl. engedélyezett originek) adhatsz hozzá a [haladó használati útmutató][advanced-usage] követésével.
 
-To use giscus with React, Vue, or Svelte, check out the [giscus component library][giscus-component].
+Ha giscust React, Vue vagy Svelte segítségével szeretnéd használni, nézd meg a [giscus komponens könyvtárat][giscus-component].
 
-## Migrating
+## Áttérés giscusra
 
-If you've previously used other systems that utilize GitHub Issues (e.g. [utterances][utterances], [gitalk][gitalk]), you can [convert the existing issues into discussions][convert]. After the conversion, just make sure that the mapping between the discussion titles and the pages are correct, then giscus will automatically use the discussions.
+Ha korábban olyan rendszereket használtál, amelyek a GitHub Issues-t használják (pl. [utterances][utterances], [gitalk][gitalk]), [átalakíthatod a meglévő issue-kat beszélgetésekké][convert]. Az átalakítás után csak győződj meg róla, hogy a beszélgetések címei és az oldalak közötti leképezés helyes, és a giscus automatikusan használni fogja a beszélgetéseket.
 
-## Sites using giscus
+## Weboldalak, amelyek giscust használnak
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**and many more!**][giscus-topic]
+- [**és még sok más!**][giscus-topic]
 
-## Contributing
+## Hozzájárulás
 
-See [CONTRIBUTING.md][contributing]
+Lásd a [CONTRIBUTING.md][contributing] fájlt
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus

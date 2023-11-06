@@ -11,6 +11,7 @@ module.exports = {
     'gr',
     'gsw',
     'he',
+    'hu',
     'id',
     'it',
     'ja',

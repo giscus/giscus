@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} reakció",
+    "one": "{{count}} reakció",
+    "other": "{{count}} reakció"
+  },
+  "comment": "Hozzászólás",
+  "comments": {
+    "0": "{{count}} hozzászólás",
+    "one": "{{count}} hozzászólás",
+    "other": "{{count}} hozzászólás"
+  },
+  "reply": "Válasz",
+  "replies": {
+    "0": "{{count}} válasz",
+    "one": "{{count}} válasz",
+    "other": "{{count}}{{plus}} válasz"
+  },
+  "upvotes": {
+    "0": "{{count}} szavazat",
+    "one": "{{count}} szavazat",
+    "other": "{{count}} szavazat"
+  },
+  "hiddenItems": {
+    "0": "{{count}} rejtett elem",
+    "one": "{{count}} rejtett elem",
+    "other": "{{count}} rejtett elem"
+  },
+  "genericError": "Hiba történt: {{message}}",
+  "loadMore": "Több betöltése",
+  "loading": "Betöltés",
+  "loadingComments": "Hozzászólások betöltése…",
+  "loadingPreview": "Előnézet betöltése…",
+  "poweredBy": "– a hozzászólásokat a <a>giscus</a> motor hajtja",
+  "oldest": "Legrégebbi",
+  "newest": "Legújabb",
+  "showPreviousReplies": {
+    "0": "{{count}} korábbi válasz mutatása",
+    "one": "{{count}} korábbi válasz mutatása",
+    "other": "{{count}} korábbi válasz mutatása"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "{{count}} korábbi válasz a GitHubon",
+    "one": "{{count}} korábbi válasz a GitHubon",
+    "other": "{{count}} korábbi válasz a GitHubon"
+  },
+  "edited": "szerkesztve",
+  "thisCommentWasDeleted": "Ezt a hozzászólást törölték.",
+  "thisCommentWasMinimized": "Ezt a hozzászólást összezárták.",
+  "thisCommentWasHidden": "Ezt a hozzászólást elrejtették.",
+  "write": "Írás",
+  "preview": "Előnézet",
+  "enableFixedWidth": "Fix szélességű (monospace) betűtípus bekapcsolása a szerkesztőben",
+  "disableFixedWidth": "Fix szélességű (monospace) betűtípus kikapcsolása a szerkesztőben",
+  "lastEditedAt": "Utoljára szerkesztve: {{date}}",
+  "writeAComment": "Hozzászólás írása",
+  "signInToComment": "Hozzászóláshoz jelentkezz be",
+  "stylingWithMarkdownIsSupported": "A Markdown stílusozás támogatott",
+  "signOut": "Kijelentkezés",
+  "cancel": "Mégse",
+  "signInWithGitHub": "Bejelentkezés GitHubbal",
+  "writeAReply": "Hozzászólás írása",
+
+  "upvote": "Szavazás",
+  "youMustBeSignedInToUpvote": "A szavazáshoz be kell jelentkezned.",
+  "addReactions": "Reakció hozzáadása",
+  "pleaseWait": "Kérlek, várj…",
+  "pickYourReaction": "Válassz reakciót",
+  "addTheReaction": "{{reaction}} reakció hozzáadása",
+  "removeTheReaction": "{{reaction}} reakció eltávolítása",
+  "signInToAddYourReaction": "<a>Jelentkezz be</a> reakció hozzáadásához.",
+  "youMustBeSignedInToAddReactions": "Reakció hozzáadásához be kell jelentkezned.",
+  "peopleReactedWith": {
+    "0": "{{count}} {{reaction}} reakció {{emoji}}",
+    "one": "{{count}} {{reaction}} reakció {{emoji}}",
+    "other": "{{count}} {{reaction}} reakció {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Nincs mit megjeleníteni az előnézetben",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Haha",
+  "HOORAY": "Hurrá",
+  "CONFUSED": "Zavarodott",
+  "HEART": "Szív",
+  "ROCKET": "Rakéta",
+  "EYES": "Szemek",
+
+  "COLLABORATOR": "Együttműködő",
+  "CONTRIBUTOR": "Hozzájáruló",
+  "FIRST_TIMER": "Újonc",
+  "FIRST_TIME_CONTRIBUTOR": "Újonc hozzájáruló",
+  "MANNEQUIN": "Robot",
+  "MEMBER": "Tag",
+  "NONE": "Nincs",
+  "OWNER": "Tulajdonos",
+  "APP": "Alkalmazás"
+}

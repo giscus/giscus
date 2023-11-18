@@ -64,7 +64,7 @@ export default function Widget({ origin, session }: IWidgetProps) {
     const observer = new ResizeObserver((entries) => {
       const entry = entries[0];
       if (!entry) return;
-      emitData<IResizeHeightMessage>({ resizeHeight: entry.contentRect.height }, origin);
+      emitData<IResizeHeightMessage>({ resizeHeight: Math.ceil(entry.contentRect.height) }, origin);
     });
 
     observer.observe(document.querySelector('body'));

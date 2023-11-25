@@ -382,8 +382,8 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           {config.mapping === 'number'
             ? t('categoryNotSupportedOption')
             : categories.length
-            ? t('pickACategoryOption')
-            : t('noCategoriesFoundOption')}
+              ? t('pickACategoryOption')
+              : t('noCategoriesFoundOption')}
         </option>
         {categories.map(({ id, emoji, name }) => (
           <option key={id} value={id} className="color-text-primary" data-category={name}>

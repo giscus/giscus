@@ -23,18 +23,18 @@ type I18nKeysRequireCount<I18Namespace = I18n> = {
   [K in keyof I18Namespace]: K extends `${infer R}_${PluralSuffixes}`
     ? R
     : I18Namespace[K] extends Record<string, unknown>
-    ? {
-        [J in keyof I18Namespace[K]]: J extends PluralSuffixes ? K : never;
-      }[keyof I18Namespace[K]]
-    : never;
+      ? {
+          [J in keyof I18Namespace[K]]: J extends PluralSuffixes ? K : never;
+        }[keyof I18Namespace[K]]
+      : never;
 }[keyof I18Namespace];
 
 type I18nKeysNoCount<I18Namespace = I18n> = {
   [K in keyof I18Namespace]: K extends `${string}_${PluralSuffixes}`
     ? never
     : I18Namespace[K] extends Record<string, unknown>
-    ? never
-    : K;
+      ? never
+      : K;
 }[keyof I18Namespace];
 
 export interface GiscusTranslate<I18Namespace = I18n> {

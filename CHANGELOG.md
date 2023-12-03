@@ -14,6 +14,11 @@ major updates to the project.
 - Add Hungarian localization
   ([#1231](https://github.com/giscus/giscus/pull/1231)).
 
+### Changed
+
+- Enforce origin checks on app homepage
+  ([#1254](https://github.com/giscus/giscus/pull/1254)).
+
 ## 2023-11-25
 
 ### Fixed

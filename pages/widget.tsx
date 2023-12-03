@@ -38,8 +38,8 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const repoConfig = await getRepoConfig(repo, token);
 
   if (!assertOrigin(originHost, repoConfig)) {
-    res.setHeader('Content-Security-Policy', `frame-ancestors 'self';`);
-    res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+    res.setHeader('Content-Security-Policy', `frame-ancestors 'none';`);
+    res.setHeader('X-Frame-Options', 'DENY');
   } else {
     let origins = repoConfig.origins || [];
     if (origins.indexOf(originHost) === -1) {

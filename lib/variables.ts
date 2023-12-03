@@ -16,6 +16,9 @@ export const env = {
   revalidate_first_page: process.env.NEXT_PUBLIC_REVALIDATE_FIRST_PAGE !== 'false',
   origins: JSON.parse(process.env.ORIGINS || '[]') as string[],
   origins_regex: JSON.parse(process.env.ORIGINS_REGEX || '[]') as string[],
+  demo_repo: process.env.NEXT_PUBLIC_DEMO_REPO,
+  demo_repo_id: process.env.NEXT_PUBLIC_DEMO_REPO_ID,
+  demo_category_id: process.env.NEXT_PUBLIC_DEMO_CATEGORY_ID,
 } as const;
 
 export const availableThemes = [

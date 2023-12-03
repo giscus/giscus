@@ -142,20 +142,22 @@ export default function Home({
         </Comment>
 
         <div id="comments" className="giscus w-full my-8" />
-        <Script
-          src="/client.js"
-          data-repo="giscus/giscus"
-          data-repo-id="MDEwOlJlcG9zaXRvcnkzNTE5NTgwNTM="
-          data-category-id="MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyNzk2NTc1"
-          data-mapping="specific"
-          data-term="Welcome to giscus!"
-          data-theme="preferred_color_scheme"
-          data-reactions-enabled="1"
-          data-emit-metadata="0"
-          data-input-position="bottom"
-          data-lang={locale}
-          data-strict="1"
-        />
+        {env.demo_repo && env.demo_repo_id && env.demo_category_id ? (
+          <Script
+            src="/client.js"
+            data-repo={env.demo_repo}
+            data-repo-id={env.demo_repo_id}
+            data-category-id={env.demo_category_id}
+            data-mapping="specific"
+            data-term="Welcome to giscus!"
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-lang={locale}
+            data-strict="1"
+          />
+        ) : null}
         <a
           className="block w-max mx-auto mb-6"
           href="https://vercel.com/?utm_source=giscus&utm_campaign=oss"

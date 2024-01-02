@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} reactions",
+    "one": "{{count}} reaction",
+    "other": "{{count}} reactions"
+  },
+  "comment": "Kommenter",
+  "comments": {
+    "0": "{{count}} kommentarer",
+    "one": "{{count}} kommentar",
+    "other": "{{count}} kommentarer"
+  },
+  "reply": "Besvar",
+  "replies": {
+    "0": "{{count}} svar",
+    "one": "{{count}} svar",
+    "other": "{{count}}{{plus}} svar"
+  },
+  "upvotes": {
+    "0": "{{count}} stemmer op",
+    "one": "{{count}} stemme op",
+    "other": "{{count}} stemmer op"
+  },
+  "hiddenItems": {
+    "0": "{{count}} skjulte svar",
+    "one": "{{count}} skjult svar",
+    "other": "{{count}} skjulte svar"
+  },
+  "genericError": "Der opsted en fejl: {{message}}",
+  "loadMore": "Vis flere",
+  "loading": "Indlæser",
+  "loadingComments": "Indlæser kommentarer…",
+  "loadingPreview": "Indlæser forhåndsvisning…",
+  "poweredBy": "- drevet af <a>giscus</a>",
+  "oldest": "Ældste",
+  "newest": "Nyeste",
+  "showPreviousReplies": {
+    "0": "Vis {{count}} tidligere svar",
+    "one": "Vis {{count}} tidligere svar",
+    "other": "Vis {{count}} tidligere svar"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Se {{count}} tidligere svar på GitHub",
+    "one": "Se {{count}} tidligere svar på GitHub",
+    "other": "Se {{count}} tidligere svar på GitHub"
+  },
+  "edited": "redigeret",
+  "thisCommentWasDeleted": "Denne kommentar er blevet slettet.",
+  "thisCommentWasMinimized": "Denne kommentar er blevet minimeret.",
+  "thisCommentWasHidden": "Denne kommentar er blevet skjult.",
+  "write": "Skriv",
+  "preview": "Forhåndsvisning",
+  "enableFixedWidth": "Aktiver fast bredde (monospace) skrifttype i editoren",
+  "disableFixedWidth": "Deaktiver fast bredde (monospace) skrifttype i editoren",
+  "lastEditedAt": "Sidst redigeret {{date}}",
+  "writeAComment": "Skriv en kommentar",
+  "signInToComment": "Log ind for at kommentere",
+  "stylingWithMarkdownIsSupported": "Styling med Markdown understøttes",
+  "signOut": "Log ud",
+  "cancel": "Annuller",
+  "signInWithGitHub": "Log ind med GitHub",
+  "writeAReply": "Skriv et svar",
+
+  "upvote": "Stem op",
+  "youMustBeSignedInToUpvote": "Du skal være logget ind for at stemme op.",
+  "addReactions": "Tilføj reaktioner",
+  "pleaseWait": "Vent venligst...",
+  "pickYourReaction": "Vælg din reaktion",
+  "addTheReaction": "Tilføj {{reaction}} reaktion",
+  "removeTheReaction": "Fjern {{reaction}} reaktion",
+  "signInToAddYourReaction": "<a>Log ind</a> for at tilføje din reaktion.",
+  "youMustBeSignedInToAddReactions": "Du skal være logget ind for at tilføje reaktioner.",
+  "peopleReactedWith": {
+    "0": "{{count}} personer reagerede med {{reaction}} {{emoji}}",
+    "one": "{{count}} person reagerede med {{reaction}} {{emoji}}",
+    "other": "{{count}} personer reagerede med {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Intet at forhåndsvise",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Grin",
+  "HOORAY": "Hurra",
+  "CONFUSED": "Forvirret",
+  "HEART": "Hjerte",
+  "ROCKET": "Raket",
+  "EYES": "Øjne",
+
+  "COLLABORATOR": "Samarbejdspartner",
+  "CONTRIBUTOR": "Contributor",
+  "FIRST_TIMER": "First-timer",
+  "FIRST_TIME_CONTRIBUTOR": "First-time contributor",
+  "MANNEQUIN": "Mannequin",
+  "MEMBER": "Member",
+  "NONE": "None",
+  "OWNER": "Owner",
+  "APP": "App"
+}

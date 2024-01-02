@@ -45,6 +45,7 @@ export interface GiscusTranslate<I18Namespace = I18n> {
 export const availableLanguages = {
   ar: 'العربية',
   ca: 'Català',
+  da: 'Dansk',
   de: 'Deutsch',
   en: 'English',
   eo: 'Esperanto',
@@ -140,6 +141,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
 const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', dateFormat),
   ca: new Intl.DateTimeFormat('ca', dateFormat),
+  da: new Intl.DateTimeFormat('da', dateFormat),
   de: new Intl.DateTimeFormat('de', dateFormat),
   en: new Intl.DateTimeFormat('en', dateFormat),
   eo: new Intl.DateTimeFormat('eo', dateFormat),
@@ -175,6 +177,7 @@ const shortDateFormat: Intl.DateTimeFormatOptions = {
 const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', shortDateFormat),
   ca: new Intl.DateTimeFormat('ca', shortDateFormat),
+  da: new Intl.DateTimeFormat('da', shortDateFormat),
   de: new Intl.DateTimeFormat('de', shortDateFormat),
   en: new Intl.DateTimeFormat('en', shortDateFormat),
   eo: new Intl.DateTimeFormat('eo', shortDateFormat),
@@ -211,6 +214,7 @@ const shortDateYearFormat: Intl.DateTimeFormatOptions = {
 const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', shortDateYearFormat),
   ca: new Intl.DateTimeFormat('ca', shortDateYearFormat),
+  da: new Intl.DateTimeFormat('da', shortDateYearFormat),
   de: new Intl.DateTimeFormat('de', shortDateYearFormat),
   en: new Intl.DateTimeFormat('en', shortDateYearFormat),
   eo: new Intl.DateTimeFormat('eo', shortDateYearFormat),
@@ -247,6 +251,7 @@ const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
 const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat> = {
   ar: new Intl.RelativeTimeFormat('ar', relativeTimeFormat),
   ca: new Intl.RelativeTimeFormat('ca', relativeTimeFormat),
+  da: new Intl.RelativeTimeFormat('da', relativeTimeFormat),
   de: new Intl.RelativeTimeFormat('de', relativeTimeFormat),
   en: new Intl.RelativeTimeFormat('en', relativeTimeFormat),
   eo: new Intl.RelativeTimeFormat('eo', relativeTimeFormat),

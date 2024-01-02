@@ -1,26 +1,26 @@
 # [giscus][giscus]
 
-Un sistem de comentarii oferit de [GitHub Discussions][discussions]. Oferă vizitatorilor posibilitatea de a lăsa comentarii ori reacții pe site-ul tău via GitHub! Inspirat masiv de [utterances][utterances].
+Et kommentarsystem drevet af [GitHub Discussions][discussions]. Lad besøgende efterlade kommentarer og reaktioner på din hjemmeside via GitHub! Stærkt inspireret af [utterances][utterances].
 
 - [Open source][repo]. 🌏
-- Nu te urmărește, fără reclame, întotdeauna gratuit. 📡 🚫
-- Nu e nevoie de o bază de date. Toate datele sînt stocate în GitHub Discussions. :octocat:
-- Suportă [teme personalizate][creating-custom-themes]! 🌗
-- Suportă [mai multe limbi][multiple-languages]. 🌐
-- [Extrem de configurabil][advanced-usage]. 🔧
-- Extrage automat comentariile noi ori pe cele editate de la GitHub. 🔃
-- [Poate fi găzduit][self-hosting]! 🤳
+- Ingen sporing, ingen reklamer, altid gratis. 📡 🚫
+- Ingen database nødvendig. Alle data opbevares i GitHub-diskussioner. :octocat:
+- Understøtter [tilpasset temaer][creating-custom-themes]! 🌗
+- Understøtter [flere sprog][multiple-languages]. 🌐
+- [Ekstrem konfigurerbar][advanced-usage]. 🔧
+- Henter automatisk nye kommentarer og redigeringer fra GitHub. 🔃
+- [Kan være selvhostet][self-hosting]! 🤳
 
-> **Note:**\
-> giscus este încă în dezvoltare. GitHub dezvoltă încă în mod activ Discussions și API-ul corespunzător. Prin urmare unele funcționalități giscus pot să Thus, some features of giscus pot genera erori sau pot fi schimbate în timp.
+> **Note**
+> Giscus er stadig under aktiv udvikling. GitHub udvikler også stadig Diskussioner og dets API. Derfor kan nogle funktioner i Giscus bryde eller ændre sig over tid.
 
-## Cum funcționează
+## Sådan fungerer det
 
-Cînd giscus se încarcă, [API-ul de căutare GitHub Discussions][search-api] este folosit pentru a găsi discuția asociată cu pagina pe baza unei atribuiri alese (URL, `pathname`, `<title>`, etc.). Dacă nu este găsită nici o discuție, bot-ul giscus va crea în mod automat o discuție pentru prima dată cînd cineva lasă un comentariu sau o reacție.
+Når Giscus indlæses, bruges [GitHub-diskussionssøgnings-API'et][search-api] til at finde diskussionen, der er knyttet til siden baseret på en valgt mapping (URL, `stinavn`, `<title>`, osv.). Hvis en matchende diskussion ikke kan findes, vil Giscus-botten automatisk oprette en diskussion første gang nogen efterlader en kommentar eller reaktion.
 
-Pentru a comenta vizitatorii trebuie să autorizeze [aplicația giscus][giscus-app] ca să [publice în numele lor][authorization] folosind sistemul GitHub OAuth. Alternativ, vizitatorii pot comenta direct în GitHub Discussion. Comentariile pot fi moderate la GitHub.
+For at kommentere skal besøgende autorisere [giscus app][giscus-app] til at [poste på deres vegne][authorization] ved hjælp af GitHub OAuth-flow. Alternativt kan besøgende kommentere direkte på GitHub-diskussionen. Du kan moderere kommentarerne på GitHub.
 
-[giscus]: https://giscus.app/ro
+[giscus]: https://giscus.app
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
@@ -34,29 +34,29 @@ Pentru a comenta vizitatorii trebuie să autorizeze [aplicația giscus][giscus-a
 
 <!-- configuration -->
 
-Dacă folosești giscus poți să îți arăți aprecierea cu [o 🌟 giscus la GitHub][repo] și adăugînd [`giscus`][giscus-topic] la [repository-ul personal][topic-howto]! 🎉
+Hvis du bruger Giscus, skal du overveje at [stjernemarkere 🌟 Giscus på GitHub][repo] og tilføje emnet [`giscus`][giscus-topic] topic [til dit repository][topic-howto]! 🎉
 
-## Folosire avansată
+## Avanceret brug
 
-Configurări adiționale (e. g. permiterea doar a unor origini pentru comentarii) pot fi adăugate urmărind [ghidul avansat de utilizare][advanced-usage].
+Du kan tilføje yderligere konfigurationer (f.eks. tillade specifikke oprindelser) ved at følge [avanceret brug-guiden][advanced-usage].
 
-Pentru a folosi giscus cu React, Vue sau Svelte vezi [giscus component library][giscus-component].
+For at bruge Giscus med React, Vue eller Svelte, skal du tjekke [giscus komponentbiblioteket][giscus-component].
 
-## Migrare
+## Migration
 
-Dacă ai folosit anterior un alt sistem ce folosește GitHub Issues (e.g. [utterances][utterances], [gitalk][gitalk]), poți [converti sistemul exitent în discuții][convert]. După convertire verificați că titlurile discuțiilor și ale paginilor sînt corect atribuite, apoi giscus va folosi în mod automat discuțiile..
+Hvis du tidligere har brugt andre systemer, der udnytter GitHub Issues (f.eks [utterances][utterances], [gitalk][gitalk]), kan du [ckonvertere de eksisterende problemer til diskussioner][convert]. Efter konverteringen skal du bare sørge for, at mappingen mellem diskussionstitlerne og siderne er korrekt, så vil Giscus automatisk bruge diskussionerne.
 
-## Site-urile care folosesc giscus
+## Websteder, der bruger Giscus
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**and many more!**][giscus-topic]
+- [**og mange flere!!**][giscus-topic]
 
-## Cum să ajuți
+## Bidrag
 
-Vezi [CONTRIBUTING.md][contributing]
+Se [CONTRIBUTING.md][contributing]
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus
@@ -76,7 +76,7 @@ Vezi [CONTRIBUTING.md][contributing]
 
 ---
 
-Acest README este disponibil în:
+Denne README er tilgængelig på:
 
 - [Arabic (العربية)](README.ar.md)
 - [Català](README.ca.md)
@@ -107,6 +107,6 @@ Acest README este disponibil în:
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 
-[![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
+[![Drevet af Vercel](public/powered-by-vercel.svg)][vercel]
 
 [vercel]: https://vercel.com/?utm_source=giscus&utm_campaign=oss

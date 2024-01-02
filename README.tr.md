@@ -80,6 +80,7 @@ README şu dillerde de mevcut:
 
 - [Arabic (العربية)](README.ar.md)
 - [Català](README.ca.md)
+- [Dansk](README.da.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Esperanto](README.eo.md)

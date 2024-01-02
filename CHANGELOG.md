@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2024-01-06
+
+### Added
+
+- Add Danish localization
+  ([#1277](https://github.com/giscus/giscus/pull/1277)).
+
 ## 2023-12-03
 
 ### Added

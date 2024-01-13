@@ -26,7 +26,7 @@
     "jsonwebtoken": "^9.0.2",
     "lit-html": "^3.1.0",
     "mathjax": "3.2.0",
-    "next": "^12.3.4",
+    "next": "^13.5.6",
     "next-plugin-preact": "^3.0.7",
     "next-translate": "^2.6.2",
     "preact": "^10.19.3",
@@ -37,7 +37,7 @@
     "swr": "^2.2.4"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^12.3.4",
+    "@next/bundle-analyzer": "^14.0.4",
     "@types/dompurify": "^3.0.5",
     "@types/node": "^18.16.9",
     "@types/react": "^18.0.9",
@@ -46,7 +46,7 @@
     "autoprefixer": "^10.4.16",
     "cssnano": "^6.0.3",
     "eslint": "^8.56.0",
-    "eslint-config-next": "^12.3.4",
+    "eslint-config-next": "^14.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
     "google-closure-compiler": "^20230802.0.0",

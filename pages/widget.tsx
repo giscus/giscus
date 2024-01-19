@@ -40,6 +40,12 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   if (!assertOrigin(originHost, repoConfig)) {
     res.setHeader('Content-Security-Policy', `frame-ancestors 'none';`);
     res.setHeader('X-Frame-Options', 'DENY');
+    return {
+      redirect: {
+        destination: 'https://github.com/orgs/giscus/discussions/1298',
+        permanent: false,
+      },
+    };
   } else {
     let origins = repoConfig.origins || [];
     if (origins.indexOf(originHost) === -1) {

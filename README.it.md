@@ -104,6 +104,7 @@ Questo README è disponibile in:
 - [Türkçe](README.tr.md)
 - [Tiếng Việt](README.vi.md)
 - [Українська](README.uk.md)
+- [O'zbek](README.uz.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 

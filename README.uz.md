@@ -1,24 +1,25 @@
 # [giscus][giscus]
 
-Et kommentarsystem drevet af [GitHub Discussions][discussions]. Lad besøgende efterlade kommentarer og reaktioner på din hjemmeside via GitHub! Stærkt inspireret af [utterances][utterances].
+
+[GitHub Discussions][discussions] bilan yasalgan izohlar tizimi. GitHub orqali web saytingizda izoh va reaksiyalar qoldirish imkoniyatini yarating! [utterances][utterances] dan qattiq ilhomlanilgan.
 
 - [Open source][repo]. 🌏
-- Ingen sporing, ingen reklamer, altid gratis. 📡 🚫
-- Ingen database nødvendig. Alle data opbevares i GitHub-diskussioner. :octocat:
-- Understøtter [tilpasset temaer][creating-custom-themes]! 🌗
-- Understøtter [flere sprog][multiple-languages]. 🌐
-- [Ekstrem konfigurerbar][advanced-usage]. 🔧
-- Henter automatisk nye kommentarer og redigeringer fra GitHub. 🔃
-- [Kan være selvhostet][self-hosting]! 🤳
+- Kuzativ, rekalamalarsiz, abadiy tekin. 📡 🚫
+- Ma'lumot bazalari kerak emas. Hamma ma'lumot GitHub Discussions ga joylanadi. :octocat:
+- [O'zga ko'rinishlar][creating-custom-themes] qo'llab quvvatlaydi! 🌗
+- [Boshqa tillarni][multiple-languages] ham qo'llab quvvatlaydi. 🌐
+- [Istagancha sozlab olish mumkin][advanced-usage]. 🔧
+- GitHubdan avtomatik tarzda yangi izohlarni yuklab oladi. 🔃
+- [O'zingizda o'rnatishingiz mumkin][self-hosting]! 🤳
 
-> **Note**
-> Giscus er stadig under aktiv udvikling. GitHub udvikler også stadig Diskussioner og dets API. Derfor kan nogle funktioner i Giscus bryde eller ændre sig over tid.
+> **Eslatma**
+> giscus hali faol rivojlanish jarayonida. GitHub ham Discussions va uning API'larini faol rivojlantirishda davom etmoqda. Shu sababli, giscusning ba'zi xususiyatlari vaqt o'tishi bilan ishlamay qolishi yoki o'zgarishi mumkin.
 
-## Sådan fungerer det
+## Qanday ishlaydis
 
-Når Giscus indlæses, bruges [GitHub-diskussionssøgnings-API'et][search-api] til at finde diskussionen, der er knyttet til siden baseret på en valgt mapping (URL, `stinavn`, `<title>`, osv.). Hvis en matchende diskussion ikke kan findes, vil Giscus-botten automatisk oprette en diskussion første gang nogen efterlader en kommentar eller reaktion.
+Giscus yuklanganda, sahifaga mos muhokama topish uchun [GitHub Muzokaralari qidiruv API][search-api] dan foydalaniladi, bu tanlangan xarita (URL, pathname, <title> va boshqa) parametrlarga asoslangan. Agar mos keladigan muhokama topilmasa, giscus boti birinchi marta kimdir izoh yoki reaktsiya qoldirganda avtomatik ravishda muhokama yaratadi.
 
-For at kommentere skal besøgende autorisere [giscus app][giscus-app] til at [poste på deres vegne][authorization] ved hjælp af GitHub OAuth-flow. Alternativt kan besøgende kommentere direkte på GitHub-diskussionen. Du kan moderere kommentarerne på GitHub.
+Izoh qoldirish uchun tashrif buyuruvchilar [GitHub OAuth oqimi][authorization] orqali [giscus ilovasini][giscus-app] o'zlarining nomidan xabar yuborishga ruxsat berishlari kerak. Boshqa tomondan, tashrif buyuruvchilar to'g'ridan-to'g'ri GitHub Muzokarasida izoh qoldirishlari mumkin. Siz GitHub'da izohlarni moderatsiya qilishingiz mumkin.
 
 [giscus]: https://giscus.app
 [discussions]: https://docs.github.com/en/discussions
@@ -34,29 +35,29 @@ For at kommentere skal besøgende autorisere [giscus app][giscus-app] til at [po
 
 <!-- configuration -->
 
-Hvis du bruger Giscus, skal du overveje at [stjernemarkere 🌟 Giscus på GitHub][repo] og tilføje emnet [`giscus`][giscus-topic] topic [til dit repository][topic-howto]! 🎉
+Agar giscusni ishlatayotgan bo'lsangiz, [GitHubda yulduzcha 🌟 qoldirishni][repo] va o'zingizni [repozitoriyangiz][topic-howto] da [`giscus`][giscus-topic] topigini qo'shishni unutmang! 🎉
 
-## Avanceret brug
+## Ko'proq qo'llanmalar
 
-Du kan tilføje yderligere konfigurationer (f.eks. tillade specifikke oprindelser) ved at følge [avanceret brug-guiden][advanced-usage].
+Qo'shimcha sozlamalarni (masalan, ma'lum kelayotgan manzillariga ruxsat berish) [kengaytirilgan foydalanish bo'yicha qo'llanma][advanced-usage]ni kuzatib, qo'shishingiz mumkin.
 
-For at bruge Giscus med React, Vue eller Svelte, skal du tjekke [giscus komponentbiblioteket][giscus-component].
+React, Vue yoki Svelte bilan giscus'dan foydalanish uchun, [giscus komponent kutubxonasini][giscus-component] ko'rib chiqing.
 
-## Migration
+## Migratsiya
 
-Hvis du tidligere har brugt andre systemer, der udnytter GitHub Issues (f.eks [utterances][utterances], [gitalk][gitalk]), kan du [ckonvertere de eksisterende problemer til diskussioner][convert]. Efter konverteringen skal du bare sørge for, at mappingen mellem diskussionstitlerne og siderne er korrekt, så vil Giscus automatisk bruge diskussionerne.
+Agar siz avval GitHub Issues'dan foydalanadigan boshqa tizimlarni ishlatgan bo'lsangiz (masalan, [utterances][utterances], [gitalk][gitalk]), siz [mavjud muammolarni muhokamalarga aylantirishingiz][convert] mumkin. Aylantirishdan keyin, faqat muhokama sarlavhalari va sahifalar o'rtasidagi xaritani to'g'ri ekanligiga ishonch hosil qiling, keyin giscus avtomatik ravishda muhokamalardan foydalanadi.
 
-## Websteder, der bruger Giscus
+## Giscus ishlatayotgan saytlar
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**og mange flere!!**][giscus-topic]
+- [**and many more!**][giscus-topic]
 
-## Bidrag
+## Hissa qo'shish
 
-Se [CONTRIBUTING.md][contributing]
+[CONTRIBUTING.md][contributing] ni ko'rib chiqing
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus
@@ -76,7 +77,7 @@ Se [CONTRIBUTING.md][contributing]
 
 ---
 
-Denne README er tilgængelig på:
+Ushbu README quyidagi tillarda mavjud:
 
 - [Arabic (العربية)](README.ar.md)
 - [Català](README.ca.md)
@@ -108,6 +109,6 @@ Denne README er tilgængelig på:
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 
-[![Drevet af Vercel](public/powered-by-vercel.svg)][vercel]
+[![Vercel tomonidan qo'llab quvvatlanadi](public/powered-by-vercel.svg)][vercel]
 
 [vercel]: https://vercel.com/?utm_source=giscus&utm_campaign=oss

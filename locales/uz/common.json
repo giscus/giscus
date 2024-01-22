@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} ta reaksiya",
+    "one": "{{count}} reaksiya",
+    "other": "{{count}} ta reaksiya"
+  },
+  "comment": "Izoh",
+  "comments": {
+    "0": "{{count}} ta izoh",
+    "one": "{{count}} izoh",
+    "other": "{{count}} ta izoh"
+  },
+  "reply": "Javob",
+  "replies": {
+    "0": "{{count}} ta javob",
+    "one": "{{count}} javob",
+    "other": "{{count}}{{plus}} ta javob"
+  },
+  "upvotes": {
+    "0": "{{count}} ta yoqimli",
+    "one": "{{count}} yoqimli",
+    "other": "{{count}} ta yoqimli"
+  },
+  "hiddenItems": {
+    "0": "{{count}} ta yashirin narsa",
+    "one": "{{count}} yashirin narsa",
+    "other": "{{count}} ta yashirin narsalar"
+  },
+  "genericError": "Xatolik yuz berdi: {{message}}",
+  "loadMore": "Ko'proq yuklash",
+  "loading": "Yuklanmoqda",
+  "loadingComments": "Izohlar yuklanmoqda…",
+  "loadingPreview": "Ko'rishni yuklanmoqda…",
+  "poweredBy": "– <a>giscus</a> tomonidan taqdim etilgan",
+  "oldest": "Eng qadimgi",
+  "newest": "Eng yangi",
+  "showPreviousReplies": {
+    "0": "{{count}} oldingi javoblarni ko'rsatish",
+    "one": "{{count}} oldingi javobni ko'rsatish",
+    "other": "{{count}} oldingi javoblarni ko'rsatish"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "{{count}} oldingi javoblarni GitHub'da ko'rish",
+    "one": "{{count}} oldingi javobni GitHub'da ko'rish",
+    "other": "{{count}} oldingi javoblarni GitHub'da ko'rish"
+  },
+  "edited": "tahrirlangan",
+  "thisCommentWasDeleted": "Bu izoh o'chirildi.",
+  "thisCommentWasMinimized": "Bu izoh minimallashtirildi.",
+  "thisCommentWasHidden": "Bu izoh yashirildi.",
+  "write": "Yozish",
+  "preview": "Ko'rish",
+  "enableFixedWidth": "Tahrirlovchida to'g'ri kenglikdagi (monospace) shriftni yoqing",
+  "disableFixedWidth": "Tahrirlovchida to'g'ri kenglikdagi (monospace) shriftni o'chirish",
+  "lastEditedAt": "Oxirgi tahrir vaqti {{date}}",
+  "writeAComment": "Izoh yozish",
+  "signInToComment": "Izoh yozish uchun kirish",
+  "stylingWithMarkdownIsSupported": "Markdown bilan stil berish qo'llab-quvvatlanadi",
+  "signOut": "Chiqish",
+  "cancel": "Bekor qilish",
+  "signInWithGitHub": "GitHub orqali kirish",
+  "writeAReply": "Javob yozish",
+
+  "upvote": "Yoqimli",
+  "youMustBeSignedInToUpvote": "Yoqimli berish uchun kirish kerak.",
+  "addReactions": "Reaksiyalar qo'shish",
+  "pleaseWait": "Iltimos, kuting…",
+  "pickYourReaction": "Reaksiyangizni tanlang",
+  "addTheReaction": "{{reaction}} reaksiyasini qo'shish",
+  "removeTheReaction": "{{reaction}} reaksiyasini olib tashlash",
+  "signInToAddYourReaction": "<a>Kirish</a> orqali reaksiyangizni qo'shing.",
+  "youMustBeSignedInToAddReactions": "Reaksiyalarni qo'shish uchun kirish kerak.",
+  "peopleReactedWith": {
+    "0": "{{count}} kishi {{reaction}} {{emoji}} bilan reaksiya bildirdi",
+    "one": "{{count}} kishi {{reaction}} {{emoji}} bilan reaksiya bildirdi",
+    "other": "{{count}} kishi {{reaction}} {{emoji}} bilan reaksiya bildirdi"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Ko'rish uchun hech narsa yo'q",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Kulgi",
+  "HOORAY": "Hurra",
+  "CONFUSED": "Ikkilangan",
+  "HEART": "Yurak",
+  "ROCKET": "Raketa",
+  "EYES": "Ko'zlar",
+
+  "COLLABORATOR": "Hamkor",
+  "CONTRIBUTOR": "Hissa qo'shuvchi",
+  "FIRST_TIMER": "Birinchi marta",
+  "FIRST_TIME_CONTRIBUTOR": "Birinchi marta hissa qo'shuvchi",
+  "MANNEQUIN": "Maneken",
+  "MEMBER": "A'zo",
+  "NONE": "Hech narsa",
+  "OWNER": "Egasi",
+  "APP": "Ilova"
+}

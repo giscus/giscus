@@ -69,6 +69,7 @@ export const availableLanguages = {
   tr: 'Türkçe',
   vi: 'Việt Nam',
   uk: 'Українська',
+  uz: "O'zbek",
   'zh-CN': '简体中文',
   'zh-TW': '繁體中文',
 } as const;
@@ -165,6 +166,7 @@ const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   tr: new Intl.DateTimeFormat('tr', dateFormat),
   vi: new Intl.DateTimeFormat('vi', dateFormat),
   uk: new Intl.DateTimeFormat('uk', dateFormat),
+  uz: new Intl.DateTimeFormat('uz', dateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', dateFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', dateFormat),
 };
@@ -201,6 +203,7 @@ const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   tr: new Intl.DateTimeFormat('tr', shortDateFormat),
   vi: new Intl.DateTimeFormat('vi', shortDateFormat),
   uk: new Intl.DateTimeFormat('uk', shortDateFormat),
+  uz: new Intl.DateTimeFormat('uz', shortDateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateFormat),
 };
@@ -238,6 +241,7 @@ const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = 
   tr: new Intl.DateTimeFormat('tr', shortDateYearFormat),
   vi: new Intl.DateTimeFormat('vi', shortDateYearFormat),
   uk: new Intl.DateTimeFormat('uk', shortDateYearFormat),
+  uz: new Intl.DateTimeFormat('uz', shortDateYearFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateYearFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateYearFormat),
 };
@@ -275,6 +279,7 @@ const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat>
   tr: new Intl.RelativeTimeFormat('tr', relativeTimeFormat),
   vi: new Intl.RelativeTimeFormat('vi', relativeTimeFormat),
   uk: new Intl.RelativeTimeFormat('uk', relativeTimeFormat),
+  uz: new Intl.RelativeTimeFormat('uz', relativeTimeFormat),
   'zh-CN': new Intl.RelativeTimeFormat('zh-CN', relativeTimeFormat),
   'zh-TW': new Intl.RelativeTimeFormat('zh-TW', relativeTimeFormat),
 };

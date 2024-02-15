@@ -5,7 +5,7 @@
 
 - [Open source][repo]. 🌏
 - Kuzativ, rekalamalarsiz, abadiy tekin. 📡 🚫
-- Ma'lumot bazalari kerak emas. Hamma ma'lumot GitHub Discussions ga joylanadi. :octocat:
+- Ma'lumot bazalari kerak emas. Hamma ma'lumot GitHub Discussions'ga joylanadi. :octocat:
 - [O'zga ko'rinishlar][creating-custom-themes] qo'llab quvvatlaydi! 🌗
 - [Boshqa tillarni][multiple-languages] ham qo'llab quvvatlaydi. 🌐
 - [Istagancha sozlab olish mumkin][advanced-usage]. 🔧
@@ -15,7 +15,7 @@
 > **Eslatma**
 > giscus hali faol rivojlanish jarayonida. GitHub ham Discussions va uning API'larini faol rivojlantirishda davom etmoqda. Shu sababli, giscusning ba'zi xususiyatlari vaqt o'tishi bilan ishlamay qolishi yoki o'zgarishi mumkin.
 
-## Qanday ishlaydis
+## Qanday ishlaydi
 
 Giscus yuklanganda, sahifaga mos muhokama topish uchun [GitHub Muzokaralari qidiruv API][search-api] dan foydalaniladi, bu tanlangan xarita (URL, pathname, <title> va boshqa) parametrlarga asoslangan. Agar mos keladigan muhokama topilmasa, giscus boti birinchi marta kimdir izoh yoki reaktsiya qoldirganda avtomatik ravishda muhokama yaratadi.
 

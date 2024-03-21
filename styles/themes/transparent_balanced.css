@@ -35,7 +35,7 @@ main {
   --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
   --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
   --color-prettylights-syntax-constant-other-reference-link: var(--color-accent-fg);
-  --color-btn-text: #c9d1d9;
+  --color-btn-text: #7b858d;
   --color-btn-bg: rgb(45 51 59 / 80%);
   --color-btn-border: rgb(240 246 252 / 10%);
   --color-btn-shadow: 0 0 transparent;
@@ -94,7 +94,6 @@ main {
 
 main {
   accent-color: var(--color-accent-fg);
-  color-scheme: light;
 }
 
 main .pagination-loader-container {

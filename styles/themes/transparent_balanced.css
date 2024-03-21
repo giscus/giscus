@@ -6,41 +6,41 @@
 
 main {
   --color-prettylights-syntax-comment: #8b949e;
-  --color-prettylights-syntax-constant: #79c0ff;
-  --color-prettylights-syntax-entity: #d2a8ff;
-  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
-  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-constant: #3e97e7;
+  --color-prettylights-syntax-entity: #9067bc;
+  --color-prettylights-syntax-storage-modifier-import: #878a8d;
+  --color-prettylights-syntax-entity-tag: #1fd52f;
   --color-prettylights-syntax-keyword: #ff7b72;
-  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-string: #689dc9;
   --color-prettylights-syntax-variable: #ffa657;
   --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
-  --color-prettylights-syntax-invalid-illegal-text: #f0f6fc;
+  --color-prettylights-syntax-invalid-illegal-text: #999999;
   --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
-  --color-prettylights-syntax-carriage-return-text: #f0f6fc;
+  --color-prettylights-syntax-carriage-return-text: #999999;
   --color-prettylights-syntax-carriage-return-bg: #b62324;
-  --color-prettylights-syntax-string-regexp: #7ee787;
-  --color-prettylights-syntax-markup-list: #f2cc60;
+  --color-prettylights-syntax-string-regexp: #1fd52f;
+  --color-prettylights-syntax-markup-list: #e4b73d;
   --color-prettylights-syntax-markup-heading: #1f6feb;
-  --color-prettylights-syntax-markup-italic: #c9d1d9;
-  --color-prettylights-syntax-markup-bold: #c9d1d9;
-  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
-  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-italic: #999999;
+  --color-prettylights-syntax-markup-bold: #999999;
+  --color-prettylights-syntax-markup-deleted-text: #999999;
+  --color-prettylights-syntax-markup-deleted-bg: #824545;
   --color-prettylights-syntax-markup-inserted-text: #aff5b4;
-  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-markup-inserted-bg: #45825a;
   --color-prettylights-syntax-markup-changed-text: #ffdfb6;
   --color-prettylights-syntax-markup-changed-bg: #5a1e02;
-  --color-prettylights-syntax-markup-ignored-text: #c9d1d9;
+  --color-prettylights-syntax-markup-ignored-text: #999999;
   --color-prettylights-syntax-markup-ignored-bg: #1158c7;
-  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+  --color-prettylights-syntax-meta-diff-range: #a464e8;
   --color-prettylights-syntax-brackethighlighter-angle: #8b949e;
   --color-prettylights-syntax-sublimelinter-gutter-mark: #484f58;
-  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+  --color-prettylights-syntax-constant-other-reference-link: var(--color-accent-fg);
   --color-btn-text: #c9d1d9;
   --color-btn-bg: rgb(45 51 59 / 80%);
   --color-btn-border: rgb(240 246 252 / 10%);
   --color-btn-shadow: 0 0 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
-  --color-btn-hover-bg: rgb(45 51 59 / 50%);
+  --color-btn-hover-bg: rgb(45 51 59 / 70%);
   --color-btn-hover-border: #8b949e;
   --color-btn-active-bg: hsl(212deg 12% 18% / 50%);
   --color-btn-active-border: #6e7681;
@@ -57,12 +57,12 @@ main {
   --color-btn-primary-disabled-text: rgb(240 246 252 / 80%);
   --color-btn-primary-disabled-bg: rgb(35 134 54 / 60%);
   --color-btn-primary-disabled-border: rgb(240 246 252 / 10%);
-  --color-action-list-item-default-hover-bg: rgb(144 157 171 / 12%);
+  --color-action-list-item-default-hover-bg: rgb(144 157 171 / 50%);
   --color-segmented-control-bg: rgb(99 110 123 / 10%);
   --color-segmented-control-button-bg: transparent;
   --color-segmented-control-button-selected-border: #636e7b;
-  --color-fg-default: #a0a0a0;
-  --color-fg-muted: #8b949e;
+  --color-fg-default: #999999;
+  --color-fg-muted: #9fa9b4;
   --color-fg-subtle: #5f6979;
   --color-canvas-default: transparent;
   --color-canvas-overlay: rgb(22 27 34 / 90%);
@@ -79,7 +79,7 @@ main {
   --color-success-fg: #3fb950;
   --color-attention-fg: #c69026;
   --color-attention-muted: rgb(174 124 20 / 40%);
-  --color-attention-subtle: rgb(174 124 20 / 15%);
+  --color-attention-subtle: transparent;
   --color-danger-fg: #f85149;
   --color-danger-muted: rgb(229 83 75 / 40%);
   --color-danger-subtle: rgb(229 83 75 / 10%);
@@ -92,6 +92,11 @@ main {
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
+main {
+  accent-color: var(--color-accent-fg);
+  color-scheme: light;
+}
+
 main .pagination-loader-container {
   background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
 }
@@ -101,23 +106,9 @@ main .pagination-loader-container {
 }
 
 .gsc-homepage-bg {
-  background: linear-gradient(135deg, #05485c, #032e58, #2f0154);
-  background-size: 600% 600%;
-  animation: gradient 21s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 2% 0%;
-  }
-
-  50% {
-    background-position: 99% 100%;
-  }
-
-  100% {
-    background-position: 2% 0%;
-  }
+  background: linear-gradient(135deg, aliceblue 25%, #101010 25%, #101010 50%, aliceblue 50%, aliceblue 75%, #101010 75%, #101010 100%);
+  background-size: 350%;
+  background-repeat: repeat-y;
 }
 
 main .gsc-loading-image {

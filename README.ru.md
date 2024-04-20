@@ -92,6 +92,7 @@
 - [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
 - [Ελληνικά](README.gr.md)
+- [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)
 - [Magyar](README.hu.md)
 - [Indonesia](README.id.md)

@@ -1,24 +1,24 @@
 # [giscus][giscus]
 
-A comments system powered by [GitHub Discussions][discussions]. Let visitors leave comments and reactions on your website via GitHub! Heavily inspired by [utterances][utterances].
+Sistem za komentarisanje koji koristi [GitHub Diskusije][discussions]. Dajte čitaocima da ostave komentare i reakcije na vašem sajtu preko GitHub-a! Veoma inspirisano ugledajući se na [utterances][utterances].
 
-- [Open source][repo]. 🌏
-- No tracking, no ads, always free. 📡 🚫
-- No database needed. All data is stored in GitHub Discussions. :octocat:
-- Supports [custom themes][creating-custom-themes]! 🌗
-- Supports [multiple languages][multiple-languages]. 🌐
-- [Extensively configurable][advanced-usage]. 🔧
-- Automatically fetches new comments and edits from GitHub. 🔃
-- [Can be self-hosted][self-hosting]! 🤳
+- [Otvorenog koda][repo]. 🌏
+- Bez praćenja, bez reklama, zauvek besplatno. 📡 🚫
+- Baza podataka nepotrebna. Sve je skladišteno u GitHub Diskusijama. :octocat:
+- Podržava [prilagođavanje tema][creating-custom-themes]! 🌗
+- Podržava [više jezika][multiple-languages]. 🌐
+- [Veoma lako za dodatnu konfiguraciju][advanced-usage]. 🔧
+- Automatski preuzima nove komentare i reakcije od GitHub-a. 🔃
+- [Može da se self-hostuje][self-hosting]! 🤳
 
-> **Note**
-> giscus is still under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscus may break or change over time.
+> **Beleška**
+> giscus je još uvek u izgradnji. GitHub takođe aktivno gradi GitHub Diskusije i njihov API. Posledično tome, neke funkcionalnosti giscus-a se moguće vremenom pokvare.
 
-## How it works
+## Kako sve to radi
 
-When giscus loads, the [GitHub Discussions search API][search-api] is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.). If a matching discussion cannot be found, the giscus bot will automatically create a discussion the first time someone leaves a comment or reaction.
+Kada se giscus učita, [API za pretragu GitHub Diskusija][search-api] se koristi da se pronađe diskusija vezana za stranicu na osnovu izabranog mapiranja (URL, `pathname`, `<title>`, itd.). Ako se diskusija ne pronađe, giscus bot će automatski napraviti diskusiju odmah nakon što neko ostavi reakciju ili komentar.
 
-To comment, visitors must authorize the [giscus app][giscus-app] to [post on their behalf][authorization] using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
+Da bi komentarisali, korisnici moraju dati autoritet [giscus aplikaciji][giscus-app] da [objavljuje u njihovo ime][authorization] koristeći GitHub OAuth tok. Alternativno, čitaoci mogu komentarisati na GitHub Diskusiji direktno. Vlasnik diskusije može biti moderator iste.
 
 [giscus]: https://giscus.app
 [discussions]: https://docs.github.com/en/discussions
@@ -34,29 +34,29 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 
 <!-- configuration -->
 
-If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
+Ako koristite giscus, bilo bi lepo da [starujete 🌟 giscus na GitHub-u][repo] i da dodate [`giscus`][giscus-topic] kao temu [na vaš repozitorijum][topic-howto]! 🎉
 
-## Advanced usage
+## Napredno korišćenje
 
-You can add additional configurations (e.g. allowing specific origins) by following the [advanced usage guide][advanced-usage].
+Možete dodati dodatne konfiguracije (npr. dopuštanje specifičnih origin-a) prateći [uputstvo za napredne korisnike][advanced-usage].
 
-To use giscus with React, Vue, or Svelte, check out the [giscus component library][giscus-component].
+Da bi koristili giscus sa React-om, Vue-om, ili Svelte-om, proverite [giscus biblioteku komponenti][giscus-component].
 
-## Migrating
+## Migracija
 
-If you've previously used other systems that utilize GitHub Issues (e.g. [utterances][utterances], [gitalk][gitalk]), you can [convert the existing issues into discussions][convert]. After the conversion, just make sure that the mapping between the discussion titles and the pages are correct, then giscus will automatically use the discussions.
+Ako ste prethodno koristili sisteme koji se oslanjaju na GitHub Issues (npr. [utterances][utterances], [gitalk][gitalk]), možete [konvertovati issue-e u diskusije][convert]. Nakon konverzije, uverite se da je mapiranje korektno, onda će giscus automatski da koristi diskusije.
 
-## Sites using giscus
+## Sajtovi koji koriste giscus
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**and many more!**][giscus-topic]
+- [**i još mnogi!**][giscus-topic]
 
-## Contributing
+## Kontribucija
 
-See [CONTRIBUTING.md][contributing]
+Pogledajte [CONTRIBUTING.md][contributing]
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus
@@ -76,7 +76,7 @@ See [CONTRIBUTING.md][contributing]
 
 ---
 
-This README is available in:
+Ovaj README je dostupan na:
 
 - [Arabic (العربية)](README.ar.md)
 - [Català](README.ca.md)
@@ -109,6 +109,6 @@ This README is available in:
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 
-[![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
+[![Radi uz pomoć Vercel-a](public/powered-by-vercel.svg)][vercel]
 
 [vercel]: https://vercel.com/?utm_source=giscus&utm_campaign=oss

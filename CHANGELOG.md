@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2024-04-22
+
+### Added
+
+- Add Serbo-Croatian localization
+  ([#1365](https://github.com/giscus/giscus/pull/1365)).
+
 ## 2024-02-11
 
 ### Added

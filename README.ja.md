@@ -88,6 +88,7 @@ READMEは下記の言語で参照できます:
 - [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
 - [Ελληνικά](README.gr.md)
+- [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)
 - [Magyar](README.hu.md)
 - [Indonesia](README.id.md)

@@ -1,10 +1,10 @@
 # [giscus][giscus]
 
-[GitHub Discussions][discussions]로 작동하는 댓글 시스템입니다. GitHub를 이용해 방문자가 댓글과 반응을 웹사이트에 남기게 해보세요! [utterances][utterances]에서 큰 영감을 받았습니다.
+[GitHub Discussions][discussions]로 작동하는 댓글 시스템입니다. 방문자가 GitHub를 통해 웹사이트에 댓글과 반응을 남기게 해보세요! [utterances][utterances]에서 큰 영감을 받았습니다.
 
 - [오픈 소스][repo]입니다. 🌏
 - 사용자 추적도, 광고도 없습니다. 항상 무료입니다. 📡 🚫
-- 데이터베이스가 필요 없습니다. 모든 데이터는 GitHub Discussions에 저장됩니다. :octocat:
+- 데이터베이스가 필요없습니다. 모든 데이터는 GitHub Discussions에 저장됩니다. :octocat:
 - [커스텀 테마 제작][creating-custom-themes]을 지원합니다! 🌗
 - [여러 언어][multiple-languages]를 지원합니다. 🌐
 - [여러 설정][advanced-usage]을 제공합니다. 🔧
@@ -12,13 +12,13 @@
 - [셀프 호스팅이 가능합니다][self-hosting]! 🤳
 
 > **주의:**\
-> giscus는 활발히 개발되고 있습니다. GitHub에서도 Discussions와 그 API를 활발하게 개발하고 있습니다. 따라서 시간이 지나면서 giscus의 일부 기능이 작동하지 않거나 변경될 수 있습니다.
+> giscus는 여전히 활발하게 개발되고 있습니다. GitHub에서도 Discussions와 그 API를 활발하게 개발하고 있습니다. 따라서 시간이 지나면서 giscus의 일부 기능이 작동하지 않거나 변경될 수 있습니다.
 
 ## 작동 원리
 
-giscus가 로드되면, [GitHub Discussions 검색 API][search-api]를 사용하여 선택된 매핑 방법(URL, `pathname`, `<title>`, etc.)에 따라 페이지와 연관된 Discussion을 찾습니다. 일치하는 discussion이 없으면 giscus 봇은 누군가 처음으로 댓글이나 반응이 남길 때 자동으로 discussion을 생성합니다.
+giscus가 로드되면, [GitHub Discussions 검색 API][search-api]를 사용하여 선택된 매핑 방법(URL, `pathname`, `<title>`, etc.)에 따라 페이지와 연관된 Discussion을 찾습니다. 일치하는 discussion이 없으면 giscus 봇은 누군가 처음으로 댓글이나 반응을 남길 때 자동으로 discussion을 생성합니다.
 
-댓글을 남기기 위해 방문자는 GitHub OAuth를 이용하여 [giscus app][giscus-app]이 [대신 게시할 수 있도록][authorization] 권한을 부여해야합니다. 혹은 방문자들은 GitHub Discussion에서 직접 댓글을 달 수도 있습니다. GitHub에서 댓글을 관리할 수 있습니다.
+댓글을 남기기 위해, 방문자는 GitHub OAuth를 이용하여 [giscus app][giscus-app]이 [자신을 대신하여 게시][authorization]할 수 있도록 권한을 부여해야합니다. 또는 방문자가 GitHub Discussion에서 직접 댓글을 달 수도 있습니다. GitHub에서 댓글을 관리할 수 있습니다.
 
 [giscus]: https://giscus.app/ko
 [discussions]: https://docs.github.com/en/discussions
@@ -34,7 +34,7 @@ giscus가 로드되면, [GitHub Discussions 검색 API][search-api]를 사용하
 
 <!-- configuration -->
 
-giscus를 사용한다면, [giscus GitHub 저장소 스타🌟를 눌러 주시고][repo][저장소의 토픽에][topic-howto] [`giscus`][giscus-topic]를 추가해 주세요! 🎉
+giscus를 사용하신다면, [GitHub에서 giscus를 🌟 별표][repo]하신 후에 [`giscus`][giscus-topic]를 [자신의 저장소 토픽에 추가][topic-howto]해 주세요! 🎉
 
 ## 고급 사용법
 
@@ -44,7 +44,7 @@ React, Vue, 또는 Svelte와 함께 giscus를 사용하고 싶다면, [giscus co
 
 ## 전환하기
 
-GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utterances], [gitalk][gitalk])을 사용하고 있다면 [이미 생성된 issue를 discussion으로 변환할 수 있습니다][convert]. 변환 후에 discussion의 제목과 페이지 간의 매핑이 올바른지 확인하세요. 그러면 giscus가 자동으로 해당 discussion을 사용합니다.
+GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utterances], [gitalk][gitalk])을 사용하고 있다면 [이미 생성된 issue를 discussion으로 변환할 수 있습니다][convert]. 변환 후 discussion의 제목과 페이지 간의 매핑이 올바른지 확인하기만 하면 giscus가 자동으로 해당 discussion을 사용합니다.
 
 ## giscus를 사용하는 사이트
 

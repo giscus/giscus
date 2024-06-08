@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2024-06-08
+
+### Changed
+
+- Fixed CSS injection vulnerability in MathJax renderer
+  (https://news.ycombinator.com/item?id=40615653).
+
 ## 2024-04-22
 
 ### Added

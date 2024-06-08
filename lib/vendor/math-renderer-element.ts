@@ -3,9 +3,50 @@
  * provided to the browser when you load their website.
  */
 
+import type Dompurify from 'dompurify';
 import type MathJaxConfig from 'mathjax/es5/tex-chtml-full';
 import { html, render } from 'lit-html';
 import { hasStorageAccess } from '../utils';
+
+/**
+ * UsageTracker is a thin wrapper around the Map class
+ * suitable for keeping count of numerical values across
+ * catlyst component instances.
+ *
+ * We are using this alongside the math-render-element as a static
+ * way of tracking overall macro counts for a single pipeline run.
+ *
+ * Because this is a long-lived object, values associated with a pipeline
+ * id must be cleared when the component is unmounted from the DOM.
+ */
+class UsageTracker {
+  private usage: Map<string, number>;
+  constructor() {
+    this.usage = new Map();
+  }
+
+  get(key: string) {
+    return this.usage.get(key) ?? 0;
+  }
+
+  update(key: string, value = 0) {
+    const currentValue = this.get(key);
+    this.usage.set(key, value + (currentValue ?? 0));
+  }
+
+  clear(key: string) {
+    this.usage.delete(key);
+  }
+
+  // total provides a count of all instances of math usage across all pipeline
+  // runs we've registered with the tracker.
+  total() {
+    return Array.from(this.usage.entries()).reduce((sum, [, time]) => {
+      sum += time;
+      return sum;
+    }, 0);
+  }
+}
 
 declare global {
   interface Window {
@@ -13,11 +54,68 @@ declare global {
   }
 }
 const MAX_ALLOWED_MACROS = 100;
+/**
+ * While each instance of a math renderer element is limited
+ * to 100 macros, there is nothing preventing users with malicious intent
+ * from authoring many comments, each with 100 macros. This value allows
+ * us to limit the total number of macros on any given page.
+ */
+const GLOBAL_MAX_ALLOWED_MACROS = 2000;
+
 const BAD_EXPRESSION_ERROR = 'Unable to render expression.';
 const INLINE_DELIMITER = '$';
 const DISPLAY_DELIMITER = '$$';
 const STATIC_RESOURCE_ATTR = 'data-static-url';
 const MATHJAX_PREFIX_REGEX = new RegExp('^(TEX|mjx|MJX)-');
+const DIMENSION_ARG_MACROS = [
+  'hskip',
+  'hspace',
+  'raise',
+  'mspace',
+  'mskip',
+  'kern',
+  'lower',
+  'above',
+  'mkern',
+  'moveleft',
+  'moveright',
+  'rule',
+  'Rule',
+  'space',
+  'Space',
+];
+const DISALLOWED_MACROS = [
+  'DeclareMathOperator',
+  'DeclarePairedDelimiters',
+  'renewtagform',
+  'newtagform',
+  'colorbox',
+  'fcolorbox',
+  'hphantom',
+  'vphantom',
+  'phantom',
+  'operatorname',
+  'Newextarrow',
+  'definecolor',
+  'mathchoice',
+  'unicode',
+];
+
+// Maps possible dimension units that can be passed to LaTeX macros to the maximum value (absolute) that we allow.
+const unitToMaxVal: Record<string, number> = {
+  em: 2,
+  pt: 20,
+  pc: 0.75,
+  ex: 2.5,
+};
+
+const macrosWithDimensionArgs = DIMENSION_ARG_MACROS.join('|');
+const unitTypes = Object.keys(unitToMaxVal).join('|');
+const dimensionRegex = '-?\\d+.?\\d*?';
+const macrosWithDimensionsRegex = new RegExp(
+  `(${macrosWithDimensionArgs})({${dimensionRegex}(${unitTypes})})+`,
+  'g',
+);
 
 const stripAttrsConfigs = {
   ALLOWED_ATTR: [],
@@ -36,7 +134,9 @@ const purifyConfigs = {
   },
 };
 
-let DOMPurify: null | { default: typeof import('dompurify') } = null;
+const macroUsageTracker = new UsageTracker();
+
+let DOMPurify: null | { default: typeof Dompurify } = null;
 let configurationPromise: Promise<void> | null = null;
 
 /**
@@ -66,8 +166,13 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
       tex: {
         inlineMath: [[INLINE_DELIMITER, INLINE_DELIMITER]],
         displayMath: [[DISPLAY_DELIMITER, DISPLAY_DELIMITER]],
-        packages: { '[-]': ['html', 'require', 'newcommand'] },
+        packages: {
+          '[-]': ['noerrors', 'bbox', 'html', 'require', 'newcommand', 'action', 'colortbl'],
+        },
         maxMacros: 1000,
+        macros: Object.fromEntries(
+          DISALLOWED_MACROS.map((macro) => [macro, [`\\text{${macro} macro is not supported}`, 1]]),
+        ),
       },
       chtml: {
         fontURL: `${staticURL}/fonts/mathjax`,
@@ -79,6 +184,15 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
           const menu = window.MathJax.startup.document.menu.menu;
           const renderer = menu.find('Renderer');
           renderer?.disable();
+          const safe = window.MathJax.startup.document?.safe;
+
+          if (safe) {
+            safe.filterAttributes.set('fontfamily', 'filterFamily');
+            safe.filterMethods.filterFamily = function (_unused, family) {
+              const [split] = family.split(/;/);
+              return split;
+            };
+          }
         },
       },
       options: {
@@ -91,8 +205,14 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
             URLs: 'none',
             classes: 'none',
             cssIDs: 'none',
-            styles: 'none',
+            styles: 'safe',
           },
+          // Largest padding/border/margin value allowed, in ems
+          // Note: There is a bug in mathjax that appears to prevent this setting from working correctly
+          lengthMax: 2,
+          // an emtpy object here is equivalent to setting all style properties to false, but is required so that lengthMax is respected.
+          safeStyles: {},
+          styleLengths: {},
         },
       },
     };
@@ -134,6 +254,7 @@ function sanitizeClass(_: Element, data: DOMPurify.SanitizeAttributeHookEvent): 
 
 class MathRendererElement extends HTMLElement {
   public staticURL = 'https://github.githubassets.com/static';
+  private runId: string;
 
   /**
    * Create a parallel document node that LaTeX content is injected into.
@@ -170,7 +291,9 @@ class MathRendererElement extends HTMLElement {
   }
 
   private isMathJaxContainer(node: Element | null) {
-    return node && node.nodeName === 'MJX-CONTAINER';
+    // Check whether math being parsed already exists within a MJX-CONTAINER (was already processed by MathJax)
+    // or a MATH-RENDERER element (just in case math elements are mistakenly nested somehow)
+    return node && (node.nodeName === 'MJX-CONTAINER' || node.nodeName === 'MATH-RENDERER');
   }
 
   private wasPreviouslyRendered() {
@@ -203,6 +326,65 @@ class MathRendererElement extends HTMLElement {
         <pre>${rawContent}</pre>`,
       this,
     );
+  }
+
+  // certain macros allow the user to alter other parts of the page, such as by
+  // allowing custom operators to override existing ones.  We disallow these.
+  private checkDisallowedMacros() {
+    const disallowedMacrosFound = [];
+    for (const macro of DISALLOWED_MACROS) {
+      if (this.textContent.includes(`\\${macro}`)) {
+        disallowedMacrosFound.push(macro);
+      }
+    }
+    return disallowedMacrosFound;
+  }
+
+  // Effectively does what the lengthMax attribute of safeOptions is supposed to but evidently does not;
+  // limits the value of numeric arguments to macros that can change padding or spacing, such as \hskip or \raise
+  // such that users cannot alter GitHub's UI.
+  private enforcePaddingLimit(textContent: string) {
+    // match all macros that can change padding or spacing (listed in DIMENSION_ARG_MACROS)
+    return textContent.replace(macrosWithDimensionsRegex, (match, other) => {
+      const dimensionAndUnitRegex = new RegExp(`(${dimensionRegex}(${unitTypes}))+`, 'g');
+      const matches = match?.match(dimensionAndUnitRegex);
+      if (!matches || !matches.length) {
+        return match;
+      }
+      // iterate through each dimension argument and clamp its value according to the allowed max value for its unit.
+      const output = matches.map((m) => {
+        const unit = m.split(new RegExp(`(${unitTypes})`));
+
+        if (!unit.length) {
+          return m;
+        }
+
+        const numericArg = Number(unit[0]);
+        const unitType = unit[1] ?? '';
+
+        if (!unitType) {
+          return m;
+        }
+
+        const maxVal = unitToMaxVal[unitType] ?? 0;
+        if (numericArg < -maxVal || numericArg > maxVal) {
+          return `{${maxVal}${unitType}}`;
+        } else {
+          return `{${m}}`;
+        }
+      });
+      return `${other}${output.join('')}`;
+    });
+  }
+
+  private enforceMathJaxSafety() {
+    if (!this.textContent) {
+      return '';
+    }
+
+    return this.enforcePaddingLimit(this.textContent);
+    // TODO: Call a method here that disallows passing `transparent` as a color argument
+    // and potentially other methods that enforce UI safeguards
   }
 
   private renderContent(node: Node) {
@@ -250,14 +432,28 @@ class MathRendererElement extends HTMLElement {
     }
   }
 
-  get textContent() {
+  override get textContent() {
     return this.firstChild?.textContent ?? '';
+  }
+
+  override set textContent(content: string) {
+    if (this.firstChild) {
+      this.firstChild.textContent = content;
+    }
   }
 
   async connectedCallback() {
     this.staticURL = this.getAttribute(STATIC_RESOURCE_ATTR);
+    this.runId = this.getAttribute('data-run-id');
+
+    macroUsageTracker.update(this.runId);
+
     await configureMathJax({ staticURL: this.staticURL });
     requestAnimationFrame(() => this.typeset());
+  }
+
+  disconnectedCallback() {
+    macroUsageTracker.clear(this.runId);
   }
 
   async typeset() {
@@ -272,10 +468,30 @@ class MathRendererElement extends HTMLElement {
       return;
     }
 
-    if (this.textContent.split('{').length > MAX_ALLOWED_MACROS) {
+    // Large amounts of macros can crash the page, so we set an upper limit
+    const estimatedElMacroCount = this.textContent.split('{').length;
+    macroUsageTracker.update(this.runId, estimatedElMacroCount);
+
+    const aggregateMacroCount = macroUsageTracker.total();
+
+    if (
+      aggregateMacroCount > GLOBAL_MAX_ALLOWED_MACROS ||
+      estimatedElMacroCount > MAX_ALLOWED_MACROS
+    ) {
       this.renderError();
       return;
     }
+
+    // Perform additional sanitization to prevent behavior that MathJax technically allows.
+    const disallowedMacrosFound = this.checkDisallowedMacros();
+    if (disallowedMacrosFound.length > 0) {
+      this.renderError({
+        msg: `The following macros are not allowed: ${disallowedMacrosFound.join(', ')}`,
+      });
+      return;
+    }
+
+    this.textContent = this.enforceMathJaxSafety();
 
     const parallelDocContent = this.tempDocumentContentForSanitization();
 

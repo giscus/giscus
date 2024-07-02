@@ -23,6 +23,9 @@ major updates to the project.
 - Added Gruvbox themes
   ([#1232](https://github.com/giscus/giscus/pull/1232)).
 
+- Added Catppuccin themes
+  ([#1411](https://github.com/giscus/giscus/pull/1411)).
+
 ## 2024-11-28
 
 ### Added

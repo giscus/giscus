@@ -41,6 +41,10 @@ export const availableThemes = [
   'gruvbox',
   'gruvbox_dark',
   'gruvbox_light',
+  'catppuccin_latte',
+  'catppuccin_frappe',
+  'catppuccin_macchiato',
+  'catppuccin_mocha',
   'custom',
 ] as const;
 

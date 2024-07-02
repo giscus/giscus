@@ -87,6 +87,10 @@
   "theme=gruvbox": "Gruvbox",
   "theme=gruvbox_dark": "Gruvbox Dark",
   "theme=gruvbox_light": "Gruvbox Light",
+  "theme=catppuccin_latte": "Catppuccin Latte",
+  "theme=catppuccin_frappe": "Catppuccin Frappé",
+  "theme=catppuccin_macchiato": "Catppuccin Macchiato",
+  "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=custom": "自訂（實驗功能）",
 
   "enableGiscus": "啟用 giscus",

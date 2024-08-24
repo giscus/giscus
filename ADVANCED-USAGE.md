@@ -200,7 +200,7 @@ web page:
   >
   <meta
     name="giscus:description"
-    content="Let visitors leave comments and reactions on your website via GitHub!"
+    content="Please click the link above to see the post."
   >
   <!-- ... -->
 </head>

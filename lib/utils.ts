@@ -29,7 +29,7 @@ export function getOriginHost(origin: string) {
     const url = new URL(origin);
     url.searchParams.delete('giscus');
     return { origin: url.toString(), originHost: url.origin };
-  } catch (err) {
+  } catch {
     return { origin: '', originHost: '' };
   }
 }
@@ -50,7 +50,7 @@ export function cleanSessionParam(url: string) {
     const newUrl = new URL(url);
     newUrl.searchParams.delete('giscus');
     return newUrl.toString();
-  } catch (err) {
+  } catch {
     return url;
   }
 }
@@ -105,7 +105,7 @@ export async function hasStorageAccess() {
   if (await document.hasStorageAccess()) return true;
   try {
     await document.requestStorageAccess();
-  } catch (err) {
+  } catch {
     // The request can only be made under very specific conditions.
   }
   return await document.hasStorageAccess();

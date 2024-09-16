@@ -89,6 +89,7 @@
   const locale = attributes.lang ? `/${attributes.lang}` : '';
   const src = `${giscusOrigin}${locale}/widget?${new URLSearchParams(params)}`;
   const loading = attributes.loading === 'lazy' ? 'lazy' : undefined;
+  const onload = attributes.callback ?? undefined;
 
   // Set up iframe element
   const iframeElement = document.createElement('iframe');
@@ -99,6 +100,7 @@
     allow: 'clipboard-write',
     src,
     loading,
+    onload,
   };
   Object.entries(iframeAttributes).forEach(
     ([key, value]) => value && iframeElement.setAttribute(key, value),

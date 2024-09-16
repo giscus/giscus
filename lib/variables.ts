@@ -38,6 +38,10 @@ export const availableThemes = [
   'noborder_gray',
   'cobalt',
   'purple_dark',
+  'catppuccin_latte',
+  'catppuccin_frappe',
+  'catppuccin_macchiato',
+  'catppuccin_mocha',
   'custom',
 ] as const;
 

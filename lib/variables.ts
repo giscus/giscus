@@ -45,6 +45,7 @@ export const availableThemes = [
   'catppuccin_frappe',
   'catppuccin_macchiato',
   'catppuccin_mocha',
+  'fro',
   'custom',
 ] as const;
 

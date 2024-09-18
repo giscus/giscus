@@ -26,6 +26,9 @@ major updates to the project.
 - Added Catppuccin themes
   ([#1411](https://github.com/giscus/giscus/pull/1411)).
 
+- Added Fro theme
+  ([#1464](https://github.com/giscus/giscus/pull/1464)).
+
 ### Fixed
 
 - Ensure links and link-like buttons are underlined

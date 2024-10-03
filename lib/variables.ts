@@ -38,6 +38,7 @@ export const availableThemes = [
   'noborder_gray',
   'cobalt',
   'purple_dark',
+  'fro',
   'custom',
 ] as const;
 

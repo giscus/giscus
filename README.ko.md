@@ -4,11 +4,11 @@
 
 - [오픈 소스][repo]입니다. 🌏
 - 사용자 추적도, 광고도 없습니다. 항상 무료입니다. 📡 🚫
-- 데이터베이스가 필요없습니다. 모든 데이터는 GitHub Discussions에 저장됩니다. :octocat:
+- 데이터베이스가 필요 없습니다. 모든 데이터는 GitHub Discussions에 저장됩니다. :octocat:
 - [커스텀 테마 제작][creating-custom-themes]을 지원합니다! 🌗
 - [여러 언어][multiple-languages]를 지원합니다. 🌐
 - [여러 설정][advanced-usage]을 제공합니다. 🔧
-- 자동으로 GitHub에서 새로운 코멘트와 수정사항을 반영합니다. 🔃
+- 자동으로 GitHub에서 새로운 댓글과 수정 사항을 반영합니다. 🔃
 - [셀프 호스팅이 가능합니다][self-hosting]! 🤳
 
 > **주의:**\
@@ -40,7 +40,7 @@ giscus를 사용하신다면, [GitHub에서 giscus를 🌟 별표][repo]하신 �
 
 [고급 사용법 가이드][advanced-usage]를 따라서 추가적인 설정(예를 들면, 특정 origin 허가하기)을 할 수 있습니다.
 
-React, Vue, 또는 Svelte와 함께 giscus를 사용하고 싶다면, [giscus component library][giscus-component]를 확인해보세요.
+React, Vue, 또는 Svelte와 함께 giscus를 사용하고 싶다면, [giscus component library][giscus-component]를 확인해 보세요.
 
 ## 전환하기
 
@@ -76,7 +76,7 @@ GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utteranc
 
 ---
 
-이 README는 다음 언어로도 제공됩니다. :
+이 README 는 다음 언어로도 제공됩니다. :
 
 - [Arabic (العربية)](README.ar.md)
 - [Català](README.ca.md)

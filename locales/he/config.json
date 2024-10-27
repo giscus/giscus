@@ -74,7 +74,9 @@
   "theme=noborder_dark": "NoBorder Dark",
   "theme=noborder_gray": "NoBorder Gray",
   "theme=purple_dark": "Purple Dark",
+  "theme=fro": "Fro",
   "theme=custom": "המתאמה אישית (ניסיוני)",
+
   "enableGiscus": "הפעל giscus",
   "addTheFollowingScriptTag": "הוסף את התגית <code><script></code> לתבנית האתר שלכם במקום שבו תרצו שהתגובות יופיעו. אם קיים אלמנט עם המזהה (class) <code>giscus</code>, התגובות יופיעו במקום זה.",
   "youHaveNotConfiguredRepositoryCategory": "לא הגדרת את <arepo>המאגר</arepo> ו/או <acategory>קבוצה</acategory>. הערכים עבור השדות הבאים יופיעו לאחר מילוי השדות הנדרשים.",

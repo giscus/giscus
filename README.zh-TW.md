@@ -4,7 +4,7 @@
 
 - [開放原始碼][repo]。🌏
 - 無追蹤，無廣告，永久免費。📡 🚫
-- 無需資料庫。全部資料均儲存在 GitHub Discussions 中。:octocat:
+- 無需資料庫。全部資料均儲存在 GitHub Discussions 中。 :octocat:
 - 支援[自訂佈景主題][creating-custom-themes]！🌗
 - 支援[多語言][multiple-languages]。🌐
 - [高度彈性][advanced-usage]。🔧

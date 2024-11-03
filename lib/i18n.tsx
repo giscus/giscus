@@ -44,6 +44,7 @@ export interface GiscusTranslate<I18Namespace = I18n> {
 
 export const availableLanguages = {
   ar: 'العربية',
+  bg: 'български',
   ca: 'Català',
   da: 'Dansk',
   de: 'Deutsch',
@@ -142,6 +143,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
 
 const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', dateFormat),
+  bg: new Intl.DateTimeFormat('bg', dateFormat),
   ca: new Intl.DateTimeFormat('ca', dateFormat),
   da: new Intl.DateTimeFormat('da', dateFormat),
   de: new Intl.DateTimeFormat('de', dateFormat),
@@ -180,6 +182,7 @@ const shortDateFormat: Intl.DateTimeFormatOptions = {
 
 const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', shortDateFormat),
+  bg: new Intl.DateTimeFormat('bg', shortDateFormat),
   ca: new Intl.DateTimeFormat('ca', shortDateFormat),
   da: new Intl.DateTimeFormat('da', shortDateFormat),
   de: new Intl.DateTimeFormat('de', shortDateFormat),
@@ -219,6 +222,7 @@ const shortDateYearFormat: Intl.DateTimeFormatOptions = {
 
 const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', shortDateYearFormat),
+  bg: new Intl.DateTimeFormat('bg', shortDateYearFormat),
   ca: new Intl.DateTimeFormat('ca', shortDateYearFormat),
   da: new Intl.DateTimeFormat('da', shortDateYearFormat),
   de: new Intl.DateTimeFormat('de', shortDateYearFormat),
@@ -258,6 +262,7 @@ const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
 
 const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat> = {
   ar: new Intl.RelativeTimeFormat('ar', relativeTimeFormat),
+  bg: new Intl.RelativeTimeFormat('bg', relativeTimeFormat),
   ca: new Intl.RelativeTimeFormat('ca', relativeTimeFormat),
   da: new Intl.RelativeTimeFormat('da', relativeTimeFormat),
   de: new Intl.RelativeTimeFormat('de', relativeTimeFormat),

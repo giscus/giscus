@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} реакции",
+    "one": "{{count}} реакция",
+    "other": "{{count}} реакции"
+  },
+  "comment": "Коментиране",
+  "comments": {
+    "0": "{{count}} коментара",
+    "one": "{{count}} коментар",
+    "other": "{{count}} коментара"
+  },
+  "reply": "Отговаряне",
+  "replies": {
+    "0": "{{count}} отговора",
+    "one": "{{count}} отговор",
+    "other": "{{count}}{{plus}} отговора"
+  },
+  "upvotes": {
+    "0": "{{count}} палци нагоре",
+    "one": "{{count}} палец нагоре",
+    "other": "{{count}} палци нагоре"
+  },
+  "hiddenItems": {
+    "0": "{{count}} скрити елемента",
+    "one": "{{count}} скрит елемент",
+    "other": "{{count}} скрити елемента"
+  },
+  "genericError": "Възникна грешка: {{message}}",
+  "loadMore": "Заредете повече",
+  "loading": "Зарежда се",
+  "loadingComments": "Коментарите се зареждат…",
+  "loadingPreview": "Визуализацията се зарежда…",
+  "poweredBy": "– задвижвано от <a>giscus</a>",
+  "oldest": "Най-стари",
+  "newest": "Най-нови",
+  "showPreviousReplies": {
+    "0": "Показване на {{count}} предишни отговора",
+    "one": "Показване на {{count}} предишен отговор",
+    "other": "Показване на {{count}} предишни отговора"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Вижте {{count}} предишни отговора в GitHub",
+    "one": "Вижте {{count}} предишен отговор в GitHub",
+    "other": "Вижте {{count}} предишни отговора в GitHub"
+  },
+  "edited": "редактирано",
+  "thisCommentWasDeleted": "Този коментар е изтрит.",
+  "thisCommentWasMinimized": "Този коментар е минимизиран.",
+  "thisCommentWasHidden": "Този коментар е скрит.",
+  "write": "Писане",
+  "preview": "Визуализация",
+  "enableFixedWidth": "Активиране на шрифт с фиксирана ширина (едноразмерен) в редактора",
+  "disableFixedWidth": "Деактивиране на шрифта с фиксирана ширина (едноразмерен) в редактора",
+  "lastEditedAt": "Последна редакция на {{date}}",
+  "writeAComment": "Напишете коментар",
+  "signInToComment": "Влезте, за да коментирате",
+  "stylingWithMarkdownIsSupported": "Поддържа се стилизиране с Маркдаун",
+  "signOut": "Излизане",
+  "cancel": "Отказ",
+  "signInWithGitHub": "Влизане с GitHub",
+  "writeAReply": "Напишете отговор",
+
+  "upvote": "Палец нагоре",
+  "youMustBeSignedInToUpvote": "Трябва да сте влезли, за да дадете палец нагоре.",
+  "addReactions": "Добавяне на реакции",
+  "pleaseWait": "Моля, изчакайте…",
+  "pickYourReaction": "Изберете вашата реакция",
+  "addTheReaction": "Добавяне на реакция {{reaction}}",
+  "removeTheReaction": "Премахване на реакцията {{reaction}}",
+  "signInToAddYourReaction": "<a>Влезте</a>, за да добавите реакцията си.",
+  "youMustBeSignedInToAddReactions": "Трябва да сте влезли, за да добавяте реакции.",
+  "peopleReactedWith": {
+    "0": "{{count}} души реагираха с {{emoji}} {{reaction}}",
+    "one": "{{count}} човек реагира с {{emoji}} {{reaction}}",
+    "other": "{{count}} души реагираха с {{emoji}} {{reaction}}"
+  },
+  "emoji": "емоджи",
+  "nothingToPreview": "Няма нищо за визуализиране",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Смях",
+  "HOORAY": "Ура",
+  "CONFUSED": "Объркан",
+  "HEART": "Любов",
+  "ROCKET": "Ракета",
+  "EYES": "Очи",
+
+  "COLLABORATOR": "Съмишленик",
+  "CONTRIBUTOR": "Сътрудник",
+  "FIRST_TIMER": "За първи път",
+  "FIRST_TIME_CONTRIBUTOR": "Сътрудник за първи път",
+  "MANNEQUIN": "Манекен",
+  "MEMBER": "Участник",
+  "NONE": "Никое",
+  "OWNER": "Притежател",
+  "APP": "Приложение"
+}

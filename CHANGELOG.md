@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2024-11-28
+
+### Added
+
+- Added Bulgarian localization
+  ([#1544](https://github.com/giscus/giscus/pull/1544)).
+
 ## 2024-06-08
 
 ### Changed

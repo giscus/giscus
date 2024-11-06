@@ -1,30 +1,30 @@
 # [giscus][giscus]
 
-Um sistema de comentários mantido por [Discussões do GitHub][discussions]. Permita que visitantes deixem comentários e reações no seu site através do GitHub! Fortemente inspirado por [utterances][utterances].
+Systém komentářů založený na [GitHub Discussions][discussions]. Nechte návštěvníky zanechávat komentáře a reakce na vašem webu prostřednictvím GitHub! Silně inspirováno [utterances][utterances].
 
-- [Código Aberto][repo]. 🌏
-- Sem rastreamento, sem anúncios, sempre grátis. 📡 🚫
-- Nenhum banco de dados necessário. Todos os dados são armazenados no GitHub Discussions. :octocat:
-- Suporta [temas personalizados][creating-custom-themes]! 🌗
-- Suporta [diversos idiomas][multiple-languages]. 🌐
-- [Amplamente configurável][advanced-usage]. 🔧
-- Automaticamente procura novos comentários e edições do GitHub. 🔃
-- [Pode ser hospedado por conta própria][self-hosting]! 🤳
+- [Open source][repo]. 🌏
+- Žádné trackování, žádné reklamy, vždy zdarma. 📡 🚫
+- Není potřeba žádná databáze. Všechna data jsou uložena v GitHub Discussions. :octocat:
+- Podporuje [vlastní barevná schémata][creating-custom-themes]! 🌗
+- Podporuje [více jazyků][multiple-languages]. 🌐
+- [Rozsáhle konfigurovatelné][advanced-usage]. 🔧
+- Automaticky načítá nové komentáře a úpravy z GitHub. 🔃
+- [Lze hostovat na vlastním serveru][self-hosting]! 🤳
 
-> **Nota**
-> giscus ainda está em desenvolvimento. O GitHub também está ativamente desenvolvendo Discussions e suas API. Desta forma, algumas características do giscus podem quebrar ou mudar no decorrer do tempo.
+> **Poznámka**
+> giscus je stále ve fázi aktivního vývoje. GitHub také stále aktivně vyvíjí Discussions a jeho API. Některé funkce giscusu se tedy mohou časem rozbít nebo změnit.
 
-## Como funciona
+## Jak to funguje
 
-Quando o giscus é carregado, a [API de pesquisa das Discussões do GitHub][search-api] é usada para encontrar as discussões associadas com a página baseado no mapeamento escolhido (URL, `pathname`, `<title>`, etc.). Se uma discussão correspondente não for encontrada, o bot do giscus irá criar automaticamente uma discussão na primeira vez que alguém deixar um comentário ou reação.
+Při načtení nástroje giscus se použije [GitHub Discussions search API][search-api] k vyhledání diskuse spojené se stránkou na základě zvoleného mapování (URL, `pathname`, `<title>` atd.). Pokud odpovídající diskusi nenajde, giscus bot automaticky vytvoří diskusi, jakmile někdo poprvé zanechá komentář nebo reakci.
 
-Para comentar, visitantes devem autorizar o [app giscus][giscus-app] a [postar em seu nome][authorization] usando o fluxo GitHub OAuth. Alternativamente, visitantes podem comentar diretamente no GitHub Discussion. Você pode moderar comentários no GitHub.
+Aby mohli návštěvníci komentovat, musí autorizovat [aplikaci giscus][giscus-app], aby [psala jejich jménem][authorization] pomocí GitHub OAuth. Případně mohou návštěvníci komentovat přímo v GitHub Discussion. Komentáře můžete moderovat na GitHub.
 
-[giscus]: https://giscus.app/pt
+[giscus]: https://giscus.app
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
-[usos avançados]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
+[advanced-usage]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
 [creating-custom-themes]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme
 [multiple-languages]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#adding-localizations
 [self-hosting]: https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md
@@ -34,19 +34,19 @@ Para comentar, visitantes devem autorizar o [app giscus][giscus-app] a [postar e
 
 <!-- configuration -->
 
-Se você estiver usando giscus, considere [dar uma 🌟 no giscus no GitHub][repo] e adicionar o tópico [`giscus`][giscus-topic] [no seu repositório][topic-howto]! 🎉
+Pokud používáte giscus, zvažte [zahvězdičkování 🌟 giscus na GitHub][repo] a přidání tématu [`giscus`][giscus-topic] [do svého repozitáře][topic-howto]! 🎉
 
-## Usos Avançados
+## Pokročilé použití
 
-Você pode adicionar configurações adicionais (por exemplo permitindo origens específicas) seguindo o [guia de uso avançado][advanced-usage].
+Další konfigurace (např. povolení konkrétních domén) můžete přidat podle [průvodce pokročilým použitím][advanced-usage].
 
-Para usar o giscus com React, Vue, ou Svelte, olhe a [biblioteca de componentes do giscus][giscus-component].
+Chcete-li používat giscus s React, Vue nebo Svelte, podívejte se na [knihovnu komponent giscus][giscus-component].
 
-## Migrando
+## Migrace
 
-Caso você tenha utilizado outros sistemas que usam os Problemas do GitHub (por exemplo [utterances][utterances], [gitalk][gitalk]), você pode [você pode converter problemas existentes em discussões][convert]. Após a conversão, confira que o mapeamento entre títulos de discussões e páginas está correto, então o giscus irá utilizar as discussões automaticamente.
+Pokud jste dříve používali jiné systémy, které využívají GitHub Issues (např. [utterances][utterances], [gitalk][gitalk]), můžete [převést stávající issues na discussions][convert]. Po převodu se jen ujistěte, že mapování mezi názvy diskusí a stránkami je správné, pak bude giscus automaticky používat Discussions.
 
-## Sites que usam o giscus
+## Stránky používající giscus
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
@@ -54,9 +54,9 @@ Caso você tenha utilizado outros sistemas que usam os Problemas do GitHub (por 
 - [Tech Debt Burndown Podcast][techdebtburndown]
 - [**and many more!**][giscus-topic]
 
-## Contribuindo
+## Přispívání
 
-Veja [CONTRIBUTING.md][contributing]
+Viz [CONTRIBUTING.md][contributing]
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus
@@ -76,7 +76,7 @@ Veja [CONTRIBUTING.md][contributing]
 
 ---
 
-Esse README também está disponível em:
+Toto README je k dispozici v:
 
 - [Arabic (العربية)](README.ar.md)
 - [български](README.bg.md)

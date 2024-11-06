@@ -3,6 +3,7 @@ module.exports = {
     'ar',
     'bg',
     'ca',
+    'cs',
     'da',
     'de',
     'en',

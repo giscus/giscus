@@ -14,6 +14,9 @@ major updates to the project.
 - Added Bulgarian localization
   ([#1544](https://github.com/giscus/giscus/pull/1544)).
 
+- Added Czech localization
+  ([#1561](https://github.com/giscus/giscus/pull/1561)).
+
 ## 2024-06-08
 
 ### Changed

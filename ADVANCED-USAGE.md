@@ -156,6 +156,19 @@ your website. Make sure that your users are aware of this.
 
 For more details, see [creating new themes][creating-new-themes].
 
+### `data-callback`
+
+The callback function will be invoked after loading the `iframe`.
+
+```html
+<script src="https://giscus.app/client.js"
+        data-repo="giscus/giscus"
+        ...
+        data-callback="console.log('iframe loaded')"
+        ...>
+</script>
+```
+
 ## `<meta>` tags
 
 Your website can define additional `<meta>` tags to help giscus gather the

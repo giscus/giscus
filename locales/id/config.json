@@ -77,6 +77,9 @@
   "theme=noborder_dark": "NoBorder Dark",
   "theme=noborder_gray": "NoBorder Gray",
   "theme=purple_dark": "Purple Dark",
+  "theme=gruvbox": "Gruvbox",
+  "theme=gruvbox_dark": "Gruvbox Dark",
+  "theme=gruvbox_light": "Gruvbox Light",
   "theme=custom": "Buat sendiri (eksperimental)",
 
   "enableGiscus": "Aktifkan giscus",

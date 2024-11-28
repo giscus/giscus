@@ -38,6 +38,9 @@ export const availableThemes = [
   'noborder_gray',
   'cobalt',
   'purple_dark',
+  'gruvbox',
+  'gruvbox_dark',
+  'gruvbox_light',
   'custom',
 ] as const;
 

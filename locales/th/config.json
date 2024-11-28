@@ -77,6 +77,7 @@
   "theme=noborder_dark": "NoBorder Dark",
   "theme=noborder_gray": "NoBorder Gray",
   "theme=purple_dark": "Purple Dark",
+  "theme=fro": "Fro",
   "theme=custom": "กำหนดเอง (การทดลอง)",
 
   "enableGiscus": "เปิดใช้งาน giscus",

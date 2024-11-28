@@ -77,6 +77,10 @@
   "theme=noborder_dark": "SenLimo Malhela",
   "theme=noborder_gray": "SenLimo Griza",
   "theme=purple_dark": "Purple Dark",
+  "theme=catppuccin_latte": "Catppuccin Latte",
+  "theme=catppuccin_frappe": "Catppuccin Frappé",
+  "theme=catppuccin_macchiato": "Catppuccin Macchiato",
+  "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=custom": "Propra (eksperimenta)",
 
   "enableGiscus": "Ebligi giscus",

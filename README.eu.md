@@ -42,11 +42,12 @@ Puedes agregar configuraciones adicionales (por ejemplo, permitir orígenes espe
 
 Para usar giscus con React, Vue o Svelte, consulta la [biblioteca de componentes de giscus][giscus-component].
 
-## Migrando
+## Migratzeko
 
-Si has utilizado anteriormente otros sistemas que usan GitHub Issues (p.ej. [utterances][utterances], [gitalk][gitalk]), puedes [convertir los issues existentes en discusiones][convert]. Después de la conversión, asegúrate de que el mapeo entre los títulos de la discusión y las páginas sea correcto, entonces giscus utilizará automáticamente las discusiones.
+Aurretik GitHub Issues erabiltzen duten sistemak erabili badituzu (adibidez, [utterances][utterances], [gitalk][gitalk]), [issue-ak eztabaida bilakatu][convert] ditzakezu. 
+Aldaketa hori egin ondoren, ziurta zaitez eztabaiden izenburuaren eta webgunearen arteko lotura zuzena dela, giscus mezuak partekatzen hasiko da.
 
-## Sitios que usan giscus
+## Giscus erabiltzen duten guneak
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
@@ -54,9 +55,9 @@ Si has utilizado anteriormente otros sistemas que usan GitHub Issues (p.ej. [utt
 - [Tech Debt Burndown Podcast][techdebtburndown]
 - [**Y muchos más!**][giscus-topic]
 
-## Contribución
+## Lagundu
 
-Ver [CONTRIBUTING.md][contributing]
+Ikusi [CONTRIBUTING.md][contributing]
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus
@@ -76,7 +77,7 @@ Ver [CONTRIBUTING.md][contributing]
 
 ---
 
-Este archivo README está disponible en:
+README fitxategi hau hurrengo hizkuntzetan eskaintzen da:
 
 - [Arabic (العربية)](README.ar.md)
 - [български](README.bg.md)
@@ -87,6 +88,7 @@ Este archivo README está disponible en:
 - [English](README.md)
 - [Esperanto](README.eo.md)
 - [Español](README.es.md)
+- [Euskera](README.eu.md)
 - [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
 - [Ελληνικά](README.gr.md)

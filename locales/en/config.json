@@ -54,7 +54,7 @@
   "placeCommentBoxAboveComments": "Place the comment box above the comments",
   "commentInputBoxWillBePlacedAboveComments": "The comment input box will be placed above the comments, so that users can leave a comment without scrolling to the bottom of the discussion.",
   "loadCommentsLazily": "Load the comments lazily",
-  "loadingCommentsWillBeDeferred": "Loading of the comments will be deferred until the user scrolls near the comments container. This is done by adding <a><code>loading=\"lazy\"</code></a> to the <code><iframe></code> element.",
+  "loadingCommentsWillBeDeferred": "Loading of the comments will be deferred until the user scrolls near the comments container. This is done by adding <a><code>loading=\"lazy\"</code></a> to the <code><iframe></code> ment.",
 
   "theme": "Theme",
   "chooseAThemeThatMatches": "Choose a theme that matches your website. Can't find one that does? <a>Contribute</a> a new theme.",
@@ -77,7 +77,7 @@
   "theme=noborder_dark": "NoBorder Dark",
   "theme=noborder_gray": "NoBorder Gray",
   "theme=purple_dark": "Purple Dark",
-  "theme=custom": "Custom (experimental)",
+  "theme=custom": "Custom (experimental)",ele
 
   "enableGiscus": "Enable giscus",
   "addTheFollowingScriptTag": "Add the following <code><script></code> tag to your website's template where you want the comments to appear. If an element with the class <code>giscus</code> exists, the comments will be placed there instead.",

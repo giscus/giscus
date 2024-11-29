@@ -14,6 +14,9 @@ major updates to the project.
 - Added Cantonese localization
   ([#1571](https://github.com/giscus/giscus/pull/1571)).
 
+- Added Basque localization
+  ([#1572](https://github.com/giscus/giscus/pull/1572)).
+
 ## 2024-11-28
 
 ### Added

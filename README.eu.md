@@ -1,26 +1,32 @@
 # [giscus][giscus]
 
-A comments system powered by [GitHub Discussions][discussions]. Let visitors leave comments and reactions on your website via GitHub! Heavily inspired by [utterances][utterances].
+[GitHub Eztabaidak][discussions] ahalbidetutako weborrientzako iradokizunen sistema.
+Weborria bisitazen dutenei iradokizunak idazteko eta erreakzioak uzteko aukera eman GitHub plataformaren bitartez! [utterances][utterances] plataforman inspiratuta.
 
-- [Open source][repo]. 🌏
-- No tracking, no ads, always free. 📡 🚫
-- No database needed. All data is stored in GitHub Discussions. :octocat:
-- Supports [custom themes][creating-custom-themes]! 🌗
-- Supports [multiple languages][multiple-languages]. 🌐
-- [Extensively configurable][advanced-usage]. 🔧
-- Automatically fetches new comments and edits from GitHub. 🔃
-- [Can be self-hosted][self-hosting]! 🤳
+- [Kode irekia][repo]. 🌏
+- Jarraipenik gabe, anuntziorik gabe, doan betirako. 📡 🚫
+- Ez da datu-baserik behar. Datu guztiak GitHub Eztabaidan gordetzen dira. :octocat:
+- [Estiloa pertsonalizatu][creating-custom-themes] daiteke! 🌗
+- [Hainbat hizkutzetan][multiple-languages]. 🌐
+- [Erabilera aurreratuak][advanced-usage]. 🔧
+- Iradokizun eta eztabaida eguneratuak jaso GitHub Eztabaidak orritik. 🔃
+- [Puede ser autohospedado][self-hosting]! 🤳
 
-> **Note**
-> giscus is still under active development. GitHub is also still actively developing Discussions and its API. Thus, some features of giscus may break or change over time.
+> **Oharra:**\
+> giscus eguneratze prozesuan dago.
+> GitHub plataformak ere Eztabaida funtzionalitatea eta APIa aktiboki eguneratzen ditu.
+> Beraz, giscusen ezaugarri batzuk aldaketak izan ditzakete edo gaizki funtzionatu dezakete.
 
-## How it works
+## Nola funtzionatzen du
 
-When giscus loads, the [GitHub Discussions search API][search-api] is used to find the Discussion associated with the page based on a chosen mapping (URL, `pathname`, `<title>`, etc.). If a matching discussion cannot be found, the giscus bot will automatically create a discussion the first time someone leaves a comment or reaction.
+giscus kargatzerakoan, [GitHub-en bilaketa APIa][search-api] erabiltzen da webguneari lotutako eztabaida aurkitzeko (URL, `pathname`, `<title>`, eta abar).
+Eztabaidarik ez bada aurkitzen, giscus bot-ak webguneari lotutako eztabaida berri bat sortuko du behin erabiltzaireren batek iradokizun bat uzten duentean.
 
-To comment, visitors must authorize the [giscus app][giscus-app] to [post on their behalf][authorization] using the GitHub OAuth flow. Alternatively, visitors can comment on the GitHub Discussion directly. You can moderate the comments on GitHub.
+Iradokizunak idazteko, bisitariek [giscus aplikazioa][giscus-app] beraien izenean publikatzeko baimendu behar dute [GitHub OAuth][authorization] baimenen protokoloa erabilita.
+Aukeran, bisitariek GitHub Eztabaidan bertan publikatu dezakete.
+Iradokizuznak GitHub plataforman moderatu daitezke.
 
-[giscus]: https://giscus.app
+[giscus]: https://giscus.app/es
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
@@ -34,29 +40,31 @@ To comment, visitors must authorize the [giscus app][giscus-app] to [post on the
 
 <!-- configuration -->
 
-If you're using giscus, consider [starring 🌟 giscus on GitHub][repo] and adding the [`giscus`][giscus-topic] topic [to your repository][topic-howto]! 🎉
+giscus erabiltzen baduzu, [GitHub-en gomendatzea 🌟][repo] eta [zure errepositorioaren][topic-howto] mintzagaitean [`giscus`][giscus-topic] jartzea eskertzen da! 🎉
 
-## Advanced usage
+## Erabilera aurreratua
 
-You can add additional configurations (e.g. allowing specific origins) by following the [advanced usage guide][advanced-usage].
+[Erabilera aurreratuaren gida][advanced-usage] ikusi ezarpen aurreratuak erabiltzeko, adibidez, jatorri zehatzetako iradokizunak baimentzeko.
 
-To use giscus with React, Vue, or Svelte, check out the [giscus component library][giscus-component].
+giscusen erabilera React, Vue edo Svelte plataformetan nola funtzionatzen duen [giscusen osagarrien bibliotekan][giscus-component] topa daiteke.
 
-## Migrating
+## Migratzeko
 
-If you've previously used other systems that utilize GitHub Issues (e.g. [utterances][utterances], [gitalk][gitalk]), you can [convert the existing issues into discussions][convert]. After the conversion, just make sure that the mapping between the discussion titles and the pages are correct, then giscus will automatically use the discussions.
+Lehenagotik GitHub Issues sistema erabiltzen duten beste herraminta batzuk erabili badituzu, adibidez, [utterances][utterances], [gitalk][gitalk] eta abar, [issues-ak eztabaida bilakatu][convert] ditzakezu.
+Eztabaiden izenburuaren eta giscusen arteko lotura egokia dela ziurtatu bilakaeraren ondoren.
+Horrela, giscus aplikazioak estabaidak automatikoki bilatzeko aukera izango du.
 
-## Sites using giscus
+## giscus erabitzen duten webguneak
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**and many more!**][giscus-topic]
+- [**Eta askoz gehiago!**][giscus-topic]
 
-## Contributing
+## Lagundu
 
-See [CONTRIBUTING.md][contributing]
+Ikusi [CONTRIBUTING.md][contributing]
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus
@@ -76,10 +84,10 @@ See [CONTRIBUTING.md][contributing]
 
 ---
 
-This README is available in:
+README fitxategia hizkuntza ezberdinetan topa daiteke:
 
 - [Arabic (العربية)](README.ar.md)
-- [Bulgarian (български)](README.bg.md)
+- [български](README.bg.md)
 - [Català](README.ca.md)
 - [Čeština](README.cs.md)
 - [Dansk](README.da.md)
@@ -113,6 +121,6 @@ This README is available in:
 - [繁體中文](README.zh-TW.md)
 - [香港繁體](README.zh-HK.md)
 
-[![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
+[![Vercel-ek garatua](public/powered-by-vercel.svg)][vercel]
 
 [vercel]: https://vercel.com/?utm_source=giscus&utm_campaign=oss

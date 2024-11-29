@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} erreakzio",
+    "one": "Erreakzio {{count}}",
+    "other": "{{count}} erreakzio"
+  },
+  "comment": "Iruzkina idatzi",
+  "comments": {
+    "0": "{{count}} iruzkin",
+    "one": "Iruzkin {{count}}",
+    "other": "{{count}} iruzkin"
+  },
+  "reply": "Erantzun",
+  "replies": {
+    "0": "{{count}} erantzun",
+    "one": "Erantzun {{count}}",
+    "other": "{{count}}{{plus}} erantzun"
+  },
+  "upvotes": {
+    "0": "{{count}} aldeko boto",
+    "one": "Aldeko boto {{count}}",
+    "other": "{{count}} aldeko boto"
+  },
+  "hiddenItems": {
+    "0": "{{count}} ezkutuko elementu",
+    "one": "Ezkutuko elementu {{count}}",
+    "other": "{{count}} ezkutuko elementu"
+  },
+  "genericError": "Errore bat gertatu da: {{message}}",
+  "loadMore": "Kargatu gehiago",
+  "loading": "Kargatzen",
+  "loadingComments": "Iruzkinak kargatzen…",
+  "loadingPreview": "Aurrebista kargatzen…",
+  "poweredBy": "– <a>Giscus</a>-ek garatua",
+  "oldest": "Zaharrena",
+  "newest": "Berriena",
+  "showPreviousReplies": {
+    "0": "Erakutsi aurreko {{count}} erantzunak",
+    "one": "Erakutsi aurreko erantzun {{count}}",
+    "other": "Erakutsi aurreko {{count}} erantzunak"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Ikusi aurreko {{count}} erantzunak GitHub-en",
+    "one": "Ikusi aurreko erantzun {{count}} GitHub-en",
+    "other": "Ikusi aurreko {{count}} erantzunak GitHub-en"
+  },
+  "edited": "editatuta",
+  "thisCommentWasDeleted": "Iruzkin hau ezabatu egin da.",
+  "thisCommentWasMinimized": "Iruzkin hau minimizatu egin da.",
+  "thisCommentWasHidden": "Iruzkin hau ezkutatu egin da.",
+  "write": "Idatzi",
+  "preview": "Aurreikusi",
+  "enableFixedWidth": "Zabalera bakarreko letra-tipoa (monospace) gaitu editorean",
+  "disableFixedWidth": "Zabalera bakarreko letra-tipoa (monospace) desgaitu editorean",
+  "lastEditedAt": "Azken aldiz aldatua: {{date}}",
+  "writeAComment": "Iradokizun bat idatzi",
+  "signInToComment": "Iradokizunak idazteko hasi saioa",
+  "stylingWithMarkdownIsSupported": "Markdown idazkera estiloa onartzen da",
+  "signOut": "Saioa bukatu",
+  "cancel": "Utzi",
+  "signInWithGitHub": "Saioa hasi GitHub bidez",
+  "writeAReply": "Erantzun bat idatzi",
+
+  "upvote": "Aldeko botoa eman",
+  "youMustBeSignedInToUpvote": "Aldeko botoa emateko saioa hasi behar duzu.",
+  "addReactions": "Gehitu erreakzioak",
+  "pleaseWait": "Itxaron mesedez…",
+  "pickYourReaction": "Hautatu zure erreakzioa",
+  "addTheReaction": "Gehitu {{reaction}} erreakzioa",
+  "removeTheReaction": "Ezabatu {{reaction}} erreakzioa",
+  "signInToAddYourReaction": "Erreakzioa gehitzeko <a>hasi saioa</a>.",
+  "youMustBeSignedInToAddReactions": "Erreakzioak gehitzeko saioa hasi behar duzu.",
+  "peopleReactedWith": {
+    "0": "{{count}} pertsonek {{reaction}} {{emoji}}rekin erreakzionatu dute",
+    "one": "Pertsona {{count}}k {{reaction}} {{emoji}}rekin erreakzionatu du",
+    "other": "{{count}} pertsonek {{reaction}} {{emoji}}rekin erreakzionatu dute"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Ezer ez aurreukusteko",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Barrea",
+  "HOORAY": "Aupa!",
+  "CONFUSED": "Nahastua",
+  "HEART": "Bihotza",
+  "ROCKET": "Suziria",
+  "EYES": "Begiak",
+
+  "COLLABORATOR": "Kolaboratzailea",
+  "CONTRIBUTOR": "Laguntzailea",
+  "FIRST_TIMER": "Hasiberria",
+  "FIRST_TIME_CONTRIBUTOR": "Laguntzaile hasiberria",
+  "MANNEQUIN": "Manikina",
+  "MEMBER": "Kidea",
+  "NONE": "Batere ez",
+  "OWNER": "Jabea",
+  "APP": "App"
+}

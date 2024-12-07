@@ -1,22 +1,22 @@
 # [giscus][giscus]
 
-由 [GitHub Discussions][discussions] 驅動的留言系統。讓訪客借助 GitHub 在你的網站上留言和留下反應吧！本專案很大一部份是受 [utterances][utterances] 啟發。
+由 [GitHub Discussions][discussions] 驅動嘅留言系統。等訪客借助 GitHub 喺你嘅網站上面留言同留下反應啦！本專案好大一部份係受 [utterances][utterances] 啟發。
 
 - [開放原始碼][repo]。🌏
-- 無追蹤，無廣告，永久免費。📡 🚫
-- 無需資料庫。全部資料均儲存在 GitHub Discussions 中。 :octocat:
+- 冇追蹤，冇廣告，永久免費。 📡 🚫
+- 唔需要資料庫。所有資料都儲存喺 GitHub Discussions 中。 :octocat:
 - 支援[自訂佈景主題][creating-custom-themes]！🌗
 - 支援[多語言][multiple-languages]。🌐
 - [高度彈性][advanced-usage]。🔧
-- 自動從 GitHub 取得新留言（包含編輯）。🔃
+- 自動喺 GitHub 取得新留言（包括編輯) 。🔃
 - [可自架伺服器][self-hosting]！🤳
 
 > **注意：**\
-> giscus 仍活躍開發中。GitHub 也還在活躍地開發 Discussions 及其 API。因此，一些 giscus 的功能可能將隨時間而無法使用或改變。
+> giscus 仍然活躍開發中。 GitHub 亦都仲係活躍噉開發 Discussions 同佢嘅 API 。所以，一啲 giscus 嘅功能可能會隨時間而無法使用或者改變。
 
 ## 運作原理
 
-giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據選定的搜尋對應方式（如 URL、`pathname`、`<title>` 等）來搜尋與目前頁面相關的 discussion。如果找不到符合的 discussion，giscus bot 就會在第一次有人留言或反應時自動建立一則 discussion。
+giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據選定嘅搜尋對應方式（如 URL、`pathname`、`<title>` 等）嚟搜尋同目前頁面相關嘅 discussion。如果找不到符合的 discussion，giscus bot 就會在第一次有人留言或反應時自動建立一則 discussion。
 
 如要留言，訪客必須按照 GitHub OAuth 流程授權 [giscus app][giscus-app] [代表他發文][authorization]。或者訪客也可以直接在 GitHub Discussion 裡面留言。你可以在 GitHub 上管理留言。
 

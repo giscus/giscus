@@ -110,6 +110,7 @@ READMEは下記の言語で参照できます:
 - [O'zbek](README.uz.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
+- [香港繁體](README.zh-HK.md)
 
 [![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
 

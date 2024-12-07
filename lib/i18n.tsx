@@ -75,6 +75,7 @@ export const availableLanguages = {
   uz: "O'zbek",
   'zh-CN': '简体中文',
   'zh-TW': '繁體中文',
+  'zh-HK': '香港繁體',
 } as const;
 
 export const rtlLanguages = new Set(['ar', 'fa', 'he']);
@@ -175,6 +176,7 @@ const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   uz: new Intl.DateTimeFormat('uz', dateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', dateFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', dateFormat),
+  'zh-HK': new Intl.DateTimeFormat('zh-HK', dateFormat),
 };
 
 const shortDateFormat: Intl.DateTimeFormatOptions = {
@@ -215,6 +217,7 @@ const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   uz: new Intl.DateTimeFormat('uz', shortDateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateFormat),
+  'zh-HK': new Intl.DateTimeFormat('zh-HK', shortDateFormat),
 };
 
 const shortDateYearFormat: Intl.DateTimeFormatOptions = {
@@ -256,6 +259,7 @@ const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = 
   uz: new Intl.DateTimeFormat('uz', shortDateYearFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateYearFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateYearFormat),
+  'zh-HK': new Intl.DateTimeFormat('zh-HK', shortDateYearFormat),
 };
 
 const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
@@ -297,6 +301,7 @@ const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat>
   uz: new Intl.RelativeTimeFormat('uz', relativeTimeFormat),
   'zh-CN': new Intl.RelativeTimeFormat('zh-CN', relativeTimeFormat),
   'zh-TW': new Intl.RelativeTimeFormat('zh-TW', relativeTimeFormat),
+  'zh-HK': new Intl.RelativeTimeFormat('zh-HK', relativeTimeFormat),
 };
 
 export function useDateFormatter() {

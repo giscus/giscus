@@ -111,6 +111,7 @@ Ushbu README quyidagi tillarda mavjud:
 - [O'zbek](README.uz.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
+- [香港繁體](README.zh-HK.md)
 
 [![Vercel tomonidan qo'llab quvvatlanadi](public/powered-by-vercel.svg)][vercel]
 

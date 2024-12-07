@@ -1,26 +1,26 @@
 # [giscus][giscus]
 
-Egy hozzászólási rendszer, ami a [GitHub Discussions][discussions] adta lehetőségeket használja. Segítségével látogatóid hozzászólásokat és reakciókat hagyhatnak weboldaladon a GitHub által! Erősen inspirálta az [utterances][utterances].
+由 [GitHub Discussions][discussions] 驅動嘅留言系統。等訪客借助 GitHub 喺你嘅網站上面留言同留下反應啦！本專案好大一部份係受 [utterances][utterances] 啟發。
 
-- [Nyílt forráskódú][repo]. 🌏
-- Nincs követés, nincs hirdetés, mindig ingyenes. 📡 🚫
-- Nincs szükség adatbázisra. Minden adat a GitHub Discussions-ben tárolódik. :octocat:
-- Támogatja az [egyéni témákat][creating-custom-themes]! 🌗
-- Támogat [több nyelvet][multiple-languages]. 🌐
-- [Széleskörűen konfigurálható][advanced-usage]. 🔧
-- Automatikusan lekéri az új hozzászólásokat és szerkesztéseket a GitHubról. 🔃
-- [Önmagad is üzemeltetheted][self-hosting]! 🤳
+- [開放原始碼][repo]。🌏
+- 冇追蹤，冇廣告，永久免費。 📡 🚫
+- 唔需要資料庫。所有資料都儲存喺 GitHub Discussions 中。 :octocat:
+- 支援[自訂佈景主題][creating-custom-themes]！🌗
+- 支援[多語言][multiple-languages]。🌐
+- [高度彈性][advanced-usage]。🔧
+- 自動喺 GitHub 取得新留言（包括編輯) 。🔃
+- [可自架伺服器][self-hosting]！🤳
 
-> **Megjegyzés**
-> A giscus még aktív fejlesztés alatt áll. A GitHub is folyamatosan fejleszti a Discussions-t és annak API-ját. Így előfordulhat, hogy a giscus néhány funkciója idővel elromlik vagy megváltozik.
+> **注意：**\
+> giscus 仍然活躍開發中。 GitHub 亦都仲係活躍噉開發 Discussions 同佢嘅 API 。所以，一啲 giscus 嘅功能可能會隨時間而無法使用或者改變。
 
-## Hogyan működik
+## 運作原理
 
-Amikor a giscus betöltődik, a [GitHub Discussions keresési API][search-api] használatával megkeresi az oldalhoz tartozó beszélgetést egy választott leképezés alapján (URL, `pathname`, `<title>`, stb.). Ha nem található egyező beszélgetés, a giscus bot automatikusan létrehoz egyet, amikor valaki először hagy egy hozzászólást vagy reakciót.
+giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據選定嘅搜尋對應方式（如 URL、`pathname`、`<title>` 等）嚟搜尋同目前頁面相關嘅 discussion。如果找不到符合的 discussion，giscus bot 就會在第一次有人留言或反應時自動建立一則 discussion。
 
-A hozzászóláshoz a látogatóknak engedélyezniük kell a [giscus alkalmazást][giscus-app] számára a GitHub OAuth folyamat segítségével, hogy [a nevükben hozzászólhassanak][authorization]. Alternatív megoldásként a látogatók közvetlenül a GitHubon is hozzászólhatnak. A hozzászólásokat a GitHubon moderálhatod.
+如要留言，訪客必須按照 GitHub OAuth 流程授權 [giscus app][giscus-app] [代表他發文][authorization]。或者訪客也可以直接在 GitHub Discussion 裡面留言。你可以在 GitHub 上管理留言。
 
-[giscus]: https://giscus.app
+[giscus]: https://giscus.app/zh-HK
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
@@ -34,29 +34,29 @@ A hozzászóláshoz a látogatóknak engedélyezniük kell a [giscus alkalmazás
 
 <!-- configuration -->
 
-Ha giscust használsz, fontold meg a [giscus megcsillagozását 🌟 a GitHubon][repo] és a [`giscus`][giscus-topic] téma hozzáadását [a repódhoz][topic-howto]! 🎉
+如果你使用了 giscus，請考慮[在 GitHub 上 star 🌟 giscus][repo] 並[為你的repo][topic-howto] 加上 [`giscus`][giscus-topic] topic！🎉
 
-## Haladó beállítások
+## 進階用法
 
-További konfigurációt (pl. engedélyezett originek) adhatsz hozzá a [haladó használati útmutató][advanced-usage] követésével.
+你可以依照[進階用法指南][advanced-usage]添加其他設定（例如允許特定來源）。
 
-Ha giscust React, Vue vagy Svelte segítségével szeretnéd használni, nézd meg a [giscus komponens könyvtárat][giscus-component].
+要在 React、Vue 和 Svelte 中使用 giscus，請查看 [giscus components][giscus-component]。
 
-## Áttérés giscusra
+## 轉移
 
-Ha korábban olyan rendszereket használtál, amelyek a GitHub Issues-t használják (pl. [utterances][utterances], [gitalk][gitalk]), [átalakíthatod a meglévő issue-kat beszélgetésekké][convert]. Az átalakítás után csak győződj meg róla, hogy a beszélgetések címei és az oldalak közötti leképezés helyes, és a giscus automatikusan használni fogja a beszélgetéseket.
+如果你曾經使用過其它利用 GitHub Issue 的留言系統（如 [utterances][utterances]、[gitalk][gitalk]），你可以[把已有的 issue 轉換成 discussion][convert]。轉換後，只要確保 discussion 標題與頁面的對應關係正確，giscus 就會自動使用這些 discussion。
 
-## Weboldalak, amelyek giscust használnak
+## 正使用 giscus 的網站
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**és még sok más!**][giscus-topic]
+- [**還有更多！**][giscus-topic]
 
-## Hozzájárulás
+## 貢獻
 
-Lásd a [CONTRIBUTING.md][contributing] fájlt
+請查看 [CONTRIBUTING.md][contributing]。
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus
@@ -76,7 +76,7 @@ Lásd a [CONTRIBUTING.md][contributing] fájlt
 
 ---
 
-This README is available in:
+此 README 有以下語言版本：
 
 - [Arabic (العربية)](README.ar.md)
 - [български](README.bg.md)
@@ -112,6 +112,6 @@ This README is available in:
 - [繁體中文](README.zh-TW.md)
 - [香港繁體](README.zh-HK.md)
 
-[![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
+[![由 Vercel 技術支援](public/powered-by-vercel.svg)][vercel]
 
 [vercel]: https://vercel.com/?utm_source=giscus&utm_campaign=oss

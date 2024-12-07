@@ -110,6 +110,7 @@
 - [O'zbek](README.uz.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
+- [香港繁體](README.zh-HK.md)
 
 [![מופעל על ידי Vercel](public/powered-by-vercel.svg)][vercel]
 

@@ -2,7 +2,7 @@
   "configuration": "設定",
 
   "language": "語言",
-  "chooseLanguageGiscusDisplayed": "選擇 giscus 的顯示語言。找不到你的語言嗎？來<a>貢獻</a>一個！",
+  "chooseLanguageGiscusDisplayed": "選擇 giscus 嘅顯示語言。搵唔到你嘅語言？來<a>貢獻</a>一個！",
 
   "lang=en": "英語",
   "lang=fr": "法語",
@@ -100,5 +100,5 @@
   "[enterThemeCSSURLHere]": "[在此輸入佈景主題 CSS 檔案的網址]",
 
   "youCanCustomizeTheLayout": "你可以在嵌入的頁面中使用 <code>.giscus</code> 和 <code>.giscus-frame</code> css 選擇器來自訂容器樣式。",
-  "tryItOut": "試試看"
+  "tryItOut": "試下佢"
 }

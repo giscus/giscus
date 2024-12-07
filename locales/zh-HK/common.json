@@ -48,14 +48,14 @@
   "writeAReply": "寫回覆",
 
   "upvote": "贊同",
-  "youMustBeSignedInToUpvote": "你必須登入才能投票。",
+  "youMustBeSignedInToUpvote": "你必須要登入才能投票。",
   "addReactions": "加反應",
   "pleaseWait": "請稍候……",
   "pickYourReaction": "挑選您的反應",
   "addTheReaction": "表示 {{reaction}}",
   "removeTheReaction": "取消表示 {{reaction}}",
   "signInToAddYourReaction": "<a>登入</a>以送出反應。",
-  "youMustBeSignedInToAddReactions": "您必須登入才能送出反應。",
+  "youMustBeSignedInToAddReactions": "您必須要登入才能送出反應。",
   "peopleReactedWith": {
     "other": "{{count}} 人表示 {{reaction}}"
   },

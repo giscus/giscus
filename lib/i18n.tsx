@@ -75,6 +75,7 @@ export const availableLanguages = {
   uz: "O'zbek",
   'zh-CN': '简体中文',
   'zh-TW': '繁體中文',
+  'zh-HK': '香港繁體',
 } as const;
 
 export const rtlLanguages = new Set(['ar', 'fa', 'he']);

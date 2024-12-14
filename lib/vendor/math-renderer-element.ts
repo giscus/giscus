@@ -234,7 +234,7 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
   await configurationPromise;
 }
 
-function sanitizeClass(_: Element, data: DOMPurify.SanitizeAttributeHookEvent): void {
+function sanitizeClass(_: Element, data: Dompurify.UponSanitizeAttributeHookEvent): void {
   // only look at class attributes
   if (data.attrName !== 'class') {
     return;
@@ -503,7 +503,7 @@ class MathRendererElement extends HTMLElement {
     const sanitizedDocBody = DOMPurify?.default.sanitize(
       parallelDocContent,
       stripAttrsConfigs,
-    ) as Element;
+    ) as unknown as Element;
 
     // in-place typeset the content in the parallel document
     await window.MathJax.typesetPromise([sanitizedDocBody]);

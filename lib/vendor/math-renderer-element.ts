@@ -50,7 +50,7 @@ class UsageTracker {
 
 declare global {
   interface Window {
-    MathJax: MathJaxConfig;
+    MathJax?: MathJaxConfig;
   }
 }
 const MAX_ALLOWED_MACROS = 100;
@@ -99,7 +99,11 @@ const DISALLOWED_MACROS = [
   'definecolor',
   'mathchoice',
   'unicode',
+  'mmlToken',
 ];
+
+// MathML parsing error messages that we want to replace with a generic error message
+const MATHML_PARSING_ERROR_MESSAGES = ['Misplaced &'];
 
 // Maps possible dimension units that can be passed to LaTeX macros to the maximum value (absolute) that we allow.
 const unitToMaxVal: Record<string, number> = {
@@ -116,12 +120,6 @@ const macrosWithDimensionsRegex = new RegExp(
   `(${macrosWithDimensionArgs})({${dimensionRegex}(${unitTypes})})+`,
   'g',
 );
-
-const stripAttrsConfigs = {
-  ALLOWED_ATTR: [],
-  ALLOW_DATA_ATTR: false,
-  RETURN_DOM: true,
-};
 
 const purifyConfigs = {
   USE_PROFILES: { mathMl: true },
@@ -170,9 +168,6 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
           '[-]': ['noerrors', 'bbox', 'html', 'require', 'newcommand', 'action', 'colortbl'],
         },
         maxMacros: 1000,
-        macros: Object.fromEntries(
-          DISALLOWED_MACROS.map((macro) => [macro, [`\\text{${macro} macro is not supported}`, 1]]),
-        ),
       },
       chtml: {
         fontURL: `${staticURL}/fonts/mathjax`,
@@ -180,16 +175,37 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
       startup: {
         typeset: false,
         ready() {
-          window.MathJax.startup.defaultReady();
-          const menu = window.MathJax.startup.document.menu.menu;
+          // MathJax has loaded all needed components
+          const mathjax = window.MathJax as MathJaxConfig;
+
+          // Initializes the MathJax internal objects and creates typesetting and conversion methods
+          mathjax.startup.defaultReady();
+
+          // Disable SVG option from context menu
+          const menu = mathjax.startup.document.menu.menu;
           const renderer = menu.find('Renderer');
           renderer?.disable();
-          const safe = window.MathJax.startup.document?.safe;
+
+          for (const jax of mathjax.startup.document!.inputJax) {
+            jax.preFilters.add(async ({ math: mathObj }) => {
+              for (const macro of DISALLOWED_MACROS) {
+                if (mathObj.math.includes(`\\${macro}`)) {
+                  mathObj.math = `\\text{${macro} macro is not supported}`;
+                }
+              }
+
+              return true;
+            }, -1000);
+          }
+
+          const safe = mathjax.startup.document?.safe;
 
           if (safe) {
-            safe.filterAttributes.set('fontfamily', 'filterFamily');
-            safe.filterMethods.filterFamily = function (_unused, family) {
-              const [split] = family.split(/;/);
+            safe.filterAttributes.set('fontfamily', 'filterSemiColon');
+            safe.filterAttributes.set('fontstyle', 'filterSemiColon');
+            safe.filterAttributes.set('fontweight', 'filterSemiColon');
+            safe.filterMethods.filterSemiColon = function (_: unknown, input: string) {
+              const [split] = input.split(/;/);
               return split;
             };
           }
@@ -234,6 +250,17 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
   await configurationPromise;
 }
 
+// Workaround to force DOMPurify to not remove `columnalign` attributes from MathML elements
+function allowMathMlAttributes(el: Element, data: Dompurify.UponSanitizeAttributeHookEvent): void {
+  const allowedTags = ['mtable'];
+  const allowedAttributes = ['columnalign'];
+
+  if (allowedTags.includes(el.tagName) && allowedAttributes.includes(data.attrName)) {
+    data.keepAttr = true;
+    data.forceKeepAttr = true;
+  }
+}
+
 function sanitizeClass(_: Element, data: Dompurify.UponSanitizeAttributeHookEvent): void {
   // only look at class attributes
   if (data.attrName !== 'class') {
@@ -255,6 +282,8 @@ function sanitizeClass(_: Element, data: Dompurify.UponSanitizeAttributeHookEven
 class MathRendererElement extends HTMLElement {
   public staticURL = 'https://github.githubassets.com/static';
   private runId: string;
+
+  mathmlEnabled: boolean = false;
 
   /**
    * Create a parallel document node that LaTeX content is injected into.
@@ -306,10 +335,22 @@ class MathRendererElement extends HTMLElement {
       return null;
     }
 
-    const errorNode = node.querySelector('mjx-merror');
-    const mathjaxError = errorNode?.getAttribute('data-mjx-error');
+    const selector = 'merror';
+    const errorNode = node.querySelector(selector);
+    let errorMessage = errorNode?.textContent ?? null;
 
-    return mathjaxError ?? null;
+    if (errorMessage) {
+      // Replace MathML's weird parsing error messages with a generic error message
+      const containsParsingError = MATHML_PARSING_ERROR_MESSAGES.some((mjxErrorMessage: string) =>
+        errorMessage?.includes(mjxErrorMessage),
+      );
+
+      if (containsParsingError) {
+        errorMessage = BAD_EXPRESSION_ERROR;
+      }
+    }
+
+    return errorMessage;
   }
 
   private renderError({ msg, raw }: { msg?: string | null; raw?: string } = {}) {
@@ -387,6 +428,34 @@ class MathRendererElement extends HTMLElement {
     // and potentially other methods that enforce UI safeguards
   }
 
+  // Workaround for WebKit bug (https://bugs.webkit.org/show_bug.cgi?id=160075)
+  // that prevents columnalign from being applied to mtd elements
+  private setColumnAlignments() {
+    const validAlignments = ['left', 'center', 'right'];
+    const tables = this.querySelectorAll('mtable[columnalign]');
+
+    for (const table of tables) {
+      const alignments = table.getAttribute('columnalign')?.trim().split(/\s+/);
+
+      if (alignments && alignments.length > 1) {
+        const rows = table.querySelectorAll(':scope > mtr');
+
+        for (const row of rows) {
+          const columns = row.querySelectorAll('mtd');
+
+          for (let j = 0; j < columns.length; j++) {
+            const column = columns[j];
+            const alignment = alignments[j] ?? alignments[alignments.length - 1];
+
+            if (column?.style && alignment && validAlignments.includes(alignment)) {
+              column.style.textAlign = alignment;
+            }
+          }
+        }
+      }
+    }
+  }
+
   private renderContent(node: Node) {
     // Determine if typesetting in the parallel document produced an error.
     // Do this first so we can skip a potentially unecessary sanitization pass.
@@ -420,16 +489,14 @@ class MathRendererElement extends HTMLElement {
     }
 
     this.innerHTML = sanitized;
+  }
 
-    // reset the typesetRoot to the real document
-    // The properties in output will be present if mathjax is loaded, so the ! are reasonably safe
-    const displayedMath = window.MathJax.startup.output.math;
+  get isInline(): boolean {
+    return this.classList.contains('js-inline-math');
+  }
 
-    // ensure the mathjax element exists and is an element node
-    if (displayedMath && this.childIsNode(this.firstChild)) {
-      displayedMath.typesetRoot = this.firstChild;
-      window.MathJax.startup.output.document.menu.addMenu(displayedMath);
-    }
+  get isDisplay(): boolean {
+    return this.classList.contains('js-display-math');
   }
 
   override get textContent() {
@@ -443,20 +510,53 @@ class MathRendererElement extends HTMLElement {
   }
 
   async connectedCallback() {
-    this.staticURL = this.getAttribute(STATIC_RESOURCE_ATTR);
-    this.runId = this.getAttribute('data-run-id');
+    this.staticURL = this.getAttribute(STATIC_RESOURCE_ATTR)!;
+    this.runId = this.getAttribute('data-run-id')!;
 
     macroUsageTracker.update(this.runId);
 
     await configureMathJax({ staticURL: this.staticURL });
-    requestAnimationFrame(() => this.typeset());
+
+    requestAnimationFrame(() => {
+      this.renderMath();
+    });
+  }
+
+  convertTexToMathML() {
+    const parallelDocContent = this.tempDocumentContentForSanitization();
+    const mathJax = window.MathJax;
+
+    // We need to remove the $ delimiters from the TeX content before feeding it to MathJax
+    const tex = parallelDocContent
+      .trim()
+      .replace(new RegExp(`^\\${INLINE_DELIMITER}{1,2}|\\${INLINE_DELIMITER}{1,2}$`, 'g'), '');
+
+    if (mathJax && mathJax.tex2mml) {
+      const mathMl = mathJax.tex2mml(tex, { display: !this.isInline });
+
+      /**
+       * Add a custom hook to preserve table attributes,
+       * which should have been preserved with DOMPurify's "ALLOWED_ATTR" and "ADD_ATTR" configs,
+       * but that apparently isn't working at this time.
+       */
+      DOMPurify?.default.addHook('uponSanitizeAttribute', allowMathMlAttributes);
+      const sanitizedDocBody = DOMPurify?.default.sanitize(mathMl, {
+        USE_PROFILES: { mathMl: true },
+        RETURN_DOM: true,
+      }) as Element;
+
+      this.renderContent(sanitizedDocBody.firstElementChild as Node);
+
+      // Fix any misaligned math tables in browsers that don't yet support `mtable[columnalign]`
+      this.setColumnAlignments();
+    }
   }
 
   disconnectedCallback() {
     macroUsageTracker.clear(this.runId);
   }
 
-  async typeset() {
+  renderMath() {
     if (!window.MathJax) {
       return;
     }
@@ -493,22 +593,7 @@ class MathRendererElement extends HTMLElement {
 
     this.textContent = this.enforceMathJaxSafety();
 
-    const parallelDocContent = this.tempDocumentContentForSanitization();
-
-    /**
-     * Users can potentially introduce insecure code that hijacks our behavior observer code
-     * by providing the math render element with HTML nodes with classes that match our
-     * js behaviors e.g. js-sso-modal-complete
-     */
-    const sanitizedDocBody = DOMPurify?.default.sanitize(
-      parallelDocContent,
-      stripAttrsConfigs,
-    ) as unknown as Element;
-
-    // in-place typeset the content in the parallel document
-    await window.MathJax.typesetPromise([sanitizedDocBody]);
-
-    this.renderContent(sanitizedDocBody.firstElementChild as Node);
+    this.convertTexToMathML();
   }
 }
 

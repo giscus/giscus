@@ -35,6 +35,7 @@ module.exports = {
     'zh-Hans',
     'zh-Hant',
     'zh-TW',
+    'zh-HK',
   ],
   defaultLocale: 'en',
   pages: {

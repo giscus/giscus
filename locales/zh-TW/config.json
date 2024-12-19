@@ -84,6 +84,7 @@
   "theme=noborder_dark": "NoBorder 深色主題",
   "theme=noborder_gray": "NoBorder 灰色主題",
   "theme=purple_dark": "Purple Dark",
+  "theme=fro": "Fro",
   "theme=custom": "自訂（實驗功能）",
 
   "enableGiscus": "啟用 giscus",

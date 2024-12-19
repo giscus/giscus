@@ -87,6 +87,7 @@ GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utteranc
 - [English](README.md)
 - [Esperanto](README.eo.md)
 - [Español](README.es.md)
+- [Euskera](README.eu.md)
 - [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
 - [Ελληνικά](README.gr.md)

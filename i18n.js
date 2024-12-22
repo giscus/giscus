@@ -1,6 +1,7 @@
 module.exports = {
   locales: [
     'ar',
+    'be',
     'bg',
     'ca',
     'cs',

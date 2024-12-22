@@ -79,6 +79,7 @@ giscusをReactやVue、Svelteで利用する場合は[giscusコンポーネン�
 READMEは下記の言語で参照できます:
 
 - [Arabic (العربية)](README.ar.md)
+- [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)
 - [Čeština](README.cs.md)

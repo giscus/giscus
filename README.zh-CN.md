@@ -79,6 +79,7 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 本 README 有以下语言版本：
 
 - [Arabic (العربية)](README.ar.md)
+- [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)
 - [Čeština](README.cs.md)

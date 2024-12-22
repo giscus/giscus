@@ -1,0 +1,115 @@
+{
+  "reactions": {
+    "0": "{{count}} рэакцыяў",
+    "one": "{{count}} рэакцыя",
+    "few": "{{count}} рэакцыі",
+    "many": "{{count}} рэакцыяў",
+    "other": "{{count}} рэакцыі"
+  },
+  "comment": "Камэнтар",
+  "comments": {
+    "0": "{{count}} камэнтароў",
+    "one": "{{count}} камэнтар",
+    "few": "{{count}} камэнтары",
+    "many": "{{count}} камэнтароў",
+    "other": "{{count}} камэнтара"
+  },
+  "reply": "Адказ",
+  "replies": {
+    "0": "{{count}} адказаў",
+    "one": "{{count}} адказ",
+    "few": "{{count}} адказы",
+    "many": "{{count}}{{plus}} адказаў",
+    "other": "{{count}}{{plus}} адказу"
+  },
+  "upvotes": {
+    "0": "{{count}} галасоў",
+    "one": "{{count}} голас",
+    "few": "{{count}} галасы",
+    "many": "{{count}} галасоў",
+    "other": "{{count}} голасу"
+  },
+  "hiddenItems": {
+    "0": "{{count}} схаваных",
+    "one": "{{count}} схаваны",
+    "few": "{{count}} схаваныя",
+    "many": "{{count}} схаваных",
+    "other": "{{count}} схаваных"
+  },
+  "genericError": "Узьнікла памылка: {{message}}",
+  "loadMore": "Заладаваць больш",
+  "loading": "Ладаваньне",
+  "loadingComments": "Ладаваньне камэнтароў…",
+  "loadingPreview": "Ладаваньне прагляду…",
+  "poweredBy": "– сілкуецца ад <a>giscus</a>",
+  "oldest": "Найстарэйшыя",
+  "newest": "Найноўшыя",
+  "showPreviousReplies": {
+    "0": "Паказаць {{count}} папярэдніх адказаў",
+    "one": "Паказаць {{count}} папярэдні адказ",
+    "few": "Паказаць {{count}} папярэднія адказы",
+    "many": "Паказаць {{count}} папярэдніх адказаў",
+    "other": "Паказаць {{count}} папярэдніх адказаў"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Паглядзець {{count}} папярэдніх адказаў на GitHub",
+    "one": "Паглядзець {{count}} папярэдні адказ на GitHub",
+    "few": "Паглядзець {{count}} папярэднія адказы на GitHub",
+    "many": "Паглядзець {{count}} папярэдніх адказаў на GitHub",
+    "other": "Паглядзець {{count}} папярэдніх адказаў на GitHub"
+  },
+  "edited": "рэдаґавана",
+  "thisCommentWasDeleted": "Гэты камэнтар быў выдалены.",
+  "thisCommentWasMinimized": "Гэты камэнтар быў згорнуты.",
+  "thisCommentWasHidden": "Гэты камэнтар быў схаваны.",
+  "write": "Зьмест",
+  "preview": "Прагляд",
+  "enableFіxedWіdth": "Улучыць шрыфт фіксаванае шырыні (monospace) у рэдактары",
+  "dіsableFіxedWіdth": "Вымкнуць шрыфт фіксаванае шырыні (monospace) у рэдактары",
+  "lastEditedAt": "Адрэдаґавана {{date}}",
+  "writeAComment": "Напісаць камэнтар",
+  "signInToComment": "Увайдзіце, каб камэнтаваць",
+  "stylingWithMarkdownIsSupported": "Падтрымліваецца стылізацыя з Markdown",
+  "signOut": "Выйсьці",
+  "cancel": "Скасаваць",
+  "signInWithGitHub": "Увайсьці праз Github",
+  "writeAReply": "Адпавесьці",
+
+  "upvote": "Голас",
+  "youMustBeSignedInToUpvote": "Вы мусіце ўвайсьці, каб прагаласаваць.",
+  "addReactions": "Дадаць рэакцыі",
+  "pleaseWait": "Калі ласка, пачакайце…",
+  "pickYourReaction": "Абярыце сваю рэакцыю",
+  "addTheReaction": "Дадаць рэакцыю {{reaction}}",
+  "removeTheReaction": "Выдаліць рэакцыю {{reaction}}",
+  "signInToAddYourReaction": "<a>Увайдзіце</a>, каб дадаць рэакцыю.",
+  "youMustBeSignedInToAddReactions": "Вы мусіце ўвайсьці, каб дадаць рэакцыі.",
+  "peopleReactedWith": {
+    "0": "{{count}} асобаў адрэаґавалі з {{emoji}} {{reaction}}",
+    "one": "{{count}} асоба адрэаґавала з {{emoji}} {{reaction}}",
+    "few": "{{count}} асобы адрэаґавалі з {{emoji}} {{reaction}}",
+    "many": "{{count}} асобаў адрэаґавалі з {{emoji}} {{reaction}}",
+    "other": "{{count}} асобы адрэаґавалі з {{emoji}} {{reaction}}"
+  },
+  "emoji": "эмоджы",
+  "nothingToPreview": "Няма чаго пераглядаць",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Сьмех",
+  "HOORAY": "Ура",
+  "CONFUSED": "Зьбянтэжаны",
+  "HEART": "Сэрца",
+  "ROCKET": "Ракета",
+  "EYES": "Вочы",
+
+  "COLLABORATOR": "Супрацоўнік",
+  "CONTRIBUTOR": "Укладнік",
+  "FIRST_TIMER": "Навак",
+  "FIRST_TIME_CONTRIBUTOR": "Навак укладнік",
+  "MANNEQUIN": "Манекен",
+  "MEMBER": "Чалец",
+  "NONE": "None",
+  "OWNER": "Уладальнік",
+  "APP": "Дастасунак"
+}

@@ -17,6 +17,9 @@ major updates to the project.
 - Added Basque localization
   ([#1572](https://github.com/giscus/giscus/pull/1572)).
 
+- Added Belarusian localization
+  ([#1579](https://github.com/giscus/giscus/pull/1579)).
+
 ## 2024-11-28
 
 ### Added

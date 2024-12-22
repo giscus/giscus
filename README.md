@@ -79,6 +79,7 @@ See [CONTRIBUTING.md][contributing]
 This README is available in:
 
 - [Arabic (العربية)](README.ar.md)
+- [Беларуская](README.be.md)
 - [Bulgarian (български)](README.bg.md)
 - [Català](README.ca.md)
 - [Čeština](README.cs.md)

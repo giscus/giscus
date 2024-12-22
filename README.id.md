@@ -79,6 +79,7 @@ Lihat [CONTRIBUTING.md][contributing]
 README ini tersedia dalam bahasa:
 
 - [Arabic (العربية)](README.ar.md)
+- [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)
 - [Čeština](README.cs.md)

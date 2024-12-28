@@ -36,14 +36,14 @@
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
     "react-ssr-prepass": "npm:preact-ssr-prepass",
-    "swr": "^2.2.5"
+    "swr": "^2.3.0"
   },
   "devDependencies": {
     "@types/dompurify": "^3.2.0",
     "@types/node": "^22.10.2",
     "@types/react": "^18.0.9",
-    "@typescript-eslint/eslint-plugin": "^8.18.0",
-    "@typescript-eslint/parser": "^8.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
     "eslint": "^8.57.0",
@@ -56,9 +56,9 @@
     "postcss-import": "^16.1.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
-    "stylelint": "^16.11.0",
+    "stylelint": "^16.12.0",
     "stylelint-config-standard": "^36.0.1",
-    "tailwindcss": "^3.4.16",
+    "tailwindcss": "^3.4.17",
     "tailwindcss-vanilla-rtl": "^0.4.0",
     "typescript": "^5.7.2"
   }

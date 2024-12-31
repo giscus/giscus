@@ -78,7 +78,7 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 
 此 README 有以下語言版本：
 
-- [Arabic (العربية)](README.ar.md)
+- [العربية](README.ar.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)
@@ -89,7 +89,7 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 - [Esperanto](README.eo.md)
 - [Español](README.es.md)
 - [Euskera](README.eu.md)
-- [Persian (فارسی)](README.fa.md)
+- [فارسی](README.fa.md)
 - [Français](README.fr.md)
 - [Ελληνικά](README.gr.md)
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)

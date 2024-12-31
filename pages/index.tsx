@@ -32,9 +32,9 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
 
   contents[1] = `${afterConfig}\n## ${t('tryItOut')} 👇👇👇\n`;
 
-  const token = await getAppAccessToken('giscus/giscus').catch(() => '');
+  const token = await getAppAccessToken(env.demo_repo).catch(() => '');
   const [contentBefore, contentAfter] = await Promise.all(
-    contents.map((section) => renderMarkdown(section, token, 'giscus/giscus')),
+    contents.map((section) => renderMarkdown(section, token, env.demo_repo)),
   );
 
   const comment: IComment = {

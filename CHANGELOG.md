@@ -41,8 +41,12 @@ major updates to the project.
 
 - Ensure links and link-like buttons are underlined
   ([#1586](https://github.com/giscus/giscus/pull/1586)).
+
 - Set `dir="auto"` on the comment `textarea`
   ([#1590](https://github.com/giscus/giscus/pull/1590)).
+
+- Use `NEXT_PUBLIC_DEMO_REPO` to fetch token for rendering markdown on the
+  homepage ([#1591](https://github.com/giscus/giscus/pull/1591)).
 
 
 ## 2024-11-28

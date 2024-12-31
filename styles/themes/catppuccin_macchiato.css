@@ -55,7 +55,7 @@ main {
   --color-canvas-subtle: #1e2030;
   --color-border-default: #494d64;
   --color-border-muted: #363a4f;
-  --color-neutral-muted: rgb(110 115 141 / 40%);
+  --color-neutral-muted: rgb(110 115 141 / 30%);
   --color-accent-fg: #c6a0f6;
   --color-accent-emphasis: #c6a0f6;
   --color-accent-muted: rgb(198 160 246 / 40%);
@@ -66,7 +66,7 @@ main {
   --color-attention-subtle: rgb(198 160 246 / 15%);
   --color-danger-fg: #ed8796;
   --color-danger-muted: rgb(237 135 150 / 40%);
-  --color-danger-subtle: rgb(237 135 150 / 80%);
+  --color-danger-subtle: rgb(237 135 150 / 20%);
   --color-primer-shadow-inset: 0 0 transparent;
   --color-scale-gray-7: #494d64;
   --color-scale-blue-8: #5b8cf0;

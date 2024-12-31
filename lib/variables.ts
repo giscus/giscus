@@ -49,6 +49,13 @@ export const availableThemes = [
   'custom',
 ] as const;
 
+export const meta = {
+  title: 'giscus',
+  description: 'A comments widget built on GitHub Discussions.',
+  image:
+    'https://opengraph.githubassets.com/4f866d5b634e7cd5422af77f8dbfb6d48dd288b7c5c18326544c1973210320ed/giscus/giscus',
+};
+
 export type AvailableTheme = (typeof availableThemes)[number];
 
 export type Theme = AvailableTheme | `/${string}` | `https://${string}`;

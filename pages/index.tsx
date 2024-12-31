@@ -18,7 +18,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import Router from 'next/router';
 import getT from 'next-translate/getT';
 import { AvailableLanguage } from '../lib/i18n';
-import { env } from '../lib/variables';
+import { env, meta } from '../lib/variables';
 import fallbacks from '../i18n.fallbacks.json';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
@@ -131,6 +131,15 @@ export default function Home({
       <Head>
         <title>giscus</title>
         <meta name="giscus:backlink" content={env.app_host} />
+        <meta name="description" content={meta.description} />
+        <meta property="og:description" content={meta.description} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:image" content={meta.image} />
+        <meta name="twitter:title" content={meta.title} />
+        <meta name="twitter:description" content={meta.description} />
+        <meta name="twitter:image" content={meta.image} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@laymonage" />
       </Head>
       <div className="color-text-primary w-full max-w-3xl mx-auto p-2">
         <Comment comment={comment}>

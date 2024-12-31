@@ -34,6 +34,9 @@ major updates to the project.
 - Expose fonts as CSS variables
   ([#1587](https://github.com/giscus/giscus/pull/1587)).
 
+- Only add description, og, and twitter meta tags on the homepage
+  ([#1588](https://github.com/giscus/giscus/pull/1588)).
+
 ### Fixed
 
 - Ensure links and link-like buttons are underlined

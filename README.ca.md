@@ -78,7 +78,7 @@ Veure [CONTRIBUTING.md][contributing]
 
 Aquest fitxer README està disponible en:
 
-- [العربية](README.ar.md)
+- [&lrm;العربية](README.ar.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

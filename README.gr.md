@@ -78,7 +78,7 @@
 
 Το README είναι διαθέσιμο σε:
 
-- [العربية](README.ar.md)
+- [&lrm;العربية](README.ar.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

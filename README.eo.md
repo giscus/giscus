@@ -78,7 +78,7 @@ Vidu [CONTRIBUTING.md][contributing]
 
 Ĉi tiu README haveblas en:
 
-- [العربية](README.ar.md)
+- [&lrm;العربية](README.ar.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

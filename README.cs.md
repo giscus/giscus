@@ -78,7 +78,7 @@ Viz [CONTRIBUTING.md][contributing]
 
 Toto README je k dispozici v:
 
-- [العربية](README.ar.md)
+- [&lrm;العربية](README.ar.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

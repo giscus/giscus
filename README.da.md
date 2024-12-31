@@ -78,7 +78,7 @@ Se [CONTRIBUTING.md][contributing]
 
 Denne README er tilgængelig på:
 
-- [العربية](README.ar.md)
+- [&lrm;العربية](README.ar.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

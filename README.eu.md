@@ -86,7 +86,7 @@ Ikusi [CONTRIBUTING.md][contributing]
 
 README fitxategia hizkuntza ezberdinetan topa daiteke:
 
-- [العربية](README.ar.md)
+- [&lrm;العربية](README.ar.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

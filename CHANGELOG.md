@@ -11,23 +11,28 @@ major updates to the project.
 
 ### Added
 
-- Added Cantonese localization
+- Add Cantonese localization
   ([#1571](https://github.com/giscus/giscus/pull/1571)).
 
-- Added Basque localization
+- Add Basque localization
   ([#1572](https://github.com/giscus/giscus/pull/1572)).
 
-- Added Belarusian localization
+- Add Belarusian localization
   ([#1579](https://github.com/giscus/giscus/pull/1579)).
 
-- Added Gruvbox themes
+- Add Gruvbox themes
   ([#1232](https://github.com/giscus/giscus/pull/1232)).
 
-- Added Catppuccin themes
+- Add Catppuccin themes
   ([#1411](https://github.com/giscus/giscus/pull/1411)).
 
-- Added Fro theme
+- Add Fro theme
   ([#1464](https://github.com/giscus/giscus/pull/1464)).
+
+### Changed
+
+- Expose fonts as CSS variables
+  ([#1587](https://github.com/giscus/giscus/pull/1587)).
 
 ### Fixed
 
@@ -38,10 +43,10 @@ major updates to the project.
 
 ### Added
 
-- Added Bulgarian localization
+- Add Bulgarian localization
   ([#1544](https://github.com/giscus/giscus/pull/1544)).
 
-- Added Czech localization
+- Add Czech localization
   ([#1561](https://github.com/giscus/giscus/pull/1561)).
 
 ## 2024-06-08

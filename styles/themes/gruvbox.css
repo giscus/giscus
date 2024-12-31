@@ -36,7 +36,7 @@ main {
   --color-prettylights-syntax-constant-other-reference-link: #458588; /* blue */
   --color-btn-text: #3c3836; /* fg0 */
   --color-btn-bg: #ebdbb2; /* bg1 */
-  --color-btn-border: rgba(60, 56, 54, 0.1); /* fg0 at 10% opacity */
+  --color-btn-border: rgb(60 56 54 / 10%); /* fg0 at 10% opacity */
   --color-btn-shadow: 0 0 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
   --color-btn-hover-bg: #d5c4a1; /* bg2 */
@@ -46,18 +46,18 @@ main {
   --color-btn-selected-bg: #ebdbb2; /* bg1 */
   --color-btn-primary-text: #3c3836; /* fg0 */
   --color-btn-primary-bg: #98971a; /* green */
-  --color-btn-primary-border: rgba(60, 56, 54, 0.1); /* fg0 at 10% opacity */
+  --color-btn-primary-border: rgb(60 56 54 / 10%); /* fg0 at 10% opacity */
   --color-btn-primary-shadow: 0 0 transparent;
   --color-btn-primary-inset-shadow: 0 0 transparent;
   --color-btn-primary-hover-bg: #98971a; /* green */
-  --color-btn-primary-hover-border: rgba(60, 56, 54, 0.1); /* fg0 at 10% opacity */
+  --color-btn-primary-hover-border: rgb(60 56 54 / 10%); /* fg0 at 10% opacity */
   --color-btn-primary-selected-bg: #98971a; /* green */
   --color-btn-primary-selected-shadow: 0 0 transparent;
-  --color-btn-primary-disabled-text: rgba(60, 56, 54, 0.5); /* fg0 at 50% opacity */
-  --color-btn-primary-disabled-bg: rgba(152, 151, 26, 0.6); /* green at 60% opacity */
-  --color-btn-primary-disabled-border: rgba(60, 56, 54, 0.1); /* fg0 at 10% opacity */
-  --color-action-list-item-default-hover-bg: rgba(102, 92, 84, 0.12); /* fg2 at 12% opacity */
-  --color-segmented-control-bg: rgba(146, 131, 116, 0.1); /* fg4 at 10% opacity */
+  --color-btn-primary-disabled-text: rgb(60 56 54 / 50%); /* fg0 at 50% opacity */
+  --color-btn-primary-disabled-bg: rgb(152 151 26 / 60%); /* green at 60% opacity */
+  --color-btn-primary-disabled-border: rgb(60 56 54 / 10%); /* fg0 at 10% opacity */
+  --color-action-list-item-default-hover-bg: rgb(102 92 84 / 12%); /* fg2 at 12% opacity */
+  --color-segmented-control-bg: rgb(146 131 116 / 10%); /* fg4 at 10% opacity */
   --color-segmented-control-button-bg: #fbf1c7; /* bg0 */
   --color-segmented-control-button-selected-border: #665c54; /* fg2 */
   --color-fg-default: #3c3836; /* fg0 */
@@ -69,18 +69,18 @@ main {
   --color-canvas-subtle: #ebdbb2; /* bg1 */
   --color-border-default: #d5c4a1; /* bg2 */
   --color-border-muted: #ebdbb2; /* bg1 */
-  --color-neutral-muted: rgba(146, 131, 116, 0.2); /* fg4 at 20% opacity */
+  --color-neutral-muted: rgb(146 131 116 / 20%); /* fg4 at 20% opacity */
   --color-accent-fg: #28676b; /* blue */
   --color-accent-emphasis: #458588; /* blue */
-  --color-accent-muted: rgba(69, 133, 136, 0.4); /* blue at 40% opacity */
-  --color-accent-subtle: rgba(69, 133, 136, 0.1); /* blue at 10% opacity */
+  --color-accent-muted: rgb(69 133 136 / 40%); /* blue at 40% opacity */
+  --color-accent-subtle: rgb(69 133 136 / 10%); /* blue at 10% opacity */
   --color-success-fg: #98971a; /* green */
   --color-attention-fg: #d79921; /* yellow */
-  --color-attention-muted: rgba(215, 153, 33, 0.4); /* yellow at 40% opacity */
-  --color-attention-subtle: rgba(215, 153, 33, 0.15); /* yellow at 15% opacity */
+  --color-attention-muted: rgb(215 153 33 / 40%); /* yellow at 40% opacity */
+  --color-attention-subtle: rgb(215 153 33 / 15%); /* yellow at 15% opacity */
   --color-danger-fg: #cc241d; /* red */
-  --color-danger-muted: rgba(204, 36, 29, 0.4); /* red at 40% opacity */
-  --color-danger-subtle: rgba(204, 36, 29, 0.1); /* red at 10% opacity */
+  --color-danger-muted: rgb(204 36 29 / 40%); /* red at 40% opacity */
+  --color-danger-subtle: rgb(204 36 29 / 10%); /* red at 10% opacity */
   --color-primer-shadow-inset: 0 0 transparent;
   --color-scale-gray-7: #ebdbb2; /* bg1 */
   --color-scale-blue-8: #076678; /* dark blue */
@@ -132,7 +132,7 @@ main .gsc-loading-image {
     --color-prettylights-syntax-constant-other-reference-link: #83a598; /* blue */
     --color-btn-text: #ebdbb2; /* fg1 */
     --color-btn-bg: #282828; /* bg0 */
-    --color-btn-border: rgba(251, 241, 199, 0.1); /* fg0 */
+    --color-btn-border: rgb(251 241 199 / 10%); /* fg0 */
     --color-btn-shadow: 0 0 transparent;
     --color-btn-inset-shadow: 0 0 transparent;
     --color-btn-hover-bg: #3c3836; /* bg1 */
@@ -142,18 +142,18 @@ main .gsc-loading-image {
     --color-btn-selected-bg: #282828; /* bg0 */
     --color-btn-primary-text: #fbf1c7; /* fg0 */
     --color-btn-primary-bg: #b8bb26; /* green */
-    --color-btn-primary-border: rgba(251, 241, 199, 0.1); /* fg0 */
+    --color-btn-primary-border: rgb(251 241 199 / 10%); /* fg0 */
     --color-btn-primary-shadow: 0 0 transparent;
     --color-btn-primary-inset-shadow: 0 0 transparent;
     --color-btn-primary-hover-bg: #b8bb26; /* green */
-    --color-btn-primary-hover-border: rgba(251, 241, 199, 0.1); /* fg0 */
+    --color-btn-primary-hover-border: rgb(251 241 199 / 10%); /* fg0 */
     --color-btn-primary-selected-bg: #b8bb26; /* green */
     --color-btn-primary-selected-shadow: 0 0 transparent;
-    --color-btn-primary-disabled-text: rgba(251, 241, 199, 0.5); /* fg0 */
-    --color-btn-primary-disabled-bg: rgba(184, 187, 38, 0.6); /* green */
-    --color-btn-primary-disabled-border: rgba(251, 241, 199, 0.1); /* fg0 */
-    --color-action-list-item-default-hover-bg: rgba(213, 196, 161, 0.12); /* fg2 */
-    --color-segmented-control-bg: rgba(146, 131, 116, 0.1); /* bg4 */
+    --color-btn-primary-disabled-text: rgb(251 241 199 / 50%); /* fg0 */
+    --color-btn-primary-disabled-bg: rgb(184 187 38 / 60%); /* green */
+    --color-btn-primary-disabled-border: rgb(251 241 199 / 10%); /* fg0 */
+    --color-action-list-item-default-hover-bg: rgb(213 196 161 / 12%); /* fg2 */
+    --color-segmented-control-bg: rgb(146 131 116 / 10%); /* bg4 */
     --color-segmented-control-button-bg: #1d2021; /* bg0_h */
     --color-segmented-control-button-selected-border: #665c54; /* bg3 */
     --color-fg-default: #ebdbb2; /* fg1 */
@@ -165,18 +165,18 @@ main .gsc-loading-image {
     --color-canvas-subtle: #3c3836; /* bg1 */
     --color-border-default: #3c3836; /* bg1 */
     --color-border-muted: #282828; /* bg0 */
-    --color-neutral-muted: rgba(146, 131, 116, 0.2); /* bg4 */
+    --color-neutral-muted: rgb(146 131 116 / 20%); /* bg4 */
     --color-accent-fg: #91b2a5; /* blue */
     --color-accent-emphasis: #83a598; /* blue */
-    --color-accent-muted: rgba(131, 165, 152, 0.4); /* blue */
-    --color-accent-subtle: rgba(131, 165, 152, 0.1); /* blue */
+    --color-accent-muted: rgb(131 165 152 / 40%); /* blue */
+    --color-accent-subtle: rgb(131 165 152 / 10%); /* blue */
     --color-success-fg: #b8bb26; /* green */
     --color-attention-fg: #fabd2f; /* yellow */
-    --color-attention-muted: rgba(250, 189, 47, 0.4); /* yellow */
-    --color-attention-subtle: rgba(250, 189, 47, 0.15); /* yellow */
+    --color-attention-muted: rgb(250 189 47 / 40%); /* yellow */
+    --color-attention-subtle: rgb(250 189 47 / 15%); /* yellow */
     --color-danger-fg: #fb4934; /* red */
-    --color-danger-muted: rgba(251, 73, 52, 0.4); /* red */
-    --color-danger-subtle: rgba(251, 73, 52, 0.1); /* red */
+    --color-danger-muted: rgb(251 73 52 / 40%); /* red */
+    --color-danger-subtle: rgb(251 73 52 / 10%); /* red */
     --color-primer-shadow-inset: 0 0 transparent;
     --color-scale-gray-7: #282828; /* bg0 */
     --color-scale-blue-8: #076678; /* dark blue */

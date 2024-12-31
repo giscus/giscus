@@ -20,6 +20,9 @@ major updates to the project.
 - Added Belarusian localization
   ([#1579](https://github.com/giscus/giscus/pull/1579)).
 
+- Added Gruvbox themes
+  ([#1232](https://github.com/giscus/giscus/pull/1232)).
+
 ## 2024-11-28
 
 ### Added

@@ -7,6 +7,13 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2024-12-31
+
+### Added
+
+- Added Cantonese localization
+  ([#1571](https://github.com/giscus/giscus/pull/1571)).
+
 ## 2024-11-28
 
 ### Added

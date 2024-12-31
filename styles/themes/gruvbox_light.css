@@ -73,8 +73,8 @@ main {
   --color-canvas-subtle: #ebdbb2; /* bg1 */
   --color-border-default: #d5c4a1; /* bg2 */
   --color-border-muted: #ebdbb2; /* bg1 */
-  --color-neutral-muted: rgba(146, 131, 116, 0.4); /* fg4 at 40% opacity */
-  --color-accent-fg: #458588; /* blue */
+  --color-neutral-muted: rgba(146, 131, 116, 0.2); /* fg4 at 20% opacity */
+  --color-accent-fg: #28676b; /* blue */
   --color-accent-emphasis: #458588; /* blue */
   --color-accent-muted: rgba(69, 133, 136, 0.4); /* blue at 40% opacity */
   --color-accent-subtle: rgba(69, 133, 136, 0.1); /* blue at 10% opacity */

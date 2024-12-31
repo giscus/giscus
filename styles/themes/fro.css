@@ -1,5 +1,6 @@
-:root {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+:host, html {
+  --font-family-serif: ui-serif, "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  --font-family-default: var(--font-family-serif);
 }
 
 main {

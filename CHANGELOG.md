@@ -41,6 +41,9 @@ major updates to the project.
 
 - Ensure links and link-like buttons are underlined
   ([#1586](https://github.com/giscus/giscus/pull/1586)).
+- Set `dir="auto"` on the comment `textarea`
+  ([#1590](https://github.com/giscus/giscus/pull/1590)).
+
 
 ## 2024-11-28
 

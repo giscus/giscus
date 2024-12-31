@@ -35,6 +35,10 @@ details summary {
   }
 }
 
+.link-secondary {
+  @apply underline;
+}
+
 .color-bg-primary,
 .color-bg-default {
   background-color: var(--color-canvas-default, var(--color-bg-primary));

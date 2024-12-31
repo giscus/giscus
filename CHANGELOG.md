@@ -26,6 +26,11 @@ major updates to the project.
 - Added Catppuccin themes
   ([#1411](https://github.com/giscus/giscus/pull/1411)).
 
+### Fixed
+
+- Ensure links and link-like buttons are underlined
+  ([#1586](https://github.com/giscus/giscus/pull/1586)).
+
 ## 2024-11-28
 
 ### Added

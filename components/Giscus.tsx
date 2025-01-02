@@ -130,7 +130,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
                   href={data.discussion.url}
                   target="_blank"
                   rel="noreferrer noopener nofollow"
-                  className="color-text-primary"
+                  className="color-text-primary underline"
                 >
                   {t('comments', { count: data.totalCommentCount })}
                 </a>

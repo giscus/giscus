@@ -99,7 +99,7 @@ localization! Follow these steps to add a new localization:
 [gsc-classes]: https://github.com/giscus/giscus/search?l=TSX&q=gsc
 [custom-theme-url]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme
 [locales]: locales/
-[language-codes]: https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/languages_and_scripts.html
-[plural-rules]: https://unicode-org.github.io/cldr-staging/charts/latest/supplemental/language_plural_rules.html
+[language-codes]: https://www.unicode.org/cldr/charts/46/supplemental/languages_and_scripts.html
+[plural-rules]: https://www.unicode.org/cldr/charts/46/supplemental/language_plural_rules.html
 [i18n-tsx]: lib/i18n.tsx
 [i18n-js]: i18n.js

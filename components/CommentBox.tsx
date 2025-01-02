@@ -193,6 +193,7 @@ export default function CommentBox({
               className={`form-control input-contrast gsc-comment-box-textarea ${
                 isFixedWidth ? 'gsc-is-fixed-width' : ''
               }`}
+              dir="auto"
               placeholder={token ? placeHolderText : t('signInToComment')}
               onChange={handleTextAreaChange}
               value={input}

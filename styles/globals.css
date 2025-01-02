@@ -2,16 +2,16 @@ body * {
   border-color: var(--color-border-default, var(--color-border-primary));
 }
 
-a {
-  @apply no-underline;
-}
-
 a:hover {
   @apply underline;
 }
 
 .markdown {
   @apply break-words;
+}
+
+.markdown a {
+  @apply underline;
 }
 
 .markdown strong {

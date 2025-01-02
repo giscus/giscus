@@ -21,18 +21,6 @@ module.exports = {
         dxl: { raw: '(min-device-width: 1280px)' },
         d2xl: { raw: '(min-device-width: 1536px)' },
       },
-      fontFamily: {
-        sans: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Helvetica',
-          'Arial',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-        ],
-      },
     },
   },
 };

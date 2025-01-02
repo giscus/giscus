@@ -1,12 +1,16 @@
 module.exports = {
   locales: [
     'ar',
+    'be',
+    'bg',
     'ca',
+    'cs',
     'da',
     'de',
     'en',
     'eo',
     'es',
+    'eu',
     'fa',
     'fr',
     'gr',
@@ -33,6 +37,7 @@ module.exports = {
     'zh-Hans',
     'zh-Hant',
     'zh-TW',
+    'zh-HK',
   ],
   defaultLocale: 'en',
   pages: {

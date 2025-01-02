@@ -44,12 +44,16 @@ export interface GiscusTranslate<I18Namespace = I18n> {
 
 export const availableLanguages = {
   ar: 'العربية',
+  be: 'Беларуская',
+  bg: 'български',
   ca: 'Català',
+  cs: 'Čeština',
   da: 'Dansk',
   de: 'Deutsch',
   en: 'English',
   eo: 'Esperanto',
   es: 'Español',
+  eu: 'Euskera',
   fa: 'فارسی',
   fr: 'Français',
   gr: 'Ελληνικά',
@@ -73,6 +77,7 @@ export const availableLanguages = {
   uz: "O'zbek",
   'zh-CN': '简体中文',
   'zh-TW': '繁體中文',
+  'zh-HK': '香港繁體',
 } as const;
 
 export const rtlLanguages = new Set(['ar', 'fa', 'he']);
@@ -142,12 +147,16 @@ const dateFormat: Intl.DateTimeFormatOptions = {
 
 const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', dateFormat),
+  be: new Intl.DateTimeFormat('be', dateFormat),
+  bg: new Intl.DateTimeFormat('bg', dateFormat),
   ca: new Intl.DateTimeFormat('ca', dateFormat),
+  cs: new Intl.DateTimeFormat('cs', dateFormat),
   da: new Intl.DateTimeFormat('da', dateFormat),
   de: new Intl.DateTimeFormat('de', dateFormat),
   en: new Intl.DateTimeFormat('en', dateFormat),
   eo: new Intl.DateTimeFormat('eo', dateFormat),
   es: new Intl.DateTimeFormat('es', dateFormat),
+  eu: new Intl.DateTimeFormat('eu', dateFormat),
   fa: new Intl.DateTimeFormat('fa', dateFormat),
   fr: new Intl.DateTimeFormat('fr', dateFormat),
   gr: new Intl.DateTimeFormat('gr', dateFormat),
@@ -171,6 +180,7 @@ const dateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   uz: new Intl.DateTimeFormat('uz', dateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', dateFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', dateFormat),
+  'zh-HK': new Intl.DateTimeFormat('zh-HK', dateFormat),
 };
 
 const shortDateFormat: Intl.DateTimeFormatOptions = {
@@ -180,12 +190,16 @@ const shortDateFormat: Intl.DateTimeFormatOptions = {
 
 const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', shortDateFormat),
+  be: new Intl.DateTimeFormat('be', shortDateFormat),
+  bg: new Intl.DateTimeFormat('bg', shortDateFormat),
   ca: new Intl.DateTimeFormat('ca', shortDateFormat),
+  cs: new Intl.DateTimeFormat('cs', shortDateFormat),
   da: new Intl.DateTimeFormat('da', shortDateFormat),
   de: new Intl.DateTimeFormat('de', shortDateFormat),
   en: new Intl.DateTimeFormat('en', shortDateFormat),
   eo: new Intl.DateTimeFormat('eo', shortDateFormat),
   es: new Intl.DateTimeFormat('es', shortDateFormat),
+  eu: new Intl.DateTimeFormat('eu', shortDateFormat),
   fa: new Intl.DateTimeFormat('fa', shortDateFormat),
   fr: new Intl.DateTimeFormat('fr', shortDateFormat),
   gr: new Intl.DateTimeFormat('gr', shortDateFormat),
@@ -209,6 +223,7 @@ const shortDateFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   uz: new Intl.DateTimeFormat('uz', shortDateFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateFormat),
+  'zh-HK': new Intl.DateTimeFormat('zh-HK', shortDateFormat),
 };
 
 const shortDateYearFormat: Intl.DateTimeFormatOptions = {
@@ -219,12 +234,16 @@ const shortDateYearFormat: Intl.DateTimeFormatOptions = {
 
 const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = {
   ar: new Intl.DateTimeFormat('ar', shortDateYearFormat),
+  be: new Intl.DateTimeFormat('be', shortDateYearFormat),
+  bg: new Intl.DateTimeFormat('bg', shortDateYearFormat),
   ca: new Intl.DateTimeFormat('ca', shortDateYearFormat),
+  cs: new Intl.DateTimeFormat('cs', shortDateYearFormat),
   da: new Intl.DateTimeFormat('da', shortDateYearFormat),
   de: new Intl.DateTimeFormat('de', shortDateYearFormat),
   en: new Intl.DateTimeFormat('en', shortDateYearFormat),
   eo: new Intl.DateTimeFormat('eo', shortDateYearFormat),
   es: new Intl.DateTimeFormat('es', shortDateYearFormat),
+  eu: new Intl.DateTimeFormat('eu', shortDateYearFormat),
   fa: new Intl.DateTimeFormat('fa', shortDateYearFormat),
   fr: new Intl.DateTimeFormat('fr', shortDateYearFormat),
   gr: new Intl.DateTimeFormat('gr', shortDateYearFormat),
@@ -248,6 +267,7 @@ const shortDateYearFormatters: Record<AvailableLanguage, Intl.DateTimeFormat> = 
   uz: new Intl.DateTimeFormat('uz', shortDateYearFormat),
   'zh-CN': new Intl.DateTimeFormat('zh-CN', shortDateYearFormat),
   'zh-TW': new Intl.DateTimeFormat('zh-TW', shortDateYearFormat),
+  'zh-HK': new Intl.DateTimeFormat('zh-HK', shortDateYearFormat),
 };
 
 const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
@@ -258,12 +278,16 @@ const relativeTimeFormat: Intl.RelativeTimeFormatOptions = {
 
 const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat> = {
   ar: new Intl.RelativeTimeFormat('ar', relativeTimeFormat),
+  be: new Intl.RelativeTimeFormat('be', relativeTimeFormat),
+  bg: new Intl.RelativeTimeFormat('bg', relativeTimeFormat),
   ca: new Intl.RelativeTimeFormat('ca', relativeTimeFormat),
+  cs: new Intl.RelativeTimeFormat('cs', relativeTimeFormat),
   da: new Intl.RelativeTimeFormat('da', relativeTimeFormat),
   de: new Intl.RelativeTimeFormat('de', relativeTimeFormat),
   en: new Intl.RelativeTimeFormat('en', relativeTimeFormat),
   eo: new Intl.RelativeTimeFormat('eo', relativeTimeFormat),
   es: new Intl.RelativeTimeFormat('es', relativeTimeFormat),
+  eu: new Intl.RelativeTimeFormat('eu', relativeTimeFormat),
   fa: new Intl.RelativeTimeFormat('fa', relativeTimeFormat),
   fr: new Intl.RelativeTimeFormat('fr', relativeTimeFormat),
   gr: new Intl.RelativeTimeFormat('gr', relativeTimeFormat),
@@ -287,6 +311,7 @@ const relativeTimeFormatters: Record<AvailableLanguage, Intl.RelativeTimeFormat>
   uz: new Intl.RelativeTimeFormat('uz', relativeTimeFormat),
   'zh-CN': new Intl.RelativeTimeFormat('zh-CN', relativeTimeFormat),
   'zh-TW': new Intl.RelativeTimeFormat('zh-TW', relativeTimeFormat),
+  'zh-HK': new Intl.RelativeTimeFormat('zh-HK', relativeTimeFormat),
 };
 
 export function useDateFormatter() {

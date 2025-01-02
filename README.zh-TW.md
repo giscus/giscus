@@ -4,7 +4,7 @@
 
 - [開放原始碼][repo]。🌏
 - 無追蹤，無廣告，永久免費。📡 🚫
-- 無需資料庫。全部資料均儲存在 GitHub Discussions 中。:octocat:
+- 無需資料庫。全部資料均儲存在 GitHub Discussions 中。 :octocat:
 - 支援[自訂佈景主題][creating-custom-themes]！🌗
 - 支援[多語言][multiple-languages]。🌐
 - [高度彈性][advanced-usage]。🔧
@@ -78,14 +78,18 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 
 此 README 有以下語言版本：
 
-- [Arabic (العربية)](README.ar.md)
+- [&lrm;العربية](README.ar.md)
+- [Беларуская](README.be.md)
+- [български](README.bg.md)
 - [Català](README.ca.md)
+- [Čeština](README.cs.md)
 - [Dansk](README.da.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Esperanto](README.eo.md)
 - [Español](README.es.md)
-- [Persian (فارسی)](README.fa.md)
+- [Euskera](README.eu.md)
+- [فارسی](README.fa.md)
 - [Français](README.fr.md)
 - [Ελληνικά](README.gr.md)
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)
@@ -108,6 +112,7 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 - [O'zbek](README.uz.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
+- [香港繁體](README.zh-HK.md)
 
 [![由 Vercel 技術支援](public/powered-by-vercel.svg)][vercel]
 

@@ -1,0 +1,115 @@
+{
+  "reactions": {
+    "0": "{{count}} reakcí",
+    "one": "{{count}} reakce",
+    "few": "{{count}} reakce",
+    "many": "{{count}} reakce",
+    "other": "{{count}} reakcí"
+  },
+  "comment": "Okomentovat",
+  "comments": {
+    "0": "{{count}} komentářů",
+    "one": "{{count}} komentář",
+    "few": "{{count}} komentáře",
+    "many": "{{count}} komentáře",
+    "other": "{{count}} komentářů"
+  },
+  "reply": "Odpovědět",
+  "replies": {
+    "0": "{{count}} odpovědí",
+    "one": "{{count}} odpověď",
+    "few": "{{count}} odpovědi",
+    "many": "{{count}} odpovědi",
+    "other": "{{count}}{{plus}} odpovědí"
+  },
+  "upvotes": {
+    "0": "{{count}} hlasů pro",
+    "one": "{{count}} hlas pro",
+    "few": "{{count}} hlasy pro",
+    "many": "{{count}} hlasy pro",
+    "other": "{{count}} hlasů pro"
+  },
+  "hiddenItems": {
+    "0": "{{count}} skrytých položek",
+    "one": "{{count}} skrytá položka",
+    "few": "{{count}} skryté položky",
+    "many": "{{count}} skryté položky",
+    "other": "{{count}} skrytých položek"
+  },
+  "genericError": "Vyskytla se chyba: {{message}}",
+  "loadMore": "Načíst více",
+  "loading": "Načítání",
+  "loadingComments": "Načítání komentářů…",
+  "loadingPreview": "Načítání náhledu…",
+  "poweredBy": "- poháněno službou <a>giscus</a>",
+  "oldest": "Nejstarší",
+  "newest": "Nejnovější",
+  "showPreviousReplies": {
+    "0": "Zobrazit {{count}} předchozích odpovědí",
+    "one": "Zobrazit {{count}} předchozí odpověď",
+    "few": "Zobrazit {{count}} předchozí odpovědi",
+    "many": "Zobrazit {{count}} předchozí odpovědi",
+    "other": "Zobrazit {{count}} předchozích odpovědí"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Zobrazit {{count}} předchozích odpovědí na GitHub",
+    "one": "Zobrazit {{count}} předchozí odpověď na GitHub",
+    "few": "Zobrazit {{count}} předchozí odpovědi na GitHub",
+    "many": "Zobrazit {{count}} předchozí odpovědi na GitHub",
+    "other": "Zobrazit {{count}} předchozích odpovědí na GitHub"
+  },
+  "edited": "upraveno",
+  "thisCommentWasDeleted": "Tento komentář byl smazán.",
+  "thisCommentWasMinimized": "Tento komentář byl sbalen.",
+  "thisCommentWasHidden": "Tento komentář byl skryt.",
+  "write": "Napsat",
+  "preview": "Zobrazit náhled",
+  "enableFixedWidth": "Zapnout písmo s pevnou šířkou (monospace) v editoru",
+  "disableFixedWidth": "Vypnout písmo s pevnou šířkou (monospace) v editoru",
+  "lastEditedAt": "Naposledy upraveno {{date}}",
+  "writeAComment": "Napsat komentář",
+  "signInToComment": "Přihlaste se k přidání komentáře",
+  "stylingWithMarkdownIsSupported": "Formátování pomocí Markdown je podporováno",
+  "signOut": "Odhlásit se",
+  "cancel": "Zrušit",
+  "signInWithGitHub": "Přihlásit se přes GitHub",
+  "writeAReply": "Odpovědět",
+
+  "upvote": "Hlasovat pro",
+  "youMustBeSignedInToUpvote": "Pro hlasování se musíte přihlásit.",
+  "addReactions": "Přidat reakce",
+  "pleaseWait": "Prosím, čekejte…",
+  "pickYourReaction": "Vyberte svou reakci",
+  "addTheReaction": "Přidat reakci {{reaction}}",
+  "removeTheReaction": "Odebrat reakci {{reaction}}",
+  "signInToAddYourReaction": "<a>Přihlaste se</a> k přidání reakce.",
+  "youMustBeSignedInToAddReactions": "Pro přidávání reakcí se musíte přihlásit.",
+  "peopleReactedWith": {
+    "0": "{{count}} lidí reagovalo reakcí {{reaction}} {{emoji}}",
+    "one": "{{count}} osoba reagovala reakcí {{reaction}} {{emoji}}",
+    "few": "{{count}} lidé reagovali reakcí {{reaction}} {{emoji}}",
+    "many": "{{count}} lidé reagovali reakcí {{reaction}} {{emoji}}",
+    "other": "{{count}} lidí reagovalo reakcí {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Nic k náhledu",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Smích",
+  "HOORAY": "Hurá",
+  "CONFUSED": "Zmatený",
+  "HEART": "Láska",
+  "ROCKET": "Raketa",
+  "EYES": "Oči",
+
+  "COLLABORATOR": "Spolupracovník",
+  "CONTRIBUTOR": "Přispěvatel",
+  "FIRST_TIMER": "Začátečník",
+  "FIRST_TIME_CONTRIBUTOR": "Přispívá poprvé",
+  "MANNEQUIN": "Mannequin",
+  "MEMBER": "Člen",
+  "NONE": "Žádný",
+  "OWNER": "Vlastník",
+  "APP": "Aplikace"
+}

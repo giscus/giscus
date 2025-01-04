@@ -1,0 +1,196 @@
+/*! MIT License
+ * Modified from Pavel Pertsev's Gruvbox theme, licensed under the MIT License
+ * https://github.com/morhetz/gruvbox
+ */
+
+main {
+  --color-prettylights-syntax-comment: #928374; /* fg4 */
+  --color-prettylights-syntax-constant: #458588; /* blue */
+  --color-prettylights-syntax-entity: #b16286; /* purple */
+  --color-prettylights-syntax-storage-modifier-import: #665c54; /* fg2 */
+  --color-prettylights-syntax-entity-tag: #98971a; /* green */
+  --color-prettylights-syntax-keyword: #cc241d; /* red */
+  --color-prettylights-syntax-string: #689d6a; /* aqua */
+  --color-prettylights-syntax-variable: #d65d0e; /* orange */
+  --color-prettylights-syntax-brackethighlighter-unmatched: #cc241d; /* red */
+  --color-prettylights-syntax-invalid-illegal-text: #3c3836; /* fg0 */
+  --color-prettylights-syntax-invalid-illegal-bg: #9d0006; /* dark red */
+  --color-prettylights-syntax-carriage-return-text: #3c3836; /* fg0 */
+  --color-prettylights-syntax-carriage-return-bg: #9d0006; /* dark red */
+  --color-prettylights-syntax-string-regexp: #689d6a; /* aqua */
+  --color-prettylights-syntax-markup-list: #d79921; /* yellow */
+  --color-prettylights-syntax-markup-heading: #458588; /* blue */
+  --color-prettylights-syntax-markup-italic: #665c54; /* fg2 */
+  --color-prettylights-syntax-markup-bold: #665c54; /* fg2 */
+  --color-prettylights-syntax-markup-deleted-text: #cc241d; /* red */
+  --color-prettylights-syntax-markup-deleted-bg: #9d0006; /* dark red */
+  --color-prettylights-syntax-markup-inserted-text: #98971a; /* green */
+  --color-prettylights-syntax-markup-inserted-bg: #79740e; /* dark green */
+  --color-prettylights-syntax-markup-changed-text: #d79921; /* yellow */
+  --color-prettylights-syntax-markup-changed-bg: #b57614; /* dark yellow */
+  --color-prettylights-syntax-markup-ignored-text: #665c54; /* fg2 */
+  --color-prettylights-syntax-markup-ignored-bg: #458588; /* blue */
+  --color-prettylights-syntax-meta-diff-range: #b16286; /* purple */
+  --color-prettylights-syntax-brackethighlighter-angle: #928374; /* fg4 */
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #a89984; /* bg4 */
+  --color-prettylights-syntax-constant-other-reference-link: #458588; /* blue */
+  --color-btn-text: #3c3836; /* fg0 */
+  --color-btn-bg: #ebdbb2; /* bg1 */
+  --color-btn-border: rgb(60 56 54 / 10%); /* fg0 at 10% opacity */
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-hover-bg: #d5c4a1; /* bg2 */
+  --color-btn-hover-border: #7c6f64; /* fg3 */
+  --color-btn-active-bg: #bdae93; /* bg3 */
+  --color-btn-active-border: #665c54; /* fg2 */
+  --color-btn-selected-bg: #ebdbb2; /* bg1 */
+  --color-btn-primary-text: #3c3836; /* fg0 */
+  --color-btn-primary-bg: #98971a; /* green */
+  --color-btn-primary-border: rgb(60 56 54 / 10%); /* fg0 at 10% opacity */
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  --color-btn-primary-hover-bg: #98971a; /* green */
+  --color-btn-primary-hover-border: rgb(60 56 54 / 10%); /* fg0 at 10% opacity */
+  --color-btn-primary-selected-bg: #98971a; /* green */
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+  --color-btn-primary-disabled-text: rgb(60 56 54 / 50%); /* fg0 at 50% opacity */
+  --color-btn-primary-disabled-bg: rgb(152 151 26 / 60%); /* green at 60% opacity */
+  --color-btn-primary-disabled-border: rgb(60 56 54 / 10%); /* fg0 at 10% opacity */
+  --color-action-list-item-default-hover-bg: rgb(102 92 84 / 12%); /* fg2 at 12% opacity */
+  --color-segmented-control-bg: rgb(146 131 116 / 10%); /* fg4 at 10% opacity */
+  --color-segmented-control-button-bg: #fbf1c7; /* bg0 */
+  --color-segmented-control-button-selected-border: #665c54; /* fg2 */
+  --color-fg-default: #3c3836; /* fg0 */
+  --color-fg-muted: #665c54; /* fg2 */
+  --color-fg-subtle: #7c6f64; /* fg3 */
+  --color-canvas-default: #fbf1c7; /* bg0 */
+  --color-canvas-overlay: #ebdbb2; /* bg1 */
+  --color-canvas-inset: #fbf1c7; /* bg0 */
+  --color-canvas-subtle: #ebdbb2; /* bg1 */
+  --color-border-default: #d5c4a1; /* bg2 */
+  --color-border-muted: #ebdbb2; /* bg1 */
+  --color-neutral-muted: rgb(146 131 116 / 20%); /* fg4 at 20% opacity */
+  --color-accent-fg: #28676b; /* blue */
+  --color-accent-emphasis: #458588; /* blue */
+  --color-accent-muted: rgb(69 133 136 / 40%); /* blue at 40% opacity */
+  --color-accent-subtle: rgb(69 133 136 / 10%); /* blue at 10% opacity */
+  --color-success-fg: #98971a; /* green */
+  --color-attention-fg: #d79921; /* yellow */
+  --color-attention-muted: rgb(215 153 33 / 40%); /* yellow at 40% opacity */
+  --color-attention-subtle: rgb(215 153 33 / 15%); /* yellow at 15% opacity */
+  --color-danger-fg: #cc241d; /* red */
+  --color-danger-muted: rgb(204 36 29 / 40%); /* red at 40% opacity */
+  --color-danger-subtle: rgb(204 36 29 / 10%); /* red at 10% opacity */
+  --color-primer-shadow-inset: 0 0 transparent;
+  --color-scale-gray-7: #ebdbb2; /* bg1 */
+  --color-scale-blue-8: #076678; /* dark blue */
+
+  /*! Extensions from @primer/css/alerts/flash.scss */
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+}
+
+main .pagination-loader-container {
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line.svg");
+}
+
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-default.gif");
+}
+
+@media (prefers-color-scheme: dark) {
+    main {
+    --color-prettylights-syntax-comment: #928374; /* bg4 */
+    --color-prettylights-syntax-constant: #83a598; /* blue */
+    --color-prettylights-syntax-entity: #d3869b; /* purple */
+    --color-prettylights-syntax-storage-modifier-import: #d5c4a1; /* fg2 */
+    --color-prettylights-syntax-entity-tag: #b8bb26; /* green */
+    --color-prettylights-syntax-keyword: #fb4934; /* red */
+    --color-prettylights-syntax-string: #8ec07c; /* aqua */
+    --color-prettylights-syntax-variable: #fe8019; /* orange */
+    --color-prettylights-syntax-brackethighlighter-unmatched: #fb4934; /* red */
+    --color-prettylights-syntax-invalid-illegal-text: #fbf1c7; /* fg0 */
+    --color-prettylights-syntax-invalid-illegal-bg: #cc241d; /* dark red */
+    --color-prettylights-syntax-carriage-return-text: #fbf1c7; /* fg0 */
+    --color-prettylights-syntax-carriage-return-bg: #cc241d; /* dark red */
+    --color-prettylights-syntax-string-regexp: #b8bb26; /* green */
+    --color-prettylights-syntax-markup-list: #fabd2f; /* yellow */
+    --color-prettylights-syntax-markup-heading: #83a598; /* blue */
+    --color-prettylights-syntax-markup-italic: #d5c4a1; /* fg2 */
+    --color-prettylights-syntax-markup-bold: #d5c4a1; /* fg2 */
+    --color-prettylights-syntax-markup-deleted-text: #fbf1c7; /* fg0 */
+    --color-prettylights-syntax-markup-deleted-bg: #9d0006; /* dark red */
+    --color-prettylights-syntax-markup-inserted-text: #b8bb26; /* green */
+    --color-prettylights-syntax-markup-inserted-bg: #427b58; /* dark aqua */
+    --color-prettylights-syntax-markup-changed-text: #fabd2f; /* yellow */
+    --color-prettylights-syntax-markup-changed-bg: #af3a03; /* dark orange */
+    --color-prettylights-syntax-markup-ignored-text: #d5c4a1; /* fg2 */
+    --color-prettylights-syntax-markup-ignored-bg: #83a598; /* blue */
+    --color-prettylights-syntax-meta-diff-range: #d3869b; /* purple */
+    --color-prettylights-syntax-brackethighlighter-angle: #928374; /* bg4 */
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #504945; /* bg2 */
+    --color-prettylights-syntax-constant-other-reference-link: #83a598; /* blue */
+    --color-btn-text: #ebdbb2; /* fg1 */
+    --color-btn-bg: #282828; /* bg0 */
+    --color-btn-border: rgb(251 241 199 / 10%); /* fg0 */
+    --color-btn-shadow: 0 0 transparent;
+    --color-btn-inset-shadow: 0 0 transparent;
+    --color-btn-hover-bg: #3c3836; /* bg1 */
+    --color-btn-hover-border: #928374; /* bg4 */
+    --color-btn-active-bg: #504945; /* bg2 */
+    --color-btn-active-border: #665c54; /* bg3 */
+    --color-btn-selected-bg: #282828; /* bg0 */
+    --color-btn-primary-text: #fbf1c7; /* fg0 */
+    --color-btn-primary-bg: #b8bb26; /* green */
+    --color-btn-primary-border: rgb(251 241 199 / 10%); /* fg0 */
+    --color-btn-primary-shadow: 0 0 transparent;
+    --color-btn-primary-inset-shadow: 0 0 transparent;
+    --color-btn-primary-hover-bg: #b8bb26; /* green */
+    --color-btn-primary-hover-border: rgb(251 241 199 / 10%); /* fg0 */
+    --color-btn-primary-selected-bg: #b8bb26; /* green */
+    --color-btn-primary-selected-shadow: 0 0 transparent;
+    --color-btn-primary-disabled-text: rgb(251 241 199 / 50%); /* fg0 */
+    --color-btn-primary-disabled-bg: rgb(184 187 38 / 60%); /* green */
+    --color-btn-primary-disabled-border: rgb(251 241 199 / 10%); /* fg0 */
+    --color-action-list-item-default-hover-bg: rgb(213 196 161 / 12%); /* fg2 */
+    --color-segmented-control-bg: rgb(146 131 116 / 10%); /* bg4 */
+    --color-segmented-control-button-bg: #1d2021; /* bg0_h */
+    --color-segmented-control-button-selected-border: #665c54; /* bg3 */
+    --color-fg-default: #ebdbb2; /* fg1 */
+    --color-fg-muted: #bdae93; /* fg3 */
+    --color-fg-subtle: #a89984; /* fg4 */
+    --color-canvas-default: #282828; /* bg0 */
+    --color-canvas-overlay: #3c3836; /* bg1 */
+    --color-canvas-inset: #1d2021; /* bg0_h */
+    --color-canvas-subtle: #3c3836; /* bg1 */
+    --color-border-default: #3c3836; /* bg1 */
+    --color-border-muted: #282828; /* bg0 */
+    --color-neutral-muted: rgb(146 131 116 / 20%); /* bg4 */
+    --color-accent-fg: #91b2a5; /* blue */
+    --color-accent-emphasis: #83a598; /* blue */
+    --color-accent-muted: rgb(131 165 152 / 40%); /* blue */
+    --color-accent-subtle: rgb(131 165 152 / 10%); /* blue */
+    --color-success-fg: #b8bb26; /* green */
+    --color-attention-fg: #fabd2f; /* yellow */
+    --color-attention-muted: rgb(250 189 47 / 40%); /* yellow */
+    --color-attention-subtle: rgb(250 189 47 / 15%); /* yellow */
+    --color-danger-fg: #fb4934; /* red */
+    --color-danger-muted: rgb(251 73 52 / 40%); /* red */
+    --color-danger-subtle: rgb(251 73 52 / 10%); /* red */
+    --color-primer-shadow-inset: 0 0 transparent;
+    --color-scale-gray-7: #282828; /* bg0 */
+    --color-scale-blue-8: #076678; /* dark blue */
+
+    /*! Extensions from @primer/css/alerts/flash.scss */
+    --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+    --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+    }
+
+    main .pagination-loader-container {
+    background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
+    }
+
+    main .gsc-loading-image {
+    background-image: url("https://github.githubassets.com/images/mona-loading-dark.gif");
+    }
+}

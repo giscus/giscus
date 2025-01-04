@@ -1,0 +1,115 @@
+{
+  "reactions": {
+    "0": "{{count}} reakcija",
+    "one": "{{count}} reakcija",
+    "few": "{{count}} reakcije",
+    "many": "{{count}} reakcija",
+    "other": "{{count}} reakcija"
+  },
+  "comment": "Komentariši",
+  "comments": {
+    "0": "{{count}} komentara",
+    "one": "{{count}} komentar",
+    "few": "{{count}} komentara",
+    "many": "{{count}} komentara",
+    "other": "{{count}} komentara"
+  },
+  "reply": "Odgovor",
+  "replies": {
+    "0": "{{count}} odgovora",
+    "one": "{{count}} odgovor",
+    "few": "{{count}} odgovora",
+    "many": "{{count}}{{plus}} odgovora",
+    "other": "{{count}}{{plus}} odgovora"
+  },
+  "upvotes": {
+    "0": "{{count}} goreglasova",
+    "one": "{{count}} goreglas",
+    "few": "{{count}} goreglasa",
+    "many": "{{count}} goreglasova",
+    "other": "{{count}} goreglasova"
+  },
+  "hiddenItems": {
+    "0": "{{count}} skrivenih stvari",
+    "one": "{{count}} skrivena stvar",
+    "few": "{{count}} skrivene stvari",
+    "many": "{{count}} skrivenih stvari",
+    "other": "{{count}} skrivenih stvari"
+  },
+  "genericError": "Pojavila se greška: {{message}}",
+  "loadMore": "Učitaj više",
+  "loading": "Učitavanje",
+  "loadingComments": "Učitavanje komentara…",
+  "loadingPreview": "Učitavanje pregleda…",
+  "poweredBy": "– pokrenuto preko <a>giscus</a>-a",
+  "oldest": "Najstarije",
+  "newest": "Najnovije",
+  "showPreviousReplies": {
+    "0": "Prikaži {{count}} prethodnih odgovora",
+    "one": "Prikaži prethodni odgovor",
+    "few": "Prikaži {{count}} prethodna odgovora",
+    "many": "Prikaži {{count}} prethodnih odgovora",
+    "other": "Prikaži {{count}} prethodnih odgovora"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Pogledaj {{count}} prethodnih odgovora na GitHub-u",
+    "one": "Pogledaj prethodni odgovor na GitHub-u",
+    "few": "Pogledaj {{count}} prethodna odgovora na GitHub-u",
+    "many": "Pogledaj {{count}} prethodnih odgovora na GitHub-u",
+    "other": "Pogledaj {{count}} prethodnih odgovora na GitHub-u"
+  },
+  "edited": "Izmenjeno",
+  "thisCommentWasDeleted": "Ovaj komentar je izbrisan.",
+  "thisCommentWasMinimized": "Ovaj komentar je minimizovan.",
+  "thisCommentWasHidden": "Ovaj komentar je skriven.",
+  "write": "Pisanje",
+  "preview": "Pregled",
+  "enableFixedWidth": "Uključi font fiksne širine (monospace) unutar editor-a.",
+  "disableFixedWidth": "Isključi font fiksne širine (monospace) unutar editor-a.",
+  "lastEditedAt": "Poslednji put izmenjeno: {{date}}",
+  "writeAComment": "Napiši komentar",
+  "signInToComment": "Prijavite se da bi komentarisali",
+  "stylingWithMarkdownIsSupported": "Dekorisanje teksta sa Markdown-om je podržano.",
+  "signOut": "Izloguj se",
+  "cancel": "Poništi",
+  "signInWithGitHub": "Prijavi se sa Github-om",
+  "writeAReply": "Odgovori",
+
+  "upvote": "Glasaj",
+  "youMustBeSignedInToUpvote": "Morate biti prijavljeni da bi glasali.",
+  "addReactions": "Dodaj reakcije",
+  "pleaseWait": "Sačekajte, molim…",
+  "pickYourReaction": "Izaberi reakciju",
+  "addTheReaction": "Dodaj {{reaction}} reakciju",
+  "removeTheReaction": "Ukloni {{reaction}} reakciju",
+  "signInToAddYourReaction": "<a>Prijavite se</a> da bi dodali reakcije.",
+  "youMustBeSignedInToAddReactions": "Morate biti prijavljeni da bi dodavali reakcije.",
+  "peopleReactedWith": {
+    "0": "{{count}} osoba je reagovalo sa {{emoji}} {{reaction}}",
+    "one": "{{count}} osoba je reagovala sa {{emoji}} {{reaction}}",
+    "few": "{{count}} osobe su reagovale sa {{emoji}} {{reaction}}",
+    "many": "{{count}} osoba je reagovalo sa {{emoji}} {{reaction}}",
+    "other": "{{count}} osoba je reagovalo sa {{emoji}} {{reaction}}"
+  },
+  "emoji": "smajli",
+  "nothingToPreview": "Ništa nema za pregled",
+
+  "THUMBS_UP": "Palac nagore",
+  "THUMBS_DOWN": "Palac nadole",
+  "LAUGH": "Smešno",
+  "HOORAY": "Uzbuđen",
+  "CONFUSED": "Zbunjen",
+  "HEART": "Voli",
+  "ROCKET": "Raketa",
+  "EYES": "Oči",
+
+  "COLLABORATOR": "Kolaborator",
+  "CONTRIBUTOR": "Kontributor",
+  "FIRST_TIMER": "Novajlija",
+  "FIRST_TIME_CONTRIBUTOR": "Novajlija kontributor",
+  "MANNEQUIN": "Lutka",
+  "MEMBER": "Član",
+  "NONE": "Ništa",
+  "OWNER": "Vlasnik",
+  "APP": "Aplikacija"
+}

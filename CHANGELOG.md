@@ -7,6 +7,86 @@ writing, this is a rolling-release project without any meaningful versioning
 whatsoever. Tags/releases may be created for the sole purpose of documenting
 major updates to the project.
 
+## 2024-12-31
+
+### Added
+
+- Add Cantonese localization
+  ([#1571](https://github.com/giscus/giscus/pull/1571)).
+
+- Add Basque localization
+  ([#1572](https://github.com/giscus/giscus/pull/1572)).
+
+- Add Belarusian localization
+  ([#1579](https://github.com/giscus/giscus/pull/1579)).
+
+- Add Gruvbox themes
+  ([#1232](https://github.com/giscus/giscus/pull/1232)).
+
+- Add Catppuccin themes
+  ([#1411](https://github.com/giscus/giscus/pull/1411)).
+
+- Add Fro theme
+  ([#1464](https://github.com/giscus/giscus/pull/1464)).
+
+### Changed
+
+- Expose fonts as CSS variables
+  ([#1587](https://github.com/giscus/giscus/pull/1587)).
+
+- Only add description, og, and twitter meta tags on the homepage
+  ([#1588](https://github.com/giscus/giscus/pull/1588)).
+
+### Fixed
+
+- Ensure links and link-like buttons are underlined
+  ([#1586](https://github.com/giscus/giscus/pull/1586)).
+
+- Set `dir="auto"` on the comment `textarea`
+  ([#1590](https://github.com/giscus/giscus/pull/1590)).
+
+- Use `NEXT_PUBLIC_DEMO_REPO` to fetch token for rendering markdown on the
+  homepage ([#1591](https://github.com/giscus/giscus/pull/1591)).
+
+
+## 2024-11-28
+
+### Added
+
+- Add Bulgarian localization
+  ([#1544](https://github.com/giscus/giscus/pull/1544)).
+
+- Add Czech localization
+  ([#1561](https://github.com/giscus/giscus/pull/1561)).
+
+## 2024-06-08
+
+### Changed
+
+- Fixed CSS injection vulnerability in MathJax renderer
+  (https://news.ycombinator.com/item?id=40615653).
+
+## 2024-04-22
+
+### Added
+
+- Add Serbo-Croatian localization
+  ([#1365](https://github.com/giscus/giscus/pull/1365)).
+
+## 2024-02-11
+
+### Added
+
+- Add Cross-Origin Resource Policy support
+  ([#1309](https://github.com/giscus/giscus/pull/1309)).
+
+## 2024-02-10
+
+### Added
+
+- Add Uzbek localization
+  ([#1303](https://github.com/giscus/giscus/pull/1303)).
+
 ## 2024-01-06
 
 ### Added

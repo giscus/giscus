@@ -11,6 +11,18 @@
   border-color: var(--color-border-default, var(--color-border-primary));
 }
 
+:host, html {
+  --font-family-sans: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-family-monospace: ui-monospace, "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+  --font-family-default: var(--font-family-sans);
+
+  font-family: var(--font-family-default);
+}
+
+code, kbd, pre, samp, .gsc-is-fixed-width, .commit-tease-sha, .blob-code-inner, .blob-num {
+  font-family: var(--font-family-monospace);
+}
+
 a {
   color: var(--color-accent-fg, var(--color-text-link));
 }
@@ -33,6 +45,10 @@ details summary {
   html {
     font-size: 5vw;
   }
+}
+
+.link-secondary {
+  @apply underline;
 }
 
 .color-bg-primary,
@@ -303,8 +319,6 @@ details summary {
 }
 
 .commit-tease-sha {
-  @apply font-mono;
-
   font-size: 90%;
   color: var(--color-fg-default, var(--color-text-primary));
 }
@@ -355,7 +369,7 @@ details summary {
 
 .blob-num {
   /* stylelint-disable-next-line max-line-length */
-  @apply w-[1%] min-w-[50px] px-[10px] font-mono text-xs leading-5 text-right whitespace-nowrap align-top cursor-pointer select-none;
+  @apply w-[1%] min-w-[50px] px-[10px] text-xs leading-5 text-right whitespace-nowrap align-top cursor-pointer select-none;
 
   color: var(--color-fg-subtle, var(--color-diff-blob-num-text));
 }
@@ -369,7 +383,7 @@ details summary {
 }
 
 .blob-code-inner {
-  @apply overflow-visible font-mono text-xs whitespace-pre;
+  @apply overflow-visible text-xs whitespace-pre;
 
   word-wrap: normal;
 }
@@ -877,10 +891,6 @@ img.emoji {
 
 .gsc-reply-reactions {
   @apply flex content-center mr-4 gap-2 -ml-1;
-}
-
-.gsc-is-fixed-width {
-  @apply font-mono;
 }
 
 /* Re-apply overridden tailwind */

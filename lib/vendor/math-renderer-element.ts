@@ -3,27 +3,123 @@
  * provided to the browser when you load their website.
  */
 
+import type Dompurify from 'dompurify';
 import type MathJaxConfig from 'mathjax/es5/tex-chtml-full';
 import { html, render } from 'lit-html';
 import { hasStorageAccess } from '../utils';
 
+/**
+ * UsageTracker is a thin wrapper around the Map class
+ * suitable for keeping count of numerical values across
+ * catlyst component instances.
+ *
+ * We are using this alongside the math-render-element as a static
+ * way of tracking overall macro counts for a single pipeline run.
+ *
+ * Because this is a long-lived object, values associated with a pipeline
+ * id must be cleared when the component is unmounted from the DOM.
+ */
+class UsageTracker {
+  private usage: Map<string, number>;
+  constructor() {
+    this.usage = new Map();
+  }
+
+  get(key: string) {
+    return this.usage.get(key) ?? 0;
+  }
+
+  update(key: string, value = 0) {
+    const currentValue = this.get(key);
+    this.usage.set(key, value + (currentValue ?? 0));
+  }
+
+  clear(key: string) {
+    this.usage.delete(key);
+  }
+
+  // total provides a count of all instances of math usage across all pipeline
+  // runs we've registered with the tracker.
+  total() {
+    return Array.from(this.usage.entries()).reduce((sum, [, time]) => {
+      sum += time;
+      return sum;
+    }, 0);
+  }
+}
+
 declare global {
   interface Window {
-    MathJax: MathJaxConfig;
+    MathJax?: MathJaxConfig;
   }
 }
 const MAX_ALLOWED_MACROS = 100;
+/**
+ * While each instance of a math renderer element is limited
+ * to 100 macros, there is nothing preventing users with malicious intent
+ * from authoring many comments, each with 100 macros. This value allows
+ * us to limit the total number of macros on any given page.
+ */
+const GLOBAL_MAX_ALLOWED_MACROS = 2000;
+
 const BAD_EXPRESSION_ERROR = 'Unable to render expression.';
 const INLINE_DELIMITER = '$';
 const DISPLAY_DELIMITER = '$$';
 const STATIC_RESOURCE_ATTR = 'data-static-url';
 const MATHJAX_PREFIX_REGEX = new RegExp('^(TEX|mjx|MJX)-');
+const DIMENSION_ARG_MACROS = [
+  'hskip',
+  'hspace',
+  'raise',
+  'mspace',
+  'mskip',
+  'kern',
+  'lower',
+  'above',
+  'mkern',
+  'moveleft',
+  'moveright',
+  'rule',
+  'Rule',
+  'space',
+  'Space',
+];
+const DISALLOWED_MACROS = [
+  'DeclareMathOperator',
+  'DeclarePairedDelimiters',
+  'renewtagform',
+  'newtagform',
+  'colorbox',
+  'fcolorbox',
+  'hphantom',
+  'vphantom',
+  'phantom',
+  'operatorname',
+  'Newextarrow',
+  'definecolor',
+  'mathchoice',
+  'unicode',
+  'mmlToken',
+];
 
-const stripAttrsConfigs = {
-  ALLOWED_ATTR: [],
-  ALLOW_DATA_ATTR: false,
-  RETURN_DOM: true,
+// MathML parsing error messages that we want to replace with a generic error message
+const MATHML_PARSING_ERROR_MESSAGES = ['Misplaced &'];
+
+// Maps possible dimension units that can be passed to LaTeX macros to the maximum value (absolute) that we allow.
+const unitToMaxVal: Record<string, number> = {
+  em: 2,
+  pt: 20,
+  pc: 0.75,
+  ex: 2.5,
 };
+
+const macrosWithDimensionArgs = DIMENSION_ARG_MACROS.join('|');
+const unitTypes = Object.keys(unitToMaxVal).join('|');
+const dimensionRegex = '-?\\d+.?\\d*?';
+const macrosWithDimensionsRegex = new RegExp(
+  `(${macrosWithDimensionArgs})({${dimensionRegex}(${unitTypes})})+`,
+  'g',
+);
 
 const purifyConfigs = {
   USE_PROFILES: { mathMl: true },
@@ -36,7 +132,9 @@ const purifyConfigs = {
   },
 };
 
-let DOMPurify: null | { default: typeof import('dompurify') } = null;
+const macroUsageTracker = new UsageTracker();
+
+let DOMPurify: null | { default: typeof Dompurify } = null;
 let configurationPromise: Promise<void> | null = null;
 
 /**
@@ -66,7 +164,9 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
       tex: {
         inlineMath: [[INLINE_DELIMITER, INLINE_DELIMITER]],
         displayMath: [[DISPLAY_DELIMITER, DISPLAY_DELIMITER]],
-        packages: { '[-]': ['html', 'require', 'newcommand'] },
+        packages: {
+          '[-]': ['noerrors', 'bbox', 'html', 'require', 'newcommand', 'action', 'colortbl'],
+        },
         maxMacros: 1000,
       },
       chtml: {
@@ -75,10 +175,40 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
       startup: {
         typeset: false,
         ready() {
-          window.MathJax.startup.defaultReady();
-          const menu = window.MathJax.startup.document.menu.menu;
+          // MathJax has loaded all needed components
+          const mathjax = window.MathJax as MathJaxConfig;
+
+          // Initializes the MathJax internal objects and creates typesetting and conversion methods
+          mathjax.startup.defaultReady();
+
+          // Disable SVG option from context menu
+          const menu = mathjax.startup.document.menu.menu;
           const renderer = menu.find('Renderer');
           renderer?.disable();
+
+          for (const jax of mathjax.startup.document!.inputJax) {
+            jax.preFilters.add(async ({ math: mathObj }) => {
+              for (const macro of DISALLOWED_MACROS) {
+                if (mathObj.math.includes(`\\${macro}`)) {
+                  mathObj.math = `\\text{${macro} macro is not supported}`;
+                }
+              }
+
+              return true;
+            }, -1000);
+          }
+
+          const safe = mathjax.startup.document?.safe;
+
+          if (safe) {
+            safe.filterAttributes.set('fontfamily', 'filterSemiColon');
+            safe.filterAttributes.set('fontstyle', 'filterSemiColon');
+            safe.filterAttributes.set('fontweight', 'filterSemiColon');
+            safe.filterMethods.filterSemiColon = function (_: unknown, input: string) {
+              const [split] = input.split(/;/);
+              return split;
+            };
+          }
         },
       },
       options: {
@@ -91,8 +221,14 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
             URLs: 'none',
             classes: 'none',
             cssIDs: 'none',
-            styles: 'none',
+            styles: 'safe',
           },
+          // Largest padding/border/margin value allowed, in ems
+          // Note: There is a bug in mathjax that appears to prevent this setting from working correctly
+          lengthMax: 2,
+          // an emtpy object here is equivalent to setting all style properties to false, but is required so that lengthMax is respected.
+          safeStyles: {},
+          styleLengths: {},
         },
       },
     };
@@ -114,7 +250,18 @@ async function configureMathJax({ staticURL }: { staticURL: string }) {
   await configurationPromise;
 }
 
-function sanitizeClass(_: Element, data: DOMPurify.SanitizeAttributeHookEvent): void {
+// Workaround to force DOMPurify to not remove `columnalign` attributes from MathML elements
+function allowMathMlAttributes(el: Element, data: Dompurify.UponSanitizeAttributeHookEvent): void {
+  const allowedTags = ['mtable'];
+  const allowedAttributes = ['columnalign'];
+
+  if (allowedTags.includes(el.tagName) && allowedAttributes.includes(data.attrName)) {
+    data.keepAttr = true;
+    data.forceKeepAttr = true;
+  }
+}
+
+function sanitizeClass(_: Element, data: Dompurify.UponSanitizeAttributeHookEvent): void {
   // only look at class attributes
   if (data.attrName !== 'class') {
     return;
@@ -134,6 +281,9 @@ function sanitizeClass(_: Element, data: DOMPurify.SanitizeAttributeHookEvent): 
 
 class MathRendererElement extends HTMLElement {
   public staticURL = 'https://github.githubassets.com/static';
+  private runId: string;
+
+  mathmlEnabled: boolean = false;
 
   /**
    * Create a parallel document node that LaTeX content is injected into.
@@ -170,7 +320,9 @@ class MathRendererElement extends HTMLElement {
   }
 
   private isMathJaxContainer(node: Element | null) {
-    return node && node.nodeName === 'MJX-CONTAINER';
+    // Check whether math being parsed already exists within a MJX-CONTAINER (was already processed by MathJax)
+    // or a MATH-RENDERER element (just in case math elements are mistakenly nested somehow)
+    return node && (node.nodeName === 'MJX-CONTAINER' || node.nodeName === 'MATH-RENDERER');
   }
 
   private wasPreviouslyRendered() {
@@ -183,10 +335,22 @@ class MathRendererElement extends HTMLElement {
       return null;
     }
 
-    const errorNode = node.querySelector('mjx-merror');
-    const mathjaxError = errorNode?.getAttribute('data-mjx-error');
+    const selector = 'merror';
+    const errorNode = node.querySelector(selector);
+    let errorMessage = errorNode?.textContent ?? null;
 
-    return mathjaxError ?? null;
+    if (errorMessage) {
+      // Replace MathML's weird parsing error messages with a generic error message
+      const containsParsingError = MATHML_PARSING_ERROR_MESSAGES.some((mjxErrorMessage: string) =>
+        errorMessage?.includes(mjxErrorMessage),
+      );
+
+      if (containsParsingError) {
+        errorMessage = BAD_EXPRESSION_ERROR;
+      }
+    }
+
+    return errorMessage;
   }
 
   private renderError({ msg, raw }: { msg?: string | null; raw?: string } = {}) {
@@ -203,6 +367,93 @@ class MathRendererElement extends HTMLElement {
         <pre>${rawContent}</pre>`,
       this,
     );
+  }
+
+  // certain macros allow the user to alter other parts of the page, such as by
+  // allowing custom operators to override existing ones.  We disallow these.
+  private checkDisallowedMacros() {
+    const disallowedMacrosFound = [];
+    for (const macro of DISALLOWED_MACROS) {
+      if (this.textContent.includes(`\\${macro}`)) {
+        disallowedMacrosFound.push(macro);
+      }
+    }
+    return disallowedMacrosFound;
+  }
+
+  // Effectively does what the lengthMax attribute of safeOptions is supposed to but evidently does not;
+  // limits the value of numeric arguments to macros that can change padding or spacing, such as \hskip or \raise
+  // such that users cannot alter GitHub's UI.
+  private enforcePaddingLimit(textContent: string) {
+    // match all macros that can change padding or spacing (listed in DIMENSION_ARG_MACROS)
+    return textContent.replace(macrosWithDimensionsRegex, (match, other) => {
+      const dimensionAndUnitRegex = new RegExp(`(${dimensionRegex}(${unitTypes}))+`, 'g');
+      const matches = match?.match(dimensionAndUnitRegex);
+      if (!matches || !matches.length) {
+        return match;
+      }
+      // iterate through each dimension argument and clamp its value according to the allowed max value for its unit.
+      const output = matches.map((m) => {
+        const unit = m.split(new RegExp(`(${unitTypes})`));
+
+        if (!unit.length) {
+          return m;
+        }
+
+        const numericArg = Number(unit[0]);
+        const unitType = unit[1] ?? '';
+
+        if (!unitType) {
+          return m;
+        }
+
+        const maxVal = unitToMaxVal[unitType] ?? 0;
+        if (numericArg < -maxVal || numericArg > maxVal) {
+          return `{${maxVal}${unitType}}`;
+        } else {
+          return `{${m}}`;
+        }
+      });
+      return `${other}${output.join('')}`;
+    });
+  }
+
+  private enforceMathJaxSafety() {
+    if (!this.textContent) {
+      return '';
+    }
+
+    return this.enforcePaddingLimit(this.textContent);
+    // TODO: Call a method here that disallows passing `transparent` as a color argument
+    // and potentially other methods that enforce UI safeguards
+  }
+
+  // Workaround for WebKit bug (https://bugs.webkit.org/show_bug.cgi?id=160075)
+  // that prevents columnalign from being applied to mtd elements
+  private setColumnAlignments() {
+    const validAlignments = ['left', 'center', 'right'];
+    const tables = this.querySelectorAll('mtable[columnalign]');
+
+    for (const table of tables) {
+      const alignments = table.getAttribute('columnalign')?.trim().split(/\s+/);
+
+      if (alignments && alignments.length > 1) {
+        const rows = table.querySelectorAll(':scope > mtr');
+
+        for (const row of rows) {
+          const columns = row.querySelectorAll('mtd');
+
+          for (let j = 0; j < columns.length; j++) {
+            const column = columns[j];
+            const alignment = alignments[j] ?? alignments[alignments.length - 1];
+
+            if (column?.style && alignment && validAlignments.includes(alignment)) {
+              column.style.textAlign = alignment;
+            }
+          }
+        }
+      }
+    }
   }
 
   private renderContent(node: Node) {
@@ -238,29 +489,74 @@ class MathRendererElement extends HTMLElement {
     }
 
     this.innerHTML = sanitized;
-
-    // reset the typesetRoot to the real document
-    // The properties in output will be present if mathjax is loaded, so the ! are reasonably safe
-    const displayedMath = window.MathJax.startup.output.math;
-
-    // ensure the mathjax element exists and is an element node
-    if (displayedMath && this.childIsNode(this.firstChild)) {
-      displayedMath.typesetRoot = this.firstChild;
-      window.MathJax.startup.output.document.menu.addMenu(displayedMath);
-    }
   }
 
-  get textContent() {
+  get isInline(): boolean {
+    return this.classList.contains('js-inline-math');
+  }
+
+  get isDisplay(): boolean {
+    return this.classList.contains('js-display-math');
+  }
+
+  override get textContent() {
     return this.firstChild?.textContent ?? '';
   }
 
-  async connectedCallback() {
-    this.staticURL = this.getAttribute(STATIC_RESOURCE_ATTR);
-    await configureMathJax({ staticURL: this.staticURL });
-    requestAnimationFrame(() => this.typeset());
+  override set textContent(content: string) {
+    if (this.firstChild) {
+      this.firstChild.textContent = content;
+    }
   }
 
-  async typeset() {
+  async connectedCallback() {
+    this.staticURL = this.getAttribute(STATIC_RESOURCE_ATTR)!;
+    this.runId = this.getAttribute('data-run-id')!;
+
+    macroUsageTracker.update(this.runId);
+
+    await configureMathJax({ staticURL: this.staticURL });
+
+    requestAnimationFrame(() => {
+      this.renderMath();
+    });
+  }
+
+  convertTexToMathML() {
+    const parallelDocContent = this.tempDocumentContentForSanitization();
+    const mathJax = window.MathJax;
+
+    // We need to remove the $ delimiters from the TeX content before feeding it to MathJax
+    const tex = parallelDocContent
+      .trim()
+      .replace(new RegExp(`^\\${INLINE_DELIMITER}{1,2}|\\${INLINE_DELIMITER}{1,2}$`, 'g'), '');
+
+    if (mathJax && mathJax.tex2mml) {
+      const mathMl = mathJax.tex2mml(tex, { display: !this.isInline });
+
+      /**
+       * Add a custom hook to preserve table attributes,
+       * which should have been preserved with DOMPurify's "ALLOWED_ATTR" and "ADD_ATTR" configs,
+       * but that apparently isn't working at this time.
+       */
+      DOMPurify?.default.addHook('uponSanitizeAttribute', allowMathMlAttributes);
+      const sanitizedDocBody = DOMPurify?.default.sanitize(mathMl, {
+        USE_PROFILES: { mathMl: true },
+        RETURN_DOM: true,
+      }) as Element;
+
+      this.renderContent(sanitizedDocBody.firstElementChild as Node);
+
+      // Fix any misaligned math tables in browsers that don't yet support `mtable[columnalign]`
+      this.setColumnAlignments();
+    }
+  }
+
+  disconnectedCallback() {
+    macroUsageTracker.clear(this.runId);
+  }
+
+  renderMath() {
     if (!window.MathJax) {
       return;
     }
@@ -272,27 +568,32 @@ class MathRendererElement extends HTMLElement {
       return;
     }
 
-    if (this.textContent.split('{').length > MAX_ALLOWED_MACROS) {
+    // Large amounts of macros can crash the page, so we set an upper limit
+    const estimatedElMacroCount = this.textContent.split('{').length;
+    macroUsageTracker.update(this.runId, estimatedElMacroCount);
+
+    const aggregateMacroCount = macroUsageTracker.total();
+
+    if (
+      aggregateMacroCount > GLOBAL_MAX_ALLOWED_MACROS ||
+      estimatedElMacroCount > MAX_ALLOWED_MACROS
+    ) {
       this.renderError();
       return;
     }
 
-    const parallelDocContent = this.tempDocumentContentForSanitization();
+    // Perform additional sanitization to prevent behavior that MathJax technically allows.
+    const disallowedMacrosFound = this.checkDisallowedMacros();
+    if (disallowedMacrosFound.length > 0) {
+      this.renderError({
+        msg: `The following macros are not allowed: ${disallowedMacrosFound.join(', ')}`,
+      });
+      return;
+    }
 
-    /**
-     * Users can potentially introduce insecure code that hijacks our behavior observer code
-     * by providing the math render element with HTML nodes with classes that match our
-     * js behaviors e.g. js-sso-modal-complete
-     */
-    const sanitizedDocBody = DOMPurify?.default.sanitize(
-      parallelDocContent,
-      stripAttrsConfigs,
-    ) as Element;
+    this.textContent = this.enforceMathJaxSafety();
 
-    // in-place typeset the content in the parallel document
-    await window.MathJax.typesetPromise([sanitizedDocBody]);
-
-    this.renderContent(sanitizedDocBody.firstElementChild as Node);
+    this.convertTexToMathML();
   }
 }
 

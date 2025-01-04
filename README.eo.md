@@ -78,16 +78,21 @@ Vidu [CONTRIBUTING.md][contributing]
 
 Ĉi tiu README haveblas en:
 
-- [Arabic (العربية)](README.ar.md)
+- [&lrm;العربية](README.ar.md)
+- [Беларуская](README.be.md)
+- [български](README.bg.md)
 - [Català](README.ca.md)
+- [Čeština](README.cs.md)
 - [Dansk](README.da.md)
 - [Deutsch](README.de.md)
 - [English](README.md)
 - [Esperanto](README.eo.md)
 - [Español](README.es.md)
-- [Persian (فارسی)](README.fa.md)
+- [Euskera](README.eu.md)
+- [فارسی](README.fa.md)
 - [Français](README.fr.md)
 - [Ελληνικά](README.gr.md)
+- [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)
 - [Magyar](README.hu.md)
 - [Indonesia](README.id.md)
@@ -104,8 +109,10 @@ Vidu [CONTRIBUTING.md][contributing]
 - [Türkçe](README.tr.md)
 - [Tiếng Việt](README.vi.md)
 - [Українська](README.uk.md)
+- [O'zbek](README.uz.md)
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
+- [香港繁體](README.zh-HK.md)
 
 [![Powered by Vercel](public/powered-by-vercel.svg)][vercel]
 

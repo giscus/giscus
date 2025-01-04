@@ -208,7 +208,7 @@ export default function Comment({
                 </div>
 
                 {hasNextPage ? (
-                  <button className="color-text-link hover:underline" onClick={incrementBackPage}>
+                  <button className="color-text-link underline" onClick={incrementBackPage}>
                     {t('showPreviousReplies', { count: remainingReplies })}
                   </button>
                 ) : null}
@@ -216,7 +216,7 @@ export default function Comment({
                 {hasUnfetchedReplies ? (
                   <a
                     href={comment.url}
-                    className="color-text-link hover:underline"
+                    className="color-text-link underline"
                     rel="nofollow noopener noreferrer"
                     target="_blank"
                   >

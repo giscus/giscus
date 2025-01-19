@@ -206,7 +206,7 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
             components={{
               a: (
                 <a
-                  href="https://github.com/apps/giscus"
+                  href="https://github.com/apps/giscus-new"
                   target="_blank"
                   rel="noreferrer noopener nofollow"
                 />

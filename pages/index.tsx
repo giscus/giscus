@@ -41,7 +41,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
     author: {
       avatarUrl: 'https://avatars.githubusercontent.com/in/106117',
       login: 'giscus',
-      url: 'https://github.com/apps/giscus',
+      url: 'https://github.com/apps/giscus-new',
     },
     authorAssociation: 'APP',
     bodyHTML: contentBefore,

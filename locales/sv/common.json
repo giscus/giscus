@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} reaktioner",
+    "one": "{{count}} reaktion",
+    "other": "{{count}} reaktioner"
+  },
+  "comment": "Kommentera",
+  "comments": {
+    "0": "{{count}} kommentarer",
+    "one": "{{count}} kommentar",
+    "other": "{{count}} kommentarer"
+  },
+  "reply": "Svara",
+  "replies": {
+    "0": "{{count}} svar",
+    "one": "{{count}} svar",
+    "other": "{{count}}{{plus}} svar"
+  },
+  "upvotes": {
+    "0": "{{count}} gillningar",
+    "one": "{{count}} gillning",
+    "other": "{{count}} gillningar"
+  },
+  "hiddenItems": {
+    "0": "{{count}} dolda objekt",
+    "one": "{{count}} dolt objekt",
+    "other": "{{count}} dolda objekt"
+  },
+  "genericError": "Ett fel inträffade: {{message}}",
+  "loadMore": "Ladda mer",
+  "loading": "Laddar",
+  "loadingComments": "Laddar kommentarer…",
+  "loadingPreview": "Laddar förhandsvisning…",
+  "poweredBy": "– drivs av <a>giscus</a>",
+  "oldest": "Äldst",
+  "newest": "Nyast",
+  "showPreviousReplies": {
+    "0": "Visa {{count}} tidigare svar",
+    "one": "Visa {{count}} tidigare svar",
+    "other": "Visa {{count}} tidigare svar"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Visa {{count}} tidigare svar på GitHub",
+    "one": "Visa {{count}} tidigare svar på GitHub",
+    "other": "Visa {{count}} tidigare svar på GitHub"
+  },
+  "edited": "redigerad",
+  "thisCommentWasDeleted": "Denna kommentar har tagits bort.",
+  "thisCommentWasMinimized": "Denna kommentar har minimerats.",
+  "thisCommentWasHidden": "Denna kommentar har dolts.",
+  "write": "Skriv",
+  "preview": "Förhandsvisa",
+  "enableFixedWidth": "Aktivera fastbreddtypsnitt (monospace) i redigeraren",
+  "disableFixedWidth": "Inaktivera fastbreddtypsnitt (monospace) i redigeraren",
+  "lastEditedAt": "Senast redigerad {{date}}",
+  "writeAComment": "Skriv en kommentar",
+  "signInToComment": "Logga in för att kommentera",
+  "stylingWithMarkdownIsSupported": "Formatering med Markdown stöds",
+  "signOut": "Logga ut",
+  "cancel": "Avbryt",
+  "signInWithGitHub": "Logga in med GitHub",
+  "writeAReply": "Skriv ett svar",
+
+  "upvote": "Gilla",
+  "youMustBeSignedInToUpvote": "Du måste vara inloggad för att gilla.",
+  "addReactions": "Lägg till reaktioner",
+  "pleaseWait": "Vänligen vänta…",
+  "pickYourReaction": "Välj din reaktion",
+  "addTheReaction": "Lägg till {{reaction}}-reaktion",
+  "removeTheReaction": "Ta bort {{reaction}}-reaktion",
+  "signInToAddYourReaction": "<a>Logga in</a> för att lägga till din reaktion.",
+  "youMustBeSignedInToAddReactions": "Du måste vara inloggad för att lägga till reaktioner.",
+  "peopleReactedWith": {
+    "0": "{{count}} personer reagerade med {{reaction}} {{emoji}}",
+    "one": "{{count}} person reagerade med {{reaction}} {{emoji}}",
+    "other": "{{count}} personer reagerade med {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Inget att förhandsvisa",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Skratt",
+  "HOORAY": "Hurra",
+  "CONFUSED": "Förvirrad",
+  "HEART": "Kärlek",
+  "ROCKET": "Raket",
+  "EYES": "Ögon",
+
+  "COLLABORATOR": "Samarbetspartner",
+  "CONTRIBUTOR": "Bidragsgivare",
+  "FIRST_TIMER": "Förstagångare",
+  "FIRST_TIME_CONTRIBUTOR": "Förstagångsbidragsgivare",
+  "MANNEQUIN": "Docka",
+  "MEMBER": "Medlem",
+  "NONE": "Ingen",
+  "OWNER": "Ägare",
+  "APP": "App"
+}

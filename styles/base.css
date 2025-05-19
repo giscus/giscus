@@ -428,7 +428,7 @@ details summary {
 
 .ClipboardButton:focus,
 .snippet-clipboard-content:hover .ClipboardButton,
-.highlight:hover .ClipboardButton, {
+.highlight:hover .ClipboardButton {
   @apply opacity-100;
 
   animation: fade-in 0.2s both;

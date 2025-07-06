@@ -21,7 +21,7 @@ export default function Widget({ origin, session }: IWidgetProps) {
   const handleDiscussionCreateRequest = async () => {
     if (createDiscussionPromise) return createDiscussionPromise;
 
-    const promise = createDiscussion(repo, {
+    const promise = createDiscussion(token, repo, {
       repositoryId: repoId,
       categoryId,
       title: term,

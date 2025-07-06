@@ -12,11 +12,6 @@ export async function check(token: string): Promise<boolean> {
     body: JSON.stringify({ access_token: token }),
   })
     .then((response) => response.json())
-    .then((data) => {
-      if (data?.app?.client_id !== client_id) {
-        throw new Error('Invalid client ID');
-      }
-      return true;
-    })
+    .then((data) => data?.app?.client_id === client_id)
     .catch(() => false);
 }

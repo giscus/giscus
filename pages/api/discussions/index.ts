@@ -93,7 +93,7 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
 
 async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | IError>) {
   const userToken = req.headers.authorization?.split('Bearer ')[1];
-  if (!check(userToken)) {
+  if (!(await check(userToken))) {
     res.status(403).json({ error: 'Invalid or missing access token.' });
     return;
   }

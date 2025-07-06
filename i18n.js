@@ -28,6 +28,7 @@ module.exports = {
     'pt',
     'ro',
     'ru',
+    'sv',
     'th',
     'tr',
     'vi',

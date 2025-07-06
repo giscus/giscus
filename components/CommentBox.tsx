@@ -71,6 +71,12 @@ export default function CommentBox({
     const id = discussionId ? discussionId : await onDiscussionCreateRequest();
     const payload = { body: input, discussionId: id, replyToId };
 
+    if (!id) {
+      window.alert('Unable to create discussion.');
+      setIsSubmitting(false);
+      return;
+    }
+
     if (replyToId) {
       addDiscussionReply(payload, token).then(({ data: { addDiscussionReply } }) => {
         const { reply } = addDiscussionReply;

@@ -1,0 +1,189 @@
+/*!
+ * 液态玻璃主题 - 为 giscus 评论系统设计
+ * 基于 GitHub Dimmed 主题修改
+ */
+
+:root {
+  /* 液态玻璃主题变量 */
+  --glass-bg-light: rgba(255, 255, 255, 0.15);
+  --glass-bg-light-hover: rgba(255, 255, 255, 0.25);
+  --glass-bg-dark: rgba(30, 30, 30, 0.4);
+  --glass-bg-dark-hover: rgba(30, 30, 30, 0.5);
+  --glass-border-light: rgba(255, 255, 255, 0.4);
+  --glass-border-dark: rgba(255, 255, 255, 0.2);
+  --glass-blur-light: blur(8px) saturate(200%);
+  --glass-blur-light-hover: blur(8px) saturate(220%);
+  --glass-blur-dark: blur(12px) saturate(180%);
+  --glass-shadow-out: 0 8px 32px rgba(31, 38, 135, 0.25);
+  --glass-shadow-in: inset 0 -4px 8px rgba(255, 255, 255, 0.3);
+  --glass-after-light: rgba(255, 255, 255, 0.1);
+  --glass-after-dark: rgba(255, 255, 255, 0.05);
+}
+
+/* 液态玻璃基础样式 */
+.gsc-header,
+.gsc-comment-box,
+.gsc-timeline > div,
+.gsc-pagination {
+  position: relative;
+  z-index: 1;
+  background: var(--glass-bg-light) !important;
+  backdrop-filter: var(--glass-blur-light) !important;
+  -webkit-backdrop-filter: var(--glass-blur-light) !important;
+  border: 1px solid var(--glass-border-light) !important;
+  border-radius: 1rem !important;
+  box-shadow: var(--glass-shadow-out), var(--glass-shadow-in) !important;
+  transition: background 0.3s ease, 
+              transform 0.2s ease,
+              backdrop-filter 0.3s ease !important;
+}
+
+/* 内部折射效果 */
+.gsc-header::after,
+.gsc-comment-box::after,
+.gsc-timeline > div::after,
+.gsc-pagination::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--glass-after-light) !important;
+  filter: blur(2px) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  pointer-events: none;
+  z-index: -1;
+  transition: background 0.3s ease;
+}
+
+/* 悬停效果 */
+.gsc-header:hover,
+.gsc-comment-box:hover,
+.gsc-timeline > div:hover,
+.gsc-pagination:hover {
+  background: var(--glass-bg-light-hover) !important;
+  transform: translateY(-2px) !important;
+  backdrop-filter: var(--glass-blur-light-hover) !important;
+  -webkit-backdrop-filter: var(--glass-blur-light-hover) !important;
+}
+.gsc-header:hover::after,
+.gsc-comment-box:hover::after,
+.gsc-timeline > div:hover::after,
+.gsc-pagination:hover::after {
+  background: rgba(255, 255, 255, 0.15) !important;
+  filter: blur(2px) drop-shadow(0 6px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .gsc-header,
+  .gsc-comment-box,
+  .gsc-timeline > div,
+  .gsc-pagination {
+    background: var(--glass-bg-dark) !important;
+    border: 1px solid var(--glass-border-dark) !important;
+    backdrop-filter: var(--glass-blur-dark) !important;
+    -webkit-backdrop-filter: var(--glass-blur-dark) !important;
+  }
+  .gsc-header::after,
+  .gsc-comment-box::after,
+  .gsc-timeline > div::after,
+  .gsc-pagination::after {
+    background: var(--glass-after-dark) !important;
+  }
+  .gsc-header:hover,
+  .gsc-comment-box:hover,
+  .gsc-timeline > div:hover,
+  .gsc-pagination:hover {
+    background: var(--glass-bg-dark-hover) !important;
+  }
+  .gsc-header:hover::after,
+  .gsc-comment-box:hover::after,
+  .gsc-timeline > div:hover::after,
+  .gsc-pagination:hover::after {
+    background: rgba(255, 255, 255, 0.08) !important;
+    filter: blur(2px) drop-shadow(0 6px 8px rgba(0, 0, 0, 0.2));
+  }
+}
+
+/* ====================== */
+/* 原始giscus主题变量保留 */
+/* ====================== */
+main {
+  --color-prettylights-syntax-comment: #768390;
+  --color-prettylights-syntax-constant: #6cb6ff;
+  /* ...保留其他原始变量... */
+  --color-btn-text: #adbac7;
+  --color-btn-bg: rgba(55, 62, 71, 0.5);
+  --color-btn-border: rgba(205, 217, 229, 0.1);
+  --color-btn-hover-bg: rgba(68, 76, 86, 0.6);
+  /* ...其他变量调整为半透明... */
+}
+
+/* 布局调整 - 与原始样式保持一致 */
+.gsc-reactions-count {
+  display: none;
+}
+
+.gsc-timeline {
+  flex-direction: column-reverse;
+}
+
+.gsc-header {
+  padding-bottom: 1rem;
+}
+
+.gsc-comments > .gsc-header {
+  order: 1;
+}
+
+.gsc-comments > .gsc-comment-box {
+  order: 2;
+  margin-bottom: 1rem;
+}
+
+.gsc-comments > .gsc-timeline {
+  order: 3;
+}
+
+.gsc-homepage-bg {
+  background-color: #15202b;
+}
+
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-dimmed.gif");
+}
+
+/* 自定义按钮样式 */
+.gsc-btn {
+  background: rgba(52, 125, 57, 0.7) !important;
+  backdrop-filter: blur(4px);
+  border-radius: 0.8rem !important;
+  transition: all 0.3s ease;
+}
+.gsc-btn:hover {
+  background: rgba(70, 149, 74, 0.8) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 输入框样式 */
+.gsc-comment-box input, 
+.gsc-comment-box textarea {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 0.8rem !important;
+  border: 1px solid var(--glass-border-light) !important;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+.gsc-comment-box input:focus, 
+.gsc-comment-box textarea:focus {
+  background: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 0 0 2px rgba(83, 155, 245, 0.5);
+}
+
+/* 分页组件调整 */
+.gsc-pagination {
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}

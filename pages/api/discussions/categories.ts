@@ -47,7 +47,7 @@ export default async function DiscussionCategoriesApi(
     discussionCategories: { nodes },
   } = repository;
   const categories = nodes.map(({ emojiHTML, ...rest }) => ({
-    emoji: emojiHTML?.match(/">(.*?)<\/g-emoji/)?.[1] || '',
+    emoji: emojiHTML?.match(/^<div>([^<]+)<\/div>$/)?.[1] || '',
     ...rest,
   }));
 

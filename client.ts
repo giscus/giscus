@@ -133,7 +133,7 @@
 
   function signOut() {
     delete params.session;
-    const src = `${giscusOrigin}/widget?${new URLSearchParams(params)}`;
+    const src = `${giscusOrigin}${locale}/widget?${new URLSearchParams(params)}`;
     iframeElement.src = src; // Force reload
   }
 

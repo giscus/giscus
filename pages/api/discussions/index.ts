@@ -7,6 +7,7 @@ import { GRepositoryDiscussion } from '../../../lib/types/github';
 import { getAppAccessToken } from '../../../services/github/getAppAccessToken';
 import { addCorsHeaders } from '../../../lib/cors';
 import { digestMessage } from '../../../lib/utils';
+import { check } from '../../../services/github/oauth';
 
 async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IError>) {
   const params = {
@@ -91,6 +92,12 @@ async function get(req: NextApiRequest, res: NextApiResponse<IGiscussion | IErro
 }
 
 async function post(req: NextApiRequest, res: NextApiResponse<{ id: string } | IError>) {
+  const userToken = req.headers.authorization?.split('Bearer ')[1];
+  if (!(await check(userToken))) {
+    res.status(403).json({ error: 'Invalid or missing access token.' });
+    return;
+  }
+
   const { repo, input } = req.body;
   const params: CreateDiscussionBody = { input };
   const hashTag = `<!-- sha1: ${await digestMessage(params.input.title)} -->`;

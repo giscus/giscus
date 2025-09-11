@@ -1,4 +1,4 @@
-# Privacy Policy
+# Privacy Policys
 
 The [giscus organization][organization] (our organization) is an independent
 organization and is not part of any company. Our organization operates the

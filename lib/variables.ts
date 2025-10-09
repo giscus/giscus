@@ -47,6 +47,7 @@ export const availableThemes = [
   'catppuccin_mocha',
   'fro',
   'flexoki_light',
+  'flexoki_dark',
   'custom',
 ] as const;
 

@@ -41,6 +41,14 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: `frame-ancestors 'self';`,
   },
+  {
+    key: 'Cross-Origin-Embedder-Policy', 
+    value: 'require-corp',
+  },
+  {
+    key: 'Cross-Origin-Resource-Policy', 
+    value: 'cross-origin',
+  }
 ];
 
 const swr = 60 * 60 * 24 * 7; // 7 days

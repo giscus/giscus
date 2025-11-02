@@ -91,6 +91,7 @@ Questo README è disponibile in:
 - [Euskera](README.eu.md)
 - [Persian (فارسی)](README.fa.md)
 - [Français](README.fr.md)
+- [Galego](README.gl.md)
 - [Ελληνικά](README.gr.md)
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)

@@ -13,6 +13,7 @@ module.exports = {
     'eu',
     'fa',
     'fr',
+    'gl',
     'gr',
     'gsw',
     'hbs',

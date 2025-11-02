@@ -91,6 +91,7 @@ README นี้ในภาษาอื่น:
 - [Euskera](README.eu.md)
 - [فارسی](README.fa.md)
 - [Français](README.fr.md)
+- [Galego](README.gl.md)
 - [Ελληνικά](README.gr.md)
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)

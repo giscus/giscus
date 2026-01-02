@@ -45,6 +45,7 @@
   params.reactionsEnabled = attributes.reactionsEnabled || '1';
   params.emitMetadata = attributes.emitMetadata || '0';
   params.inputPosition = attributes.inputPosition || 'bottom';
+  params.reactionsLayout = attributes.reactionsLayout || 'default';
   params.repo = attributes.repo as string;
   params.repoId = attributes.repoId as string;
   params.category = attributes.category || '';

@@ -536,6 +536,10 @@ img.emoji {
   @apply font-semibold text-center;
 }
 
+.gsc-reactions-compact {
+  @apply flex items-center gap-2 text-sm;
+}
+
 .gsc-comments {
   @apply flex flex-col gap-6;
 }

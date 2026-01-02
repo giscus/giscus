@@ -1,9 +1,7 @@
 {
   "configuration": "Konfiguration",
-
   "language": "Sprog",
   "chooseLanguageGiscusDisplayed": "Vælg det sprog, som Giscus vil blive vist i. Kan du ikke finde dit sprog? <a>Medvirk til</a> en oversættelse.",
-
   "repository": "Repository",
   "chooseTheRepository": "Vælg det repository, som Giscus skal forbinde til. Sørg for, at:",
   "theRepositoryIsPublic": "<strong>Repository'et er <a>offentligt</a></strong>, ellers vil besøgende ikke kunne se diskussionen.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Kan ikke bruge Giscus på dette repository. Sørg for, at alle de ovenstående kriterier er opfyldt.",
   "successRepositoryMeetsCriteria": "Succes! Dette repository opfylder alle de ovenstående kriterier.",
   "aPublicGitHubRepository": "Et <strong>offentligt</strong> GitHub-repository. Dette repository er, hvor diskussionerne vil blive linket til.",
-
   "pageDiscussionsMapping": "Side ↔️ Diskussion Mapping",
   "chooseTheMapping": "Vælg mappingen mellem den indlejrede side og den indlejrede diskussion.",
   "titleContainsPathname": "Diskussionstitel indeholder sidens <code>stinavn</code>",
@@ -32,7 +29,6 @@
   "specificDiscussionNumberDesc": "Giscus vil indlæse en specifik diskussion efter nummer. Denne indstilling understøtter <strong>ikke</strong> automatisk oprettelse af diskussioner.",
   "enterDiscussionNumberHere": "Indtast diskussionsnummer her",
   "useStrictTitleMatching": "Brug streng titelmatching",
-
   "avoidMismatches": "Undgå uoverensstemmelser på grund af GitHub's fuzzy søgemetode, når der er flere diskussioner med lignende titler. Se <a>dokumentationen</a> for flere detaljer.",
   "discussionCategory": "Diskussionskategori",
   "chooseTheDiscussionCategory": "Vælg den diskussionskategori, hvor nye diskussioner vil blive oprettet.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Ingen kategorier fundet",
   "onlySearchInThisCategory": "Søg kun efter diskussioner i denne kategori",
   "whenSearchingOnlyThisCategory": "Når der søger efter en matchende diskussion, vil Giscus kun søge i denne kategori.",
-
   "features": "Funktioner",
   "chooseSpecificFeatures": "Vælg om specifikke funktioner skal aktiveres.",
   "enableReactionsMainPost": "Aktivér reaktioner for hovedindlægget",
   "reactionsMainPostShownBeforeComments": "Reaktioner for diskussionens hovedindlæg vil blive vist før kommentarerne.",
+  "reactionsLayout": "Reaktionslayout",
+  "reactionsLayoutDefault": "Standard (over kommentarer)",
+  "reactionsLayoutCompact": "Kompakt (med kommentarer)",
+  "reactionsLayoutDescription": "Vælg, hvordan reaktioner vises på siden.",
   "emitDiscussionMetadata": "Send diskussionsmetadata",
   "discussionMetadataSentPeriodically": "Diskussionsmetadata vil blive sendt periodisk til forældrevinduet (den indlejrede side). For demonstration, aktiver denne indstilling og åbn din browsers konsol på denne side. Se <a>dokumentationen</a> for flere detaljer.",
   "placeCommentBoxAboveComments": "Placér kommentarfeltet over kommentarerne",
   "commentInputBoxWillBePlacedAboveComments": "Kommentarfeltet vil blive placeret over kommentarerne, så brugere kan efterlade en kommentar uden at rulle til bunden af diskussionen.",
   "loadCommentsLazily": "Indlæs kommentarerne dovent (lazy)",
   "loadingCommentsWillBeDeferred": "Indlæsning af kommentarerne vil blive udskudt, indtil brugeren scroller nær kommentarkontaineren. Dette gøres ved at tilføje <a><code>loading=\"lazy\"</code></a> til <code><iframe></code> elementet.",
-
   "theme": "Tema",
   "chooseAThemeThatMatches": "Vælg et tema, der passer til din hjemmeside. Kan du ikke finde et er passer? <a>Bidrag til</a> et nyt tema.",
   "URLToThemeCSS": "URL til teamaets CSS fil:",
   "warningExternalCSSUnsafe": "Advarsel: Indlæsning af ekstern CSS kan være usikker. Sørg for, at du stoler på forfatteren og udbyderen af CSS-filen.",
-
   "theme=light": "GitHub Lys",
   "theme=light_high_contrast": "GitHub Lys Høj Kontrast",
   "theme=light_protanopia": "GitHub Lys Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Custom (experimental)",
-
   "enableGiscus": "Aktivér Giscus",
   "addTheFollowingScriptTag": "Tilføj følgende <code><script></code>-tag til dit websteds skabelon, hvor du ønsker, at kommentarerne skal vises. Hvis et element med klassen <code>giscus</code> findes, vil kommentarerne blive placeret der i stedet.",
   "youHaveNotConfiguredRepositoryCategory": "Du har ikke konfigureret dit <arepo>repository</arepo> og/eller <acategory>kategori</acategory>. Værdierne for disse felter vises ikke, før du udfylder dem.",
   "copy": "Kopier",
-
   "[enterRepoHere]": "[INDSÆT REPO HER]",
   "[enterRepoIDHere]": "[INDSÆT REPO-ID HER]",
   "[enterCategoryHere]": "[INDSÆT KATEGORINAVN HER]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[INDSÆT UDTRYK HER]",
   "[enterNumberHere]": "[INDSÆT NUMMER HER]",
   "[enterThemeCSSURLHere]": "[INDSÆT TEMA CSS-URL HER]",
-
   "youCanCustomizeTheLayout": "Du kan tilpasse layoutet ved hjælp af <code>.giscus</code> og <code>.giscus-frame</code> klsserne fra indlejringssiden.",
   "tryItOut": "Prøv det"
 }

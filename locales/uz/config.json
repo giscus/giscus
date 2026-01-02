@@ -1,9 +1,7 @@
 {
   "configuration": "Sozlash",
-
   "language": "Til",
   "chooseLanguageGiscusDisplayed": "Giscus qaysi tilda ko'rsatilishini tanlang. Can't find your language? Tilni topa olmadingizmi? <a>Tarjima qo'shish</a> orqali hissa qo'shing.",
-
   "repository": "Repozitoriya",
   "chooseTheRepository": "Giscus qaysi repozitoriyaga ulanishini tanlang. Quyidagilarga ishonch hosil qiling:",
   "theRepositoryIsPublic": "Repozitoriya <strong><a>ochiq</a></strong> bo'lishi kerak, aks holda tashrif buyuruvchilar muhokamani ko'ra olmaydilar.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Bu repozitoriyada giscusdan foydalana olmaysiz. Yuqoridagi barcha mezonlar bajarilganligiga ishonch hosil qiling.",
   "successRepositoryMeetsCriteria": "Muvaffaqiyat! Bu repozitoriya yuqoridagi barcha mezonlarga javob beradi.",
   "aPublicGitHubRepository": "<strong>Ochiq</strong> GitHub repozitoriyasi. Bu repozitoriya muhokamalar bog'lanadigan joydir.",
-
   "pageDiscussionsMapping": "Sahifa ↔️ Sahifa Xaritalash",
   "chooseTheMapping": "Joylashtirilgan sahifa va joylashtirilgan muhokama o'rtasidagi xaritani tanlang.",
   "titleContainsPathname": "Muhokama sarlavhasi sahifaning <code>pathname</code> URL komponentini o'z ichiga oladi",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Muhokama raqamini bu yerda kiriting",
   "useStrictTitleMatching": "Qat'iy sarlavha mosligidan foydalaning",
   "avoidMismatches": "Bir xil sarlavhalarga ega bir nechta muhokamalar mavjud bo'lganda, GitHubning noaniq qidiruv usulidan kelib chiqadigan mos kelmasliklarni oldini oling. Batafsil ma'lumot uchun <a>hujjatlarga</a> qarang.",
-
   "discussionCategory": "Muhokama Kategoriyasi",
   "chooseTheDiscussionCategory": "Yangi muhokamalar yaratiladigan muhokama kategoriyasini tanlang.",
   "categoryIsNotSupported": "Agar siz <strong>aniq muhokama raqami</strong> xaritasidan foydalansangiz, bu xususiyat qo'llab-quvvatlanmaydi.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Kategoriyalar topilmadi",
   "onlySearchInThisCategory": "Faqat bu kategoriyada muhokamalarni qidiring",
   "whenSearchingOnlyThisCategory": "Mos keladigan muhokamani qidirganda, giscus faqat bu kategoriyada qidiradi.",
-
   "features": "Xususiyatlar",
   "chooseSpecificFeatures": "Ma'lum xususiyatlar yoqilishi kerakligini tanlang.",
   "enableReactionsMainPost": "Asosiy xabar uchun reaktsiyalarni yoqing",
   "reactionsMainPostShownBeforeComments": "Muhokamaning asosiy xabari uchun reaktsiyalar izohlardan oldin ko'rsatiladi.",
+  "reactionsLayout": "Reaktsiyalar tartibi",
+  "reactionsLayoutDefault": "Standart (izohlar ustida)",
+  "reactionsLayoutCompact": "Ixcham (izohlar bilan)",
+  "reactionsLayoutDescription": "Reaktsiyalar sahifada qanday ko'rsatilishini tanlang.",
   "emitDiscussionMetadata": "Muhokama metama'lumotlarini yuboring",
   "discussionMetadataSentPeriodically": "Muhokama metama'lumotlari vaqti-vaqti bilan joylashtirilgan sahifaning ota oynasiga yuboriladi (joylashtirilgan sahifa). Ko'rsatma uchun, bu variantni yoqing va ushbu sahifada brauzeringizning konsolini oching. Batafsil ma'lumot uchun <a>hujjatlarga</a> qarang.",
   "placeCommentBoxAboveComments": "Izoh qutisini izohlardan yuqorida joylashtiring",
   "commentInputBoxWillBePlacedAboveComments": "Izoh kirish qutisi izohlardan yuqorida joylashtiriladi, shunda foydalanuvchilar muhokamaning oxiriga aylanib o'tmasdan izoh qoldirishlari mumkin.",
   "loadCommentsLazily": "Izohlarni sekin yuklang",
   "loadingCommentsWillBeDeferred": "Izohlarni yuklash <code><iframe></code> elementiga <a><code>loading=\"lazy\"</code></a> qo'shish orqali foydalanuvchi izohlar konteyneriga yaqinlashganda kechiktiriladi.",
-
   "theme": "Mavzu",
   "chooseAThemeThatMatches": "Veb-saytingizga mos keladigan mavzuni tanlang. Mosini topa olmaysizmi? <a>Yangi mavzu qo'shing</a>.",
   "URLToThemeCSS": "Mavzu CSS faylining URL manzili:",
   "warningExternalCSSUnsafe": "Ogohlantirish: tashqi CSS yuklash xavfsiz bo'lmasligi mumkin. CSS faylini yaratuvchi va taqdim etuvchiga ishona olishingizni o'ylab ko'ring.",
-
   "theme=light": "GitHub Yorug'",
   "theme=light_high_contrast": "GitHub Yorug' Yuqori Kontrast",
   "theme=light_protanopia": "GitHub Yorug' Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Boshqa (eksperimental)",
-
   "enableGiscus": "Giscusni yoqing",
   "addTheFollowingScriptTag": "Izohlarni ko'rish xohlagan joyingizda veb-saytingizning shabloniga quyidagi <code><script></code> tegini qo'shing. Agar <code>giscus</code> klassiga ega element mavjud bo'lsa, izohlar shu joyda joylashtiriladi.",
   "youHaveNotConfiguredRepositoryCategory": "Siz <arepo>repozitoriyangizni</arepo> va/yoki <acategory>kategoriya</acategory>ni sozlamadingiz. Ushbu maydonlar uchun qiymatlar to'ldirilguncha ko'rsatilmaydi.",
   "copy": "Nusxa olish",
-
   "[enterRepoHere]": "[REPOZITORIYANI BU YERDA KIRITING]",
   "[enterRepoIDHere]": "[REPOZITORIYA ID'SINI BU YERDA KIRITING]",
   "[enterCategoryHere]": "[KATEGORIYA NOMINI BU YERDA KIRITING]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ATAMANI BU YERDA KIRITING]",
   "[enterNumberHere]": "[RAQAMNI BU YERDA KIRITING]",
   "[enterThemeCSSURLHere]": "[MAVZU CSS URL'INI BU YERDA KIRITING]",
-
   "youCanCustomizeTheLayout": "Siz <code>.giscus</code> va <code>.giscus-frame</code> selektorlari orqali joylashtirish sahifasidan konteyner tuzilishini sozlashingiz mumkin.",
   "tryItOut": "Sinab ko'ring"
 }

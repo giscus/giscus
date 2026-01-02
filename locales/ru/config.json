@@ -1,9 +1,7 @@
 {
   "configuration": "Конфигурация",
-
   "language": "Язык",
   "chooseLanguageGiscusDisplayed": "Выберите язык интерфейса. Не нашли нужный? <a>Добавьте</a> свою локализацию.",
-
   "repository": "Репозиторий",
   "chooseTheRepository": "Выберите репозиторий для подключения giscus. Требования к репозиторию:",
   "theRepositoryIsPublic": "<strong>Репозиторий является <a>общедоступным</a></strong>, иначе посетители не смогут видеть обсуждение.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Невозможно использовать giscus с этим репозиторием. Убедитесь, что все условия выполнены.",
   "successRepositoryMeetsCriteria": "Успешно! Ваш репозиторий удовлетворяет всем условиям.",
   "aPublicGitHubRepository": "<strong>Общедоступный</strong> GitHub репозиторий, куда будут подключены обсуждения.",
-
   "pageDiscussionsMapping": "Страница сайта ↔️ Обсуждения",
   "chooseTheMapping": "Выберите тип связи между страницей сайта и обсуждениями.",
   "titleContainsPathname": "Название беседы содержит <code>путь</code> страницы.",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Введите номер обсуждения",
   "useStrictTitleMatching": "Используйте строгое соответствие название",
   "avoidMismatches": "Избегайте несоответствий из-за метода нечеткого поиска GitHub, когда есть несколько обсуждений с похожими заголовками. Подробности указаны в <a>документации</a>.",
-
   "discussionCategory": "Категории обсуждений",
   "chooseTheDiscussionCategory": "Выберите категорию, где будут создаваться новые обсуждения.",
   "categoryIsNotSupported": "Данная функциональность не поддерживается в случае если выбран <strong>определенный номер обсуждения</strong>",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Категории не найдены",
   "onlySearchInThisCategory": "Искать обсуждения только в текущей категории",
   "whenSearchingOnlyThisCategory": "При поиске подходящего обсуждения giscus будет искать только в указанной категории.",
-
   "features": "Опции",
   "chooseSpecificFeatures": "Выберите, какие опции должны быть включены.",
   "enableReactionsMainPost": "Включить реакции к главному сообщению",
   "reactionsMainPostShownBeforeComments": "Отображать реакции к главному сообщению вверху комментариев.",
+  "reactionsLayout": "Макет реакций",
+  "reactionsLayoutDefault": "По умолчанию (над комментариями)",
+  "reactionsLayoutCompact": "Компактный (с комментариями)",
+  "reactionsLayoutDescription": "Выберите, как реакции будут отображаться на странице.",
   "emitDiscussionMetadata": "Показать метаданные обсуждения",
   "discussionMetadataSentPeriodically": "Периодически посылать метаданные обсуждения в родительский объект (страница сайта). Для демонстрации включите эту опцию и откройте консоль браузера на странице сайта. Подробности указаны в <a>документации</a>.",
   "placeCommentBoxAboveComments": "Поместите поле комментария над комментарием",
   "commentInputBoxWillBePlacedAboveComments": "Поле ввода комментария будет размещено над комментариями, чтобы пользователи могли оставить комментарий, не прокручивая обсуждение до конца.",
   "loadCommentsLazily": "Загружать комментарии лениво",
   "loadingCommentsWillBeDeferred": "Загрузка комментариев будет отложена до тех пор, пока пользователь не прокрутит страницу до контейнера комментариев. Это делается путем добавления <a><code>loading=\"lazy\"</code></a> к элементу <code><iframe></code>.",
-
   "theme": "Тема оформления",
   "chooseAThemeThatMatches": "Выберите тему оформления, соответствующую вашему сайту. Не можете выбрать нужную? <a>Создайте</a> новую тему.",
   "URLToThemeCSS": "URL к CSS файлу темы:",
   "warningExternalCSSUnsafe": "Внимание: загрузка внешних CSS может быть небезопасной. Убедитесь, что вы доверяете автору CSS файла.",
-
   "theme=light": "GitHub Light",
   "theme=light_high_contrast": "GitHub Light High Contrast",
   "theme=light_protanopia": "GitHub Light Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Custom (экспериментальная опция)",
-
   "enableGiscus": "Включить giscus",
   "addTheFollowingScriptTag": "Добавьте тэг <code><script></code> в шаблон вашего сайта, где бы вы хотели видеть комментарии. Если существует элемент с классом <code>giscus</code>, то комментарии будут размещены вместо него.",
   "youHaveNotConfiguredRepositoryCategory": "Вы не настроили свой <arepo>репозиторий</arepo> и/или <acategory>категорию</acategory>. Значения этих полей не будут отображаться, пока вы их не заполните.",
   "copy": "Скопировать",
-
   "[enterRepoHere]": "[ВВЕДИТЕ REPO]",
   "[enterRepoIDHere]": "[ВВЕДИТЕ REPO ID]",
   "[enterCategoryHere]": "[ВВЕДИТЕ CATEGORY NAME]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ВВЕДИТЕ TERM]",
   "[enterNumberHere]": "[ВВЕДИТЕ НОМЕР]",
   "[enterThemeCSSURLHere]": "[ВВЕДИТЕ THEME CSS URL]",
-
   "youCanCustomizeTheLayout": "Вы можете настроить расположение контейнера с помощью <code>.giscus</code> и <code>.giscus-frame</code> селекторов на странице сайта.",
   "tryItOut": "Попробовать"
 }

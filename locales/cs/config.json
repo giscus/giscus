@@ -1,9 +1,7 @@
 {
   "configuration": "Konfigurace",
-
   "language": "Jazyk",
   "chooseLanguageGiscusDisplayed": "Zvolte jazyk, ve kterém bude giscus zobrazen. Chybí váš jazyk? <a>Přispějte</a> k lokalizaci.",
-
   "repository": "Repozitář",
   "chooseTheRepository": "Vyberte repozitář, ke kterému se giscus připojí. Ujistěte se, že:",
   "theRepositoryIsPublic": "<strong>Repozitář je <a>veřejný</a></strong>, jinak návštěvníci nebudou moci zobrazit diskusi.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "V tomto repozitáři giscus nelze použít; ujistěte se, že jsou splněny všechny podmínky.",
   "successRepositoryMeetsCriteria": "Splněno! Tento repozitář splňuje všechny výše uvedené podmínky.",
   "aPublicGitHubRepository": "<strong>Veřejný</strong> repozitář na GitHub. Tento repozitář je místem, ke kterému budou diskuse připojeny.",
-
   "pageDiscussionsMapping": "Mapování: Stránka ↔ Diskuse",
   "chooseTheMapping": "Zvolte mapování mezi stránkou, do které se diskuse vkládá, a samotnou diskusí.",
   "titleContainsPathname": "Název diskuse obsahuje komponentu <code>pathname</code> URL adresy stránky",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Zadejte číslo diskuse zde",
   "useStrictTitleMatching": "Použít přesné porovnávání názvů",
   "avoidMismatches": "Při vyhledávání se vyhněte nesprávným shodám způsobeným nepřesným vyhledáváním na GitHub, pokud existuje více diskusí s podobnými názvy. Další podrobnosti naleznete v <a>dokumentaci</a>.",
-
   "discussionCategory": "Kategorie diskuse",
   "chooseTheDiscussionCategory": "Vyberte kategorii diskuse, ve které budou vytvořeny nové diskuse.",
   "categoryIsNotSupported": "This feature is not supported if you use the <strong>určité číslo diskuse</strong> mapping.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Žádné kategorie nenalezeny",
   "onlySearchInThisCategory": "Vyhledávat diskuse pouze v této kategorii",
   "whenSearchingOnlyThisCategory": "Při hledání odpovídající diskuse bude giscus hledat pouze v této kategorii.",
-
   "features": "Funkce",
   "chooseSpecificFeatures": "Zvolte, zda mají být určité funkce povoleny.",
   "enableReactionsMainPost": "Povolit reakce pro hlavní příspěvek",
   "reactionsMainPostShownBeforeComments": "Reakce na hlavní příspěvek diskuse budou zobrazeny před komentáři.",
+  "reactionsLayout": "Rozvržení reakcí",
+  "reactionsLayoutDefault": "Výchozí (nad komentáři)",
+  "reactionsLayoutCompact": "Kompaktní (s komentáři)",
+  "reactionsLayoutDescription": "Vyberte, jak se mají zobrazovat reakce na stránce.",
   "emitDiscussionMetadata": "Odesílat metadata diskuse",
   "discussionMetadataSentPeriodically": "Diskusní metadata budou pravidelně odesílána do nadřazeného okna (stránky, do které je giscus vložen). Pro ukázku povolte tuto funkci a otevřete konzoli prohlížeče na této stránce. Další podrobnosti naleznete v <a>dokumentaci</a>.",
   "placeCommentBoxAboveComments": "Umístěte okno pro přidání komentáře nad komentáře",
   "commentInputBoxWillBePlacedAboveComments": "Okno pro zadávání komentářů bude umístěno nad komentáři, aby uživatelé mohli přidat komentář bez nutnosti posouvání na konec diskuse.",
   "loadCommentsLazily": "Načítat komentáře odloženě",
   "loadingCommentsWillBeDeferred": "Načítání komentářů se odloží, dokud uživatel nescrolluje blízko kontejneru s komentáři. Toho se dosáhne přidáním atributu <a><code>loading=\"lazy\"</code></a> do <code><iframe></code>.",
-
   "theme": "Barevné schéma",
   "chooseAThemeThatMatches": "Vyberte barevné schéma, které odpovídá vašemu webu. Nemůžete najít žádné, které by vyhovovalo? <a>Přispějte</a> novým barevným schématem.",
   "URLToThemeCSS": "URL adresa CSS souboru:",
   "warningExternalCSSUnsafe": "Varování: Načítání externího CSS může být nebezpečné. Ujistěte se, že důvěřujete autorovi a poskytovateli souboru CSS.",
-
   "theme=light": "GitHub Light",
   "theme=light_high_contrast": "GitHub Light High Contrast",
   "theme=light_protanopia": "GitHub Light Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Vlastní (experimentální)",
-
   "enableGiscus": "Povolit giscus",
   "addTheFollowingScriptTag": "Přidejte následující <code><script></code> tag do šablony vašeho webu na místo, kde chcete zobrazit komentáře. Pokud existuje prvek s třídou <code>giscus</code>, komentáře budou umístěny tam.",
   "youHaveNotConfiguredRepositoryCategory": "Nemáte nakonfigurovaný svůj <arepo>repozitář</arepo> a/nebo <acategory>kategorii</acategory>. Hodnoty těchto polí se nezobrazí, dokud je nevyplníte.",
   "copy": "Zkopírovat",
-
   "[enterRepoHere]": "[ZDE ZADEJTE JMÉNO REPOZITÁŘE]",
   "[enterRepoIDHere]": "[ZDE ZADEJTE ID REPOZITÁŘE]",
   "[enterCategoryHere]": "[ZDE ZADEJTE JMÉNO KATEGORIE]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ZDE ZADEJTE VÝRAZ]",
   "[enterNumberHere]": "[ZDE ZADEJTE ČÍSLO]",
   "[enterThemeCSSURLHere]": "[ZDE ZADEJTE CSS SCHÉMA URL]",
-
   "youCanCustomizeTheLayout": "Rozložení kontejneru lze upravit pomocí selektorů <code>.giscus</code> a <code>.giscus-frame</code> na stránce, která komponentu giscus vkládá.",
   "tryItOut": "Vyzkoušejte to"
 }

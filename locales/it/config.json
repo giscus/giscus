@@ -1,9 +1,7 @@
 {
   "configuration": "Configurazione",
-
   "language": "Lingua",
   "chooseLanguageGiscusDisplayed": "Scegli la lingua in cui verrà mostrato giscus. Non trovi la tua lingua? <a>Contribuisci</a> con una traduzione",
-
   "repository": "Repository",
   "chooseTheRepository": "Scegli la repository a cui si connetterà giscus. Assicurati che:",
   "theRepositoryIsPublic": "La <strong>repository sia <a>pubblica</a></strong>, altrimenti i visitatori non potranno vedere la discussione.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Impossibile utilizzare giscus in questa repository. Assicurati che tutti i criteri sopra siano soddisfatti.",
   "successRepositoryMeetsCriteria": "Ben fatto! Questa repository soddisfa tutti i criteri.",
   "aPublicGitHubRepository": "Una repository GitHub <strong>pubblica</strong>. Questa repos è dove le discussioni verrano linkate.",
-
   "pageDiscussionsMapping": "Mappatura Pagina ↔️ Discussions",
   "chooseTheMapping": "Scegli la mappatura tra la pagina e la discussione.",
   "titleContainsPathname": "Il titolo della discussione contiene il <code>nome del percorso</code> della pagina",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Inserisci numero discussione qui",
   "useStrictTitleMatching": "Usa una corrispondenza rigorosa del titolo",
   "avoidMismatches": "Evita le discrepanze dovute al metodo di ricerca fuzzy di GitHub quando ci sono più discussioni con titoli simili. Vedi <a>la documentazione</a> per maggiori dettagli.",
-
   "discussionCategory": "Categoria della discussione",
   "chooseTheDiscussionCategory": "Scegli la categoria in cui le nuove discussioni verranno create.",
   "categoryIsNotSupported": "Questa opzione non è supportata se usi la mappatura <strong>numero specifico di discussione</strong>.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Nessuna categoria trovata",
   "onlySearchInThisCategory": "Cerca solo discussioni in questa categoria",
   "whenSearchingOnlyThisCategory": "Quando si cerca una discussione corrispondente, giscus cercherà solo in questa categoria.",
-
   "features": "Caratteristiche",
   "chooseSpecificFeatures": "Scegli se abilitare funzionalità specifiche.",
   "enableReactionsMainPost": "Abilita le reazioni per il post principale",
   "reactionsMainPostShownBeforeComments": "Le reazioni al post principale della discussione verranno mostrate prima dei commenti.",
+  "reactionsLayout": "Layout delle reazioni",
+  "reactionsLayoutDefault": "Predefinito (sopra i commenti)",
+  "reactionsLayoutCompact": "Compatto (con i commenti)",
+  "reactionsLayoutDescription": "Scegli come vengono visualizzate le reazioni sulla pagina.",
   "emitDiscussionMetadata": "Emetti i metadati della discussione",
   "discussionMetadataSentPeriodically": "I metadati della discussione verranno inviati periodicamente alla window principale (la pagina). A scopo dimostrativo, abilita questa opzione e apri la console del tuo browser in questa pagina. Vedi <a>la documentazione</a> per maggiori dettagli.",
   "placeCommentBoxAboveComments": "Posiziona la casella dei commenti sopra i commenti",
   "commentInputBoxWillBePlacedAboveComments": "La casella di immissione dei commenti verrà posizionata sopra i commenti, in modo che gli utenti possano lasciare un commento senza scorrere fino in fondo alla discussione.",
   "loadCommentsLazily": "Carica i commenti pigramente",
   "loadingCommentsWillBeDeferred": "Il caricamento dei commenti sarà posticipato fino a quando l'utente non scorrerà vicino al contenitore dei commenti. Questo viene fatto aggiungendo <a><code>loading=\"lazy\"</code></a> all'elemento <code><iframe></code>.",
-
   "theme": "Tema",
   "chooseAThemeThatMatches": "Scegli un tema che corrisponda al tuo sito web. Non riesci a trovarne uno adatto? <a>Contribuisci</a> a un nuovo tema.",
   "URLToThemeCSS": "URL del file CSS del tema:",
   "warningExternalCSSUnsafe": "Nota: il caricamento di CSS esterni potrebbe non essere sicuro. Assicurati di fidarti dell'autore e del fornitore del file CSS.",
-
   "theme=light": "GitHub Chiaro",
   "theme=light_high_contrast": "GitHub Chiaro ad alto contrasto",
   "theme=light_protanopia": "GitHub Chiaro Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Personalizzato (sperimentale)",
-
   "enableGiscus": "Abilita giscus",
   "addTheFollowingScriptTag": "Aggiungi il seguente tag <code><script></code> al template del tuo sito web in cui desideri che vengano visualizzati i commenti. Se esiste un elemento con la classe <code>giscus</code>, i commenti verranno invece inseriti lì.",
   "youHaveNotConfiguredRepositoryCategory": "Non hai configurato il tuo <arepo>repository</arepo> e/o la tua <acategory>categoria</acategory>. I valori per quei campi non verranno mostrati finché non li compili.",
   "copy": "Copia",
-
   "[enterRepoHere]": "[INSERISCI REPO]",
   "[enterRepoIDHere]": "[INSERISCI ID REPO]",
   "[enterCategoryHere]": "[INSERISCI NOME CATEGORIA]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[INSERISCI TERMINE]",
   "[enterNumberHere]": "[INSERISCI NUMERO]",
   "[enterThemeCSSURLHere]": "[INSERISCI L'URL CSS DEL TEMA]",
-
   "youCanCustomizeTheLayout": "Puoi personalizzare il layout del container utilizzando i selettori <code>.giscus</code> e <code>.giscus-frame</code> dalla pagina.",
   "tryItOut": "Prova"
 }

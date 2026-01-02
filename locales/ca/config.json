@@ -1,9 +1,7 @@
 {
   "configuration": "Configuració",
-
   "language": "Idioma",
   "chooseLanguageGiscusDisplayed": "Seleccioneu l'idioma en què es mostrarà giscus. No trobes el teu idioma? Pots <a>Contribuir</a> amb la traducció.",
-
   "repository": "Repositori",
   "chooseTheRepository": "Selecciona el repositori al que es connectarà giscus. Assegura't del següent:",
   "theRepositoryIsPublic": "El <strong>repositori es <a>públic</a></strong>. De no ser així els visitants no podran veure els comentaris.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "No es pot utilitzar giscus en aquest repositori. Assegura't de que es compleixen tots els requisits anteriors.",
   "successRepositoryMeetsCriteria": "¡Perfecte! Aquest repositori està preparat per utilitzar giscus.",
   "aPublicGitHubRepository": "Un repositori <strong>públic</strong> de GitHub. És el repositori on s'enllaçaran les discussions.",
-
   "pageDiscussionsMapping": "Pàgina ↔️ Mapeig de discussions",
   "chooseTheMapping": "Selecciona la forma de mapeig, entre la pàgina i les discussions",
   "titleContainsPathname": "El títol de la discussió conté el <code>pathname</code> de la pàgina",
@@ -22,7 +19,6 @@
   "titleContainsURL": "El títol de la discussió conté la <code>URL</code> de la pàgina",
   "titleContainsURLDesc": "giscus buscarà una discussió amb un títol que contingui la URL de la pàgina.",
   "titleContainsTitle": "El título de la discusión contiene el <code><title></code> de la página.",
-
   "titleContainsTitleDesc": "giscus buscarà una discussió amb un títol que contingui l'etiqueta HTML <code><title></code> de la pàgina.",
   "titleContainsOgTitle": "El títol de la discussió conté el valor establert en l'atribut <code>og:title</code>.",
   "titleContainsOgTitleDesc": "giscus buscarà una discussió amb un títol que contingui el valor de l'etiqueta HTML <aOgTitle><code><meta property=\"og:title\"></code></aOgTitle>.",
@@ -34,7 +30,6 @@
   "enterDiscussionNumberHere": "Introdueix el número de discussió aquí",
   "useStrictTitleMatching": "Utilitzar coincidència estricta de títols",
   "avoidMismatches": "Evita discrepàncies a causa del mètode de cerca difusa de GitHub quan hi ha diverses discussions amb títols similars. Consulta <a>la documentació</a> per obtenir més detalls.",
-
   "discussionCategory": "Categoria de discussió",
   "chooseTheDiscussionCategory": "Selecciona la categoria on es crearan noves discussions.",
   "categoryIsNotSupported": "Aquesta funció no és compatible si utilitza l'assignació de <strong>número de discussió específic</strong>.",
@@ -45,23 +40,24 @@
   "noCategoriesFoundOption": "No s'han trobat categories",
   "onlySearchInThisCategory": "Buscar només discussions en aquesta categoria",
   "whenSearchingOnlyThisCategory": "En cercar una discussió, giscus buscarà exclusivament en aquesta categoria.",
-
   "features": "Característiques",
   "chooseSpecificFeatures": "Selecciona les funcionalitats específiques que vols habilitar.",
   "enableReactionsMainPost": "Habilitar reaccions per a la publicació principal",
   "reactionsMainPostShownBeforeComments": "Les reaccions de la publicació principal es mostraran abans dels comentaris.",
+  "reactionsLayout": "Disposició de les reaccions",
+  "reactionsLayoutDefault": "Per defecte (sobre els comentaris)",
+  "reactionsLayoutCompact": "Compacta (amb els comentaris)",
+  "reactionsLayoutDescription": "Tria com es mostren les reaccions a la pàgina.",
   "emitDiscussionMetadata": "Emetre metadades de discussió",
   "discussionMetadataSentPeriodically": "Les metadades de discussió s'enviaran periòdicament a la finestra principal (la pàgina d'incrustació). Per a una demostració, habilita aquesta opció i obre la consola del teu navegador en aquesta pàgina. Consulta <a>la documentació</a> per obtenir més detalls.",
   "placeCommentBoxAboveComments": "Col·loca el quadre de comentaris sobre els comentaris",
   "commentInputBoxWillBePlacedAboveComments": "El quadre d'entrada de comentaris es col·locarà sobre els comentaris perquè els usuaris puguin deixar un comentari sense haver de desplaçar-se fins al final de la discussió.",
   "loadCommentsLazily": "Carregar els comentaris de manera lazy",
   "loadingCommentsWillBeDeferred": "La càrrega dels comentaris s'ajornarà fins que l'usuari es desplaci prop del contenidor de comentaris. Això es fa afegint <a><code>loading=\"lazy\"</code></a> a l'element <code><iframe></code>.",
-
   "theme": "Tema",
   "chooseAThemeThatMatches": "Selecciona un tema que coincideixi amb el teu lloc web. No pots trobar-ne cap que ho faci? <a>Contribueix</a> amb un nou tema.",
   "URLToThemeCSS": "URL de l'arxiu CSS del tema:",
   "warningExternalCSSUnsafe": "Advertència: carregar CSS extern pot no ser segur. Assegura't de confiar en l'autor i el proveïdor de l'arxiu CSS.",
-
   "theme=light": "GitHub Light",
   "theme=light_high_contrast": "GitHub Light High Contrast",
   "theme=light_protanopia": "GitHub Light Protanopia & Deuteranopia",
@@ -87,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Custom (experimental)",
-
   "enableGiscus": "Habilitar giscus",
   "addTheFollowingScriptTag": "Afegeix l'etiqueta següent <code><script></code> a la plantilla del teu lloc web on desitgis que apareguin els comentaris. Si hi ha un element amb la classe <code>giscus</code>, els comentaris es mostraran allà.",
   "youHaveNotConfiguredRepositoryCategory": "No has configurat el teu <arepo>repositori</arepo> i/o <acategory>categoria</acategory>. Els valors d'aquests camps no es mostraran fins que els complets.",
   "copy": "Copia",
-
   "[enterRepoHere]": "[URL REPOSITORI]",
   "[enterRepoIDHere]": "[REPOSITORI ID]",
   "[enterCategoryHere]": "[NOM CATEGORIA]",
@@ -100,7 +94,6 @@
   "[enterTermHere]": "[TERME DE CERCA]",
   "[enterNumberHere]": "[NÚMERO DE CERCA]",
   "[enterThemeCSSURLHere]": "[URL DEL TEMA CSS]",
-
   "youCanCustomizeTheLayout": "Pots personalitzar el disseny del contenidor utilitzant els selectors <code>.giscus</code> i <code>.giscus-frame</code> de la pàgina d'incrustració.",
   "tryItOut": "Prova'l"
 }

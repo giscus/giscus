@@ -1,9 +1,7 @@
 {
   "configuration": "Beállítások",
-
   "language": "Nyelv",
   "chooseLanguageGiscusDisplayed": "Válaszd ki giscus megjelenítési nyelvét. Nem találod? <a>Járulj hozzá</a> a lokalizáció elkészítéséhez.",
-
   "repository": "Repository",
   "chooseTheRepository": "Válaszd ki, melyik repository-hoz kapcsolódjon a giscus. Győződj meg róla, hogy:",
   "theRepositoryIsPublic": "A <strong>repository <a>nyilvános</a></strong>, különben a látogatók nem tudják megtekinteni a beszélgetést.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Nem használató a giscus ezen a repository-n. Győződj meg róla, hogy a fenti feltételek teljesülnek.",
   "successRepositoryMeetsCriteria": "Siker! Ez a repository teljesíti az összes fenti feltételt.",
   "aPublicGitHubRepository": "Egy <strong>nyilvános</strong> GitHub repository. Ehhez fognak a beszélgetések kapcsolódni.",
-
   "pageDiscussionsMapping": "Oldal ↔️ Beszélgetések leképezése",
   "chooseTheMapping": "Válaszd ki a beágyazott oldal és a beágyazott beszélgetés közötti leképezést.",
   "titleContainsPathname": "A beszélgetés címe tartalmazza az oldal <code>pathname</code> URL-komponensét",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Írd ide a beszélgetés azonosítóját",
   "useStrictTitleMatching": "Szigorú címegyezés használata",
   "avoidMismatches": "A GitHub fuzzy keresési módszeréből adódó helytelen egyezések elkerülhetők szigorú egyezés használatával, ha több hasonló című beszélgetés van. További részletekért lásd <a>a dokumentációt</a>.",
-
   "discussionCategory": "Beszélgetés kategóriája",
   "chooseTheDiscussionCategory": "Válaszd ki, milyen kategóriában jöjjenek létre az új beszélgetések.",
   "categoryIsNotSupported": "Ez a funkció nem támogatott, ha a <strong>megadott beszélgetés azonosítója</strong> leképezést használja.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Nem található kategória",
   "onlySearchInThisCategory": "Csak ebben a kategóriában keressen beszélgetéseket",
   "whenSearchingOnlyThisCategory": "Illeszkedő beszélgetésre való kereséskor a giscus csak ebben a kategóriában keressen.",
-
   "features": "Funkciók",
   "chooseSpecificFeatures": "Válaszd ki, hogy melyik funkciók legyenek engedélyezve.",
   "enableReactionsMainPost": "Reakciók engedélyezése a fő bejegyzéshez",
   "reactionsMainPostShownBeforeComments": "A bejegyzéshez tartozó reakciók a hozzászólások előtt jelenjenek meg.",
+  "reactionsLayout": "Reakciók elrendezése",
+  "reactionsLayoutDefault": "Alapértelmezett (a megjegyzések felett)",
+  "reactionsLayoutCompact": "Kompakt (a megjegyzésekkel)",
+  "reactionsLayoutDescription": "Válassza ki, hogyan jelenjenek meg a reakciók az oldalon.",
   "emitDiscussionMetadata": "Metaadatok küldése üzenetben",
   "discussionMetadataSentPeriodically": "A hozzászólások metaadatai rendszeresen kerüljenek elküldésre a szülő ablaknak (a beágyazó oldalnak). Bemutatásként engedélyezés után nyisd meg a böngésző konzolját ezen az oldalon. További részletekért lásd <a>a dokumentációt</a>.",
   "placeCommentBoxAboveComments": "A hozzászólás mező elhelyezése a hozzászólások fölött",
   "commentInputBoxWillBePlacedAboveComments": "A hozzászólás mező a hozzászólások fölé kerül, így a felhasználók hozzászólhatnak anélkül, hogy a vitafórum aljára kellene görgetniük.",
   "loadCommentsLazily": "A hozzászólások lusta betöltése",
   "loadingCommentsWillBeDeferred": "A hozzászólások betöltése elhalasztódik, amíg a felhasználó a hozzászólások konténer eleméhez közel nem görget. Ezt úgy érjük el, hogy az <code><iframe></code> elemhez hozzáadjuk a <a><code>loading=\"lazy\"</code></a> attribútumot.",
-
   "theme": "Téma",
   "chooseAThemeThatMatches": "Válasz egy témát, amely illeszkedik a weboldalához. Nem talál megfelelőt? <a>Járulj hozzá</a> egy új téma elkészítéséhez.",
   "URLToThemeCSS": "A téma CSS fájljának URL-je:",
   "warningExternalCSSUnsafe": "Figyelem: a külső CSS betöltése veszélyes lehet. Győződj meg arról, hogy megbízol a CSS fájl szerzőjében és szolgáltatójában.",
-
   "theme=light": "GitHub Világos",
   "theme=light_high_contrast": "GitHub Világos Magas Kontraszt",
   "theme=light_protanopia": "GitHub Világos Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Egyéni (kísérleti)",
-
   "enableGiscus": "Giscus engedélyezése",
   "addTheFollowingScriptTag": "Add hozzá a következő <code><script></code> elemet a weboldalhoz, oda, ahol a hozzászólásokat meg szeretnéd jeleníteni. Ha létezik egy <code>giscus</code> osztállyal rendelkező elem, a hozzászólások oda kerülnek.",
   "youHaveNotConfiguredRepositoryCategory": "Nem állítottad be a <arepo>repo</arepo> és/vagy a <acategory>kategória</acategory> értékét. Ezek a mezők nem fognak megjelenni, amíg ki nem töltöd őket.",
   "copy": "Másolás",
-
   "[enterRepoHere]": "[ADD MEG A REPÓT]",
   "[enterRepoIDHere]": "[ADD MEG A REPO ID-T]",
   "[enterCategoryHere]": "[ADD MEG A KATEGÓRIA NEVÉT]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ADD MEG A KIFEJEZÉST]",
   "[enterNumberHere]": "[ADD MEG A SZÁMOT]",
   "[enterThemeCSSURLHere]": "[ADD MEG A TÉMA CSS URL-JÉT]",
-
   "youCanCustomizeTheLayout": "A hozzászólásokat befoglaló konténer elrendezését a <code>.giscus</code> és a <code>.giscus-frame</code> CSS kiválasztók segítségével szabhatod testre a beágyazó oldalról.",
   "tryItOut": "Próbáld ki"
 }

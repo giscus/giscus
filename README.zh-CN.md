@@ -100,6 +100,7 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 - [日本語](README.ja.md)
 - [ភាសាខ្មែរ](README.kh.md)
 - [한국어](README.ko.md)
+- [മലയാളം](README.ml.md)
 - [Nederlands](README.nl.md)
 - [Polski](README.pl.md)
 - [Português](README.pt.md)

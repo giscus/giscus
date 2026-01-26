@@ -85,6 +85,8 @@
   "theme=catppuccin_macchiato": "Catppuccin Macchiato",
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
+  "theme=touchthegrass_dark": "TouchTheGrass Dark",
+  "theme=touchthegrass_light": "TouchTheGrass Light",
   "theme=custom": "Custom (experimenteel)",
 
   "enableGiscus": "Giscus inschakelen",

@@ -1,6 +1,6 @@
 # [giscus][giscus]
 
-Ein Kommentar-System möglich gemacht durch [GitHub Diskussionen][discussions]. Lass Besucher Kommentare und Reaktionen auf deiner Webseite hinterlassen durch GitHub! Stark inspiriert durch [utterances][utterances].
+Ein Kommentar-System möglich gemacht durch [GitHub Diskussionen][discussions]. Lass Besucher durch Github Kommentare und Reaktionen auf deiner Webseite hinterlassen! Stark inspiriert durch [utterances][utterances].
 
 - [Quelloffen][repo]. 🌏
 - Kein Tracking, keine Werbung. Immer Gratis. 📡 🚫
@@ -8,17 +8,17 @@ Ein Kommentar-System möglich gemacht durch [GitHub Diskussionen][discussions]. 
 - Unterstützt [benutzerdefinierte Themes][creating-custom-themes]! 🌗
 - Unterstützt [mehrere Sprachen][multiple-languages]. 🌐
 - [Umfangreiche Konfigurationsmöglichkeiten][advanced-usage]. 🔧
-- Sammle neue Kommentare und Bearbeitungen von GitHub komplett automatisch. 🔃
+- Synchronisiert neue Kommentare und Bearbeitungen von GitHub komplett automatisch. 🔃
 - [Kann selbst gehostet werden][self-hosting]! 🤳
 
 > **Hinweis:**\
-> giscus ist noch immer unter Entwicklung. GitHub ist auch aktiv an der Weiterentwicklung Ihrer Diskussionen und deren API beschäftigt. Darum können einige Funktionen von giscus in Zukunft ändern oder Fehler auftreten.
+> giscus ist noch immer in Entwicklung. GitHub ist auch aktiv an der Weiterentwicklung Ihrer Diskussionen und deren API beschäftigt. Darum können einige Funktionen von giscus in Zukunft ändern oder Fehler auftreten.
 
 ## Wie es funktioniert
 
-Wenn giscus lädt, wird die [GitHub Diskussionen Such-API][search-api] verwendet um die Diskussion, welche mit der Seite durch ein bestimmtes Mapping (URL, `<pathname>`, `<title>`, etc.) assoziert wird, zu finden. Wenn eine treffende Diskussion nicht gefunden werden kann, erstellt der giscus Bot automatisch eine neue Diskussion, wenn jemand zum ersten Mal einen Kommentar oder eine Reaktion hinterlässt.
+Wenn giscus lädt, wird die [GitHub-Diskussionen Such-API][search-api] verwendet, um die Diskussion, welche mit der Seite durch ein bestimmtes Mapping (URL, `<pathname>`, `<title>`, etc.) assoziert wird, zu finden. Wenn eine treffende Diskussion nicht gefunden werden kann, erstellt der giscus Bot automatisch eine neue Diskussion, wenn jemand zum ersten Mal einen Kommentar oder eine Reaktion hinterlässt.
 
-Um zu kommentieren, müssen Besucher die [giscus App][giscus-app] autorisieren [in ihrem Namen][authorization] zu posten, mithilfe des GitHub OAuth flows. Alternativ können Besucher direkt auf der Diskussion kommentieren. Du kannst die Kommentare auf GitHub moderieren.
+Um zu kommentieren, müssen Besucher die [giscus App][giscus-app] mithilfe des Github OAuth flowsautorisieren, [in ihrem Namen][authorization] zu posten. Alternativ können Besucher direkt auf der Diskussion kommentieren. Du kannst die Kommentare auf GitHub moderieren.
 
 [giscus]: https://giscus.app/de
 [discussions]: https://docs.github.com/en/discussions

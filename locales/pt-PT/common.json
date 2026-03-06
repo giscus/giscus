@@ -1,0 +1,107 @@
+{
+  "reactions": {
+    "0": "{{count}} reações",
+    "one": "{{count}} reação",
+    "many": "{{count}} reações",
+    "other": "{{count}} reações"
+  },
+  "comment": "Comenta",
+  "comments": {
+    "0": "{{count}} comentários",
+    "one": "{{count}} comentário",
+    "many": "{{count}} comentários",
+    "other": "{{count}} comentários"
+  },
+  "reply": "Responder",
+  "replies": {
+    "0": "{{count}} respostas",
+    "one": "{{count}} resposta",
+    "many": "{{count}} respostas",
+    "other": "{{count}}{{plus}} respostas"
+  },
+  "upvotes": {
+    "0": "{{count}} votos positivos",
+    "one": "{{count}} voto positivo",
+    "many": "{{count}} votos positivos",
+    "other": "{{count}} votos positivos"
+  },
+  "hiddenItems": {
+    "0": "{{count}} itens ocultos",
+    "one": "{{count}} item oculto",
+    "many": "{{count}} itens ocultos",
+    "other": "{{count}} itens ocultos"
+  },
+  "genericError": "Ocorreu um erro: {{message}}",
+  "loadMore": "Carrega mais",
+  "loading": "A carregar",
+  "loadingComments": "A carregar comentários…",
+  "loadingPreview": "A carregar pré-visualização…",
+  "poweredBy": "– distribuído por <a>giscus</a>",
+  "oldest": "Mais antigos",
+  "newest": "Mais recentes",
+  "showPreviousReplies": {
+    "0": "Mostrar {{count}} respostas anteriores",
+    "one": "Mostrar {{count}} resposta anterior",
+    "many": "Mostrar {{count}} respostas anteriores",
+    "other": "Mostrar {{count}} respostas anteriores"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Ver {{count}} respostas anteriores no GitHub",
+    "one": "Ver {{count}} resposta anterior no GitHub",
+    "many": "Ver {{count}} respostas anteriores no GitHub",
+    "other": "Ver {{count}} respostas anteriores no GitHub"
+  },
+  "edited": "editado",
+  "thisCommentWasDeleted": "Este comentário foi apagado.",
+  "thisCommentWasMinimized": "Este comentário foi minimizado.",
+  "thisCommentWasHidden": "Este comentário foi ocultado.",
+  "write": "Escrever",
+  "preview": "Pré-visualizar",
+  "enableFixedWidth": "Usar fonte de largura fixa (monoespaçada) no editor",
+  "disableFixedWidth": "Desativar fonte de largura fixa (monoespaçada) no editor",
+  "lastEditedAt": "Última edição a {{date}}",
+  "writeAComment": "Escreve um comentário",
+  "signInToComment": "Inicia sessão para comentar",
+  "stylingWithMarkdownIsSupported": "Dá para formatar com Markdown",
+  "signOut": "Sair",
+  "cancel": "Cancelar",
+  "signInWithGitHub": "Entrar com GitHub",
+  "writeAReply": "Escreve uma resposta",
+
+  "upvote": "Votar positivo",
+  "youMustBeSignedInToUpvote": "Precisas de ter sessão iniciada para votar.",
+  "addReactions": "Adicionar reações",
+  "pleaseWait": "Aguarda…",
+  "pickYourReaction": "Escolhe a tua reação",
+  "addTheReaction": "Adicionar reação {{reaction}}",
+  "removeTheReaction": "Remover reação {{reaction}}",
+  "signInToAddYourReaction": "<a>Inicia sessão</a> para adicionares a tua reação.",
+  "youMustBeSignedInToAddReactions": "Precisas de ter sessão iniciada para adicionar reações.",
+  "peopleReactedWith": {
+    "0": "{{count}} pessoas reagiram com {{reaction}} {{emoji}}",
+    "one": "{{count}} pessoa reagiu com {{reaction}} {{emoji}}",
+    "many": "{{count}} pessoas reagiram com {{reaction}} {{emoji}}",
+    "other": "{{count}} pessoas reagiram com {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Nada para pré-visualizar",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Riso",
+  "HOORAY": "Uhuu",
+  "CONFUSED": "Confuso",
+  "HEART": "Coração",
+  "ROCKET": "Foguete",
+  "EYES": "Olhos",
+
+  "COLLABORATOR": "Colaborador",
+  "CONTRIBUTOR": "Contribuidor",
+  "FIRST_TIMER": "Novato",
+  "FIRST_TIME_CONTRIBUTOR": "Contribuidor novato",
+  "MANNEQUIN": "Manequim",
+  "MEMBER": "Membro",
+  "NONE": "Nenhum",
+  "OWNER": "Dono",
+  "APP": "App"
+}

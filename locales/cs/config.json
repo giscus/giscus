@@ -85,6 +85,7 @@
   "theme=catppuccin_macchiato": "Catppuccin Macchiato",
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
+  "theme=cinderpaper": "Cinderpaper",
   "theme=custom": "Vlastní (experimentální)",
 
   "enableGiscus": "Povolit giscus",

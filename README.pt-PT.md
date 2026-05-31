@@ -1,30 +1,30 @@
 # [giscus][giscus]
 
-Um sistema de comentários mantido por [Discussões do GitHub][discussions]. Permita que visitantes deixem comentários e reações no seu site através do GitHub! Fortemente inspirado por [utterances][utterances].
+Um sistema de comentários alimentado por [Discussões do GitHub][discussions]. Permite que visitantes comentem e reajam num site através do GitHub! Fortemente inspirado no [utterances][utterances].
 
-- [Código Aberto][repo]. 🌏
-- Sem rastreamento, sem anúncios, sempre grátis. 📡 🚫
-- Nenhum banco de dados necessário. Todos os dados são armazenados no GitHub Discussions. :octocat:
-- Suporta [temas personalizados][creating-custom-themes]! 🌗
-- Suporta [diversos idiomas][multiple-languages]. 🌐
-- [Amplamente configurável][advanced-usage]. 🔧
-- Automaticamente procura novos comentários e edições do GitHub. 🔃
-- [Pode ser hospedado por conta própria][self-hosting]! 🤳
+- [Código aberto][repo]. 🌏
+- Sem tracking, sem anúncios, sempre gratuito. 📡 🚫
+- Sem base de dados. Todos os dados são armazenados nas Discussões do GitHub. :octocat:
+- Suporte para [temas personalizados][creating-custom-themes]! 🌗
+- Suporte para [vários idiomas][multiple-languages]. 🌐
+- [Altamente configurável][advanced-usage]. 🔧
+- Busca automaticamente novos comentários e edições do GitHub. 🔃
+- [Possibilidade de auto-hospedagem][self-hosting]! 🤳
 
 > **Nota**
-> giscus ainda está em desenvolvimento. O GitHub também está ativamente desenvolvendo Discussions e suas API. Desta forma, algumas características do giscus podem quebrar ou mudar no decorrer do tempo.
+> O giscus ainda está em desenvolvimento. O GitHub também está a desenvolver ativamente as Discussões e a sua API. Assim, algumas funcionalidades do giscus podem deixar de funcionar ou sofrer alterações ao longo do tempo.
 
 ## Como funciona
 
-Quando o giscus é carregado, a [API de pesquisa das Discussões do GitHub][search-api] é usada para encontrar as discussões associadas com a página baseado no mapeamento escolhido (URL, `pathname`, `<title>`, etc.). Se uma discussão correspondente não for encontrada, o bot do giscus irá criar automaticamente uma discussão na primeira vez que alguém deixar um comentário ou reação.
+Quando o giscus é carregado, a [API de pesquisa das Discussões do GitHub][search-api] é utilizada para encontrar a Discussão associada à página, com base no mapeamento escolhido (URL, `pathname`, `<title>`, etc.). Se não for encontrada uma discussão correspondente, o bot do giscus cria automaticamente uma discussão na primeira vez que alguém comentar ou reagir.
 
-Para comentar, visitantes devem autorizar o [app giscus][giscus-app] a [postar em seu nome][authorization] usando o fluxo GitHub OAuth. Alternativamente, visitantes podem comentar diretamente no GitHub Discussion. Você pode moderar comentários no GitHub.
+Para comentar, os visitantes têm de autorizar a [aplicação giscus][giscus-app] a [publicar em seu nome][authorization] através do fluxo OAuth do GitHub. Em alternativa, podem comentar diretamente na Discussão do GitHub. A moderação dos comentários é feita no GitHub.
 
 [giscus]: https://giscus.app/pt
 [discussions]: https://docs.github.com/en/discussions
 [utterances]: https://github.com/utterance/utterances
 [repo]: https://github.com/giscus/giscus
-[usos avançados]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
+[advanced-usage]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md
 [creating-custom-themes]: https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme
 [multiple-languages]: https://github.com/giscus/giscus/blob/main/CONTRIBUTING.md#adding-localizations
 [self-hosting]: https://github.com/giscus/giscus/blob/main/SELF-HOSTING.md
@@ -34,29 +34,29 @@ Para comentar, visitantes devem autorizar o [app giscus][giscus-app] a [postar e
 
 <!-- configuration -->
 
-Se você estiver usando giscus, considere [dar uma 🌟 no giscus no GitHub][repo] e adicionar o tópico [`giscus`][giscus-topic] [no seu repositório][topic-howto]! 🎉
+Se utiliza o giscus, considere [dar uma ⭐ ao giscus no GitHub][repo] e adicionar o tópico [`giscus`][giscus-topic] [ao seu repositório][topic-howto]! 🎉
 
-## Usos Avançados
+## Utilização avançada
 
-Você pode adicionar configurações adicionais (por exemplo permitindo origens específicas) seguindo o [guia de uso avançado][advanced-usage].
+É possível adicionar configurações adicionais (ex: permitir origens específicas) seguindo o [guia de utilização avançada][advanced-usage].
 
-Para usar o giscus com React, Vue, ou Svelte, olhe a [biblioteca de componentes do giscus][giscus-component].
+Para utilizar o giscus com React, Vue ou Svelte, consulte a [biblioteca de componentes do giscus][giscus-component].
 
-## Migrando
+## Migração
 
-Caso você tenha utilizado outros sistemas que usam os Problemas do GitHub (por exemplo [utterances][utterances], [gitalk][gitalk]), você pode [você pode converter problemas existentes em discussões][convert]. Após a conversão, confira que o mapeamento entre títulos de discussões e páginas está correto, então o giscus irá utilizar as discussões automaticamente.
+Se já utilizou outros sistemas baseados em Issues do GitHub (ex: [utterances][utterances], [gitalk][gitalk]), pode [converter as issues existentes em discussões][convert]. Após a conversão, certifique-se de que o mapeamento entre os títulos das discussões e as páginas está correto; o giscus utilizará automaticamente essas discussões.
 
-## Sites que usam o giscus
+## Sites que utilizam o giscus
 
 - [laymonage.com][laymonage-website]
 - [os.phil-opp.com][os-phil-opp]
 - [Stats and R][statsandr]
 - [Tech Debt Burndown Podcast][techdebtburndown]
-- [**and many more!**][giscus-topic]
+- [**e muitos mais!**][giscus-topic]
 
-## Contribuindo
+## Contribuir
 
-Veja [CONTRIBUTING.md][contributing]
+Consulte [CONTRIBUTING.md][contributing]
 
 [giscus-component]: https://github.com/giscus/giscus-component
 [repo]: https://github.com/giscus/giscus
@@ -76,7 +76,7 @@ Veja [CONTRIBUTING.md][contributing]
 
 ---
 
-Esse README também está disponível em:
+Este README também está disponível em:
 
 - [&lrm;العربية](README.ar.md)
 - [Беларуская](README.be.md)

@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} reaccións",
+    "one": "{{count}} reacción",
+    "other": "{{count}} reaccións"
+  },
+  "comment": "Comentar",
+  "comments": {
+    "0": "{{count}} comentarios",
+    "one": "{{count}} comentario",
+    "other": "{{count}} comentarios"
+  },
+  "reply": "Responder",
+  "replies": {
+    "0": "{{count}} respostas",
+    "one": "{{count}} resposta",
+    "other": "{{count}}{{plus}} respostas"
+  },
+  "upvotes": {
+    "0": "{{count}} votos a favor",
+    "one": "{{count}} voto a favor",
+    "other": "{{count}} votos a favor"
+  },
+  "hiddenItems": {
+    "0": "{{count}} elementos agochados",
+    "one": "{{count}} elemento agochado",
+    "other": "{{count}} elementos agochados"
+  },
+  "genericError": "Produciuse un erro: {{message}}",
+  "loadMore": "Cargar máis",
+  "loading": "Cargando",
+  "loadingComments": "Cargando comentarios…",
+  "loadingPreview": "Cargando vista previa…",
+  "poweredBy": "– Desenvolvido por <a>giscus</a>",
+  "oldest": "Antigo",
+  "newest": "Novo",
+  "showPreviousReplies": {
+    "0": "Amosar {{count}} respostas anteriores",
+    "one": "Amosar {{count}} resposta anterior",
+    "other": "Amosar {{count}} respostas anteriores"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "Ver {{count}} respostas anteriores en GitHub",
+    "one": "Ver {{count}} resposta anterior en GitHub",
+    "other": "Ver {{count}} respostas anteriores en GitHub"
+  },
+  "edited": "editado",
+  "thisCommentWasDeleted": "Este comentario foi eliminado.",
+  "thisCommentWasMinimized": "Este comentario foi minimizado.",
+  "thisCommentWasHidden": "Este comentario foi agochado.",
+  "write": "Escribir",
+  "preview": "Vista previa",
+  "enableFixedWidth": "Activar a fonte de ancho fixo (espazo único) no editor",
+  "disableFixedWidth": "Desactivar a fonte de ancho fixo (espazo único) no editor",
+  "lastEditedAt": "Última modificación o {{date}}",
+  "writeAComment": "Escribir un comentario",
+  "signInToComment": "Inicia sesión para comentar",
+  "stylingWithMarkdownIsSupported": "Admítense estilos con Markdown",
+  "signOut": "Pechar sesión",
+  "cancel": "Cancelar",
+  "signInWithGitHub": "Iniciar sesión con GitHub",
+  "writeAReply": "Escribe unha resposta",
+
+  "upvote": "Voto a favor",
+  "youMustBeSignedInToUpvote": "Debes iniciar sesión para votar.",
+  "addReactions": "Engadir reaccións",
+  "pleaseWait": "Agarda, por favor…",
+  "pickYourReaction": "Escolle a túa reacción",
+  "addTheReaction": "Engadir reacción de {{reaction}}",
+  "removeTheReaction": "Eliminar reacción de {{reaction}}",
+  "signInToAddYourReaction": "<a>Inicia sesión</a> para engadir a túa reacción.",
+  "youMustBeSignedInToAddReactions": "Debes iniciar sesión para engadir reaccións.",
+  "peopleReactedWith": {
+    "0": "{{count}} persoas reaccionaron con {{reaction}} {{emoji}}",
+    "one": "{{count}} persoa reaccionou con {{reaction}} {{emoji}}",
+    "other": "{{count}} persoas reaccionaron con {{reaction}} {{emoji}}"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Nada que previsualizar",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Risa",
+  "HOORAY": "Hurra",
+  "CONFUSED": "Confundido",
+  "HEART": "Amor",
+  "ROCKET": "Foguete",
+  "EYES": "Ollos",
+
+  "COLLABORATOR": "Colaborador",
+  "CONTRIBUTOR": "Colaboradora/or",
+  "FIRST_TIMER": "Primeira vez",
+  "FIRST_TIME_CONTRIBUTOR": "Colaborador/a de primeira vez",
+  "MANNEQUIN": "Maniquí",
+  "MEMBER": "Membro",
+  "NONE": "Ningún",
+  "OWNER": "Propietario",
+  "APP": "Aplicación"
+}

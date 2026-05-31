@@ -91,6 +91,7 @@ giscus 加载时，会使用 [GitHub Discussions 搜索 API][search-api] 根据�
 - [Euskera](README.eu.md)
 - [فارسی](README.fa.md)
 - [Français](README.fr.md)
+- [Galego](README.gl.md)
 - [Ελληνικά](README.gr.md)
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)

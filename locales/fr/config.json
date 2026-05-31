@@ -2,17 +2,17 @@
   "configuration": "Configuration",
 
   "language": "Langue",
-  "chooseLanguageGiscusDisplayed": "Choisir la langue d'affichage de giscus. Vous ne trouvez pas votre langue ? <a>Contribuez</a> à la traduction.",
 
+  "chooseLanguageGiscusDisplayed": "Choisir la langue d'affichage de giscus. Vous ne trouvez pas votre langue&nbsp;? <a>Contribuez</a> à la traduction.",
   "repository": "Dépôt",
-  "chooseTheRepository": "Choisir le dépôt auquel giscus se connectera. Bien vérifier que :",
+  "chooseTheRepository": "Choisir le dépôt auquel giscus se connectera. Bien vérifier que&nbsp;:",
   "theRepositoryIsPublic": "Le <strong>dépôt est <a>public</a></strong>, sinon les visiteurs ne pourront pas voir les discussions.",
   "theGiscusAppIsInstalled": "L'<strong>application <a>giscus</a> est installée</strong>, sinon les visiteurs ne pourront pas commenter ni réagir.",
   "theDiscussionsFeatureIsTurnedOn": "Les <strong>Discussions sont activées</strong> en <a>autorisant cette fonctionnalité pour votre dépôt</a>.",
-  "repositoryLabel": "dépôt :",
+  "repositoryLabel": "dépôt&nbsp;:",
   "myusername/myrepo": "myusername/myrepo",
   "cannotUseGiscusOnThisRepository": "giscus ne peut être utilisé pour ce dépôt. Merci de vérifier que les critères ci-dessus sont bien remplis.",
-  "successRepositoryMeetsCriteria": "Bravo ! Ce dépôt respecte tous les critères pré-requis.",
+  "successRepositoryMeetsCriteria": "Bravo&nbsp;! Ce dépôt respecte tous les critères pré-requis.",
   "aPublicGitHubRepository": "Un dépôt GitHub <strong>public</strong>. Ce dépôt sera celui utilisé pour lier les discussions.",
 
   "pageDiscussionsMapping": "Mappage Pages ↔️ Discussions",
@@ -43,8 +43,8 @@
   "pickACategoryOption": "Choisir une catégorie",
   "noCategoriesFoundOption": "Aucune catégorie trouvée",
   "onlySearchInThisCategory": "Rechercher seulement parmi les discussions de cette catégorie",
-  "whenSearchingOnlyThisCategory": "Lors de la recherche d'une discussion correspondante (mappage), giscuss ne cherchera que parmi les discussions de cette catégorie.",
 
+  "whenSearchingOnlyThisCategory": "Lors de la recherche d'une discussion correspondante (mappage), giscus ne cherchera que parmi les discussions de cette catégorie.",
   "features": "Fonctionnalités",
   "chooseSpecificFeatures": "Choisir des fonctionnalités spécifiques à activer.",
   "enableReactionsMainPost": "Autoriser les réactions pour le message principal",
@@ -57,10 +57,10 @@
   "loadingCommentsWillBeDeferred": "Le chargement des commentaires sera différé jusqu'à ce que l'utilisateur défile près du conteneur de commentaires. Cela se fait en ajoutant <a><code>loading=\"lazy\"</code></a> à l'élément <code><iframe></code>.",
 
   "theme": "Thème",
-  "chooseAThemeThatMatches": "Choisir un thème qui correspond au site. Vous ne trouvez pas de thème adapté ? <a>Proposer</a> un nouveau thème.",
-  "URLToThemeCSS": "URL vers le fichier CSS du thème :",
-  "warningExternalCSSUnsafe": "Attention : charger un fichier CSS externe peut être dangereux. Vérifiez que vous connaissez l'auteur et le fournisseur du fichier CSS.",
 
+  "chooseAThemeThatMatches": "Choisir un thème qui correspond au site. Vous ne trouvez pas de thème adapté&nbsp;? <a>Proposer</a> un nouveau thème.",
+  "URLToThemeCSS": "URL vers le fichier CSS du thème&nbsp;:",
+  "warningExternalCSSUnsafe": "Attention&nbsp;: charger un fichier CSS externe peut être dangereux. Vérifiez que vous connaissez l'auteur et le fournisseur du fichier CSS.",
   "theme=light": "GitHub Light",
   "theme=light_high_contrast": "GitHub Light High Contrast",
   "theme=light_protanopia": "GitHub Light Protanopia & Deuteranopia",
@@ -92,14 +92,14 @@
   "youHaveNotConfiguredRepositoryCategory": "Vous n'avez pas configuré votre <arepo>référentiel</arepo> et/ou <acategory>catégorie</acategory>. Les valeurs de ces champs ne seront pas affichées tant que vous ne les aurez pas remplis.",
   "copy": "Copier",
 
-  "[enterRepoHere]": "[ENTER REPO HERE]",
-  "[enterRepoIDHere]": "[ENTER REPO ID HERE]",
-  "[enterCategoryHere]": "[ENTER CATEGORY NAME HERE]",
-  "[enterCategoryIDHere]": "[ENTER CATEGORY ID HERE]",
-  "[enterTermHere]": "[ENTER TERM HERE]",
-  "[enterNumberHere]": "[ENTER NUMBER HERE]",
-  "[enterThemeCSSURLHere]": "[ENTER THEME CSS URL HERE]",
+  "[enterRepoHere]": "[ENTRER LE DÉPÔT ICI]",
+  "[enterRepoIDHere]": "[ENTRER L'IDENTIFIANT DU DÉPÔT ICI]",
+  "[enterCategoryHere]": "[ENTRER LE NOM DE LA CATÉGORIE ICI]",
+  "[enterCategoryIDHere]": "[ENTRER L'IDENTIFIANT DE LA CATÉGORI ICI]",
+  "[enterTermHere]": "[ENTRER LE TERME ICI]",
+  "[enterNumberHere]": "[ENTRER LE NUMÉRO ICI]",
+  "[enterThemeCSSURLHere]": "[ENTRER L'URL DU THÈME CSS ICI]",
 
-  "youCanCustomizeTheLayout": "Vous pouvez personnaliser la disposition du conteneur à l'aide des sélecteurs <code>.giscus</code> et <code>.giscus-frame</code> de la page d'incorporation.",
-  "tryItOut": "Essayez !"
+  "youCanCustomizeTheLayout": "Vous pouvez personnaliser la disposition du conteneur à l'aide des sélecteurs <code>.giscus</code> et <code>.giscus-frame</code> de la page dans laquelle giscus est incorporé.",
+  "tryItOut": "Essayez-le&nbsp;!"
 }

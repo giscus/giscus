@@ -1,0 +1,101 @@
+```json
+{
+  "reactions": {
+    "0": "{{count}} പ്രതികരണം",
+    "one": "{{count}} പ്രതികരണം",
+    "other": "{{count}} പ്രതികരണങ്ങൾ"
+  },
+  "comment": "കമന്റ്",
+  "comments": {
+    "0": "{{count}} കമന്റ്",
+    "one": "{{count}} കമന്റ്",
+    "other": "{{count}} കമന്റുകൾ"
+  },
+  "reply": "ഉത്തരം",
+  "replies": {
+    "0": "{{count}} ഉത്തരം",
+    "one": "{{count}} ഉത്തരം",
+    "other": "{{count}}{{plus}} ഉത്തരങ്ങൾ"
+  },
+  "upvotes": {
+    "0": "{{count}} പിന്തുണ",
+    "one": "{{count}} പിന്തുണ",
+    "other": "{{count}} പിന്തുണ"
+  },
+  "hiddenItems": {
+    "0": "{{count}} മറച്ചുവച്ച ഇനങ്ങൾ",
+    "one": "{{count}} മറച്ചുവച്ച ഇനം",
+    "other": "{{count}} മറച്ചുവച്ച ഇനങ്ങൾ"
+  },
+  "genericError": "ഒരു പിശക് സംഭവിച്ചു: {{message}}",
+  "loadMore": "കൂടുതൽ ലോഡ് ചെയ്യുക",
+  "loading": "ലോഡ് ചെയ്യുന്നു",
+  "loadingComments": "കമന്റുകൾ ലോഡ് ചെയ്യുന്നു…",
+  "loadingPreview": "പ്രിവ്യൂ ലോഡ് ചെയ്യുന്നു…",
+  "poweredBy": "– പ്രവർത്തിപ്പിക്കുന്നത് <a>giscus</a>",
+  "oldest": "ഏറ്റവും പഴക്കം ചെന്നത്",
+  "newest": "ഏറ്റവും പുതിയത്",
+  "showPreviousReplies": {
+    "0": "മുമ്പത്തെ {{count}} ഉത്തരങ്ങൾ കാണിക്കുക",
+    "one": "മുമ്പത്തെ {{count}} ഉത്തരം കാണിക്കുക",
+    "other": "മുമ്പത്തെ {{count}} ഉത്തരങ്ങൾ കാണിക്കുക"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "GitHub-ൽ മുമ്പത്തെ {{count}} ഉത്തരങ്ങൾ കാണുക",
+    "one": "GitHub-ൽ മുമ്പത്തെ {{count}} ഉത്തരം കാണുക",
+    "other": "GitHub-ൽ മുമ്പത്തെ {{count}} ഉത്തരങ്ങൾ കാണുക"
+  },
+  "edited": "തിരുത്തിയിരിക്കുന്നു",
+  "thisCommentWasDeleted": "ഈ കമന്റ് നീക്കം ചെയ്തിരിക്കുന്നു.",
+  "thisCommentWasMinimized": "ഈ കമന്റ് ചുരുക്കി കാണിക്കുന്നു.",
+  "thisCommentWasHidden": "ഈ കമന്റ് മറച്ചിരിക്കുന്നു.",
+  "write": "എഴുതുക",
+  "preview": "പ്രിവ്യൂ",
+  "enableFixedWidth": "എഡിറ്ററിൽ ഫിക്സഡ് വീതിയുള്ള (monospace) ഫോണ്ട് സജീവമാക്കുക",
+  "disableFixedWidth": "എഡിറ്ററിൽ ഫിക്സഡ് വീതിയുള്ള (monospace) ഫോണ്ട് അപ്രാപ്തമാക്കുക",
+  "lastEditedAt": "അവസാനമായി തിരുത്തിയത്: {{date}}",
+  "writeAComment": "ഒരു കമന്റ് എഴുതുക",
+  "signInToComment": "കമന്റ് ചെയ്യാൻ സൈൻ ഇൻ ചെയ്യുക",
+  "stylingWithMarkdownIsSupported": "Markdown ഉപയോഗിച്ച് സ്റ്റൈലിംഗ് പിന്തുണയ്ക്കുന്നു",
+  "signOut": "സൈൻ ഔട്ട്",
+  "cancel": "റദ്ദാക്കുക",
+  "signInWithGitHub": "GitHub-ൽ സൈൻ ഇൻ ചെയ്യുക",
+  "writeAReply": "ഒരു മറുപടി എഴുതുക",
+
+  "upvote": "പിന്തുണ",
+  "youMustBeSignedInToUpvote": "പിന്തുണ നൽകാൻ നിങ്ങൾ സൈൻ ഇൻ ചെയ്തിരിക്കണം.",
+  "addReactions": "പ്രതികരണങ്ങൾ ചേർക്കുക",
+  "pleaseWait": "ദയവായി കാത്തിരിക്കുക…",
+  "pickYourReaction": "നിങ്ങളുടെ പ്രതികരണം തിരഞ്ഞെടുക്കുക",
+  "addTheReaction": "{{reaction}} പ്രതികരണം ചേർക്കുക",
+  "removeTheReaction": "{{reaction}} പ്രതികരണം നീക്കം ചെയ്യുക",
+  "signInToAddYourReaction": "<a>സൈൻ ഇൻ</a> ചെയ്ത് നിങ്ങളുടെ പ്രതികരണം ചേർക്കുക.",
+  "youMustBeSignedInToAddReactions": "പ്രതികരണങ്ങൾ ചേർക്കാൻ നിങ്ങൾ സൈൻ ഇൻ ചെയ്തിരിക്കണം.",
+  "peopleReactedWith": {
+    "0": "{{count}} പേർ {{reaction}} {{emoji}} ഉപയോഗിച്ച് പ്രതികരിച്ചു",
+    "one": "{{count}} പേർ {{reaction}} {{emoji}} ഉപയോഗിച്ച് പ്രതികരിച്ചു",
+    "other": "{{count}} പേർ {{reaction}} {{emoji}} ഉപയോഗിച്ച് പ്രതികരിച്ചു"
+  },
+  "emoji": "ഇമോജി",
+  "nothingToPreview": "പ്രിവ്യൂ ചെയ്യാൻ ഒന്നുമില്ല",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "ചിരി",
+  "HOORAY": "ശുഭാശംസകൾ",
+  "CONFUSED": "സംശയത്തിൽ",
+  "HEART": "ഹൃദയം",
+  "ROCKET": "റോക്കറ്റ്",
+  "EYES": "കണ്ണുകൾ",
+
+  "COLLABORATOR": "സഹപ്രവർത്തകൻ",
+  "CONTRIBUTOR": "സംഭാവകൻ",
+  "FIRST_TIMER": "ആദ്യവട്ടം",
+  "FIRST_TIME_CONTRIBUTOR": "ആദ്യമായി സംഭാവന ചെയ്തവൻ",
+  "MANNEQUIN": "മാനിക്യു",
+  "MEMBER": "അംഗം",
+  "NONE": "ഒന്നുമില്ല",
+  "OWNER": "ഉടമ",
+  "APP": "ആപ്പ്"
+}
+

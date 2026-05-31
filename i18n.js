@@ -23,6 +23,7 @@ module.exports = {
     'ja',
     'kh',
     'ko',
+    'ml',
     'nl',
     'pl',
     'pt',

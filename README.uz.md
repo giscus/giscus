@@ -80,6 +80,7 @@ Agar siz avval GitHub Issues'dan foydalanadigan boshqa tizimlarni ishlatgan bo'l
 Ushbu README quyidagi tillarda mavjud:
 
 - [&lrm;العربية](README.ar.md)
+- [Azərbaycan dili](README.az.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

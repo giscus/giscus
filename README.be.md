@@ -79,6 +79,7 @@
 Гэты README даступны ў:
 
 - [&lrm;العربية](README.ar.md)
+- [Azərbaycan dili](README.az.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

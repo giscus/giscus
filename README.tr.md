@@ -79,6 +79,7 @@ Giscus'ı React, Vue veya Svelte ile kullanmak için [giscus bileşen kütüphan
 README şu dillerde de mevcut:
 
 - [&lrm;العربية](README.ar.md)
+- [Azərbaycan dili](README.az.md)
 - [Беларуская](README.be.md)
 - [български](README.bg.md)
 - [Català](README.ca.md)

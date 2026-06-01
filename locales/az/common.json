@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} reaksiya",
+    "one": "{{count}} reaksiya",
+    "other": "{{count}} reaksiya"
+  },
+  "comment": "Şərh",
+  "comments": {
+    "0": "{{count}} şərh",
+    "one": "{{count}} şərh",
+    "other": "{{count}} şərh"
+  },
+  "reply": "Cavab",
+  "replies": {
+    "0": "{{count}} cavab",
+    "one": "{{count}} cavab",
+    "other": "{{count}}{{plus}} cavab"
+  },
+  "upvotes": {
+    "0": "{{count}} səs",
+    "one": "{{count}} səs",
+    "other": "{{count}} səs"
+  },
+  "hiddenItems": {
+    "0": "{{count}} gizli element",
+    "one": "{{count}} gizli element",
+    "other": "{{count}} gizli element"
+  },
+  "genericError": "Xəta baş verdi: {{message}}",
+  "loadMore": "Daha çox yüklə",
+  "loading": "Yüklənir",
+  "loadingComments": "Şərhlər yüklənir…",
+  "loadingPreview": "Önizləmə yüklənir…",
+  "poweredBy": "– <a>giscus</a> tərəfindən dəstəklənir",
+  "oldest": "Ən köhnə",
+  "newest": "Ən yeni",
+  "showPreviousReplies": {
+    "0": "Əvvəlki {{count}} cavabı göstər",
+    "one": "Əvvəlki {{count}} cavabı göstər",
+    "other": "Əvvəlki {{count}} cavabı göstər"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "GitHub-da əvvəlki {{count}} cavaba bax",
+    "one": "GitHub-da əvvəlki {{count}} cavaba bax",
+    "other": "GitHub-da əvvəlki {{count}} cavaba bax"
+  },
+  "edited": "redaktə edildi",
+  "thisCommentWasDeleted": "Bu şərh silinib.",
+  "thisCommentWasMinimized": "Bu şərh kiçildilib.",
+  "thisCommentWasHidden": "Bu şərh gizlədilib.",
+  "write": "Yaz",
+  "preview": "Önizləmə",
+  "enableFixedWidth": "Redaktorda sabit enli şrifti aktiv et",
+  "disableFixedWidth": "Redaktorda sabit enli şrifti deaktiv et",
+  "lastEditedAt": "Son redaktə tarixi: {{date}}",
+  "writeAComment": "Şərh yaz",
+  "signInToComment": "Şərh yazmaq üçün giriş edin",
+  "stylingWithMarkdownIsSupported": "Markdown stili dəstəklənir",
+  "signOut": "Çıxış et",
+  "cancel": "Ləğv et",
+  "signInWithGitHub": "GitHub ilə giriş et",
+  "writeAReply": "Cavab yaz",
+
+  "upvote": "Səs ver",
+  "youMustBeSignedInToUpvote": "Səs vermək üçün giriş etməlisiniz.",
+  "addReactions": "Reaksiya əlavə et",
+  "pleaseWait": "Zəhmət olmasa, gözləyin…",
+  "pickYourReaction": "Reaksiyanızı seçin",
+  "addTheReaction": "{{reaction}} reaksiyasını əlavə et",
+  "removeTheReaction": "{{reaction}} reaksiyasını sil",
+  "signInToAddYourReaction": "Reaksiyanızı əlavə etmək üçün <a>giriş edin</a>.",
+  "youMustBeSignedInToAddReactions": "Reaksiya əlavə etmək üçün giriş etməlisiniz.",
+  "peopleReactedWith": {
+    "0": "{{count}} nəfər {{reaction}} {{emoji}} ilə reaksiya verib",
+    "one": "{{count}} nəfər {{reaction}} {{emoji}} ilə reaksiya verib",
+    "other": "{{count}} nəfər {{reaction}} {{emoji}} ilə reaksiya verib"
+  },
+  "emoji": "emoji",
+  "nothingToPreview": "Önizləmə üçün heç nə yoxdur",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "Gülüş",
+  "HOORAY": "Ura",
+  "CONFUSED": "Çaşqın",
+  "HEART": "Sevgi",
+  "ROCKET": "Raket",
+  "EYES": "Gözlər",
+
+  "COLLABORATOR": "Əməkdaş",
+  "CONTRIBUTOR": "Töhfə verən",
+  "FIRST_TIMER": "Yeni iştirakçı",
+  "FIRST_TIME_CONTRIBUTOR": "İlk dəfə töhfə verən",
+  "MANNEQUIN": "Manken",
+  "MEMBER": "Üzv",
+  "NONE": "Yoxdur",
+  "OWNER": "İdarəçi",
+  "APP": "Tətbiq"
+}

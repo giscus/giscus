@@ -79,7 +79,7 @@ a:hover {
 }
 
 .markdown pre,
-.markdown .highlight pre, {
+.markdown .highlight pre {
   @apply p-4 overflow-auto text-xs rounded-md;
 
   line-height: 1.45;

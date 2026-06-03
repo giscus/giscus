@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} რეაქცია",
+    "one": "{{count}} რეაქცია",
+    "other": "{{count}} რეაქცია"
+  },
+  "comment": "კომენტარი",
+  "comments": {
+    "0": "{{count}} კომენტარი",
+    "one": "{{count}} კომენტარი",
+    "other": "{{count}} კომენტარი"
+  },
+  "reply": "პასუხი",
+  "replies": {
+    "0": "{{count}} პასუხი",
+    "one": "{{count}} პასუხი",
+    "other": "{{count}}{{plus}} პასუხი"
+  },
+  "upvotes": {
+    "0": "{{count}} მოწონება",
+    "one": "{{count}} მოწონება",
+    "other": "{{count}} მოწონება"
+  },
+  "hiddenItems": {
+    "0": "{{count}} დამალული ელემენტი",
+    "one": "{{count}} დამალული ელემენტი",
+    "other": "{{count}} დამალული ელემენტი"
+  },
+  "genericError": "დაფიქსირდა შეცდომა: {{message}}",
+  "loadMore": "მეტის ჩატვირთვა",
+  "loading": "იტვირთება",
+  "loadingComments": "კომენტარები იტვირთება…",
+  "loadingPreview": "გადახედვა იტვირთება…",
+  "poweredBy": "– მუშაობს <a>giscus</a>-ით",
+  "oldest": "უძველესი",
+  "newest": "უახლესი",
+  "showPreviousReplies": {
+    "0": "{{count}} წინა პასუხის ჩვენება",
+    "one": "{{count}} წინა პასუხის ჩვენება",
+    "other": "{{count}} წინა პასუხის ჩვენება"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "{{count}} წინა პასუხის ნახვა GitHub-ზე",
+    "one": "{{count}} წინა პასუხის ნახვა GitHub-ზე",
+    "other": "{{count}} წინა პასუხის ნახვა GitHub-ზე"
+  },
+  "edited": "რედაქტირებულია",
+  "thisCommentWasDeleted": "ეს კომენტარი წაიშალა.",
+  "thisCommentWasMinimized": "ეს კომენტარი მინიმიზებულია.",
+  "thisCommentWasHidden": "ეს კომენტარი დამალულია.",
+  "write": "წერა",
+  "preview": "გადახედვა",
+  "enableFixedWidth": "ფიქსირებული სიგანის (მონოსივრცის) შრიფტის ჩართვა რედაქტორში",
+  "disableFixedWidth": "ფიქსირებული სიგანის (მონოსივრცის) შრიფტის გამორთვა რედაქტორში",
+  "lastEditedAt": "ბოლო რედაქტირება: {{date}}",
+  "writeAComment": "დაწერეთ კომენტარი",
+  "signInToComment": "კომენტარის დასატოვებლად შედით სისტემაში",
+  "stylingWithMarkdownIsSupported": "მხარდაჭერილია Markdown-ით სტილიზაცია",
+  "signOut": "გასვლა",
+  "cancel": "გაუქმება",
+  "signInWithGitHub": "GitHub-ით შესვლა",
+  "writeAReply": "დაწერეთ პასუხი",
+
+  "upvote": "მოწონება",
+  "youMustBeSignedInToUpvote": "მოსაწონებლად უნდა იყოთ ავტორიზებული.",
+  "addReactions": "რეაქციების დამატება",
+  "pleaseWait": "გთხოვთ, დაიცადოთ…",
+  "pickYourReaction": "აირჩიეთ თქვენი რეაქცია",
+  "addTheReaction": "{{reaction}} რეაქციის დამატება",
+  "removeTheReaction": "{{reaction}} რეაქციის წაშლა",
+  "signInToAddYourReaction": "თქვენი რეაქციის დასამატებლად <a>შედით სისტემაში</a>.",
+  "youMustBeSignedInToAddReactions": "რეაქციების დასამატებლად უნდა იყოთ ავტორიზებული.",
+  "peopleReactedWith": {
+    "0": "{{count}} ადამიანმა გამოხატა რეაქცია {{reaction}} {{emoji}}-ით",
+    "one": "{{count}} ადამიანმა გამოხატა რეაქცია {{reaction}} {{emoji}}-ით",
+    "other": "{{count}} ადამიანმა გამოხატა რეაქცია {{reaction}} {{emoji}}-ით"
+  },
+  "emoji": "ემოჯი",
+  "nothingToPreview": "გადასახედი არაფერია",
+
+  "THUMBS_UP": "+1",
+  "THUMBS_DOWN": "-1",
+  "LAUGH": "სიცილი",
+  "HOORAY": "ჰურა",
+  "CONFUSED": "დაბნეულობა",
+  "HEART": "სიყვარული",
+  "ROCKET": "რაკეტა",
+  "EYES": "თვალები",
+
+  "COLLABORATOR": "თანამშრომელი",
+  "CONTRIBUTOR": "კონტრიბუტორი",
+  "FIRST_TIMER": "პირველად მოსული",
+  "FIRST_TIME_CONTRIBUTOR": "ახალი კონტრიბუტორი",
+  "MANNEQUIN": "მანეკენი",
+  "MEMBER": "წევრი",
+  "NONE": "არცერთი",
+  "OWNER": "მფლობელი",
+  "APP": "აპლიკაცია"
+}

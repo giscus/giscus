@@ -21,6 +21,7 @@ module.exports = {
     'id',
     'it',
     'ja',
+    'ka',
     'kh',
     'ko',
     'nl',

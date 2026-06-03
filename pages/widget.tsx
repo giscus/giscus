@@ -5,7 +5,7 @@ import Widget from '../components/Widget';
 import { assertOrigin } from '../lib/config';
 import { ConfigContext, ThemeContext } from '../lib/context';
 import { decodeState } from '../lib/oauth/state';
-import { InputPosition, ISetConfigMessage } from '../lib/types/giscus';
+import { InputPosition, ISetConfigMessage, ReactionsLayout } from '../lib/types/giscus';
 import { cleanSessionParam, getOriginHost } from '../lib/utils';
 import { env, Theme } from '../lib/variables';
 import { getAppAccessToken } from '../services/github/getAppAccessToken';
@@ -26,6 +26,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
   const reactionsEnabled = Boolean(+query.reactionsEnabled);
   const emitMetadata = Boolean(+query.emitMetadata);
   const inputPosition = (query.inputPosition === 'top' ? 'top' : 'bottom') as InputPosition;
+  const reactionsLayout = (query.reactionsLayout === 'compact' ? 'compact' : 'default') as ReactionsLayout;
   const theme = ((query.theme as string) || 'preferred_color_scheme') as Theme;
   const { origin, originHost } = getOriginHost((query.origin as string) || '');
   const backLink = (query.backLink as string) || origin;
@@ -76,6 +77,7 @@ export async function getServerSideProps({ query, res }: GetServerSidePropsConte
       reactionsEnabled,
       emitMetadata,
       inputPosition,
+      reactionsLayout,
       defaultCommentOrder,
       theme,
       originHost,
@@ -98,6 +100,7 @@ export default function WidgetPage({
   reactionsEnabled,
   emitMetadata,
   inputPosition,
+  reactionsLayout,
   defaultCommentOrder,
   theme,
   originHost,
@@ -118,6 +121,7 @@ export default function WidgetPage({
     reactionsEnabled,
     emitMetadata,
     inputPosition,
+    reactionsLayout,
     defaultCommentOrder,
   });
 

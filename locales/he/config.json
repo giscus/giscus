@@ -1,6 +1,5 @@
 {
   "configuration": "תצורה",
-
   "language": "עברית",
   "chooseLanguageGiscusDisplayed": "בחר את השפה בה גיסקוס יוצג. לא מצאת את השפה שלך? <a>תרום</a> תרגום.",
   "repository": "מאגר",
@@ -13,10 +12,8 @@
   "cannotUseGiscusOnThisRepository": "לא ניתן להשתמש ב giscus עבור המאגר. ודא שכל התנאים הדרושים מתקייימים.",
   "successRepositoryMeetsCriteria": "נפלא! המאגר מתאים לשימוש ב giscus.",
   "aPublicGitHubRepository": "מאגר <strong>ציבורי</strong>. המאגר הינו המקום אליו יקושרו הדיונים.",
-
   "pageDiscussionsMapping": "דף ↔️ נתב דיונים",
   "chooseTheMapping": "בחר את הניתוב המתאים בין הדף המוטמע לדיון המוטמע.",
-
   "titleContainsPathname": "כותרת הדיון מכילה את שם הנתיב  <code>pathname</code>",
   "titleContainsURL": "כותרת הדיון מכילה את כתובת האתר של הדף <code>URL</code>",
   "titleContainsURLDesc": "giscus יסרוק עבור דיונים שכותרתם מכילים את רכיב כתובת האתר של שם הנתיב.",
@@ -32,7 +29,6 @@
   "enterDiscussionNumberHere": "הקלד מספר דיון",
   "useStrictTitleMatching": "השתמש בהתאמת כותרת קפדנית",
   "avoidMismatches": "הימנע מאי-התאמה עקב שיטת החיפוש המעורפלת של GitHub כאשר יש דיונים מרובים עם כותרות דומות. עיין <a>בתיעוד</a> למידע נוסף.",
-
   "discussionCategory": "קבוצת דיון",
   "chooseTheDiscussionCategory": "בחר את קבוצת הדיון בה יווצרו הדיונים החדשים.",
   "categoryIsNotSupported": "מאפיין זה אינו נתמך בעת שימוש ב-<strong>מספר מזהה מותאם לדיון</strong>.",
@@ -43,11 +39,14 @@
   "noCategoriesFoundOption": "לא נמצאו קבוצות",
   "onlySearchInThisCategory": "חפש עבור דיונים בקבוצה זו",
   "whenSearchingOnlyThisCategory": "בעת חיפוש אחר דיון מתאים, giscus יחפש בקבוצה זו בלבד.",
-
   "features": "מאפיינים",
   "chooseSpecificFeatures": "בחר אילו מאפיינים ברצונך להפעיל",
   "enableReactionsMainPost": "הפעל סמלונים עבור הפוסט הראשי",
   "reactionsMainPostShownBeforeComments": "הסמלונים של הדיון הראשי יופיעו לפני התגובות.",
+  "reactionsLayout": "פריסת תגובות",
+  "reactionsLayoutDefault": "ברירת מחדל (מעל התגובות)",
+  "reactionsLayoutCompact": "קומפקטי (עם התגובות)",
+  "reactionsLayoutDescription": "בחר כיצד תגובות מוצגות בדף.",
   "emitDiscussionMetadata": "לפלוט metadata של הדיון",
   "discussionMetadataSentPeriodically": "metadata של דיון יישלחו מעת לעת לחלון האב (דף ההטמעה). להמחשה, הפעל אפשרות זו ופתח את מסוף הדפדפן שלך בדף זה. עיין <a>בתיעוד</a> למידע נוסף.",
   "placeCommentBoxAboveComments": "מקם את תיבת התגובה מעל התגובות",
@@ -87,7 +86,6 @@
   "addTheFollowingScriptTag": "הוסף את התגית <code><script></code> לתבנית האתר שלכם במקום שבו תרצו שהתגובות יופיעו. אם קיים אלמנט עם המזהה (class) <code>giscus</code>, התגובות יופיעו במקום זה.",
   "youHaveNotConfiguredRepositoryCategory": "לא הגדרת את <arepo>המאגר</arepo> ו/או <acategory>קבוצה</acategory>. הערכים עבור השדות הבאים יופיעו לאחר מילוי השדות הנדרשים.",
   "copy": "Copy",
-
   "[enterRepoHere]": "[הקלד שם מאגר כאן]",
   "[enterRepoIDHere]": "[הקלד מזהה מאגר כאן]",
   "[enterCategoryHere]": "[הקלד שם קבוצה כאן]",

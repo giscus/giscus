@@ -85,6 +85,7 @@ export default function Home({
     theme: 'preferred_color_scheme',
     themeUrl: `${env.app_host}/themes/custom_example.css`,
     reactionsEnabled: true,
+    reactionsLayout: 'default',
     emitMetadata: false,
     lang: locale,
     inputPosition: 'bottom',
@@ -104,6 +105,7 @@ export default function Home({
       setConfig: {
         theme: configTheme,
         reactionsEnabled: directConfig.reactionsEnabled,
+        reactionsLayout: directConfig.reactionsLayout,
         emitMetadata: directConfig.emitMetadata,
         inputPosition: directConfig.inputPosition,
         lang: directConfig.lang,
@@ -113,6 +115,7 @@ export default function Home({
   }, [
     directConfig.emitMetadata,
     directConfig.reactionsEnabled,
+    directConfig.reactionsLayout,
     directConfig.inputPosition,
     directConfig.lang,
     configTheme,

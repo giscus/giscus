@@ -1,9 +1,7 @@
 {
   "configuration": "Канфіґурацыя",
-
   "language": "Мова",
   "chooseLanguageGiscusDisplayed": "Абярыце мову, якою адлюстроўвацьмецца gіscus. Вашая мова адсутнічае? <a>Стварыце</a> пераклад.",
-
   "repository": "Рэпазітар",
   "chooseTheRepository": "Абярыце рэпазітар, да якога gіscus далучацьмецца. Пераканайцеся, што:",
   "theRepositoryIsPublic": "<strong>Рэпазітар ё <a>публічным</a></strong>, інакш наведвальнікі ня змогуць праглядаць абмеркаваньне.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Немагчыма ўжыць gіscus з гэтым рэпазітарам. Пераканайцеся, што ўсе вышэйпералічаныя ўмовы выкананыя.",
   "successRepositoryMeetsCriteria": "Посьпех! Гэты рэпазітар адпавядае ўсім умовам.",
   "aPublicGitHubRepository": "<strong>Публічны</strong> GitHub рэпазітар. Да гэтага рэпазітару будуць далучаныя абмеркаваньні.",
-
   "pageDiscussionsMapping": "Зьяднаньне: Старонка ↔️ Абмеркаваньні",
   "chooseTheMapping": "Абярыце зьяднаньне між укараняльнаю старонкаю ды ўкаранёным абмеркаваньнем.",
   "titleContainsPathname": "Назва абмеркаваньня месьціць <code>шлях</code> старонкі",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Увядзіце лік абмеркаваньня",
   "useStrictTitleMatching": "Ужываць дакладнае супадзеньне назвы",
   "avoidMismatches": "Унікайце супярэчнасьцяў празь недакладны мэтад пошуку GitHub, калі ёсьць некалькі абмеркаваньняў з падобнымі назвамі. Паглядзіце <a>дакумэнтацыю</a> для падрабязнасьцяў.",
-
   "discussionCategory": "Катэґорыя абмеркаваньня",
   "chooseTheDiscussionCategory": "Абярыце катэґорыю абмеркаваньня, у якой стварацьмуцца новыя абмеркаваньні.",
   "categoryIsNotSupported": "Гэтая ўласьцівасьць не падтрымліваецца калі вы ўжываеце зьяднаньне па <strong>пэўным ліке абмеркаваньня</strong>.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Катэґорыі ня знойдзеныя",
   "onlySearchInThisCategory": "Шукаць абмеркаваньні толькі ў гэтай катэґорыі",
   "whenSearchingOnlyThisCategory": "Падчас пошуку адпаведнага абмеркаваньня, giscus шукацьме толькі ў гэтай катэґорыі.",
-
   "features": "Уласьцівасьці",
   "chooseSpecificFeatures": "Абярыце ўласьцівасьці, якія вы хаціце ўлучыць.",
   "enableReactionsMainPost": "Улучыць рэакцыі для асноўнага допісу",
   "reactionsMainPostShownBeforeComments": "Рэакцыі на асноўны допіс абмеркаваньня будуць паказаныя перад камэнтарамі.",
+  "reactionsLayout": "Макет рэакцый",
+  "reactionsLayoutDefault": "Стандартны (над каментарамі)",
+  "reactionsLayoutCompact": "Кампактны (з каментарамі)",
+  "reactionsLayoutDescription": "Выберыце, як будуць адлюстроўвацца рэакцыі на старонцы.",
   "emitDiscussionMetadata": "Выводзіць мэтазьвесткі абмеркаваньня",
   "discussionMetadataSentPeriodically": "Мэтазьвесткі абмеркаваньня пэрыядычна дасылацьмуцца ў бацькоўскае акно (укараняльную старонку). Для дэманстрацыі, улучыце гэтую опцыю і адкрыйце кансоль аглядальніку на гэтай старонцы. Паглядзіце <a>дакумэнтацыю</a> для падрабязнасьцяў.",
   "placeCommentBoxAboveComments": "Place the comment box above the comments",
   "commentInputBoxWillBePlacedAboveComments": "Поле ўводу камэнтару будзе разьмешчанае над камэнтарамі, каб карыстальнікі маглі пакідаць камэнтары, не прагортваючы да канца абмеркаваньня.",
   "loadCommentsLazily": "Заладоўваць камэнтары лена",
   "loadingCommentsWillBeDeferred": "Заладаваньне камэнтароў будзе адкладзенае, пакуль карыстальнік не прагартае да кантэйнэру камэнтароў. Гэта робіцца даданьнем <a><code>loading=\"lazy\"</code></a> да <code><iframe></code> элемэнту.",
-
   "theme": "Тэма",
   "chooseAThemeThatMatches": "Абярыце тэму, якая адпавядае вашаму ўэбсайту. Ня можаце знайсьці тую, што падыходзіць? <a>Унясіце</a> новую тэму.",
   "URLToThemeCSS": "URL да CSS файлу тэмы:",
   "warningExternalCSSUnsafe": "Увага: заладаваньне вонкавага CSS можа быць небясьпечнай. Пераканайцеся, што вы давяраеце аўтару і дастаўніку CSS файлу.",
-
   "theme=light": "GitHub Light",
   "theme=light_high_contrast": "GitHub Light High Contrast",
   "theme=light_protanopia": "GitHub Light Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Уласная (экспэрымэнтальная)",
-
   "enableGiscus": "Улучыць giscus",
   "addTheFollowingScriptTag": "Дадайце наступны <code><script></code> тэґ да шаблёну вашага ўэбсайту, дзе хочаце бачыць камэнтары. Калі элемэнт з клясам <code>giscus</code> ужо існуе, камэнтары будуць паказаныя там.",
   "youHaveNotConfiguredRepositoryCategory": "Вы не наладзілі свой <arepo>рэпазітар</arepo> ды/або <acategory>катэґорыю</acategory>. Значэньні гэтых палёў не адлюстроўвацьмуцца, пакуль вы іх не запоўніце.",
   "copy": "Скапіяваць",
-
   "[enterRepoHere]": "[УВЯДЗІЦЕ НАЗВУ РЭПАЗІТАРА]",
   "[enterRepoIDHere]": "[УВЯДЗІЦЕ ID РЭПАЗІТАРА]",
   "[enterCategoryHere]": "[УВЯДЗІЦЕ НАЗВУ КАТЭҐОРЫІ]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[УВЯДЗІЦЕ ТЭРМІН]",
   "[enterNumberHere]": "[УВЯДЗІЦЕ ЛІК]",
   "[enterThemeCSSURLHere]": "[УВЯДЗІЦЕ URL CSS ТЭМЫ]",
-
   "youCanCustomizeTheLayout": "Вы можаце зьмяніць макет кантэйнэру ўжываючы сэлектары <code>.giscus</code> ды <code>.giscus-frame</code> на ўкаранёнай старонцы.",
   "tryItOut": "Паспрабуйце гэта"
 }

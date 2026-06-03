@@ -1,9 +1,7 @@
 {
   "configuration": "설정",
-
   "language": "언어",
   "chooseLanguageGiscusDisplayed": "giscus에서 사용할 언어를 선택해주세요. 원하는 언어가 없나요? 번역에 <a>기여</a>해주세요.",
-
   "repository": "저장소",
   "chooseTheRepository": "giscus에 연결할 저장소를 선택하세요. 정확히 확인하세요.:",
   "theRepositoryIsPublic": "<strong><a>공개</a> 저장소여야 합니다.</strong> 그렇지 않으면 방문자들은 Discussion을 볼 수 없습니다.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "giscus를 사용할 수 없습니다. 위 조건을 다시 확인해보세요.",
   "successRepositoryMeetsCriteria": "통과했습니다! 이 저장소는 모든 조건을 만족합니다.",
   "aPublicGitHubRepository": "<strong>공개</strong> GitHub 저장소입니다. 이 저장소에 Discussions이 연결됩니다.",
-
   "pageDiscussionsMapping": "페이지 ↔️ Discussions 연결",
   "chooseTheMapping": "페이지와 Discussion을 연결할 방법을 선택하세요.",
   "titleContainsPathname": "Discussion 제목이 페이지 <code>경로</code>를 포함",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Discussion 번호 입력",
   "useStrictTitleMatching": "엄격한 제목 일치 사용",
   "avoidMismatches": "유사한 제목으로 여러 Discussion이 있을 때 GitHub의 퍼지 검색 방식으로 인한 불일치를 방지합니다. 자세한 내용은 <a>문서</a>를 참조하세요.",
-
   "discussionCategory": "Discussion 카테고리",
   "chooseTheDiscussionCategory": "새 Discussion이 만들어질 카테고리를 선택하세요.",
   "categoryIsNotSupported": "이 기능은 <strong>Discussion 번호 지정</strong> 연결을 사용할 경우 지원되지 않습니다.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "카테고리가 없습니다.",
   "onlySearchInThisCategory": "이 카테고리에서만 Discussion 찾기",
   "whenSearchingOnlyThisCategory": "giscus에서 조건을 만족하는 Discussion을 찾을 때 이 카테고리에서만 찾습니다.",
-
   "features": "기능",
   "chooseSpecificFeatures": "특정 기능의 사용 여부를 선택하세요.",
   "enableReactionsMainPost": "메인 포스트에 반응 남기기",
   "reactionsMainPostShownBeforeComments": "Discussion의 메인 포스트에 대한 반응을 댓글 위에 표시합니다.",
+  "reactionsLayout": "반응 레이아웃",
+  "reactionsLayoutDefault": "기본값 (댓글 위)",
+  "reactionsLayoutCompact": "컴팩트 (댓글과 함께)",
+  "reactionsLayoutDescription": "페이지에 반응을 표시하는 방법을 선택하세요.",
   "emitDiscussionMetadata": "Discussion 메타데이터 보내기",
   "discussionMetadataSentPeriodically": "Discussion의 메타데이터가 부모 페이지(설치된 페이지)로 전송됩니다. 체험하려면 이 기능을 활성화한 뒤 브라우저 콘솔을 열어보세요. 자세한 내용은 <a>문서</a>를 참조하세요.",
   "placeCommentBoxAboveComments": "댓글 위에 댓글 상자 배치",
   "commentInputBoxWillBePlacedAboveComments": "댓글 입력 상자를 댓글 위에 배치하여 사용자가 토론의 맨 아래로 스크롤하지 않고도 댓글을 남길 수 있습니다.",
   "loadCommentsLazily": "댓글 느리게 불러오기",
   "loadingCommentsWillBeDeferred": "사용자가 댓글 컨테이너 근처로 스크롤할 때까지 댓글 불러오기를 지연합니다. <code><iframe></code> 요소에 <a><code>loading=\"lazy\"</code></a>를 추가하세요.",
-
   "theme": "테마",
   "chooseAThemeThatMatches": "당신의 웹 사이트와 어울리는 테마를 선택하세요. 마음에 드는 게 없나요? 테마에 <a>기여</a>해주세요.",
   "URLToThemeCSS": "테마 CSS 파일 URL:",
   "warningExternalCSSUnsafe": "경고: 외부 CSS를 불러오는 것은 위험할 수 있습니다. 믿을 수 있는 제작자와 공급자의 CSS 파일만을 사용하세요.",
-
   "theme=light": "GitHub Light",
   "theme=light_high_contrast": "GitHub Light High Contrast",
   "theme=light_protanopia": "GitHub Light Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "사용자 지정 (실험적)",
-
   "enableGiscus": "giscus 사용",
   "addTheFollowingScriptTag": "댓글을 표시할 웹 사이트 템플릿에 다음 <code><script></code> 태그를 추가합니다. <code>giscus</code> 클래스가 있는 요소가 있으면 댓글이 대신 나타납니다.",
   "youHaveNotConfiguredRepositoryCategory": "<arepo>저장소</arepo> 및/또는 <acategory>카테고리</acategory> 구성하지 않았습니다. 해당 필드의 값은 채울 때까지 표시되지 않습니다.",
   "copy": "복사하기",
-
   "[enterRepoHere]": "[ENTER REPO HERE]",
   "[enterRepoIDHere]": "[ENTER REPO ID HERE]",
   "[enterCategoryHere]": "[ENTER CATEGORY NAME HERE]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ENTER TERM HERE]",
   "[enterNumberHere]": "[ENTER NUMBER HERE]",
   "[enterThemeCSSURLHere]": "[ENTER THEME CSS URL HERE]",
-
   "youCanCustomizeTheLayout": "giscus가 들어 있는 페이지에서 <code>.giscus</code> 및 <code>.giscus-frame</code> 선택자를 사용하여 컨테이너 레이아웃을 꾸밀 수 있습니다.",
   "tryItOut": "한번 사용해 보기"
 }

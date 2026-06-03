@@ -1,9 +1,7 @@
 {
   "configuration": "設定",
-
   "language": "言語",
   "chooseLanguageGiscusDisplayed": "giscusの利用する言語を指定してください。 お使いの言語が見つからない場合は、<a>翻訳データを送信</a>してみてください。",
-
   "repository": "リポジトリ",
   "chooseTheRepository": "giscusが利用するリポジトリを指定してください。 次のことを確認してください:",
   "theRepositoryIsPublic": "<strong>リポジトリが<a>公開状態</a></strong>である。訪問者が閲覧できる必要があります。",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "giscusはこのリポジトリを利用できません。上記の条件を満たしていることを確認してください。",
   "successRepositoryMeetsCriteria": "このリポジトリはすべての条件を満たしています。",
   "aPublicGitHubRepository": "Discussionsが連携されるGitHubのリポジトリが<strong>公開状態である</strong>。",
-
   "pageDiscussionsMapping": "ページとDiscussions連携設定",
   "chooseTheMapping": "ページとコメントの連携方法を指定してください",
   "titleContainsPathname": "Discussionのタイトルにページの<code>pathname</code>を利用する",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Discussions番号を入力",
   "useStrictTitleMatching": "厳密なタイトル一致を使用する",
   "avoidMismatches": "類似したタイトルのディスカッションが複数ある場合は、GitHubのあいまい検索方法による不一致を回避します。詳細は<a>ドキュメント</a>をご参照ください。",
-
   "discussionCategory": "Discussionで使用するカテゴリ",
   "chooseTheDiscussionCategory": "新しいDiscussionsの作成時に使用するカテゴリを指定してください。",
   "categoryIsNotSupported": "この機能は<strong>指定のDiscussion番号</strong>を利用した連携では、ご利用いただけません。",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "カテゴリが見つかりませんでした",
   "onlySearchInThisCategory": "このカテゴリのみを検索します",
   "whenSearchingOnlyThisCategory": "Discussionの検索時にgiscusはこのカテゴリのみを検索します",
-
   "features": "機能",
   "chooseSpecificFeatures": "有効にしたい機能を選択してください。",
   "enableReactionsMainPost": "記事へのリアクションを有効にする",
   "reactionsMainPostShownBeforeComments": "コメントの前にリアクションを表示する",
+  "reactionsLayout": "リアクションのレイアウト",
+  "reactionsLayoutDefault": "デフォルト (コメントの上)",
+  "reactionsLayoutCompact": "コンパクト (コメントと一緒に)",
+  "reactionsLayoutDescription": "ページにリアクションを表示する方法を選択します。",
   "emitDiscussionMetadata": "Discussionのメタデータを出力する",
   "discussionMetadataSentPeriodically": "Discussionのメタデータは定期的に親画面に送信されます。詳細はこのオプションを有効にしてブラウザのコンソールウィンドウを開くことで確認できます。詳細は<a>ドキュメント</a>をご参照ください。",
   "placeCommentBoxAboveComments": "コメントの上にコメントボックスを配置します",
   "commentInputBoxWillBePlacedAboveComments": "コメント入力ボックスはコメントの上に配置されるため、ユーザーはディスカッションの一番下までスクロールせずにコメントを残すことができます。",
   "loadCommentsLazily": "コメントのロードを遅延させる",
   "loadingCommentsWillBeDeferred": "コメントの読み込みは、ユーザーがコメントコンテナの近くをスクロールした後に実行されます。 これは、<a> <code>loading=\"lazy\"</code></a>を<code><iframe></code>要素に追加することで実行されます。",
-
   "theme": "テーマ",
   "chooseAThemeThatMatches": "Webサイトに適したテーマを選択してください。良いものが見つからない場合は、<a>自分で作成して私たちに送信</a>することもできます。",
   "URLToThemeCSS": "CSSファイルのURL:",
   "warningExternalCSSUnsafe": "警告: 外部CSSの読み込みは安全ではありません。CSSの作者とサーバ事業者を信頼している場合のみ利用してください。",
-
   "theme=light": "GitHub Light",
   "theme=light_high_contrast": "GitHub Light Contrast",
   "theme=light_protanopia": "GitHub Light Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "カスタム (試験的)",
-
   "enableGiscus": "giscusを有効にする",
   "addTheFollowingScriptTag": "下記の <code><script></code> コードタグをお使いのWebサイトのコメントを表示したい場所に追加してください。もし、<code>giscus</code>クラスを持つ要素が存在する場合、giscusは当該要素にコメントを表示します。",
   "youHaveNotConfiguredRepositoryCategory": "<arepo>リポジトリ</arepo>や<acategory>カテゴリ</acategory>を構成していません。 これらのフィールドの値は、入力するまで表示されません。",
   "copy": "コピー",
-
   "[enterRepoHere]": "[リポジトリを記述]",
   "[enterRepoIDHere]": "[リポジトリIDを記述]",
   "[enterCategoryHere]": "[カテゴリ名を記述]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ENTER TERM HERE]",
   "[enterNumberHere]": "[数字を入力]",
   "[enterThemeCSSURLHere]": "[CSSのURLを記述]",
-
   "youCanCustomizeTheLayout": "<code>.giscus</code> と <code>.giscus-frame</code> セレクタを利用することで、レイアウトをカスタマイズすることができます。",
   "tryItOut": "試してみる"
 }

@@ -10,7 +10,7 @@ import {
   useGiscusTranslation,
 } from '../lib/i18n';
 import { ICategory } from '../lib/types/adapter';
-import { InputPosition } from '../lib/types/giscus';
+import { InputPosition, ReactionsLayout } from '../lib/types/giscus';
 import { normalizeRepoName } from '../lib/utils';
 import { availableThemes, env, Theme } from '../lib/variables';
 import { getCategories } from '../services/giscus/categories';
@@ -19,6 +19,7 @@ interface IDirectConfig {
   theme: Theme;
   themeUrl: Theme;
   reactionsEnabled: boolean;
+  reactionsLayout: ReactionsLayout;
   emitMetadata: boolean;
   inputPosition: InputPosition;
   lang: AvailableLanguage;
@@ -425,6 +426,42 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           {t('reactionsMainPostShownBeforeComments')}
         </p>
       </div>
+      {directConfig.reactionsEnabled && (
+        <div className="ml-4">
+          <p className="color-text-secondary text-sm mb-2">
+            <strong>{t('reactionsLayout')}</strong>
+          </p>
+          <div className="form-checkbox">
+            <input
+              type="radio"
+              id="reactionsLayoutDefault"
+              name="reactionsLayout"
+              value="default"
+              checked={directConfig.reactionsLayout === 'default'}
+              onChange={() => onDirectConfigChange('reactionsLayout', 'default')}
+            />
+            <label htmlFor="reactionsLayoutDefault" className="ml-2">
+              {t('reactionsLayoutDefault')}
+            </label>
+          </div>
+          <div className="form-checkbox">
+            <input
+              type="radio"
+              id="reactionsLayoutCompact"
+              name="reactionsLayout"
+              value="compact"
+              checked={directConfig.reactionsLayout === 'compact'}
+              onChange={() => onDirectConfigChange('reactionsLayout', 'compact')}
+            />
+            <label htmlFor="reactionsLayoutCompact" className="ml-2">
+              {t('reactionsLayoutCompact')}
+            </label>
+          </div>
+          <p className="color-text-secondary text-xs mb-2">
+            {t('reactionsLayoutDescription')}
+          </p>
+        </div>
+      )}
       <div className="form-checkbox">
         <input
           type="checkbox"
@@ -606,6 +643,9 @@ export default function Configuration({ directConfig, onDirectConfigChange }: IC
           ) : null}
           <span className="pl-c1">data-reactions-enabled</span>={'"'}
           <span className="pl-s">{Number(directConfig.reactionsEnabled)}</span>
+          {'"\n        '}
+          <span className="pl-c1">data-reactions-layout</span>={'"'}
+          <span className="pl-s">{directConfig.reactionsLayout}</span>
           {'"\n        '}
           <span className="pl-c1">data-emit-metadata</span>={'"'}
           <span className="pl-s">{Number(directConfig.emitMetadata)}</span>

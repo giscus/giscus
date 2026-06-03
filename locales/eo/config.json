@@ -1,9 +1,7 @@
 {
   "configuration": "Agordo",
-
   "language": "Lingvo",
   "chooseLanguageGiscusDisplayed": "Elektu la lingvon en kiu giscus estos montrata. Ĉu vi ne trovas vian lingvon? <a>Kontribuu</a> lokaligon.",
-
   "repository": "Deponejo",
   "chooseTheRepository": "Elektu la deponejon al kiu giscus konektiĝos. Certiĝu ke:",
   "theRepositoryIsPublic": "La <strong>deponejo estas <a>publika</a></strong>, alie vizitantoj ne povos vidi la diskuton.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Ne povas uzi giscus en tiu deponejo. Certiĝu, ke ĉiuj supre menciitaj kriterioj estas plenumitaj.",
   "successRepositoryMeetsCriteria": "Sukceso! Ĉi tiu deponejo plenumas ĉiujn supre menciitajn kriteriojn.",
   "aPublicGitHubRepository": "Publika GitHub-a deponejo. Tiu ĉi deponejo estas kie la diskutoj estos ligataj.",
-
   "pageDiscussionsMapping": "Paĝo ↔️ Diskutoj Mapeado",
   "chooseTheMapping": "Elektu la mapeadon inter la enketita paĝo kaj la enketita diskuto.",
   "titleContainsPathname": "La titolo de la diskuto enhavas la paĝan <code>pathname</code>",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Enigu diskuta numeron ĉi tie",
   "useStrictTitleMatching": "Uzu striktan titolokongruecon",
   "avoidMismatches": "Evitu miskongruoj pro la neakra serĉmetodo de GitHub kiam estas pluraj diskutoj kun similaj titoloj. Vidu <a>la dokumentaron</a> por pli da detaloj.",
-
   "discussionCategory": "Diskuta Kategorio",
   "chooseTheDiscussionCategory": "Elektu la diskutan kategorion kie novaj diskutoj estos kreitaj.",
   "categoryIsNotSupported": "Tiu ĉi funkcio ne estas subtenata se vi uzas la <strong>specifikan diskuta numeron</strong> mapeadon.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Ne trovis kategoriojn",
   "onlySearchInThisCategory": "Serĉu nur diskutojn en tiu ĉi kategorio",
   "whenSearchingOnlyThisCategory": "Kiam serĉante kongruan diskuton, giscus serĉos nur en tiu ĉi kategorio.",
-
   "features": "Funkcioj",
   "chooseSpecificFeatures": "Elektu ĉu specifaj funkcioj estu ebligitaj.",
   "enableReactionsMainPost": "Ebligi reagojn por la ĉefpaĝo",
   "reactionsMainPostShownBeforeComments": "La reagoj por la ĉefpaĝo de la diskuto estos montrataj antaŭ la komentoj.",
+  "reactionsLayout": "Aranĝo de reagoj",
+  "reactionsLayoutDefault": "Implicita (super komentoj)",
+  "reactionsLayoutCompact": "Kompakta (kun komentoj)",
+  "reactionsLayoutDescription": "Elektu kiel reagoj estas montrataj sur la paĝo.",
   "emitDiscussionMetadata": "Eksigi diskutan metadatumon",
   "discussionMetadataSentPeriodically": "Diskuta metadatumo periode estos sendita al la gepatra fenestro (la enketa paĝo). Por demonstro, ebligu tiun ĉi opcio kaj malfermu la konsonilon de via retumilo en tiu ĉi paĝo. Vidu <a>la dokumentaron</a> por pli da detaloj.",
   "placeCommentBoxAboveComments": "Metu la komentoblokon super la komentoj",
   "commentInputBoxWillBePlacedAboveComments": "La komenta enigobloko estos metita super la komentoj tiel ke uzantoj povas lasi komenton sen rulumiĝi al la malsupro de la diskuto.",
   "loadCommentsLazily": "Ŝargu la komentojn pigre",
   "loadingCommentsWillBeDeferred": "La ŝargo de la komentoj estos prokrastita ĝis la uzanto ruliĝas proksimen al la komentujo. Tio estas farita aldonante <a><code>loading=\"lazy\"</code></a> al la <code><iframe></code> elemento.",
-
   "theme": "Aspekto",
   "chooseAThemeThatMatches": "Elektu aspekton kiu kongruas kun via retejo. Ĉu vi ne povas trovi unu kiu faras tion? <a>Kontribuu</a> novan aspekton.",
   "URLToThemeCSS": "URL al la aspekta CSS-dosiero:",
   "warningExternalCSSUnsafe": "Averto: la ŝargo de ekstera CSS povas esti riska. Certiĝu ke vi fidas la aŭtoron kaj provizanton de la CSS-dosiero.",
-
   "theme=light": "GitHub Hela",
   "theme=light_high_contrast": "GitHub Hela (Alta Kontrasto)",
   "theme=light_protanopia": "GitHub Hela (Protanopia & Deuteranopia)",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Propra (eksperimenta)",
-
   "enableGiscus": "Ebligi giscus",
   "addTheFollowingScriptTag": "Aldonu la sekvantan <code><script></code> etikedon al la ŝablono de via retejo kie vi volas montri la komentojn. Se elemento kun la klaso <code>giscus</code> ekzistas, la komentoj estos metitaj tien anstataŭe.",
   "youHaveNotConfiguredRepositoryCategory": "Vi ne agordis vian <arepo>deponejon</arepo> kaj/aŭ <acategory>kategorion</acategory>. La valoroj por tiuj kampoj ne montriĝos ĝis vi plenigos ilin.",
   "copy": "Kopiu",
-
   "[enterRepoHere]": "[ENIGU DEPONEJON ĈI TIE]",
   "[enterRepoIDHere]": "[ENIGU DEPONEJAN IDENTIGILON ĈI TIE]",
   "[enterCategoryHere]": "[ENIGU KATEGORIAN NOMON ĈI TIE]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ENIGU TERMINON ĈI TIE]",
   "[enterNumberHere]": "[ENIGU NUMERON ĈI TIE]",
   "[enterThemeCSSURLHere]": "[ENIGU LA ASPEKTA CSS DOSIERA URL ĈI TIE]",
-
   "youCanCustomizeTheLayout": "Vi povas modifi la aspekton de la ujo uzante la elektilojn <code>.giscus</code> kaj <code>.giscus-frame</code> en la enketa paĝo.",
   "tryItOut": "Provu tion"
 }

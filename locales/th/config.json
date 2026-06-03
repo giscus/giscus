@@ -1,9 +1,7 @@
 {
   "configuration": "การกำหนดค่า",
-
   "language": "ภาษา",
   "chooseLanguageGiscusDisplayed": "เลือกภาษาที่จะใช้แสดง giscus ไม่พบภาษาของคุณ? <a>มีส่วนร่วม</a>แปลภาษา",
-
   "repository": "คลังเก็บ",
   "chooseTheRepository": "เลือกคลังเก็บที่จะเชื่อมต่อกับ giscus ตรวจสอบให้แน่ใจว่า:",
   "theRepositoryIsPublic": "<strong>คลังเก็บเปิดเป็น<a>สาธารณะ</a></strong>, มิฉะนั้นผู้เยี่ยมชมจะไม่สามารถดูการสนทนา",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "ไม่สามารถใช้งาน giscus กับคลังเก็บนี้ ตรวจสอบให้แน่ใจว่าทำตามเกณฑ์ข้างต้นทั้งหมดแล้ว",
   "successRepositoryMeetsCriteria": "สำเร็จ! คลังเก็บนี้ผ่านเกณฑ์ขข้างต้นทั้งหมดแล้ว",
   "aPublicGitHubRepository": "คลังเก็บ<strong>สาธารณะ</strong>บน GitHub ใช้คลังเก็บนี้เพื่อเชื่อมต่อกับการสนทนา",
-
   "pageDiscussionsMapping": "การเชื่อมโยงหน้าเว็บ ↔️ การสนทนา",
   "chooseTheMapping": "เลือกการเชื่อมโยงระหว่างหน้าเว็บและการสนทนา",
   "titleContainsPathname": "หัวข้อการสนทนาที่มี <code>pathname</code> ของหน้าเว็บ",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "ใส่หมายเลขการสนทนาที่นี่",
   "useStrictTitleMatching": "ใช้การจับคู่หัวข้อแบบเข้มงวด",
   "avoidMismatches": "ป้องกันการจับคู่ผิดพลาดเนื่องจากระบบค้นหาแบบไม่ตรงตัวของ GitHub เมื่อมีหลายการสนทนาที่มีหัวข้อคล้ายกัน ดู<a>เอกสาร</a>สำหรับข้อมูลเพิ่มเติม",
-
   "discussionCategory": "หมวดหมู่การสนทนา",
   "chooseTheDiscussionCategory": "เลือกหมวดหมู่การสนทนาที่การสนทนาใหม่จะถูกสร้างขึ้น",
   "categoryIsNotSupported": "ฟีเจอร์นี้ไม่สามารถใช้งานได้หากคุณเลือกใช้การเชื่อมโยงด้วย<strong>หมายเลขการสนทนา</strong>",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "ไม่พบหมวดหมู่",
   "onlySearchInThisCategory": "ค้นหาการสนทนาเฉพาะในหมวดหมู่นี้เท่านั้น",
   "whenSearchingOnlyThisCategory": "ในการค้นหาเพื่อจับคู่การสนทนา giscus จะค้นหาในหมวดหมู่นี้เท่านั้น",
-
   "features": "ฟีเจอร์",
   "chooseSpecificFeatures": "เลือกฟีเจอร์ที่ต้องการเปิดใช้งาน",
   "enableReactionsMainPost": "เปิดใช้งานรีแอคชันในโพสต์หลัก",
   "reactionsMainPostShownBeforeComments": "รีแอคชันสำหรับโพสต์หลักของการสนทนาจะถูกแสดงด้านบนความคิดเห็น",
+  "reactionsLayout": "เค้าโครงรีแอคชั่น",
+  "reactionsLayoutDefault": "ค่าเริ่มต้น (ด้านบนความคิดเห็น)",
+  "reactionsLayoutCompact": "กะทัดรัด (พร้อมความคิดเห็น)",
+  "reactionsLayoutDescription": "เลือกวิธีแสดงรีแอคชั่นบนหน้า",
   "emitDiscussionMetadata": "ส่งข้อมูลการสนทนา",
   "discussionMetadataSentPeriodically": "ข้อมูลของการสนทนาจะถูกส่งเป็นระยะไปยังหน้าต่างหลัก (หน้าเว็บที่ฝัง giscus ไว้) เปิดใช้ตัวเลือกนี้แล้วเปิดคอนโซลของเบราว์เซอร์ในหน้านี้เพื่อดูตัวอย่าง ดู<a>เอกสาร</a>สำหรับข้อมูลเพิ่มเติม",
   "placeCommentBoxAboveComments": "วางช่องพิมพ์ข้อความไว้ด้านบนความคิดเห็น",
   "commentInputBoxWillBePlacedAboveComments": "ช่องพิมพ์ข้อความจะถูกวางไว้ด้านบนความคิดเห็น เพื่อให้ผู้ใช้งานแสดงความคิดเห็นได้โดยไม่ต้องเลื่อนลงไปด้านล่างสุดของบทสนทนา",
   "loadCommentsLazily": "โหลดความคิดเห็นทีหลัง",
   "loadingCommentsWillBeDeferred": "เพิ่มแท็ก <a><code>loading=\"lazy\"</code></a> ไปยัง <code><iframe></code> เพื่อหยุดการโหลดความคิดเห็นไว้จนกว่าผู้ใช้จะเลื่อนหน้าเว็บเข้าใกล้ส่วนความคิดเห็น",
-
   "theme": "ธีม",
   "chooseAThemeThatMatches": "เลือกธีมที่เข้ากับเว็บไซต์ของคุณ ไม่พบธีมที่ถูกใจ? <a>มีส่วนร่วม</a>สร้างธีมใหม่",
   "URLToThemeCSS": "URL ของไฟล์ CSS ธีม:",
   "warningExternalCSSUnsafe": "คำเตือน: การโหลด CSS ภายนอกอาจไม่ปลอดภัย ตรวจสอบให้แน่ใจว่าคุณเชื่อถือเจ้าของและผู้ให้บริการไฟล์ CSS",
-
   "theme=light": "GitHub สว่าง",
   "theme=light_high_contrast": "GitHub สว่าง คอนทราสต์สูง",
   "theme=light_protanopia": "GitHub สว่าง Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "กำหนดเอง (การทดลอง)",
-
   "enableGiscus": "เปิดใช้งาน giscus",
   "addTheFollowingScriptTag": "ใส่โค้ด <code><script></code> ด้านล่างนี้ลงในเทมเพลตเว็บไซต์ของคุณในส่วนที่คุณต้องการให้ความคิดเห็นปรากฏอยู่ หากมี element ที่มี class <code>giscus</code> อยู่, ความคิดเห็นจะปรากฏตรง element นั้นแทน",
   "youHaveNotConfiguredRepositoryCategory": "คุณยังไม่ได้กำหนดค่าพื้นที่<arepo>เก็บ</arepo>ข้อมูลและ/หรือ<acategory>หมวดหมู่</acategory>ของคุณ ค่าสำหรับฟิลด์เหล่านั้นจะไม่แสดงจนกว่าคุณจะกรอกข้อมูล",
   "copy": "คัดลอก",
-
   "[enterRepoHere]": "[ใส่คลังเก็บที่น่ี]",
   "[enterRepoIDHere]": "[ใส่ ID คลังเก็บที่นี่]",
   "[enterCategoryHere]": "[ใส่หมวดหมู่ที่นี่]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ใส่ข้อความที่นี่]",
   "[enterNumberHere]": "[ใส่หมายเลขที่นี่]",
   "[enterThemeCSSURLHere]": "[ใส่ URL ไฟล์ CSS ธีมที่นี่]",
-
   "youCanCustomizeTheLayout": "คุณสามารถปรับแต่งรูปแบบการจัดวางได้โดยใช้ <code>.giscus</code> และ <code>.giscus-frame</code> ในหน้าเว็บของคุณ",
   "tryItOut": "ลองใช้ดู"
 }

@@ -1,9 +1,7 @@
 {
   "configuration": "Konfigurasi",
-
   "language": "Bahasa",
   "chooseLanguageGiscusDisplayed": "Pilih bahasa yang akan ditampilkan giscus. Tidak dapat menemukan bahasa Anda? <a>Buat kontribusi</a> terjemahan.",
-
   "repository": "Repositori",
   "chooseTheRepository": "Pilih repositori yang akan dihubungkan dengan giscus. Pastikan:",
   "theRepositoryIsPublic": "<strong>Repositori tersebut <a>publik</a></strong>, jika tidak maka pengunjung tidak dapat melihat diskusi.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Tidak dapat menggunakan giscus di repositori ini. Pastikan seluruh kriteria di atas telah terpenuhi.",
   "successRepositoryMeetsCriteria": "Sukses! Repositori ini memenuhi seluruh kriteria di atas.",
   "aPublicGitHubRepository": "Suatu repositori yang <strong>publik</strong>. Di repositori inilah diskusinya akan dihubungkan.",
-
   "pageDiscussionsMapping": "Pemetaan Halaman ↔️ Diskusi",
   "chooseTheMapping": "Pilih pemetaan antara halaman penyemat dan diskusi yang disematkan.",
   "titleContainsPathname": "Judul diskusi mengandung <code>pathname</code> halaman",
@@ -35,7 +32,6 @@
   "commentInputBoxWillBePlacedAboveComments": "Kotak masukan komentar akan ditempatkan di atas komentar, sehingga pengguna dapat meninggalkan komentar tanpa menggulir ke bagian bawah diskusi.",
   "useStrictTitleMatching": "Gunakan pencocokan judul yang ketat",
   "avoidMismatches": "Menghindari ketidakcocokan akibat metode pencarian GitHub yang samar ketika ada beberapa diskusi dengan judul yang mirip. Baca <a>dokumentasinya</a> untuk detail lebih lanjut.",
-
   "discussionCategory": "Kategori Diskusi",
   "chooseTheDiscussionCategory": "Pilih kategori diskusi di mana diskusi baru akan dibuat.",
   "categoryIsNotSupported": "Fitur ini tidak didukung apabila Anda menggunakan pemetaan <strong>nomor diskusi spesifik</strong>.",
@@ -46,21 +42,22 @@
   "noCategoriesFoundOption": "Tidak ada kategori yang ditemukan",
   "onlySearchInThisCategory": "Hanya cari diskusi dalam kategori ini",
   "whenSearchingOnlyThisCategory": "Ketika mencari diskusi yang cocok, giscus hanya mencari dalam kategori ini.",
-
   "features": "Fitur",
   "chooseSpecificFeatures": "Pilih apakah fitur-fitur tertentu ingin diaktifkan.",
   "enableReactionsMainPost": "Aktifkan reaksi untuk kiriman utama",
   "reactionsMainPostShownBeforeComments": "Reaksi untuk kiriman utama diskusinya akan ditampilkan di atas komentar.",
+  "reactionsLayout": "Tata letak reaksi",
+  "reactionsLayoutDefault": "Bawaan (di atas komentar)",
+  "reactionsLayoutCompact": "Kompak (dengan komentar)",
+  "reactionsLayoutDescription": "Pilih bagaimana reaksi ditampilkan di halaman.",
   "emitDiscussionMetadata": "Pancarkan metadata diskusi",
   "discussionMetadataSentPeriodically": "Metadata diskusi akan dikirimkan secara berkala ke jendela induk (halaman yang menyematkan diskusi). Untuk demonstrasi, aktifkan opsi ini dan buka konsol peramban Anda pada halaman ini. Baca <a>dokumentasinya</a> untuk detail lebih lanjut.",
   "loadCommentsLazily": "Muat komentar dengan malas",
   "loadingCommentsWillBeDeferred": "Pemuatan komentar akan ditunda sampai pengguna menggulir ke dekat wadah komentar. Ini dilakukan dengan menambahkan <a><code>loading=\"lazy\"</code></a> ke elemen <code><iframe></code>.",
-
   "theme": "Tema",
   "chooseAThemeThatMatches": "Pilih tema yang cocok dengan situs web Anda. Tidak ada yang cocok? <a>Buat kontribusi</a> tema baru.",
   "URLToThemeCSS": "URL menuju berkas CSS tema:",
   "warningExternalCSSUnsafe": "Perhatian: memuat CSS eksternal mungkin tidak aman. Pastikan Anda memercayai pembuat dan penyedia berkas CSS ini.",
-
   "theme=light": "GitHub Terang",
   "theme=light_high_contrast": "GitHub Terang Kontras Tinggi",
   "theme=light_protanopia": "GitHub Terang Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Buat sendiri (eksperimental)",
-
   "enableGiscus": "Aktifkan giscus",
   "addTheFollowingScriptTag": "Tambahkan tag <code><script></code> berikut ke template halaman web Anda di mana Anda ingin komentarnya muncul. Apabila sudah terdapat elemen dengan kelas <code>giscus</code>, maka komentarnya akan diletakkan di sana.",
   "youHaveNotConfiguredRepositoryCategory": "Anda belum mengonfigurasi <arepo>repositori</arepo> dan/atau <acategory>kategori</acategory> Anda. Nilai untuk kolom tersebut tidak akan ditampilkan sampai Anda mengisinya.",
   "copy": "Salin",
-
   "[enterRepoHere]": "[MASUKKAN REPOSITORI DI SINI]",
   "[enterRepoIDHere]": "[MASUKKAN ID REPOSITORI DI SINI]",
   "[enterCategoryHere]": "[MASUKKAN NAMA KATEGORI DI SINI]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[MASUKKAN ISTILAH DI SINI]",
   "[enterNumberHere]": "[MASUKKAN NOMOR DI SINI]",
   "[enterThemeCSSURLHere]": "[MASUKKAN URL CSS TEMA DI SINI]",
-
   "youCanCustomizeTheLayout": "Anda dapat mengubah tata letak wadahnya menggunakan pemilih kelas <code>.giscus</code> dan <code>.giscus-frame</code> dari halaman penyemat.",
   "tryItOut": "Silakan dicoba"
 }

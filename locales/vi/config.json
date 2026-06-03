@@ -1,9 +1,7 @@
 {
   "configuration": "Cấu hình",
-
   "language": "Ngôn ngữ",
   "chooseLanguageGiscusDisplayed": "Chọn ngôn ngữ giscus sẽ được hiển thị. Bạn không thể tìm thấy ngôn ngữ của mình? <a> Đóng góp </a> dữ liệu dịch.",
-
   "repository": "Repository",
   "chooseTheRepository": "Chọn Repository mà giscus sẽ kết nối. Đảm bảo rằng:",
   "theRepositoryIsPublic": "<strong>Repository <a> ở chế độ công khai</a></strong>, nếu không khách truy cập sẽ không thể xem discussion github.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Không thể sử dụng giscus trên Repository này. Đảm bảo rằng tất cả các tiêu chí trên đã được đáp ứng.",
   "successRepositoryMeetsCriteria": "Thành công! Repository này đáp ứng tất cả các tiêu chí trên.",
   "aPublicGitHubRepository": "Kho Repository GitHub <strong>công khai</strong>. Repo này là nơi các discussions sẽ được liên kết.",
-
   "pageDiscussionsMapping": "Trang ↔️ Discussions Mapping",
   "chooseTheMapping": "Chọn mapping giữa trang nhúng và discussion được nhúng.",
   "titleContainsPathname": "Tiêu đề discussion chứa <code>tên đường dẫn</code> của trang",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Nhập số discussion tại đây",
   "useStrictTitleMatching": "Sử dụng đối sánh tiêu đề nghiêm ngặt",
   "avoidMismatches": "Tránh không khớp do phương pháp tìm kiếm mờ nhạt của GitHub khi có nhiều thảo luận với các tiêu đề tương tự. Xem <a>tài liệu</a> để biết thêm chi tiết.",
-
   "discussionCategory": "Thể loại discussion",
   "chooseTheDiscussionCategory": "Chọn thể loại discussion nơi các cuộc thảo luận mới sẽ được tạo.",
   "categoryIsNotSupported": "Tính năng này không hỗ trợ nếu bạn sử dụng <strong>số discussion cụ thể</strong> để mapping.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Không tìm thấy thể loại",
   "onlySearchInThisCategory": "Chỉ tìm kiếm discussion của thể loại này",
   "whenSearchingOnlyThisCategory": "Khi tìm kiếm một discussion phù hợp, giscus sẽ chỉ tìm kiếm trong thể loại này.",
-
   "features": "Tính năng",
   "chooseSpecificFeatures": "Chọn xem có nên bật các tính năng cụ thể hay không.",
   "enableReactionsMainPost": "Bật reactions cho bài đăng chính",
   "reactionsMainPostShownBeforeComments": "Reactions cho bài đăng chính của discussion sẽ được hiển thị trước phần bình luận.",
+  "reactionsLayout": "Bố cục phản ứng",
+  "reactionsLayoutDefault": "Mặc định (phía trên bình luận)",
+  "reactionsLayoutCompact": "Gọn (cùng với bình luận)",
+  "reactionsLayoutDescription": "Chọn cách hiển thị phản ứng trên trang.",
   "emitDiscussionMetadata": "Emit discussion metadata",
   "discussionMetadataSentPeriodically": "Discussion metadata sẽ được gửi định kỳ đến cửa sổ chính (trang nhúng). Để kiểm tra, hãy bật tùy chọn này và mở bảng điều khiển trình duyệt của bạn trên trang này. Xem <a>tài liệu</a> để biết thêm chi tiết.",
   "placeCommentBoxAboveComments": "Đặt ô bình luận phía trên các bình luận",
   "commentInputBoxWillBePlacedAboveComments": "Trường nhập bình luận sẽ được đặt phía trên bình luận để người dùng có thể để lại bình luận mà không cần phải cuộn đến cuối cuộc thảo luận.",
   "loadCommentsLazily": "Tải các bình luận một cách lười biếng",
   "loadingCommentsWillBeDeferred": "Việc tải nhận xét sẽ bị hoãn lại cho đến khi người dùng cuộn đến gần vùng chứa nhận xét. Điều này được thực hiện bằng cách thêm <a><code>loading=\"lazy\"</code></a> vào phần tử <code><iframe></code>.",
-
   "theme": "Chủ đề",
   "chooseAThemeThatMatches": "Chọn một chủ đề phù hợp với trang website của bạn. Không thể tìm thấy một trong đó không? <a>Đóng góp</a> một chủ đề mới.",
   "URLToThemeCSS": "URL đến tệp CSS chủ đề:",
   "warningExternalCSSUnsafe": "Warning: loading external CSS may be unsafe. Make sure you trust the author and provider of the CSS file.",
-
   "theme=light": "GitHub Light",
   "theme=light_high_contrast": "GitHub Light High Contrast",
   "theme=light_protanopia": "GitHub Light Protanopia & Deuteranopia",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Tùy chỉnh (thử nghiệm)",
-
   "enableGiscus": "Bật giscus",
   "addTheFollowingScriptTag": "Thêm thẻ <code><script></code> sau vào website của bạn nơi bạn muốn comment xuất hiện. Nếu một phần tử có class <code>giscus</code> tồn tại, các comment sẽ được đặt ở đó.",
   "youHaveNotConfiguredRepositoryCategory": "Bạn chưa định cấu hình <arepo>Repository</arepo> và/hoặc <acategory>thể loại</acategory> của mình. Các giá trị cho các trường đó sẽ không được hiển thị cho đến khi bạn điền vào.",
   "copy": "Copy",
-
   "[enterRepoHere]": "[NHẬP REPO TẠI ĐÂY]",
   "[enterRepoIDHere]": "[NHẬP ID REPO TẠI ĐÂY]",
   "[enterCategoryHere]": "[NHẬP TÊN THỂ LOẠI TẠI ĐÂY]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[NHẬP TERM TẠI ĐÂY]",
   "[enterNumberHere]": "[NHẬP SỐ TẠI ĐÂY]",
   "[enterThemeCSSURLHere]": "[NHẬP URL CSS CHỦ ĐỀ TẠI ĐÂY]",
-
   "youCanCustomizeTheLayout": "Bạn có thể tùy chỉnh bố cục container bằng cách sử dụng các bộ chọn <code>.giscus</code> và <code>.giscus-frame</code> từ trang nhúng.",
   "tryItOut": "Hãy dùng thử"
 }

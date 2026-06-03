@@ -25,6 +25,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     reactionsEnabled,
     emitMetadata,
     inputPosition,
+    reactionsLayout,
     defaultCommentOrder,
   } = useContext(ConfigContext);
   const [orderBy, setOrderBy] = useState<CommentOrder>(defaultCommentOrder);
@@ -88,9 +89,25 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
     );
   }
 
+  const reactionsComponent = reactionsEnabled &&
+    !data.isLoading &&
+    (shouldCreateDiscussion || !data.error) && (
+      <ReactButtons
+        subjectId={data.discussion.id}
+        reactionGroups={data.discussion.reactions}
+        onReact={updateReactions}
+        onDiscussionCreateRequest={handleDiscussionCreateRequest}
+      />
+    );
+
+  const isCompactLayout = reactionsLayout === 'compact';
+
   return (
     <div className="color-text-primary gsc-main">
-      {reactionsEnabled && !data.isLoading && (shouldCreateDiscussion || !data.error) ? (
+      {reactionsEnabled &&
+      !data.isLoading &&
+      (shouldCreateDiscussion || !data.error) &&
+      !isCompactLayout ? (
         <div className="gsc-reactions">
           <h4 className="gsc-reactions-count">
             {shouldCreateDiscussion && !data.reactionCount ? (
@@ -107,12 +124,7 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
             )}
           </h4>
           <div className="flex flex-auto items-center justify-center gap-2 text-sm mt-2">
-            <ReactButtons
-              subjectId={data.discussion.id}
-              reactionGroups={data.discussion.reactions}
-              onReact={updateReactions}
-              onDiscussionCreateRequest={handleDiscussionCreateRequest}
-            />
+            {reactionsComponent}
           </div>
         </div>
       ) : null}
@@ -120,6 +132,26 @@ export default function Giscus({ onDiscussionCreateRequest, onError }: IGiscusPr
       <div className="gsc-comments">
         <div className="gsc-header">
           <div className="gsc-left-header">
+            {isCompactLayout && reactionsComponent ? (
+              <>
+                <h4 className="gsc-reactions-count">
+                  {shouldCreateDiscussion && !data.reactionCount ? (
+                    t('reactions', { count: 0 })
+                  ) : (
+                    <a
+                      href={data.discussion.url}
+                      target="_blank"
+                      rel="noreferrer noopener nofollow"
+                      className="color-text-primary"
+                    >
+                      {t('reactions', { count: data.reactionCount || 0 })}
+                    </a>
+                  )}
+                </h4>
+                <div className="gsc-reactions-compact">{reactionsComponent}</div>
+                <h4 className="gsc-comments-count-separator">·</h4>
+              </>
+            ) : null}
             <h4 className="gsc-comments-count">
               {shouldCreateDiscussion && !data.totalCommentCount ? (
                 t('comments', { count: 0 })

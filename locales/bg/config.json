@@ -1,9 +1,7 @@
 {
   "configuration": "Конфигурация",
-
   "language": "Език",
   "chooseLanguageGiscusDisplayed": "Изберете езика, на който ще се показва giscus. Не намирате вашия език? <a>Допринесете</a> с локализация.",
-
   "repository": "Хранилище",
   "chooseTheRepository": "Изберете хранилището, към което giscus ще се свърже. Уверете се, че:",
   "theRepositoryIsPublic": "<strong>Хранилището е <a>публично</a></strong>, в противен случай посетителите няма да могат да виждат дискусията.",
@@ -14,7 +12,6 @@
   "cannotUseGiscusOnThisRepository": "Не може да използвате giscus в това хранилище. Уверете се, че всички горепосочени критерии са изпълнени.",
   "successRepositoryMeetsCriteria": "Успех! Това хранилище отговаря на всички горепосочени критерии.",
   "aPublicGitHubRepository": "<strong>Публично</strong> GitHub хранилище. Това е хранилището, към което ще бъдат свързани дискусиите.",
-
   "pageDiscussionsMapping": "Съпоставяне на Страница ↔️ Дискусии",
   "chooseTheMapping": "Изберете съпоставянето между вградената страница и вградената дискусия.",
   "titleContainsPathname": "Заглавието на дискусията съдържа <code>pathname</code> на страницата",
@@ -33,7 +30,6 @@
   "enterDiscussionNumberHere": "Въведете номер на дискусия тук",
   "useStrictTitleMatching": "Използване на точно съвпадение на заглавието",
   "avoidMismatches": "Избягвайте несъответствия поради приблизителния метод на търсене на GitHub, когато има няколко дискусии с подобни заглавия. Вижте <a>документацията</a> за повече подробности.",
-
   "discussionCategory": "Категория на дискусията",
   "chooseTheDiscussionCategory": "Изберете категорията на дискусията, в която ще се създават нови дискусии.",
   "categoryIsNotSupported": "Тази функция не се поддържа, ако използвате съпоставяне по <strong>конкретен номер на дискусия</strong>.",
@@ -44,23 +40,24 @@
   "noCategoriesFoundOption": "Няма намерени категории",
   "onlySearchInThisCategory": "Търсене само на дискусии в тази категория",
   "whenSearchingOnlyThisCategory": "При търсене на съответстваща дискусия, giscus ще търси само в тази категория.",
-
   "features": "Функции",
   "chooseSpecificFeatures": "Изберете дали определени функции трябва да бъдат активирани.",
   "enableReactionsMainPost": "Активиране на реакции за основната публикация",
   "reactionsMainPostShownBeforeComments": "Реакциите за основната публикация на дискусията ще се показват преди коментарите.",
+  "reactionsLayout": "Оформление на реакциите",
+  "reactionsLayoutDefault": "По подразбиране (над коментарите)",
+  "reactionsLayoutCompact": "Компактно (заедно с коментарите)",
+  "reactionsLayoutDescription": "Изберете как да се показват реакциите на страницата.",
   "emitDiscussionMetadata": "Излъчване на метаданни за дискусията",
   "discussionMetadataSentPeriodically": "Метаданните за дискусията ще се изпращат периодично към родителския прозорец (вградената страница). За демонстрация активирайте тази опция и отворете конзолата на браузъра на тази страница. Вижте <a>документацията</a> за повече подробности.",
   "placeCommentBoxAboveComments": "Поставяне на полето за коментари над коментарите",
   "commentInputBoxWillBePlacedAboveComments": "Полето за въвеждане на коментари ще бъде поставено над коментарите, така че потребителите да могат да оставят коментар без да превъртат до края на дискусията.",
   "loadCommentsLazily": "Зареждане на коментарите лениво",
   "loadingCommentsWillBeDeferred": "Зареждането на коментарите ще бъде отложено, докато потребителят не превърти близо до контейнера с коментари. Това се постига чрез добавяне на <a><code>loading=\"lazy\"</code></a> към елемента <code><iframe></code>.",
-
   "theme": "Тема",
   "chooseAThemeThatMatches": "Изберете тема, която съответства на вашия уебсайт. Не намирате подходяща? <a>Допринесете</a> с нова тема.",
   "URLToThemeCSS": "URL адрес към CSS файл на темата:",
   "warningExternalCSSUnsafe": "Предупреждение: зареждането на външен CSS може да бъде несигурно. Уверете се, че се доверявате на автора и доставчика на CSS файла.",
-
   "theme=light": "GitHub Светла",
   "theme=light_high_contrast": "GitHub Светла с Висок Контраст",
   "theme=light_protanopia": "GitHub Светла Протанопия и Деутеранопия",
@@ -86,12 +83,10 @@
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
   "theme=custom": "Персонализирана (експериментална)",
-
   "enableGiscus": "Активиране на giscus",
   "addTheFollowingScriptTag": "Добавете следния таг <code><script></code> към шаблона на вашия уебсайт, където искате да се появят коментарите. Ако съществува елемент с клас <code>giscus</code>, коментарите ще бъдат поставени там.",
   "youHaveNotConfiguredRepositoryCategory": "Не сте конфигурирали вашето <arepo>хранилище</arepo> и/или <acategory>категория</acategory>. Стойностите за тези полета няма да се покажат, докато не ги попълните.",
   "copy": "Копиране",
-
   "[enterRepoHere]": "[ВЪВЕДЕТЕ ХРАНИЛИЩЕ ТУК]",
   "[enterRepoIDHere]": "[ВЪВЕДЕТЕ ID НА ХРАНИЛИЩЕ ТУК]",
   "[enterCategoryHere]": "[ВЪВЕДЕТЕ ИМЕ НА КАТЕГОРИЯ ТУК]",
@@ -99,7 +94,6 @@
   "[enterTermHere]": "[ВЪВЕДЕТЕ ТЕРМИН ТУК]",
   "[enterNumberHere]": "[ВЪВЕДЕТЕ НОМЕР ТУК]",
   "[enterThemeCSSURLHere]": "[ВЪВЕДЕТЕ URL НА CSS ТЕМА ТУК]",
-
   "youCanCustomizeTheLayout": "Можете да персонализирате оформлението на контейнера с помощта на селекторите <code>.giscus</code> и <code>.giscus-frame</code> от вградената страница.",
   "tryItOut": "Изпробвайте"
 }

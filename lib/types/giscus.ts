@@ -6,6 +6,8 @@ export type InputPosition = 'top' | 'bottom';
 
 export type CommentOrder = 'oldest' | 'newest';
 
+export type ReactionsLayout = 'default' | 'compact';
+
 export interface ITokenRequest {
   session: string;
 }
@@ -71,6 +73,7 @@ export interface ISetConfigMessage {
     reactionsEnabled?: boolean;
     emitMetadata?: boolean;
     inputPosition?: InputPosition;
+    reactionsLayout?: ReactionsLayout;
     lang?: AvailableLanguage;
   };
 }

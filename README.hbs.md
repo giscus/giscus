@@ -113,6 +113,7 @@ Ovaj README je dostupan na:
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 - [香港繁體](README.zh-HK.md)
+- [Bangla](README.bn.md)
 
 [![Radi uz pomoć Vercel-a](public/powered-by-vercel.svg)][vercel]
 

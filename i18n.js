@@ -33,6 +33,7 @@ module.exports = {
     'vi',
     'uk',
     'uz',
+    'bn',
     'zh-CN',
     'zh-Hans',
     'zh-Hant',

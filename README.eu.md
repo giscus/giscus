@@ -121,6 +121,7 @@ README fitxategia hizkuntza ezberdinetan topa daiteke:
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 - [香港繁體](README.zh-HK.md)
+- [Bangla](README.bn.md)
 
 [![Vercel-ek garatua](public/powered-by-vercel.svg)][vercel]
 

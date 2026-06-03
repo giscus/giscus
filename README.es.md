@@ -113,6 +113,7 @@ Este archivo README está disponible en:
 - [简体中文](README.zh-CN.md)
 - [繁體中文](README.zh-TW.md)
 - [香港繁體](README.zh-HK.md)
+- [Bangla](README.bn.md)
 
 [![Desarrollado por Vercel](public/powered-by-vercel.svg)][vercel]
 

@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "কোনো প্রতিক্রিয়া নেই",
+    "one": "১টি প্রতিক্রিয়া",
+    "other": "{{count}}টি প্রতিক্রিয়া"
+  },
+  "comment": "মন্তব্য",
+  "comments": {
+    "0": "কোনো মন্তব্য নেই",
+    "one": "১টি মন্তব্য",
+    "other": "{{count}}টি মন্তব্য"
+  },
+  "reply": "উত্তর",
+  "replies": {
+    "0": "কোনো উত্তর নেই",
+    "one": "১টি উত্তর",
+    "other": "{{count}}টি উত্তর"
+  },
+  "upvotes": {
+    "0": "কোনো আপভোট নেই",
+    "one": "১টি আপভোট",
+    "other": "{{count}}টি আপভোট"
+  },
+  "hiddenItems": {
+    "0": "কোনো লুকানো আইটেম নেই",
+    "one": "১টি লুকানো আইটেম",
+    "other": "{{count}}টি লুকানো আইটেম"
+  },
+  "genericError": "একটি ত্রুটি ঘটেছে: {{message}}",
+  "loadMore": "আরও লোড করুন",
+  "loading": "লোড হচ্ছে",
+  "loadingComments": "মন্তব্য লোড হচ্ছে…",
+  "loadingPreview": "প্রিভিউ লোড হচ্ছে…",
+  "poweredBy": "– দ্বারা চালিত <a>giscus</a>",
+  "oldest": "সর্বপ্রাচীন",
+  "newest": "সর্বশেষ",
+  "showPreviousReplies": {
+    "0": "কোনো পূর্ববর্তী উত্তর নেই",
+    "one": "১টি পূর্ববর্তী উত্তর দেখান",
+    "other": "{{count}}টি পূর্ববর্তী উত্তর দেখান"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "GitHub-এ কোনো পূর্ববর্তী উত্তর নেই",
+    "one": "GitHub-এ ১টি পূর্ববর্তী উত্তর দেখুন",
+    "other": "GitHub-এ {{count}}টি পূর্ববর্তী উত্তর দেখুন"
+  },
+  "edited": "সম্পাদিত",
+  "thisCommentWasDeleted": "এই মন্তব্যটি মুছে ফেলা হয়েছে।",
+  "thisCommentWasMinimized": "এই মন্তব্যটি ছোট করা হয়েছে।",
+  "thisCommentWasHidden": "এই মন্তব্যটি লুকানো হয়েছে।",
+  "write": "লিখুন",
+  "preview": "প্রিভিউ",
+  "enableFixedWidth": "এডিটরে স্থির-প্রস্থ (মনোস্পেস) ফন্ট সক্ষম করুন",
+  "disableFixedWidth": "এডিটরে স্থির-প্রস্থ (মনোস্পেস) ফন্ট নিষ্ক্রিয় করুন",
+  "lastEditedAt": "শেষ সম্পাদনা {{date}}-এ",
+  "writeAComment": "মন্তব্য লিখুন",
+  "signInToComment": "মন্তব্য করতে সাইন ইন করুন",
+  "stylingWithMarkdownIsSupported": "Markdown দিয়ে স্টাইলিং সমর্থিত",
+  "signOut": "সাইন আউট",
+  "cancel": "বাতিল",
+  "signInWithGitHub": "GitHub দিয়ে সাইন ইন করুন",
+  "writeAReply": "উত্তর লিখুন",
+
+  "upvote": "আপভোট",
+  "youMustBeSignedInToUpvote": "আপভোট করতে সাইন ইন থাকতে হবে।",
+  "addReactions": "প্রতিক্রিয়া যোগ করুন",
+  "pleaseWait": "দয়া করে অপেক্ষা করুন…",
+  "pickYourReaction": "আপনার প্রতিক্রিয়া বেছে নিন",
+  "addTheReaction": "{{reaction}} প্রতিক্রিয়া যোগ করুন",
+  "removeTheReaction": "{{reaction}} প্রতিক্রিয়া মুছে দিন",
+  "signInToAddYourReaction": "আপনার প্রতিক্রিয়া যোগ করতে <a>সাইন ইন করুন</a>।",
+  "youMustBeSignedInToAddReactions": "প্রতিক্রিয়া যোগ করতে সাইন ইন থাকতে হবে।",
+  "peopleReactedWith": {
+    "0": "কেউ {{reaction}} {{emoji}} দিয়ে প্রতিক্রিয়া দেখায়নি",
+    "one": "১ জন ব্যক্তি {{reaction}} {{emoji}} দিয়ে প্রতিক্রিয়া দেখেছেন",
+    "other": "{{count}} জন ব্যক্তি {{reaction}} {{emoji}} দিয়ে প্রতিক্রিয়া দেখেছেন"
+  },
+  "emoji": "ইমোজি",
+  "nothingToPreview": "প্রিভিউ করার কিছু নেই",
+
+  "THUMBS_UP": "+১",
+  "THUMBS_DOWN": "-১",
+  "LAUGH": "হাসি",
+  "HOORAY": "শুভেচ্ছা",
+  "CONFUSED": "বিভ্রান্ত",
+  "HEART": "ভালোবাসা",
+  "ROCKET": "রকেট",
+  "EYES": "চোখ",
+
+  "COLLABORATOR": "সহযোগী",
+  "CONTRIBUTOR": "অবদানকারী",
+  "FIRST_TIMER": "প্রথমবারকারী",
+  "FIRST_TIME_CONTRIBUTOR": "প্রথমবার অবদানকারী",
+  "MANNEQUIN": "মানেকুইন",
+  "MEMBER": "সদস্য",
+  "NONE": "কোনোটিই নয়",
+  "OWNER": "মালিক",
+  "APP": "অ্যাপ"
+}

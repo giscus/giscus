@@ -49,6 +49,7 @@ export const availableThemes = [
   'catppuccin_mocha',
   'fro',
   'custom',
+  'tokyonight_moon',
 ] as const;
 
 export const meta = {

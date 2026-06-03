@@ -82,6 +82,8 @@
   "theme=catppuccin_macchiato": "Catppuccin Macchiato",
   "theme=catppuccin_mocha": "Catppuccin Mocha",
   "theme=fro": "Fro",
+  "theme=flexoki_light": "Flexoki Light",
+  "theme=flexoki_dark": "Flexoki Dark",
   "theme=custom": "המתאמה אישית (ניסיוני)",
   "enableGiscus": "הפעל giscus",
   "addTheFollowingScriptTag": "הוסף את התגית <code><script></code> לתבנית האתר שלכם במקום שבו תרצו שהתגובות יופיעו. אם קיים אלמנט עם המזהה (class) <code>giscus</code>, התגובות יופיעו במקום זה.",

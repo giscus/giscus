@@ -103,6 +103,7 @@ README fitxategia hizkuntza ezberdinetan topa daiteke:
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)
 - [Magyar](README.hu.md)
+- [हिन्दी](README.hi.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)
 - [日本語](README.ja.md)

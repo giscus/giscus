@@ -94,6 +94,7 @@ Toto README je k dispozici v:
 - [Ελληνικά](README.gr.md)
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)
+- [हिन्दी](README.hi.md)
 - [Magyar](README.hu.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)

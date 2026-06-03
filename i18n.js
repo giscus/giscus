@@ -17,6 +17,7 @@ module.exports = {
     'gsw',
     'hbs',
     'he',
+    'hi',
     'hu',
     'id',
     'it',

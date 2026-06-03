@@ -94,6 +94,7 @@ giscus 載入時，會使用 [GitHub Discussions 搜尋 API][search-api] 根據�
 - [Ελληνικά](README.gr.md)
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)
+- [हिन्दी](README.hi.md)
 - [Magyar](README.hu.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)

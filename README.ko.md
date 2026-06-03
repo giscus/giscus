@@ -94,6 +94,7 @@ GitHub Issues를 활용한 다른 시스템(예를 들면, [utterances][utteranc
 - [Ελληνικά](README.gr.md)
 - [Srpsko-Hrvatski (BCMS)](README.hbs.md)
 - [עברית](README.he.md)
+- [हिन्दी](README.hi.md)
 - [Magyar](README.hu.md)
 - [Indonesia](README.id.md)
 - [Italiano](README.it.md)

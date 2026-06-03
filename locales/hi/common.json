@@ -1,0 +1,99 @@
+{
+  "reactions": {
+    "0": "{{count}} प्रतिक्रिया",
+    "one": "{{count}} प्रतिक्रिया",
+    "other": "{{count}} प्रतिक्रियाएँ"
+  },
+  "comment": "टिप्पणी",
+  "comments": {
+    "0": "{{count}} टिप्पणी",
+    "one": "{{count}} टिप्पणी",
+    "other": "{{count}} टिप्पणियाँ"
+  },
+  "reply": "उत्तर",
+  "replies": {
+    "0": "{{count}} उत्तर",
+    "one": "{{count}} उत्तर",
+    "other": "{{count}}{{plus}} उत्तर"
+  },
+  "upvotes": {
+    "0": "{{count}} समर्थन",
+    "one": "{{count}} समर्थन",
+    "other": "{{count}} समर्थन"
+  },
+  "hiddenItems": {
+    "0": "{{count}} छुपाई गई वस्तुएँ",
+    "one": "{{count}} छुपाई गई वस्तु",
+    "other": "{{count}} छुपाई गई वस्तुएँ"
+  },
+  "genericError": "एक त्रुटि हुई: {{message}}",
+  "loadMore": "और लोड करें",
+  "loading": "लोड हो रहा है",
+  "loadingComments": "टिप्पणियाँ लोड हो रही हैं…",
+  "loadingPreview": "पूर्वावलोकन लोड हो रहा है…",
+  "poweredBy": "– द्वारा संचालित <a>giscus</a>",
+  "oldest": "प्राचीनतम",
+  "newest": "नवीनतम",
+  "showPreviousReplies": {
+    "0": "पूर्व के {{count}} उत्तर दिखाएँ",
+    "one": "पूर्व का {{count}} उत्तर दिखाएँ",
+    "other": "पूर्व के {{count}} उत्तर दिखाएँ"
+  },
+  "seePreviousRepliesOnGitHub": {
+    "0": "GitHub पर पूर्व के {{count}} उत्तर देखें",
+    "one": "GitHub पर पूर्व का {{count}} उत्तर देखें",
+    "other": "GitHub पर पूर्व के {{count}} उत्तर देखें"
+  },
+  "edited": "संपादित",
+  "thisCommentWasDeleted": "यह टिप्पणी हटा दी गई थी।",
+  "thisCommentWasMinimized": "यह टिप्पणी घटाकर दिखायी गई है।",
+  "thisCommentWasHidden": "यह टिप्पणी छिपायी गई है।",
+  "write": "लिखें",
+  "preview": "पूर्वावलोकन",
+  "enableFixedWidth": "एडिटर में स्थिर-चौड़ाई (monospace) फ़ॉन्ट सक्षम करें",
+  "disableFixedWidth": "एडिटर में स्थिर-चौड़ाई (monospace) फ़ॉन्ट अक्षम करें",
+  "lastEditedAt": "अंतिम संपादन: {{date}}",
+  "writeAComment": "एक टिप्पणी लिखें",
+  "signInToComment": "टिप्पणी करने हेतु प्रवेश करें",
+  "stylingWithMarkdownIsSupported": "Markdown द्वारा स्वरूपण समर्थित है",
+  "signOut": "प्रवेश समाप्त करें",
+  "cancel": "रद्द करें",
+  "signInWithGitHub": "GitHub से प्रवेश करें",
+  "writeAReply": "एक उत्तर लिखें",
+
+  "upvote": "समर्थन",
+  "youMustBeSignedInToUpvote": "समर्थन करने के लिए आपको प्रवेश करना आवश्यक है।",
+  "addReactions": "प्रतिक्रियाएँ जोड़ें",
+  "pleaseWait": "कृपया प्रतीक्षा करें…",
+  "pickYourReaction": "अपनी प्रतिक्रिया चुनें",
+  "addTheReaction": "{{reaction}} प्रतिक्रिया जोड़ें",
+  "removeTheReaction": "{{reaction}} प्रतिक्रिया हटाएँ",
+  "signInToAddYourReaction": "<a>प्रवेश</a> करके अपनी प्रतिक्रिया जोड़ें।",
+  "youMustBeSignedInToAddReactions": "प्रतिक्रियाएँ जोड़ने के लिए आपको प्रवेश करना आवश्यक है।",
+  "peopleReactedWith": {
+    "0": "{{count}} व्यक्ति ने {{reaction}} {{emoji}} के साथ प्रतिक्रिया दी",
+    "one": "{{count}} व्यक्ति ने {{reaction}} {{emoji}} के साथ प्रतिक्रिया दी",
+    "other": "{{count}} लोगों ने {{reaction}} {{emoji}} के साथ प्रतिक्रिया दी"
+  },
+  "emoji": "भावचिह्न",
+  "nothingToPreview": "पूर्वावलोकन के लिए कुछ भी नहीं है",
+
+  "THUMBS_UP": "+१",
+  "THUMBS_DOWN": "-१",
+  "LAUGH": "हँसी",
+  "HOORAY": "बधाई",
+  "CONFUSED": "अस्पष्ट",
+  "HEART": "प्रेम",
+  "ROCKET": "रॉकेट",
+  "EYES": "नेत्र",
+
+  "COLLABORATOR": "सहयोगी",
+  "CONTRIBUTOR": "योगदाता",
+  "FIRST_TIMER": "नवागंतुक",
+  "FIRST_TIME_CONTRIBUTOR": "पहली बार योगदानकर्ता",
+  "MANNEQUIN": "प्रतिरूप",
+  "MEMBER": "सदस्य",
+  "NONE": "कोई नहीं",
+  "OWNER": "स्वामी",
+  "APP": "अनुप्रयोग"
+}

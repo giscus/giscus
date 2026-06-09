@@ -19,19 +19,23 @@
   // Set up session and clear the session param on load
   const url = new URL(location.href);
   let session = url.searchParams.get('giscus') || '';
-  const savedSession = localStorage.getItem(GISCUS_SESSION_KEY);
+  // Some webviews (e.g. Chrome Mobile WebView on Android 11) expose `localStorage`
+  // as `null` when the embedding app does not enable it. Guard against that so
+  // the script does not crash on load. See issue #1183.
+  const storage = typeof localStorage !== 'undefined' && localStorage ? localStorage : null;
+  const savedSession = storage ? storage.getItem(GISCUS_SESSION_KEY) : null;
   url.searchParams.delete('giscus');
   url.hash = '';
   const cleanedLocation = url.toString();
 
   if (session) {
-    localStorage.setItem(GISCUS_SESSION_KEY, JSON.stringify(session));
+    storage?.setItem(GISCUS_SESSION_KEY, JSON.stringify(session));
     history.replaceState(undefined, document.title, cleanedLocation);
   } else if (savedSession) {
     try {
       session = JSON.parse(savedSession);
     } catch (e) {
-      localStorage.removeItem(GISCUS_SESSION_KEY);
+      storage?.removeItem(GISCUS_SESSION_KEY);
       console.warn(`${formatError(e?.message)} Session has been cleared.`);
     }
   }

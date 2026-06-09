@@ -56,6 +56,20 @@ export default function CommentBox({
     }
   }, [isPreview, input, lastInput, token, context]);
 
+  // The textarea is unmounted when switching to the Preview tab and remounted
+  // when switching back to Write, so the previous inline `style.height` is
+  // lost. Restore the last recorded height (if any) after the textarea has
+  // been re-mounted. See issue #1428.
+  useEffect(() => {
+    if (isPreview || !textarea.current) return;
+    if (lastHeight) {
+      textarea.current.style.height = lastHeight;
+    } else {
+      resizeTextArea(textarea.current);
+      setLastHeight(textarea.current.style.height);
+    }
+  }, [isPreview, lastHeight]);
+
   const reset = useCallback(() => {
     setInput('');
     setPreview('');

@@ -12,7 +12,7 @@
 - [Şahsi olarak barındırılabilir][self-hosting]! 🤳
 
 > **Not:**\
-> giscus hâlâ aktif olarak geliştiriliyor. GitHub da aktif olarak GitHub Discussions ve API'ını geliştiriyiror. Nitekim, giscus'ın özellikleri zamanla değişebilir veya bozulabilir.
+> giscus hâlâ aktif olarak geliştirilmektedir. GitHub da aktif olarak GitHub Discussions ve API'ını geliştirmektedir. Bundan dolayı, giscus'ın özellikleri zamanla değişebilir veya bozulabilir.
 
 ## Nasıl çalışır
 

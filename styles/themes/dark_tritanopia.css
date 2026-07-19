@@ -37,7 +37,7 @@ main {
   --color-btn-text: #c9d1d9;
   --color-btn-bg: #21262d;
   --color-btn-border: rgb(240 246 252 / 10%);
-  --color-btn-shadow: 0 0 transparent;
+  --color-btn-shadow: 0 15 transparent;
   --color-btn-inset-shadow: 0 0 transparent;
   --color-btn-hover-bg: #30363d;
   --color-btn-hover-border: #8b949e;

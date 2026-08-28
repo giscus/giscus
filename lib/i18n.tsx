@@ -68,6 +68,7 @@ export const availableLanguages = {
   nl: 'Nederlands',
   pl: 'Polski',
   pt: 'Português',
+  'pt-BR': 'Português (Brasil)',
   ro: 'Română',
   ru: 'Русский',
   th: 'ภาษาไทย',
